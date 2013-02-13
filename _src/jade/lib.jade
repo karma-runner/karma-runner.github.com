@@ -1,0 +1,32 @@
+
+mixin navigation()
+  | {% for section in site.sections %}
+  li
+    a(href='javascript:void') {{section}}
+    ul
+      // The most hacky shit way there is to write an ordered
+      // list of items..but that's all that you get in jekyll...
+      | {% capture get_items %}
+      |    {% for cat in site.categories[section] %}
+      |    {{ cat | map: 'title' | replace: ' ', '_'}}
+      |    {% endfor %}
+      | {% endcapture %}
+      | {% capture num_words %}
+      |   {{ get_items | split:' ' |  sort | join:' ' | number_of_words }}
+      | {% endcapture %}
+      | {% for item in (1..num_words) %}
+      | {% capture url %}{{ site.categories[section] | sort: 'date' | map: 'url' | join:' ' | truncatewords:item | remove:'...' | split:' '  | last | replace: '_', ' '}}{% endcapture %}
+      | {% capture title %}        
+      | {% for post in site.categories[section] %}{% if post.url == url %}{{post.title}}{% endif %}{% endfor %}{% endcapture %}
+      li
+        a(href='{{url}}') 
+          | {{title}}
+      | {% endfor %}
+  | {% endfor %} 
+  li
+    a(href='') {{page.tags}}
+    ul
+      | {% for tag in site.tags %}
+      li 
+        a(href='/{{tag[0]}}/index.html') {{ tag[0] }}
+      | {% endfor %}

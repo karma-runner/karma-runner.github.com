@@ -1,0 +1,50 @@
+# Configuration for testacular.github.com
+#
+# Github uses this file to configure to start jekyll 
+# with the following command
+#
+#     $ jekyll --pygments --no-lsi --safe
+# 
+# For more information see 
+# https://help.github.com/articles/using-jekyll-with-pages
+#
+# For more information about this configuration file see
+# https://github.com/mojombo/jekyll/wiki/Configuration
+
+safe:        false
+auto:        false
+server:      false
+server_port: 4000
+url:         http://localhost:4000
+
+source:      .
+destination: ./_site
+plugins:     ./_plugins
+exclude:     ["node_modules", "_src", "package.json", "Gruntfile.coffee", "Gemfile", "Gemfile.lock", "README.md"]
+
+future:      true
+lsi:         false
+pygments:    true
+markdown:    redcarpet
+permalink:   none
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data", "lax_spacing"]
+
+
+kramdown:
+  auto_ids: true,
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  use_coderay: false
+  
+  coderay:
+    coderay_wrap: div
+    coderay_line_numbers: inline
+    coderay_line_numbers_start: 1
+    coderay_tab_width: 4
+    coderay_bold_every: 10
+    coderay_css: style
+
+# List of all available sections
+sections: ['intro', 'config', 'plus', 'dev', 'about']

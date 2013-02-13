@@ -1,0 +1,24 @@
+- var matter = '---\ntitle: Testacular\n---\n'
+!{matter}
+
+!!! 5
+
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    // Generate the latest version by sorting the list of all available
+    // and then take the last one
+
+    // This generates a string of all available versions
+    | {% capture versions %}
+    |   {% for tag in site.tags %}  
+    |     {{tag | first}}
+    |   {% endfor %}
+    | {% endcapture %}
+    // Take the latest version and assign it
+    | {% capture version %}
+    |   {{ versions | split: ' ' | sort | last }}
+    | {% endcapture %}
+    meta(http-equiv='refresh', content="0; URL=/{{version | replace: ' ', ''}}/index.html")
+  body
+
