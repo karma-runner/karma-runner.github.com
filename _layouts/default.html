@@ -1,0 +1,92 @@
+<!DOCTYPE html><!--[if lt IE 7]>
+<html lang="en" class="ie ie6"></html><![endif]--><!--[if IE 7]>
+<html lang="en" class="ie ie7"></html><![endif]--><!--[if IE 8]>
+<html lang="en" class="ie ie8"></html><![endif]--><!--[if (gte IE 9)|!(IE)]>
+<html lang="en"></html>
+<head>
+  <!-- head.jade -->
+  <!---->
+  <!-- This this the template for the head part.-->
+  <!-- Basic Page Needs-->
+  <meta charset="utf-8">
+  <title>{{page.title}}</title>
+  <!-- Mobile specific Metas-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- Le styles -->
+  <link href="/css/app.css" rel="stylesheet">
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements --><!--[if lt IE 9]>
+  <script src="/js/html5.js"></script><![endif]-->
+  <!-- Fav and touch icons -->
+  <link rel="shortcut icon" href="/images/favicon/favicon.ico">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
+</head>
+<body>
+  <div id="wrap" class="boxed">
+    <header>
+      <div class="container clearfix">
+        <div class="one-third column">
+          <div class="logo"><a href="/"><img src="/images/logo_light.png" alt="Testacular"></a></div>
+        </div>
+        <div class="two-thirds column">
+          <nav id="menu" class="navigation">
+            <ul id="nav">{% for section in site.sections %}
+              <li><a href="javascript:void">{{section}}</a>
+                <ul>
+                  <!-- The most hacky shit way there is to write an ordered-->
+                  <!-- list of items..but that's all that you get in jekyll...-->{% capture get_items %}
+                     {% for cat in site.categories[section] %}
+                     {{ cat | map: 'title' | replace: ' ', '_'}}
+                     {% endfor %}
+                  {% endcapture %}
+                  {% capture num_words %}
+                    {{ get_items | split:' ' |  sort | join:' ' | number_of_words }}
+                  {% endcapture %}
+                  {% for item in (1..num_words) %}
+                  {% capture url %}{{ site.categories[section] | sort: 'date' | map: 'url' | join:' ' | truncatewords:item | remove:'...' | split:' '  | last | replace: '_', ' '}}{% endcapture %}
+                  {% capture title %}        
+                  {% for post in site.categories[section] %}{% if post.url == url %}{{post.title}}{% endif %}{% endfor %}{% endcapture %}
+                  <li><a href="{{url}}">
+                       
+                      {{title}}</a></li>{% endfor %}
+                </ul>
+              </li>{% endfor %} 
+              <li><a href="">{{page.tags}}</a>
+                <ul>{% for tag in site.tags %}
+                  <li> <a href="/{{tag[0]}}/index.html">{{ tag[0] }}</a></li>{% endfor %}
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="sixteen columns">
+          <hr>
+        </div>
+      </div>
+    </header>
+    <div class="container clearfix">
+      <div class="sixteen columns">
+        <h1 class="page-title">{{page.title}}<span class="line"></span></h1>
+      </div>
+      <div class="page-columns">
+        <div id="markdown" class="sixteen columns bottom">{{content}}</div>
+      </div>
+    </div>
+    <div class="push"></div>
+  </div>
+  <footer>
+    <div class="container">
+      <div class="ten columns"><span class="copyright"><a href="https://github.com/testacular/testacular">Testacular</a>&nbsp;is released under the<a href="https://github.com/testacular/testacular/blob/master/LICENSE" target="_blank">
+             
+            MIT license</a>. Site by&nbsp;<a href="https://github.com/Dignifiedquire" target="_blank">Friedel Ziegelmayer</a>.</span></div>
+      <div class="six columns">
+        <div class="social"><a href="https://github.com/testacular/testacular/" data-tooltip="GitHub Repo"><i class="icon-github-alt icon-large"></i></a><a href="https://github.com/testacular/testacular/issues" data-tooltip="Issues"><i class="icon-beaker icon-large"></i></a><a href="http://twitter.com/TestacularJS" data-tooltip="@TestacularJS"><i class="icon-twitter icon-large"></i></a><a href="https://groups.google.com/forum/#!forum/testacular" data-tooltip="Mailing List"><i class="icon-envelope-alt icon-large"></i></a></div>
+      </div>
+    </div>
+  </footer>
+</body>
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/javascript/app.js">;</script><![endif]-->
