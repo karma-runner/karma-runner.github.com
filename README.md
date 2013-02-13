@@ -19,6 +19,37 @@ and startup via
 ```bash
 $ grunt
 ```
+Now you can open http://localhost:8000 and see all the beauty.
+
+
+## YAML Front Matter
+
+This where all the basic information is stored that we need to
+generate this page dynamically. There are four basic values that need
+to be set:
+
+* `title`: The title of the page
+* `layout`: Always `default` for a normal page
+* `categories`: An array with the first value the version and the
+  second value the section. Available sections are 
+    * about
+    * intro
+    * config
+    * plus
+    * dev
+* `tags`: Again this needs to be the version this belongs to.
+
+### Example
+```yaml
+---
+title: The title
+layout: default
+categories: ['0.6.0', 'about']
+tags: 0.6.0
+---
+```
+
+
 
 ## Grunt Tasks
 
