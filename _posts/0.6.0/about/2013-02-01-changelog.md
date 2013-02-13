@@ -3,7 +3,6 @@ layout: default
 title: Changelog
 categories: ['0.6.0', 'about']
 tags: 0.6.0
-weight: 1
 ---
 
 ### v0.5.8

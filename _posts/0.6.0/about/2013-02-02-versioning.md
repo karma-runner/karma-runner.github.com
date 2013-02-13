@@ -3,7 +3,6 @@ layout: default
 title: Versioning
 categories: ['0.6.0', 'about']
 tags: 0.6.0
-weight: 2
 ---
 
 Testacular uses [Semantic Versioning].
