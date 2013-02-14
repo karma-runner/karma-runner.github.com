@@ -1,0 +1,12 @@
+### **Because things should be simple.**
+
+## We believe in Test Driven Development and so we want to make it as simple as possible. And fun.
+
+The main goal for Testacular is to bring a productive environment to developers. An environment, where they don't have to set up many things, and rather just write the code and get instant feedback. Because getting a quick feedback is what makes you productive and [creative].
+
+-----
+
+For more motivation why to use Testacular and why we did it, check out the blog post on [Google Testing].
+
+[Google Testing]: http://googletesting.blogspot.com/2012/11/testacular-spectacular-test-runner-for.html
+[creative]: http://vimeo.com/36579366
