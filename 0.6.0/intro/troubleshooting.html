@@ -1,0 +1,131 @@
+<!DOCTYPE html><!--[if lt IE 7]>
+<html lang="en" class="ie ie6"></html><![endif]--><!--[if IE 7]>
+<html lang="en" class="ie ie7"></html><![endif]--><!--[if IE 8]>
+<html lang="en" class="ie ie8"></html><![endif]--><!--[if (gte IE 9)|!(IE)]>
+<html lang="en"></html>
+<head>
+  <!-- Basic Page Needs-->
+  <meta charset="utf-8">
+  <title>Testacular - Troubleshooting</title>
+  <!-- Mobile specific Metas-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- Le styles-->
+  <link href="/assets/css/app.css" rel="stylesheet">
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements--><!--[if lt IE 9]>
+  <script src="/assets/js/html5.js"></script><![endif]-->
+  <!-- Fav and touch icons-->
+  <link rel="shortcut icon" href="/assets/img/favicon/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/apple-touch-icon-114x114.png">
+</head>
+<body>
+  <div id="wrap" class="boxed">
+    <header>
+      <div class="container clearfix">
+        <div class="one-third column">
+          <div class="logo"><a href="/0.6.0/index.html"><img src="/assets/img/logo_light.png" alt="Testacular"></a></div>
+        </div>
+        <div class="two-thirds column">
+          <nav id="menu" class="navigation">
+            <ul id="nav">
+              <li><a href="javascript:void" class="active">intro</a>
+                <ul>
+                  <li><a href="/0.6.0/intro/why.html">Why</a></li>
+                  <li><a href="/0.6.0/intro/installation.html">Installation</a></li>
+                  <li><a href="/0.6.0/intro/configuration.html">Configuration</a></li>
+                  <li><a href="/0.6.0/intro/troubleshooting.html">Troubleshooting</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void" class="">config</a>
+                <ul>
+                  <li><a href="/0.6.0/config/configuration-file.html">Configuration File</a></li>
+                  <li><a href="/0.6.0/config/files.html">Files</a></li>
+                  <li><a href="/0.6.0/config/browsers.html">Browsers</a></li>
+                  <li><a href="/0.6.0/config/preprocessors.html">Preprocessors</a></li>
+                  <li><a href="/0.6.0/config/coverage.html">Coverage</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void" class="">plus</a>
+                <ul>
+                  <li><a href="/0.6.0/plus/AngularJS.html">AngularJS</a></li>
+                  <li><a href="/0.6.0/plus/RequireJS.html">RequireJS</a></li>
+                  <li><a href="/0.6.0/plus/Jenkins-CI.html">Jenkins CI</a></li>
+                  <li><a href="/0.6.0/plus/Travis-CI.html">Travis CI</a></li>
+                  <li><a href="/0.6.0/plus/Cloud9.html">Cloud9</a></li>
+                  <li><a href="/0.6.0/plus/Teamcity.html">Teamcity</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void" class="">dev</a>
+                <ul>
+                  <li><a href="/0.6.0/dev/public-api.html">Public Api</a></li>
+                  <li><a href="/0.6.0/dev/contributing.html">Contributing</a></li>
+                  <li><a href="/0.6.0/dev/git-commit-msg.html">Git Commit Msg</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void" class="">about</a>
+                <ul>
+                  <li><a href="/0.6.0/about/changelog.html">Changelog</a></li>
+                  <li><a href="/0.6.0/about/versioning.html">Versioning</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void">v0.6.0</a>
+                <ul>
+                  <li><a href="/0.6.0/index.html">v0.6.0</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="sixteen columns">
+          <hr>
+        </div>
+      </div>
+    </header>
+    <div class="container clearfix">
+      <div class="sixteen columns">
+        <h1 class="page-title">Troubleshooting<span class="line"></span>
+        </h1>
+      </div>
+      <div class="page-columns">
+        <div id="markdown" class="sixteen columns bottom"><p>You have some problems? Look no further. Known problems and solutions are collected here so you don&#39;t have to figure them out again and again.</p>
+<p>If you can&#39;t find solution to your problem here, feel free to ask on the <a href="https://groups.google.com/forum/#!forum/testacular">mailing list</a>.</p>
+<p>Before complaining, please make sure you are on the latest version.</p>
+<h2>Windows</h2>
+<h3>Tips &amp; Tricks</h3>
+<ul>
+<li>Use <a href="(http://chocolatey.org/)">chocolatey</a> for installation of tools. It helps. A lot.</li>
+</ul>
+<h3>Specific problems</h3>
+<ul>
+<li><p>Chrome won&#39;t start. (Issues: <a href="https://github.com/testacular/testacular/issues/202">#202</a>, <a href="https://github.com/testacular/testacular/issues/74">#74</a>)</p>
+<ol>
+<li>Set <code>CHROME_BIN</code> like this<pre><code>&gt; export CHROME_BIN='C:<span class="command">\Program</span> Files (x86)<span class="command">\Google</span><span class="command">\Chrome</span><span class="command">\Application</span><span class="command">\chrome</span>.exe'</code></pre>
+</li>
+<li>Increase the timeout from 5000ms to 10000ms. At 5000ms, timeouts occurred and the retry logic kicks in and eventually resolves after 2~3 tries.</li>
+</ol>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </div>
+    <div class="push"></div>
+  </div>
+  <footer>
+    <div class="container">
+      <div class="ten columns"><span class="copyright"><a href="https://github.com/testacular/testacular">Testacular</a>&nbsp;is released under the<a href="https://github.com/testacular/testacular/blob/master/LICENSE">
+             
+            MIT license</a>. Site by&nbsp;<a href="https://github.com/Dignifiedquire">
+             
+            Friedel Ziegelmayer</a>.</span></div>
+      <div class="six columns">
+        <div class="social"><a href="https://github.com/testacular/testacular/" data-tooltip="GitHub Repo"><i class="icon-github-alt icon-large"></i></a><a href="https://github.com/testacular/testacular/issues" data-tooltip="Issues"><i class="icon-beaker icon-large"></i></a><a href="http://twitter.com/TestacularJS" data-tooltip="@TestacularJS"><i class="icon-twitter icon-large"></i></a><a href="https://groups.google.com/forum/#!forum/testacular" data-tooltip="Mailing List"><i class="icon-envelope-alt icon-large"></i></a></div>
+      </div>
+    </div>
+  </footer>
+</body>
+<!-- Placed at the end of the document so the pages load faster-->
+<script src="/assets/js/app.js">;</script><![endif]-->
