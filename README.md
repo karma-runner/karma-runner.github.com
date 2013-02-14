@@ -1,11 +1,6 @@
 # testacular.github.com
 
-This is the source code for http://testacular.github.com. The documentation of 
-[Testacular], the spectacular test runner.
+**This is the source code for http://testacular.github.com. The homepage and documentation of
+[Testacular], the spectacular test runner.**
 
-If you want to contribute, please don't do it here but go over to the repository 
-of [Testacular] under [docs] you'll find everything you need to get started.
-
-
-[Testacular]: https://github.com/testacular/testacular
-[docs]: https://github.com/testacular/testacular/tree/master/docs
+If you wanna update the docs, just go the the main repo and update the markdown. You can even do that directly from github web interface.

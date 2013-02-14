@@ -1,0 +1,38 @@
+include lib
+
+!!! 5
+include html
+  head
+    include head
+  body
+    #wrap.boxed
+      header
+        .container.clearfix
+          .one-third.column
+            .logo
+              a(href='/#{self.version}/index.html')
+                img(src='/assets/img/logo_light.png', alt='Testacular')
+          .two-thirds.column
+            nav#menu.navigation
+              ul#nav
+                mixin navigation(self, menu)
+                mixin versionDropdown(versions, self.version)
+          .sixteen.columns
+            hr
+
+      block content
+        .container.clearfix
+          .sixteen.columns
+            h1.page-title
+              = self.pageTitle
+              span.line
+          .page-columns
+            #markdown.sixteen.columns.bottom
+              != self.content
+      .push
+    footer
+      .container
+        include footer
+
+  // Placed at the end of the document so the pages load faster
+  include scripts

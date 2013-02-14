@@ -1,0 +1,27 @@
+{
+  "name": "testacular.github.com",
+  "version": "0.0.1",
+  "private": true,
+  "description": "",
+  "main": "",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.0rc7",
+    "grunt-contrib-less": "https://github.com/gruntjs/grunt-contrib-less/tarball/master",
+    "grunt-contrib-uglify": "~0.1.1rc6",
+    "grunt-contrib-mincss": "https://github.com/gruntjs/grunt-contrib-mincss/tarball/master",
+    "q": "0.8.12",
+    "q-io": "1.5.2",
+    "namp": "0.2.25",
+    "jade": "0.28.1"
+  },
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/testacular/testacular.github.com.git"
+  },
+  "author": "Friedel Ziegelmayer",
+  "license": "MIT"
+}
