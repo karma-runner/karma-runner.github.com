@@ -20,15 +20,23 @@ module.exports = (grunt) ->
             'src/js/selectnav.js'
             'src/js/custom.js'
           ]
+    connect:
+      server:
+        options:
+          base: '.'
+          port: 8000
+          keepalive: true
 
   grunt.loadNpmTasks 'grunt-contrib-mincss'
   grunt.loadNpmTasks 'grunt-contrib-uglify'
   grunt.loadNpmTasks 'grunt-contrib-less'
+  grunt.loadNpmTasks 'grunt-contrib-connect'
 
   grunt.registerTask 'build', [
     'less:docs'
     'mincss:docs'
     'uglify:docs'
   ]
+  grunt.registerTask 'server', 'connect:server'
 
   grunt.registerTask 'default', ['build']
