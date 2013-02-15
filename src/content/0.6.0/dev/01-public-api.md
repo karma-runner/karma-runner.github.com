@@ -1,6 +1,6 @@
 Most of the time, you will be using Testacular directly from the command line.
 
-You can, however, call Testacular pragmatically from your node module. This might be helpful when
+You can, however, call Testacular programmatically from your node module. This might be helpful when
 using Testacular with [Grunt] for instance.
 
 
