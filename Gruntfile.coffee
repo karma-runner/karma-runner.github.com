@@ -27,10 +27,18 @@ module.exports = (grunt) ->
           port: 8000
           keepalive: true
 
+    static:
+      options:
+        template: 'src/jade'
+      build:
+        files:
+          '.': 'src/content'
+
   grunt.loadNpmTasks 'grunt-contrib-mincss'
   grunt.loadNpmTasks 'grunt-contrib-uglify'
   grunt.loadNpmTasks 'grunt-contrib-less'
   grunt.loadNpmTasks 'grunt-contrib-connect'
+  grunt.loadTasks 'tasks'
 
   grunt.registerTask 'build', [
     'less:docs'
