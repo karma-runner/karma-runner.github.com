@@ -26,7 +26,7 @@
     <header>
       <div class="container clearfix">
         <div class="one-third column">
-          <div class="logo"><a href="/0.6.0/index.html"><img src="/assets/img/logo_light.png" alt="Testacular"></a></div>
+          <div class="logo"><a href="/0.6.0/index.html">Testacular</a></div>
         </div>
         <div class="two-thirds column">
           <nav id="menu" class="navigation">
@@ -116,13 +116,13 @@
 <p>This example uses a <a href="http://coffeescript.org/documentation/docs/cake.html">Cake</a> task to run a suite of tests but you can fire off any executable task in the <code>test</code> field. Note that the <a href="http://about.travis-ci.org/docs/user/ci-environment/">Travis environment</a> doesn&#39;t have <a href="http://coffeescript.org/">CoffeeScript</a> available globally so you must point to your module&#39;s Cake bin.</p>
 </li>
 <li><p>Now it&#39;s time to open (or create) <code>Cakefile</code> in your project root and add a task to run Testacular. This creates a way to fire your Testacular suite for a single run which can be used any place or time.</p>
-<pre><code class="language-coffeescript">task <span class="string">'test'</span>, <span class="string">'run all tests suites'</span>, -&gt;
+<pre><code class="language-coffeescript">task <span class="string">'test'</span>, <span class="string">'run all tests suites'</span>, ->
 console.log <span class="string">'Running front-end tests'</span>
   phantom_bin = <span class="string">"PHANTOMJS_BIN=<span class="subst">#{__dirname}</span>/node_modules/phantomjs/lib/phantom/bin/phantomjs"</span>
   testacular = <span class="string">"<span class="subst">#{__dirname}</span>/node_modules/testacular/bin/testacular"</span>
-  browsers = <span class="keyword">if</span> process.env.TRAVIS <span class="keyword">then</span> <span class="string">'PhantomJS'</span> <span class="keyword">else</span> <span class="string">'PhantomJS,Chrome'</span>
+  browsers = <span class="keyword">if</span> process.env.TRAVIS then <span class="string">'PhantomJS'</span> <span class="keyword">else</span> <span class="string">'PhantomJS,Chrome'</span>
   options = <span class="string">"--single-run --browsers=<span class="subst">#{browsers}</span>"</span>
-  exec <span class="string">"<span class="subst">#{phantom_bin}</span> <span class="subst">#{testacular}</span> start <span class="subst">#{__dirname}</span>/tests/testacular.conf.js <span class="subst">#{options}</span>"</span>, (err, stdout, stderr) -&gt;
+  exec <span class="string">"<span class="subst">#{phantom_bin}</span> <span class="subst">#{testacular}</span> start <span class="subst">#{__dirname}</span>/tests/testacular.conf.js <span class="subst">#{options}</span>"</span>, (err, stdout, stderr) ->
     console.error err <span class="keyword">if</span> err
     console.log stdout</code></pre>
 <p>While Travis does have <a href="http://phantomjs.org/">PhantomJS</a> available in its global root, other CI environments or developers may not so it&#39;s a good idea to make sure it&#39;s explicitly set before running Testacular.</p>
