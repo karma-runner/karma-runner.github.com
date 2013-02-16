@@ -25,12 +25,11 @@ module.exports = (grunt) ->
         options:
           base: '.'
           port: 8000
-          keepalive: true
 
     static:
       options:
         template: 'src/jade'
-      build:
+      docs:
         files:
           '.': 'src/content'
 
@@ -56,8 +55,8 @@ module.exports = (grunt) ->
     'less:docs'
     'mincss:docs'
     'uglify:docs'
+    'static:docs'
   ]
   grunt.registerTask 'server', 'connect:server'
 
-  grunt.registerTask 'default', ['build']
   grunt.registerTask 'default', ['build', 'server', 'watch']
