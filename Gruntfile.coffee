@@ -34,10 +34,22 @@ module.exports = (grunt) ->
         files:
           '.': 'src/content'
 
+    watch:
+      less:
+        files: 'src/less/*.less'
+        tasks: ['less:docs', 'mincss:docs']
+      js:
+        files: 'src/js/*.js'
+        tasks: ['uglify:docs']
+      jade:
+        files: ['src/content/**/*.md', 'src/jade/*.jade']
+        tasks: ['static:docs']
+      
   grunt.loadNpmTasks 'grunt-contrib-mincss'
   grunt.loadNpmTasks 'grunt-contrib-uglify'
   grunt.loadNpmTasks 'grunt-contrib-less'
   grunt.loadNpmTasks 'grunt-contrib-connect'
+  grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadTasks 'tasks'
 
   grunt.registerTask 'build', [
@@ -48,3 +60,4 @@ module.exports = (grunt) ->
   grunt.registerTask 'server', 'connect:server'
 
   grunt.registerTask 'default', ['build']
+  grunt.registerTask 'default', ['build', 'server', 'watch']
