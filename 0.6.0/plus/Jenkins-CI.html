@@ -95,17 +95,21 @@ in the market today. At some point while developing your <a href="http://angular
 project (hopefully early on), you might want to have automated tests run
 off your code versioning system. Jenkins will help you with this task.
 You can integrate testacular to your Jenkins setup fairly easy and as of
-version 0.3.12, test results can be “pretty printed” into a format
+version 0.3.12, test results can be &quot;pretty printed&quot; into a format
 Jenkins understands (i.e. no need to hunt down failures in the console
 log). This tutorial assumes you have Jenkins already setup and running
 on your CI environment.</p>
-<h2>Setup</h2>
-<ol>
-<li>Install Node and testacular as per [[Installation]] on your
-Jenkins CI server.</li>
-<li>Highly suggest installing the following Jenkins plug-in:
+<h2>Install Prerequisites</h2>
+<p>You need the following tools installed on your Jenkins CI server:</p>
+<ul>
+<li>Node </li>
+<li>Testacular</li>
+</ul>
+<p>Optional we highly suggest to install the following Jenkins plug-in:
 <a href="https://wiki.jenkins-ci.org/display/JENKINS/EnvInject+Plugin">EnvInject</a> as it makes things easier under certain linux
-distributions and user permissions.</li>
+distributions and user permissions.</p>
+<h2>Configure Testacular</h2>
+<ol>
 <li><p>Make the following additions and changes to your testacular config
 file as needed:</p>
 <pre><code class="language-javascript">singleRun = <span class="literal">true</span>;
@@ -116,24 +120,23 @@ junitReporter = {
 <p>Please note the test-result.xml file will be output to the present
 working directory (and you will need to tell Jenkins where to find it).</p>
 </li>
-<li><p>In Jenkins, start a new job for Angular/Testacular with the basic
+</ol>
+<h2>Create a new Jenkins Job</h2>
+<p>In Jenkins, start a new job for Angular/Testacular with the basic
 settings (Name, description, parameters, source code repo to pull
 from, etc.)</p>
-</li>
-<li>Go to the job page and click on configure.</li>
-<li><p>In the Build Environment sub-section, check the “Inject environment
+<h2>Configure the Build Environment</h2>
+<p>First go to the job page and click on configure. Then in the Build
+Environment sub-section, check the “Inject environment 
 variables to the build process” checkbox. A few textboxes will
 appear and in the “Properties Content” box set the following:</p>
 <pre><code class="language-bash">$ PATH=/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/bin
 $ PHANTOMJS_BIN=/usr/local/bin/phantomjs <span class="comment">#or wherever PhantomJS happens to be installed</span></code></pre>
-</li>
-<li><p>Further down the page, in the Post-build Actions sub-section add a
-“Publish JUnit test result report” from the Post-build action drop
+<p>Further down the page, in the Post-build Actions sub-section add a
+<code>Publish JUnit test result report</code> from the Post-build action drop
 down menu. When the textbox labeled Test report XMLs appears, enter
 the path to where the test-results.xml is relative to the root of
 your Jenkins job workspace.</p>
-</li>
-</ol>
 
         </div>
       </div>

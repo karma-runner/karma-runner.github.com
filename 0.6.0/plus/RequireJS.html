@@ -93,17 +93,17 @@
         <div id="markdown" class="sixteen columns bottom"><h2>Configure Testacular</h2>
 <h3>Directory Setup</h3>
 <p>For clarity in the example configuration files and test below, the directory structure upon which these are based looks like this:</p>
-<pre><code>project/
+<pre><code class="language-bash">project/
   lib/
-    jquery<span class="variable">.js</span> <span class="preprocessor">#etc</span>
+    jquery.js <span class="comment">#etc</span>
   node_modules/
-    chai/ <span class="preprocessor">#etc</span>
+    chai/ <span class="comment">#etc</span>
   src/
-    MyModule<span class="variable">.js</span>
+    MyModule.js
   test/
-    MyModule<span class="variable">.test</span><span class="variable">.js</span>
-    test-main<span class="variable">.js</span>
-testacular<span class="variable">.conf</span><span class="variable">.js</span></code></pre>
+    MyModule.test.js
+    test-main.js
+testacular.conf.js</code></pre>
 <h3>Initialize Testacular</h3>
 <p>Testacular comes with a nice utility for generating a config file (default name: <code>testacular.conf.js</code>) that it needs in order to run. In your terminal, type:</p>
 <pre><code class="language-bash">$ testacular init</code></pre>

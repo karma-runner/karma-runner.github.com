@@ -90,53 +90,84 @@
         </h1>
       </div>
       <div class="page-columns">
-        <div id="markdown" class="sixteen columns bottom"><p><a href="https://travis-ci.org/">Travis CI</a> is a popular continuous integration service that integrates with your <a href="https://github.com/">Github</a> repository to automatically run your tests when code is pushed. Integration is done by adding a simple <a href="http://www.yaml.org/">YAML</a> file to your project root; Travis and Github take care of the rest. Travis results will appear in your Github pull requests and your history is available on their control panel. This article assumes you already have Travis account.</p>
-<h2>Setup</h2>
-<ol>
-<li><p>Create a file in your project root called <code>.travis.yml</code> with the following YAML:</p>
-<pre><code><span class="title">language</span>: node_js
-<span class="title">node_js</span>:
+        <div id="markdown" class="sixteen columns bottom"><p><a href="https://travis-ci.org/">Travis CI</a> is a popular continuous integration service that
+integrates with your <a href="https://github.com/">Github</a> repository to automatically run your
+tests when code is pushed. Integration is done by adding a simple
+<a href="http://www.yaml.org/">YAML</a> file to your project root; Travis and Github take care of the
+rest. Travis results will appear in your Github pull requests and your
+history is available on their control panel. This article assumes you
+already have Travis account. </p>
+<h2>Configure Travis</h2>
+<p>Create a file in your project root called <code>.travis.yml</code> with the
+following YAML content: </p>
+<pre><code class="language-bash">language: node_js
+node_js:
   - <span class="number">0.8</span></code></pre>
-</li>
-<li><p>If you do not already have a <code>package.json</code> in your project root create one now. Travis runs <code>npm test</code> to trigger your tests so this is where you tell Travis how to run your tests.</p>
+<h2>Setup a Test Command</h2>
+<p>If you do not already have a <code>package.json</code> in your project root
+create one now. Travis runs <code>npm test</code> to trigger your tests so this
+is where you tell Travis how to run your tests. </p>
 <pre><code class="language-javascript"><span class="comment">// ...snip...</span>
 <span class="string">"dependencies"</span>: {
-   <span class="string">"coffee-script"</span>: <span class="string">"1.4.x"</span>
+  <span class="string">"coffee-script"</span>: <span class="string">"1.4.x"</span>
 },
 <span class="string">"devDependencies"</span>: {
-  <span class="string">"testacular"</span>: <span class="string">"0.4.x"</span>,
+<span class="string">"testacular"</span>: <span class="string">"0.4.x"</span>,
   <span class="string">"phantomjs"</span>: <span class="string">"0.2.x"</span>
 },
 <span class="comment">// ...snip...</span>
 <span class="string">"scripts"</span>: {
-    <span class="string">"test"</span>: <span class="string">"./node_modules/coffee-script/bin/cake test"</span>
+   <span class="string">"test"</span>: <span class="string">"./node_modules/coffee-script/bin/cake test"</span>
 }
 <span class="comment">// ...snip...</span></code></pre>
-<p>Travis will run <code>npm install</code> before every suite so this is your chance to specify any modules your app needs that Travis does not – like Testacular.</p>
-<p>This example uses a <a href="http://coffeescript.org/documentation/docs/cake.html">Cake</a> task to run a suite of tests but you can fire off any executable task in the <code>test</code> field. Note that the <a href="http://about.travis-ci.org/docs/user/ci-environment/">Travis environment</a> doesn&#39;t have <a href="http://coffeescript.org/">CoffeeScript</a> available globally so you must point to your module&#39;s Cake bin.</p>
-</li>
-<li><p>Now it&#39;s time to open (or create) <code>Cakefile</code> in your project root and add a task to run Testacular. This creates a way to fire your Testacular suite for a single run which can be used any place or time.</p>
+<p>Travis will run <code>npm install</code> before every suite so this is your
+chance to specify any modules your app needs that Travis does not know
+about like Testacular. </p>
+<h2>Create a Cake Task to Run Your Tests</h2>
+<p>This example uses a <a href="http://coffeescript.org/documentation/docs/cake.html">Cake</a> task to run a suite of tests but you can
+fire off any executable task in the <code>test</code> field. Note that the
+<a href="http://about.travis-ci.org/docs/user/ci-environment/">Travis environment</a> doesn&#39;t have <a href="http://coffeescript.org/">CoffeeScript</a> available globally so
+you must point to your module&#39;s Cake bin. </p>
+<p>Now it&#39;s time to open (or create) <code>Cakefile</code> in your project root and
+add a task to run Testacular. This creates a way to fire your
+Testacular suite for a single run which can be used any place or time. </p>
 <pre><code class="language-coffeescript">task <span class="string">'test'</span>, <span class="string">'run all tests suites'</span>, ->
-console.log <span class="string">'Running front-end tests'</span>
+  console.log <span class="string">'Running front-end tests'</span>
   phantom_bin = <span class="string">"PHANTOMJS_BIN=<span class="subst">#{__dirname}</span>/node_modules/phantomjs/lib/phantom/bin/phantomjs"</span>
   testacular = <span class="string">"<span class="subst">#{__dirname}</span>/node_modules/testacular/bin/testacular"</span>
   browsers = <span class="keyword">if</span> process.env.TRAVIS then <span class="string">'PhantomJS'</span> <span class="keyword">else</span> <span class="string">'PhantomJS,Chrome'</span>
   options = <span class="string">"--single-run --browsers=<span class="subst">#{browsers}</span>"</span>
-  exec <span class="string">"<span class="subst">#{phantom_bin}</span> <span class="subst">#{testacular}</span> start <span class="subst">#{__dirname}</span>/tests/testacular.conf.js <span class="subst">#{options}</span>"</span>, (err, stdout, stderr) ->
+  config_file = <span class="string">" <span class="subst">#{__dirname}</span>/tests/testacular.conf.js"</span>
+
+  exec <span class="string">"<span class="subst">#{phantom_bin}</span> <span class="subst">#{testacular}</span> start <span class="subst">#{config_file}</span> <span class="subst">#{options}</span>"</span>, (err, stdout, stderr) ->
     console.error err <span class="keyword">if</span> err
     console.log stdout</code></pre>
-<p>While Travis does have <a href="http://phantomjs.org/">PhantomJS</a> available in its global root, other CI environments or developers may not so it&#39;s a good idea to make sure it&#39;s explicitly set before running Testacular.</p>
-<p>Also note that while you can run <a href="http://about.travis-ci.org/docs/user/gui-and-headless-browsers/">GUI apps</a> in Travis their configuration is beyond this article so the script checks that it&#39;s in a Travis environment and sets the browser list to only use PhantomJS.</p>
-<p>Once all configuration is set Testacular is fired off, assuming your Testacular configuration is in <code>#{__dirname}/tests/testacular.conf.js</code>. If any errors or encountered they - and the standard logs - are displayed in the Travis control panel.</p>
-</li>
-<li><p>All that&#39;s left is to test the Cake task locally to assure it works as advertised, commit the files, push them to Github.</p>
-</li>
-</ol>
+<h2>Configure a Browser</h2>
+<p>While Travis does have <a href="http://phantomjs.org/">PhantomJS</a> available in its global root, other
+CI environments or developers may not so it&#39;s a good idea to make sure
+it&#39;s explicitly set before running Testacular. </p>
+<p>Also note that while you can run <a href="http://about.travis-ci.org/docs/user/gui-and-headless-browsers/">GUI apps</a> in Travis their
+configuration is beyond this article so the script checks that it&#39;s
+in a Travis environment and sets the browser list to only use
+PhantomJS. </p>
+<p>Once all configuration is set Testacular is fired off, assuming your
+Testacular configuration is in
+<code>#{__dirname}/tests/testacular.conf.js</code>. If any errors or encountered
+they - and the standard logs - are displayed in the Travis control
+panel. </p>
+<h2>Finish up</h2>
+<p>All that&#39;s left is to test your test script locally to assure it works as
+advertised, commit the files, push them to Github. </p>
 <h2>Notes</h2>
 <ul>
-<li>Travis&#39; Node environment has very little available. If the startup process in Travis fails check for missing module information and be sure to add them to your <code>package.json</code> dependencies.</li>
-<li>Travis does not run in your local network so any code that attempts to connect to resources should be stubbed out using <a href="https://github.com/flatiron/nock">Nock</a>.</li>
-<li>There are more options available to your <code>.travis.yml</code>, such as running scripts before the install or test run. There are hints in the Travis docs for <a href="http://about.travis-ci.org/docs/user/gui-and-headless-browsers/">GUI apps</a> configuration.</li>
+<li>Travis&#39; Node environment has very little available. If the startup
+process in Travis fails check for missing module information and be
+sure to add them to your <code>package.json</code> dependencies. </li>
+<li>Travis does not run in your local network so any code that attempts
+to connect to resources should be stubbed out using <a href="https://github.com/flatiron/nock">Nock</a>. </li>
+<li>There are more options available to your <code>.travis.yml</code>, such as
+running scripts before the install or test run. There are hints in
+the Travis docs for <a href="http://about.travis-ci.org/docs/user/gui-and-headless-browsers/">GUI apps</a> configuration. </li>
 </ul>
 
         </div>
