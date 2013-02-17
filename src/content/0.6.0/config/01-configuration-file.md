@@ -4,8 +4,7 @@ configuration file.
 For an example configuration, see [test/client/testacular.conf.js] which contains most of the
 options.
 
-This document contain list of all available options as well as their command line equivalents.
-
+This document contains a list of all available options as well as their command line equivalents.
 
 
 ## autoWatch

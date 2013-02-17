@@ -3,7 +3,7 @@
 ### Directory Setup
 
 For clarity in the example configuration files and test below, the directory structure upon which these are based looks like this:
-```
+```bash
 project/
   lib/
     jquery.js #etc
