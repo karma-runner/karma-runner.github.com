@@ -33,7 +33,6 @@
             <ul id="nav">
               <li><a href="javascript:void" class="">intro</a>
                 <ul>
-                  <li><a href="/0.6.0/intro/why.html">Why</a></li>
                   <li><a href="/0.6.0/intro/installation.html">Installation</a></li>
                   <li><a href="/0.6.0/intro/configuration.html">Configuration</a></li>
                   <li><a href="/0.6.0/intro/troubleshooting.html">Troubleshooting</a></li>
@@ -100,9 +99,9 @@ already have Travis account. </p>
 <h2>Configure Travis</h2>
 <p>Create a file in your project root called <code>.travis.yml</code> with the
 following YAML content: </p>
-<pre><code class="language-bash">language: node_js
-node_js:
-  - <span class="number">0.8</span></code></pre>
+<pre><code class="language-ruby"><span class="identifier">language</span><span class="symbol">:</span> <span class="identifier">node_js</span>
+<span class="identifier">node_js</span><span class="symbol">:</span>
+  - <span class="number">0</span>.<span class="number">8</span></code></pre>
 <h2>Setup a Test Command</h2>
 <p>If you do not already have a <code>package.json</code> in your project root
 create one now. Travis runs <code>npm test</code> to trigger your tests so this
