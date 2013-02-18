@@ -10,7 +10,7 @@ already have Travis account.
 Create a file in your project root called `.travis.yml` with the
 following YAML content: 
 
-```bash
+```ruby
 language: node_js
 node_js:
   - 0.8
