@@ -30,7 +30,9 @@ module.exports = function(grunt) {
   var pageTitleFromFilename = menuTitleFromFilename;
 
   var filterOnlyFiles = function(path, stat) {
-    return stat.isFile();
+    // ignore dot files like .DS_Store
+    var filename = path.split('/').pop();
+    return stat.isFile() && !filename.match(/^\./);
   };
 
 
@@ -52,7 +54,7 @@ module.exports = function(grunt) {
         var tplFileName = path.join(template, name + '.jade');
 
         tplCache[name] = fs.read(tplFileName).then(function(content) {
-          return jade.compile(content, {filename: tplFileName, cache: true, pretty: true});
+          return jade.compile(content, {filename: tplFileName, cache: true, pretty: true}); 
         });
       }
       return tplCache[name];
