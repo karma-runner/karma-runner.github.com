@@ -22,7 +22,7 @@ block content
             | &nbsp; npm install -g testacular
 
   #slider
-    .container.clearfix
+    .container.clearfix.bottom
       .sixteen.columns
         .flex-container
           .flexslider
@@ -40,3 +40,84 @@ block content
                   span JS Everywhere 2012 Paris
                   | Watch Vojta Jína presenting Testacular at JS.everywhere.
 
+  .container
+    .sixteen.columns
+      h2.title
+        | Designed for Quick Development
+        span.line
+    .sixteen.columns.bottom
+      p.bold.
+        Things should be simple. We believe in testing and so we wanna make
+        it as simple as possible.
+    .sixteen.columns.bottom
+      p.
+        The main goal for Testacular is to bring a productive testing 
+        environment to developers. An environment, where they don't have 
+        to set up many things and rather just write the code and get an 
+        instant feedback. Because getting a quick feedback is what makes you 
+        productive and creative.
+
+    .clearfix
+    .our-services
+      ul
+        li.one-third.column
+          .icon-box
+            i.icon-group.icon-2x
+          h3 Open Source
+          p 
+            | Developed for and maintained by the open source community at 
+            a(href='https://github.com') GitHub
+            | .
+        li.one-third.column
+          .icon-box
+            i.icon-resize-small.icon-2x
+          h3 Remote Control
+          p 
+            | Control the whole workflow from the command line or your favourite 
+            | IDE. Just save a file and Testacular will run all the tests.
+        li.one-third.column
+          .icon-box
+            i.icon-mobile-phone.icon-2x
+          h3 Test on Real Devices
+          p 
+            | Test your code on real browsers and real devices such as phones, 
+            | tablets or headless PhantomJS.
+        // This needs to be here otherwise the layout gets fucked up
+        // I don't know why :(
+        li.one-third.column 
+        li.one-third.column
+          .icon-box
+            i.icon-magic.icon-2x
+          h3 Easy Debugging
+          p 
+            | Easy debugging directly from your IDE (WebStorm).
+        li.one-third.column
+          .icon-box
+            i.icon-globe.icon-2x
+          h3 Mocha, QUnit &amp; Jasmine Adapters
+          p 
+            :markdown
+              Testacular is framework agnostic. However it ships with 
+              adapters for [Mocha](http://visionmedia.github.com/mocha/), 
+              [QUnit](http://qunitjs.com/) and 
+              [Jasmine](http://pivotal.github.com/jasmine/), as well as 
+              [AngularJS](http://angularjs.org/)'s scenario runner.
+        li.one-third.column
+          .icon-box
+            i.icon-refresh.icon-2x
+          h3 Continous Integration
+          p 
+            :markdown
+              Simple integration with [Jenkins](http://jenkins-ci.org/), 
+              [Travis](http://travis-ci.org/) or 
+              [Teamcity](http://www.jetbrains.com/teamcity/).
+
+  .container.clearfix.bottom
+    .sixteen.columns.bottom
+      hr
+    .sixteen.columns
+      p
+        | For more motivation on why to use Testacular and why we did it, check out 
+        | the blog post on 
+        a(href='http://googletesting.blogspot.com/2012/11/testacular-spectacular-test-runner-for.html') Google Testing
+        | .
