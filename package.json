@@ -6,16 +6,16 @@
   "main": "",
   "dependencies": {},
   "devDependencies": {
-    "grunt": "~0.4.0rc7",
-    "grunt-contrib-less": "https://github.com/gruntjs/grunt-contrib-less/tarball/master",
-    "grunt-contrib-uglify": "~0.1.1rc6",
-    "grunt-contrib-mincss": "https://github.com/gruntjs/grunt-contrib-cssmin/tarball/master",
+    "grunt": "~0.4.0",
+    "grunt-contrib-less": "~0.5.0",
+    "grunt-contrib-uglify": "~0.1.1",
+    "grunt-contrib-connect": "~0.1.2",
+    "grunt-contrib-watch": "~0.2.0",
+    "grunt-contrib-cssmin": "~0.4.1",
     "q": "0.8.12",
     "q-io": "1.5.2",
     "namp": "0.2.25",
     "jade": "0.28.1",
-    "grunt-contrib-connect": "~0.1.1rc6",
-    "grunt-contrib-watch": "~0.1.4"
     "marked": "~0.2.8"
   },
   "scripts": {
