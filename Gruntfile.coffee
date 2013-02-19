@@ -4,7 +4,7 @@ module.exports = (grunt) ->
       docs:
         files:
           'assets/css/app.css': 'src/less/app.less'
-    mincss:
+    cssmin:
       docs:
         files:
           'assets/css/app.css': 'assets/css/app.css'
@@ -36,15 +36,15 @@ module.exports = (grunt) ->
     watch:
       less:
         files: 'src/less/*.less'
-        tasks: ['less:docs', 'mincss:docs']
+        tasks: ['less:docs', 'cssmin:docs']
       js:
         files: 'src/js/*.js'
         tasks: ['uglify:docs']
       jade:
         files: ['src/content/**/*.md', 'src/jade/*.jade']
         tasks: ['static:docs']
-      
-  grunt.loadNpmTasks 'grunt-contrib-mincss'
+
+  grunt.loadNpmTasks 'grunt-contrib-cssmin'
   grunt.loadNpmTasks 'grunt-contrib-uglify'
   grunt.loadNpmTasks 'grunt-contrib-less'
   grunt.loadNpmTasks 'grunt-contrib-connect'
@@ -53,7 +53,7 @@ module.exports = (grunt) ->
 
   grunt.registerTask 'build', [
     'less:docs'
-    'mincss:docs'
+    'cssmin:docs'
     'uglify:docs'
     'static:docs'
   ]

@@ -9,11 +9,12 @@
     "grunt": "~0.4.0rc7",
     "grunt-contrib-less": "https://github.com/gruntjs/grunt-contrib-less/tarball/master",
     "grunt-contrib-uglify": "~0.1.1rc6",
-    "grunt-contrib-mincss": "https://github.com/gruntjs/grunt-contrib-mincss/tarball/master",
+    "grunt-contrib-mincss": "https://github.com/gruntjs/grunt-contrib-cssmin/tarball/master",
     "q": "0.8.12",
     "q-io": "1.5.2",
     "namp": "0.2.25",
     "jade": "0.28.1",
+    "markdown": "0.4.0",
     "grunt-contrib-connect": "~0.1.1rc6",
     "grunt-contrib-watch": "~0.1.4"
   },
