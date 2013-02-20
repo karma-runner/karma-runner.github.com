@@ -1,17 +1,10 @@
-If you want to use the code coverage feature of testacular you need to
-configure three parts.
+Testacular can generate code coverage using awesome [Istanbul](https://github.com/yahoo/istanbul).
+If you want to generate the coverage, you need to configure three parts:
 
-* Reporter `coverage` (required)
-* Preprocessor `coverage` (required)
-* Reporter Options (optional)
+* preprocessor `coverage` (required)
+* reporter `coverage` (required)
+* reporter options (optional)
 
-## Reporter
-To activate the coverage reporter add this to your configuration file.
-```javascript
-reporters = ['coverage'];
-```
-This will create a coverage report for every browser that the tests are run in.
-In addition, it will create a JSON file that outputs the intermediate data.
 
 ## Preprocessor
 The preprocessor configures which files should be tested for coverage.
@@ -24,7 +17,7 @@ preprocessors = {
 };
 ```
 You should not however include the files that aren't directly related to your
-program, e.g. libraries, mocks.
+program, e.g. libraries, mocks, neither tests.
 
 This is a **BAD** example
 
@@ -46,6 +39,14 @@ If you include these files there can occur side effects like the following,
 
 * a part of the code coverage report will be output in the installation directory of testacular.
 * the code coverage rate is reduced unfairly.
+
+## Reporter
+To activate the coverage reporter add this to your configuration file.
+```javascript
+reporters = ['coverage'];
+```
+This will create a coverage report for every browser that the tests are run in.
+In addition, it will create a JSON file that outputs the intermediate data.
 
 
 ##  Reporter Options

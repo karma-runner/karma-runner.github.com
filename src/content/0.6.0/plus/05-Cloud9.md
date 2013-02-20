@@ -5,7 +5,7 @@ There are 2 possibilities in order to run unit tests with testacular in [Cloud9 
 
 ## Capture the browser manually on the local machine
 
-Call `http://[projectName].[cloud9User].c9.io/` in your browser.
+Open `http://[projectName].[cloud9User].c9.io/` in your browser.
 
 ## Run testacular unit tests with PhantomJS in cloud9 IDE
 

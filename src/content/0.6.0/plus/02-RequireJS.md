@@ -1,3 +1,5 @@
+This page shows how to configure a project that uses [RequireJS](http://requirejs.org/). It is based on Jake's [post](http://jaketrent.com/post/test-requirejs-testacular/).
+
 ## Configure Testacular
 
 ### Directory Setup
@@ -19,18 +21,13 @@ testacular.conf.js
 
 ### Initialize Testacular
 
-Testacular comes with a nice utility for generating a config file (default name: `testacular.conf.js`) that it needs in order to run. In your terminal, type:
+Testacular comes with a nice utility for generating a config file (default name: `testacular.conf.js`) that it needs in order to run.
+
+In your terminal, type:
 ```bash
 $ testacular init
 ```
-This will give you a series of prompts for things such as paths to source and tests and which browsers to capture. These prompts do not include the option to add RequireJs support automatically, so you’ll need to add those lines manually to your `testacular.conf.js` (see below). As of testacular 0.5.2, testacular init will prompt for usage of the RequireJs adapter.
-
-### Testacular Include
-
-Testacular 0.5.1 (**WARNING** As of writing, npm install will give you 0.4.0, the latest stable version) This, while adding RequireJs support, has added a new concept of “included” to the files listed in your config. This is because RequireJs will balk about a the module not being loaded correctly (ie, loaded synchronously in the `<head/>` tag of the runner). From the RequireJs docs:
-
-> Be sure to load all scripts that call `define()` via the RequireJS API. Do not manually code script tags
-> in HTML to load scripts that have `define()` calls in them.
+This will give you a series of prompts for things such as paths to source and tests and which browsers to capture.
 
 ### RequireJs Shim
 
@@ -48,23 +45,24 @@ files = [
   REQUIRE,
   REQUIRE_ADAPTER,
 
-  // !! libs required for test framework
+  // libs required for test framework
   {pattern: 'node_modules/chai/chai.js', included: false},
 
-  // !! put what used to be in your requirejs 'shim' config here
+  // put what used to be in your requirejs 'shim' config here,
+  // these files will be included without requirejs
   'lib/jquery.js',
   'lib/underscore.js',
   'lib/backbone.js',
   'lib/handlebars.js',
 
-  // !! put all libs in requirejs 'paths' config here (included: false)
+  // put all libs in requirejs 'paths' config here (included: false)
   {pattern: 'lib/**/*.js', included: false},
 
-  // !! all src and test modules (included: false)
+  // all src and test modules (included: false)
   {pattern: 'src/**/*', included: false},
   {pattern: 'test/**/*.test.js', included: false},
 
-  // !! test main require module last
+  // test main require module last
   'test/test-main.js'
 ];
 ```
@@ -90,19 +88,20 @@ Because the RequireJs require statements are asynchronous, Testacular needs to w
 The main-test.js file ends up looking like this:
 ```javascript
 var tests = Object.keys(window.__testacular__.files).filter(function (file) {
-    return /\.test\.js$/.test(file);
+  return /\.test\.js$/.test(file);
 });
 
 require({
-
-  // !! Testacular serves files from '/base'
+  // Testacular serves files from '/base'
   baseUrl: '/base/src',
   paths: {
     require: '../lib/require',
     text: '../lib/text'
   },
-}, tests, function() {
-  window.__testacular__.start();
+  // ask requirejs to load these files (all our tests)
+  deps: tests,
+  // start test run, once requirejs is done
+  callback: window.__testacular__.start
 });
 ```
 
@@ -122,8 +121,8 @@ define(['../node_modules/chai/chai', 'MyModule'],
   function(chai, MyModule) {
 
   var assert = chai.assert,
-    expect = chai.expect,
-    should = chai.should();
+      expect = chai.expect,
+      should = chai.should();
 
   describe('MyModule', function () {
     describe('#initialize()', function () {
@@ -142,10 +141,8 @@ To start the Testacular server:
 ```bash
 $ testacular start
 ```
-Finally, if your Testacular server is already running and you want to kick off the tests, type:
+
+If you didn't configure to watch all the files and run tests automatically on any change, you can trigger the tests manually. Just type:
 ```bash
 $ testacular run
 ```
-
-***
-Source: [Jake Trent](http://jaketrent.com/post/test-requirejs-testacular/)
