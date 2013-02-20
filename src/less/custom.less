@@ -109,6 +109,28 @@ a {
 }
 
 .logo {
+    a {
+        display: block;
+    }
+    span {
+        display: block;
+        font-size: 18px;
+        padding: 4px 0 0 2px;
+    }
   font-size: 36px;
   font-weight: 600;
+}
+
+@media only screen and (max-width: 767px) {
+    .logo {
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    .logo {
+        span {
+            font-size: 15px;
+        }
+    }
 }
