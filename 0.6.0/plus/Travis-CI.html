@@ -99,8 +99,8 @@ already have Travis account. </p>
 <h2>Configure Travis</h2>
 <p>Create a file in your project root called <code>.travis.yml</code> with the
 following YAML content: </p>
-<pre><code class="language-ruby"><span class="symbol">language:</span> node_js
-<span class="symbol">node_js:</span>
+<pre><code class="language-ruby"><span class="identifier">language</span><span class="symbol">:</span> <span class="identifier">node_js</span>
+<span class="identifier">node_js</span><span class="symbol">:</span>
   - <span class="number">0</span>.<span class="number">8</span></code></pre>
 <h2>Setup a Test Command</h2>
 <p>If you do not already have a <code>package.json</code> in your project root
@@ -130,15 +130,15 @@ you must point to your module&#39;s Cake bin. </p>
 <p>Now it&#39;s time to open (or create) <code>Cakefile</code> in your project root and
 add a task to run Testacular. This creates a way to fire your
 Testacular suite for a single run which can be used any place or time. </p>
-<pre><code class="language-coffeescript">task <span class="string">'test'</span>, <span class="string">'run all tests suites'</span>, -&gt;
+<pre><code class="language-coffeescript">task <span class="string">'test'</span>, <span class="string">'run all tests suites'</span>, ->
   console.log <span class="string">'Running front-end tests'</span>
   phantom_bin = <span class="string">"PHANTOMJS_BIN=<span class="subst">#{__dirname}</span>/node_modules/phantomjs/lib/phantom/bin/phantomjs"</span>
   testacular = <span class="string">"<span class="subst">#{__dirname}</span>/node_modules/testacular/bin/testacular"</span>
-  browsers = <span class="keyword">if</span> process.env.TRAVIS <span class="keyword">then</span> <span class="string">'PhantomJS'</span> <span class="keyword">else</span> <span class="string">'PhantomJS,Chrome'</span>
+  browsers = <span class="keyword">if</span> process.env.TRAVIS then <span class="string">'PhantomJS'</span> <span class="keyword">else</span> <span class="string">'PhantomJS,Chrome'</span>
   options = <span class="string">"--single-run --browsers=<span class="subst">#{browsers}</span>"</span>
   config_file = <span class="string">" <span class="subst">#{__dirname}</span>/tests/testacular.conf.js"</span>
 
-  exec <span class="string">"<span class="subst">#{phantom_bin}</span> <span class="subst">#{testacular}</span> start <span class="subst">#{config_file}</span> <span class="subst">#{options}</span>"</span>, (err, stdout, stderr) -&gt;
+  exec <span class="string">"<span class="subst">#{phantom_bin}</span> <span class="subst">#{testacular}</span> start <span class="subst">#{config_file}</span> <span class="subst">#{options}</span>"</span>, (err, stdout, stderr) ->
     console.error err <span class="keyword">if</span> err
     console.log stdout</code></pre>
 <h2>Configure a Browser</h2>
