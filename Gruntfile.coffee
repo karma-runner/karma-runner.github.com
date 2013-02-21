@@ -35,7 +35,7 @@ module.exports = (grunt) ->
 
     watch:
       less:
-        files: 'src/less/*.less'
+        files: 'src/less/**/*.less'
         tasks: ['less:docs', 'cssmin:docs']
       js:
         files: 'src/js/*.js'
