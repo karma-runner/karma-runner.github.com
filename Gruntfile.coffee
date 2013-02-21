@@ -41,7 +41,7 @@ module.exports = (grunt) ->
         files: 'src/js/*.js'
         tasks: ['uglify:docs']
       jade:
-        files: ['src/content/**/*.md', 'src/jade/*.jade']
+        files: ['src/content/**/*.md', 'src/jade/**/*.jade']
         tasks: ['static:docs']
 
   grunt.loadNpmTasks 'grunt-contrib-cssmin'
