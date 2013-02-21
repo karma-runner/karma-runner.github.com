@@ -3,25 +3,28 @@ Testacular runs on [Node.js] and is available as a node module via [NPM].
 ## Requirements
 
 First, you need to install [Node.js]. There are installers for both
-Macintosh and Windows. On Linux, we recommend using [NVM].
+Mac and Windows. On Linux, we recommend using [NVM].
 
-## Global instalalation
-This is the recommended way. It will install Testacular into your global `node_modules` and create a symlink to its binary.
+## Global Installation
+This is the recommended way. It will install Testacular into your
+global `node_modules` directory and create a symlink to its binary.
 
 ```bash
 $ npm install -g testacular
 
-# start testacular...
+# Start Testacular
 $ testacular start
 ```
 
-## Local instalalation
-Local installation will install Testacular into your current directory's `node_modules`. That allows you to have a different version for different project.
+## Local Installation
+A local installation will install Testacular into your current
+directory's `node_modules`. That allows you to have different
+versions for different projects.
 
 ```bash
 $ npm install testacular
 
-# starting testacular
+# Start Testacular
 $ ./node_modules/.bin/testacular start
 ```
 

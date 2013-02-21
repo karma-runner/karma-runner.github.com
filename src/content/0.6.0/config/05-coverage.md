@@ -1,5 +1,5 @@
-Testacular can generate code coverage using awesome [Istanbul](https://github.com/yahoo/istanbul).
-If you want to generate the coverage, you need to configure three parts:
+Testacular can generate code coverage using awesome [Istanbul].
+If you want to generate the coverage, you need to configure up to three parts:
 
 * preprocessor `coverage` (required)
 * reporter `coverage` (required)
@@ -60,9 +60,10 @@ coverageReporter = {
 ```
 If you want to configure it yourself here are the options explained.
 
-### `type`
-* **Type.** String
-* **Possible Values.**
+### type
+**Type:** String
+
+**Possible Values:**
   * `html` (default)
   * `lcov` (lcov and html)
   * `lcovonly`
@@ -80,7 +81,12 @@ coverageReporter = {
 ```
 If no filename is given, it will write the output to the console.
 
-### `dir`
-* **Type.** String
-* **Description.** This will be used to output coverage reports. When
+### dir
+**Type:** String
+
+**Description:** This will be used to output coverage reports. When
   you set a relative path, the directory is resolved against the `basePath`.
+
+
+
+[Istanbul]: https://github.com/yahoo/istanbul

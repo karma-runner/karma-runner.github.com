@@ -19,19 +19,19 @@ Optional we highly suggest to install the following Jenkins plug-in:
 distributions and user permissions.
 
 ## Configure Testacular
-3.  Make the following additions and changes to your testacular config
-    file as needed:
+ Make the following additions and changes to your testacular config
+ file as needed:
 
-    ```javascript
-    singleRun = true;
-    reporters = ['dots', 'junit'];
-    junitReporter = {
-      outputFile: 'test-results.xml'
-    };
-    ```
+```javascript
+singleRun = true;
+reporters = ['dots', 'junit'];
+junitReporter = {
+  outputFile: 'test-results.xml'
+};
+ ```
 
-    Please note the `test-result.xml` file will be output to the present
-    working directory (and you will need to tell Jenkins where to find it).
+Please note the `test-result.xml` file will be output to the present
+working directory (and you will need to tell Jenkins where to find it).
 
 ## Create a new Jenkins Job
 In Jenkins, start a new job for Angular/Testacular with the basic
@@ -54,6 +54,8 @@ Further down the page, in the Post-build Actions sub-section add a
 down menu. When the textbox labeled Test report XMLs appears, enter
 the path to where the `test-results.xml` is relative to the root of
 your Jenkins job workspace.
+
+
 
 [Jenkins CI]: http://jenkins-ci.org/
 [AngularJS]: http://angularjs.org

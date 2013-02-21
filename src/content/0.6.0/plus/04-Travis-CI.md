@@ -23,12 +23,12 @@ is where you tell Travis how to run your tests.
 
 ```javascript
 // ...snip...
-"devDependencies": {
-  "testacular": "~0.6"
+'devDependencies': {
+  'testacular': '~0.6'
 },
 // ...snip...
-"scripts": {
-   "test": "./node_modules/.bin/testacular start --single-run --browsers PhantomJS"
+'scripts': {
+   'test': './node_modules/.bin/testacular start --single-run --browsers PhantomJS'
 }
 // ...snip...
 ```
@@ -38,7 +38,9 @@ chance to specify any modules your app needs that Travis does not know
 about like Testacular.
 
 ## Configure Travis with Firefox
-Travis supports running a real browser (Firefox) with a virtual screen. Just update your `.travis.yml` to set up the virtual screen like this:
+Travis supports running a real browser (Firefox) with a virtual
+screen. Just update your `.travis.yml` to set up the virtual screen
+like this:
 ```ruby
 language: node_js
 node_js:
@@ -48,8 +50,11 @@ before_script:
   - sh -e /etc/init.d/xvfb start
 ```
 
-And now, you can run your tests on Firefox, just change the `npm test` command to `./node_modules/.bin/testacular start --browsers Firefox --single-run`.
-
+And now, you can run your tests on Firefox, just change the `npm test`
+command to
+```bash
+./node_modules/.bin/testacular start --browsers Firefox --single-run
+```
 
 ## Notes
 
@@ -61,6 +66,7 @@ And now, you can run your tests on Firefox, just change the `npm test` command t
 * There are more options available to your `.travis.yml`, such as
   running scripts before the install or test run. There are hints in
   the Travis docs for [GUI apps] configuration.
+
 
 [Travis CI]: https://travis-ci.org/
 [Github]: https://github.com/
