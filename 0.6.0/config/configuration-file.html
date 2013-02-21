@@ -89,23 +89,25 @@
         </h1>
       </div>
       <div class="page-columns">
-        <div id="markdown" class="sixteen columns bottom"><p>In order to serve you well, Testacular needs to know about your project. That&#39;s done through a
-configuration file.</p>
-<p>For an example configuration, see <a href="https://github.com/testacular/testacular/blob/master/test/client/testacular.conf.js">test/client/testacular.conf.js</a> which contains most of the
-options.</p>
-<p>This document contains a list of all available options as well as their command line equivalents.</p>
+        <div id="markdown" class="sixteen columns bottom"><p>In order to serve you well, Testacular needs to know about your
+project. That&#39;s done through a configuration file.</p>
+<p>For an example configuration, see <a href="https://github.com/testacular/testacular/blob/master/test/client/testacular.conf.js">test/client/testacular.conf.js</a>
+which contains most of the options.</p>
+<p>This document contains a list of all available options, as well as
+their command line equivalents.</p>
 <h2>autoWatch</h2>
 <p><strong>Type:</strong> Boolean</p>
 <p><strong>Default:</strong>  <code>false</code></p>
 <p><strong>CLI:</strong> <code>--auto-watch</code>, <code>--no-auto-watch</code></p>
-<p><strong>Description:</strong> Enable/disable watching the files and executing the tests
-  whenever any file changes.</p>
+<p><strong>Description:</strong> Enable or disable watching files and executing the tests
+  whenever one of these files changes.</p>
 <h2>basePath</h2>
 <p><strong>Type:</strong> String</p>
 <p><strong>Default:</strong> <code>&#39;&#39;</code></p>
-<p><strong>Description:</strong>  Base path, that will be used to resolve all relative paths defined in <code>files</code> and
-<code>exclude</code>. If the <code>basePath</code> is a relative path, it will be resolved to the <code>__dirname</code> of the
-configuration file.</p>
+<p><strong>Description:</strong>  Base path, that will be used to resolve all relative
+  paths defined in <code>files</code> and <code>exclude</code>. If <code>basePath</code> is a
+  relative path, it will be resolved to the <code>__dirname</code> of the
+  configuration file.</p>
 <h2>browsers</h2>
 <p><strong>Type:</strong> Array</p>
 <p><strong>Default:</strong>  <code>[]</code></p>
@@ -120,10 +122,10 @@ configuration file.</p>
 <li><code>PhantomJS</code></li>
 </ul>
 <p><strong>Description:</strong>
-A list of browsers to launch and capture. Once testacular is shut down, it will shut down these
-browsers as well. You can capture any browser manually just by opening a url, where Testacular&#39;s
-web server is listening.</p>
-<p>See <a href="03_browsers.html">config/browsers</a> for more.</p>
+  A list of browsers to launch and capture. Once testacular is shut down, it will shut down these
+  browsers as well. You can capture any browser manually just by opening a url, where Testacular&#39;s
+  web server is listening.</p>
+<p>See <a href="browsers.html">config/browsers</a> for more.</p>
 <h2>captureTimeout</h2>
 <p><strong>Type:</strong> Number</p>
 <p><strong>Default:</strong> <code>60000</code></p>
@@ -134,7 +136,7 @@ it again. After three attempts to capture it, Testacular will give up.</p>
 <p><strong>Type:</strong> Boolean</p>
 <p><strong>Default:</strong>   <code>true</code></p>
 <p><strong>CLI:</strong> <code>--colors</code>, <code>--no-colors</code></p>
-<p><strong>Description:</strong>  Enable / disable colors in the output (reporters and logs).</p>
+<p><strong>Description:</strong>  Enable or disable colors in the output (reporters and logs).</p>
 <h2>exclude</h2>
 <p><strong>Type:</strong> Array</p>
 <p><strong>Default:</strong> <code>[]</code></p>
@@ -143,7 +145,7 @@ it again. After three attempts to capture it, Testacular will give up.</p>
 <p><strong>Type:</strong> Array</p>
 <p><strong>Default:</strong> <code>[]</code></p>
 <p><strong>Description:</strong> List of files/patterns to load in the browser.</p>
-<p>See <a href="02_files.html">config/files</a> for more information.</p>
+<p>See <a href="files.html">config/files</a> for more information.</p>
 <h2>hostname</h2>
 <p><strong>Type:</strong> String</p>
 <p><strong>Default:</strong> <code>&#39;localhost&#39;</code></p>
@@ -164,7 +166,8 @@ it again. After three attempts to capture it, Testacular will give up.</p>
 <h2>loggers</h2>
 <p><strong>Type:</strong> Array</p>
 <p><strong>Default:</strong> <code>[{type: &#39;console&#39;}]</code></p>
-<p><strong>Description:</strong> A list of log appenders to be used. See <a href="https://github.com/nomiddlename/log4js-node">log4js</a> for more.</p>
+<p><strong>Description:</strong> A list of log appenders to be used. See the
+  documentation for <a href="https://github.com/nomiddlename/log4js-node">log4js</a> for more information.</p>
 <h2>port</h2>
 <p><strong>Type:</strong> Number</p>
 <p><strong>Default:</strong> <code>9876</code></p>
@@ -173,16 +176,16 @@ it again. After three attempts to capture it, Testacular will give up.</p>
 <h2>preprocessors</h2>
 <p><strong>Type:</strong> Object</p>
 <p><strong>Default:</strong> <code>{&#39;**/*.coffee&#39;: &#39;coffee&#39;}</code></p>
-<p><strong>Description:</strong> A map of preprocessors to use. See <a href="04_preprocessors.html">config/preprocessors</a> for more.</p>
+<p><strong>Description:</strong> A map of preprocessors to use. See <a href="preprocessors.html">config/preprocessors</a> for more.</p>
 <h2>proxies</h2>
 <p><strong>Type:</strong> Object</p>
 <p><strong>Default:</strong>   <code>{}</code></p>
 <p><strong>Description:</strong> A map of path-proxy pairs.</p>
-<p>For example:</p>
-<pre><code class="language-javascript">proxies =  {
-  <span class="string">'/static'</span>: <span class="string">'http://gstatic.com'</span>,
-  <span class="string">'/web'</span>: <span class="string">'http://localhost:9000'</span>
-};</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="language-javascript">  proxies =  {
+    <span class="string">'/static'</span>: <span class="string">'http://gstatic.com'</span>,
+    <span class="string">'/web'</span>: <span class="string">'http://localhost:9000'</span>
+  };</code></pre>
 <h2>reportSlowerThan</h2>
 <p><strong>Type:</strong> Number</p>
 <p><strong>Default:</strong> <code>0</code></p>

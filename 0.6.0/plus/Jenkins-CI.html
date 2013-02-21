@@ -108,9 +108,8 @@ on your CI environment.</p>
 <a href="https://wiki.jenkins-ci.org/display/JENKINS/EnvInject+Plugin">EnvInject</a> as it makes things easier under certain linux
 distributions and user permissions.</p>
 <h2>Configure Testacular</h2>
-<ol>
-<li><p>Make the following additions and changes to your testacular config
-file as needed:</p>
+<p> Make the following additions and changes to your testacular config
+ file as needed:</p>
 <pre><code class="language-javascript">singleRun = <span class="literal">true</span>;
 reporters = [<span class="string">'dots'</span>, <span class="string">'junit'</span>];
 junitReporter = {
@@ -118,8 +117,6 @@ junitReporter = {
 };</code></pre>
 <p>Please note the <code>test-result.xml</code> file will be output to the present
 working directory (and you will need to tell Jenkins where to find it).</p>
-</li>
-</ol>
 <h2>Create a new Jenkins Job</h2>
 <p>In Jenkins, start a new job for Angular/Testacular with the basic
 settings (Name, description, parameters, source code repo to pull

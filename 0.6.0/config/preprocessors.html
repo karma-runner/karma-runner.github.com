@@ -105,14 +105,17 @@ in the config file.</p>
 </ul>
 <h2>Minimatching</h2>
 <p>The keys of the preprocessors config object are used to filter the files specified in
-the <code>files</code> configuration. The file paths are expanded to an absolute path, based on
-the <code>basePath</code> config and the directory of the configuration file. See <a href="files.html">files</a> for more
-information on that.
-This expanded path is then matched using <a href="https://github.com/isaacs/minimatch">minimatch</a>
-against the specified key.
-So for example the path <code>/my/absolute/path/to/test/unit/file.coffee</code> matched against
-the key <code>**/*.coffee</code> would return true, but the matched against just <code>*.coffee</code> it would
-return false and the preprocessor would not be executed on the CoffeeScript files.</p>
+the <code>files</code> configuration.</p>
+<ul>
+<li>First the file paths are expanded to an absolute path, based on the
+<code>basePath</code> config and the directory of the configuration file. See
+<a href="files.html">files</a> for more information on that.</li>
+<li>Second this expanded path is matched using <a href="https://github.com/isaacs/minimatch">minimatch</a> against the
+specified key.</li>
+</ul>
+<p>So for example the path <code>/my/absolute/path/to/test/unit/file.coffee</code> matched against
+the key <code>**/*.coffee</code> would return <code>true</code>, but matched against just <code>*.coffee</code> it would
+return <code>false</code> and the preprocessor would not be executed on the CoffeeScript files.</p>
 
         </div>
       </div>

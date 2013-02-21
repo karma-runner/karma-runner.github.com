@@ -90,7 +90,7 @@
       </div>
       <div class="page-columns">
         <div id="markdown" class="sixteen columns bottom"><p>Testacular can generate code coverage using awesome <a href="https://github.com/yahoo/istanbul">Istanbul</a>.
-If you want to generate the coverage, you need to configure three parts:</p>
+If you want to generate the coverage, you need to configure up to three parts:</p>
 <ul>
 <li>preprocessor <code>coverage</code> (required)</li>
 <li>reporter <code>coverage</code> (required)</li>
@@ -134,18 +134,16 @@ In addition, it will create a JSON file that outputs the intermediate data.</p>
   dir : <span class="string">'coverage/'</span>
 }</code></pre>
 <p>If you want to configure it yourself here are the options explained.</p>
-<h3><code>type</code></h3>
+<h3>type</h3>
+<p><strong>Type:</strong> String</p>
+<p><strong>Possible Values:</strong></p>
 <ul>
-<li><strong>Type.</strong> String</li>
-<li><strong>Possible Values.</strong><ul>
 <li><code>html</code> (default)</li>
 <li><code>lcov</code> (lcov and html)</li>
 <li><code>lcovonly</code></li>
 <li><code>text</code></li>
 <li><code>text-summary</code></li>
 <li><code>cobertura</code> (xml format supported by Jenkins)</li>
-</ul>
-</li>
 </ul>
 <p>If you set <code>type</code> to <code>text</code> or <code>text-summary</code>, you may set the <code>file</code> option, like this.</p>
 <pre><code class="language-javascript">coverageReporter = {
@@ -154,12 +152,10 @@ In addition, it will create a JSON file that outputs the intermediate data.</p>
   file : <span class="string">'coverage.txt'</span>
 }</code></pre>
 <p>If no filename is given, it will write the output to the console.</p>
-<h3><code>dir</code></h3>
-<ul>
-<li><strong>Type.</strong> String</li>
-<li><strong>Description.</strong> This will be used to output coverage reports. When
-you set a relative path, the directory is resolved against the <code>basePath</code>.</li>
-</ul>
+<h3>dir</h3>
+<p><strong>Type:</strong> String</p>
+<p><strong>Description:</strong> This will be used to output coverage reports. When
+  you set a relative path, the directory is resolved against the <code>basePath</code>.</p>
 
         </div>
       </div>

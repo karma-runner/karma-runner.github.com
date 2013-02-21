@@ -90,13 +90,14 @@
       </div>
       <div class="page-columns">
         <div id="markdown" class="sixteen columns bottom"><p><strong>Format of the commit message:</strong></p>
-<pre><code><span class="tag">&lt;<span class="title">type</span>></span>(<span class="tag">&lt;<span class="title">scope</span>></span>): <span class="tag">&lt;<span class="title">subject</span>></span>
+<pre><code class="language-bash">&lt;type>(&lt;scope>): &lt;subject>
 
-<span class="tag">&lt;<span class="title">body</span>></span>
+&lt;body>
 
-<span class="tag">&lt;<span class="title">footer</span>></span></code></pre>
+&lt;footer></code></pre>
 <h2>Message subject (first line)</h2>
-<p>First line cannot be longer than 70 characters, second line is always blank and other lines should be wrapped at 80 characters.</p>
+<p>First line cannot be longer than 70 characters, second line is always
+blank and other lines should be wrapped at 80 characters.</p>
 <h3>Allowed <code>&lt;type&gt;</code> values:</h3>
 <ul>
 <li><strong>feat</strong> (new feature)</li>
@@ -119,7 +120,9 @@
 <li>launcher.chrome</li>
 <li>etc.</li>
 </ul>
-<p>The <code>&lt;scope&gt;</code> can be empty (eg. if the change is a global or difficult to assign to a single component), in which case the parentheses are omitted.</p>
+<p>The <code>&lt;scope&gt;</code> can be empty (eg. if the change is a global or difficult
+to assign to a single component), in which case the parentheses are
+omitted.</p>
 <h2>Message body</h2>
 <ul>
 <li>uses the imperative, present tense: “change” not “changed” nor “changes”</li>
@@ -133,18 +136,19 @@
 <h2>Message footer</h2>
 <h3>Referencing issues</h3>
 <p>Closed issues should be listed on a separate line in the footer prefixed with &quot;Closes&quot; keyword like this:</p>
-<pre><code><span class="title">Closes</span> <span class="comment">#234</span></code></pre>
+<pre><code class="language-bash">Closes <span class="comment">#234</span></code></pre>
 <p>or in case of multiple issues:</p>
-<pre><code><span class="tag">Closes</span> <span class="id">#123</span>, <span class="id">#245</span>, <span class="id">#992</span></code></pre>
+<pre><code class="language-bash">Closes <span class="comment">#123, #245, #992</span></code></pre>
 <h3>Breaking changes</h3>
-<p>All breaking changes have to be mentioned in footer with the description of the change, justification and migration notes.</p>
-<pre><code>BREAKING CHANGE:
+<p>All breaking changes have to be mentioned in footer with the
+description of the change, justification and migration notes.</p>
+<pre><code class="language-bash">BREAKING CHANGE:
 
-`<span class="keyword">port</span>-runner` command line option has changed <span class="keyword">to</span> `runner-<span class="keyword">port</span>`, so that it <span class="keyword">is</span>
-consistent <span class="keyword">with</span> the <span class="keyword">configuration</span> <span class="keyword">file</span> syntax.
+`port-runner` command line option has changed to `runner-port`, so that it is
+consistent with the configuration file syntax.
 
-<span class="keyword">To</span> migrate your project, change <span class="keyword">all</span> the commands, where you <span class="keyword">use</span> `<span class="comment">--port-runner`</span>
-<span class="keyword">to</span> `<span class="comment">--runner-port`.</span></code></pre>
+To migrate your project, change all the commands, where you use `--port-runner`
+to `--runner-port`.</code></pre>
 <hr>
 <p>This document is based on <a href="https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#">AngularJS Git Commit Msg Convention</a>.</p>
 

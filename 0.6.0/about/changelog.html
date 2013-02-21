@@ -89,7 +89,35 @@
         </h1>
       </div>
       <div class="page-columns">
-        <div id="markdown" class="sixteen columns bottom"><h3>v0.5.8</h3>
+        <div id="markdown" class="sixteen columns bottom"><p><a name="v0.5.10"></a></p>
+<h3>v0.5.10 (2013-02-14)</h3>
+<h4>Bug Fixes</h4>
+<ul>
+<li><strong>init:</strong> fix the logger configuration (<a href="https://github.com/testacular/testacular/commit/481dc3fd75f45a0efa8aabdb1c71e8234b9e8a06">481dc3fd</a>, closes <a href="https://github.com/testacular/testacular/issues/340">#340</a>)</li>
+<li><strong>proxy:</strong> fix crashing proxy when browser hangs connection (<a href="https://github.com/testacular/testacular/commit/1c78a01a19411accb86f0bde9e040e5088752575">1c78a01a</a>)</li>
+</ul>
+<h4>Features</h4>
+<ul>
+<li>set urlRoot to /<strong>testacular</strong>/ when proxying the root (<a href="https://github.com/testacular/testacular/commit/8b4fd64df6b7d07b5479e43dcd8cd2aa5e1efc9c">8b4fd64d</a>)</li>
+<li><strong>adapter.requirejs:</strong> normalize paths before appending timestamp (<a href="https://github.com/testacular/testacular/commit/94889e7d2de701c67a2612e3fc6a51bfae891d36">94889e7d</a>)</li>
+<li>update dependencies to the latest (<a href="https://github.com/testacular/testacular/commit/93f9627817f2d5d9446de9935930ca85cfa7df7f">93f96278</a>, <a href="https://github.com/testacular/testacular/commit/e34d8834d69ec4e022fcd6e1be4055add96d693c">e34d8834</a>)</li>
+</ul>
+<p><a name="v0.5.9"></a></p>
+<h3>v0.5.9 (2013-02-06)</h3>
+<h4>Bug Fixes</h4>
+<ul>
+<li><strong>adapter.requirejs:</strong> show error if no timestamp defined for a file (<a href="https://github.com/testacular/testacular/commit/59dbdbd136baa87467b9b9a4cb6ce226ae87bbef">59dbdbd1</a>)</li>
+<li><strong>init:</strong> fix logger configuration (<a href="https://github.com/testacular/testacular/commit/557922d71941e0929f9cdc0d3794424a1f27b311">557922d7</a>)</li>
+<li><strong>reporter:</strong> remove newline from base reporter browser dump (<a href="https://github.com/testacular/testacular/commit/dfae18b63b413a1e6240d00b9dc0521ac0386ec5">dfae18b6</a>, closes <a href="https://github.com/testacular/testacular/issues/297">#297</a>)</li>
+<li><strong>reporter.dots:</strong> only add newline to message when needed (<a href="https://github.com/testacular/testacular/commit/dbe1155cb57fc4caa792f83f45288238db0fc7e0">dbe1155c</a></li>
+</ul>
+<h4>Features</h4>
+<ul>
+<li>add &quot;debug&quot; button to easily open debugging window (<a href="https://github.com/testacular/testacular/commit/da85aab927edd1614e4e05b136dee834344aa3cb">da85aab9</a>)</li>
+<li><strong>config:</strong> support running on a custom hostname (<a href="https://github.com/testacular/testacular/commit/b8c5fe8533b13fd59cbf48972d2021069a84ae5b">b8c5fe85</a>)</li>
+<li><strong>reporter.junit:</strong> add a &#39;skipped&#39; tag for skipped testcases (<a href="https://github.com/testacular/testacular/commit/6286406e0a36a61125ea16d6f49be07030164cb0">6286406e</a>, closes <a href="https://github.com/testacular/testacular/issues/321">#321</a>)</li>
+</ul>
+<h3>v0.5.8</h3>
 <ul>
 <li>Fix #283</li>
 <li>Suppress global leak for istanbul</li>
@@ -223,7 +251,7 @@
 <li>Fix PhantomJS binary on Travis CI</li>
 </ul>
 <h2>v0.2.0 (stable)</h2>
-<h2>v0.1.3</h2>
+<h3>v0.1.3</h3>
 <ul>
 <li>Launch Canary with crankshaft disabled</li>
 <li>Make the captured page nicer</li>

@@ -95,7 +95,7 @@ Just simply add into the configuration file:</p>
 <pre><code class="language-javascript">browsers = [<span class="string">'Chrome'</span>];</code></pre>
 <p>Then, Testacular will take care of autocapturing these browsers, as
 well as killing them.</p>
-<p>Available browsers:</p>
+<p>Currently available browsers:</p>
 <ul>
 <li>Chrome</li>
 <li>ChromeCanary</li>
@@ -107,30 +107,33 @@ well as killing them.</p>
 </ul>
 <h2>Correct path to browser binary</h2>
 <p>Testacular has some default paths, where to find these browsers.
-Check out <a href="https://github.com/testacular/testacular/blob/master/lib/launchers">launchers</a> to see them.</p>
-<p>You can override these settings by <code>&lt;BROWSER&gt;_BIN</code> env variable,
-or alternatively by creating a <code>symlink</code></p>
+Check out
+<a href="https://github.com/testacular/testacular/blob/master/lib/launchers">launchers</a>
+to see them.</p>
+<p>You can override these settings by <code>&lt;BROWSER&gt;_BIN</code> ENV variable,
+or alternatively by creating a <code>symlink</code>.</p>
 <h3>POSIX shells</h3>
-<pre><code class="language-bash"><span class="comment"># Example - changing path to Chrome binary:</span>
+<pre><code class="language-bash"><span class="comment"># Changing the path to the Chrome binary</span>
 $ export CHROME_BIN=/usr/local/bin/my-chrome-build
 
-<span class="comment"># Example - changing path to Chrome Canary binary:</span>
+<span class="comment"># Changing the path to the Chrome Canary binary</span>
 $ export CHROME_CANARY_BIN=/usr/local/bin/my-chrome-build
 
-<span class="comment"># Example - changing path to PhantomJs binary:</span>
+<span class="comment"># Changing the path to the PhantomJs binary</span>
 $ export PHANTOMJS_BIN=<span class="variable">$HOME</span>/local/bin/phantomjs</code></pre>
 <h3>Windows cmd.exe</h3>
 <pre><code class="language-bash">C:> SET IE_BIN=C:\Program Files\Internet Explorer\iexplore.exe</code></pre>
 <h3>Windows Powershell</h3>
-<pre><code class="language-bash"><span class="comment"># During a scripted Testacular run</span>
-<span class="variable">$Env</span>:FIREFOX_BIN = <span class="string">'c:\Program Files (x86)\Mozilla Firefox 4.0 Beta 6\firefox.exe'</span></code></pre>
+<pre><code class="language-bash"><span class="variable">$Env</span>:FIREFOX_BIN = <span class="string">'c:\Program Files (x86)\Mozilla Firefox 4.0 Beta 6\firefox.exe'</span></code></pre>
 <h2>Custom browsers</h2>
 <pre><code class="language-javascript"><span class="comment">// in the testacular.conf.js</span>
 browsers = [<span class="string">'/usr/local/bin/custom-browser.sh'</span>];
 
 <span class="comment">// from cli</span>
 testacular start --browsers /usr/local/bin/custom-browser.sh</code></pre>
-<p>The browser scripts need to take one argument, the url with id parameter to be used to connect to the server. The supplied id is used by the server to determine when the specific browser is captured.</p>
+<p>The browser scripts need to take one argument, the url with id
+parameter to be used to connect to the server. The supplied id is used
+by the server to determine when the specific browser is captured.</p>
 
         </div>
       </div>
