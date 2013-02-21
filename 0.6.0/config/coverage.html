@@ -89,18 +89,13 @@
         </h1>
       </div>
       <div class="page-columns">
-        <div id="markdown" class="sixteen columns bottom"><p>If you want to use the code coverage feature of testacular you need to
-configure three parts.</p>
+        <div id="markdown" class="sixteen columns bottom"><p>Testacular can generate code coverage using awesome <a href="https://github.com/yahoo/istanbul">Istanbul</a>.
+If you want to generate the coverage, you need to configure three parts:</p>
 <ul>
-<li>Reporter <code>coverage</code> (required)</li>
-<li>Preprocessor <code>coverage</code> (required)</li>
-<li>Reporter Options (optional)</li>
+<li>preprocessor <code>coverage</code> (required)</li>
+<li>reporter <code>coverage</code> (required)</li>
+<li>reporter options (optional)</li>
 </ul>
-<h2>Reporter</h2>
-<p>To activate the coverage reporter add this to your configuration file.</p>
-<pre><code class="language-javascript">reporters = [<span class="string">'coverage'</span>];</code></pre>
-<p>This will create a coverage report for every browser that the tests are run in.
-In addition, it will create a JSON file that outputs the intermediate data.</p>
 <h2>Preprocessor</h2>
 <p>The preprocessor configures which files should be tested for coverage.
 For example if all your code lives in <code>lib/</code> you need to add this to your
@@ -109,7 +104,7 @@ configuration file.</p>
   <span class="string">'**/lib/*.js'</span>: <span class="string">'coverage'</span>
 };</code></pre>
 <p>You should not however include the files that aren&#39;t directly related to your
-program, e.g. libraries, mocks.</p>
+program, e.g. libraries, mocks, neither tests.</p>
 <p>This is a <strong>BAD</strong> example</p>
 <pre><code class="language-javascript">files = [
   JASMINE,
@@ -127,6 +122,11 @@ these file are only for the test setup used and not for your program.</p>
 <li>a part of the code coverage report will be output in the installation directory of testacular.</li>
 <li>the code coverage rate is reduced unfairly.</li>
 </ul>
+<h2>Reporter</h2>
+<p>To activate the coverage reporter add this to your configuration file.</p>
+<pre><code class="language-javascript">reporters = [<span class="string">'coverage'</span>];</code></pre>
+<p>This will create a coverage report for every browser that the tests are run in.
+In addition, it will create a JSON file that outputs the intermediate data.</p>
 <h2>Reporter Options</h2>
 <p>The reporter defaults to the following values.</p>
 <pre><code class="language-javascript">coverageReporter = {

@@ -89,7 +89,8 @@
         </h1>
       </div>
       <div class="page-columns">
-        <div id="markdown" class="sixteen columns bottom"><h2>Configure Testacular</h2>
+        <div id="markdown" class="sixteen columns bottom"><p>This page shows how to configure a project that uses <a href="http://requirejs.org/">RequireJS</a>. It is based on Jake&#39;s <a href="http://jaketrent.com/post/test-requirejs-testacular/">post</a>.</p>
+<h2>Configure Testacular</h2>
 <h3>Directory Setup</h3>
 <p>For clarity in the example configuration files and test below, the directory structure upon which these are based looks like this:</p>
 <pre><code class="language-bash">project/
@@ -104,15 +105,10 @@
     test-main.js
 testacular.conf.js</code></pre>
 <h3>Initialize Testacular</h3>
-<p>Testacular comes with a nice utility for generating a config file (default name: <code>testacular.conf.js</code>) that it needs in order to run. In your terminal, type:</p>
+<p>Testacular comes with a nice utility for generating a config file (default name: <code>testacular.conf.js</code>) that it needs in order to run.</p>
+<p>In your terminal, type:</p>
 <pre><code class="language-bash">$ testacular init</code></pre>
-<p>This will give you a series of prompts for things such as paths to source and tests and which browsers to capture. These prompts do not include the option to add RequireJs support automatically, so you’ll need to add those lines manually to your <code>testacular.conf.js</code> (see below). As of testacular 0.5.2, testacular init will prompt for usage of the RequireJs adapter.</p>
-<h3>Testacular Include</h3>
-<p>Testacular 0.5.1 (<strong>WARNING</strong> As of writing, npm install will give you 0.4.0, the latest stable version) This, while adding RequireJs support, has added a new concept of “included” to the files listed in your config. This is because RequireJs will balk about a the module not being loaded correctly (ie, loaded synchronously in the <code>&lt;head/&gt;</code> tag of the runner). From the RequireJs docs:</p>
-<blockquote>
-<p>Be sure to load all scripts that call <code>define()</code> via the RequireJS API. Do not manually code script tags
-in HTML to load scripts that have <code>define()</code> calls in them.</p>
-</blockquote>
+<p>This will give you a series of prompts for things such as paths to source and tests and which browsers to capture.</p>
 <h3>RequireJs Shim</h3>
 <p>Not immediately apparent is the fact that the ‘shim’ config from RequireJs 2.x does not work from within Testacular. I haven’t yet figured out why. For instance, I was constantly getting “‘Backbone’ is not defined” messages even though it was specified in the ‘shim’ config and required in the test. I could have been doing something wrong. My solution thus far has been to list each of the non-RequireJs modules and their dependencies in the <code>files</code> attribute of <code>testacular.conf.js</code>.</p>
 <h3><code>testacular.conf.js</code></h3>
@@ -124,23 +120,24 @@ in HTML to load scripts that have <code>define()</code> calls in them.</p>
   REQUIRE,
   REQUIRE_ADAPTER,
 
-  <span class="comment">// !! libs required for test framework</span>
+  <span class="comment">// libs required for test framework</span>
   {pattern: <span class="string">'node_modules/chai/chai.js'</span>, included: <span class="literal">false</span>},
 
-  <span class="comment">// !! put what used to be in your requirejs 'shim' config here</span>
+  <span class="comment">// put what used to be in your requirejs 'shim' config here,</span>
+  <span class="comment">// these files will be included without requirejs</span>
   <span class="string">'lib/jquery.js'</span>,
   <span class="string">'lib/underscore.js'</span>,
   <span class="string">'lib/backbone.js'</span>,
   <span class="string">'lib/handlebars.js'</span>,
 
-  <span class="comment">// !! put all libs in requirejs 'paths' config here (included: false)</span>
+  <span class="comment">// put all libs in requirejs 'paths' config here (included: false)</span>
   {pattern: <span class="string">'lib/**/*.js'</span>, included: <span class="literal">false</span>},
 
-  <span class="comment">// !! all src and test modules (included: false)</span>
+  <span class="comment">// all src and test modules (included: false)</span>
   {pattern: <span class="string">'src/**/*'</span>, included: <span class="literal">false</span>},
   {pattern: <span class="string">'test/**/*.test.js'</span>, included: <span class="literal">false</span>},
 
-  <span class="comment">// !! test main require module last</span>
+  <span class="comment">// test main require module last</span>
   <span class="string">'test/test-main.js'</span>
 ];</code></pre>
 <p>This config is awesome. It replaces an html test runner that you would otherwise have to build.</p>
@@ -155,19 +152,20 @@ The code is included in the example below and the original suggestion came from 
 <p>Because the RequireJs require statements are asynchronous, Testacular needs to wait until they’re done (the code is loaded and ready) before it starts the tests.</p>
 <p>The main-test.js file ends up looking like this:</p>
 <pre><code class="language-javascript"><span class="keyword">var</span> tests = Object.keys(window.__testacular__.files).filter(<span class="function"><span class="keyword">function</span> <span class="params">(file)</span> {</span>
-    <span class="keyword">return</span> <span class="regexp">/\.test\.js$/</span>.test(file);
+  <span class="keyword">return</span> <span class="regexp">/\.test\.js$/</span>.test(file);
 });
 
 require({
-
-  <span class="comment">// !! Testacular serves files from '/base'</span>
+  <span class="comment">// Testacular serves files from '/base'</span>
   baseUrl: <span class="string">'/base/src'</span>,
   paths: {
     require: <span class="string">'../lib/require'</span>,
     text: <span class="string">'../lib/text'</span>
   },
-}, tests, <span class="keyword">function</span>() {
-  window.__testacular__.start();
+  <span class="comment">// ask requirejs to load these files (all our tests)</span>
+  deps: tests,
+  <span class="comment">// start test run, once requirejs is done</span>
+  callback: window.__testacular__.start
 });</code></pre>
 <h2>RequireJs Test in Testacular</h2>
 <p>All the setup thus far has been in preparation for the code to follow. The test can now be setup as a RequireJs module. It can require the source code under test. It can use Mocha (or whatever framework there is a Testacular adapter for).</p>
@@ -179,8 +177,8 @@ require({
   <span class="keyword">function</span>(chai, MyModule) {
 
   <span class="keyword">var</span> assert = chai.assert,
-    expect = chai.expect,
-    should = chai.should();
+      expect = chai.expect,
+      should = chai.should();
 
   describe(<span class="string">'MyModule'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>
     describe(<span class="string">'#initialize()'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>
@@ -194,10 +192,8 @@ require({
 <h2>Run the Tests in Testacular</h2>
 <p>To start the Testacular server:</p>
 <pre><code class="language-bash">$ testacular start</code></pre>
-<p>Finally, if your Testacular server is already running and you want to kick off the tests, type:</p>
+<p>If you didn&#39;t configure to watch all the files and run tests automatically on any change, you can trigger the tests manually. Just type:</p>
 <pre><code class="language-bash">$ testacular run</code></pre>
-<hr>
-<p>Source: <a href="http://jaketrent.com/post/test-requirejs-testacular/">Jake Trent</a></p>
 
         </div>
       </div>
