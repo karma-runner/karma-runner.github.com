@@ -25,6 +25,8 @@ include html
           .sixteen.columns
             h1.page-title
               = self.pageTitle
+              a.edit(href='#{self.editUrl}', data-tooltip='Edit')
+                i.icon-cogs
               span.line
           .page-columns
             #markdown.sixteen.columns.bottom
