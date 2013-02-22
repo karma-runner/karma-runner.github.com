@@ -3,7 +3,7 @@
 > This is the source code for http://testacular.github.com. The
 > homepage and documentation of [Testacular], the spectacular test runner.
 
-If you wanna update the docs, just go the the main repo and update the
+If you wanna update the docs, just go the the [main repo] and update the
 markdown. You can even do that directly from the github web interface.
 
 
@@ -28,3 +28,4 @@ Now open your browser at http://localhost:8000.
 
 
 [Testacular]: http://testacular.github.com
+[main repo]: https://github.com/testacular/testacular/tree/master/docs
