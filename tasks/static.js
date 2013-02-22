@@ -29,6 +29,10 @@ module.exports = function(grunt) {
 
   var pageTitleFromFilename = menuTitleFromFilename;
 
+  var editUrlFromFilenameAndSection = function(fileName, section) {
+    return 'https://github.com/testacular/testacular/edit/master/docs/' + section + '/' + fileName;
+  };
+
   var filterOnlyFiles = function(path, stat) {
     // ignore dot files like .DS_Store
     var filename = path.split('/').pop();
@@ -81,6 +85,7 @@ module.exports = function(grunt) {
 
             return {
               url: basePath + urlFromFilename(fileName),
+              editUrl: editUrlFromFilenameAndSection(fileName, section),
               layout: parsed.metadata.layout || 'layout',
               content: parsed.html,
               version: version,
