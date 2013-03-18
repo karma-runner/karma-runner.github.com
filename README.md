@@ -1,7 +1,7 @@
-# testacular.github.com
+# karma-runner.github.com
 
-> This is the source code for http://testacular.github.com. The
-> homepage and documentation of [Testacular], the spectacular test runner.
+> This is the source code for http://karma-runner.github.com. The
+> homepage and documentation of [Karma], the spectacular test runner.
 
 If you wanna update the docs, just go the the [main repo] and update the
 markdown. You can even do that directly from the github web interface.
@@ -10,8 +10,8 @@ markdown. You can even do that directly from the github web interface.
 ## Building the Documentation
 
 ```bash
-$ git clone https://github.com/testacular/testacular.github.com.git
-$ cd testacular.github.com
+$ git clone https://github.com/karma-runner/karma-runner.github.com.git
+$ cd karma-runner.github.com
 $ npm install
 $ grunt
 ```
@@ -27,5 +27,5 @@ Now open your browser at http://localhost:8000.
 * `uglify`
 
 
-[Testacular]: http://testacular.github.com
-[main repo]: https://github.com/testacular/testacular/tree/master/docs
+[Karma]: http://karma-runner.github.com
+[main repo]: https://github.com/karma-runner/karma-runner/tree/master/docs

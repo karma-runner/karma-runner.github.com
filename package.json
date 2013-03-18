@@ -1,5 +1,5 @@
 {
-  "name": "testacular.github.com",
+  "name": "karma-runner.github.com",
   "version": "0.0.1",
   "private": true,
   "description": "",
@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/testacular/testacular.github.com.git"
+    "url": "https://github.com/karma-runner/karma-runner.github.com.git"
   },
   "author": "Friedel Ziegelmayer",
   "license": "MIT"
