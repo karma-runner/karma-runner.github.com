@@ -1,0 +1,244 @@
+<!DOCTYPE html><!--[if lt IE 7]>
+<html lang="en" class="ie ie6"></html><![endif]--><!--[if IE 7]>
+<html lang="en" class="ie ie7"></html><![endif]--><!--[if IE 8]>
+<html lang="en" class="ie ie8"></html><![endif]--><!--[if (gte IE 9)|!(IE)]>
+<html lang="en"></html>
+<head>
+  <!-- Basic Page Needs-->
+  <meta charset="utf-8">
+  <title>Karma - Configuration File</title>
+  <!-- Mobile specific Metas-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- Le styles-->
+  <link href="/assets/css/app.css" rel="stylesheet">
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements--><!--[if lt IE 9]>
+  <script src="/assets/js/html5.js"></script><![endif]-->
+  <!-- Fav and touch icons-->
+  <link rel="shortcut icon" href="/assets/img/favicon/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/apple-touch-icon-114x114.png">
+</head>
+<body>
+  <div id="wrap" class="boxed">
+    <header>
+      <div class="container clearfix">
+        <div class="six columns">
+          <div class="logo"><a href="/0.8/index.html">Karma</a><span>Spectacular Test Runner for JavaScript</span></div>
+        </div>
+        <div class="ten columns">
+          <nav id="menu" class="navigation">
+            <ul id="nav">
+              <li><a href="javascript:void" class="">intro</a>
+                <ul>
+                  <li><a href="/0.8/intro/installation.html">Installation</a></li>
+                  <li><a href="/0.8/intro/configuration.html">Configuration</a></li>
+                  <li><a href="/0.8/intro/troubleshooting.html">Troubleshooting</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void" class="active">config</a>
+                <ul>
+                  <li><a href="/0.8/config/configuration-file.html">Configuration File</a></li>
+                  <li><a href="/0.8/config/files.html">Files</a></li>
+                  <li><a href="/0.8/config/browsers.html">Browsers</a></li>
+                  <li><a href="/0.8/config/preprocessors.html">Preprocessors</a></li>
+                  <li><a href="/0.8/config/coverage.html">Coverage</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void" class="">plus</a>
+                <ul>
+                  <li><a href="/0.8/plus/AngularJS.html">AngularJS</a></li>
+                  <li><a href="/0.8/plus/RequireJS.html">RequireJS</a></li>
+                  <li><a href="/0.8/plus/Jenkins-CI.html">Jenkins CI</a></li>
+                  <li><a href="/0.8/plus/Travis-CI.html">Travis CI</a></li>
+                  <li><a href="/0.8/plus/Cloud9.html">Cloud9</a></li>
+                  <li><a href="/0.8/plus/Teamcity.html">Teamcity</a></li>
+                  <li><a href="/0.8/plus/Yeoman.html">Yeoman</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void" class="">dev</a>
+                <ul>
+                  <li><a href="/0.8/dev/public-api.html">Public Api</a></li>
+                  <li><a href="/0.8/dev/contributing.html">Contributing</a></li>
+                  <li><a href="/0.8/dev/git-commit-msg.html">Git Commit Msg</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void" class="">about</a>
+                <ul>
+                  <li><a href="/0.8/about/changelog.html">Changelog</a></li>
+                  <li><a href="/0.8/about/versioning.html">Versioning</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void">v0.8</a>
+                <ul>
+                  <li><a href="/0.6/index.html">v0.6</a></li>
+                  <li><a href="/0.8/index.html">v0.8</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="sixteen columns">
+          <hr>
+        </div>
+      </div>
+    </header>
+    <div class="container clearfix">
+      <div class="sixteen columns">
+        <h1 class="page-title">Configuration File<a href="https://github.com/testacular/testacular/edit/master/docs/config/01-configuration-file.md" data-tooltip="Edit this page on GitHub" class="edit"><i class="icon-edit"></i></a><span class="line"></span>
+        </h1>
+      </div>
+      <div class="page-columns">
+        <div id="markdown" class="sixteen columns bottom"><p>In order to serve you well, Karma needs to know about your
+project. That&#39;s done through a configuration file.</p>
+<p>For an example configuration, see <a href="https://github.com/karma-runner/karma/blob/master/test/client/testacular.conf.js">test/client/testacular.conf.js</a>
+which contains most of the options.</p>
+<p>This document contains a list of all available options, as well as
+their command line equivalents.</p>
+<h2>autoWatch</h2>
+<p><strong>Type:</strong> Boolean</p>
+<p><strong>Default:</strong>  <code>false</code></p>
+<p><strong>CLI:</strong> <code>--auto-watch</code>, <code>--no-auto-watch</code></p>
+<p><strong>Description:</strong> Enable or disable watching files and executing the tests
+  whenever one of these files changes.</p>
+<h2>basePath</h2>
+<p><strong>Type:</strong> String</p>
+<p><strong>Default:</strong> <code>&#39;&#39;</code></p>
+<p><strong>Description:</strong>  Base path, that will be used to resolve all relative
+  paths defined in <code>files</code> and <code>exclude</code>. If <code>basePath</code> is a
+  relative path, it will be resolved to the <code>__dirname</code> of the
+  configuration file.</p>
+<h2>browsers</h2>
+<p><strong>Type:</strong> Array</p>
+<p><strong>Default:</strong>  <code>[]</code></p>
+<p><strong>CLI:</strong> <code>--browsers Chrome,Firefox</code></p>
+<p><strong>Possible Values:</strong></p>
+<ul>
+<li><code>Chrome</code></li>
+<li><code>ChromeCanary</code></li>
+<li><code>Firefox</code></li>
+<li><code>Opera</code></li>
+<li><code>Safari</code></li>
+<li><code>PhantomJS</code></li>
+</ul>
+<p><strong>Description:</strong>
+  A list of browsers to launch and capture. Once Karma is shut down, it will shut down these
+  browsers as well. You can capture any browser manually just by opening a url, where Karma&#39;s
+  web server is listening.</p>
+<p>See <a href="browsers.html">config/browsers</a> for more.</p>
+<h2>captureTimeout</h2>
+<p><strong>Type:</strong> Number</p>
+<p><strong>Default:</strong> <code>60000</code></p>
+<p><strong>Description:</strong> Timeout for capturing a browser (in ms).</p>
+<p>If any browser does not get captured within the timeout, Karma will kill it and try to launch
+it again. After three attempts to capture it, Karma will give up.</p>
+<h2>colors</h2>
+<p><strong>Type:</strong> Boolean</p>
+<p><strong>Default:</strong>   <code>true</code></p>
+<p><strong>CLI:</strong> <code>--colors</code>, <code>--no-colors</code></p>
+<p><strong>Description:</strong>  Enable or disable colors in the output (reporters and logs).</p>
+<h2>exclude</h2>
+<p><strong>Type:</strong> Array</p>
+<p><strong>Default:</strong> <code>[]</code></p>
+<p><strong>Description:</strong> List of files/patterns to exclude from loaded files.</p>
+<h2>files</h2>
+<p><strong>Type:</strong> Array</p>
+<p><strong>Default:</strong> <code>[]</code></p>
+<p><strong>Description:</strong> List of files/patterns to load in the browser.</p>
+<p>See <a href="files.html">config/files</a> for more information.</p>
+<h2>hostname</h2>
+<p><strong>Type:</strong> String</p>
+<p><strong>Default:</strong> <code>&#39;localhost&#39;</code></p>
+<p><strong>Description:</strong> Hostname to be used when capturing browsers.</p>
+<h2>logLevel</h2>
+<p><strong>Type:</strong> Constant</p>
+<p><strong>Default:</strong> <code>LOG_INFO</code></p>
+<p><strong>CLI:</strong> <code>--log-level debug</code></p>
+<p><strong>Possible values:</strong></p>
+<ul>
+<li><code>LOG_DISABLE</code></li>
+<li><code>LOG_ERROR</code></li>
+<li><code>LOG_WARN</code></li>
+<li><code>LOG_INFO</code></li>
+<li><code>LOG_DEBUG</code></li>
+</ul>
+<p><strong>Description:</strong> Level of logging.</p>
+<h2>loggers</h2>
+<p><strong>Type:</strong> Array</p>
+<p><strong>Default:</strong> <code>[{type: &#39;console&#39;}]</code></p>
+<p><strong>Description:</strong> A list of log appenders to be used. See the
+  documentation for <a href="https://github.com/nomiddlename/log4js-node">log4js</a> for more information.</p>
+<h2>port</h2>
+<p><strong>Type:</strong> Number</p>
+<p><strong>Default:</strong> <code>9876</code></p>
+<p><strong>CLI:</strong> <code>--port 9876</code></p>
+<p><strong>Description:</strong> The port where the webserver will be listening.</p>
+<h2>preprocessors</h2>
+<p><strong>Type:</strong> Object</p>
+<p><strong>Default:</strong> <code>{&#39;**/*.coffee&#39;: &#39;coffee&#39;}</code></p>
+<p><strong>Description:</strong> A map of preprocessors to use. See <a href="preprocessors.html">config/preprocessors</a> for more.</p>
+<h2>proxies</h2>
+<p><strong>Type:</strong> Object</p>
+<p><strong>Default:</strong>   <code>{}</code></p>
+<p><strong>Description:</strong> A map of path-proxy pairs.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-javascript">  proxies =  {
+    <span class="string">'/static'</span>: <span class="string">'http://gstatic.com'</span>,
+    <span class="string">'/web'</span>: <span class="string">'http://localhost:9000'</span>
+  };</code></pre>
+<h2>reportSlowerThan</h2>
+<p><strong>Type:</strong> Number</p>
+<p><strong>Default:</strong> <code>0</code></p>
+<p><strong>Description:</strong> Karma will report all the tests that are slower than given time limit (in ms).
+This is disabled by default.</p>
+<h2>reporters</h2>
+<p><strong>Type:</strong> Array</p>
+<p><strong>Default:</strong> <code>[&#39;progress&#39;]</code></p>
+<p><strong>CLI:</strong> <code>--reporters progress,growl</code></p>
+<p><strong>Possible Values:</strong></p>
+<ul>
+<li><code>dots</code></li>
+<li><code>progress</code></li>
+<li><code>junit</code></li>
+<li><code>growl</code></li>
+<li><code>coverage</code></li>
+</ul>
+<p><strong>Description:</strong> A list of reporters to use.</p>
+<h2>runnerPort</h2>
+<p><strong>Type:</strong> Number</p>
+<p><strong>Default:</strong> <code>9100</code></p>
+<p><strong>CLI:</strong> <code>--runner-port 9100</code></p>
+<p><strong>Description:</strong> The port where the server will be listening. This is only used when you are using
+<code>karma run</code>.</p>
+<h2>singleRun</h2>
+<p><strong>Type:</strong> Boolean</p>
+<p><strong>Default:</strong> <code>false</code></p>
+<p><strong>CLI:</strong> <code>--single-run</code>, <code>no-single-run</code></p>
+<p><strong>Description:</strong> Continuous Integration mode.</p>
+<p>If <code>true</code>, it captures browsers, runs tests and exits with <code>0</code> exit code (if all tests passed) or
+<code>1</code> exit code (if any test failed).</p>
+<h2>urlRoot</h2>
+<p><strong>Type:</strong> String</p>
+<p><strong>Default:</strong> <code>&#39;/&#39;</code></p>
+<p><strong>Description:</strong> The base url, where Karma runs.</p>
+<p>All the Karma&#39;s urls get prefixed with the <code>urlRoot</code>. This is helpful when using proxies, as
+sometimes you might want to proxy a url that is already taken by Karma.</p>
+
+        </div>
+      </div>
+    </div>
+    <div class="push"></div>
+  </div>
+  <footer>
+    <div class="container">
+      <div class="ten columns"><span class="copyright"><a href="https://github.com/karma-runner/karma">Karma</a>&nbsp;is released under the <a href="https://github.com/karma-runner/karma/blob/master/LICENSE">MIT license</a>. Site by&nbsp;<a href="https://github.com/Dignifiedquire">Friedel Ziegelmayer</a>.</span></div>
+      <div class="six columns">
+        <div class="social"><a href="https://github.com/karma-runner/karma/" data-tooltip="GitHub Repo"><i class="icon-github-alt icon-large"></i></a><a href="https://github.com/karma-runner/karma/issues" data-tooltip="Issues"><i class="icon-beaker icon-large"></i></a><a href="http://twitter.com/TestacularJS" data-tooltip="@TestacularJS"><i class="icon-twitter icon-large"></i></a><a href="https://groups.google.com/forum/#!forum/karma-users" data-tooltip="Mailing List"><i class="icon-envelope-alt icon-large"></i></a></div>
+      </div>
+    </div>
+  </footer>
+</body>
+<!-- Placed at the end of the document so the pages load faster-->
+<script src="/assets/js/app.js">;</script><![endif]-->
