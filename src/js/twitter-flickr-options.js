@@ -2,7 +2,7 @@
 jQuery(function($){
   jQuery(".tweet").tweet({
 	join_text: false,
-	username: "TestacularJS", // Change username here
+	username: "JsKarma", // Change username here
 	avatar_size: false, // you can active avatar
 	count: 2, // number of tweets
 	seconds_ago_text: "about %d seconds ago",
