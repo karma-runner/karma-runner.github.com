@@ -91,139 +91,150 @@
         </h1>
       </div>
       <div class="page-columns">
-        <div id="markdown" class="sixteen columns bottom"><p>This page shows how to configure a project that uses <a href="http://requirejs.org/">RequireJS</a>. It is based on Jake&#39;s <a href="http://jaketrent.com/post/test-requirejs-testacular/">post</a>.</p>
+        <div id="markdown" class="sixteen columns bottom"><p>To get Karma to run with <a href="http://requirejs.org/">Require.js</a> we need two files:</p>
+<ul>
+<li><code>karma.conf.js</code> &mdash; which configures Karma</li>
+<li><code>test-main.js</code> &mdash; which configures Require.js for the tests</li>
+</ul>
+<p>Let&#39;s say our app has a directory structure which looks something like
+this:</p>
+<pre><code class="language-bash">$ tree
+.
+|-- index.html
+|-- karma.conf.js
+|-- lib
+|   |-- jquery.js
+|   |-- require.js
+|   `-- underscore.js
+|-- src
+|   |-- app.js
+|   `-- main.js
+`-- test
+    |-- appSpec.js
+    `-- test-main.js
+
+3 directories, 9 files</code></pre>
 <h2>Configure Karma</h2>
-<h3>Directory Setup</h3>
-<p>For clarity in the example configuration files and test below, the
-directory structure upon which these are based looks like this:</p>
-<pre><code class="language-bash">project/
-  lib/
-    jquery.js <span class="comment">#etc</span>
-  node_modules/
-    chai/ <span class="comment">#etc</span>
-  src/
-    MyModule.js
-  test/
-    MyModule.test.js
-    test-main.js
-karma.conf.js</code></pre>
-<h3>Initialize Karma</h3>
-<p>Karma comes with a nice utility for generating a config file
-(default name: <code>karma.conf.js</code>) that it needs in order to run.</p>
-<p>In your terminal, type:</p>
+<p>The first step is creating our <code>karma.conf.js</code>. We can do this from the
+command line:</p>
 <pre><code class="language-bash">$ karma init</code></pre>
 <p>This will give you a series of prompts for things such as paths to
-source and tests and which browsers to capture.</p>
-<h3>RequireJs Shim</h3>
-<p>Not immediately apparent is the fact that the ‘shim’ config from
-RequireJs 2.x does not work from within Karma. I haven’t yet
-figured out why. For instance, I was constantly getting <code>‘Backbone’ is
-not defined</code> messages even though it was specified in the ‘shim’
-config and required in the test. I could have been doing something
-wrong. My solution thus far has been to list each of the non-RequireJs
-modules and their dependencies in the <code>files</code> attribute of
-<code>karma.conf.js</code>.</p>
-<h3><code>karma.conf.js</code></h3>
-<p>The final point is that the RequireJs main module for your test runner
-should be the last file listed.</p>
-<p>So, finally, here is the ‘file’ excerpt of <code>karma.conf.js</code>:</p>
-<pre><code class="language-javascript">files = [
-  MOCHA,
-  MOCHA_ADAPTER,
+source and test and which browsers to capture.</p>
+<p>In this example we&#39;ll use Jasmine, but other test frameworks works just
+as well.</p>
+<p>Choose &quot;yes&quot; for Require.js.</p>
+<p>For the question <em>&quot;Which files do you want to include with &lt;script&gt;
+tag?&quot;</em>, we need to choose all files which are <em>not</em> loaded by Require.js.
+Usually you&#39;ll only need to include your <code>test-main.js</code> file, which has
+the same role for your tests as <code>main.js</code> has for your app when using
+Require.js.</p>
+<p>For the qustion <em>&quot;Which files do you want to test?&quot;</em>, we choose all the
+files we want to load with Require.js. For this example we&#39;ll need:</p>
+<ul>
+<li><code>lib/**/*.js</code> &mdash; all external libraries</li>
+<li><code>src/**/*.js</code> &mdash; our source code</li>
+<li><code>test/**/*Spec.js</code> &mdash; all the tests</li>
+</ul>
+<p>And then, for excludes, type <code>src/main.js</code>, as we don&#39;t want to actually
+start the application in our tests.</p>
+<p>Now your <code>karma.conf.js</code> should include:</p>
+<pre><code class="language-javascript"><span class="comment">// list of files / patterns to load in the browser</span>
+files = [
+  JASMINE,
+  JASMINE_ADAPTER,
   REQUIRE,
   REQUIRE_ADAPTER,
 
-  <span class="comment">// libs required for test framework</span>
-  {pattern: <span class="string">'node_modules/chai/chai.js'</span>, included: <span class="literal">false</span>},
-
-  <span class="comment">// put what used to be in your requirejs 'shim' config here,</span>
-  <span class="comment">// these files will be included without requirejs</span>
-  <span class="string">'lib/jquery.js'</span>,
-  <span class="string">'lib/underscore.js'</span>,
-  <span class="string">'lib/backbone.js'</span>,
-  <span class="string">'lib/handlebars.js'</span>,
-
-  <span class="comment">// put all libs in requirejs 'paths' config here (included: false)</span>
   {pattern: <span class="string">'lib/**/*.js'</span>, included: <span class="literal">false</span>},
+  {pattern: <span class="string">'src/**/*.js'</span>, included: <span class="literal">false</span>},
+  {pattern: <span class="string">'test/**/*Spec.js'</span>, included: <span class="literal">false</span>},
 
-  <span class="comment">// all src and test modules (included: false)</span>
-  {pattern: <span class="string">'src/**/*'</span>, included: <span class="literal">false</span>},
-  {pattern: <span class="string">'test/**/*.test.js'</span>, included: <span class="literal">false</span>},
-
-  <span class="comment">// test main require module last</span>
   <span class="string">'test/test-main.js'</span>
+];
+
+<span class="comment">// list of files to exclude</span>
+exclude = [
+    <span class="string">'src/main.js'</span>
 ];</code></pre>
-<p>This config is awesome. It replaces an html test runner that you would otherwise have to build.</p>
-<h2>RequireJs Main Module</h2>
-<p>Just like any RequireJs project, you need a main module to bootstrap
-your tests. In the main module, you setup the <code>require.config</code>.</p>
+<h2>Configuring Require.js</h2>
+<p>Just like any Require.js project, you need a main module to bootstrap
+your tests. We do this is <code>test/test-main.js</code>.</p>
 <h3>Karma <code>/base</code> Directory</h3>
-<p>Karma serves files under the <code>/base</code> directory. So, on the
-server, requests to files will be served up under
-<code>http://localhost:9876/base/*</code>. The RequireJs config for <code>baseUrl</code>
-gives a starting context for modules that load with relative paths.
-When setting this value for the Karma server, it will need to
-start with <code>/base</code>. I want my baseUrl to be at the root of my <code>/src</code>
-directory so relative requires in the source won’t need to change. My
-baseUrl has the value of <code>/base/src</code>.</p>
+<p>Karma serves files under the <code>/base</code> directory. So, on the server
+requests to files will be served up under
+<code>http://localhost:9876/base/*</code>.</p>
+<p>The Require.js config for <code>baseUrl</code> gives a starting context for modules
+that load with relative paths. When setting this value for the Karma
+server it will need to start with <code>/base</code>. We want the <code>baseUrl</code> for our
+tests to be the same folder as the base url we have in <code>src/main.js</code>, so
+that relative requires in the source won’t need to change. So, as we
+want our base url to be at <code>src/</code>, we need to write <code>/base/src</code>.</p>
 <h3>Require Each Test File</h3>
-<p>One of the things I hate is having to update a master list of all
-tests to run every time I add a test. There is no config option for
-this, but there&#39;s an easy way to get around it by filtering the tests
-from the <code>window.__karma__.files</code> object.
-The code is included in the example below and the original suggestion
-came from <a href="https://github.com/karma-runner/karma/pull/236">https://github.com/karma-runner/karma/pull/236</a>.</p>
-<h3>Asynchronously Run Karma</h3>
-<p>Because the RequireJs require statements are asynchronous, Karma
-needs to wait until they’re done (the code is loaded and ready) before
-it starts the tests.</p>
-<p>The main-test.js file ends up looking like this:</p>
+<p>With Karma we don&#39;t need to list all test files ourselves as we can
+easily find them from the files specified in <code>test-main.js</code>: Karma
+includes all the files in <code>window.__karma__.files</code>, so by filtering this
+array we find all our test files.</p>
+<p>Now we can tell Require.js to load our tests, which must be done
+asynchronously as dependencies must be fetched before the tests are run.
+The <code>test/main-test.js</code> file ends up looking like this:</p>
 <pre><code class="language-javascript"><span class="keyword">var</span> tests = Object.keys(window.__karma__.files).filter(<span class="function"><span class="keyword">function</span> <span class="params">(file)</span> {</span>
-  <span class="keyword">return</span> <span class="regexp">/\.test\.js$/</span>.test(file);
+      <span class="keyword">return</span> <span class="regexp">/Spec\.js$/</span>.test(file);
 });
 
-require({
-  <span class="comment">// Karma serves files from '/base'</span>
-  baseUrl: <span class="string">'/base/src'</span>,
-  paths: {
-    require: <span class="string">'../lib/require'</span>,
-    text: <span class="string">'../lib/text'</span>
-  },
-  <span class="comment">// ask requirejs to load these files (all our tests)</span>
-  deps: tests,
-  <span class="comment">// start test run, once requirejs is done</span>
-  callback: window.__karma__.start
+requirejs.config({
+    <span class="comment">// Karma serves files from '/base'</span>
+    baseUrl: <span class="string">'/base/src'</span>,
+
+    paths: {
+        <span class="string">'jquery'</span>: <span class="string">'../lib/jquery'</span>,
+        <span class="string">'underscore'</span>: <span class="string">'../lib/underscore'</span>,
+    },
+
+    shim: {
+        <span class="string">'underscore'</span>: {
+            exports: <span class="string">'_'</span>
+        }
+    },
+
+    <span class="comment">// ask Require.js to load these files (all our tests)</span>
+    deps: tests,
+
+    <span class="comment">// start test run, once Require.js is done</span>
+    callback: window.__karma__.start
 });</code></pre>
-<h2>RequireJs Test in Karma</h2>
-<p>All the setup thus far has been in preparation for the code to follow.
-The test can now be setup as a RequireJs module. It can require the
-source code under test. It can use Mocha (or whatever framework there
-is a Karma adapter for).</p>
-<p>I will also use Chai in order to get the ‘should’ BDD-style
-assertions. Note that by using RequireJs and running in the browser,
-we can’t just <code>require(&#39;chai&#39;)</code>. It has to be required using the
-asynchronous callback to avoid this error:</p>
-<pre><code class="language-bash">Uncaught Error: Module name “../node_modules/chai/chai” has not been loaded yet <span class="keyword">for</span> context: _. Use require([])</code></pre>
-<p>And finally, <code>should()</code> must be invoked to be available in the test.</p>
-<p>So, a simple test will look like:</p>
-<pre><code class="language-javascript">define([<span class="string">'../node_modules/chai/chai'</span>, <span class="string">'MyModule'</span>], <span class="keyword">function</span>(chai, MyModule) {
+<h2>Using Require.js in tests</h2>
+<p>Tests can now be written as regular Require.js modules. We wrap
+everything in <code>define</code>, and inside we can use the regular test methods,
+such as <code>describe</code> and <code>it</code>. Example:</p>
+<pre><code class="language-javascript">define([<span class="string">'app'</span>, <span class="string">'jquery'</span>, <span class="string">'underscore'</span>], <span class="keyword">function</span>(App, $, _) {
 
-  <span class="keyword">var</span> should = chai.should();
+    describe(<span class="string">'just checking'</span>, <span class="keyword">function</span>() {
 
-  describe(<span class="string">'MyModule'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>
-    describe(<span class="string">'#initialize()'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>
-      it(<span class="string">'should be a stinkin object'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>
-        <span class="keyword">var</span> yippee = <span class="keyword">new</span> MyModule();
-        yippee.should.be.an(<span class="string">'object'</span>);
-      });
+        it(<span class="string">'works for app'</span>, <span class="keyword">function</span>() {
+            <span class="keyword">var</span> el = $(<span class="string">'&lt;div&gt;&lt;/div&gt;'</span>);
+
+            <span class="keyword">var</span> app = <span class="keyword">new</span> App(el);
+            app.render();
+
+            expect(el.text()).toEqual(<span class="string">'require.js up and running'</span>);
+        });
+
+        it(<span class="string">'works for underscore'</span>, <span class="keyword">function</span>() {
+            <span class="comment">// just checking that _ works</span>
+            expect(_.size([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])).toEqual(<span class="number">3</span>);
+        });
+
     });
-  });
+
 });</code></pre>
-<h2>Run the Tests in Karma</h2>
-<p>To start the Karma server:</p>
+<h2>Running the tests</h2>
+<p>We can now run the tests from the command line:</p>
 <pre><code class="language-bash">$ karma start</code></pre>
-<p>If you didn&#39;t configure to watch all the files and run tests automatically on any change, you can trigger the tests manually. Just type:</p>
+<p>If you didn&#39;t configure Karma to watch all the files and run tests
+automatically on any change, you can trigger the tests manually by
+typing:</p>
 <pre><code class="language-bash">$ karma run</code></pre>
+<p><a href="https://github.com/kjbekkelund/karma-requirejs">Here is a running example of Karma with Require.js</a>.</p>
 
         </div>
       </div>
