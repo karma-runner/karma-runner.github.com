@@ -17,13 +17,13 @@ project/
   test/
     MyModule.test.js
     test-main.js
-testacular.conf.js
+karma.conf.js
 ```
 
 ### Initialize Karma
 
 Karma comes with a nice utility for generating a config file
-(default name: `testacular.conf.js`) that it needs in order to run.
+(default name: `karma.conf.js`) that it needs in order to run.
 
 In your terminal, type:
 ```bash
@@ -40,13 +40,13 @@ not defined` messages even though it was specified in the ‘shim’
 config and required in the test. I could have been doing something
 wrong. My solution thus far has been to list each of the non-RequireJs
 modules and their dependencies in the `files` attribute of
-`testacular.conf.js`.
+`karma.conf.js`.
 
-### `testacular.conf.js`
+### `karma.conf.js`
 The final point is that the RequireJs main module for your test runner
 should be the last file listed.
 
-So, finally, here is the ‘file’ excerpt of `testacular.conf.js`:
+So, finally, here is the ‘file’ excerpt of `karma.conf.js`:
 ```javascript
 files = [
   MOCHA,
@@ -95,7 +95,7 @@ baseUrl has the value of `/base/src`.
 One of the things I hate is having to update a master list of all
 tests to run every time I add a test. There is no config option for
 this, but there's an easy way to get around it by filtering the tests
-from the `window.__testacular__.files` object.
+from the `window.__karma__.files` object.
 The code is included in the example below and the original suggestion
 came from <https://github.com/karma-runner/karma/pull/236>.
 
@@ -106,7 +106,7 @@ it starts the tests.
 
 The main-test.js file ends up looking like this:
 ```javascript
-var tests = Object.keys(window.__testacular__.files).filter(function (file) {
+var tests = Object.keys(window.__karma__.files).filter(function (file) {
   return /\.test\.js$/.test(file);
 });
 
@@ -120,7 +120,7 @@ require({
   // ask requirejs to load these files (all our tests)
   deps: tests,
   // start test run, once requirejs is done
-  callback: window.__testacular__.start
+  callback: window.__karma__.start
 });
 ```
 
