@@ -106,10 +106,10 @@ directory structure upon which these are based looks like this:</p>
   test/
     MyModule.test.js
     test-main.js
-testacular.conf.js</code></pre>
+karma.conf.js</code></pre>
 <h3>Initialize Karma</h3>
 <p>Karma comes with a nice utility for generating a config file
-(default name: <code>testacular.conf.js</code>) that it needs in order to run.</p>
+(default name: <code>karma.conf.js</code>) that it needs in order to run.</p>
 <p>In your terminal, type:</p>
 <pre><code class="language-bash">$ karma init</code></pre>
 <p>This will give you a series of prompts for things such as paths to
@@ -122,11 +122,11 @@ not defined</code> messages even though it was specified in the ‘shim’
 config and required in the test. I could have been doing something
 wrong. My solution thus far has been to list each of the non-RequireJs
 modules and their dependencies in the <code>files</code> attribute of
-<code>testacular.conf.js</code>.</p>
-<h3><code>testacular.conf.js</code></h3>
+<code>karma.conf.js</code>.</p>
+<h3><code>karma.conf.js</code></h3>
 <p>The final point is that the RequireJs main module for your test runner
 should be the last file listed.</p>
-<p>So, finally, here is the ‘file’ excerpt of <code>testacular.conf.js</code>:</p>
+<p>So, finally, here is the ‘file’ excerpt of <code>karma.conf.js</code>:</p>
 <pre><code class="language-javascript">files = [
   MOCHA,
   MOCHA_ADAPTER,
@@ -170,7 +170,7 @@ baseUrl has the value of <code>/base/src</code>.</p>
 <p>One of the things I hate is having to update a master list of all
 tests to run every time I add a test. There is no config option for
 this, but there&#39;s an easy way to get around it by filtering the tests
-from the <code>window.__testacular__.files</code> object.
+from the <code>window.__karma__.files</code> object.
 The code is included in the example below and the original suggestion
 came from <a href="https://github.com/karma-runner/karma/pull/236">https://github.com/karma-runner/karma/pull/236</a>.</p>
 <h3>Asynchronously Run Karma</h3>
@@ -178,7 +178,7 @@ came from <a href="https://github.com/karma-runner/karma/pull/236">https://githu
 needs to wait until they’re done (the code is loaded and ready) before
 it starts the tests.</p>
 <p>The main-test.js file ends up looking like this:</p>
-<pre><code class="language-javascript"><span class="keyword">var</span> tests = Object.keys(window.__testacular__.files).filter(<span class="function"><span class="keyword">function</span> <span class="params">(file)</span> {</span>
+<pre><code class="language-javascript"><span class="keyword">var</span> tests = Object.keys(window.__karma__.files).filter(<span class="function"><span class="keyword">function</span> <span class="params">(file)</span> {</span>
   <span class="keyword">return</span> <span class="regexp">/\.test\.js$/</span>.test(file);
 });
 
@@ -192,7 +192,7 @@ require({
   <span class="comment">// ask requirejs to load these files (all our tests)</span>
   deps: tests,
   <span class="comment">// start test run, once requirejs is done</span>
-  callback: window.__testacular__.start
+  callback: window.__karma__.start
 });</code></pre>
 <h2>RequireJs Test in Karma</h2>
 <p>All the setup thus far has been in preparation for the code to follow.
