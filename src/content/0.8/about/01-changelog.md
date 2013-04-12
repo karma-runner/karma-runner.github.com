@@ -1,3 +1,32 @@
+<a name="v0.8.4"></a>
+### v0.8.4 (2013-04-03)
+
+* update angular-scenario.js to v1.1.4 ([2d4ce4a0](https://github.com/karma-runner/karma/commit/2d4ce4a04a10c3e42e45b05debbbea68127343a8))
+
+<a name="v0.8.3"></a>
+### v0.8.3 (2013-04-02)
+
+* fixed hack for log4js to install on Windows
+
+<a name="v0.8.2"></a>
+### v0.8.2 (2013-04-01)
+
+* compatibility with Node 0.10
+
+#### Bug Fixes
+
+* **config:** Check if configFilePath is a string. ([cc12d0d3](https://github.com/karma-runner/karma/commit/cc12d0d3afb8c60b5a7e4e4d58793a322bb0314f))
+
+<a name="v0.8.1"></a>
+### v0.8.1 (2013-03-29)
+
+
+#### Bug Fixes
+
+* **init:** fix enter in "karma init" on Windows ([2516d773](https://github.com/karma-runner/karma/commit/2516d773c579e9209fc1e942bd8d8a5e4f3339b1))
+* **preprocessor:** resolve relative patterns to basePath ([a4c7d193](https://github.com/karma-runner/karma/commit/a4c7d1935fe8fdeea3bdccf8272c79480ff0929e), closes [#382](https://github.com/karma-runner/karma/issues/382))
+* **runner:** send exit code as string ([e53ab79e](https://github.com/karma-runner/karma/commit/e53ab79ecc78271d0e1ea0f08c7338f4586a89fa), closes [#403](https://github.com/karma-runner/karma/issues/403))
+
 <a name="v0.8.0"></a>
 ## v0.8.0 (2013-03-18)
 
