@@ -6,7 +6,7 @@
 <head>
   <!-- Basic Page Needs-->
   <meta charset="utf-8">
-  <title>Karma - Jenkins CI</title>
+  <title>Karma - Semaphore CI</title>
   <!-- Mobile specific Metas-->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="">
@@ -89,54 +89,44 @@
     </header>
     <div class="container clearfix">
       <div class="sixteen columns">
-        <h1 class="page-title">Jenkins CI<a href="https://github.com/karma-runner/karma/edit/master/docs/plus/03-Jenkins-CI.md" data-tooltip="Edit this page on GitHub" class="edit"><i class="icon-edit"></i></a><span class="line"></span>
+        <h1 class="page-title">Semaphore CI<a href="https://github.com/karma-runner/karma/edit/master/docs/plus/08-Semaphore-CI.md" data-tooltip="Edit this page on GitHub" class="edit"><i class="icon-edit"></i></a><span class="line"></span>
         </h1>
       </div>
       <div class="page-columns">
-        <div id="markdown" class="sixteen columns bottom"><p><a href="http://jenkins-ci.org/">Jenkins CI</a> is one of the most popular continuous integration servers
-in the market today. At some point while developing your <a href="http://angularjs.org">AngularJS</a>
-project (hopefully early on), you might want to have automated tests run
-off your code versioning system. Jenkins will help you with this task.
-You can integrate Karma to your Jenkins setup fairly easy and as of
-version 0.3.12, test results can be &quot;pretty printed&quot; into a format
-Jenkins understands (i.e. no need to hunt down failures in the console
-log). This tutorial assumes you have Jenkins already setup and running
-on your CI environment.</p>
-<h2>Install Prerequisites</h2>
-<p>You need the following tools installed on your Jenkins CI server:</p>
-<ul>
-<li>Node</li>
-<li>Karma</li>
-</ul>
-<p>Optional we highly suggest to install the following Jenkins plug-in:
-<a href="https://wiki.jenkins-ci.org/display/JENKINS/EnvInject+Plugin">EnvInject</a> as it makes things easier under certain linux
-distributions and user permissions.</p>
-<h2>Configure Karma</h2>
-<p> Make the following additions and changes to your <code>karma.conf.js</code>
- file as needed:</p>
-<pre><code class="language-javascript">singleRun = <span class="literal">true</span>;
-reporters = [<span class="string">'dots'</span>, <span class="string">'junit'</span>];
-junitReporter = {
-  outputFile: <span class="string">'test-results.xml'</span>
-};</code></pre>
-<p>Please note the <code>test-result.xml</code> file will be output to the present
-working directory (and you will need to tell Jenkins where to find it).</p>
-<h2>Create a new Jenkins Job</h2>
-<p>In Jenkins, start a new job for Angular/Karma with the basic
-settings (Name, description, parameters, source code repo to pull
-from, etc.)</p>
-<h2>Configure the Build Environment</h2>
-<p>First go to the job page and click on configure. Then in the Build
-Environment sub-section, check the “Inject environment
-variables to the build process” checkbox. A few textboxes will
-appear and in the “Properties Content” box set the following:</p>
-<pre><code class="language-bash">$ PATH=/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/bin
-$ PHANTOMJS_BIN=/usr/local/bin/phantomjs <span class="comment">#or wherever PhantomJS happens to be installed</span></code></pre>
-<p>Further down the page, in the Post-build Actions sub-section add a
-<code>Publish JUnit test result report</code> from the Post-build action drop
-down menu. When the textbox labeled Test report XMLs appears, enter
-the path to where the <code>test-results.xml</code> is relative to the root of
-your Jenkins job workspace.</p>
+        <div id="markdown" class="sixteen columns bottom"><p><a href="https://semaphoreapp.com">Semaphore</a> is a popular continuous integration service for
+Ruby developers that <a href="https://semaphoreapp.com/features">integrates</a> with <a href="https://github.com/">GitHub</a>. It also includes
+<a href="http://nodejs.org">Node.js</a>, <a href="http://phantomjs.org/">PhantomJS</a> and headless Firefox in its <a href="http://docs.semaphoreapp.com/version-information">platform</a>,
+making it fit for testing JavaScript applications as well.
+This article assumes you already have a Semaphore account.</p>
+<h2>Configure Your Project</h2>
+<p>If you do not already have a <code>package.json</code> in your project root,
+create one now. This will both document your configuration and
+make it easy to run your tests. Here&#39;s an example:</p>
+<pre><code class="language-javascript"><span class="comment">// ...snip...</span>
+<span class="string">'devDependencies'</span>: {
+  <span class="string">'karma'</span>: <span class="string">'~0.8'</span>
+},
+<span class="comment">// ...snip...</span>
+<span class="string">'scripts'</span>: {
+   <span class="string">'test'</span>: <span class="string">'./node_modules/.bin/karma start --single-run --browsers PhantomJS'</span>
+}
+<span class="comment">// ...snip...</span></code></pre>
+<p>Another option is to use Firefox as your test browser. To do this, change
+the last part to:</p>
+<pre><code class="language-javascript"><span class="string">'scripts'</span>: {
+   <span class="string">'test'</span>: <span class="string">'./node_modules/.bin/karma start --single-run --browsers Firefox'</span>
+}</code></pre>
+<p>Now running <code>npm test</code> within your project will run your tests with Karma.</p>
+<h2>Add Your Project to Semaphore</h2>
+<p>Follow the process as shown in the screencast on the Semaphore homepage.</p>
+<p>After the analysis is finished, ignore the Ruby version Semaphore has set
+for you, choose to customize your build commands and use these:</p>
+<pre><code class="language-bash">npm install
+npm test</code></pre>
+<p>That&#39;s it - proceed to your first build. In case you&#39;re using Firefox as
+your test browser, Semaphore will automatically run it in a virtual screen
+during your builds.</p>
+<p>If necessary, build commands can be <a href="http://docs.semaphoreapp.com/custom-build-commands">customized</a> at any time.</p>
 
         </div>
       </div>
