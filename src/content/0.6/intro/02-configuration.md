@@ -32,4 +32,4 @@ Try `testacular start --help` if you want to see all available options.
 
 
 [test/client/testacular.conf.js]: https://github.com/testacular/testacular/blob/master/test/client/testacular.conf.js
-[configuration file docs]: ../config/configuration_file.html
+[configuration file docs]: ../config/configuration-file.html
