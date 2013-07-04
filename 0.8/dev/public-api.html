@@ -100,7 +100,7 @@ using Karma with <a href="http://gruntjs.com/">Grunt</a> for instance.</p>
 <p>Equivalent of <code>karma start</code>.</p>
 <pre><code class="language-javascript"><span class="keyword">var</span> server = require(<span class="string">'karma'</span>).server;
 server.start({port: <span class="number">9877</span>}, <span class="keyword">function</span>(exitCode) {
-  console.log(<span class="string">'Karma has exitted with '</span> + exitCode);
+  console.log(<span class="string">'Karma has exited with '</span> + exitCode);
   process.exit(exitCode);
 });</code></pre>
 <h2>karma.runner</h2>
@@ -108,7 +108,7 @@ server.start({port: <span class="number">9877</span>}, <span class="keyword">fun
 <p>Equivalent of <code>karma run</code>.</p>
 <pre><code class="language-javascript"><span class="keyword">var</span> runner = require(<span class="string">'karma'</span>).runner;
 runner.run({runnerPort: <span class="number">9100</span>}, <span class="keyword">function</span>(exitCode) {
-  console.log(<span class="string">'Karma has exitted with '</span> + exitCode);
+  console.log(<span class="string">'Karma has exited with '</span> + exitCode);
   process.exit(exitCode);
 });</code></pre>
 
