@@ -1,11 +1,43 @@
 #!/bin/bash
 
-cp -r ../karma/docs/* src/content/0.8/
-cp ../karma/CHANGELOG.md src/content/0.8/about/01-changelog.md
+BRANCH="$1"
+VERSION="$2"
+REMOTE="upstream"
 
-git add src/content/0.8/**/*.md
+if [ -z "$BRANCH" ]; then
+  BRANCH="stable"
+fi
+
+if [ -z "$VERSION" ]; then
+  VERSION="0.10"
+fi
+
+DOCS_REPO=$(cd "$(dirname "$0")"; pwd)
+KARMA_REPO="$DOCS_REPO/../karma"
+
+# checkout the branch in the karma repo
+cd $KARMA_REPO
+git fetch $REMOTE
+git checkout $REMOTE/$BRANCH
+
+# copy the docs source
+cd $DOCS_REPO
+echo "Removing old docs..."
+git rm -rf src/content/$VERSION
+echo "Copying the docs from master repo..."
+mkdir src/content/$VERSION
+cp -r $KARMA_REPO/docs/* $DOCS_REPO/src/content/$VERSION/
+echo "Copying the changelog..."
+cp $KARMA_REPO/CHANGELOG.md $DOCS_REPO/src/content/$VERSION/about/02-changelog.md
+
+# commit sync
+cd $DOCS_REPO
+git add src/content/$VERSION/**/*.md src/content/$VERSION/*.md
 git commit -m "Sync the docs"
 
+# build html and commit
 grunt build
-git add 0.8/**/*.html
+git add $VERSION/**/*.html $VERSION/*.html
 git commit -m "Build"
+
+# git push upstream master
