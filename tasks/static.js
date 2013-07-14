@@ -11,6 +11,7 @@ var fs = require('q-io/fs');
 var namp = require('namp');
 var jade = require('jade');
 
+var semver = require('semver');
 
 
 module.exports = function(grunt) {
@@ -38,6 +39,10 @@ module.exports = function(grunt) {
     var filename = path.split('/').pop();
     return stat.isFile() && !filename.match(/^\./);
   };
+
+  var sortByVersion = function(a, b) {
+    return semver.lt(a + '.0', b + '.0');
+  }
 
 
   // Register Grunt Task
@@ -91,6 +96,7 @@ module.exports = function(grunt) {
               version: version,
               section: section,
               menuTitle: parsed.metadata.menuTitle || menuTitleFromFilename(fileName),
+              showInMenu: parsed.metadata.showInMenu !== 'false',
               pageTitle: parsed.metadata.pageTitle || pageTitleFromFilename(fileName)
             };
           });
@@ -99,13 +105,15 @@ module.exports = function(grunt) {
         // construct the menu tree
         var menu = Object.create(null);
         files.forEach(function(file) {
+          if (!file.showInMenu) return;
+
           menu[file.version] = menu[file.version] || Object.create(null);
           menu[file.version][file.section] = menu[file.version][file.section] || [];
           menu[file.version][file.section].push(file);
         });
 
         // generate and write all the html files
-        var versions = Object.keys(menu).sort();
+        var versions = Object.keys(menu).sort(sortByVersion);
         return q.all(files.map(function(file) {
           var fileUrl = path.join(destination, file.url);
           return q.all([getJadeTpl(file.layout), fs.makeTree(path.dirname(fileUrl))]).then(function(args) {
