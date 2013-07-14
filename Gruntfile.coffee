@@ -25,6 +25,7 @@ module.exports = (grunt) ->
         options:
           base: '.'
           port: 8000
+          keepalive: true
 
     static:
       options:
