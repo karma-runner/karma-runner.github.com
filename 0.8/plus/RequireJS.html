@@ -178,9 +178,14 @@ array we find all our test files.</p>
 <p>Now we can tell Require.js to load our tests, which must be done
 asynchronously as dependencies must be fetched before the tests are run.
 The <code>test/main-test.js</code> file ends up looking like this:</p>
-<pre><code class="language-javascript"><span class="keyword">var</span> tests = Object.keys(window.__karma__.files).filter(<span class="function"><span class="keyword">function</span> <span class="params">(file)</span> {</span>
-      <span class="keyword">return</span> <span class="regexp">/Spec\.js$/</span>.test(file);
-});
+<pre><code class="language-javascript"><span class="keyword">var</span> tests = [];
+<span class="keyword">for</span> (<span class="keyword">var</span> file <span class="keyword">in</span> window.__karma__.files) {
+  <span class="keyword">if</span> (window.__karma__.files.hasOwnProperty(file)) {
+    <span class="keyword">if</span> (<span class="regexp">/Spec\.js$/</span>.test(file)) {
+      tests.push(file);
+    }
+  }
+}
 
 requirejs.config({
     <span class="comment">// Karma serves files from '/base'</span>
