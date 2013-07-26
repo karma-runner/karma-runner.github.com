@@ -97,7 +97,8 @@ module.exports = function(grunt) {
               section: section,
               menuTitle: parsed.metadata.menuTitle || menuTitleFromFilename(fileName),
               showInMenu: parsed.metadata.showInMenu !== 'false',
-              pageTitle: parsed.metadata.pageTitle || pageTitleFromFilename(fileName)
+              pageTitle: parsed.metadata.pageTitle || pageTitleFromFilename(fileName),
+              editButton: parsed.metadata.editButton !== 'false'
             };
           });
         }));

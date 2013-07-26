@@ -25,8 +25,9 @@ include html
           .sixteen.columns
             h1.page-title
               = self.pageTitle
-              a.edit(href='#{self.editUrl}', data-tooltip='Edit this page on GitHub')
-                i.icon-edit
+              if self.editButton
+                a.edit(href='#{self.editUrl}', data-tooltip='Edit this page on GitHub')
+                  i.icon-edit
               span.line
           .page-columns
             #markdown.sixteen.columns.bottom
