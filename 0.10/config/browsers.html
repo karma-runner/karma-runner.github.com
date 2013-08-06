@@ -94,8 +94,8 @@
         </h1>
       </div>
       <div class="page-columns">
-        <div id="markdown" class="sixteen columns bottom"><p>Capturing browsers is kinda boring, so Karma can do that for you.
-Just simply add into the configuration file:</p>
+        <div id="markdown" class="sixteen columns bottom"><p>Capturing browsers on your own is kinda tedious and time consuming,
+so Karma can do that for you. Just simply add into the configuration file:</p>
 <pre><code class="language-javascript">browsers: [<span class="string">'Chrome'</span>]</code></pre>
 <p>Then, Karma will take care of autocapturing these browsers, as well as killing them.</p>
 <div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Most of the browser launchers needs to be loaded as <a href="plugins.html">plugins</a>.
@@ -109,14 +109,26 @@ Just simply add into the configuration file:</p>
 </ul>
 <p>Additional launchers can be loaded through <a href="plugins.html">plugins</a>, such as:</p>
 <ul>
-<li><a href="https://github.com/karma-runner/karma-firefox-launcher">Firefox</a></li>
-<li><a href="https://github.com/karma-runner/karma-safari-launcher">Safari</a></li>
-<li><a href="https://github.com/karma-runner/karma-opera-launcher">Opera</a></li>
-<li><a href="https://github.com/karma-runner/karma-ie-launcher">IE</a></li>
+<li><a href="https://github.com/karma-runner/karma-firefox-launcher">Firefox</a> (install karma-firefox-launcher first)</li>
+<li><a href="https://github.com/karma-runner/karma-safari-launcher">Safari</a> (install karma-safari-launcher first)</li>
+<li><a href="https://github.com/karma-runner/karma-opera-launcher">Opera</a> (install karma-opera-launcher first)</li>
+<li><a href="https://github.com/karma-runner/karma-ie-launcher">IE</a> (install karma-ie-launcher first)</li>
 </ul>
+<p>As mentioned above above, only Chrome and PhantomJS come bundled with Karma. Therefore, to use other browsers naturally,
+simply install the required launcher first using NPM and then assign the browser setting within the configuration file using the <code>browsers</code>.</p>
+<p>Here&#39;s an example of how to add Firefox to your testing suite:</p>
+<pre><code class="language-bash"><span class="comment"># Install it first with NPM</span>
+$ npm install karma-firefox-launcher --save-dev</code></pre>
+<p>And then inside your configuration file...</p>
+<pre><code class="language-javascript">module.exports = <span class="keyword">function</span>(config) {
+  config.set({
+    browsers : [<span class="string">'Chrome'</span>, <span class="string">'Firefox'</span>]
+  });
+};</code></pre>
+<p>Also keep in mind that the <code>browsers</code> configuraiton setting is empty by default.</p>
 <p>Of course, you can write <a href="../dev/plugins.html">custom plugins</a> too!</p>
 <h2>Capturing any browser manually</h2>
-<p>You can also capture browsers by simply opening <code>http://&lt;hostname&gt;:&lt;port&gt;/</code>, where <code>&lt;hostname&gt;</code> is the IP address or hostname of the machine where Karma server is running and <code>&lt;port&gt;</code> is the port where Karma server is listening (by default it&#39;s <code>9876</code>).</p>
+<p>You can also capture browsers by simply opening <code>http://&lt;hostname&gt;:&lt;port&gt;/</code>, where <code>&lt;hostname&gt;</code> is the IP address or hostname of the machine where Karma server is running and <code>&lt;port&gt;</code> is the port where Karma server is listening (by default it&#39;s <code>9876</code>). With the default settings in place, just point your browser to <code>http://localhost:9876/</code>.</p>
 <p>This allows you to capture a browser on any device such as a tablet or a phone, that is on the same network as the machine running Karma (or using a local tunnel).</p>
 <h2>Configured launchers</h2>
 <p>Some of the launchers can be also configured:</p>
@@ -157,9 +169,9 @@ browsers: [<span class="string">'/usr/local/bin/custom-browser.sh'</span>],
 
 <span class="comment">// from cli</span>
 karma start --browsers /usr/local/bin/custom-browser.sh</code></pre>
-<p>The browser scripts need to take one argument, the url with id
-parameter to be used to connect to the server. The supplied id is used
-by the server to determine when the specific browser is captured.</p>
+<p>The browser scripts need to take one argument, which is the URL with the ID
+parameter to be used to connect to the server. The supplied ID is used
+by the server to keep track of which specific browser is captured.</p>
 
         </div>
       </div>

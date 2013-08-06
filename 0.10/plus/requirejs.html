@@ -99,8 +99,7 @@
 <li><code>karma.conf.js</code> &mdash; which configures Karma</li>
 <li><code>test-main.js</code> &mdash; which configures Require.js for the tests</li>
 </ul>
-<p>Let&#39;s say our app has a directory structure which looks something like
-this:</p>
+<p>Let&#39;s imagine our app has a directory structure which looks something like this:</p>
 <pre><code class="language-bash">$ tree
 .
 |-- index.html
@@ -121,8 +120,8 @@ this:</p>
 <p>The first step is creating our <code>karma.conf.js</code>. We can do this from the
 command line:</p>
 <pre><code class="language-bash">$ karma init</code></pre>
-<p>This will give you a series of prompts for things such as paths to
-source and test and which browsers to capture.</p>
+<p>This will give you a series of prompts for things such as paths to the source and test
+files as well as which browsers to capture.</p>
 <p>In this example we&#39;ll use Jasmine, but other test frameworks works just
 as well.</p>
 <p>Choose &quot;yes&quot; for Require.js.</p>
@@ -138,7 +137,7 @@ files we want to load with Require.js. For this example we&#39;ll need:</p>
 <li><code>src/**/*.js</code> &mdash; our source code</li>
 <li><code>test/**/*Spec.js</code> &mdash; all the tests</li>
 </ul>
-<p>And then, for excludes, type <code>src/main.js</code>, as we don&#39;t want to actually
+<p>And then, when excluding files, type in <code>src/main.js</code>, as we don&#39;t want to actually
 start the application in our tests.</p>
 <p>Now your <code>karma.conf.js</code> should include:</p>
 <pre><code class="language-javascript"><span class="comment">// list of files / patterns to load in the browser</span>

@@ -94,15 +94,15 @@
         </h1>
       </div>
       <div class="page-columns">
-        <div id="markdown" class="sixteen columns bottom"><p><strong>In order to serve you well, Karma needs to know about your project.
-That is done through a configuration file.
-This page explains the syntax of the configuration file and all the available options.</strong></p>
+        <div id="markdown" class="sixteen columns bottom"><p><strong>In order to serve you well, Karma needs to know about your project in order to test it
+and this is done via a configuration file. This page explains how to create such a configuration file.</strong></p>
 <div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Most of the framework adapters, reporters, preprocessors and launchers needs to be loaded as <a href="plugins.html">plugins</a>.
 
 
 </div>
-<p>Karma configuration file is written in JavaScript or CoffeeScript and it is loaded as a regular Node.js module.
-It is expected to export a function which accepts one argument - the configuration object:</p>
+<p>The Karma configuration file can be written in JavaScript or CoffeeScript and is loaded as a regular Node.js module.
+Within the configuration file, the configuration code is put together by setting <code>module.exports</code> to point to a function
+which accepts one argument: the configuration object.</p>
 <pre><code class="language-javascript"><span class="comment">// an example karma.conf.js</span>
 module.exports = <span class="keyword">function</span>(config) {
   config.set({
@@ -117,8 +117,9 @@ module.<span class="function"><span class="title">exports</span></span> = (confi
     basePath: <span class="string">'../..'</span>
     frameworks: [<span class="string">'jasmine'</span>]
     <span class="comment"># ...</span></code></pre>
-<p>For an example configuration, see <a href="https://github.com/karma-runner/karma/blob/master/test/client/karma.conf.js">test/client/karma.conf.js</a> which contains most of the available options.</p>
-<p>This document contains a list of all available options, as well as their command line equivalents.</p>
+<p>To see a more detailed example configuration file, see <a href="https://github.com/karma-runner/karma/blob/master/test/client/karma.conf.js">test/client/karma.conf.js</a> which contains most of
+the available configuration options.</p>
+<p>The rest of the document contains a list of all available configuration options...</p>
 <h2>autoWatch</h2>
 <p><strong>Type:</strong> Boolean</p>
 <p><strong>Default:</strong>  <code>false</code></p>
@@ -129,41 +130,40 @@ module.<span class="function"><span class="title">exports</span></span> = (confi
 <p><strong>Type:</strong> Number</p>
 <p><strong>Default:</strong>  <code>250</code></p>
 <p><strong>Description:</strong> When Karma is watching the files for changes, it tries to batch
-multiple changes into a single run. For instance, if you do <code>git checkout</code> you
-don&#39;t want to trigger multiple tests runs. Instead, you wanna wait for all the
-changes and then run the tests once. This tells Karma how long to wait for more
-changes (in ms).</p>
+multiple changes into a single run so that the test runner doesn&#39;t try to start and restart running
+tests more than it should. The configuration setting tells Karma how long to wait (in milliseconds) after any changes
+have occurred before starting the test process again.</p>
 <h2>basePath</h2>
 <p><strong>Type:</strong> String</p>
 <p><strong>Default:</strong> <code>&#39;&#39;</code></p>
-<p><strong>Description:</strong>  Base path, that will be used to resolve all relative
-  paths defined in <code>files</code> and <code>exclude</code>. If <code>basePath</code> is a
-  relative path, it will be resolved to the <code>__dirname</code> of the
-  configuration file.</p>
+<p><strong>Description:</strong> The root path location that will be used to resolve all relative
+paths defined in <code>files</code> and <code>exclude</code>. If the <code>basePath</code> configuration is a
+relative path then it will be resolved to the <code>__dirname</code> of the configuration file.</p>
 <h2>browsers</h2>
 <p><strong>Type:</strong> Array</p>
 <p><strong>Default:</strong>  <code>[]</code></p>
 <p><strong>CLI:</strong> <code>--browsers Chrome,Firefox</code></p>
 <p><strong>Possible Values:</strong></p>
 <ul>
-<li><code>Chrome</code></li>
-<li><code>ChromeCanary</code></li>
-<li><code>PhantomJS</code></li>
+<li><code>Chrome</code> (comes installed with Karma)</li>
+<li><code>ChromeCanary</code> (comes installed with Karma)</li>
+<li><code>PhantomJS</code> (comes installed with Karma)</li>
 <li><code>Firefox</code> (requires karma-firefox-launcher plugin)</li>
 <li><code>Opera</code> (requires karma-opera-launcher plugin)</li>
 <li><code>Safari</code> (requires karma-ie-launcher plugin)</li>
 </ul>
-<p><strong>Description:</strong>
-  A list of browsers to launch and capture. Once Karma is shut down, it will shut down these
-  browsers as well. You can capture any browser manually just by opening a url, where Karma&#39;s
-  web server is listening.</p>
+<p><strong>Description:</strong> A list of browsers to launch and capture. When Karma starts up, it will also start up each browser
+which is placed within this setting.  Once Karma is shut down, it will shut down these
+browsers as well. You can capture any browser manually just by opening the browser and visiting the URL where
+the Karma web server is listening (by default it is <code>http://localhost:9876/</code>).</p>
 <p>See <a href="browsers.html">config/browsers</a> for more. Additional launchers can be defined through <a href="plugins.html">plugins</a>.</p>
 <h2>captureTimeout</h2>
 <p><strong>Type:</strong> Number</p>
 <p><strong>Default:</strong> <code>60000</code></p>
 <p><strong>Description:</strong> Timeout for capturing a browser (in ms).</p>
-<p>If any browser does not get captured within the timeout, Karma will kill it and try to launch
-it again. After three attempts to capture it, Karma will give up.</p>
+<p>The <code>captureTimeout</code> value represents the maximum boot-up time allowed for a browser to start and connect to Karma.
+If any browser does not get captured within the timeout, Karma will kill it and try to launch
+it again and, after three attempts to capture it, Karma will give up.</p>
 <h2>colors</h2>
 <p><strong>Type:</strong> Boolean</p>
 <p><strong>Default:</strong>   <code>true</code></p>
@@ -181,8 +181,9 @@ it again. After three attempts to capture it, Karma will give up.</p>
 <h2>frameworks</h2>
 <p><strong>Type:</strong> Array</p>
 <p><strong>Default:</strong> <code>[]</code></p>
-<p><strong>Description:</strong> List of frameworks you wanna use. Typically, you will set this to <code>[&#39;jasmine&#39;]</code>, <code>[&#39;mocha&#39;]</code> or <code>[&#39;qunit&#39;]</code>.</p>
-<p>Additional frameworks can be loaded through <a href="plugins.html">plugins</a>.</p>
+<p><strong>Description:</strong> List of frameworks you want to use. Typically, you will set this to <code>[&#39;jasmine&#39;]</code>, <code>[&#39;mocha&#39;]</code> or <code>[&#39;qunit&#39;]</code>...</p>
+<p>Please note just about all frameworks in Karma require an additional plugin/framework library to be installed (via NPM).</p>
+<p>Additional information can be found in <a href="plugins.html">plugins</a>.</p>
 <h2>hostname</h2>
 <p><strong>Type:</strong> String</p>
 <p><strong>Default:</strong> <code>&#39;localhost&#39;</code></p>
@@ -208,7 +209,10 @@ it again. After three attempts to capture it, Karma will give up.</p>
 <h2>plugins</h2>
 <p><strong>Type:</strong> Array</p>
 <p><strong>Default:</strong> <code>[&#39;karma-*&#39;]</code></p>
-<p><strong>Description:</strong> List of plugins to load. A plugin can be a string (in which case it will be required by Karma) or an inlined plugin - Object. By default, Karma loads all siblink modules, that match <code>karma-*</code>. See <a href="plugins.html">plugins</a> for more information.</p>
+<p><strong>Description:</strong> List of plugins to load. A plugin can be a string (in which case it will be required by Karma) or an inlined plugin - Object.
+By default, Karma loads all siblink modules, that match <code>karma-*</code>.</p>
+<p>Please note just about all plugins in Karma require an additional library to be installed (via NPM).</p>
+<p>See <a href="plugins.html">plugins</a> for more information.</p>
 <h2>port</h2>
 <p><strong>Type:</strong> Number</p>
 <p><strong>Default:</strong> <code>9876</code></p>
@@ -218,7 +222,10 @@ it again. After three attempts to capture it, Karma will give up.</p>
 <p><strong>Type:</strong> Object</p>
 <p><strong>Default:</strong> <code>{&#39;**/*.coffee&#39;: &#39;coffee&#39;}</code></p>
 <p><strong>Description:</strong> A map of preprocessors to use.</p>
-<p>Preprocessors can be loaded through <a href="plugins.html">plugins</a>. See <a href="preprocessors.html">config/preprocessors</a> for more.</p>
+<p>Preprocessors can be loaded through <a href="plugins.html">plugins</a>. </p>
+<p>Please note just about all preprocessors in Karma (other than CoffeeScript and some other defaults)
+require an additional library to be installed (via NPM).</p>
+<p>Click <a href="preprocessors.html">here</a> for more information.</p>
 <h2>proxies</h2>
 <p><strong>Type:</strong> Object</p>
 <p><strong>Default:</strong>   <code>{}</code></p>
@@ -231,12 +238,12 @@ it again. After three attempts to capture it, Karma will give up.</p>
 <h2>proxyValidateSSL</h2>
 <p><strong>Type:</strong> Boolean</p>
 <p><strong>Default:</strong>   <code>true</code></p>
-<p><strong>Description:</strong> Should https proxies error on invalid SSL certificate?</p>
+<p><strong>Description:</strong> Whether or not karma or any browsers should raise an error when an inavlid SSL certificate is found.</p>
 <h2>reportSlowerThan</h2>
 <p><strong>Type:</strong> Number</p>
 <p><strong>Default:</strong> <code>0</code></p>
 <p><strong>Description:</strong> Karma will report all the tests that are slower than given time limit (in ms).
-This is disabled by default.</p>
+This is disabled by default (since the default value is 0).</p>
 <h2>reporters</h2>
 <p><strong>Type:</strong> Array</p>
 <p><strong>Default:</strong> <code>[&#39;progress&#39;]</code></p>
@@ -248,17 +255,20 @@ This is disabled by default.</p>
 </ul>
 <p><strong>Description:</strong> A list of reporters to use.</p>
 <p>Additional reporters, such as <code>growl</code>, <code>junit</code>, <code>teamcity</code> or <code>coverage</code> can be loaded through <a href="plugins.html">plugins</a>.</p>
+<p>Please note just about all additional reporters in Karma (other than progress) require an additional library to be installed (via NPM).</p>
 <h2>singleRun</h2>
 <p><strong>Type:</strong> Boolean</p>
 <p><strong>Default:</strong> <code>false</code></p>
 <p><strong>CLI:</strong> <code>--single-run</code>, <code>no-single-run</code></p>
 <p><strong>Description:</strong> Continuous Integration mode.</p>
-<p>If <code>true</code>, it captures browsers, runs tests and exits with <code>0</code> exit code (if all tests passed) or
-<code>1</code> exit code (if any test failed).</p>
+<p>If <code>true</code>, Karma will start and capture all configured browsers, run tests and then exit with an exit code of <code>0</code> or <code>1</code> depending
+on whether all tests passed or any tests failed.</p>
 <h2>transports</h2>
 <p><strong>Type:</strong> Array</p>
 <p><strong>Default:</strong> <code>[&#39;websocket&#39;, &#39;flashsocket&#39;, &#39;xhr-polling&#39;, &#39;jsonp-polling&#39;]</code></p>
-<p><strong>Description:</strong> An array of allowed transport methods between the server and the client. This is configuration of <a href="https://github.com/LearnBoost/Socket.IO/wiki/Configuring-Socket.IO">socket.io</a>.</p>
+<p><strong>Description:</strong> An array of allowed transport methods between the browser and testing server. This configuration setting
+is handed off to <a href="https://github.com/LearnBoost/Socket.IO/wiki/Configuring-Socket.IO">socket.io</a> (which manages the communication
+between browsers and the testing server).</p>
 <h2>urlRoot</h2>
 <p><strong>Type:</strong> String</p>
 <p><strong>Default:</strong> <code>&#39;/&#39;</code></p>

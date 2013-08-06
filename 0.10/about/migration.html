@@ -95,9 +95,14 @@
       </div>
       <div class="page-columns">
         <div id="markdown" class="sixteen columns bottom"><p>The good thing is that you don&#39;t have to migrate everything at once. You can keep the global Karma and update project by project.</p>
-<p>Let&#39;s get started:</p>
-<pre><code class="language-bash">cd &lt;path-to-your-project&gt;
-npm install karma</code></pre>
+<p>Let&#39;s get started...</p>
+<p>First upgrade your local or global install of Karma via the command line using NPM.</p>
+<pre><code class="language-bash"><span class="comment"># upgrade local install...</span>
+cd &lt;path-to-your-project&gt;
+npm install karma
+
+<span class="comment"># or upgrade global install...</span>
+sudo npm install -g karma</code></pre>
 <h2>Plugins</h2>
 <p>All the frameworks, reporters, preprocessors and browser launchers are now separate plugins. Here is a list of all of them including related plugins. So install all the plugins you need:</p>
 <pre><code class="language-bash">npm install karma-&lt;plugin name&gt; --save-dev</code></pre>

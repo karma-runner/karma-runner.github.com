@@ -96,7 +96,7 @@
       <div class="page-columns">
         <div id="markdown" class="sixteen columns bottom"><p>Preprocessors in Karma allow you to do some work with your files before
 they get served to the browser. The configuration of these happens in the <code>preprocessors</code> block
-in the configuration file:</p>
+within the configuration file:</p>
 <pre><code class="language-javascript">preprocessors: {
   <span class="string">'**/*.coffee'</span>: [<span class="string">'coffee'</span>],
   <span class="string">'**/*.html'</span>: [<span class="string">'html2js'</span>]
@@ -116,6 +116,19 @@ in the configuration file:</p>
 <li><a href="https://github.com/karma-runner/karma-ng-html2js-preprocessor">ng-html2js</a></li>
 <li><a href="https://github.com/karma-runner/karma-ember-preprocessor">ember</a></li>
 </ul>
+<p>As mentioned above above, only the coffee and html2j preprocessors come bundled with Karma. Therefore, to use additional preprocessors,
+simply install the required NPM library first and the installed preprocessor can be used regularly.</p>
+<p>Here&#39;s an example of how to add the coverage preprocessor to your testing suite:</p>
+<pre><code class="language-bash"><span class="comment"># Install it first with NPM</span>
+$ npm install karma-coverage --save-dev&lt;/code&gt;&lt;/pre&gt;</code></pre>
+<p>And then inside your configuration file...</p>
+<pre><code class="language-javascript">module.exports = <span class="keyword">function</span>(config) {
+  config.set({
+    preprocessors: {
+      <span class="string">'**/*.js'</span>: [<span class="string">'coverage'</span>]
+    }
+  });
+};</code></pre>
 <p>Of course, you can write <a href="../dev/plugins.html">custom plugins</a> too!</p>
 <h2>Configured Preprocessors</h2>
 <p>Some of the preprocessors can be also configured:</p>
@@ -136,9 +149,9 @@ in the configuration file:</p>
 the <code>files</code> configuration.</p>
 <ul>
 <li>First the file paths are expanded to an absolute path, based on the
-<code>basePath</code> config and the directory of the configuration file. See
+<code>basePath</code> configuration and the directory of the configuration file. See
 <a href="files.html">files</a> for more information on that.</li>
-<li>Second this expanded path is matched using <a href="https://github.com/isaacs/minimatch">minimatch</a> against the
+<li>Then the newly expanded path is matched using <a href="https://github.com/isaacs/minimatch">minimatch</a> against the
 specified key.</li>
 </ul>
 <p>So for example the path <code>/my/absolute/path/to/test/unit/file.coffee</code> matched against
