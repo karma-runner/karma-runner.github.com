@@ -27,7 +27,7 @@ Here's an example of how to add Firefox to your testing suite:
 
 ```bash
 # Install it first with NPM
-$ npm install karma-firefox-launcher --save-dev</code></pre>
+$ npm install karma-firefox-launcher --save-dev
 ```
 
 And then inside your configuration file...
