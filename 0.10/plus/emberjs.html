@@ -34,44 +34,44 @@
               <li><a href="javascript:void" class="">intro</a>
                 <ul>
                   <li><a href="/0.10/intro/installation.html">Installation</a></li>
-                  <li><a href="/0.10/intro/faq.html">FAQ</a></li>
                   <li><a href="/0.10/intro/configuration.html">Configuration</a></li>
                   <li><a href="/0.10/intro/how-it-works.html">How It Works</a></li>
+                  <li><a href="/0.10/intro/faq.html">FAQ</a></li>
                 </ul>
               </li>
               <li><a href="javascript:void" class="">config</a>
                 <ul>
+                  <li><a href="/0.10/config/configuration-file.html">Configuration File</a></li>
+                  <li><a href="/0.10/config/files.html">Files</a></li>
+                  <li><a href="/0.10/config/browsers.html">Browsers</a></li>
                   <li><a href="/0.10/config/preprocessors.html">Preprocessors</a></li>
                   <li><a href="/0.10/config/plugins.html">Plugins</a></li>
-                  <li><a href="/0.10/config/configuration-file.html">Configuration File</a></li>
-                  <li><a href="/0.10/config/browsers.html">Browsers</a></li>
-                  <li><a href="/0.10/config/files.html">Files</a></li>
                 </ul>
               </li>
               <li><a href="javascript:void" class="active">plus</a>
                 <ul>
-                  <li><a href="/0.10/plus/yeoman.html">Yeoman</a></li>
-                  <li><a href="/0.10/plus/angularjs.html">AngularJS</a></li>
-                  <li><a href="/0.10/plus/cloud9.html">Cloud9</a></li>
-                  <li><a href="/0.10/plus/emberjs.html">Ember.js</a></li>
-                  <li><a href="/0.10/plus/semaphore.html">Semaphore CI</a></li>
-                  <li><a href="/0.10/plus/jenkins.html">Jenkins CI</a></li>
                   <li><a href="/0.10/plus/requirejs.html">RequireJS</a></li>
                   <li><a href="/0.10/plus/travis.html">Travis CI</a></li>
+                  <li><a href="/0.10/plus/jenkins.html">Jenkins CI</a></li>
+                  <li><a href="/0.10/plus/semaphore.html">Semaphore CI</a></li>
+                  <li><a href="/0.10/plus/cloud9.html">Cloud9</a></li>
+                  <li><a href="/0.10/plus/angularjs.html">AngularJS</a></li>
+                  <li><a href="/0.10/plus/yeoman.html">Yeoman</a></li>
+                  <li><a href="/0.10/plus/emberjs.html">Ember.js</a></li>
                 </ul>
               </li>
               <li><a href="javascript:void" class="">dev</a>
                 <ul>
                   <li><a href="/0.10/dev/public-api.html">Public Api</a></li>
-                  <li><a href="/0.10/dev/contributing.html">Contributing</a></li>
                   <li><a href="/0.10/dev/plugins.html">Plugins</a></li>
+                  <li><a href="/0.10/dev/contributing.html">Contributing</a></li>
                 </ul>
               </li>
               <li><a href="javascript:void" class="">about</a>
                 <ul>
+                  <li><a href="/0.10/about/versioning.html">Versioning</a></li>
                   <li><a href="/0.10/about/changelog.html">Changelog</a></li>
                   <li><a href="/0.10/about/migration.html">Migration</a></li>
-                  <li><a href="/0.10/about/versioning.html">Versioning</a></li>
                 </ul>
               </li>
               <li><a href="javascript:void">v0.10</a>
@@ -100,56 +100,53 @@
 <li><p><a href="../intro/installation.html">install karma</a></p>
 </li>
 <li><p>install the qunit plugin</p>
-<p> npm install karma-qunit --save-dev</p>
+<pre><code class="language-bash">npm install karma-qunit --save-dev</code></pre>
 </li>
 <li><p>install the ember preprocessor plugin</p>
-<p> npm install karma-ember-preprocessor --save-dev</p>
+<pre><code class="language-bash">npm install karma-ember-preprocessor --save-dev</code></pre>
 </li>
 <li><p>genenerate a configuration file for karma</p>
-<p> karma init</p>
-</li>
-</ol>
+<pre><code class="language-bash">karma init</code></pre>
 <p>note -the above will walk you through the basic setup. An example configuration file that works with ember.js/qunit and phantomjs is below</p>
-<p>```javascript
-module.exports = function(config) {
-  config.set({</p>
-<pre><code><span class="attribute">basePath</span>: <span class="string">'js',</span>
+<pre><code class="language-javascript">module.exports = <span class="keyword">function</span>(config) {
+ config.set({
+   basePath: <span class="string">'js'</span>,
 
-<span class="vbscript">files: [
-  <span class="comment">'vendor/jquery/jquery.min.js',</span>
-  <span class="comment">'vendor/handlebars/handlebars.js',</span>
-  <span class="comment">'vendor/ember/ember.js',</span>
-  <span class="comment">'app.js',</span>
-  <span class="comment">'tests/*.js',</span>
-  <span class="comment">'templates/*.handlebars'</span>
-],
+   files: [
+     <span class="string">'vendor/jquery/jquery.min.js'</span>,
+     <span class="string">'vendor/handlebars/handlebars.js'</span>,
+     <span class="string">'vendor/ember/ember.js'</span>,
+     <span class="string">'app.js'</span>,
+     <span class="string">'tests/*.js'</span>,
+     <span class="string">'templates/*.handlebars'</span>
+   ],
 
-browsers: [<span class="comment">'PhantomJS'],</span>
-singleRun: <span class="literal">true</span>,
-autoWatch: <span class="literal">false</span>,
+   browsers: [<span class="string">'PhantomJS'</span>],
+   singleRun: <span class="literal">true</span>,
+   autoWatch: <span class="literal">false</span>,
 
-frameworks: [<span class="comment">'qunit'],</span>
+   frameworks: [<span class="string">'qunit'</span>],
 
-plugins: [
-  <span class="comment">'karma-qunit',</span>
-  <span class="comment">'karma-ember-preprocessor',</span>
-  <span class="comment">'karma-phantomjs-launcher'</span>
-],
+   plugins: [
+     <span class="string">'karma-qunit'</span>,
+     <span class="string">'karma-ember-preprocessor'</span>,
+     <span class="string">'karma-phantomjs-launcher'</span>
+   ],
 
-preprocessors: {
-  <span class="comment">'**/*.handlebars': 'ember'</span>
-}</span></code></pre>
-<p>  });
-};</p>
+   preprocessors: {
+     <span class="string">'**/*.handlebars'</span>: <span class="string">'ember'</span>
+   }
+ });
+};</code></pre>
 <p>Note - the <code>files</code> section above should include all dependencies, ie- jQuery/handlebars/ember.js along with the js and handlebars files required to deploy and run your production ember.js application</p>
-<ol>
+</li>
 <li><p>add a simple qunit test</p>
-<p> test(&#39;one should equal one&#39;, function() {</p>
-<pre><code> <span class="keyword">equal</span>(<span class="number">1</span>, <span class="number">1</span>, '<span class="keyword">error</span>: one did <span class="keyword">not</span> <span class="keyword">equal</span> one');</code></pre>
-<p> });</p>
+<pre><code class="language-javascript">test(<span class="string">'one should equal one'</span>, <span class="keyword">function</span>() {
+   equal(<span class="number">1</span>, <span class="number">1</span>, <span class="string">'error: one did not equal one'</span>);
+});</code></pre>
 </li>
 <li><p>run the tests with karma from the command line</p>
-<p> karma start</p>
+<pre><code class="language-bash">karma start</code></pre>
 </li>
 </ol>
 <p>A simple unit / integration tested example app showing karma / qunit / ember in action can be found <a href="https://github.com/toranb/ember-testing-example">here</a></p>
