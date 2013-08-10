@@ -41,4 +41,4 @@ grunt build
 git add $VERSION/**/*.html $VERSION/*.html
 git commit -m "Build"
 
-# git push upstream master
+git push upstream HEAD:master
