@@ -10,7 +10,6 @@ var q = require('q');
 var fs = require('q-io/fs');
 var namp = require('namp');
 var jade = require('jade');
-
 var semver = require('semver');
 
 
@@ -42,15 +41,14 @@ module.exports = function(grunt) {
 
   var sortByVersion = function(a, b) {
     return semver.lt(a + '.0', b + '.0');
-  }
+  };
 
 
   // Register Grunt Task
-  grunt.registerMultiTask('static', 'Generate a static homepage', function(){
+  grunt.registerMultiTask('static', 'Generate a static homepage', function() {
 
     // Async Task
     var done = this.async();
-
     var options = this.options({});
     var template = options.template;
 
@@ -63,13 +61,13 @@ module.exports = function(grunt) {
         var tplFileName = path.join(template, name + '.jade');
 
         tplCache[name] = fs.read(tplFileName).then(function(content) {
-          return jade.compile(content, {filename: tplFileName, cache: true, pretty: true}); 
+          return jade.compile(content, {filename: tplFileName, cache: true, pretty: true});
         });
       }
       return tplCache[name];
     };
 
-    this.files.forEach(function(f){
+    this.files.forEach(function(f) {
 
       // Options
       var source = f.src[0];
@@ -119,7 +117,7 @@ module.exports = function(grunt) {
           var fileUrl = path.join(destination, file.url);
           return q.all([getJadeTpl(file.layout), fs.makeTree(path.dirname(fileUrl))]).then(function(args) {
             var jadeTpl = args[0];
-            
+
             return fs.write(fileUrl, jadeTpl({
               versions: versions,
               menu: menu[file.version],
