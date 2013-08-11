@@ -79,7 +79,7 @@ module.exports = function(grunt) {
 
       // Read all the markdown files
       fs.listTree(source, filterOnlyFiles).then(function(files) {
-        return q.all(files.map(function(filePath) {
+        return q.all(files.sort().map(function(filePath) {
           return fs.read(filePath).then(function(content) {
             var parts = filePath.substr(source.length).replace(/^\//, '').split('/');
             var fileName = parts.pop();
