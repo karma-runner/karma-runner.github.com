@@ -109,6 +109,8 @@ use Karma with <a href="https://github.com/karma-runner/karma-ng-scenario">karma
 <h3>Which version of Karma should I use ?</h3>
 <p>The latest stable version from NPM (<code>npm install karma</code>). See <a href="../about/versioning.html">versioning</a> for more.
 Please use the latest stable version found via NPM (<code>npm install karma</code>). See <a href="../about/versioning.html">versioning</a> for more detailed information.</p>
+<h3>Which version of Node.js does Karma run with ?</h3>
+<p>In general, the two latest stable versions. That means <code>0.8</code> and <code>0.10</code> at this point.</p>
 <h3>The browser does not start.</h3>
 <h3>The browser just does not start. What&#39;s going on?</h3>
 <p>It&#39;s more likely Karma can&#39;t find the location of the browser binary (the execution file). You can fix this by setting
@@ -122,6 +124,8 @@ the web inspector is open.)</p>
 <p>The patterns in the <code>preprocessors</code> configuration setting are resolved via the <code>basePath</code> setting.
 See preprocessors for more information. You can also turn on debug logging (use <code>--log-level debug</code> when starting Karma)
 and Karma will display which files are preprocessed.</p>
+<h3>I&#39;m getting a <code>npm ERR! peerinvalid Peer</code> error. How can I fix that ?</h3>
+<p>Try to remove <code>karma</code> and <code>karma-*</code> modules from your <code>node_modules</code> first (for instance <code>rm -rf /usr/local/lib/node_modules/karma-*</code>), than install Karma again.</p>
 
         </div>
       </div>
