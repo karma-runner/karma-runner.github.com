@@ -13,7 +13,7 @@ Karma can be extended through plugins. A plugin is essentially an NPM module. Ty
 - use NPM keywords `karma-plugin`, `karma-reporter`
 
 ## Launchers
-- example plugins: [karma-chroma-launcher], [karma-sauce-launcher]
+- example plugins: [karma-chrome-launcher], [karma-sauce-launcher]
 - use naming convention is `karma-*-launcher`
 - use NPM keywords `karma-plugin`, `karma-launcher`
 
