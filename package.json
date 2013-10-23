@@ -27,5 +27,13 @@
     "url": "https://github.com/karma-runner/karma-runner.github.com.git"
   },
   "author": "Friedel Ziegelmayer",
-  "license": "MIT"
+  "license": "MIT",
+  "contributors": [
+    "Friedel Ziegelmayer <friedel.ziegelmayer@gmail.com>",
+    "Brian Ford <btford@umich.edu>",
+    "elumalai <elumalais@gmail.com>",
+    "isyiwang <isaacwang@gmail.com>",
+    "Tim Schaub <tim.schaub@gmail.com>",
+    "Matias Niemelä <matias@yearofmoo.com>"
+  ]
 }
