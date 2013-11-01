@@ -221,7 +221,7 @@ if you are using <code>karma run</code> with custom <code>--runer-port</code>, p
 <li>please update your karma.conf.js as follows (<a href="https://github.com/karma-runner/karma/commit/d2a3c8546dc4b10bb9194047a1c11963639f3730">d2a3c854</a>):</li>
 </ul>
 <pre><code class="language-javascript"><span class="comment">// before:</span>
-module.exports = <span class="keyword">function</span>(karma) {
+module.exports = <span class="function"><span class="keyword">function</span><span class="params">(karma)</span> {</span>
   karma.configure({port: <span class="number">123</span>});
   karma.defineLauncher(<span class="string">'x'</span>, <span class="string">'Chrome'</span>, {
     flags: [<span class="string">'--disable-web-security'</span>]
@@ -235,7 +235,7 @@ module.exports = <span class="keyword">function</span>(karma) {
 };
 
 <span class="comment">// after:</span>
-module.exports = <span class="keyword">function</span>(config) {
+module.exports = <span class="function"><span class="keyword">function</span><span class="params">(config)</span> {</span>
   config.set({
     port: <span class="number">123</span>,
     customLaunchers: {
@@ -297,7 +297,7 @@ module.exports = <span class="keyword">function</span>(config) {
 <ul>
 <li>Update your karma.conf.js to export a config function (<a href="https://github.com/karma-runner/karma/commit/a37fd6f7d28036b8da5fe98634cf711cebafc1ff">a37fd6f7</a>):</li>
 </ul>
-<pre><code class="language-javascript">module.exports = <span class="keyword">function</span>(karma) {
+<pre><code class="language-javascript">module.exports = <span class="function"><span class="keyword">function</span><span class="params">(karma)</span> {</span>
   karma.configure({
     autoWatch: <span class="literal">true</span>,
     <span class="comment">// ...</span>

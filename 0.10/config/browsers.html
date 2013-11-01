@@ -121,7 +121,7 @@ simply install the required launcher first using NPM and then assign the browser
 <pre><code class="language-bash"><span class="comment"># Install it first with NPM</span>
 $ npm install karma-firefox-launcher --save-dev</code></pre>
 <p>And then inside your configuration file...</p>
-<pre><code class="language-javascript">module.exports = <span class="keyword">function</span>(config) {
+<pre><code class="language-javascript">module.exports = <span class="function"><span class="keyword">function</span><span class="params">(config)</span> {</span>
   config.set({
     browsers : [<span class="string">'Chrome'</span>, <span class="string">'Firefox'</span>]
   });
@@ -153,13 +153,13 @@ $ npm install karma-firefox-launcher --save-dev</code></pre>
 You can override these settings by <code>&lt;BROWSER&gt;_BIN</code> ENV variable, or alternatively by creating a <code>symlink</code>.</p>
 <h3>POSIX shells</h3>
 <pre><code class="language-bash"><span class="comment"># Changing the path to the Chrome binary</span>
-$ export CHROME_BIN=/usr/local/bin/my-chrome-build
+$ <span class="keyword">export</span> CHROME_BIN=/usr/local/bin/my-chrome-build
 
 <span class="comment"># Changing the path to the Chrome Canary binary</span>
-$ export CHROME_CANARY_BIN=/usr/local/bin/my-chrome-build
+$ <span class="keyword">export</span> CHROME_CANARY_BIN=/usr/local/bin/my-chrome-build
 
 <span class="comment"># Changing the path to the PhantomJs binary</span>
-$ export PHANTOMJS_BIN=<span class="variable">$HOME</span>/local/bin/phantomjs</code></pre>
+$ <span class="keyword">export</span> PHANTOMJS_BIN=<span class="variable">$HOME</span>/local/bin/phantomjs</code></pre>
 <h3>Windows cmd.exe</h3>
 <pre><code class="language-bash">C:&gt; SET IE_BIN=C:\Program Files\Internet Explorer\iexplore.exe</code></pre>
 <h3>Windows Powershell</h3>

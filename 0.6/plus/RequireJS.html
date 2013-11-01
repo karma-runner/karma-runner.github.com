@@ -207,7 +207,7 @@ asynchronous callback to avoid this error:</p>
 <pre><code class="language-bash">Uncaught Error: Module name “../node_modules/chai/chai” has not been loaded yet <span class="keyword">for</span> context: _. Use require([])</code></pre>
 <p>And finally, <code>should()</code> must be invoked to be available in the test.</p>
 <p>So, a simple test will look like:</p>
-<pre><code class="language-javascript">define([<span class="string">'../node_modules/chai/chai'</span>, <span class="string">'MyModule'</span>], <span class="keyword">function</span>(chai, MyModule) {
+<pre><code class="language-javascript">define([<span class="string">'../node_modules/chai/chai'</span>, <span class="string">'MyModule'</span>], <span class="function"><span class="keyword">function</span><span class="params">(chai, MyModule)</span> {</span>
 
   <span class="keyword">var</span> should = chai.should();
 
