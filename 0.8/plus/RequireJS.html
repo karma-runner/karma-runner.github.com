@@ -115,7 +115,7 @@ this:</p>
     |-- appSpec.js
     `-- test-main.js
 
-3 directories, 9 files</code></pre>
+<span class="number">3</span> directories, <span class="number">9</span> files</code></pre>
 <h2>Configure Karma</h2>
 <p>The first step is creating our <code>karma.conf.js</code>. We can do this from the
 command line:</p>
@@ -213,11 +213,11 @@ requirejs.config({
 <p>Tests can now be written as regular Require.js modules. We wrap
 everything in <code>define</code>, and inside we can use the regular test methods,
 such as <code>describe</code> and <code>it</code>. Example:</p>
-<pre><code class="language-javascript">define([<span class="string">'app'</span>, <span class="string">'jquery'</span>, <span class="string">'underscore'</span>], <span class="keyword">function</span>(App, $, _) {
+<pre><code class="language-javascript">define([<span class="string">'app'</span>, <span class="string">'jquery'</span>, <span class="string">'underscore'</span>], <span class="function"><span class="keyword">function</span><span class="params">(App, $, _)</span> {</span>
 
-    describe(<span class="string">'just checking'</span>, <span class="keyword">function</span>() {
+    describe(<span class="string">'just checking'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
 
-        it(<span class="string">'works for app'</span>, <span class="keyword">function</span>() {
+        it(<span class="string">'works for app'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
             <span class="keyword">var</span> el = $(<span class="string">'&lt;div&gt;&lt;/div&gt;'</span>);
 
             <span class="keyword">var</span> app = <span class="keyword">new</span> App(el);
@@ -226,7 +226,7 @@ such as <code>describe</code> and <code>it</code>. Example:</p>
             expect(el.text()).toEqual(<span class="string">'require.js up and running'</span>);
         });
 
-        it(<span class="string">'works for underscore'</span>, <span class="keyword">function</span>() {
+        it(<span class="string">'works for underscore'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
             <span class="comment">// just checking that _ works</span>
             expect(_.size([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])).toEqual(<span class="number">3</span>);
         });

@@ -99,7 +99,7 @@ using Testacular with <a href="http://gruntjs.com/">Grunt</a> for instance.</p>
 <h3><strong>server.start(options, [callback=process.exit])</strong></h3>
 <p>Equivalent of <code>testacular start</code>.</p>
 <pre><code class="language-javascript"><span class="keyword">var</span> server = require(<span class="string">'testacular'</span>).server;
-server.start({port: <span class="number">9877</span>}, <span class="keyword">function</span>(exitCode) {
+server.start({port: <span class="number">9877</span>}, <span class="function"><span class="keyword">function</span><span class="params">(exitCode)</span> {</span>
   console.log(<span class="string">'Testacular has exitted with '</span> + exitCode);
   process.exit(exitCode);
 });</code></pre>
@@ -107,7 +107,7 @@ server.start({port: <span class="number">9877</span>}, <span class="keyword">fun
 <h3><strong>runner.run(options, [callback=process.exit])</strong></h3>
 <p>Equivalent of <code>testacular run</code>.</p>
 <pre><code class="language-javascript"><span class="keyword">var</span> runner = require(<span class="string">'testacular'</span>).runner;
-runner.run({runnerPort: <span class="number">9100</span>}, <span class="keyword">function</span>(exitCode) {
+runner.run({runnerPort: <span class="number">9100</span>}, <span class="function"><span class="keyword">function</span><span class="params">(exitCode)</span> {</span>
   console.log(<span class="string">'Testacular has exitted with '</span> + exitCode);
   process.exit(exitCode);
 });</code></pre>

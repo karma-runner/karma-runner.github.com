@@ -123,7 +123,7 @@ simply install the required NPM library first and the installed preprocessor can
 <pre><code class="language-bash"><span class="comment"># Install it first with NPM</span>
 $ npm install karma-coverage --save-dev</code></pre>
 <p>And then inside your configuration file...</p>
-<pre><code class="language-javascript">module.exports = <span class="keyword">function</span>(config) {
+<pre><code class="language-javascript">module.exports = <span class="function"><span class="keyword">function</span><span class="params">(config)</span> {</span>
   config.set({
     preprocessors: {
       <span class="string">'**/*.js'</span>: [<span class="string">'coverage'</span>]

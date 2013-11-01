@@ -108,7 +108,7 @@
 <li><p>genenerate a configuration file for karma</p>
 <pre><code class="language-bash">karma init</code></pre>
 <p>note -the above will walk you through the basic setup. An example configuration file that works with ember.js/qunit and phantomjs is below</p>
-<pre><code class="language-javascript">module.exports = <span class="keyword">function</span>(config) {
+<pre><code class="language-javascript">module.exports = <span class="function"><span class="keyword">function</span><span class="params">(config)</span> {</span>
  config.set({
    basePath: <span class="string">'js'</span>,
 
@@ -141,7 +141,7 @@
 <p>Note - the <code>files</code> section above should include all dependencies, ie- jQuery/handlebars/ember.js along with the js and handlebars files required to deploy and run your production ember.js application</p>
 </li>
 <li><p>add a simple qunit test</p>
-<pre><code class="language-javascript">test(<span class="string">'one should equal one'</span>, <span class="keyword">function</span>() {
+<pre><code class="language-javascript">test(<span class="string">'one should equal one'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
    equal(<span class="number">1</span>, <span class="number">1</span>, <span class="string">'error: one did not equal one'</span>);
 });</code></pre>
 </li>
