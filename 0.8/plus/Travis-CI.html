@@ -103,8 +103,8 @@ already have Travis account.</p>
 <h2>Configure Travis</h2>
 <p>Create a file in your project root called <code>.travis.yml</code> with the
 following YAML content:</p>
-<pre><code class="language-ruby"><span class="symbol">language:</span> node_js
-<span class="symbol">node_js:</span>
+<pre><code class="language-ruby"><span class="identifier">language</span><span class="symbol">:</span> <span class="identifier">node_js</span>
+<span class="identifier">node_js</span><span class="symbol">:</span>
   - <span class="number">0</span>.<span class="number">8</span></code></pre>
 <h2>Setup a Test Command</h2>
 <p>If you do not already have a <code>package.json</code> in your project root
@@ -126,12 +126,12 @@ about like Karma.</p>
 <p>Travis supports running a real browser (Firefox) with a virtual
 screen. Just update your <code>.travis.yml</code> to set up the virtual screen
 like this:</p>
-<pre><code class="language-ruby"><span class="symbol">language:</span> node_js
-<span class="symbol">node_js:</span>
+<pre><code class="language-ruby"><span class="identifier">language</span><span class="symbol">:</span> <span class="identifier">node_js</span>
+<span class="identifier">node_js</span><span class="symbol">:</span>
   - <span class="number">0</span>.<span class="number">8</span>
-<span class="symbol">before_script:</span>
-  - export <span class="constant">DISPLAY</span>=<span class="symbol">:</span><span class="number">99.0</span>
-  - sh -e /etc/init.d/xvfb start</code></pre>
+<span class="identifier">before_script</span><span class="symbol">:</span>
+  - <span class="identifier">export</span> <span class="constant">DISPLAY</span>=<span class="symbol">:</span><span class="number">99.0</span>
+  - <span class="identifier">sh</span> -<span class="identifier">e</span> /<span class="identifier">etc</span>/<span class="identifier">init</span>.<span class="identifier">d</span>/<span class="identifier">xvfb</span> <span class="identifier">start</span></code></pre>
 <p>And now, you can run your tests on Firefox, just change the <code>npm test</code>
 command to</p>
 <pre><code class="language-bash">./node_modules/.bin/karma start --browsers Firefox --single-run</code></pre>
