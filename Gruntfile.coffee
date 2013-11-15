@@ -50,6 +50,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-less'
   grunt.loadNpmTasks 'grunt-contrib-connect'
   grunt.loadNpmTasks 'grunt-contrib-watch'
+  grunt.loadNpmTasks 'grunt-npm'
   grunt.loadTasks 'tasks'
 
   grunt.registerTask 'build', [
