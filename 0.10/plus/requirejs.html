@@ -116,7 +116,7 @@
     |-- appSpec.js
     `-- test-main.js
 
-<span class="number">3</span> directories, <span class="number">9</span> files</code></pre>
+3 directories, 9 files</code></pre>
 <h2>Configure Karma</h2>
 <p>The first step is creating our <code>karma.conf.js</code>. We can do this from the
 command line:</p>
@@ -220,7 +220,7 @@ such as <code>describe</code> and <code>it</code>. Example:</p>
     describe(<span class="string">'just checking'</span>, <span class="keyword">function</span>() {
 
         it(<span class="string">'works for app'</span>, <span class="keyword">function</span>() {
-            <span class="keyword">var</span> el = $(<span class="string">'&lt;div>&lt;/div>'</span>);
+            <span class="keyword">var</span> el = $(<span class="string">'&lt;div&gt;&lt;/div&gt;'</span>);
 
             <span class="keyword">var</span> app = <span class="keyword">new</span> App(el);
             app.render();

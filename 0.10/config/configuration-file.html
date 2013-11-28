@@ -95,7 +95,8 @@
         </h1>
       </div>
       <div class="page-columns">
-        <div id="markdown" class="sixteen columns bottom"><p><strong>In order to serve you well, Karma needs to know about your project in order to test it
+        <div id="markdown" class="sixteen columns bottom"><h2>Overview</h2>
+<p><strong>In order to serve you well, Karma needs to know about your project in order to test it
 and this is done via a configuration file. This page explains how to create such a configuration file.</strong></p>
 <div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Most of the framework adapters, reporters, preprocessors and launchers needs to be loaded as <a href="plugins.html">plugins</a>.
 
@@ -113,14 +114,29 @@ module.exports = <span class="keyword">function</span>(config) {
   });
 };</code></pre>
 <pre><code class="language-coffeescript"><span class="comment"># an example karma.conf.coffee</span>
-module.<span class="function"><span class="title">exports</span></span> = (config) ->
+module.<span class="function"><span class="title">exports</span></span> = (config) -&gt;
   config.set
     basePath: <span class="string">'../..'</span>
     frameworks: [<span class="string">'jasmine'</span>]
     <span class="comment"># ...</span></code></pre>
 <p>To see a more detailed example configuration file, see <a href="https://github.com/karma-runner/karma/blob/master/test/client/karma.conf.js">test/client/karma.conf.js</a> which contains most of
 the available configuration options.</p>
-<p>The rest of the document contains a list of all available configuration options...</p>
+<h2>File Patterns</h2>
+<p>All of the configuration options which specify file paths use the <a href="https://github.com/isaacs/minimatch">minimatch</a> library to facilitate flexible but concise file expressions, so you can easily list all the files you want to include, along with excluding the files that need to be skipped.</p>
+<p>You can find details of each option in the following section, but this is the list of options that utilize minimatch expressions:</p>
+<ul>
+<li><code>exclude</code></li>
+<li><code>files</code></li>
+<li><code>preprocessors</code></li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li><code>**/*.js</code>: All files with a &quot;js&quot; extension in all subdirectories</li>
+<li><code>**/!(jquery).js</code>: Same as previous, but excludes &quot;jquery.js&quot;</li>
+<li><code>**/(foo|bar).js</code>: In all subdirectories, all &quot;foo.js&quot; or &quot;bar.js&quot; files</li>
+</ul>
+<h2>Configuration Options</h2>
+<p>These are all the available configuration options.</p>
 <h2>autoWatch</h2>
 <p><strong>Type:</strong> Boolean</p>
 <p><strong>Default:</strong>  <code>false</code></p>
@@ -224,9 +240,14 @@ By default, Karma loads all siblink modules, that match <code>karma-*</code>.</p
 <p><strong>Type:</strong> Object</p>
 <p><strong>Default:</strong> <code>{&#39;**/*.coffee&#39;: &#39;coffee&#39;}</code></p>
 <p><strong>Description:</strong> A map of preprocessors to use.</p>
-<p>Preprocessors can be loaded through <a href="plugins.html">plugins</a>. </p>
+<p>Preprocessors can be loaded through <a href="plugins.html">plugins</a>.</p>
 <p>Please note just about all preprocessors in Karma (other than CoffeeScript and some other defaults)
 require an additional library to be installed (via NPM).</p>
+<p>Be aware that preprocessors may be transforming the files and file types that are available at run time. For instance,
+if you are using the &quot;coverage&quot; preprocessor on your source files, if you then attempt to interactively debug
+your tests, you&#39;ll discover that your expected source code is completely changed from what you expected.  Because
+of that, you&#39;ll want to engineer this so that your automated builds use the coverage entry in the &quot;reporters&quot; list,
+but your interactive debugging does not.</p>
 <p>Click <a href="preprocessors.html">here</a> for more information.</p>
 <h2>proxies</h2>
 <p><strong>Type:</strong> Object</p>

@@ -96,20 +96,27 @@
       </div>
       <div class="page-columns">
         <div id="markdown" class="sixteen columns bottom"><p>Preprocessors in Karma allow you to do some work with your files before
-they get served to the browser. The configuration of these happens in the <code>preprocessors</code> block
-within the configuration file:</p>
+they get served to the browser. These are configured in the <code>preprocessors</code> block
+of the configuration file:</p>
 <pre><code class="language-javascript">preprocessors: {
   <span class="string">'**/*.coffee'</span>: [<span class="string">'coffee'</span>],
+  <span class="string">'**/*.tea'</span>: [<span class="string">'coffee'</span>],
   <span class="string">'**/*.html'</span>: [<span class="string">'html2js'</span>]
 },</code></pre>
-<div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Most of the preprocessors needs to be loaded as <a href="plugins.html">plugins</a>.
+<p>Note the multiple expressions referencing the &quot;coffee&quot; preprocessor, as a preprocessor can be listed more than once,
+as another way to specify multiple file path expressions.</p>
+<div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Most of the preprocessors need to be loaded as <a href="plugins.html">plugins</a>.
 
 </div>
 <h2>Available Preprocessors</h2>
 <p>These preprocessors/plugins are shipped with Karma by default:</p>
 <ul>
 <li><a href="https://github.com/karma-runner/karma-coffee-preprocessor">coffee</a></li>
-<li><a href="https://github.com/karma-runner/karma-html2js-preprocessor">html2js</a></li>
+<li><a href="https://github.com/karma-runner/karma-html2js-preprocessor">html2js</a><ul>
+<li>Note any .html files listed in the files section must be referenced at run time as <code>window.__html__[&#39;template.html&#39;]</code>. <a href="html2js">Learn more</a>.</li>
+<li>If this preprocessor is disabled, included .html files will need <code>base/</code> added to beginning of their path reference. See <a href="https://github.com/karma-runner/karma/issues/788">discussion in issue 788</a>.</li>
+</ul>
+</li>
 </ul>
 <p>Additional preprocessors can be loaded through <a href="plugins.html">plugins</a>, such as:</p>
 <ul>

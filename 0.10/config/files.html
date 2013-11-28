@@ -102,7 +102,7 @@
 <li>If the <code>basePath</code> is a relative path, it gets resolved to the
 directory where the configuration file is.</li>
 <li>Eventually, all the patterns will get resolved into files using
-<a href="https://github.com/isaacs/node-glob">glob</a>, so you can use expressions like <code>test/unit/**/*.spec.js</code>.</li>
+<a href="https://github.com/isaacs/node-glob">glob</a>, so you can use <a href="https://github.com/isaacs/minimatch">minimatch</a> expressions like <code>test/unit/**/*.spec.js</code>.</li>
 </ul>
 <h2>Ordering</h2>
 <ul>
@@ -139,6 +139,10 @@ watched for changes.</li>
 <li><strong>Default.</strong> <code>true</code></li>
 <li><strong>Description.</strong> Should the files be served by Karma&#39;s webserver?</li>
 </ul>
+<h2>Preprocessor tranformations</h2>
+<p>Depending on preprocessor configuration, be aware that files loaded may be transformed and no longer available in
+their native format. For instance, if html2js preprocessor is enabled, the actual .html files are no longer
+served - but rather available as <code>window.__html__[&#39;my.html&#39;]</code>. Read more about <a href="04-preprocessors.html">preprocessors</a>.</p>
 <h2>Complete example</h2>
 <p>Here is a complete example showing the different options that are possible.</p>
 <pre><code class="language-javascript">files: [
@@ -148,6 +152,7 @@ watched for changes.</li>
   <span class="string">'test/unit/*.spec.js'</span>,
 
   <span class="comment">// this file gets served but will be ignored by the watcher</span>
+  <span class="comment">// note if html2js preprocessor is active, reference as `window.__html__['compiled/index.html']`</span>
   {pattern: <span class="string">'compiled/index.html'</span>, watched: <span class="literal">false</span>},
 
   <span class="comment">// this file only gets watched but otherwise ignored</span>
