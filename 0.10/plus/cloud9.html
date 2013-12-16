@@ -95,18 +95,25 @@
         </h1>
       </div>
       <div class="page-columns">
-        <div id="markdown" class="sixteen columns bottom"><p><a href="https://c9.io/">Cloud9 IDE</a> is an open source web-based cloud integrated development environment that supports several programming languages, with a focus on the web stack (specifically JavaScript and <a href="http://nodejs.org/">NodeJS</a>). It is written almost entirely in JavaScript, and uses <a href="http://nodejs.org/">NodeJS</a> on the back-end.</p>
-<p>There are two possibilities in order to run unit tests with Karma in <a href="https://c9.io/">Cloud9 IDE</a>:</p>
-<h2>Capture the browser manually on the local machine</h2>
-<p>Open <code>http://&lt;projectName&gt;.&lt;cloud9User&gt;.c9.io/</code> in your browser.</p>
-<h2>Run Karma unit tests with PhantomJS in cloud9 IDE</h2>
-<h3>Install PhantomJS</h3>
-<p>PhantomJS must be installed with <code>npm install phantomjs</code>.</p>
-<h3>Configure Karma</h3>
-<p>The <code>karma.conf.js</code> file must include the following entries:</p>
-<pre><code class="language-javascript">browsers: [<span class="string">'PhantomJS'</span>],
-hostname: process.env.IP,
+        <div id="markdown" class="sixteen columns bottom"><p><a href="https://c9.io/">Cloud9 IDE</a> is an open source web-based cloud integrated development environment that supports
+several programming languages, with a focus on the web stack (specifically JavaScript and NodeJS).
+It is written almost entirely in JavaScript, and uses NodeJS on the back-end.</p>
+<h2>Configuration</h2>
+<p>First, make sure the <code>karma.conf.js</code> includes the following entries:</p>
+<pre><code class="language-javascript">hostname: process.env.IP,
 port: process.env.PORT</code></pre>
+<h2>Capture the browser manually on the local machine</h2>
+<p>You can use any of your local browsers.</p>
+<pre><code class="language-bash"><span class="comment"># Start Karma without browsers:</span>
+$ karma start --no-browsers</code></pre>
+<p>Now, open <code>http://&lt;projectName&gt;.&lt;cloud9User&gt;.c9.io/</code> in your browser.</p>
+<h2>Run Karma unit tests with PhantomJS</h2>
+<p>It is also possible to run headless PhantomJS on the Cloud9 server.</p>
+<pre><code class="language-bash"><span class="comment"># Install the PhantomJS plugin:</span>
+$ npm install karma-phantomjs-launcher
+
+<span class="comment"># Start Karma:</span>
+$ karma start --browsers PhantomJS</code></pre>
 
         </div>
       </div>
