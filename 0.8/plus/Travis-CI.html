@@ -20,13 +20,14 @@
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
   <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/apple-touch-icon-72x72.png">
   <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/img/apple-touch-icon-144x144.png">
 </head>
 <body>
   <div id="wrap" class="boxed">
     <header>
       <div class="container clearfix">
         <div class="six columns">
-          <div class="logo"><a href="/0.8/index.html">Karma</a><span>Spectacular Test Runner for JavaScript</span></div>
+          <div class="logo"><a href="/0.8/index.html"><img src="/assets/img/banner.png" alt="Karma - Spectacular Test Runner for JavaScript" title="Karma - Spectacular Test Runner for JavaScript"></a></div>
         </div>
         <div class="ten columns">
           <nav id="menu" class="navigation">
@@ -103,8 +104,8 @@ already have Travis account.</p>
 <h2>Configure Travis</h2>
 <p>Create a file in your project root called <code>.travis.yml</code> with the
 following YAML content:</p>
-<pre><code class="language-ruby"><span class="identifier">language</span><span class="symbol">:</span> <span class="identifier">node_js</span>
-<span class="identifier">node_js</span><span class="symbol">:</span>
+<pre><code class="language-ruby"><span class="symbol">language:</span> node_js
+<span class="symbol">node_js:</span>
   - <span class="number">0</span>.<span class="number">8</span></code></pre>
 <h2>Setup a Test Command</h2>
 <p>If you do not already have a <code>package.json</code> in your project root
@@ -126,12 +127,12 @@ about like Karma.</p>
 <p>Travis supports running a real browser (Firefox) with a virtual
 screen. Just update your <code>.travis.yml</code> to set up the virtual screen
 like this:</p>
-<pre><code class="language-ruby"><span class="identifier">language</span><span class="symbol">:</span> <span class="identifier">node_js</span>
-<span class="identifier">node_js</span><span class="symbol">:</span>
+<pre><code class="language-ruby"><span class="symbol">language:</span> node_js
+<span class="symbol">node_js:</span>
   - <span class="number">0</span>.<span class="number">8</span>
-<span class="identifier">before_script</span><span class="symbol">:</span>
-  - <span class="identifier">export</span> <span class="constant">DISPLAY</span>=<span class="symbol">:</span><span class="number">99.0</span>
-  - <span class="identifier">sh</span> -<span class="identifier">e</span> /<span class="identifier">etc</span>/<span class="identifier">init</span>.<span class="identifier">d</span>/<span class="identifier">xvfb</span> <span class="identifier">start</span></code></pre>
+<span class="symbol">before_script:</span>
+  - export <span class="constant">DISPLAY</span>=<span class="symbol">:</span><span class="number">99.0</span>
+  - sh -e /etc/init.d/xvfb start</code></pre>
 <p>And now, you can run your tests on Firefox, just change the <code>npm test</code>
 command to</p>
 <pre><code class="language-bash">./node_modules/.bin/karma start --browsers Firefox --single-run</code></pre>
@@ -154,7 +155,9 @@ the Travis docs for <a href="http://about.travis-ci.org/docs/user/gui-and-headle
   </div>
   <footer>
     <div class="container">
-      <div class="ten columns"><span class="copyright"><a href="https://github.com/karma-runner/karma">Karma</a>&nbsp;is released under the <a href="https://github.com/karma-runner/karma/blob/master/LICENSE">MIT license</a>. Site by&nbsp;<a href="https://github.com/Dignifiedquire">Friedel Ziegelmayer</a>.</span></div>
+      <div class="ten columns"><span class="copyright">
+          Karma is released under the MIT license. 
+          Site by&nbsp;<a href="https://github.com/Dignifiedquire">Friedel Ziegelmayer</a>. Logo by&nbsp;<a href="http://dribbble.com/isaacdurazo">Isaac Durazo</a>.</span></div>
       <div class="six columns">
         <div class="social"><a href="https://github.com/karma-runner/karma/" data-tooltip="GitHub Repo"><i class="icon-github-alt icon-large"></i></a><a href="https://github.com/karma-runner/karma/issues" data-tooltip="Issues"><i class="icon-beaker icon-large"></i></a><a href="http://twitter.com/JsKarma" data-tooltip="@JsKarma"><i class="icon-twitter icon-large"></i></a><a href="https://groups.google.com/forum/#!forum/karma-users" data-tooltip="Mailing List"><i class="icon-envelope-alt icon-large"></i></a></div>
       </div>
@@ -162,4 +165,16 @@ the Travis docs for <a href="http://about.travis-ci.org/docs/user/gui-and-headle
   </footer>
 </body>
 <!-- Placed at the end of the document so the pages load faster-->
-<script src="/assets/js/app.js">;</script><![endif]-->
+<script src="/assets/js/app.js">;</script>
+<!-- Google Analytics-->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-46195299-1']);
+  _gaq.push(['_trackPageview']);
+  
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script><![endif]-->
