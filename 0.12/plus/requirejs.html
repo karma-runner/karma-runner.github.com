@@ -38,14 +38,12 @@
                   <li><a href="/0.12/intro/configuration.html">Configuration</a></li>
                   <li><a href="/0.12/intro/how-it-works.html">How It Works</a></li>
                   <li><a href="/0.12/intro/faq.html">FAQ</a></li>
-                  <li><a href="/0.12/intro/faq.md.orig">FAQ</a></li>
                 </ul>
               </li>
               <li><a href="javascript:void" class="">config</a>
                 <ul>
                   <li><a href="/0.12/config/configuration-file.html">Configuration File</a></li>
                   <li><a href="/0.12/config/files.html">Files</a></li>
-                  <li><a href="/0.12/config/files.md.orig">Files.md.orig</a></li>
                   <li><a href="/0.12/config/browsers.html">Browsers</a></li>
                   <li><a href="/0.12/config/preprocessors.html">Preprocessors</a></li>
                   <li><a href="/0.12/config/plugins.html">Plugins</a></li>
@@ -185,35 +183,41 @@ array we find all our test files.</p>
 <p>Now we can tell Require.js to load our tests, which must be done
 asynchronously as dependencies must be fetched before the tests are run.
 The <code>test/main-test.js</code> file ends up looking like this:</p>
-<pre><code class="language-javascript"><span class="keyword">var</span> tests = [];
-<span class="keyword">for</span> (<span class="keyword">var</span> file <span class="keyword">in</span> window.__karma__.files) {
-  <span class="keyword">if</span> (window.__karma__.files.hasOwnProperty(file)) {
-    <span class="keyword">if</span> (<span class="regexp">/Spec\.js$/</span>.test(file)) {
-      tests.push(file);
-    }
+<pre><code class="language-javascript"><span class="keyword">var</span> allTestFiles = [];
+<span class="keyword">var</span> TEST_REGEXP = <span class="regexp">/test\.js$/</span>;
+
+<span class="keyword">var</span> pathToModule = <span class="keyword">function</span>(path) {
+  <span class="keyword">return</span> path.replace(<span class="regexp">/^\/base\//</span>, <span class="string">''</span>).replace(<span class="regexp">/\.js$/</span>, <span class="string">''</span>);
+};
+
+Object.keys(window.__karma__.files).forEach(<span class="keyword">function</span>(file) {
+  <span class="keyword">if</span> (TEST_REGEXP.test(file)) {
+    <span class="comment">// Normalize paths to RequireJS module names.</span>
+    allTestFiles.push(pathToModule(file));
   }
-}
+});
 
-requirejs.config({
-    <span class="comment">// Karma serves files from '/base'</span>
-    baseUrl: <span class="string">'/base/src'</span>,
+require.config({
+  <span class="comment">// Karma serves files under /base, which is the basePath from your config file</span>
+  baseUrl: <span class="string">'/base/src'</span>,
 
-    paths: {
-        <span class="string">'jquery'</span>: <span class="string">'../lib/jquery'</span>,
-        <span class="string">'underscore'</span>: <span class="string">'../lib/underscore'</span>,
-    },
+  <span class="comment">// example of using shim, to load non AMD libraries (such as underscore and jquery)</span>
+  paths: {
+    <span class="string">'jquery'</span>: <span class="string">'../lib/jquery'</span>,
+    <span class="string">'underscore'</span>: <span class="string">'../lib/underscore'</span>,
+  },
 
-    shim: {
-        <span class="string">'underscore'</span>: {
-            exports: <span class="string">'_'</span>
-        }
-    },
+  shim: {
+    <span class="string">'underscore'</span>: {
+      exports: <span class="string">'_'</span>
+    }
+  },
 
-    <span class="comment">// ask Require.js to load these files (all our tests)</span>
-    deps: tests,
+  <span class="comment">// dynamically load all test files</span>
+  deps: allTestFiles,
 
-    <span class="comment">// start test run, once Require.js is done</span>
-    callback: window.__karma__.start
+  <span class="comment">// we have to kickoff jasmine, as it is asynchronous</span>
+  callback: window.__karma__.start
 });</code></pre>
 <h2>Using Require.js in tests</h2>
 <p>Tests can now be written as regular Require.js modules. We wrap

@@ -38,14 +38,12 @@
                   <li><a href="/0.12/intro/configuration.html">Configuration</a></li>
                   <li><a href="/0.12/intro/how-it-works.html">How It Works</a></li>
                   <li><a href="/0.12/intro/faq.html">FAQ</a></li>
-                  <li><a href="/0.12/intro/faq.md.orig">FAQ</a></li>
                 </ul>
               </li>
               <li><a href="javascript:void" class="active">config</a>
                 <ul>
                   <li><a href="/0.12/config/configuration-file.html">Configuration File</a></li>
                   <li><a href="/0.12/config/files.html">Files</a></li>
-                  <li><a href="/0.12/config/files.md.orig">Files.md.orig</a></li>
                   <li><a href="/0.12/config/browsers.html">Browsers</a></li>
                   <li><a href="/0.12/config/preprocessors.html">Preprocessors</a></li>
                   <li><a href="/0.12/config/plugins.html">Plugins</a></li>
@@ -100,8 +98,9 @@
       </div>
       <div class="page-columns">
         <div id="markdown" class="sixteen columns bottom"><h2>Overview</h2>
-<p><strong>In order to serve you well, Karma needs to know about your project in order to test it
-and this is done via a configuration file. This page explains how to create such a configuration file.</strong></p>
+<p>In order to serve you well, Karma needs to know about your project in order to test it
+and this is done via a configuration file. The easiest way to generate initial configuration file
+is using <code>karma init</code> command. This page lists all the available configuration options.</p>
 <div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Most of the framework adapters, reporters, preprocessors and launchers needs to be loaded as <a href="plugins.html">plugins</a>.
 
 
@@ -109,7 +108,7 @@ and this is done via a configuration file. This page explains how to create such
 <p>The Karma configuration file can be written in JavaScript or CoffeeScript and is loaded as a regular Node.js module.
 Within the configuration file, the configuration code is put together by setting <code>module.exports</code> to point to a function
 which accepts one argument: the configuration object.</p>
-<pre><code class="language-javascript"><span class="comment">// an example karma.conf.js</span>
+<pre><code class="language-javascript"><span class="comment">// karma.conf.js</span>
 module.exports = <span class="keyword">function</span>(config) {
   config.set({
     basePath: <span class="string">'../..'</span>,
@@ -117,14 +116,12 @@ module.exports = <span class="keyword">function</span>(config) {
     <span class="comment">//...</span>
   });
 };</code></pre>
-<pre><code class="language-coffeescript"><span class="comment"># an example karma.conf.coffee</span>
+<pre><code class="language-coffeescript"><span class="comment"># karma.conf.coffee</span>
 module.<span class="function"><span class="title">exports</span></span> = (config) -&gt;
   config.set
     basePath: <span class="string">'../..'</span>
     frameworks: [<span class="string">'jasmine'</span>]
     <span class="comment"># ...</span></code></pre>
-<p>To see a more detailed example configuration file, see <a href="https://github.com/karma-runner/karma/blob/master/test/client/karma.conf.js">test/client/karma.conf.js</a> which contains most of
-the available configuration options.</p>
 <h2>File Patterns</h2>
 <p>All of the configuration options which specify file paths use the <a href="https://github.com/isaacs/minimatch">minimatch</a> library to facilitate flexible but concise file expressions, so you can easily list all the files you want to include, along with excluding the files that need to be skipped.</p>
 <p>You can find details of each option in the following section, but this is the list of options that utilize minimatch expressions:</p>

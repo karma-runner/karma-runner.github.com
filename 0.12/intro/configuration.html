@@ -38,14 +38,12 @@
                   <li><a href="/0.12/intro/configuration.html">Configuration</a></li>
                   <li><a href="/0.12/intro/how-it-works.html">How It Works</a></li>
                   <li><a href="/0.12/intro/faq.html">FAQ</a></li>
-                  <li><a href="/0.12/intro/faq.md.orig">FAQ</a></li>
                 </ul>
               </li>
               <li><a href="javascript:void" class="">config</a>
                 <ul>
                   <li><a href="/0.12/config/configuration-file.html">Configuration File</a></li>
                   <li><a href="/0.12/config/files.html">Files</a></li>
-                  <li><a href="/0.12/config/files.md.orig">Files.md.orig</a></li>
                   <li><a href="/0.12/config/browsers.html">Browsers</a></li>
                   <li><a href="/0.12/config/preprocessors.html">Preprocessors</a></li>
                   <li><a href="/0.12/config/plugins.html">Plugins</a></li>
@@ -101,7 +99,7 @@
       <div class="page-columns">
         <div id="markdown" class="sixteen columns bottom"><p>In order to serve you well, Karma needs to know about your project in order to test it
 and this is done via a configuration file. This page explains how to create such a configuration file.</p>
-<p>See <a href="../config/configuration-file.html">configuration file docs</a> for more information about the syntax and the available options.</p>
+<p>See <a href="../config/configuration-file.html">configuration file docs</a> for more information about the syntax and all the available options.</p>
 <h2>Generating the config file</h2>
 <p>The configuration file can be generated using <code>karma init</code>:</p>
 <pre><code class="language-bash">$ karma init my.conf.js
@@ -139,27 +137,25 @@ Press tab to list possible options.
 
 Config file generated at <span class="string">"/Users/vojta/Code/karma/my.conf.js"</span>.</code></pre>
 <p>The configuration file can be written in CoffeeScript as well.
-In fact, if you execute <code>karma init</code> with a <code>.coffee</code> filename extension, it will generate a CoffeeScript file.</p>
+In fact, if you execute <code>karma init</code> with a <code>*.coffee</code> extension such as <code>karma init karma.conf.coffee</code>, it will generate a CoffeeScript file.</p>
 <p>Of course, you can write the config file by hand or copy paste it from another project ;-)</p>
 <h2>Starting Karma</h2>
 <p>When starting Karma, the configuration file path can be passed in as the first argument.</p>
-<p>By default, Karma will look for <code>karma.conf.js</code> in the current directory.</p>
-<pre><code class="language-bash"><span class="comment"># Start Karma using your configuration</span>
+<p>By default, Karma will look for <code>karma.conf.js</code> or <code>karma.conf.coffee</code> in the current directory.</p>
+<pre><code class="language-bash"><span class="comment"># Start Karma using your configuration:</span>
 $ karma start my.conf.js</code></pre>
 <p>For more detailed information about the Karma configuration file, such as available options and features,
 please read the <a href="../config/configuration-file.html">configuration file docs</a>.</p>
 <h2>Command line arguments</h2>
 <p>Some configurations, which are already present within the configuration file, can be overridden by specifying the configuration
 as a command line argument for when Karma is executed.</p>
-<pre><code class="language-bash">karma start karma-conf.js --command-one --command-two</code></pre>
+<pre><code class="language-bash">karma start karma-conf.js --log-level debug --single-run</code></pre>
 <p>Try <code>karma start --help</code> if you want to see all available options.</p>
-<h2>Using Grunt</h2>
-<p>If you are using <a href="http://gruntjs.com/">Grunt</a> within your project,
-the <a href="https://github.com/karma-runner/grunt-karma">grunt-karma</a> plugin may be useful.
-The <code>grunt-karma</code> plugin allows you to place your Karma configurations directly within your <code>Gruntfile</code>.
-By doing so, the central <code>karma.conf.js</code> is no longer required. However, this also means that Karma must also be run as a Grunt task.
-Please visit the <a href="https://github.com/karma-runner/grunt-karma#running-tests">Grunt Karma Github Page</a> to learn more about how it&#39;s used.</p>
-<p>[grunt-karma-usage] <a href="https://github.com/karma-runner/grunt-karma#running-tests">https://github.com/karma-runner/grunt-karma#running-tests</a></p>
+<h2>Integrating with Grunt/Gulp</h2>
+<ul>
+<li><a href="https://github.com/karma-runner/grunt-karma">grunt-karma</a></li>
+<li><a href="https://github.com/lazd/gulp-karma">gulp-karma</a></li>
+</ul>
 
         </div>
       </div>

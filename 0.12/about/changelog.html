@@ -38,14 +38,12 @@
                   <li><a href="/0.12/intro/configuration.html">Configuration</a></li>
                   <li><a href="/0.12/intro/how-it-works.html">How It Works</a></li>
                   <li><a href="/0.12/intro/faq.html">FAQ</a></li>
-                  <li><a href="/0.12/intro/faq.md.orig">FAQ</a></li>
                 </ul>
               </li>
               <li><a href="javascript:void" class="">config</a>
                 <ul>
                   <li><a href="/0.12/config/configuration-file.html">Configuration File</a></li>
                   <li><a href="/0.12/config/files.html">Files</a></li>
-                  <li><a href="/0.12/config/files.md.orig">Files.md.orig</a></li>
                   <li><a href="/0.12/config/browsers.html">Browsers</a></li>
                   <li><a href="/0.12/config/preprocessors.html">Preprocessors</a></li>
                   <li><a href="/0.12/config/plugins.html">Plugins</a></li>
@@ -99,7 +97,30 @@
         </h1>
       </div>
       <div class="page-columns">
-        <div id="markdown" class="sixteen columns bottom"><p><a name="v0.11.14"></a></p>
+        <div id="markdown" class="sixteen columns bottom"><p><a name="v0.12.0"></a></p>
+<h2>v0.12.0 (2014-03-10)</h2>
+<h4>Bug Fixes</h4>
+<ul>
+<li>serving binary files (<a href="http://github.com/karma-runner/karma/commit/8a30cf55751bbaec672597f4f0ed66fe8742095f">8a30cf55</a>, closes <a href="http://github.com/karma-runner/karma/issues/864">#864</a>, <a href="http://github.com/karma-runner/karma/issues/885">#885</a>)</li>
+<li><strong>config:</strong><ul>
+<li>fail if client.args is set to a non array (<a href="http://github.com/karma-runner/karma/commit/fe4eaec09f1b7d34270dec7f948cd9441ef6fe48">fe4eaec0</a>)</li>
+<li>allow CoffeeScript 1.7 to be used (<a href="http://github.com/karma-runner/karma/commit/a1583decd97438a241f99287159da2948eb3a95f">a1583dec</a>)</li>
+</ul>
+</li>
+<li><strong>runner:</strong> Karma hangs when file paths have \u in them #924 (<a href="http://github.com/karma-runner/karma/commit/1199fc4d7ee7be2d48a707876ddb857544cf2fb4">1199fc4d</a>, closes <a href="http://github.com/karma-runner/karma/issues/924">#924</a>)</li>
+<li><strong>web-server:</strong><ul>
+<li>detach listeners after running (<a href="http://github.com/karma-runner/karma/commit/3baa8e1979003e4136e48515c0ba1815a950ca19">3baa8e19</a>)</li>
+<li>close webserver after running (<a href="http://github.com/karma-runner/karma/commit/f9dee4681cad716b56748e275680fb09e574978c">f9dee468</a>)</li>
+</ul>
+</li>
+</ul>
+<h4>Features</h4>
+<ul>
+<li>remove dependency on coffee-script (<a href="http://github.com/karma-runner/karma/commit/af2d0e72599d242c59ebefd6c3c965bf8496399e">af2d0e72</a>)</li>
+<li><strong>config:</strong> better error when Coffee/Live Script not installed (<a href="http://github.com/karma-runner/karma/commit/aca84dc9c6f4a966280bfcd080317c7c9d498f53">aca84dc9</a>)</li>
+<li><strong>init:</strong> generate test-main.(js/coffee) for RequireJS projects (<a href="http://github.com/karma-runner/karma/commit/85900c93f070264d71fdae6c257285767119c5c2">85900c93</a>)</li>
+</ul>
+<p><a name="v0.11.14"></a></p>
 <h3>v0.11.14 (2014-02-04)</h3>
 <h4>Features</h4>
 <ul>

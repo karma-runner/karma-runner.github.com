@@ -38,14 +38,12 @@
                   <li><a href="/0.12/intro/configuration.html">Configuration</a></li>
                   <li><a href="/0.12/intro/how-it-works.html">How It Works</a></li>
                   <li><a href="/0.12/intro/faq.html">FAQ</a></li>
-                  <li><a href="/0.12/intro/faq.md.orig">FAQ</a></li>
                 </ul>
               </li>
               <li><a href="javascript:void" class="active">config</a>
                 <ul>
                   <li><a href="/0.12/config/configuration-file.html">Configuration File</a></li>
                   <li><a href="/0.12/config/files.html">Files</a></li>
-                  <li><a href="/0.12/config/files.md.orig">Files.md.orig</a></li>
                   <li><a href="/0.12/config/browsers.html">Browsers</a></li>
                   <li><a href="/0.12/config/preprocessors.html">Preprocessors</a></li>
                   <li><a href="/0.12/config/plugins.html">Plugins</a></li>
@@ -113,7 +111,6 @@ as another way to specify multiple file path expressions.</p>
 
 </div>
 <h2>Available Preprocessors</h2>
-<p>These preprocessors/plugins are shipped with Karma by default:</p>
 <ul>
 <li><a href="https://github.com/karma-runner/karma-coffee-preprocessor">coffee</a></li>
 <li><a href="https://github.com/karma-runner/karma-html2js-preprocessor">html2js</a><ul>
@@ -121,23 +118,18 @@ as another way to specify multiple file path expressions.</p>
 <li>If this preprocessor is disabled, included .html files will need <code>base/</code> added to beginning of their path reference. See <a href="https://github.com/karma-runner/karma/issues/788">discussion in issue 788</a>.</li>
 </ul>
 </li>
-</ul>
-<p>Additional preprocessors can be loaded through <a href="plugins.html">plugins</a>, such as:</p>
-<ul>
 <li><a href="https://github.com/karma-runner/karma-coverage">coverage</a></li>
 <li><a href="https://github.com/karma-runner/karma-ng-html2js-preprocessor">ng-html2js</a></li>
-<li><a href="https://github.com/karma-runner/karma-ember-preprocessor">ember</a></li>
+<li><a href="https://www.npmjs.org/browse/keyword/karma-preprocessor">many more</a></li>
 </ul>
-<p>As mentioned above above, only the coffee and html2j preprocessors come bundled with Karma. Therefore, to use additional preprocessors,
-simply install the required NPM library first and the installed preprocessor can be used regularly.</p>
-<p>Here&#39;s an example of how to add the coverage preprocessor to your testing suite:</p>
+<p>Here&#39;s an example of how to add the CoffeScript preprocessor to your testing suite:</p>
 <pre><code class="language-bash"><span class="comment"># Install it first with NPM</span>
-$ npm install karma-coverage --save-dev</code></pre>
+$ npm install karma-coffee-preprocessor --save-dev</code></pre>
 <p>And then inside your configuration file...</p>
 <pre><code class="language-javascript">module.exports = <span class="keyword">function</span>(config) {
   config.set({
     preprocessors: {
-      <span class="string">'**/*.js'</span>: [<span class="string">'coverage'</span>]
+      <span class="string">'**/*.coffee'</span>: [<span class="string">'coffee'</span>]
     }
   });
 };</code></pre>

@@ -38,14 +38,12 @@
                   <li><a href="/0.12/intro/configuration.html">Configuration</a></li>
                   <li><a href="/0.12/intro/how-it-works.html">How It Works</a></li>
                   <li><a href="/0.12/intro/faq.html">FAQ</a></li>
-                  <li><a href="/0.12/intro/faq.md.orig">FAQ</a></li>
                 </ul>
               </li>
               <li><a href="javascript:void" class="active">config</a>
                 <ul>
                   <li><a href="/0.12/config/configuration-file.html">Configuration File</a></li>
                   <li><a href="/0.12/config/files.html">Files</a></li>
-                  <li><a href="/0.12/config/files.md.orig">Files.md.orig</a></li>
                   <li><a href="/0.12/config/browsers.html">Browsers</a></li>
                   <li><a href="/0.12/config/preprocessors.html">Preprocessors</a></li>
                   <li><a href="/0.12/config/plugins.html">Plugins</a></li>
@@ -107,22 +105,19 @@ so Karma can do that for you. Just simply add into the configuration file:</p>
 
 </div>
 <h2>Available browser launchers</h2>
-<p>These launchers are shipped with Karma by default:</p>
 <ul>
-<li><a href="https://github.com/karma-runner/karma-chrome-launcher">Chrome and Chrome Canary</a></li>
-<li><a href="https://github.com/karma-runner/karma-phantomjs-launcher">PhantomJS</a></li>
-</ul>
-<p>Additional launchers can be loaded through <a href="plugins.html">plugins</a>, such as:</p>
-<ul>
+<li><a href="https://github.com/karma-runner/karma-chrome-launcher">Chrome and Chrome Canary</a> (install karma-chrome-launcher)</li>
 <li><a href="https://github.com/karma-runner/karma-firefox-launcher">Firefox</a> (install karma-firefox-launcher first)</li>
 <li><a href="https://github.com/karma-runner/karma-safari-launcher">Safari</a> (install karma-safari-launcher first)</li>
+<li><a href="https://github.com/karma-runner/karma-phantomjs-launcher">PhantomJS</a> (install karma-phantomjs-launcher)</li>
 <li><a href="https://github.com/karma-runner/karma-opera-launcher">Opera</a> (install karma-opera-launcher first)</li>
 <li><a href="https://github.com/karma-runner/karma-ie-launcher">IE</a> (install karma-ie-launcher first)</li>
+<li><a href="https://github.com/karma-runner/karma-sauce-launcher">SauceLabs</a> (install karma-sauce-launcher)</li>
+<li><a href="https://github.com/karma-runner/karma-browserstack-launcher">BrowserStack</a> (install karma-browserstack-launcher)</li>
+<li><a href="https://www.npmjs.org/browse/keyword/karma-launcher">many more</a></li>
 </ul>
-<p>As mentioned above above, only Chrome and PhantomJS come bundled with Karma. Therefore, to use other browsers naturally,
-simply install the required launcher first using NPM and then assign the browser setting within the configuration file using the <code>browsers</code>.</p>
 <p>Here&#39;s an example of how to add Firefox to your testing suite:</p>
-<pre><code class="language-bash"><span class="comment"># Install it first with NPM</span>
+<pre><code class="language-bash"><span class="comment"># Install it first with NPM:</span>
 $ npm install karma-firefox-launcher --save-dev</code></pre>
 <p>And then inside your configuration file...</p>
 <pre><code class="language-javascript">module.exports = <span class="keyword">function</span>(config) {

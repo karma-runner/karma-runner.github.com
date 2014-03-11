@@ -38,14 +38,12 @@
                   <li><a href="/0.12/intro/configuration.html">Configuration</a></li>
                   <li><a href="/0.12/intro/how-it-works.html">How It Works</a></li>
                   <li><a href="/0.12/intro/faq.html">FAQ</a></li>
-                  <li><a href="/0.12/intro/faq.md.orig">FAQ</a></li>
                 </ul>
               </li>
               <li><a href="javascript:void" class="">config</a>
                 <ul>
                   <li><a href="/0.12/config/configuration-file.html">Configuration File</a></li>
                   <li><a href="/0.12/config/files.html">Files</a></li>
-                  <li><a href="/0.12/config/files.md.orig">Files.md.orig</a></li>
                   <li><a href="/0.12/config/browsers.html">Browsers</a></li>
                   <li><a href="/0.12/config/preprocessors.html">Preprocessors</a></li>
                   <li><a href="/0.12/config/plugins.html">Plugins</a></li>
@@ -99,38 +97,26 @@
         </h1>
       </div>
       <div class="page-columns">
-        <div id="markdown" class="sixteen columns bottom"><p>Karma runs on <a href="http://nodejs.org/">Node.js</a> and is available via <a href="npmjs.org/package/karma">NPM</a>.</p>
-<h2>Requirements</h2>
-<ol>
-  <li>
-    <h3><a href="http://nodejs.org/download/">Node.js</a></h3>
-    <p>
-      There are installers for both Mac and Windows. On Linux, we recommend using
-      <a href="https://github.com/creationix/nvm">NVM</a>.
-    </p>
-  </li>
-  <li>
-    <h3><a href="https://npmjs.org/">Node Package Manager (NPM)</a></h3>
-    <p>
-      NPM is a package manager for Node.js which is used to install Karma. This should
-      automatically be installed when Node.js is installed, but if not then please install
-      it afterwards.
-    </p>
-  </li>
-</ol>
+        <div id="markdown" class="sixteen columns bottom"><p>Karma runs on <a href="http://nodejs.org/">Node.js</a> and is available as an <a href="npmjs.org/package/karma">NPM</a> package.</p>
+<h2>Installing Node.js</h2>
+<p>There are <a href="http://nodejs.org/download/">installers</a> for both Mac and Windows.
+On Linux, we recommend using <a href="https://github.com/creationix/nvm">NVM</a>.</p>
+<div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Karma works on the two latest stable versions. That is <strong>0.8.x</strong> and <strong>0.10.x</strong> at this point.
 
+
+</div>
 <h2>Installing Karma and plugins</h2>
 <p>The recommended approach is to install Karma (and all the plugins your project needs) locally in
-the project&#39;s directory:</p>
+the project&#39;s directory.</p>
 <pre><code class="language-bash"><span class="comment"># Install Karma:</span>
 $ npm install karma --save-dev
 
 <span class="comment"># Install plugins that your project needs:</span>
 $ npm install karma-jasmine karma-chrome-launcher --save-dev</code></pre>
-<p>This will install Karma and <code>karma-jasmine</code> and <code>karma-chrome-launcher</code> plugins into your current
-directory&#39;s <code>node_modules</code> and also save these as devDependencies in <code>package.json</code>, so that any
-other developer working on the project will only have to do <code>npm install</code> in order to get all the
-dependencies.</p>
+<p>This will install <code>karma</code>, <code>karma-jasmine</code> and <code>karma-chrome-launcher</code> packages into <code>node_modules</code> in your current
+working directory and also save these as <code>devDependencies</code> in <code>package.json</code>, so that any
+other developer working on the project will only have to do <code>npm install</code> in order to get all these
+dependencies installed.</p>
 <pre><code class="language-bash"><span class="comment"># Run Karma:</span>
 $ ./node_modules/karma/bin/karma start</code></pre>
 <h2>Commandline Interface</h2>
