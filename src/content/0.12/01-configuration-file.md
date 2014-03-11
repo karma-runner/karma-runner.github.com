@@ -1,7 +1,8 @@
 ## Overview
-**In order to serve you well, Karma needs to know about your project in order to test it
-and this is done via a configuration file. This page explains how to create such a configuration file.**
+In order to serve you well, Karma needs to know about your project in order to test it
+and this is done via a configuration file. This page lists all the available configuration options.
 
+Note: The easiest way to generate initial configuration is using `karma init` command.
 
 Note: Most of the framework adapters, reporters, preprocessors and launchers needs to be loaded as [plugins].
 
@@ -11,7 +12,7 @@ Within the configuration file, the configuration code is put together by setting
 which accepts one argument: the configuration object.
 
 ```javascript
-// an example karma.conf.js
+// karma.conf.js
 module.exports = function(config) {
   config.set({
     basePath: '../..',
@@ -22,7 +23,7 @@ module.exports = function(config) {
 ```
 
 ```coffeescript
-# an example karma.conf.coffee
+# karma.conf.coffee
 module.exports = (config) ->
   config.set
     basePath: '../..'
