@@ -6,7 +6,7 @@
 <head>
   <!-- Basic Page Needs-->
   <meta charset="utf-8">
-  <title>Karma - Versioning</title>
+  <title>Karma - Making Changes</title>
   <!-- Mobile specific Metas-->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="">
@@ -61,7 +61,7 @@
                   <li><a href="/0.12/plus/emberjs.html">Ember.js</a></li>
                 </ul>
               </li>
-              <li><a href="javascript:void" class="">dev</a>
+              <li><a href="javascript:void" class="active">dev</a>
                 <ul>
                   <li><a href="/0.12/dev/contributing.html">Contributing</a></li>
                   <li><a href="/0.12/dev/making-changes.html">Making Changes</a></li>
@@ -70,7 +70,7 @@
                   <li><a href="/0.12/dev/plugins.html">Plugins</a></li>
                 </ul>
               </li>
-              <li><a href="javascript:void" class="active">about</a>
+              <li><a href="javascript:void" class="">about</a>
                 <ul>
                   <li><a href="/0.12/about/versioning.html">Versioning</a></li>
                   <li><a href="/0.12/about/changelog.html">Changelog</a></li>
@@ -95,25 +95,88 @@
     </header>
     <div class="container clearfix">
       <div class="sixteen columns">
-        <h1 class="page-title">Versioning<a href="https://github.com/karma-runner/karma/edit/master/docs/about/01-versioning.md" data-tooltip="Edit this page on GitHub" class="edit"><i class="icon-edit"></i></a><span class="line"></span>
+        <h1 class="page-title">Making Changes<a href="https://github.com/karma-runner/karma/edit/master/docs/dev/02-making-changes.md" data-tooltip="Edit this page on GitHub" class="edit"><i class="icon-edit"></i></a><span class="line"></span>
         </h1>
       </div>
       <div class="page-columns">
-        <div id="markdown" class="sixteen columns bottom"><p>Karma uses <a href="http://semver.org/">Semantic Versioning</a> with a little exception:</p>
+        <div id="markdown" class="sixteen columns bottom"><!---
+TODO:
+- add more info about updating PR
+  - rebasing/squashing changes
+  - making sure Travis is green
+- how to run tests on sauce labs
+- how to set up plugins
+-->
+
+<p>If you are thinking about making Karma better, or you just want to hack on it, that’s great!
+Here are some tips on how to set up a Karma workspace and how to send a good pull request.</p>
+<h2>Setting up the Workspace</h2>
 <ul>
-<li>even versions (eg. <code>0.6.x</code>, <code>0.8.x</code>) are considered stable - no breaking changes or new features, only bug fixes will pushed into this branch,</li>
-<li>odd versions (eg. <code>0.7.x</code>, <code>0.9.x</code>) are unstable - anything can happen ;-)</li>
+<li>Make sure you have a <a href="https://github.com/signup/free">GitHub account</a>.</li>
+<li><a href="https://github.com/karma-runner/karma/fork">Fork the repository</a> on GitHub.</li>
+<li>Clone your fork.<pre><code class="language-bash">$ git clone git@github.com:&lt;your-username&gt;/karma.git
+$ cd karma</code></pre>
+</li>
+<li>Init the workspace<pre><code class="language-bash">$ ./scripts/init-dev-env.js</code></pre>
+</li>
 </ul>
-<p>Therefore it is recommended to rely on the latest stable version, which gives you automatic bug fixes, but does not break you:</p>
-<pre><code class="language-javascript">{
-  <span class="string">"devDependencies"</span>: {
-    <span class="string">"karma"</span>: <span class="string">"~0.10"</span>
-  }
-}</code></pre>
-<h2>Stable channel (branch <code>stable</code>)</h2>
-<pre><code class="language-bash">$ npm install karma</code></pre>
-<h2>Canary channel (branch <code>master</code>)</h2>
-<pre><code class="language-bash">$ npm install karma@canary</code></pre>
+<h2>Testing and Building</h2>
+<ul>
+<li><p>Run the tests via:</p>
+<pre><code class="language-bash">$ grunt test:unit
+$ grunt test:e2e
+$ grunt test:client
+
+<span class="comment"># All tests.</span>
+$ grunt test</code></pre>
+</li>
+<li><p>Lint the code via:</p>
+<pre><code class="language-bash">$ grunt lint</code></pre>
+</li>
+<li><p>Build the client code via:</p>
+<pre><code class="language-bash">$ grunt build</code></pre>
+</li>
+</ul>
+<p>The default task, just calling <code>grunt</code> will run <code>build lint test</code>.</p>
+<h2>Changing the Code</h2>
+<p>Checkout a new branch and name it accordingly to what you intend to do:</p>
+<ul>
+<li>Features get the prefix <code>feature-</code>.</li>
+<li>Bug fixes get the prefix <code>fix-</code>.</li>
+<li>Improvements to the documentation get the prefix <code>docs-</code>.<pre><code class="language-bash">$ git checkout -b &lt;branch_name&gt;</code></pre>
+</li>
+</ul>
+<p>Open your favourite editor, make some changes, run the tests, change the code, run the tests,
+change the code, run the tests, etc.</p>
+<ul>
+<li>Please follow <a href="http://nodeguide.com/style.html">http://nodeguide.com/style.html</a> (with exception of 100 characters per line).</li>
+</ul>
+<h2>Sending a Pull Request</h2>
+<ul>
+<li>Commit your changes (<strong>please follow our <a href="git-commit-msg.html">commit message conventions</a></strong>):<pre><code class="language-bash">$ git commit -m <span class="string">"..."</span></code></pre>
+</li>
+<li>Push to your github repo:<pre><code class="language-bash">$ git push origin &lt;branch_name&gt;</code></pre>
+</li>
+<li>Go to the github page and click &quot;Open a Pull reguest&quot;.</li>
+<li>Write a good description of the change.</li>
+</ul>
+<p>After sending a pull request, other developers will review and discuss your change.
+Please address all the comments. Once everything is all right, one of the maintainers will merge
+your changes in.</p>
+<h2>Contributor License Agreement</h2>
+<p>Please sign our Contributor License Agreement (CLA) before sending pull requests.
+For any code changes to be accepted, the CLA must be signed. It&#39;s a quick process, we promise!</p>
+<ul>
+<li>For individuals we have a <a href="http://code.google.com/legal/individual-cla-v1.0.html">simple click-through form</a>.</li>
+<li>For corporations we&#39;ll need you to print, sign and one of scan+email, fax or mail <a href="http://code.google.com/legal/corporate-cla-v1.0.html">the form</a>.</li>
+</ul>
+<h2>Additional Resources</h2>
+<ul>
+<li><a href="https://groups.google.com/forum/#!forum/karma-users">Mailing List</a></li>
+<li><a href="https://github.com/karma-runner/karma/issues">Issue tracker</a></li>
+<li><a href="http://help.github.com/">General GitHub documentation</a></li>
+<li><a href="http://help.github.com/send-pull-requests/">GitHub pull request documentation</a></li>
+</ul>
 
         </div>
       </div>

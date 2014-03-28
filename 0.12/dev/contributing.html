@@ -6,7 +6,7 @@
 <head>
   <!-- Basic Page Needs-->
   <meta charset="utf-8">
-  <title>Karma - Contributing</title>
+  <title>Karma - Contributing to Karma</title>
   <!-- Mobile specific Metas-->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="">
@@ -63,9 +63,11 @@
               </li>
               <li><a href="javascript:void" class="active">dev</a>
                 <ul>
+                  <li><a href="/0.12/dev/contributing.html">Contributing</a></li>
+                  <li><a href="/0.12/dev/making-changes.html">Making Changes</a></li>
+                  <li><a href="/0.12/dev/maintaining.html">Maintaining</a></li>
                   <li><a href="/0.12/dev/public-api.html">Public Api</a></li>
                   <li><a href="/0.12/dev/plugins.html">Plugins</a></li>
-                  <li><a href="/0.12/dev/contributing.html">Contributing</a></li>
                 </ul>
               </li>
               <li><a href="javascript:void" class="">about</a>
@@ -93,74 +95,37 @@
     </header>
     <div class="container clearfix">
       <div class="sixteen columns">
-        <h1 class="page-title">Contributing<a href="https://github.com/karma-runner/karma/edit/master/docs/dev/03-contributing.md" data-tooltip="Edit this page on GitHub" class="edit"><i class="icon-edit"></i></a><span class="line"></span>
+        <h1 class="page-title">Contributing to Karma<a href="https://github.com/karma-runner/karma/edit/master/docs/dev/01-contributing.md" data-tooltip="Edit this page on GitHub" class="edit"><i class="icon-edit"></i></a><span class="line"></span>
         </h1>
       </div>
       <div class="page-columns">
-        <div id="markdown" class="sixteen columns bottom"><p>If you are thinking about making Karma better, or you just want to hack on it, that’s great!
-Here are some tips to get you started.</p>
-<h2>Getting Started</h2>
-<ul>
-<li>Make sure you have a <a href="https://github.com/signup/free">GitHub account</a></li>
-<li><a href="https://github.com/karma-runner/karma/issues/new">Submit</a> a ticket for your issue, assuming one does not
-already exist.<ul>
-<li>Clearly describe the issue including steps to reproduce when it is a bug.</li>
-<li>Make sure you fill in the earliest version that you know has the issue.</li>
-</ul>
-</li>
-<li>Fork the repository on GitHub</li>
-</ul>
-<h2>Making Changes</h2>
-<ul>
-<li>Clone your fork<pre><code class="language-bash">$ git clone git@github.com:&lt;your-username&gt;/karma.git</code></pre>
-</li>
-<li>Init your workspace</li>
-</ul>
-<pre><code class="language-bash">$ ./scripts/init-dev-env.js</code></pre>
-<ul>
-<li>Checkout a new branch (usually based on <code>master</code>) and name it accordingly to what
-you intend to do<ul>
-<li>Features get the prefix <code>feature-</code></li>
-<li>Bug fixes get the prefix <code>fix-</code></li>
-<li>Improvements to the documentation get the prefix <code>docs-</code></li>
-</ul>
-</li>
-</ul>
-<h2>Testing and Building</h2>
-<p>Run the tests via</p>
-<pre><code class="language-bash"><span class="comment"># All tests</span>
-$ grunt test
-
-$ grunt test:unit
-$ grunt test:e2e
-$ grunt test:client</code></pre>
-<p>Lint the files via</p>
-<pre><code class="language-bash">$ grunt lint</code></pre>
-<p>Build the project via</p>
-<pre><code class="language-bash">$ grunt build</code></pre>
-<p>The default task, just calling <code>grunt</code> will run <code>build lint test</code>.</p>
-<h2>Submitting Changes</h2>
-<ul>
-<li>One branch per feature/fix</li>
-<li>Follow  <a href="http://nodeguide.com/style.html">http://nodeguide.com/style.html</a> (with exception of 100 characters per line)</li>
-<li>Please follow <a href="git-commit-msg.html">commit message conventions</a>.</li>
-<li>Send a pull request to the <code>master</code> branch.</li>
-</ul>
-<h2>Contributor License Agreement</h2>
-<p>Please sign our Contributor License Agreement (CLA) before sending pull requests.
-For any code changes to be accepted, the CLA must be signed. It&#39;s a quick process, we promise!</p>
-<ul>
-<li>For individuals we have a <a href="http://code.google.com/legal/individual-cla-v1.0.html">simple click-through form</a>.</li>
-<li>For corporations we&#39;ll need you to print, sign and one of scan+email, fax or mail <a href="http://code.google.com/legal/corporate-cla-v1.0.html">the form</a>.</li>
-</ul>
-<h2>Additional Resources</h2>
-<ul>
-<li><a href="https://github.com/karma-runner/karma/issues">Issue tracker</a></li>
-<li><a href="https://groups.google.com/forum/#!forum/karma-users">Mailing List</a></li>
-<li><a href="http://help.github.com/">General GitHub documentation</a></li>
-<li><a href="http://help.github.com/send-pull-requests/">GitHub pull request documentation</a></li>
-<li><a href="http://twitter.com/JsKarma">@JsKarma</a></li>
-</ul>
+        <div id="markdown" class="sixteen columns bottom"><p>You wanna contribute to Karma? That is truly great!
+Here are some tips to get you started...</p>
+<p>You might also find [set up the workspace] helpful.</p>
+<h3>Help others</h3>
+<p>The best way to start contributing to any open source project is to help other people.
+You can answer questions on the <a href="https://groups.google.com/forum/#!forum/karma-users">mailing list</a> or <a href="http://stackoverflow.com/questions/tagged/karma-runner">Stack Overflow</a>.
+Either find something you already know the answer for, or something you feel interested in and
+dig into it a little bit to find the answer.</p>
+<p>Soon, you will realize you know Karma pretty well...</p>
+<h3>Improve the documentation</h3>
+<p>You don’t feel like hacking on the code, but still wanna help?
+Improving the documentation is very valuable as it will help many others.</p>
+<p>All the source code is in <a href="https://github.com/karma-runner/karma/tree/master/docs"><code>docs/</code></a>.</p>
+<h3>Fix something that bothers you</h3>
+<p>You found a bug that really bothers you? It’s more likely it bothers other users too and maybe
+it’s not that hard to fix it! Try to find an existing issue. If it does not exist yet, create one.
+Look into the code and let others know what solution you are thinking about.
+Then, send a pull request and let other contributors to review.</p>
+<p><a href="./making-changes.html">Here</a> is some more info on how to set up your workspace and send a pull
+request.</p>
+<h3>Review others work</h3>
+<p>Check out the list of outstanding pull requests if there is something you might be interested in.
+Maybe somebody is trying to fix that stupid bug that bothers you. Review the PR.
+Do you have any better ideas how to fix this problem? Let us know...</p>
+<h3>I wanna help more</h3>
+<p>Check out <a href="./maintaining.html">Maintaining Karma</a>. Becoming a Karma maintainer is simple.
+You just do it. There is no test to pass ;-)</p>
 
         </div>
       </div>

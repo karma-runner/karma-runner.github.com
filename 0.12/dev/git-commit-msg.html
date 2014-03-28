@@ -63,9 +63,11 @@
               </li>
               <li><a href="javascript:void" class="active">dev</a>
                 <ul>
+                  <li><a href="/0.12/dev/contributing.html">Contributing</a></li>
+                  <li><a href="/0.12/dev/making-changes.html">Making Changes</a></li>
+                  <li><a href="/0.12/dev/maintaining.html">Maintaining</a></li>
                   <li><a href="/0.12/dev/public-api.html">Public Api</a></li>
                   <li><a href="/0.12/dev/plugins.html">Plugins</a></li>
-                  <li><a href="/0.12/dev/contributing.html">Contributing</a></li>
                 </ul>
               </li>
               <li><a href="javascript:void" class="">about</a>
@@ -93,7 +95,7 @@
     </header>
     <div class="container clearfix">
       <div class="sixteen columns">
-        <h1 class="page-title">Git Commit Msg<a href="https://github.com/karma-runner/karma/edit/master/docs/dev/04-git-commit-msg.md" data-tooltip="Edit this page on GitHub" class="edit"><i class="icon-edit"></i></a><span class="line"></span>
+        <h1 class="page-title">Git Commit Msg<a href="https://github.com/karma-runner/karma/edit/master/docs/dev/06-git-commit-msg.md" data-tooltip="Edit this page on GitHub" class="edit"><i class="icon-edit"></i></a><span class="line"></span>
         </h1>
       </div>
       <div class="page-columns">
@@ -113,11 +115,11 @@
 blank and other lines should be wrapped at 80 characters.</p>
 <h3>Allowed <code>&lt;type&gt;</code> values:</h3>
 <ul>
-<li><strong>feat</strong> (new feature)</li>
-<li><strong>fix</strong> (bug fix)</li>
-<li><strong>docs</strong> (changes to documentation)</li>
-<li><strong>style</strong> (formatting, missing semi colons, etc; no code change)</li>
-<li><strong>refactor</strong> (refactoring production code)</li>
+<li><strong>feat</strong> (new feature for the user, not a new feature for build script)</li>
+<li><strong>fix</strong> (bug fix for the user, not a fix to a build script)</li>
+<li><strong>docs</strong> (changes to the documentation)</li>
+<li><strong>style</strong> (formatting, missing semi colons, etc; no production code change)</li>
+<li><strong>refactor</strong> (refactoring production code, eg. renaming a variable)</li>
 <li><strong>test</strong> (adding missing tests, refactoring tests; no production code change)</li>
 <li><strong>chore</strong> (updating grunt tasks etc; no production code change)</li>
 </ul>
@@ -133,7 +135,7 @@ blank and other lines should be wrapped at 80 characters.</p>
 </ul>
 <p>The <code>&lt;scope&gt;</code> can be empty (eg. if the change is a global or difficult
 to assign to a single component), in which case the parentheses are
-omitted.</p>
+omitted. In smaller projects such as Karma plugins, the <code>&lt;scope&gt;</code> is empty.</p>
 <h2>Message body</h2>
 <ul>
 <li>uses the imperative, present tense: “change” not “changed” nor “changes”</li>
