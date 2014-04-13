@@ -1,5 +1,40 @@
 editButton: false
 
+<a name="v0.12.6"></a>
+### v0.12.6 (2014-04-09)
+
+<a name="v0.12.5"></a>
+### v0.12.5 (2014-04-08)
+
+
+#### Bug Fixes
+
+* **reporters:** format fix for console log ([d2d1377d](http://github.com/karma-runner/karma/commit/d2d1377d1be0da17196a1c82bf5584997d502b68), closes [#934](http://github.com/karma-runner/karma/issues/934))
+
+<a name="v0.12.4"></a>
+### v0.12.4 (2014-04-06)
+
+
+#### Bug Fixes
+
+* **init:** Fix type in init text ([e34465b0](http://github.com/karma-runner/karma/commit/e34465b01cc583cac9645acc98d20acbf471c856), closes [#954](http://github.com/karma-runner/karma/issues/954))
+
+<a name="v0.12.3"></a>
+### v0.12.3 (2014-04-01)
+
+
+#### Bug Fixes
+
+* **web-server:** implement a timeout on webServer.close() ([fe3dca78](http://github.com/karma-runner/karma/commit/fe3dca781def0a5f813e598fe73eb97b3f55d223), closes [#952](http://github.com/karma-runner/karma/issues/952))
+
+
+#### Features
+
+* **web-server:** run karma using multiple emulation modes, #631 ([b9a2930a](http://github.com/karma-runner/karma/commit/b9a2930a7fead5f29eb5f62b1a87739c4cf2e04b), closes [#936](http://github.com/karma-runner/karma/issues/936))
+
+<a name="v0.12.2"></a>
+### v0.12.2 (2014-03-30)
+
 <a name="v0.12.1"></a>
 ### v0.12.1 (2014-03-16)
 
