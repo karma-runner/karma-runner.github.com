@@ -162,6 +162,19 @@ served - but rather available as <code>window.__html__[&#39;my.html&#39;]</code>
   <span class="comment">// this file only gets watched and is otherwise ignored</span>
   {pattern: <span class="string">'app/index.html'</span>, included: <span class="literal">false</span>, served: <span class="literal">false</span>}
 ],</code></pre>
+<h2>Loading Assets</h2>
+<p>By default all assets are served at <code>http://localhost:[PORT]/base/</code>, Example for loading images</p>
+<pre><code class="language-javascript">files: [
+  {pattern: <span class="string">'test/images/*.jpg'</span>, watched: <span class="literal">false</span>, included: <span class="literal">false</span>, served: <span class="literal">true</span>}
+],</code></pre>
+<p>in this case the image is accessed at <code>http://localhost:[PORT]/base/test/images/[MY IMAGE].jpg</code></p>
+<p>notice the <strong>base</strong> in the URL</p>
+<p>or in addition you can use a proxy</p>
+<pre><code class="language-javascript">proxies: {
+  <span class="string">'/img/'</span>: <span class="string">'http://localhost:8080/base/test/images/'</span>
+},</code></pre>
+<p>now you can fetch images in &#39;test/images&#39; at <code>http://localhost:8080/img/[MY IMAGE].jpg</code></p>
+<p>just change <strong>8080</strong> to the port you use</p>
 
         </div>
       </div>
