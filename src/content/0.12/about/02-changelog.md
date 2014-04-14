@@ -1,5 +1,30 @@
 editButton: false
 
+<a name="v0.12.9"></a>
+### v0.12.9 (2014-04-14)
+
+
+#### Bug Fixes
+
+* **web-server:** strip scheme, host and port ([06a0da09](http://github.com/karma-runner/karma/commit/06a0da09320340a988513285046b577b4a7518fd))
+
+<a name="v0.12.8"></a>
+### v0.12.8 (2014-04-14)
+
+
+#### Bug Fixes
+
+* **web-server:** inline the config, when serving debug.html ([1eb36430](http://github.com/karma-runner/karma/commit/1eb36430ca26a769cd8fd2ab5a471aecb31cad9f))
+
+<a name="v0.12.7"></a>
+### v0.12.7 (2014-04-14)
+
+
+#### Bug Fixes
+
+* don't crash/terminate upon errors within chokidar ([2c389311](http://github.com/karma-runner/karma/commit/2c389311ce683646675adccf5a7b7b3160335148))
+* **preprocessor:** consider SVG files as text files, not binary files ([ff288036](http://github.com/karma-runner/karma/commit/ff2880369f0c4e8b78d95bb20365cead340f8fc9), closes [#1026](http://github.com/karma-runner/karma/issues/1026))
+
 <a name="v0.12.6"></a>
 ### v0.12.6 (2014-04-09)
 
