@@ -7,6 +7,10 @@ include html
   body
     #wrap.boxed
       header
+        if oldVersion
+          .flash
+              | <b>Heads Up!</b> You're viewing the docs for <b>v#{self.version}</b>, an old version of Karma.
+              | <a href="/#{self.newUrl}"><b>v#{versions[0]}</b> is the newest</a>.
         .container.clearfix
           .six.columns
             .logo
