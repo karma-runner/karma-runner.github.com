@@ -38,6 +38,7 @@
                   <li><a href="/0.12/intro/configuration.html">Configuration</a></li>
                   <li><a href="/0.12/intro/how-it-works.html">How It Works</a></li>
                   <li><a href="/0.12/intro/faq.html">FAQ</a></li>
+                  <li><a href="/0.12/intro/troubleshooting.html">Troubleshooting</a></li>
                 </ul>
               </li>
               <li><a href="javascript:void" class="">config</a>
@@ -59,6 +60,7 @@
                   <li><a href="/0.12/plus/angularjs.html">AngularJS</a></li>
                   <li><a href="/0.12/plus/yeoman.html">Yeoman</a></li>
                   <li><a href="/0.12/plus/emberjs.html">Ember.js</a></li>
+                  <li><a href="/0.12/plus/codio.html">Codio</a></li>
                 </ul>
               </li>
               <li><a href="javascript:void" class="">dev</a>
@@ -99,7 +101,49 @@
         </h1>
       </div>
       <div class="page-columns">
-        <div id="markdown" class="sixteen columns bottom"><p><a name="v0.12.9"></a></p>
+        <div id="markdown" class="sixteen columns bottom"><p><a name="v0.12.16"></a></p>
+<h3>v0.12.16 (2014-05-10)</h3>
+<h4>Bug Fixes</h4>
+<ul>
+<li><strong>launcher:</strong> cancel kill timeout when process exits cleanly (<a href="http://github.com/karma-runner/karma/commit/bd662744bfbe353ccb63c7a795f691d12530129c">bd662744</a>, closes <a href="http://github.com/karma-runner/karma/issues/946">#946</a>)</li>
+</ul>
+<p><a name="v0.12.15"></a></p>
+<h3>v0.12.15 (2014-05-08)</h3>
+<h4>Bug Fixes</h4>
+<ul>
+<li><strong>server:</strong> don&#39;t wait for socket.io store expiration timeout (<a href="http://github.com/karma-runner/karma/commit/cd30a422fbc3d9d96b9aae791063a20d02a5f195">cd30a422</a>)</li>
+</ul>
+<p><a name="v0.12.14"></a></p>
+<h3>v0.12.14 (2014-04-27)</h3>
+<h4>Bug Fixes</h4>
+<ul>
+<li><strong>debug.html:</strong> Added whitespace after &#39;SKIPPED&#39; (<a href="http://github.com/karma-runner/karma/commit/218ee859d8c8f1c7d2f47435548030f367f1e05d">218ee859</a>)</li>
+</ul>
+<p><a name="v0.12.13"></a></p>
+<h3>v0.12.13 (2014-04-27)</h3>
+<h4>Bug Fixes</h4>
+<ul>
+<li><strong>preprocessor:</strong> serve NaCl binaries (<a href="http://github.com/karma-runner/karma/commit/1cc6a1e34b24768bffdaf47fb5e36559f5dc5135">1cc6a1e3</a>)</li>
+</ul>
+<p><a name="v0.12.12"></a></p>
+<h3>v0.12.12 (2014-04-25)</h3>
+<h4>Bug Fixes</h4>
+<ul>
+<li><strong>server:</strong> properly close flash transport (<a href="http://github.com/karma-runner/karma/commit/de89cd33b772d373569d2db2e9066c6656016aa3">de89cd33</a>)</li>
+</ul>
+<p><a name="v0.12.11"></a></p>
+<h3>v0.12.11 (2014-04-25)</h3>
+<h4>Bug Fixes</h4>
+<ul>
+<li><strong>preprocessor:</strong> remove ts from binary extensions (<a href="http://github.com/karma-runner/karma/commit/8269852304d2d420bb25a0e4bb13bba58a339f39">82698523</a>)</li>
+</ul>
+<p><a name="v0.12.10"></a></p>
+<h3>v0.12.10 (2014-04-23)</h3>
+<h4>Bug Fixes</h4>
+<ul>
+<li><strong>server:</strong> clear web server close timeout on clean close (<a href="http://github.com/karma-runner/karma/commit/34123fed2fbe99b3a9a39ad5e0a141d55decb9f6">34123fed</a>)</li>
+</ul>
+<p><a name="v0.12.9"></a></p>
 <h3>v0.12.9 (2014-04-14)</h3>
 <h4>Bug Fixes</h4>
 <ul>
@@ -490,40 +534,40 @@ if you are using <code>karma run</code> with custom <code>--runer-port</code>, p
 <ul>
 <li>please update your karma.conf.js as follows (<a href="https://github.com/karma-runner/karma/commit/d2a3c8546dc4b10bb9194047a1c11963639f3730">d2a3c854</a>):</li>
 </ul>
-<pre><code class="language-javascript"><span class="comment">// before:</span>
-module.exports = <span class="keyword">function</span>(karma) {
-  karma.configure({port: <span class="number">123</span>});
-  karma.defineLauncher(<span class="string">'x'</span>, <span class="string">'Chrome'</span>, {
-    flags: [<span class="string">'--disable-web-security'</span>]
+<pre><code class="language-javascript"><span class="hljs-comment">// before:</span>
+module.exports = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(karma)</span> {</span>
+  karma.configure({port: <span class="hljs-number">123</span>});
+  karma.defineLauncher(<span class="hljs-string">'x'</span>, <span class="hljs-string">'Chrome'</span>, {
+    flags: [<span class="hljs-string">'--disable-web-security'</span>]
   });
-  karma.definePreprocessor(<span class="string">'y'</span>, <span class="string">'coffee'</span>, {
-    bare: <span class="literal">false</span>
+  karma.definePreprocessor(<span class="hljs-string">'y'</span>, <span class="hljs-string">'coffee'</span>, {
+    bare: <span class="hljs-literal">false</span>
   });
-  karma.defineReporter(<span class="string">'z'</span>, <span class="string">'coverage'</span>, {
-    type: <span class="string">'html'</span>
+  karma.defineReporter(<span class="hljs-string">'z'</span>, <span class="hljs-string">'coverage'</span>, {
+    type: <span class="hljs-string">'html'</span>
   });
 };
 
-<span class="comment">// after:</span>
-module.exports = <span class="keyword">function</span>(config) {
+<span class="hljs-comment">// after:</span>
+module.exports = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(config)</span> {</span>
   config.set({
-    port: <span class="number">123</span>,
+    port: <span class="hljs-number">123</span>,
     customLaunchers: {
-      <span class="string">'x'</span>: {
-        base: <span class="string">'Chrome'</span>,
-        flags: [<span class="string">'--disable-web-security'</span>]
+      <span class="hljs-string">'x'</span>: {
+        base: <span class="hljs-string">'Chrome'</span>,
+        flags: [<span class="hljs-string">'--disable-web-security'</span>]
       }
     },
     customPreprocessors: {
-      <span class="string">'y'</span>: {
-        base: <span class="string">'coffee'</span>,
-        bare: <span class="literal">false</span>
+      <span class="hljs-string">'y'</span>: {
+        base: <span class="hljs-string">'coffee'</span>,
+        bare: <span class="hljs-literal">false</span>
       }
     },
     customReporters: {
-      <span class="string">'z'</span>: {
-        base: <span class="string">'coverage'</span>,
-        type: <span class="string">'html'</span>
+      <span class="hljs-string">'z'</span>: {
+        base: <span class="hljs-string">'coverage'</span>,
+        type: <span class="hljs-string">'html'</span>
       }
     }
   });
@@ -567,10 +611,10 @@ module.exports = <span class="keyword">function</span>(config) {
 <ul>
 <li>Update your karma.conf.js to export a config function (<a href="https://github.com/karma-runner/karma/commit/a37fd6f7d28036b8da5fe98634cf711cebafc1ff">a37fd6f7</a>):</li>
 </ul>
-<pre><code class="language-javascript">module.exports = <span class="keyword">function</span>(karma) {
+<pre><code class="language-javascript">module.exports = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(karma)</span> {</span>
   karma.configure({
-    autoWatch: <span class="literal">true</span>,
-    <span class="comment">// ...</span>
+    autoWatch: <span class="hljs-literal">true</span>,
+    <span class="hljs-comment">// ...</span>
   });
 };</code></pre>
 <p><a name="v0.9.2"></a></p>

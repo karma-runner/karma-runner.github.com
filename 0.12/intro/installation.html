@@ -38,6 +38,7 @@
                   <li><a href="/0.12/intro/configuration.html">Configuration</a></li>
                   <li><a href="/0.12/intro/how-it-works.html">How It Works</a></li>
                   <li><a href="/0.12/intro/faq.html">FAQ</a></li>
+                  <li><a href="/0.12/intro/troubleshooting.html">Troubleshooting</a></li>
                 </ul>
               </li>
               <li><a href="javascript:void" class="">config</a>
@@ -59,6 +60,7 @@
                   <li><a href="/0.12/plus/angularjs.html">AngularJS</a></li>
                   <li><a href="/0.12/plus/yeoman.html">Yeoman</a></li>
                   <li><a href="/0.12/plus/emberjs.html">Ember.js</a></li>
+                  <li><a href="/0.12/plus/codio.html">Codio</a></li>
                 </ul>
               </li>
               <li><a href="javascript:void" class="">dev</a>
@@ -110,16 +112,16 @@ On Linux, we recommend using <a href="https://github.com/creationix/nvm">NVM</a>
 <h2>Installing Karma and plugins</h2>
 <p>The recommended approach is to install Karma (and all the plugins your project needs) locally in
 the project&#39;s directory.</p>
-<pre><code class="language-bash"><span class="comment"># Install Karma:</span>
+<pre><code class="language-bash"><span class="hljs-comment"># Install Karma:</span>
 $ npm install karma --save-dev
 
-<span class="comment"># Install plugins that your project needs:</span>
+<span class="hljs-comment"># Install plugins that your project needs:</span>
 $ npm install karma-jasmine karma-chrome-launcher --save-dev</code></pre>
 <p>This will install <code>karma</code>, <code>karma-jasmine</code> and <code>karma-chrome-launcher</code> packages into <code>node_modules</code> in your current
 working directory and also save these as <code>devDependencies</code> in <code>package.json</code>, so that any
 other developer working on the project will only have to do <code>npm install</code> in order to get all these
 dependencies installed.</p>
-<pre><code class="language-bash"><span class="comment"># Run Karma:</span>
+<pre><code class="language-bash"><span class="hljs-comment"># Run Karma:</span>
 $ ./node_modules/karma/bin/karma start</code></pre>
 <h2>Commandline Interface</h2>
 <p>Typing <code>./node_modules/karma/bin/karma start</code> sucks and so you might find it useful to install <code>karma-cli</code> globally.</p>

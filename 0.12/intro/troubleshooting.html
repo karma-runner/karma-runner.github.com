@@ -6,7 +6,7 @@
 <head>
   <!-- Basic Page Needs-->
   <meta charset="utf-8">
-  <title>Karma - Plugins</title>
+  <title>Karma - Troubleshooting</title>
   <!-- Mobile specific Metas-->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="">
@@ -32,7 +32,7 @@
         <div class="ten columns">
           <nav id="menu" class="navigation">
             <ul id="nav">
-              <li><a href="javascript:void" class="">intro</a>
+              <li><a href="javascript:void" class="active">intro</a>
                 <ul>
                   <li><a href="/0.12/intro/installation.html">Installation</a></li>
                   <li><a href="/0.12/intro/configuration.html">Configuration</a></li>
@@ -41,7 +41,7 @@
                   <li><a href="/0.12/intro/troubleshooting.html">Troubleshooting</a></li>
                 </ul>
               </li>
-              <li><a href="javascript:void" class="active">config</a>
+              <li><a href="javascript:void" class="">config</a>
                 <ul>
                   <li><a href="/0.12/config/configuration-file.html">Configuration File</a></li>
                   <li><a href="/0.12/config/files.html">Files</a></li>
@@ -97,38 +97,30 @@
     </header>
     <div class="container clearfix">
       <div class="sixteen columns">
-        <h1 class="page-title">Plugins<a href="https://github.com/karma-runner/karma/edit/master/docs/config/05-plugins.md" data-tooltip="Edit this page on GitHub" class="edit"><i class="icon-edit"></i></a><span class="line"></span>
+        <h1 class="page-title">Troubleshooting<a href="https://github.com/karma-runner/karma/edit/master/docs/intro/05-troubleshooting.md" data-tooltip="Edit this page on GitHub" class="edit"><i class="icon-edit"></i></a><span class="line"></span>
         </h1>
       </div>
       <div class="page-columns">
-        <div id="markdown" class="sixteen columns bottom"><p>Karma can be easily extended through plugins.
-In fact, all the existing preprocessors, reporters, browser launchers and frameworks are also plugins.</p>
-<h2>Installation</h2>
-<p>Karma plugins are NPM modules, so the recommended way is to keep all the plugins your project requires in <code>package.json</code>:</p>
-<pre><code class="language-javascript">{
-  <span class="hljs-string">"devDependencies"</span>: {
-    <span class="hljs-string">"karma"</span>: <span class="hljs-string">"~0.10"</span>,
-    <span class="hljs-string">"karma-mocha"</span>: <span class="hljs-string">"~0.0.1"</span>,
-    <span class="hljs-string">"karma-growl-reporter"</span>: <span class="hljs-string">"~0.0.1"</span>,
-    <span class="hljs-string">"karma-firefox-launcher"</span>: <span class="hljs-string">"~0.0.1"</span>
-  }
-}</code></pre>
-<p>Therefore, a simple way how to install a plugin is</p>
-<pre><code class="language-bash">npm install karma-&lt;plugin name&gt; --save-dev</code></pre>
-<h2>Loading Plugins</h2>
-<p>By default, Karma loads all sibling NPM modules which names start with <code>karma-*</code>.</p>
-<p>You can also explicitly list plugins you want to load via the <code>plugins</code> configuration setting. The configuration value can either be
-a string (module name), which will be required by Karma, or an object (inlined plugin).</p>
-<pre><code class="language-javascript">plugins: [
-  <span class="hljs-comment">// these plugins will be require() by Karma</span>
-  <span class="hljs-string">'karma-jasmine'</span>,
-  <span class="hljs-string">'karma-chrome-launcher'</span>
+        <div id="markdown" class="sixteen columns bottom"><p>Here you&#39;ll find a list of the most common problems and how to solve it.</p>
+<div class="alert alert-success"><h4 class="alert-heading">Note: </h4>If you can&#39;t find the solution for your issue here you can also ask for help in the <a href="https://groups.google.com/d/forum/karma-users">mailing-list</a> or <a href="http://stackoverflow.com/questions/tagged/karma-runner">Stack Overflow</a>.
 
-  <span class="hljs-comment">// inlined plugins</span>
-  {<span class="hljs-string">'framework:xyz'</span>, [<span class="hljs-string">'factory'</span>, factoryFn]},
-  <span class="hljs-built_in">require</span>(<span class="hljs-string">'./plugin-required-from-config'</span>)
-]</code></pre>
-<p>There are already many <a href="https://npmjs.org/browse/keyword/karma-plugin">existing plugins</a>. Of course, you write <a href="../dev/plugins.html">your own plugins</a> too!</p>
+</div>
+<h3>The browser just does not start. What&#39;s going on?</h3>
+<p>It&#39;s more likely Karma can&#39;t find the location of the browser binary (the execution file). You can fix this by setting
+the appropriate environment variable with the correct path (Google Chrome for instance uses the <code>CHROME_BIN</code> environment variable).
+Check out [browsers] for more information.</p>
+<h3>I&#39;m getting a weird error from the browser, how can I debug it ?</h3>
+<p>Go to the captured browser and click the &quot;DEBUG&quot; button (or open <code>http://localhost:9876/debug.html</code>)
+and use the web inspector to see what&#39;s going on. (You may need to refresh the debug.html page for it to kick in once
+the web inspector is open.)</p>
+<h3>I&#39;m getting a syntax error from a HTML file. It looks like the preprocessor isn&#39;t working.</h3>
+<p>The patterns in the <code>preprocessors</code> configuration setting are resolved via the <code>basePath</code> setting.
+See preprocessors for more information. You can also turn on debug logging (use <code>--log-level debug</code> when starting Karma)
+and Karma will display which files are preprocessed.</p>
+<h3>I&#39;m getting a <code>npm ERR! peerinvalid Peer</code> error. How can I fix that ?</h3>
+<p>Try to remove <code>karma</code> and <code>karma-*</code> modules from your <code>node_modules</code> first (for instance <code>rm -rf /usr/local/lib/node_modules/karma-*</code>), than install Karma again.</p>
+<h3>My tests are running really slow. What&#39;s going on?</h3>
+<p>Make sure the Karma&#39;s tab is active. Browsers give inactive tabs only minimum CPU.</p>
 
         </div>
       </div>

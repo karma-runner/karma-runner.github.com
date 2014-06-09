@@ -38,6 +38,7 @@
                   <li><a href="/0.12/intro/configuration.html">Configuration</a></li>
                   <li><a href="/0.12/intro/how-it-works.html">How It Works</a></li>
                   <li><a href="/0.12/intro/faq.html">FAQ</a></li>
+                  <li><a href="/0.12/intro/troubleshooting.html">Troubleshooting</a></li>
                 </ul>
               </li>
               <li><a href="javascript:void" class="">config</a>
@@ -59,6 +60,7 @@
                   <li><a href="/0.12/plus/angularjs.html">AngularJS</a></li>
                   <li><a href="/0.12/plus/yeoman.html">Yeoman</a></li>
                   <li><a href="/0.12/plus/emberjs.html">Ember.js</a></li>
+                  <li><a href="/0.12/plus/codio.html">Codio</a></li>
                 </ul>
               </li>
               <li><a href="javascript:void" class="">dev</a>
@@ -114,22 +116,6 @@ use Karma with <a href="https://github.com/karma-runner/karma-ng-scenario">karma
 <p>The latest stable version from NPM (<code>npm install karma</code>). See <a href="../about/versioning.html">versioning</a> for more detailed information about Karma&#39;s release channels.</p>
 <h3>Which version of Node.js does Karma run with ?</h3>
 <p>The two latest stable versions. That means <code>0.8</code> and <code>0.10</code> at this point.</p>
-<h3>The browser just does not start. What&#39;s going on?</h3>
-<p>It&#39;s more likely Karma can&#39;t find the location of the browser binary (the execution file). You can fix this by setting
-the appropriate environment variable with the correct path (Google Chrome for instance uses the <code>CHROME_BIN</code> environment variable).
-Check out <a href="../config/browsers.html">browsers</a> for more information.</p>
-<h3>I&#39;m getting a weird error from the browser, how can I debug it ?</h3>
-<p>Go to the captured browser and click the &quot;DEBUG&quot; button (or open <code>http://localhost:9876/debug.html</code>)
-and use the web inspector to see what&#39;s going on. (You may need to refresh the debug.html page for it to kick in once
-the web inspector is open.)</p>
-<h3>I&#39;m getting a syntax error from a HTML file. It looks like the preprocessor isn&#39;t working.</h3>
-<p>The patterns in the <code>preprocessors</code> configuration setting are resolved via the <code>basePath</code> setting.
-See preprocessors for more information. You can also turn on debug logging (use <code>--log-level debug</code> when starting Karma)
-and Karma will display which files are preprocessed.</p>
-<h3>I&#39;m getting a <code>npm ERR! peerinvalid Peer</code> error. How can I fix that ?</h3>
-<p>Try to remove <code>karma</code> and <code>karma-*</code> modules from your <code>node_modules</code> first (for instance <code>rm -rf /usr/local/lib/node_modules/karma-*</code>), than install Karma again.</p>
-<h3>My tests are running really slow. What&#39;s going on?</h3>
-<p>Make sure the Karma&#39;s tab is active. Browsers give inactive tabs only minimum CPU.</p>
 
         </div>
       </div>

@@ -38,6 +38,7 @@
                   <li><a href="/0.12/intro/configuration.html">Configuration</a></li>
                   <li><a href="/0.12/intro/how-it-works.html">How It Works</a></li>
                   <li><a href="/0.12/intro/faq.html">FAQ</a></li>
+                  <li><a href="/0.12/intro/troubleshooting.html">Troubleshooting</a></li>
                 </ul>
               </li>
               <li><a href="javascript:void" class="">config</a>
@@ -59,6 +60,7 @@
                   <li><a href="/0.12/plus/angularjs.html">AngularJS</a></li>
                   <li><a href="/0.12/plus/yeoman.html">Yeoman</a></li>
                   <li><a href="/0.12/plus/emberjs.html">Ember.js</a></li>
+                  <li><a href="/0.12/plus/codio.html">Codio</a></li>
                 </ul>
               </li>
               <li><a href="javascript:void" class="">dev</a>
@@ -112,41 +114,60 @@
 <li><p>genenerate a configuration file for karma</p>
 <pre><code class="language-bash">karma init</code></pre>
 <p>note -the above will walk you through the basic setup. An example configuration file that works with ember.js/qunit and phantomjs is below</p>
-<pre><code class="language-javascript">module.exports = <span class="keyword">function</span>(config) {
+<pre><code class="language-javascript">module.exports = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(config)</span> {</span>
  config.set({
-   basePath: <span class="string">'js'</span>,
+   basePath: <span class="hljs-string">'js'</span>,
 
    files: [
-     <span class="string">'vendor/jquery/jquery.min.js'</span>,
-     <span class="string">'vendor/handlebars/handlebars.js'</span>,
-     <span class="string">'vendor/ember/ember.js'</span>,
-     <span class="string">'app.js'</span>,
-     <span class="string">'tests/*.js'</span>,
-     <span class="string">'templates/*.handlebars'</span>
+     <span class="hljs-string">'vendor/jquery/jquery.min.js'</span>,
+     <span class="hljs-string">'vendor/handlebars/handlebars.js'</span>,
+     <span class="hljs-string">'vendor/ember/ember.js'</span>,
+     <span class="hljs-string">'app.js'</span>,
+     <span class="hljs-string">'tests/*.js'</span>,
+     <span class="hljs-string">'templates/*.handlebars'</span>
    ],
 
-   browsers: [<span class="string">'PhantomJS'</span>],
-   singleRun: <span class="literal">true</span>,
-   autoWatch: <span class="literal">false</span>,
+   browsers: [<span class="hljs-string">'PhantomJS'</span>],
+   singleRun: <span class="hljs-literal">true</span>,
+   autoWatch: <span class="hljs-literal">false</span>,
 
-   frameworks: [<span class="string">'qunit'</span>],
+   frameworks: [<span class="hljs-string">'qunit'</span>],
 
    plugins: [
-     <span class="string">'karma-qunit'</span>,
-     <span class="string">'karma-ember-preprocessor'</span>,
-     <span class="string">'karma-phantomjs-launcher'</span>
+     <span class="hljs-string">'karma-qunit'</span>,
+     <span class="hljs-string">'karma-ember-preprocessor'</span>,
+     <span class="hljs-string">'karma-phantomjs-launcher'</span>
    ],
 
    preprocessors: {
-     <span class="string">'**/*.handlebars'</span>: <span class="string">'ember'</span>
+     <span class="hljs-string">'**/*.handlebars'</span>: <span class="hljs-string">'ember'</span>
    }
  });
 };</code></pre>
 <p>Note - the <code>files</code> section above should include all dependencies, ie- jQuery/handlebars/ember.js along with the js and handlebars files required to deploy and run your production ember.js application</p>
+<p>Note - when testing ember applications, it is important that karma not being running the tests until the ember application has finished initialization.  you will need to include a small bootstrap file in the <code>files</code> section above to enforce this.  Here&#39;s an example:</p>
+<pre><code class="language-javascript">__karma__.loaded = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>};
+
+App.setupForTesting();
+App.injectTestHelpers();
+
+<span class="hljs-comment">//this gate/check is required given that standard practice in Ember tests to is to call</span>
+<span class="hljs-comment">//Ember.reset() in the afterEach/tearDown for each test.  Doing so, causes the application</span>
+<span class="hljs-comment">//to 're-initialize', resulting in repeated calls to the initialize function below</span>
+<span class="hljs-keyword">var</span> karma_started = <span class="hljs-literal">false</span>;
+App.initializer({
+   name: <span class="hljs-string">"run tests"</span>,
+   initialize: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(container, application)</span> {</span>
+       <span class="hljs-keyword">if</span> (!karma_started) {
+           karma_started = <span class="hljs-literal">true</span>;
+           __karma__.start();
+       }
+   }
+});</code></pre>
 </li>
 <li><p>add a simple qunit test</p>
-<pre><code class="language-javascript">test(<span class="string">'one should equal one'</span>, <span class="keyword">function</span>() {
-   equal(<span class="number">1</span>, <span class="number">1</span>, <span class="string">'error: one did not equal one'</span>);
+<pre><code class="language-javascript">test(<span class="hljs-string">'one should equal one'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+   equal(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-string">'error: one did not equal one'</span>);
 });</code></pre>
 </li>
 <li><p>run the tests with karma from the command line</p>

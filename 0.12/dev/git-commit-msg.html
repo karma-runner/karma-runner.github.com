@@ -38,6 +38,7 @@
                   <li><a href="/0.12/intro/configuration.html">Configuration</a></li>
                   <li><a href="/0.12/intro/how-it-works.html">How It Works</a></li>
                   <li><a href="/0.12/intro/faq.html">FAQ</a></li>
+                  <li><a href="/0.12/intro/troubleshooting.html">Troubleshooting</a></li>
                 </ul>
               </li>
               <li><a href="javascript:void" class="">config</a>
@@ -59,6 +60,7 @@
                   <li><a href="/0.12/plus/angularjs.html">AngularJS</a></li>
                   <li><a href="/0.12/plus/yeoman.html">Yeoman</a></li>
                   <li><a href="/0.12/plus/emberjs.html">Ember.js</a></li>
+                  <li><a href="/0.12/plus/codio.html">Codio</a></li>
                 </ul>
               </li>
               <li><a href="javascript:void" class="active">dev</a>
@@ -105,7 +107,7 @@
 <li>simple navigation through git history (eg. ignoring style changes)</li>
 </ul>
 <h2>Format of the commit message:</h2>
-<pre><code class="language-bash">&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;
+<pre><code class="language-bash">&lt;<span class="hljs-built_in">type</span>&gt;(&lt;scope&gt;): &lt;subject&gt;
 
 &lt;body&gt;
 
@@ -149,9 +151,9 @@ omitted. In smaller projects such as Karma plugins, the <code>&lt;scope&gt;</cod
 <h2>Message footer</h2>
 <h3>Referencing issues</h3>
 <p>Closed issues should be listed on a separate line in the footer prefixed with &quot;Closes&quot; keyword like this:</p>
-<pre><code class="language-bash">Closes <span class="comment">#234</span></code></pre>
+<pre><code class="language-bash">Closes <span class="hljs-comment">#234</span></code></pre>
 <p>or in case of multiple issues:</p>
-<pre><code class="language-bash">Closes <span class="comment">#123, #245, #992</span></code></pre>
+<pre><code class="language-bash">Closes <span class="hljs-comment">#123, #245, #992</span></code></pre>
 <h3>Breaking changes</h3>
 <p>All breaking changes have to be mentioned in footer with the
 description of the change, justification and migration notes.</p>

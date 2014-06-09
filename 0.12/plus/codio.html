@@ -6,7 +6,7 @@
 <head>
   <!-- Basic Page Needs-->
   <meta charset="utf-8">
-  <title>Karma - Plugins</title>
+  <title>Karma - Codio</title>
   <!-- Mobile specific Metas-->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="">
@@ -41,7 +41,7 @@
                   <li><a href="/0.12/intro/troubleshooting.html">Troubleshooting</a></li>
                 </ul>
               </li>
-              <li><a href="javascript:void" class="active">config</a>
+              <li><a href="javascript:void" class="">config</a>
                 <ul>
                   <li><a href="/0.12/config/configuration-file.html">Configuration File</a></li>
                   <li><a href="/0.12/config/files.html">Files</a></li>
@@ -50,7 +50,7 @@
                   <li><a href="/0.12/config/plugins.html">Plugins</a></li>
                 </ul>
               </li>
-              <li><a href="javascript:void" class="">plus</a>
+              <li><a href="javascript:void" class="active">plus</a>
                 <ul>
                   <li><a href="/0.12/plus/requirejs.html">RequireJS</a></li>
                   <li><a href="/0.12/plus/travis.html">Travis CI</a></li>
@@ -97,38 +97,67 @@
     </header>
     <div class="container clearfix">
       <div class="sixteen columns">
-        <h1 class="page-title">Plugins<a href="https://github.com/karma-runner/karma/edit/master/docs/config/05-plugins.md" data-tooltip="Edit this page on GitHub" class="edit"><i class="icon-edit"></i></a><span class="line"></span>
+        <h1 class="page-title">Codio<a href="https://github.com/karma-runner/karma/edit/master/docs/plus/09-codio.md" data-tooltip="Edit this page on GitHub" class="edit"><i class="icon-edit"></i></a><span class="line"></span>
         </h1>
       </div>
       <div class="page-columns">
-        <div id="markdown" class="sixteen columns bottom"><p>Karma can be easily extended through plugins.
-In fact, all the existing preprocessors, reporters, browser launchers and frameworks are also plugins.</p>
-<h2>Installation</h2>
-<p>Karma plugins are NPM modules, so the recommended way is to keep all the plugins your project requires in <code>package.json</code>:</p>
-<pre><code class="language-javascript">{
-  <span class="hljs-string">"devDependencies"</span>: {
-    <span class="hljs-string">"karma"</span>: <span class="hljs-string">"~0.10"</span>,
-    <span class="hljs-string">"karma-mocha"</span>: <span class="hljs-string">"~0.0.1"</span>,
-    <span class="hljs-string">"karma-growl-reporter"</span>: <span class="hljs-string">"~0.0.1"</span>,
-    <span class="hljs-string">"karma-firefox-launcher"</span>: <span class="hljs-string">"~0.0.1"</span>
+        <div id="markdown" class="sixteen columns bottom"><p><a href="https://codio.com">Codio</a> is a web-based cloud integrated development environment that supports almost any programming language. Every project gets its own Box: an instantly available server-side development environment with full terminal access. Unlimited panels and tabs, and a plethora of productivity features. </p>
+<h2>Customize your Codio Project</h2>
+<p>Next to the help menu you will see the &quot;Configure&quot; option, if you don&#39;t see it click the little arrow near the end and then select &quot;Configure&quot;.</p>
+<p>This opens a .codio file which you can customize and use rather than entering commands in Terminal. Replace the existing text with the text below:</p>
+<pre><code>{
+<span class="hljs-comment">// Configure your Run and Preview buttons here.</span>
+
+<span class="hljs-comment">// Run button configuration</span>
+  <span class="hljs-string">"commands"</span>: {
+    <span class="hljs-string">"Karma Start"</span>: <span class="hljs-string">"karma start --no-browsers"</span>
+    <span class="hljs-string">"Karam Run"</span>: <span class="hljs-string">"karma run"</span>
+  },
+
+<span class="hljs-comment">// Preview button configuration</span>
+  <span class="hljs-string">"preview"</span>: {
+    <span class="hljs-string">"Karma Preview"</span>: <span class="hljs-string">"http://{{domain}}:8080"</span>
   }
 }</code></pre>
-<p>Therefore, a simple way how to install a plugin is</p>
-<pre><code class="language-bash">npm install karma-&lt;plugin name&gt; --save-dev</code></pre>
-<h2>Loading Plugins</h2>
-<p>By default, Karma loads all sibling NPM modules which names start with <code>karma-*</code>.</p>
-<p>You can also explicitly list plugins you want to load via the <code>plugins</code> configuration setting. The configuration value can either be
-a string (module name), which will be required by Karma, or an object (inlined plugin).</p>
-<pre><code class="language-javascript">plugins: [
-  <span class="hljs-comment">// these plugins will be require() by Karma</span>
-  <span class="hljs-string">'karma-jasmine'</span>,
-  <span class="hljs-string">'karma-chrome-launcher'</span>
-
-  <span class="hljs-comment">// inlined plugins</span>
-  {<span class="hljs-string">'framework:xyz'</span>, [<span class="hljs-string">'factory'</span>, factoryFn]},
-  <span class="hljs-built_in">require</span>(<span class="hljs-string">'./plugin-required-from-config'</span>)
-]</code></pre>
-<p>There are already many <a href="https://npmjs.org/browse/keyword/karma-plugin">existing plugins</a>. Of course, you write <a href="../dev/plugins.html">your own plugins</a> too!</p>
+<p><em>If you wish, you can change the port for the <code>Karma Preview</code> entry, but make a note of the change as you will need to include that port in the <code>karma.config js</code> file later.</em></p>
+<h2>Configuration</h2>
+<ul>
+<li>Edit the <code>karma.conf.js</code> and add the following:</li>
+</ul>
+<pre><code>    <span class="hljs-comment">// hostname for the server</span>
+    hostname: <span class="hljs-built_in">require</span>(<span class="hljs-string">'os'</span>).hostname() + <span class="hljs-string">'.codio.io'</span>,</code></pre>
+<ul>
+<li>Review webserver port entry to ensure same port defined as entered in .codio file</li>
+</ul>
+<pre><code>    // web server <span class="hljs-keyword">port</span>
+    <span class="hljs-keyword">port</span>: <span class="hljs-number">8080</span>,</code></pre>
+<h2>Capture the browser manually on the local machine</h2>
+<p>You can use your local browser.</p>
+<ul>
+<li><p>Either:</p>
+<ul>
+<li><p>Open a Terminal window and enter</p>
+<pre><code>  $ karma <span class="hljs-operator"><span class="hljs-keyword">start</span> --<span class="hljs-keyword">no</span>-browsers</span></code></pre>
+<p>or </p>
+</li>
+<li>Select <code>Karma Start</code> from the Run menu (the 2nd from right button).</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>Select <code>Karma Preview</code> from the Preview menu (the right hand button).</p>
+</li>
+<li><p>Switch back into your Codio project and either: </p>
+<ul>
+<li><p>Open a new Terminal window and enter</p>
+<pre><code>  <span class="hljs-variable">$ </span>karma run</code></pre>
+<p>or </p>
+</li>
+<li>Select <code>Karma Run</code> from the Run menu (the 2nd from right button).</li>
+</ul>
+</li>
+</ul>
+<p>and your test will execute</p>
 
         </div>
       </div>

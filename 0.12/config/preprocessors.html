@@ -38,6 +38,7 @@
                   <li><a href="/0.12/intro/configuration.html">Configuration</a></li>
                   <li><a href="/0.12/intro/how-it-works.html">How It Works</a></li>
                   <li><a href="/0.12/intro/faq.html">FAQ</a></li>
+                  <li><a href="/0.12/intro/troubleshooting.html">Troubleshooting</a></li>
                 </ul>
               </li>
               <li><a href="javascript:void" class="active">config</a>
@@ -59,6 +60,7 @@
                   <li><a href="/0.12/plus/angularjs.html">AngularJS</a></li>
                   <li><a href="/0.12/plus/yeoman.html">Yeoman</a></li>
                   <li><a href="/0.12/plus/emberjs.html">Ember.js</a></li>
+                  <li><a href="/0.12/plus/codio.html">Codio</a></li>
                 </ul>
               </li>
               <li><a href="javascript:void" class="">dev</a>
@@ -103,9 +105,9 @@
 they get served to the browser. These are configured in the <code>preprocessors</code> block
 of the configuration file:</p>
 <pre><code class="language-javascript">preprocessors: {
-  <span class="string">'**/*.coffee'</span>: [<span class="string">'coffee'</span>],
-  <span class="string">'**/*.tea'</span>: [<span class="string">'coffee'</span>],
-  <span class="string">'**/*.html'</span>: [<span class="string">'html2js'</span>]
+  <span class="hljs-string">'**/*.coffee'</span>: [<span class="hljs-string">'coffee'</span>],
+  <span class="hljs-string">'**/*.tea'</span>: [<span class="hljs-string">'coffee'</span>],
+  <span class="hljs-string">'**/*.html'</span>: [<span class="hljs-string">'html2js'</span>]
 },</code></pre>
 <p>Note the multiple expressions referencing the &quot;coffee&quot; preprocessor, as a preprocessor can be listed more than once,
 as another way to specify multiple file path expressions.</p>
@@ -125,13 +127,13 @@ as another way to specify multiple file path expressions.</p>
 <li><a href="https://www.npmjs.org/browse/keyword/karma-preprocessor">many more</a></li>
 </ul>
 <p>Here&#39;s an example of how to add the CoffeScript preprocessor to your testing suite:</p>
-<pre><code class="language-bash"><span class="comment"># Install it first with NPM</span>
+<pre><code class="language-bash"><span class="hljs-comment"># Install it first with NPM</span>
 $ npm install karma-coffee-preprocessor --save-dev</code></pre>
 <p>And then inside your configuration file...</p>
-<pre><code class="language-javascript">module.exports = <span class="keyword">function</span>(config) {
+<pre><code class="language-javascript">module.exports = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(config)</span> {</span>
   config.set({
     preprocessors: {
-      <span class="string">'**/*.coffee'</span>: [<span class="string">'coffee'</span>]
+      <span class="hljs-string">'**/*.coffee'</span>: [<span class="hljs-string">'coffee'</span>]
     }
   });
 };</code></pre>
@@ -140,14 +142,14 @@ $ npm install karma-coffee-preprocessor --save-dev</code></pre>
 <p>Some of the preprocessors can be also configured:</p>
 <pre><code class="language-javascript">coffeePreprocessor: {
   options: {
-    bare: <span class="literal">false</span>
+    bare: <span class="hljs-literal">false</span>
   }
 }</code></pre>
 <p>Or define a configured preprocessor:</p>
 <pre><code class="language-javascript">customPreprocessors: {
   bare_coffee: {
-    base: <span class="string">'coffee'</span>,
-    options: {bare: <span class="literal">true</span>}
+    base: <span class="hljs-string">'coffee'</span>,
+    options: {bare: <span class="hljs-literal">true</span>}
   }
 }</code></pre>
 <h2>Minimatching</h2>

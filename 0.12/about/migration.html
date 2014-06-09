@@ -38,6 +38,7 @@
                   <li><a href="/0.12/intro/configuration.html">Configuration</a></li>
                   <li><a href="/0.12/intro/how-it-works.html">How It Works</a></li>
                   <li><a href="/0.12/intro/faq.html">FAQ</a></li>
+                  <li><a href="/0.12/intro/troubleshooting.html">Troubleshooting</a></li>
                 </ul>
               </li>
               <li><a href="javascript:void" class="">config</a>
@@ -59,6 +60,7 @@
                   <li><a href="/0.12/plus/angularjs.html">AngularJS</a></li>
                   <li><a href="/0.12/plus/yeoman.html">Yeoman</a></li>
                   <li><a href="/0.12/plus/emberjs.html">Ember.js</a></li>
+                  <li><a href="/0.12/plus/codio.html">Codio</a></li>
                 </ul>
               </li>
               <li><a href="javascript:void" class="">dev</a>
@@ -103,7 +105,7 @@
 You can leave all the existing projects using an older version of Karma and only use the latest
 version for the new projects. Or you can migrate the existing projects one at the time...</p>
 <p>Anyway, this migration should be easy ;-) so let&#39;s get started...</p>
-<pre><code class="language-bash">cd &lt;path-to-your-project&gt;
+<pre><code class="language-bash"><span class="hljs-built_in">cd</span> &lt;path-to-your-project&gt;
 npm install karma --save-dev</code></pre>
 <p>This will install the latest version of Karma and also update <code>package.json</code> of your project.</p>
 <h2>Install missing plugins</h2>
@@ -130,7 +132,7 @@ If you want to use the <code>karma</code> command, please install the command li
 <h2>Default configuration</h2>
 <p><code>autoWatch</code> is true by default, so if you don&#39;t wanna use it make sure you set it to <code>false</code>. But hey, give it a shot first, it&#39;s really awesome to run your tests on every save!</p>
 <h2>NPM complaining</h2>
-<p>NPM is sometimes retarded so if you get into troubles like &quot;unsatisfied peer dependency&quot;, just try to remove all the packages (<code>rm -rf ./node_modules</code>) and install again.</p>
+<p>NPM is sometimes finicky so if you encounter errors such as &quot;unsatisfied peer dependency&quot;, just try to remove all the packages (<code>rm -rf ./node_modules</code>) and install again.</p>
 <p>If you have any other issuses, please ask on the <a href="https://groups.google.com/forum/?fromgroups#!forum/karma-users">mailing list</a>.</p>
 
         </div>

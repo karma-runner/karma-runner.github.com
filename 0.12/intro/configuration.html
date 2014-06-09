@@ -38,6 +38,7 @@
                   <li><a href="/0.12/intro/configuration.html">Configuration</a></li>
                   <li><a href="/0.12/intro/how-it-works.html">How It Works</a></li>
                   <li><a href="/0.12/intro/faq.html">FAQ</a></li>
+                  <li><a href="/0.12/intro/troubleshooting.html">Troubleshooting</a></li>
                 </ul>
               </li>
               <li><a href="javascript:void" class="">config</a>
@@ -59,6 +60,7 @@
                   <li><a href="/0.12/plus/angularjs.html">AngularJS</a></li>
                   <li><a href="/0.12/plus/yeoman.html">Yeoman</a></li>
                   <li><a href="/0.12/plus/emberjs.html">Ember.js</a></li>
+                  <li><a href="/0.12/plus/codio.html">Codio</a></li>
                 </ul>
               </li>
               <li><a href="javascript:void" class="">dev</a>
@@ -106,7 +108,7 @@ and this is done via a configuration file. This page explains how to create such
 <p>The configuration file can be generated using <code>karma init</code>:</p>
 <pre><code class="language-bash">$ karma init my.conf.js
 
-Which testing framework <span class="keyword">do</span> you want to use ?
+Which testing framework <span class="hljs-keyword">do</span> you want to use ?
 Press tab to list possible options. Enter to move to the next question.
 &gt; jasmine
 
@@ -121,15 +123,15 @@ Press tab to list possible options. Enter empty string to move to the next quest
 &gt; Firefox
 &gt;
 
-What is the location of your source and test files ?
-You can use glob patterns, eg. <span class="string">"js/*.js"</span> or <span class="string">"test/**/*Spec.js"</span>.
+What is the location of your <span class="hljs-built_in">source</span> and test files ?
+You can use glob patterns, eg. <span class="hljs-string">"js/*.js"</span> or <span class="hljs-string">"test/**/*Spec.js"</span>.
 Enter empty string to move to the next question.
 &gt; *.js
 &gt; test/**/*.js
 &gt;
 
 Should any of the files included by the previous patterns be excluded ?
-You can use glob patterns, eg. <span class="string">"**/*.swp"</span>.
+You can use glob patterns, eg. <span class="hljs-string">"**/*.swp"</span>.
 Enter empty string to move to the next question.
 &gt;
 
@@ -137,14 +139,14 @@ Do you want Karma to watch all the files and run the tests on change ?
 Press tab to list possible options.
 &gt; yes
 
-Config file generated at <span class="string">"/Users/vojta/Code/karma/my.conf.js"</span>.</code></pre>
+Config file generated at <span class="hljs-string">"/Users/vojta/Code/karma/my.conf.js"</span>.</code></pre>
 <p>The configuration file can be written in CoffeeScript as well.
 In fact, if you execute <code>karma init</code> with a <code>*.coffee</code> extension such as <code>karma init karma.conf.coffee</code>, it will generate a CoffeeScript file.</p>
 <p>Of course, you can write the config file by hand or copy paste it from another project ;-)</p>
 <h2>Starting Karma</h2>
 <p>When starting Karma, the configuration file path can be passed in as the first argument.</p>
 <p>By default, Karma will look for <code>karma.conf.js</code> or <code>karma.conf.coffee</code> in the current directory.</p>
-<pre><code class="language-bash"><span class="comment"># Start Karma using your configuration:</span>
+<pre><code class="language-bash"><span class="hljs-comment"># Start Karma using your configuration:</span>
 $ karma start my.conf.js</code></pre>
 <p>For more detailed information about the Karma configuration file, such as available options and features,
 please read the <a href="../config/configuration-file.html">configuration file docs</a>.</p>
