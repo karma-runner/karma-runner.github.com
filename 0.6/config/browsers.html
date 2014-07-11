@@ -101,7 +101,7 @@
         <div id="markdown" class="sixteen columns bottom"><h2>Starting browsers</h2>
 <p>Capturing browsers is kinda boring, so Testacular can do that for you.
 Just simply add into the configuration file:</p>
-<pre><code class="language-javascript">browsers = [<span class="string">'Chrome'</span>];</code></pre>
+<pre><code class="language-javascript">browsers = [<span class="hljs-string">'Chrome'</span>];</code></pre>
 <p>Then, Testacular will take care of autocapturing these browsers, as
 well as killing them.</p>
 <p>Currently available browsers:</p>
@@ -122,23 +122,23 @@ to see them.</p>
 <p>You can override these settings by <code>&lt;BROWSER&gt;_BIN</code> ENV variable,
 or alternatively by creating a <code>symlink</code>.</p>
 <h3>POSIX shells</h3>
-<pre><code class="language-bash"><span class="comment"># Changing the path to the Chrome binary</span>
-$ export CHROME_BIN=/usr/local/bin/my-chrome-build
+<pre><code class="language-bash"><span class="hljs-comment"># Changing the path to the Chrome binary</span>
+$ <span class="hljs-keyword">export</span> CHROME_BIN=/usr/local/bin/my-chrome-build
 
-<span class="comment"># Changing the path to the Chrome Canary binary</span>
-$ export CHROME_CANARY_BIN=/usr/local/bin/my-chrome-build
+<span class="hljs-comment"># Changing the path to the Chrome Canary binary</span>
+$ <span class="hljs-keyword">export</span> CHROME_CANARY_BIN=/usr/local/bin/my-chrome-build
 
-<span class="comment"># Changing the path to the PhantomJs binary</span>
-$ export PHANTOMJS_BIN=<span class="variable">$HOME</span>/local/bin/phantomjs</code></pre>
+<span class="hljs-comment"># Changing the path to the PhantomJs binary</span>
+$ <span class="hljs-keyword">export</span> PHANTOMJS_BIN=<span class="hljs-variable">$HOME</span>/local/bin/phantomjs</code></pre>
 <h3>Windows cmd.exe</h3>
 <pre><code class="language-bash">C:&gt; SET IE_BIN=C:\Program Files\Internet Explorer\iexplore.exe</code></pre>
 <h3>Windows Powershell</h3>
-<pre><code class="language-bash"><span class="variable">$Env</span>:FIREFOX_BIN = <span class="string">'c:\Program Files (x86)\Mozilla Firefox 4.0 Beta 6\firefox.exe'</span></code></pre>
+<pre><code class="language-bash"><span class="hljs-variable">$Env</span>:FIREFOX_BIN = <span class="hljs-string">'c:\Program Files (x86)\Mozilla Firefox 4.0 Beta 6\firefox.exe'</span></code></pre>
 <h2>Custom browsers</h2>
-<pre><code class="language-javascript"><span class="comment">// in the testacular.conf.js</span>
-browsers = [<span class="string">'/usr/local/bin/custom-browser.sh'</span>];
+<pre><code class="language-javascript"><span class="hljs-comment">// in the testacular.conf.js</span>
+browsers = [<span class="hljs-string">'/usr/local/bin/custom-browser.sh'</span>];
 
-<span class="comment">// from cli</span>
+<span class="hljs-comment">// from cli</span>
 testacular start --browsers /usr/local/bin/custom-browser.sh</code></pre>
 <p>The browser scripts need to take one argument, the url with id
 parameter to be used to connect to the server. The supplied id is used

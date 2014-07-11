@@ -153,16 +153,16 @@ served - but rather available as <code>window.__html__[&#39;my.html&#39;]</code>
 <p>Here is a complete example showing the different options that are possible.</p>
 <pre><code class="language-javascript">files: [
 
-  <span class="comment">// simple patterns to load the needed testfiles</span>
-  <span class="comment">// equals to {pattern: 'test/unit/*.spec.js', watched: true, served: true, included: true}</span>
-  <span class="string">'test/unit/*.spec.js'</span>,
+  <span class="hljs-comment">// simple patterns to load the needed testfiles</span>
+  <span class="hljs-comment">// equals to {pattern: 'test/unit/*.spec.js', watched: true, served: true, included: true}</span>
+  <span class="hljs-string">'test/unit/*.spec.js'</span>,
 
-  <span class="comment">// this file gets served but will be ignored by the watcher</span>
-  <span class="comment">// note if html2js preprocessor is active, reference as `window.__html__['compiled/index.html']`</span>
-  {pattern: <span class="string">'compiled/index.html'</span>, watched: <span class="literal">false</span>},
+  <span class="hljs-comment">// this file gets served but will be ignored by the watcher</span>
+  <span class="hljs-comment">// note if html2js preprocessor is active, reference as `window.__html__['compiled/index.html']`</span>
+  {pattern: <span class="hljs-string">'compiled/index.html'</span>, watched: <span class="hljs-literal">false</span>},
 
-  <span class="comment">// this file only gets watched but otherwise ignored</span>
-  {pattern: <span class="string">'app/index.html'</span>, included: <span class="literal">false</span>, served: <span class="literal">false</span>}
+  <span class="hljs-comment">// this file only gets watched but otherwise ignored</span>
+  {pattern: <span class="hljs-string">'app/index.html'</span>, included: <span class="hljs-literal">false</span>, served: <span class="hljs-literal">false</span>}
 ],</code></pre>
 
         </div>

@@ -122,7 +122,7 @@
     |-- appSpec.js
     `-- test-main.js
 
-3 directories, 9 files</code></pre>
+<span class="hljs-number">3</span> directories, <span class="hljs-number">9</span> files</code></pre>
 <h2>Configure Karma</h2>
 <p>The first step is creating our <code>karma.conf.js</code>. We can do this from the
 command line:</p>
@@ -147,22 +147,22 @@ files we want to load with Require.js. For this example we&#39;ll need:</p>
 <p>And then, when excluding files, type in <code>src/main.js</code>, as we don&#39;t want to actually
 start the application in our tests.</p>
 <p>Now your <code>karma.conf.js</code> should include:</p>
-<pre><code class="language-javascript"><span class="comment">// list of files / patterns to load in the browser</span>
-module.exports = <span class="keyword">function</span>(config) {
+<pre><code class="language-javascript"><span class="hljs-comment">// list of files / patterns to load in the browser</span>
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(config)</span> </span>{
   config.set({
-    frameworks: [<span class="string">'jasmine'</span>, <span class="string">'requirejs'</span>],
+    frameworks: [<span class="hljs-string">'jasmine'</span>, <span class="hljs-string">'requirejs'</span>],
 
     files: [
-      {pattern: <span class="string">'lib/**/*.js'</span>, included: <span class="literal">false</span>},
-      {pattern: <span class="string">'src/**/*.js'</span>, included: <span class="literal">false</span>},
-      {pattern: <span class="string">'test/**/*Spec.js'</span>, included: <span class="literal">false</span>},
+      {pattern: <span class="hljs-string">'lib/**/*.js'</span>, included: <span class="hljs-literal">false</span>},
+      {pattern: <span class="hljs-string">'src/**/*.js'</span>, included: <span class="hljs-literal">false</span>},
+      {pattern: <span class="hljs-string">'test/**/*Spec.js'</span>, included: <span class="hljs-literal">false</span>},
 
-      <span class="string">'test/test-main.js'</span>
+      <span class="hljs-string">'test/test-main.js'</span>
     ],
 
-    <span class="comment">// list of files to exclude</span>
+    <span class="hljs-comment">// list of files to exclude</span>
     exclude: [
-        <span class="string">'src/main.js'</span>
+        <span class="hljs-string">'src/main.js'</span>
     ]
   });
 };</code></pre>
@@ -187,56 +187,56 @@ array we find all our test files.</p>
 <p>Now we can tell Require.js to load our tests, which must be done
 asynchronously as dependencies must be fetched before the tests are run.
 The <code>test/main-test.js</code> file ends up looking like this:</p>
-<pre><code class="language-javascript"><span class="keyword">var</span> tests = [];
-<span class="keyword">for</span> (<span class="keyword">var</span> file <span class="keyword">in</span> window.__karma__.files) {
-  <span class="keyword">if</span> (window.__karma__.files.hasOwnProperty(file)) {
-    <span class="keyword">if</span> (<span class="regexp">/Spec\.js$/</span>.test(file)) {
+<pre><code class="language-javascript"><span class="hljs-keyword">var</span> tests = [];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> file <span class="hljs-keyword">in</span> <span class="hljs-built_in">window</span>.__karma__.files) {
+  <span class="hljs-keyword">if</span> (<span class="hljs-built_in">window</span>.__karma__.files.hasOwnProperty(file)) {
+    <span class="hljs-keyword">if</span> (<span class="hljs-regexp">/Spec\.js$/</span>.test(file)) {
       tests.push(file);
     }
   }
 }
 
 requirejs.config({
-    <span class="comment">// Karma serves files from '/base'</span>
-    baseUrl: <span class="string">'/base/src'</span>,
+    <span class="hljs-comment">// Karma serves files from '/base'</span>
+    baseUrl: <span class="hljs-string">'/base/src'</span>,
 
     paths: {
-        <span class="string">'jquery'</span>: <span class="string">'../lib/jquery'</span>,
-        <span class="string">'underscore'</span>: <span class="string">'../lib/underscore'</span>,
+        <span class="hljs-string">'jquery'</span>: <span class="hljs-string">'../lib/jquery'</span>,
+        <span class="hljs-string">'underscore'</span>: <span class="hljs-string">'../lib/underscore'</span>,
     },
 
     shim: {
-        <span class="string">'underscore'</span>: {
-            exports: <span class="string">'_'</span>
+        <span class="hljs-string">'underscore'</span>: {
+            exports: <span class="hljs-string">'_'</span>
         }
     },
 
-    <span class="comment">// ask Require.js to load these files (all our tests)</span>
+    <span class="hljs-comment">// ask Require.js to load these files (all our tests)</span>
     deps: tests,
 
-    <span class="comment">// start test run, once Require.js is done</span>
-    callback: window.__karma__.start
+    <span class="hljs-comment">// start test run, once Require.js is done</span>
+    callback: <span class="hljs-built_in">window</span>.__karma__.start
 });</code></pre>
 <h2>Using Require.js in tests</h2>
 <p>Tests can now be written as regular Require.js modules. We wrap
 everything in <code>define</code>, and inside we can use the regular test methods,
 such as <code>describe</code> and <code>it</code>. Example:</p>
-<pre><code class="language-javascript">define([<span class="string">'app'</span>, <span class="string">'jquery'</span>, <span class="string">'underscore'</span>], <span class="keyword">function</span>(App, $, _) {
+<pre><code class="language-javascript">define([<span class="hljs-string">'app'</span>, <span class="hljs-string">'jquery'</span>, <span class="hljs-string">'underscore'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(App, $, _)</span> </span>{
 
-    describe(<span class="string">'just checking'</span>, <span class="keyword">function</span>() {
+    describe(<span class="hljs-string">'just checking'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
 
-        it(<span class="string">'works for app'</span>, <span class="keyword">function</span>() {
-            <span class="keyword">var</span> el = $(<span class="string">'&lt;div&gt;&lt;/div&gt;'</span>);
+        it(<span class="hljs-string">'works for app'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-keyword">var</span> el = $(<span class="hljs-string">'&lt;div&gt;&lt;/div&gt;'</span>);
 
-            <span class="keyword">var</span> app = <span class="keyword">new</span> App(el);
+            <span class="hljs-keyword">var</span> app = <span class="hljs-keyword">new</span> App(el);
             app.render();
 
-            expect(el.text()).toEqual(<span class="string">'require.js up and running'</span>);
+            expect(el.text()).toEqual(<span class="hljs-string">'require.js up and running'</span>);
         });
 
-        it(<span class="string">'works for underscore'</span>, <span class="keyword">function</span>() {
-            <span class="comment">// just checking that _ works</span>
-            expect(_.size([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])).toEqual(<span class="number">3</span>);
+        it(<span class="hljs-string">'works for underscore'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-comment">// just checking that _ works</span>
+            expect(_.size([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>])).toEqual(<span class="hljs-number">3</span>);
         });
 
     });

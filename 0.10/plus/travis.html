@@ -111,22 +111,22 @@ already have Travis account.</p>
 <h2>Configure Travis</h2>
 <p>Create a file in your project root called <code>.travis.yml</code> with the
 following YAML content:</p>
-<pre><code class="language-ruby"><span class="symbol">language:</span> node_js
-<span class="symbol">node_js:</span>
-  - <span class="number">0</span>.<span class="number">8</span></code></pre>
+<pre><code class="language-ruby"><span class="hljs-symbol">language:</span> node_js
+<span class="hljs-symbol">node_js:</span>
+  - <span class="hljs-number">0</span>.<span class="hljs-number">8</span></code></pre>
 <h2>Setup a Test Command</h2>
 <p>If you do not already have a <code>package.json</code> in your project root
 create one now. Travis runs <code>npm test</code> to trigger your tests so this
 is where you tell Travis how to run your tests.</p>
-<pre><code class="language-javascript"><span class="comment">// ...snip...</span>
-<span class="string">'devDependencies'</span>: {
-  <span class="string">'karma'</span>: <span class="string">'~0.10'</span>
+<pre><code class="language-javascript"><span class="hljs-comment">// ...snip...</span>
+<span class="hljs-string">'devDependencies'</span>: {
+  <span class="hljs-string">'karma'</span>: <span class="hljs-string">'~0.10'</span>
 },
-<span class="comment">// ...snip...</span>
-<span class="string">'scripts'</span>: {
-   <span class="string">'test'</span>: <span class="string">'./node_modules/.bin/karma start --single-run --browsers PhantomJS'</span>
+<span class="hljs-comment">// ...snip...</span>
+<span class="hljs-string">'scripts'</span>: {
+   <span class="hljs-string">'test'</span>: <span class="hljs-string">'./node_modules/.bin/karma start --single-run --browsers PhantomJS'</span>
 }
-<span class="comment">// ...snip...</span></code></pre>
+<span class="hljs-comment">// ...snip...</span></code></pre>
 <p>Travis will run <code>npm install</code> before every suite so this is your
 chance to specify any modules your app needs that Travis does not know
 about like Karma.</p>
@@ -134,11 +134,11 @@ about like Karma.</p>
 <p>Travis supports running a real browser (Firefox) with a virtual
 screen. Just update your <code>.travis.yml</code> to set up the virtual screen
 like this:</p>
-<pre><code class="language-ruby"><span class="symbol">language:</span> node_js
-<span class="symbol">node_js:</span>
-  - <span class="number">0</span>.<span class="number">8</span>
-<span class="symbol">before_script:</span>
-  - export <span class="constant">DISPLAY</span>=<span class="symbol">:</span><span class="number">99.0</span>
+<pre><code class="language-ruby"><span class="hljs-symbol">language:</span> node_js
+<span class="hljs-symbol">node_js:</span>
+  - <span class="hljs-number">0</span>.<span class="hljs-number">8</span>
+<span class="hljs-symbol">before_script:</span>
+  - export <span class="hljs-constant">DISPLAY</span>=<span class="hljs-symbol">:</span><span class="hljs-number">99.0</span>
   - sh -e /etc/init.d/xvfb start</code></pre>
 <p>And now, you can run your tests on Firefox, just change the <code>npm test</code>
 command to</p>

@@ -110,19 +110,19 @@ This article assumes you already have a Semaphore account.</p>
 <p>If you do not already have a <code>package.json</code> in your project root,
 create one now. This will both document your configuration and
 make it easy to run your tests. Here&#39;s an example:</p>
-<pre><code class="language-javascript"><span class="comment">// ...snip...</span>
-<span class="string">'devDependencies'</span>: {
-  <span class="string">'karma'</span>: <span class="string">'~0.10'</span>
+<pre><code class="language-javascript"><span class="hljs-comment">// ...snip...</span>
+<span class="hljs-string">'devDependencies'</span>: {
+  <span class="hljs-string">'karma'</span>: <span class="hljs-string">'~0.10'</span>
 },
-<span class="comment">// ...snip...</span>
-<span class="string">'scripts'</span>: {
-   <span class="string">'test'</span>: <span class="string">'./node_modules/.bin/karma start --single-run --browsers PhantomJS'</span>
+<span class="hljs-comment">// ...snip...</span>
+<span class="hljs-string">'scripts'</span>: {
+   <span class="hljs-string">'test'</span>: <span class="hljs-string">'./node_modules/.bin/karma start --single-run --browsers PhantomJS'</span>
 }
-<span class="comment">// ...snip...</span></code></pre>
+<span class="hljs-comment">// ...snip...</span></code></pre>
 <p>Another option is to use Firefox as your test browser. To do this, change
 the last part to:</p>
-<pre><code class="language-javascript"><span class="string">'scripts'</span>: {
-   <span class="string">'test'</span>: <span class="string">'./node_modules/.bin/karma start --single-run --browsers Firefox'</span>
+<pre><code class="language-javascript"><span class="hljs-string">'scripts'</span>: {
+   <span class="hljs-string">'test'</span>: <span class="hljs-string">'./node_modules/.bin/karma start --single-run --browsers Firefox'</span>
 }</code></pre>
 <p>Now running <code>npm test</code> within your project will run your tests with Karma.</p>
 <h2>Add Your Project to Semaphore</h2>

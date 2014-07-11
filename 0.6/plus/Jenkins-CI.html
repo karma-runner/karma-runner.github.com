@@ -119,10 +119,10 @@ distributions and user permissions.</p>
 <h2>Configure Testacular</h2>
 <p> Make the following additions and changes to your testacular config
  file as needed:</p>
-<pre><code class="language-javascript">singleRun = <span class="literal">true</span>;
-reporters = [<span class="string">'dots'</span>, <span class="string">'junit'</span>];
+<pre><code class="language-javascript">singleRun = <span class="hljs-literal">true</span>;
+reporters = [<span class="hljs-string">'dots'</span>, <span class="hljs-string">'junit'</span>];
 junitReporter = {
-  outputFile: <span class="string">'test-results.xml'</span>
+  outputFile: <span class="hljs-string">'test-results.xml'</span>
 };</code></pre>
 <p>Please note the <code>test-result.xml</code> file will be output to the present
 working directory (and you will need to tell Jenkins where to find it).</p>
@@ -136,7 +136,7 @@ Environment sub-section, check the “Inject environment
 variables to the build process” checkbox. A few textboxes will
 appear and in the “Properties Content” box set the following:</p>
 <pre><code class="language-bash">$ PATH=/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/bin
-$ PHANTOMJS_BIN=/usr/local/bin/phantomjs <span class="comment">#or wherever PhantomJS happens to be installed</span></code></pre>
+$ PHANTOMJS_BIN=/usr/local/bin/phantomjs <span class="hljs-comment">#or wherever PhantomJS happens to be installed</span></code></pre>
 <p>Further down the page, in the Post-build Actions sub-section add a
 <code>Publish JUnit test result report</code> from the Post-build action drop
 down menu. When the textbox labeled Test report XMLs appears, enter

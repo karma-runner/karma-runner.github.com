@@ -269,40 +269,40 @@ if you are using <code>karma run</code> with custom <code>--runer-port</code>, p
 <ul>
 <li>please update your karma.conf.js as follows (<a href="https://github.com/karma-runner/karma/commit/d2a3c8546dc4b10bb9194047a1c11963639f3730">d2a3c854</a>):</li>
 </ul>
-<pre><code class="language-javascript"><span class="comment">// before:</span>
-module.exports = <span class="keyword">function</span>(karma) {
-  karma.configure({port: <span class="number">123</span>});
-  karma.defineLauncher(<span class="string">'x'</span>, <span class="string">'Chrome'</span>, {
-    flags: [<span class="string">'--disable-web-security'</span>]
+<pre><code class="language-javascript"><span class="hljs-comment">// before:</span>
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(karma)</span> </span>{
+  karma.configure({port: <span class="hljs-number">123</span>});
+  karma.defineLauncher(<span class="hljs-string">'x'</span>, <span class="hljs-string">'Chrome'</span>, {
+    flags: [<span class="hljs-string">'--disable-web-security'</span>]
   });
-  karma.definePreprocessor(<span class="string">'y'</span>, <span class="string">'coffee'</span>, {
-    bare: <span class="literal">false</span>
+  karma.definePreprocessor(<span class="hljs-string">'y'</span>, <span class="hljs-string">'coffee'</span>, {
+    bare: <span class="hljs-literal">false</span>
   });
-  karma.defineReporter(<span class="string">'z'</span>, <span class="string">'coverage'</span>, {
-    type: <span class="string">'html'</span>
+  karma.defineReporter(<span class="hljs-string">'z'</span>, <span class="hljs-string">'coverage'</span>, {
+    type: <span class="hljs-string">'html'</span>
   });
 };
 
-<span class="comment">// after:</span>
-module.exports = <span class="keyword">function</span>(config) {
+<span class="hljs-comment">// after:</span>
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(config)</span> </span>{
   config.set({
-    port: <span class="number">123</span>,
+    port: <span class="hljs-number">123</span>,
     customLaunchers: {
-      <span class="string">'x'</span>: {
-        base: <span class="string">'Chrome'</span>,
-        flags: [<span class="string">'--disable-web-security'</span>]
+      <span class="hljs-string">'x'</span>: {
+        base: <span class="hljs-string">'Chrome'</span>,
+        flags: [<span class="hljs-string">'--disable-web-security'</span>]
       }
     },
     customPreprocessors: {
-      <span class="string">'y'</span>: {
-        base: <span class="string">'coffee'</span>,
-        bare: <span class="literal">false</span>
+      <span class="hljs-string">'y'</span>: {
+        base: <span class="hljs-string">'coffee'</span>,
+        bare: <span class="hljs-literal">false</span>
       }
     },
     customReporters: {
-      <span class="string">'z'</span>: {
-        base: <span class="string">'coverage'</span>,
-        type: <span class="string">'html'</span>
+      <span class="hljs-string">'z'</span>: {
+        base: <span class="hljs-string">'coverage'</span>,
+        type: <span class="hljs-string">'html'</span>
       }
     }
   });
@@ -346,10 +346,10 @@ module.exports = <span class="keyword">function</span>(config) {
 <ul>
 <li>Update your karma.conf.js to export a config function (<a href="https://github.com/karma-runner/karma/commit/a37fd6f7d28036b8da5fe98634cf711cebafc1ff">a37fd6f7</a>):</li>
 </ul>
-<pre><code class="language-javascript">module.exports = <span class="keyword">function</span>(karma) {
+<pre><code class="language-javascript"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(karma)</span> </span>{
   karma.configure({
-    autoWatch: <span class="literal">true</span>,
-    <span class="comment">// ...</span>
+    autoWatch: <span class="hljs-literal">true</span>,
+    <span class="hljs-comment">// ...</span>
   });
 };</code></pre>
 <p><a name="v0.9.2"></a></p>
