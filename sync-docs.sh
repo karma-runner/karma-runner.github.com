@@ -5,7 +5,7 @@ VERSION="$2"
 REMOTE="upstream"
 
 if [ -z "$BRANCH" ]; then
-  BRANCH="stable"
+  BRANCH="master"
 fi
 
 if [ -z "$VERSION" ]; then
