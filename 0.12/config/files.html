@@ -104,16 +104,15 @@
         <div id="markdown" class="sixteen columns bottom"><p><strong>The <code>files</code> array determines which files are included in the browser and which files are watched and served by Karma.</strong></p>
 <h2>Pattern matching and <code>basePath</code></h2>
 <ul>
-<li>All of the relative patterns will get resolved to <code>basePath</code> first.</li>
+<li>All of the relative patterns will get resolved using the <code>basePath</code> first.</li>
 <li>If the <code>basePath</code> is a relative path, it gets resolved to the
-directory where the configuration file is.</li>
+directory where the configuration file is located.</li>
 <li>Eventually, all the patterns will get resolved into files using
 <a href="https://github.com/isaacs/node-glob">glob</a>, so you can use <a href="https://github.com/isaacs/minimatch">minimatch</a> expressions like <code>test/unit/**/*.spec.js</code>.</li>
 </ul>
 <h2>Ordering</h2>
 <ul>
-<li>The order of patterns determines the order of files in which they
-are included in the browser.</li>
+<li>The order of patterns determines the order in which files are included in the browser.</li>
 <li>Multiple files matching a single pattern are sorted alphabetically.</li>
 <li>Each file is included exactly once. If multiple patterns match the
 same file, it&#39;s included as if it only matched the first pattern.</li>
@@ -122,14 +121,15 @@ same file, it&#39;s included as if it only matched the first pattern.</li>
 <p>Each pattern is either a simple string or an object with four properties:</p>
 <h3><code>pattern</code></h3>
 <ul>
+<li><strong>Type.</strong> String</li>
+<li><strong>No Default.</strong></li>
 <li><strong>Description.</strong> The pattern to use for matching. This property is mandatory.</li>
 </ul>
 <h3><code>watched</code></h3>
 <ul>
 <li><strong>Type.</strong> Boolean</li>
 <li><strong>Default.</strong> <code>true</code></li>
-<li><strong>Description.</strong>  If <code>autoWatch</code> is <code>true</code> all files that have set <code>watched</code> to true will be
-watched for changes.</li>
+<li><strong>Description.</strong>  If <code>autoWatch</code> is <code>true</code> all files that have set <code>watched</code> to true will be watched for changes.</li>
 </ul>
 <h3><code>included</code></h3>
 <ul>

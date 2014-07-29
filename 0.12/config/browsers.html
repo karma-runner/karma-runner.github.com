@@ -101,11 +101,12 @@
         </h1>
       </div>
       <div class="page-columns">
-        <div id="markdown" class="sixteen columns bottom"><p>Capturing browsers on your own is kinda tedious and time consuming,
-so Karma can do that for you. Just simply add into the configuration file:</p>
+        <div id="markdown" class="sixteen columns bottom"><p>Capturing browsers on your own can be a tedious and time consuming task,
+so Karma can automate this for you. Simply add the browsers you would like to
+capture into the configuration file:</p>
 <pre><code class="language-javascript">browsers: [<span class="hljs-string">'Chrome'</span>]</code></pre>
-<p>Then, Karma will take care of autocapturing these browsers, as well as killing them.</p>
-<div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Most of the browser launchers needs to be loaded as <a href="plugins.html">plugins</a>.
+<p>Then, Karma will take care of auto-capturing these browsers, as well as killing them.</p>
+<div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Most of the browser launchers need to be loaded as <a href="plugins.html">plugins</a>.
 
 </div>
 <h2>Available browser launchers</h2>
@@ -121,7 +122,7 @@ so Karma can do that for you. Just simply add into the configuration file:</p>
 <li><a href="https://www.npmjs.org/browse/keyword/karma-launcher">many more</a></li>
 </ul>
 <p>Here&#39;s an example of how to add Firefox to your testing suite:</p>
-<pre><code class="language-bash"><span class="hljs-comment"># Install it first with NPM:</span>
+<pre><code class="language-bash"><span class="hljs-comment"># Install the launcher first with NPM:</span>
 $ npm install karma-firefox-launcher --save-dev</code></pre>
 <p>And then inside your configuration file...</p>
 <pre><code class="language-javascript"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(config)</span> </span>{
@@ -132,8 +133,11 @@ $ npm install karma-firefox-launcher --save-dev</code></pre>
 <p>Also keep in mind that the <code>browsers</code> configuration setting is empty by default.</p>
 <p>Of course, you can write <a href="../dev/plugins.html">custom plugins</a> too!</p>
 <h2>Capturing any browser manually</h2>
-<p>You can also capture browsers by simply opening <code>http://&lt;hostname&gt;:&lt;port&gt;/</code>, where <code>&lt;hostname&gt;</code> is the IP address or hostname of the machine where Karma server is running and <code>&lt;port&gt;</code> is the port where Karma server is listening (by default it&#39;s <code>9876</code>). With the default settings in place, just point your browser to <code>http://localhost:9876/</code>.</p>
-<p>This allows you to capture a browser on any device such as a tablet or a phone, that is on the same network as the machine running Karma (or using a local tunnel).</p>
+<p>You can also capture browsers by simply opening <code>http://&lt;hostname&gt;:&lt;port&gt;/</code>, where <code>&lt;hostname&gt;</code> is the IP
+address or hostname of the machine where the Karma server is running and <code>&lt;port&gt;</code> is the port where the Karma
+server is listening (by default it&#39;s <code>9876</code>). With the default settings in place, just point your browser to <code>http://localhost:9876/</code>.</p>
+<p>This allows you to capture a browser on any device, such as a tablet or a phone, that is on the same network
+as the machine running Karma (or using a local tunnel).</p>
 <h2>Configured launchers</h2>
 <p>Some of the launchers can be also configured:</p>
 <pre><code class="language-javascript">sauceLabs: {

@@ -109,8 +109,10 @@ of the configuration file:</p>
   <span class="hljs-string">'**/*.tea'</span>: [<span class="hljs-string">'coffee'</span>],
   <span class="hljs-string">'**/*.html'</span>: [<span class="hljs-string">'html2js'</span>]
 },</code></pre>
-<p>Note the multiple expressions referencing the &quot;coffee&quot; preprocessor, as a preprocessor can be listed more than once,
-as another way to specify multiple file path expressions.</p>
+<div class="alert alert-success"><h4 class="alert-heading">Note: </h4>There are multiple expressions referencing the &quot;coffee&quot; preprocessor in this example, as a preprocessor
+can be listed more than once as another way to specify multiple file path expressions.
+
+</div>
 <div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Most of the preprocessors need to be loaded as <a href="plugins.html">plugins</a>.
 
 </div>
@@ -159,8 +161,7 @@ the <code>files</code> configuration.</p>
 <li>First the file paths are expanded to an absolute path, based on the
 <code>basePath</code> configuration and the directory of the configuration file. See
 <a href="files.html">files</a> for more information on that.</li>
-<li>Then the newly expanded path is matched using <a href="https://github.com/isaacs/minimatch">minimatch</a> against the
-specified key.</li>
+<li>Then the newly expanded path is matched using <a href="https://github.com/isaacs/minimatch">minimatch</a> against the specified key.</li>
 </ul>
 <p>So for example the path <code>/my/absolute/path/to/test/unit/file.coffee</code> matched against
 the key <code>**/*.coffee</code> would return <code>true</code>, but matched against just <code>*.coffee</code> it would

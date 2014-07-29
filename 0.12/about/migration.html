@@ -103,14 +103,15 @@
       <div class="page-columns">
         <div id="markdown" class="sixteen columns bottom"><p>The good thing is that you don&#39;t have to migrate everything at once.
 You can leave all the existing projects using an older version of Karma and only use the latest
-version for the new projects. Or you can migrate the existing projects one at the time...</p>
+version for the new projects. Alternatively, you can migrate the existing projects one at a time...</p>
 <p>Anyway, this migration should be easy ;-) so let&#39;s get started...</p>
 <pre><code class="language-bash"><span class="hljs-built_in">cd</span> &lt;path-to-your-project&gt;
 npm install karma --save-dev</code></pre>
 <p>This will install the latest version of Karma and also update <code>package.json</code> of your project.</p>
 <h2>Install missing plugins</h2>
-<p>Karma does not ship with any &quot;default&quot; plugin anymore.
-For existing projects, this should not cause any problems as NPM (when installing Karma 0.10) probably added these &quot;default&quot; plugins into <code>package.json</code> as regular dependencies.
+<p>Karma does not ship with any &quot;default&quot; plugins anymore.
+For existing projects, this should not cause any problems as NPM (when updating Karma to 0.10 using
+<code>npm install karma --save-dev</code>) added these &quot;default&quot; plugins into <code>package.json</code> as regular dependencies.
 For new projects, just remember you have to install all the plugins you need. These are the &quot;default&quot; plugins that were removed:</p>
 <ul>
 <li>karma-jasmine</li>
@@ -125,14 +126,17 @@ For new projects, just remember you have to install all the plugins you need. Th
 <h2>Install CLI interface</h2>
 <p>Karma does not put the <code>karma</code> command in your system PATH anymore.
 If you want to use the <code>karma</code> command, please install the command line interface (<code>karma-cli</code>).</p>
-<p>You probably have <code>karma</code> package installed globally, in which case you should remove it first:</p>
+<p>You probably have the <code>karma</code> package installed globally, in which case you should remove it first:</p>
 <pre><code class="language-bash">npm remove -g karma</code></pre>
 <p>And then install the command line interface:</p>
 <pre><code class="language-bash">npm install -g karma-cli</code></pre>
 <h2>Default configuration</h2>
-<p><code>autoWatch</code> is true by default, so if you don&#39;t wanna use it make sure you set it to <code>false</code>. But hey, give it a shot first, it&#39;s really awesome to run your tests on every save!</p>
+<p><code>autoWatch</code> is true by default, so if you don&#39;t wanna use it make sure you set it to <code>false</code>.
+But hey, give it a shot first, it&#39;s really awesome to run your tests on every save!</p>
 <h2>NPM complaining</h2>
-<p>NPM is sometimes finicky so if you encounter errors such as &quot;unsatisfied peer dependency&quot;, just try to remove all the packages (<code>rm -rf ./node_modules</code>) and install again.</p>
+<p>In some cases NPM can run into dependency tree issues during the migration process. If you are faced
+with an &quot;unsatisfied peer dependency&quot; error, removing all of the packages (<code>rm -rf ./node_modules</code>) and installing
+them again should clear up the issue.</p>
 <p>If you have any other issuses, please ask on the <a href="https://groups.google.com/forum/?fromgroups#!forum/karma-users">mailing list</a>.</p>
 
         </div>
