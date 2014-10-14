@@ -145,7 +145,7 @@
  });
 };</code></pre>
 <p>Note - the <code>files</code> section above should include all dependencies, ie- jQuery/handlebars/ember.js along with the js and handlebars files required to deploy and run your production ember.js application</p>
-<p>Note - when testing ember applications, it is important that karma not being running the tests until the ember application has finished initialization.  you will need to include a small bootstrap file in the <code>files</code> section above to enforce this.  Here&#39;s an example:</p>
+<p>Note - when testing ember applications, it is important that karma does not try to run the tests until the ember application has finished initialization. You will need to include a small bootstrap file in the <code>files</code> section above to enforce this.  Here&#39;s an example:</p>
 <pre><code class="language-javascript">__karma__.loaded = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{};
 
 App.setupForTesting();
