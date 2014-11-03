@@ -97,7 +97,7 @@
     </header>
     <div class="container clearfix">
       <div class="sixteen columns">
-        <h1 class="page-title">Configuration File<a href="https://github.com/karma-runner/karma/edit/master/docs/config/01-configuration-file.md" data-tooltip="Edit this page on GitHub" class="edit"><i class="icon-edit"></i></a><span class="line"></span>
+        <h1 class="page-title">Configuration File<span class="line"></span>
         </h1>
       </div>
       <div class="page-columns">
@@ -120,7 +120,7 @@ which accepts one argument: the configuration object.</p>
   });
 };</code></pre>
 <pre><code class="language-coffeescript"><span class="hljs-comment"># an example karma.conf.coffee</span>
-<span class="hljs-built_in">module</span>.<span class="hljs-function"><span class="hljs-title">exports</span> = <span class="hljs-params">(config)</span> -&gt;</span>
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-params">(config)</span> -&gt;</span>
   config.set
     <span class="hljs-attribute">basePath</span>: <span class="hljs-string">'../..'</span>
     <span class="hljs-attribute">frameworks</span>: [<span class="hljs-string">'jasmine'</span>]
