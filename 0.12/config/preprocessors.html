@@ -61,6 +61,7 @@
                   <li><a href="/0.12/plus/yeoman.html">Yeoman</a></li>
                   <li><a href="/0.12/plus/emberjs.html">Ember.js</a></li>
                   <li><a href="/0.12/plus/codio.html">Codio</a></li>
+                  <li><a href="/0.12/plus/teamcity.html">TeamCity</a></li>
                 </ul>
               </li>
               <li><a href="javascript:void" class="">dev</a>
@@ -132,7 +133,7 @@ can be listed more than once as another way to specify multiple file path expres
 <pre><code class="language-bash"><span class="hljs-comment"># Install it first with NPM</span>
 $ npm install karma-coffee-preprocessor --save-dev</code></pre>
 <p>And then inside your configuration file...</p>
-<pre><code class="language-javascript"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(config)</span> </span>{
+<pre><code class="language-javascript">module.exports = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(config)</span> {</span>
   config.set({
     preprocessors: {
       <span class="hljs-string">'**/*.coffee'</span>: [<span class="hljs-string">'coffee'</span>]

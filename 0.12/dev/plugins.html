@@ -61,6 +61,7 @@
                   <li><a href="/0.12/plus/yeoman.html">Yeoman</a></li>
                   <li><a href="/0.12/plus/emberjs.html">Ember.js</a></li>
                   <li><a href="/0.12/plus/codio.html">Codio</a></li>
+                  <li><a href="/0.12/plus/teamcity.html">TeamCity</a></li>
                 </ul>
               </li>
               <li><a href="javascript:void" class="active">dev</a>
@@ -128,6 +129,38 @@
 </ul>
 <h2>Crazier stuff</h2>
 <p>Karma is assembled by Dependency Injection and a plugin is just an additional DI module (see <a href="https://github.com/vojtajina/node-di">node-di</a> for more), that can be loaded by Karma. Therefore it can asks for pretty much any Karma component and interact with it. There are couple of plugins that do more interesting stuff like this, check out <a href="https://github.com/karma-runner/karma-closure">karma-closure</a>, <a href="https://github.com/karma-runner/karma-intellij">karma-intellij</a>, <a href="https://github.com/karma-runner/karma-dart">karma-dart</a>.</p>
+<h2>Karma Framework API</h2>
+<p>Karma Framework connect existing testing libraries to Karma&#39;s API, so that their
+results can be displayed in a browser and sent back to the server.</p>
+<p>Karma frameworks <em>must</em> implement a <code>window.__karma__.start</code> method that Karma will
+call to start test execution. This function is called with an object that has methods
+to send results back to karma:</p>
+<ul>
+<li><code>.result</code> a single test has finished</li>
+<li><code>.complete</code> the client completed execution of all the tests</li>
+<li><code>.error</code> an error happened in the client</li>
+<li><code>.info</code> other data (eg. number of tests or debugging messages)</li>
+</ul>
+<p>Most commonly you&#39;ll use the <code>result</code> method to send individual test success or failure
+statuses. The method takes an object of the form:</p>
+<pre><code class="language-js">{
+    <span class="hljs-comment">// test id</span>
+    id: <span class="hljs-built_in">String</span>,
+
+     <span class="hljs-comment">// test description</span>
+    description: <span class="hljs-built_in">String</span>,
+
+    <span class="hljs-comment">// the suite to which this test belongs. potentially nested.</span>
+    suite: <span class="hljs-built_in">Array</span>[<span class="hljs-built_in">String</span>],
+
+    <span class="hljs-comment">// an array of string error messages that might explain a failure.</span>
+    <span class="hljs-comment">// this is required if success is false.</span>
+    log: <span class="hljs-built_in">Array</span>[<span class="hljs-built_in">String</span>],
+
+    success: <span class="hljs-built_in">Boolean</span>, <span class="hljs-comment">// pass / fail</span>
+
+    skipped: <span class="hljs-built_in">Boolean</span> <span class="hljs-comment">// skipped / ran</span>
+}</code></pre>
 
         </div>
       </div>

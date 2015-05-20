@@ -61,6 +61,7 @@
                   <li><a href="/0.12/plus/yeoman.html">Yeoman</a></li>
                   <li><a href="/0.12/plus/emberjs.html">Ember.js</a></li>
                   <li><a href="/0.12/plus/codio.html">Codio</a></li>
+                  <li><a href="/0.12/plus/teamcity.html">TeamCity</a></li>
                 </ul>
               </li>
               <li><a href="javascript:void" class="">dev</a>
@@ -125,7 +126,7 @@
 <li>Edit the <code>karma.conf.js</code> and add the following:</li>
 </ul>
 <pre><code>    <span class="hljs-comment">// hostname for the server</span>
-    hostname<span class="hljs-value">: <span class="hljs-function">require</span>(<span class="hljs-string">'os'</span>).<span class="hljs-function">hostname</span>() + <span class="hljs-string">'.codio.io'</span>,</span></code></pre>
+    hostname: <span class="hljs-built_in">require</span>(<span class="hljs-string">'os'</span>).hostname() + <span class="hljs-string">'.codio.io'</span>,</code></pre>
 <ul>
 <li>Review webserver port entry to ensure same port defined as entered in .codio file</li>
 </ul>
@@ -137,7 +138,7 @@
 <li><p>Either:</p>
 <ul>
 <li><p>Open a Terminal window and enter</p>
-<pre><code>  $ karma <span class="hljs-operator"><span class="hljs-keyword">start</span> <span class="hljs-comment">--no-browsers</span></span></code></pre>
+<pre><code>  $ karma <span class="hljs-operator"><span class="hljs-keyword">start</span> --<span class="hljs-keyword">no</span>-browsers</span></code></pre>
 <p>or </p>
 </li>
 <li>Select <code>Karma Start</code> from the Run menu (the 2nd from right button).</li>

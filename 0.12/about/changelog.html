@@ -61,6 +61,7 @@
                   <li><a href="/0.12/plus/yeoman.html">Yeoman</a></li>
                   <li><a href="/0.12/plus/emberjs.html">Ember.js</a></li>
                   <li><a href="/0.12/plus/codio.html">Codio</a></li>
+                  <li><a href="/0.12/plus/teamcity.html">TeamCity</a></li>
                 </ul>
               </li>
               <li><a href="javascript:void" class="">dev</a>
@@ -101,7 +102,55 @@
         </h1>
       </div>
       <div class="page-columns">
-        <div id="markdown" class="sixteen columns bottom"><p><a name="v0.12.24"></a></p>
+        <div id="markdown" class="sixteen columns bottom"><p><a name="0.12.31"></a></p>
+<h3>0.12.31 (2015-01-02)</h3>
+<h4>Bug Fixes</h4>
+<ul>
+<li><strong>client:</strong> Fix stringify serializing objects (<a href="http://github.com/karma-runner/karma/commit/0d0972a59e6e0354033c9fdfec72d5ddfbfe8e1e">0d0972a5</a>)</li>
+</ul>
+<p><a name="0.12.30"></a></p>
+<h3>0.12.30 (2014-12-30)</h3>
+<h4>Bug Fixes</h4>
+<ul>
+<li><strong>socket.io:</strong> Force 0.9.16 which works with Chrome (<a href="http://github.com/karma-runner/karma/commit/840ee5f771d547f0fd140c3728ecb92edadf835e">840ee5f7</a>)</li>
+</ul>
+<p><a name="0.12.29"></a></p>
+<h3>0.12.29 (2014-12-30)</h3>
+<h4>Bug Fixes</h4>
+<ul>
+<li><strong>proxy:</strong> proxy to correct port (<a href="http://github.com/karma-runner/karma/commit/a483636efd440c13e6db36f6b661861558464089">a483636e</a>)</li>
+<li><strong>watcher:</strong> Close file watchers on exit event (<a href="http://github.com/karma-runner/karma/commit/718102572a13d7e70d1f2c0b48b6b60a766b76b2">71810257</a>)</li>
+</ul>
+<p><a name="0.12.28"></a></p>
+<h3>0.12.28 (2014-11-25)</h3>
+<h4>Bug Fixes</h4>
+<ul>
+<li><strong>server:</strong> complete acknowledgment (<a href="http://github.com/karma-runner/karma/commit/f4144b0d2d5eafff7245301454305d2005e46449">f4144b0d</a>)</li>
+</ul>
+<p><a name="0.12.27"></a></p>
+<h3>0.12.27 (2014-11-25)</h3>
+<h4>Bug Fixes</h4>
+<ul>
+<li><strong>browser:</strong> don&#39;t add already active socket again on reconnect (<a href="http://github.com/karma-runner/karma/commit/37a7958ae5517b8bf16e36cc90fe0b1cf0c09afd">37a7958a</a>)</li>
+<li><strong>reporter:</strong> sourcemap not working in windows (<a href="http://github.com/karma-runner/karma/commit/a9516af2af87953154e81b6080214798a9b64da5">a9516af2</a>)</li>
+</ul>
+<p><a name="0.12.26"></a></p>
+<h3>0.12.26 (2014-11-25)</h3>
+<h4>Bug Fixes</h4>
+<ul>
+<li><strong>cli:</strong> override if an arg is defined multiple times (<a href="http://github.com/karma-runner/karma/commit/31eb2c2c3ca1663eff94f0398768a9b582332a93">31eb2c2c</a>, closes <a href="http://github.com/karma-runner/karma/issues/1192">#1192</a>)</li>
+</ul>
+<p><a name="0.12.25"></a></p>
+<h3>0.12.25 (2014-11-14)</h3>
+<h4>Bug Fixes</h4>
+<ul>
+<li>add emscripten memory image as binary suffix (<a href="http://github.com/karma-runner/karma/commit/f6b2b561c5d5e083cd204df9564024cac163b611">f6b2b561</a>)</li>
+<li>Wrap url.parse to always return an object for query property (<a href="http://github.com/karma-runner/karma/commit/72452e9fce4c42dc843c1157c19c08d39e3996df">72452e9f</a>, closes <a href="http://github.com/karma-runner/karma/issues/1182">#1182</a>)</li>
+<li><strong>client.html:</strong> always open debug.html in a new browser process (<a href="http://github.com/karma-runner/karma/commit/d176bcf47e9b3a7df8c6ae691f767f1012214c53">d176bcf4</a>)</li>
+<li><strong>preprocessor:</strong> calculate sha1 on content returned from a preprocessor (<a href="http://github.com/karma-runner/karma/commit/6cf795576bd6d77decac68ecc4838871b6df4836">6cf79557</a>, closes <a href="http://github.com/karma-runner/karma/issues/1204">#1204</a>)</li>
+<li><strong>runner:</strong> Fix typo in CSS class name for .idle (<a href="http://github.com/karma-runner/karma/commit/fc5a7ce0904a78ece6a9cfa29215b17bd5c1929d">fc5a7ce0</a>)</li>
+</ul>
+<p><a name="v0.12.24"></a></p>
 <h3>v0.12.24 (2014-09-30)</h3>
 <h4>Bug Fixes</h4>
 <ul>
@@ -600,7 +649,7 @@ if you are using <code>karma run</code> with custom <code>--runer-port</code>, p
 <li>please update your karma.conf.js as follows (<a href="https://github.com/karma-runner/karma/commit/d2a3c8546dc4b10bb9194047a1c11963639f3730">d2a3c854</a>):</li>
 </ul>
 <pre><code class="language-javascript"><span class="hljs-comment">// before:</span>
-<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(karma)</span> </span>{
+module.exports = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(karma)</span> {</span>
   karma.configure({port: <span class="hljs-number">123</span>});
   karma.defineLauncher(<span class="hljs-string">'x'</span>, <span class="hljs-string">'Chrome'</span>, {
     flags: [<span class="hljs-string">'--disable-web-security'</span>]
@@ -614,7 +663,7 @@ if you are using <code>karma run</code> with custom <code>--runer-port</code>, p
 };
 
 <span class="hljs-comment">// after:</span>
-<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(config)</span> </span>{
+module.exports = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(config)</span> {</span>
   config.set({
     port: <span class="hljs-number">123</span>,
     customLaunchers: {
@@ -676,7 +725,7 @@ if you are using <code>karma run</code> with custom <code>--runer-port</code>, p
 <ul>
 <li>Update your karma.conf.js to export a config function (<a href="https://github.com/karma-runner/karma/commit/a37fd6f7d28036b8da5fe98634cf711cebafc1ff">a37fd6f7</a>):</li>
 </ul>
-<pre><code class="language-javascript"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(karma)</span> </span>{
+<pre><code class="language-javascript">module.exports = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(karma)</span> {</span>
   karma.configure({
     autoWatch: <span class="hljs-literal">true</span>,
     <span class="hljs-comment">// ...</span>

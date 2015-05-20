@@ -61,6 +61,7 @@
                   <li><a href="/0.12/plus/yeoman.html">Yeoman</a></li>
                   <li><a href="/0.12/plus/emberjs.html">Ember.js</a></li>
                   <li><a href="/0.12/plus/codio.html">Codio</a></li>
+                  <li><a href="/0.12/plus/teamcity.html">TeamCity</a></li>
                 </ul>
               </li>
               <li><a href="javascript:void" class="">dev</a>
@@ -113,7 +114,7 @@ is by using the <code>karma init</code> command. This page lists all of the avai
 Within the configuration file, the configuration code is put together by setting <code>module.exports</code> to point to a function
 which accepts one argument: the configuration object.</p>
 <pre><code class="language-javascript"><span class="hljs-comment">// karma.conf.js</span>
-<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(config)</span> </span>{
+module.exports = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(config)</span> {</span>
   config.set({
     basePath: <span class="hljs-string">'../..'</span>,
     frameworks: [<span class="hljs-string">'jasmine'</span>],
