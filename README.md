@@ -1,8 +1,6 @@
 # karma-runner.github.com
 
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/karma-runner/karma-runner.github.com)
-
-[![Build Status](https://img.shields.io/travis/karma-runner/karma-runner.github.com/master.svg?style=flat-square)](https://travis-ci.org/karma-runner/karma-runner.github.com) [![Dependency Status](https://img.shields.io/david/karma-runner/karma-runner.github.com.svg?style=flat-square)](https://david-dm.org/karma-runner/karma-runner.github.com) [![devDependency Status](https://img.shields.io/david/dev/karma-runner/karma-runner.github.com.svg?style=flat-square)](https://david-dm.org/karma-runner/karma-runner.github.com#info=devDependencies)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/karma-runner/karma-runner.github.com) [![devDependency Status](https://img.shields.io/david/dev/karma-runner/karma-runner.github.com.svg?style=flat-square)](https://david-dm.org/karma-runner/karma-runner.github.com#info=devDependencies)
 
 > This is the source code for http://karma-runner.github.com. The
 > homepage and documentation of [Karma], the spectacular test runner.
