@@ -122,6 +122,7 @@ module.exports = function(grunt) {
             return fs.write(fileUrl, jadeTpl({
               versions: versions,
               oldVersion: file.version !== versions[0],
+              editButton: file.editButton && file.version === versions[0],
               menu: menu[file.version],
               self: file
             }));
