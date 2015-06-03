@@ -82,4 +82,4 @@ Please visit the [Grunt Karma Github Page](https://github.com/karma-runner/grunt
 [configuration file docs]: ../config/configuration-file.html
 [Grunt]: http://gruntjs.com/
 [grunt-karma]: https://github.com/karma-runner/grunt-karma
-[grunt-karma-usage] https://github.com/karma-runner/grunt-karma#running-tests
+[grunt-karma-usage]: https://github.com/karma-runner/grunt-karma#running-tests
