@@ -117,7 +117,7 @@ Here are some tips on how to set up a Karma workspace and how to send a good pul
 <ul>
 <li>Make sure you have a <a href="https://github.com/signup/free">GitHub account</a>.</li>
 <li><a href="https://github.com/karma-runner/karma/fork">Fork the repository</a> on GitHub.</li>
-<li>Clone your fork.<pre><code class="language-bash">$ git clone git@github.com:&lt;your-username&gt;/karma.git
+<li>Clone your fork.<pre><code class="language-bash">$ git <span class="hljs-built_in">clone</span> git@github.com:&lt;your-username&gt;/karma.git
 $ <span class="hljs-built_in">cd</span> karma</code></pre>
 </li>
 <li>Init the workspace<pre><code class="language-bash">$ ./scripts/init-dev-env.js</code></pre>
@@ -126,12 +126,12 @@ $ <span class="hljs-built_in">cd</span> karma</code></pre>
 <h2>Testing and Building</h2>
 <ul>
 <li><p>Run the tests via:</p>
-<pre><code class="language-bash">$ grunt test:unit
-$ grunt test:e2e
-$ grunt test:client
+<pre><code class="language-bash">$ grunt <span class="hljs-built_in">test</span>:unit
+$ grunt <span class="hljs-built_in">test</span>:e2e
+$ grunt <span class="hljs-built_in">test</span>:client
 
 <span class="hljs-comment"># All tests.</span>
-$ grunt test</code></pre>
+$ grunt <span class="hljs-built_in">test</span></code></pre>
 </li>
 <li><p>Lint the code via:</p>
 <pre><code class="language-bash">$ grunt lint</code></pre>

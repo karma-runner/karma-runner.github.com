@@ -102,7 +102,25 @@
         </h1>
       </div>
       <div class="page-columns">
-        <div id="markdown" class="sixteen columns bottom"><p><a name"0.12.33"></a></p>
+        <div id="markdown" class="sixteen columns bottom"><p><a name"0.12.35"></a></p>
+<h3>0.12.35 (2015-05-29)</h3>
+<h4>Bug Fixes</h4>
+<ul>
+<li><strong>server:</strong> Start webserver and browsers after preprocessing completed (<a href="https://github.com/karma-runner/karma/commit/e0d2d239">e0d2d239</a>)</li>
+</ul>
+<p><a name"0.12.34"></a></p>
+<h3>0.12.34 (2015-05-29)</h3>
+<h4>Bug Fixes</h4>
+<ul>
+<li><strong>cli:</strong> Use <code>bin</code> field in package.json (<a href="https://github.com/karma-runner/karma/commit/6823926f">6823926f</a>, closes <a href="https://github.com/karma-runner/karma/issues/1351">#1351</a>)</li>
+<li><strong>client:</strong> dynamic protocol for socket.io (<a href="https://github.com/karma-runner/karma/commit/c986eefe">c986eefe</a>, closes <a href="https://github.com/karma-runner/karma/issues/1400">#1400</a>)</li>
+<li><strong>deps:</strong> Update dependencies (<a href="https://github.com/karma-runner/karma/commit/b9a4ce98">b9a4ce98</a>)</li>
+</ul>
+<h4>Features</h4>
+<ul>
+<li><strong>runner:</strong> Use favicon in static runner pages (<a href="https://github.com/karma-runner/karma/commit/6cded4f8">6cded4f8</a>)</li>
+</ul>
+<p><a name"0.12.33"></a></p>
 <h3>0.12.33 (2015-05-26)</h3>
 <h4>Bug Fixes</h4>
 <ul>
@@ -658,7 +676,7 @@ if you are using <code>karma run</code> with custom <code>--runer-port</code>, p
 <li>please update your karma.conf.js as follows (<a href="https://github.com/karma-runner/karma/commit/d2a3c8546dc4b10bb9194047a1c11963639f3730">d2a3c854</a>):</li>
 </ul>
 <pre><code class="language-javascript"><span class="hljs-comment">// before:</span>
-module.exports = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(karma)</span> {</span>
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">karma</span>) </span>{
   karma.configure({port: <span class="hljs-number">123</span>});
   karma.defineLauncher(<span class="hljs-string">'x'</span>, <span class="hljs-string">'Chrome'</span>, {
     flags: [<span class="hljs-string">'--disable-web-security'</span>]
@@ -672,7 +690,7 @@ module.exports = <span class="hljs-function"><span class="hljs-keyword">function
 };
 
 <span class="hljs-comment">// after:</span>
-module.exports = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(config)</span> {</span>
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">config</span>) </span>{
   config.set({
     port: <span class="hljs-number">123</span>,
     customLaunchers: {
@@ -734,7 +752,7 @@ module.exports = <span class="hljs-function"><span class="hljs-keyword">function
 <ul>
 <li>Update your karma.conf.js to export a config function (<a href="https://github.com/karma-runner/karma/commit/a37fd6f7d28036b8da5fe98634cf711cebafc1ff">a37fd6f7</a>):</li>
 </ul>
-<pre><code class="language-javascript">module.exports = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(karma)</span> {</span>
+<pre><code class="language-javascript"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">karma</span>) </span>{
   karma.configure({
     autoWatch: <span class="hljs-literal">true</span>,
     <span class="hljs-comment">// ...</span>

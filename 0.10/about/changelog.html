@@ -270,7 +270,7 @@ if you are using <code>karma run</code> with custom <code>--runer-port</code>, p
 <li>please update your karma.conf.js as follows (<a href="https://github.com/karma-runner/karma/commit/d2a3c8546dc4b10bb9194047a1c11963639f3730">d2a3c854</a>):</li>
 </ul>
 <pre><code class="language-javascript"><span class="hljs-comment">// before:</span>
-module.exports = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(karma)</span> {</span>
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">karma</span>) </span>{
   karma.configure({port: <span class="hljs-number">123</span>});
   karma.defineLauncher(<span class="hljs-string">'x'</span>, <span class="hljs-string">'Chrome'</span>, {
     flags: [<span class="hljs-string">'--disable-web-security'</span>]
@@ -284,7 +284,7 @@ module.exports = <span class="hljs-function"><span class="hljs-keyword">function
 };
 
 <span class="hljs-comment">// after:</span>
-module.exports = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(config)</span> {</span>
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">config</span>) </span>{
   config.set({
     port: <span class="hljs-number">123</span>,
     customLaunchers: {
@@ -346,7 +346,7 @@ module.exports = <span class="hljs-function"><span class="hljs-keyword">function
 <ul>
 <li>Update your karma.conf.js to export a config function (<a href="https://github.com/karma-runner/karma/commit/a37fd6f7d28036b8da5fe98634cf711cebafc1ff">a37fd6f7</a>):</li>
 </ul>
-<pre><code class="language-javascript">module.exports = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(karma)</span> {</span>
+<pre><code class="language-javascript"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">karma</span>) </span>{
   karma.configure({
     autoWatch: <span class="hljs-literal">true</span>,
     <span class="hljs-comment">// ...</span>

@@ -166,18 +166,24 @@ served - but rather available as <code>window.__html__[&#39;my.html&#39;]</code>
   {pattern: <span class="hljs-string">'app/index.html'</span>, included: <span class="hljs-literal">false</span>, served: <span class="hljs-literal">false</span>}
 ],</code></pre>
 <h2>Loading Assets</h2>
-<p>By default all assets are served at <code>http://localhost:[PORT]/base/</code>, Example for loading images</p>
+<p>By default all assets are served at <code>http://localhost:[PORT]/base/</code></p>
+<p>Example for loading images</p>
 <pre><code class="language-javascript">files: [
-  {pattern: <span class="hljs-string">'test/images/*.jpg'</span>, watched: <span class="hljs-literal">false</span>, included: <span class="hljs-literal">false</span>, served: <span class="hljs-literal">true</span>}
+  {pattern: <span class="hljs-string">"test/images/*.jpg"</span>, watched: <span class="hljs-literal">false</span>, included: <span class="hljs-literal">false</span>, served: <span class="hljs-literal">true</span>}
 ],</code></pre>
-<p>in this case the image is accessed at <code>http://localhost:[PORT]/base/test/images/[MY IMAGE].jpg</code></p>
-<p>notice the <strong>base</strong> in the URL</p>
-<p>or in addition you can use a proxy</p>
+<p>The pattern is a glob which matches the specified image assets. Watched and included are not necessary as images are not tests. However they will need to be served to the browser.</p>
+<p>In this case an image would be accessed at <code>http://localhost:[PORT]/base/test/images/[MY IMAGE].jpg</code></p>
+<p>Notice the <strong>base</strong> in the URL, it is a reference to your <strong>basePath</strong>. You do not need to replace or provide your own <strong>base</strong>.</p>
+<p>In addition you can use a proxy</p>
 <pre><code class="language-javascript">proxies: {
-  <span class="hljs-string">'/img/'</span>: <span class="hljs-string">'http://localhost:8080/base/test/images/'</span>
+  <span class="hljs-string">"/img/"</span>: <span class="hljs-string">"http://localhost:8080/base/test/images/"</span>
 },</code></pre>
-<p>now you can fetch images in &#39;test/images&#39; at <code>http://localhost:8080/img/[MY IMAGE].jpg</code></p>
-<p>just change <strong>8080</strong> to the port you use</p>
+<p>Now you can fetch images in <code>test/images</code> at <code>http://localhost:8080/img/[MY IMAGE].jpg</code></p>
+<p>Change <strong>8080</strong> to the port you use</p>
+<p>You can also use proxies without specifying the protocol, hostname, and port</p>
+<pre><code class="language-javascript">proxies: {
+  <span class="hljs-string">"/img/"</span>: <span class="hljs-string">"/base/test/images/"</span>
+},</code></pre>
 
         </div>
       </div>

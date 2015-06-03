@@ -105,16 +105,16 @@ using Testacular with <a href="http://gruntjs.com/">Grunt</a> for instance.</p>
 <h3><strong>server.start(options, [callback=process.exit])</strong></h3>
 <p>Equivalent of <code>testacular start</code>.</p>
 <pre><code class="language-javascript"><span class="hljs-keyword">var</span> server = <span class="hljs-built_in">require</span>(<span class="hljs-string">'testacular'</span>).server;
-server.start({port: <span class="hljs-number">9877</span>}, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(exitCode)</span> {</span>
-  console.log(<span class="hljs-string">'Testacular has exitted with '</span> + exitCode);
+server.start({port: <span class="hljs-number">9877</span>}, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">exitCode</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Testacular has exitted with '</span> + exitCode);
   process.exit(exitCode);
 });</code></pre>
 <h2>testacular.runner</h2>
 <h3><strong>runner.run(options, [callback=process.exit])</strong></h3>
 <p>Equivalent of <code>testacular run</code>.</p>
 <pre><code class="language-javascript"><span class="hljs-keyword">var</span> runner = <span class="hljs-built_in">require</span>(<span class="hljs-string">'testacular'</span>).runner;
-runner.run({runnerPort: <span class="hljs-number">9100</span>}, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(exitCode)</span> {</span>
-  console.log(<span class="hljs-string">'Testacular has exitted with '</span> + exitCode);
+runner.run({runnerPort: <span class="hljs-number">9100</span>}, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">exitCode</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Testacular has exitted with '</span> + exitCode);
   process.exit(exitCode);
 });</code></pre>
 

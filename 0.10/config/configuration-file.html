@@ -112,7 +112,7 @@ and this is done via a configuration file. This page explains how to create such
 Within the configuration file, the configuration code is put together by setting <code>module.exports</code> to point to a function
 which accepts one argument: the configuration object.</p>
 <pre><code class="language-javascript"><span class="hljs-comment">// an example karma.conf.js</span>
-module.exports = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(config)</span> {</span>
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">config</span>) </span>{
   config.set({
     basePath: <span class="hljs-string">'../..'</span>,
     frameworks: [<span class="hljs-string">'jasmine'</span>],
@@ -120,7 +120,7 @@ module.exports = <span class="hljs-function"><span class="hljs-keyword">function
   });
 };</code></pre>
 <pre><code class="language-coffeescript"><span class="hljs-comment"># an example karma.conf.coffee</span>
-<span class="hljs-built_in">module</span>.<span class="hljs-function"><span class="hljs-title">exports</span> = <span class="hljs-params">(config)</span> -&gt;</span>
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-params">(config)</span> -&gt;</span>
   config.set
     <span class="hljs-attribute">basePath</span>: <span class="hljs-string">'../..'</span>
     <span class="hljs-attribute">frameworks</span>: [<span class="hljs-string">'jasmine'</span>]
