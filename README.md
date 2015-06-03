@@ -28,4 +28,4 @@ Now open your browser at http://localhost:8000.
 
 
 [Karma]: http://karma-runner.github.com
-[main repo]: https://github.com/karma-runner/karma-runner/tree/master/docs
+[main repo]: https://github.com/karma-runner/karma/tree/master/docs
