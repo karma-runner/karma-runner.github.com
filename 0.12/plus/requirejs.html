@@ -170,6 +170,29 @@ start the application in our tests.</p>
     ]
   });
 };</code></pre>
+<p>The files property contains every file you want to be available to the
+Karma runner. By default a script tag will be created for the files,
+unless you use the <code>included: false</code> option.</p>
+<p>If you want a script tag to be added before requirejs (to load a amd 
+compatible script before requirejs) then you must add the requirejs
+and adapter script to the files list and remove requirejs from the
+frameworks list. This allows you to control the order. For instance
+to load <code>knockout.js</code> before requirejs...</p>
+<pre><code>  config.set({
+    frameworks: [<span class="hljs-symbol">'jasmine'</span>],
+
+    files: [
+      <span class="hljs-symbol">'knockout</span>.js',
+
+      <span class="hljs-symbol">'node_modules</span>/requirejs/require.js',
+      <span class="hljs-symbol">'node_modules</span>/karma-requirejs/lib/adapter.js',
+
+      {pattern: <span class="hljs-symbol">'lib</span>/**/*.js', included: <span class="hljs-literal">false</span>},
+      {pattern: <span class="hljs-symbol">'src</span>/**/*.js', included: <span class="hljs-literal">false</span>},
+      {pattern: <span class="hljs-symbol">'test</span>/**/*<span class="hljs-type">Spec</span>.js', included: <span class="hljs-literal">false</span>},
+
+      <span class="hljs-symbol">'test</span>/test-main.js'
+    ],</code></pre>
 <h2>Configuring Require.js</h2>
 <p>Just like any Require.js project, you need a main module to bootstrap
 your tests. We do this is <code>test/test-main.js</code>.</p>
@@ -191,13 +214,16 @@ array we find all our test files.</p>
 <p>Now we can tell Require.js to load our tests, which must be done
 asynchronously as dependencies must be fetched before the tests are run.
 The <code>test/test-main.js</code> file ends up looking like this:</p>
-<pre><code class="language-javascript"><span class="hljs-keyword">var</span> allTestFiles = [];
-<span class="hljs-keyword">var</span> TEST_REGEXP = <span class="hljs-regexp">/test\.js$/</span>;
+<pre><code class="language-javascript"><span class="hljs-keyword">var</span> TEST_REGEXP = <span class="hljs-regexp">/(spec|test)\.js$/i</span>;
 
+<span class="hljs-comment">// Get a list of all the test files to include</span>
 <span class="hljs-built_in">Object</span>.keys(<span class="hljs-built_in">window</span>.__karma__.files).forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">file</span>) </span>{
   <span class="hljs-keyword">if</span> (TEST_REGEXP.test(file)) {
     <span class="hljs-comment">// Normalize paths to RequireJS module names.</span>
-    allTestFiles.push(file);
+    <span class="hljs-comment">// If you require sub-dependencies of test files to be loaded as-is (requiring file extension)</span>
+    <span class="hljs-comment">// then do not normalize the paths</span>
+    <span class="hljs-keyword">var</span> normalizedTestModule = file.replace(<span class="hljs-regexp">/^\/base\/|\.js$/g</span>, <span class="hljs-string">''</span>);
+    allTestFiles.push(normalizedTestModule);
   }
 });
 
@@ -228,9 +254,11 @@ The <code>test/test-main.js</code> file ends up looking like this:</p>
 <p>Tests can now be written as regular Require.js modules. We wrap
 everything in <code>define</code>, and inside we can use the regular test methods,
 such as <code>describe</code> and <code>it</code>. Example:</p>
-<pre><code class="language-javascript">define([<span class="hljs-string">'app'</span>, <span class="hljs-string">'jquery'</span>, <span class="hljs-string">'underscore'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">App, $, _</span>) </span>{
+<pre><code class="language-javascript">define([<span class="hljs-string">'app'</span>, <span class="hljs-string">'jquery'</span>, <span class="hljs-string">'underscore'</span>, <span class="hljs-string">'./test-helper'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">App, $, _, testHelper</span>) </span>{
 
     describe(<span class="hljs-string">'just checking'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+
+        testHelper.setup();
 
         it(<span class="hljs-string">'works for app'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
             <span class="hljs-keyword">var</span> el = $(<span class="hljs-string">'&lt;div&gt;&lt;/div&gt;'</span>);

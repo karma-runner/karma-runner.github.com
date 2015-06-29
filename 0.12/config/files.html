@@ -157,6 +157,10 @@ served - but rather available as <code>window.__html__[&#39;my.html&#39;]</code>
 <p>Here is a complete example showing the different options possible:</p>
 <pre><code class="language-javascript">files: [
 
+  <span class="hljs-comment">// Detailed pattern to include a file. Similarly other options can be used</span>
+  { pattern: <span class="hljs-string">'lib/angular.js'</span>, watched: <span class="hljs-literal">false</span> },
+  <span class="hljs-comment">// Prefer to have watched false for library files. No need to watch them for changes</span>
+
   <span class="hljs-comment">// simple pattern to load the needed testfiles</span>
   <span class="hljs-comment">// equal to {pattern: 'test/unit/*.spec.js', watched: true, served: true, included: true}</span>
   <span class="hljs-string">'test/unit/*.spec.js'</span>,
