@@ -9,7 +9,7 @@ if [ -z "$BRANCH" ]; then
 fi
 
 if [ -z "$VERSION" ]; then
-  VERSION="0.12"
+  VERSION="0.13"
 fi
 
 DOCS_REPO=$(cd "$(dirname "$0")"; pwd)
@@ -38,7 +38,7 @@ git commit -m "Sync the docs"
 
 # build html and commit
 grunt build
-git add $VERSION/**/*.html $VERSION/*.html
-git commit -m "Build"
+#git add $VERSION/**/*.html $VERSION/*.html
+#git commit -m "Build"
 
-git push upstream HEAD:master
+#git push upstream HEAD:master
