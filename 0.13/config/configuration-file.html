@@ -245,6 +245,16 @@ documentation to see how (and if) it uses this value.</p>
 <p><strong>Type:</strong> String</p>
 <p><strong>Default:</strong> <code>&#39;localhost&#39;</code></p>
 <p><strong>Description:</strong> Hostname to be used when capturing browsers.</p>
+<h2>httpsServerOptions</h2>
+<p><strong>Type:</strong> Object</p>
+<p><strong>Default:</strong> <code>{}</code></p>
+<p><strong>Description:</strong> Options object to be used by Node&#39;s <code>https</code> class.</p>
+<p>Object description can be found in the <a href="https://nodejs.org/api/tls.html#tls_tls_createserver_options_secureconnectionlistener">NodeJS.org API docs</a></p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-javascript">httpsServerOptions: {
+  key: fs.readFileSync(<span class="hljs-string">'server.key'</span>, <span class="hljs-string">'utf8'</span>),
+  cert: fs.readFileSync(<span class="hljs-string">'server.crt'</span>, <span class="hljs-string">'utf8'</span>)
+},</code></pre>
 <h2>logLevel</h2>
 <p><strong>Type:</strong> Constant</p>
 <p><strong>Default:</strong> <code>config.LOG_INFO</code></p>
@@ -291,6 +301,19 @@ your tests, you&#39;ll discover that your expected source code is completely cha
 of that, you&#39;ll want to engineer this so that your automated builds use the coverage entry in the &quot;reporters&quot; list,
 but your interactive debugging does not.</p>
 <p>Click <a href="preprocessors.html">here</a> for more information.</p>
+<h2>protocol</h2>
+<p><strong>Type:</strong> String</p>
+<p><strong>Default:</strong> <code>&#39;http:&#39;</code></p>
+<p><strong>Possible Values:</strong></p>
+<ul>
+<li><code>http:</code></li>
+<li><code>https:</code> </li>
+</ul>
+<p><strong>Description:</strong> Protocol used for running the Karma webserver.</p>
+<p>Determines the use of the Node <code>http</code> or <code>https</code> class.</p>
+<div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Using <code>&#39;https:&#39;</code> requires you to specify <code>httpsServerOptions</code>.
+
+</div>
 <h2>proxies</h2>
 <p><strong>Type:</strong> Object</p>
 <p><strong>Default:</strong> <code>{}</code></p>
