@@ -1,5 +1,31 @@
 editButton: false
 
+<a name="0.13.9"></a>
+## 0.13.9 (2015-08-11)
+
+
+### Bug Fixes
+
+* **file-list:** refresh resolves before 'file_list_modified' event ([65f1eca](https://github.com/karma-runner/karma/commit/65f1eca)), closes [#1550](https://github.com/karma-runner/karma/issues/1550)
+* **reporter:** Enable sourcemaps for errors that without column # ([086a542](https://github.com/karma-runner/karma/commit/086a542))
+
+
+
+<a name="0.13.8"></a>
+## 0.13.8 (2015-08-06)
+
+
+### Bug Fixes
+
+* **middleware:** Inject `config.urlRoot`. ([569ca0e](https://github.com/karma-runner/karma/commit/569ca0e)), closes [#1516](https://github.com/karma-runner/karma/issues/1516)
+
+### Features
+
+* **static:** Support media queries ([94e7b50](https://github.com/karma-runner/karma/commit/94e7b50))
+* Add engine support for iojs@3. ([eb1c8d2](https://github.com/karma-runner/karma/commit/eb1c8d2))
+
+
+
 <a name="0.13.7"></a>
 ## 0.13.7 (2015-08-05)
 
