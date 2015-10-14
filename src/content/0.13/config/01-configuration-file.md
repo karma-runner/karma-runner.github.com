@@ -69,6 +69,14 @@ multiple changes into a single run so that the test runner doesn't try to start 
 tests more than it should. The configuration setting tells Karma how long to wait (in milliseconds) after any changes
 have occurred before starting the test process again.
 
+## restartOnFileChange
+**Type:** Boolean
+
+**Default:** `false`
+
+**Description:** When Karma is watching the files for changes, it will delay a new run until
+the current run is finished. Enabling this setting will cancel the current run and start a new run
+immediately when a change is detected.
 
 ## basePath
 **Type:** String
@@ -175,6 +183,30 @@ documentation to see how (and if) it uses this value.
 **Description:** Enable or disable colors in the output (reporters and logs).
 
 
+## customHeaders
+**Type:** Array
+
+**Default:** `undefined`
+
+**Description** Custom HTTP headers that will be set upon serving files by Karma's web server.
+Custom headers are useful, especially with upcoming browser features like Service Workers.
+
+The `customHeaders` option allows you to set HTTP headers for files that match a regular expression.
+`customHeaders` is an array of `Objects` with properties as follows:
+
+* match: Regular expression string to match files
+* name: HTTP header name
+* value: HTTP header value
+
+**Example:**
+```javascript
+customHeaders: [{
+  match: '.*foo.html',
+  name: 'Service-Worker-Allowed',
+  value: '/'
+}]
+```
+
 ## exclude
 **Type:** Array
 
@@ -255,6 +287,35 @@ httpsServerOptions: {
 
 **Description:** A list of log appenders to be used. See the documentation for [log4js] for more information.
 
+
+## middleware
+**Type:** Array
+
+**Default:** `[]`
+
+**Description:** List of names of additional middleware you want the karma server to use. Middleware will be used in the order listed.
+
+You must have installed the middleware via a plugin/framework (either inline or via NPM). Additional information can be found in [plugins].
+
+The plugin must provide an express/connect middleware function (details about this can be found in [the Express docs](http://expressjs.com/guide/using-middleware.html). An example of custom inline middleware is shown below.
+
+**Example:**
+```javascript
+var CustomMiddlewareFactory = function (config) {
+  return function (request, response, /* next */) {
+    response.writeHead(200)
+    return response.end("content!")
+  }
+}
+```
+
+```javascript
+middleware: ['custom']
+plugins: [
+  {'middleware:custom': ['factory', CustomMiddlewareFactory]}
+  ...
+]
+```
 
 ## plugins
 **Type:** Array

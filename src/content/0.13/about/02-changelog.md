@@ -1,5 +1,36 @@
 editButton: false
 
+<a name="0.13.11"></a>
+## 0.13.11 (2015-10-14)
+
+
+### Bug Fixes
+
+* **reporter:** preserve base/absolute word in error ([b3798df](https://github.com/karma-runner/karma/commit/b3798df))
+
+### Features
+
+* **config:** add restartOnFileChange option ([1082f35](https://github.com/karma-runner/karma/commit/1082f35))
+* **reporter:** Replace way-too-big memoizee with a trivial solution. ([d926fe3](https://github.com/karma-runner/karma/commit/d926fe3))
+* **web-server:** add support for custom headers in files served ([4301bea](https://github.com/karma-runner/karma/commit/4301bea))
+* **web-server:** allow injection of custom middleware. ([2e963c3](https://github.com/karma-runner/karma/commit/2e963c3)), closes [#1612](https://github.com/karma-runner/karma/issues/1612)
+
+
+
+<a name="0.13.10"></a>
+## 0.13.10 (2015-09-21)
+
+
+### Bug Fixes
+
+* **config:** Error when browers option isn't array ([b695460](https://github.com/karma-runner/karma/commit/b695460))
+
+### Features
+
+* **config:** Pass CLI arguments to `karma.config.js`. ([70cf903](https://github.com/karma-runner/karma/commit/70cf903)), closes [#1561](https://github.com/karma-runner/karma/issues/1561)
+
+
+
 <a name="0.13.9"></a>
 ## 0.13.9 (2015-08-11)
 
