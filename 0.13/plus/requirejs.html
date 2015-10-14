@@ -216,6 +216,7 @@ array we find all our test files.</p>
 asynchronously as dependencies must be fetched before the tests are run.
 The <code>test/test-main.js</code> file ends up looking like this:</p>
 <pre><code class="language-javascript"><span class="hljs-keyword">var</span> TEST_REGEXP = <span class="hljs-regexp">/(spec|test)\.js$/i</span>;
+<span class="hljs-keyword">var</span> allTestFiles = [];
 
 <span class="hljs-comment">// Get a list of all the test files to include</span>
 <span class="hljs-built_in">Object</span>.keys(<span class="hljs-built_in">window</span>.__karma__.files).forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">file</span>) </span>{

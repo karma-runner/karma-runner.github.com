@@ -160,6 +160,12 @@ but concise file expressions so you can easily list all of the files you want to
 multiple changes into a single run so that the test runner doesn&#39;t try to start and restart running
 tests more than it should. The configuration setting tells Karma how long to wait (in milliseconds) after any changes
 have occurred before starting the test process again.</p>
+<h2>restartOnFileChange</h2>
+<p><strong>Type:</strong> Boolean</p>
+<p><strong>Default:</strong> <code>false</code></p>
+<p><strong>Description:</strong> When Karma is watching the files for changes, it will delay a new run until
+the current run is finished. Enabling this setting will cancel the current run and start a new run
+immediately when a change is detected.</p>
 <h2>basePath</h2>
 <p><strong>Type:</strong> String</p>
 <p><strong>Default:</strong> <code>&#39;&#39;</code></p>
@@ -226,6 +232,24 @@ documentation to see how (and if) it uses this value.</p>
 <p><strong>Default:</strong>   <code>true</code></p>
 <p><strong>CLI:</strong> <code>--colors</code>, <code>--no-colors</code></p>
 <p><strong>Description:</strong> Enable or disable colors in the output (reporters and logs).</p>
+<h2>customHeaders</h2>
+<p><strong>Type:</strong> Array</p>
+<p><strong>Default:</strong> <code>undefined</code></p>
+<p><strong>Description</strong> Custom HTTP headers that will be set upon serving files by Karma&#39;s web server.
+Custom headers are useful, especially with upcoming browser features like Service Workers.</p>
+<p>The <code>customHeaders</code> option allows you to set HTTP headers for files that match a regular expression.
+<code>customHeaders</code> is an array of <code>Objects</code> with properties as follows:</p>
+<ul>
+<li>match: Regular expression string to match files</li>
+<li>name: HTTP header name</li>
+<li></li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-javascript">customHeaders: [{
+  match: <span class="hljs-string">'.*foo.html'</span>,
+  name: <span class="hljs-string">'Service-Worker-Allowed'</span>,
+  value: <span class="hljs-string">'/'</span>
+}]</code></pre>
 <h2>exclude</h2>
 <p><strong>Type:</strong> Array</p>
 <p><strong>Default:</strong> <code>[]</code></p>
@@ -272,6 +296,24 @@ documentation to see how (and if) it uses this value.</p>
 <p><strong>Type:</strong> Array</p>
 <p><strong>Default:</strong> <code>[{type: &#39;console&#39;}]</code></p>
 <p><strong>Description:</strong> A list of log appenders to be used. See the documentation for <a href="https://github.com/nomiddlename/log4js-node">log4js</a> for more information.</p>
+<h2>middleware</h2>
+<p><strong>Type:</strong> Array</p>
+<p><strong>Default:</strong> <code>[]</code></p>
+<p><strong>Description:</strong> List of names of additional middleware you want the karma server to use. Middleware will be used in the order listed.</p>
+<p>You must have installed the middleware via a plugin/framework (either inline or via NPM). Additional information can be found in <a href="plugins.html">plugins</a>.</p>
+<p>The plugin must provide an express/connect middleware function (details about this can be found in <a href="http://expressjs.com/guide/using-middleware.html">the Express docs</a>. An example of custom inline middleware is shown below.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-javascript"><span class="hljs-keyword">var</span> CustomMiddlewareFactory = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">request, response, <span class="hljs-comment">/* next */</span></span>) </span>{
+    response.writeHead(<span class="hljs-number">200</span>)
+    <span class="hljs-keyword">return</span> response.end(<span class="hljs-string">"content!"</span>)
+  }
+}</code></pre>
+<pre><code class="language-javascript">middleware: [<span class="hljs-string">'custom'</span>]
+plugins: [
+  {<span class="hljs-string">'middleware:custom'</span>: [<span class="hljs-string">'factory'</span>, CustomMiddlewareFactory]}
+  ...
+]</code></pre>
 <h2>plugins</h2>
 <p><strong>Type:</strong> Array</p>
 <p><strong>Default:</strong> <code>[&#39;karma-*&#39;]</code></p>
