@@ -130,8 +130,9 @@ reporters: [<span class="hljs-string">'dots'</span>, <span class="hljs-string">'
 junitReporter: {
   outputFile: <span class="hljs-string">'test-results.xml'</span>
 },</code></pre>
-<p>Please note the <code>test-result.xml</code> file will be written to the present
-working directory (and you will need to tell Jenkins where to find it).</p>
+<p>Please note the <code>test-results.xml</code> files will be written to subdirectories
+named after the browsers the tests were run in inside the present working
+directory (and you will need to tell Jenkins where to find them).</p>
 <h2>Create a new Jenkins Job</h2>
 <p>In Jenkins, start a new job for Angular/Karma with the basic
 settings (Name, description, parameters, source code repo to pull
@@ -146,8 +147,10 @@ $ PHANTOMJS_BIN=/usr/<span class="hljs-built_in">local</span>/bin/phantomjs <spa
 <p>Further down the page, in the Post-build Actions sub-section add a
 <code>Publish JUnit test result report</code> from the Post-build action drop
 down menu. When the textbox labeled Test report XMLs appears, enter
-the path to where the <code>test-results.xml</code> is relative to the root of
-your Jenkins job workspace.</p>
+the path to where the <code>test-results.xml</code> files are relative to the root of your
+Jenkins job workspace (you can use wildcards for this, so <code>**/test-results.xml</code>
+will find the file even if it was stored inside a browser-specific
+subdirectory).</p>
 
         </div>
       </div>

@@ -16,12 +16,12 @@ DOCS_REPO=$(cd "$(dirname "$0")"; pwd)
 KARMA_REPO="$DOCS_REPO/../karma"
 
 # checkout the branch in the karma repo
-cd $KARMA_REPO
-git fetch $REMOTE
-git checkout $REMOTE/$BRANCH
+#cd $KARMA_REPO
+#git fetch $REMOTE
+#git checkout $REMOTE/$BRANCH
 
 # copy the docs source
-cd $DOCS_REPO
+#cd $DOCS_REPO
 echo "Removing old docs..."
 git rm -rf src/content/$VERSION
 echo "Copying the docs from master repo..."
@@ -39,6 +39,7 @@ git commit -m "Sync the docs"
 # build html and commit
 grunt build
 #git add $VERSION/**/*.html $VERSION/*.html
-#git commit -m "Build"
+git add .
+git commit -m "Build"
 
-#git push upstream HEAD:master
+#git push origin HEAD:master

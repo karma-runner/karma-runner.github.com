@@ -349,7 +349,7 @@ but your interactive debugging does not.</p>
 <p><strong>Possible Values:</strong></p>
 <ul>
 <li><code>http:</code></li>
-<li><code>https:</code> </li>
+<li><code>https:</code></li>
 </ul>
 <p><strong>Description:</strong> Protocol used for running the Karma webserver.</p>
 <p>Determines the use of the Node <code>http</code> or <code>https</code> class.</p>
@@ -418,6 +418,11 @@ iFrame and may need a new window to run.</p>
 <p><strong>Description:</strong> The base url, where Karma runs.</p>
 <p>All of Karma&#39;s urls get prefixed with the <code>urlRoot</code>. This is helpful when using proxies, as
 sometimes you might want to proxy a url that is already taken by Karma.</p>
+<h2>concurrency</h2>
+<p><strong>Type:</strong> Number</p>
+<p><strong>Default:</strong> <code>Infinity</code></p>
+<p><strong>Description:</strong> How many browser Karma launches in parallel.</p>
+<p>Especially on sevices like SauceLabs and Browserstack it makes sense to only launch a limited amount of browsers at once, and only start more when those have finished. Using this configuration you can sepcify how many browsers should be running at once at any given point in time.</p>
 
         </div>
       </div>
