@@ -17,7 +17,7 @@ use Karma with [karma-ng-scenario] plugin, however we recommend [Protractor] for
 
 
 ### Can I use Karma on Continuous Integration server ?
-Of course! Check out the docs for [Jenkins], [Travis] or [Semaphore].
+Of course! Check out the docs for [Jenkins], [Semaphore], [TeamCity] or [Travis].
 
 
 ### Which version of Karma should I use ?
@@ -25,14 +25,15 @@ The latest stable version from NPM (`npm install karma`). See [versioning] for m
 
 
 ### Which version of Node.js does Karma run with ?
-Karma works on all LTS versions node in active maintenance state (see [LTS docs](https://github.com/nodejs/LTS/blob/master/README.md) for more info) as well as the latest stable version. That is **0.12.x** and **4.x** at this point. Additionally, Node **0.10** is currently supported.
+Karma works on all LTS versions node in active maintenance state (see [LTS docs](https://github.com/nodejs/LTS/blob/master/README.md) for more info) as well as the latest stable version. That is **0.12.x**, **4.x** and **5.x** at this point. Additionally, Node **0.10** is currently supported.
 
 
 [mailing list]: https://groups.google.com/d/forum/karma-users
 [karma-ng-scenario]: https://github.com/karma-runner/karma-ng-scenario
 [Protractor]: https://github.com/angular/protractor
 [Jenkins]: ../plus/jenkins.html
-[Travis]: ../plus/travis.html
 [Semaphore]: ../plus/semaphore.html
+[TeamCity]: ../plus/teamcity.html
+[Travis]: ../plus/travis.html
 [versioning]: ../about/versioning.html
 [browsers]: ../config/browsers.html
