@@ -7,6 +7,16 @@ Note: Most of the framework adapters, reporters, preprocessors and launchers nee
 
 
 The Karma configuration file can be written in JavaScript or CoffeeScript and is loaded as a regular Node.js module.
+
+Unless provided as argument, the Karma CLI will look for a configuration file at
+
+* `./karma.conf.js`
+* `./karma.conf.coffee`
+* `./.config/karma.conf.js`
+* `./.config/karma.conf.coffee`
+
+in that order.
+
 Within the configuration file, the configuration code is put together by setting `module.exports` to point to a function
 which accepts one argument: the configuration object.
 
@@ -137,7 +147,7 @@ If, during test execution, Karma does not receive any message from a browser wit
   * `PhantomJS` (launcher comes installed with Karma)
   * `Firefox` (launcher requires karma-firefox-launcher plugin)
   * `Opera` (launcher requires karma-opera-launcher plugin)
-  * `Internet Explorer` (launcher requires karma-ie-launcher plugin)
+  * `IE` (launcher requires karma-ie-launcher plugin)
   * `Safari` (launcher requires karma-safari-launcher plugin)
 
 **Description:** A list of browsers to launch and capture. When Karma starts up, it will also start up each browser
@@ -408,7 +418,7 @@ proxies: {
 
 **Default:** `true`
 
-**Description:** Whether or not Karma or any browsers should raise an error when an inavlid SSL certificate is found.
+**Description:** Whether or not Karma or any browsers should raise an error when an invalid SSL certificate is found.
 
 
 ## reportSlowerThan
@@ -451,6 +461,23 @@ Note: Just about all additional reporters in Karma (other than progress) require
 If `true`, Karma will start and capture all configured browsers, run tests and then exit with an exit code of `0` or `1` depending
 on whether all tests passed or any tests failed.
 
+## mime
+**Type:** Object
+
+**Default:** `{}`
+
+**Description:** Redefine default mapping from file extensions to MIME-type 
+
+Set property name to required MIME, provide Array of extensions (without dots) as it's value
+
+**Example:**
+```javascript
+mime: {
+   'text/x-typescript': ['ts','tsx']
+   'text/plain' : ['mytxt']
+}
+```
+
 
 ## transports
 **Type:** Array
@@ -477,6 +504,16 @@ iFrame and may need a new window to run.
 **Default:** `true`
 
 **Description:** Capture all console output and pipe it to the terminal.
+
+## client.clearContext
+**Type:** Boolean
+
+**Default:** `true`
+
+**Description:** Clear the context window
+
+If true, Karma clears the context window upon the completion of running the tests. If false, Karma does not clear the context window
+upon  the completion of running the tests. Setting this to false is useful when embedding a Jasmine Spec Runner Template.
 
 ## urlRoot
 **Type:** String
