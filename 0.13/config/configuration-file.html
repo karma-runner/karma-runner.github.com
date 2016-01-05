@@ -116,8 +116,16 @@ is by using the <code>karma init</code> command. This page lists all of the avai
 
 
 </div>
-<p>The Karma configuration file can be written in JavaScript or CoffeeScript and is loaded as a regular Node.js module.
-Within the configuration file, the configuration code is put together by setting <code>module.exports</code> to point to a function
+<p>The Karma configuration file can be written in JavaScript or CoffeeScript and is loaded as a regular Node.js module.</p>
+<p>Unless provided as argument, the Karma CLI will look for a configuration file at</p>
+<ul>
+<li><code>./karma.conf.js</code></li>
+<li><code>./karma.conf.coffee</code></li>
+<li><code>./.config/karma.conf.js</code></li>
+<li><code>./.config/karma.conf.coffee</code></li>
+</ul>
+<p>in that order.</p>
+<p>Within the configuration file, the configuration code is put together by setting <code>module.exports</code> to point to a function
 which accepts one argument: the configuration object.</p>
 <pre><code class="language-javascript"><span class="hljs-comment">// karma.conf.js</span>
 <span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">config</span>) </span>{
@@ -205,7 +213,7 @@ a flaky network link between the Karma server and the browsers.</p>
 <li><code>PhantomJS</code> (launcher comes installed with Karma)</li>
 <li><code>Firefox</code> (launcher requires karma-firefox-launcher plugin)</li>
 <li><code>Opera</code> (launcher requires karma-opera-launcher plugin)</li>
-<li><code>Internet Explorer</code> (launcher requires karma-ie-launcher plugin)</li>
+<li><code>IE</code> (launcher requires karma-ie-launcher plugin)</li>
 <li><code>Safari</code> (launcher requires karma-safari-launcher plugin)</li>
 </ul>
 <p><strong>Description:</strong> A list of browsers to launch and capture. When Karma starts up, it will also start up each browser
@@ -380,7 +388,7 @@ but your interactive debugging does not.</p>
 <h2>proxyValidateSSL</h2>
 <p><strong>Type:</strong> Boolean</p>
 <p><strong>Default:</strong> <code>true</code></p>
-<p><strong>Description:</strong> Whether or not Karma or any browsers should raise an error when an inavlid SSL certificate is found.</p>
+<p><strong>Description:</strong> Whether or not Karma or any browsers should raise an error when an invalid SSL certificate is found.</p>
 <h2>reportSlowerThan</h2>
 <p><strong>Type:</strong> Number</p>
 <p><strong>Default:</strong> <code>0</code></p>
@@ -408,6 +416,16 @@ This is disabled by default (since the default value is 0).</p>
 <p><strong>Description:</strong> Continuous Integration mode.</p>
 <p>If <code>true</code>, Karma will start and capture all configured browsers, run tests and then exit with an exit code of <code>0</code> or <code>1</code> depending
 on whether all tests passed or any tests failed.</p>
+<h2>mime</h2>
+<p><strong>Type:</strong> Object</p>
+<p><strong>Default:</strong> <code>{}</code></p>
+<p><strong>Description:</strong> Redefine default mapping from file extensions to MIME-type </p>
+<p>Set property name to required MIME, provide Array of extensions (without dots) as it&#39;s value</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-javascript">mime: {
+   <span class="hljs-string">'text/x-typescript'</span>: [<span class="hljs-string">'ts'</span>,<span class="hljs-string">'tsx'</span>]
+   <span class="hljs-string">'text/plain'</span> : [<span class="hljs-string">'mytxt'</span>]
+}</code></pre>
 <h2>transports</h2>
 <p><strong>Type:</strong> Array</p>
 <p><strong>Default:</strong> <code>[&#39;polling&#39;, &#39;websocket&#39;]</code></p>
@@ -424,6 +442,12 @@ iFrame and may need a new window to run.</p>
 <p><strong>Type:</strong> Boolean</p>
 <p><strong>Default:</strong> <code>true</code></p>
 <p><strong>Description:</strong> Capture all console output and pipe it to the terminal.</p>
+<h2>client.clearContext</h2>
+<p><strong>Type:</strong> Boolean</p>
+<p><strong>Default:</strong> <code>true</code></p>
+<p><strong>Description:</strong> Clear the context window</p>
+<p>If true, Karma clears the context window upon the completion of running the tests. If false, Karma does not clear the context window
+upon  the completion of running the tests. Setting this to false is useful when embedding a Jasmine Spec Runner Template.</p>
 <h2>urlRoot</h2>
 <p><strong>Type:</strong> String</p>
 <p><strong>Default:</strong> <code>&#39;/&#39;</code></p>
