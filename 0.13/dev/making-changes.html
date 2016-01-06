@@ -123,16 +123,16 @@ Here are some tips on how to set up a Karma workspace and how to send a good pul
 <ul>
 <li>Make sure you have a <a href="https://github.com/signup/free">GitHub account</a>.</li>
 <li><a href="https://github.com/karma-runner/karma/fork">Fork the repository</a> on GitHub.</li>
-<li>Clone your fork.<pre><code class="language-bash">$ git <span class="hljs-built_in">clone</span> git@github.com:&lt;your-username&gt;/karma.git
+<li>Clone your fork.<pre><code class="language-bash">$ git <span class="hljs-built_in">clone</span> https://github.com/&lt;your-username&gt;/karma.git
 $ <span class="hljs-built_in">cd</span> karma</code></pre>
-</li>
-<li>Init the workspace<pre><code class="language-bash">$ ./scripts/init-dev-env.js</code></pre>
 </li>
 </ul>
 <h2>Testing and Building</h2>
 <ul>
 <li><p>Run the tests via:</p>
-<pre><code class="language-bash">$ grunt <span class="hljs-built_in">test</span>:unit
+<pre><code class="language-bash">$ npm <span class="hljs-built_in">test</span>
+<span class="hljs-comment"># or if you have grunt-cli installed globally you can also</span>
+$ grunt <span class="hljs-built_in">test</span>:unit
 $ grunt <span class="hljs-built_in">test</span>:e2e
 $ grunt <span class="hljs-built_in">test</span>:client
 
@@ -140,13 +140,12 @@ $ grunt <span class="hljs-built_in">test</span>:client
 $ grunt <span class="hljs-built_in">test</span></code></pre>
 </li>
 <li><p>Lint the code via:</p>
-<pre><code class="language-bash">$ grunt lint</code></pre>
+<pre><code class="language-bash">$ npm run lint</code></pre>
 </li>
 <li><p>Build the client code via:</p>
-<pre><code class="language-bash">$ grunt build</code></pre>
+<pre><code class="language-bash">$ npm build</code></pre>
 </li>
 </ul>
-<p>The default task, just calling <code>grunt</code> will run <code>build lint test</code>.</p>
 <h2>Changing the Code</h2>
 <p>Checkout a new branch and name it accordingly to what you intend to do:</p>
 <ul>

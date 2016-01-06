@@ -138,17 +138,6 @@ close duplicates, answer questions, etc.</p>
 </ul>
 </li>
 </ul>
-<h3>There are two branches:</h3>
-<ul>
-<li><strong>master</strong> is what gets automatically released into the &quot;stable&quot; channel (<code>npm install karma</code>).</li>
-<li><strong>canary</strong> is what gets automatically released into the &quot;canary&quot; channel (<code>npm install karma@canary</code>)</li>
-</ul>
-<p>If the PR is a bug fix or documentation change that is relevant to the current stable release (branch &quot;master&quot;), merge the PR into master.
-You can use the “green button” on GitHub.</p>
-<p><strong>No new features or breaking changes can go into the master branch.</strong></p>
-<p>Features or breaking changes should be merged into &quot;canary&quot; branch.
-So do bug fixes or documentation fixes that are only related to the canary release.</p>
-<p>An easy way to merge a pull request is to use the <a href="https://github.com/vojtajina/dotfiles/blob/master/bin/fetch_pr">fetch_pr</a> and <a href="https://github.com/vojtajina/dotfiles/blob/master/bin/merge_pr">merge_pr</a> scripts.</p>
 <h2>Ownership</h2>
 <p>Every project has one or more owners (or “maintainers”), listed in <code>owners</code> field of the
 <code>package.json</code>. Typically, owners have push permissions.</p>
