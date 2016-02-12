@@ -123,8 +123,15 @@ Here are some tips on how to set up a Karma workspace and how to send a good pul
 <ul>
 <li>Make sure you have a <a href="https://github.com/signup/free">GitHub account</a>.</li>
 <li><a href="https://github.com/karma-runner/karma/fork">Fork the repository</a> on GitHub.</li>
-<li>Clone your fork.<pre><code class="language-bash">$ git <span class="hljs-built_in">clone</span> https://github.com/&lt;your-username&gt;/karma.git
+<li>Clone your fork<pre><code class="language-bash">$ git <span class="hljs-built_in">clone</span> https://github.com/&lt;your-username&gt;/karma.git
 $ <span class="hljs-built_in">cd</span> karma</code></pre>
+</li>
+<li>Install for development. Use a recent npm version, ignore peerdep warnings<pre><code class="language-bash">$ npm install
+$ rm -rf node_modules/karma
+$ <span class="hljs-built_in">cd</span> node_modules
+$ ln <span class="hljs-operator">-s</span> ../ karma
+$ <span class="hljs-built_in">cd</span> ../
+$ grunt browserify</code></pre>
 </li>
 </ul>
 <h2>Testing and Building</h2>

@@ -108,7 +108,27 @@
         </h1>
       </div>
       <div class="page-columns">
-        <div id="markdown" class="sixteen columns bottom"><p><a name="0.13.19"></a></p>
+        <div id="markdown" class="sixteen columns bottom"><p><a name="0.13.20"></a></p>
+<h2><a href="https://github.com/karma-runner/karma/compare/v0.13.19...v0.13.20">0.13.20</a> (2016-02-12)</h2>
+<h3>Bug Fixes</h3>
+<ul>
+<li><strong>runner:</strong> Remove null characters from terminal output (<a href="https://github.com/karma-runner/karma/commit/3481500">3481500</a>), closes <a href="https://github.com/karma-runner/karma/issues/1343">#1343</a></li>
+<li>invalid characters in the headers on Node 5.6.0 (<a href="https://github.com/karma-runner/karma/commit/152337d">152337d</a>)</li>
+<li>Remove inadvertently added dependency to mock-fs (<a href="https://github.com/karma-runner/karma/commit/ad5f6b5">ad5f6b5</a>)</li>
+<li>Switch all requires from fs to graceful-fs (<a href="https://github.com/karma-runner/karma/commit/1e21aaa">1e21aaa</a>)</li>
+<li>Upgrade socket.io to 1.4.5 (<a href="https://github.com/karma-runner/karma/commit/2f51a9f">2f51a9f</a>)</li>
+</ul>
+<h3>Features</h3>
+<ul>
+<li>Allow custom browser names (<a href="https://github.com/karma-runner/karma/commit/60ba85f">60ba85f</a>)</li>
+<li>Do not fail on empty test suite (<a href="https://github.com/karma-runner/karma/commit/8004763">8004763</a>), closes <a href="https://github.com/karma-runner/karma/issues/926">#926</a></li>
+<li><strong>config:</strong> Add <code>forceJSONP</code> option (<a href="https://github.com/karma-runner/karma/commit/8627d67">8627d67</a>)</li>
+<li><strong>launcher:</strong> Enable specification of retry-limit (<a href="https://github.com/karma-runner/karma/commit/cc5547c">cc5547c</a>), closes <a href="https://github.com/karma-runner/karma/issues/1126">#1126</a></li>
+<li><strong>logging:</strong> Add colors and log-level options to run-command (<a href="https://github.com/karma-runner/karma/commit/2d29165">2d29165</a>)</li>
+<li><strong>logging:</strong> Send color option to server (<a href="https://github.com/karma-runner/karma/commit/486c4f3">486c4f3</a>)</li>
+<li><strong>web-server:</strong> Use isbinaryfile for binary file detection (<a href="https://github.com/karma-runner/karma/commit/f938a8e">f938a8e</a>), closes <a href="https://github.com/karma-runner/karma/issues/1070">#1070</a></li>
+</ul>
+<p><a name="0.13.19"></a></p>
 <h2><a href="https://github.com/karma-runner/karma/compare/v0.13.18...v0.13.19">0.13.19</a> (2016-01-06)</h2>
 <h3>Bug Fixes</h3>
 <ul>

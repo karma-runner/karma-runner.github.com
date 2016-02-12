@@ -162,6 +162,16 @@ as the machine running Karma (or using a local tunnel).</p>
     platform: <span class="hljs-string">'windows'</span>
   }
 }</code></pre>
+<p>A display name can be set for any custom launcher. If set, this name will be used for reporting instead of the
+user agent. E.g. defining</p>
+<pre><code class="language-javascript">customLaunchers: {
+  chrome_without_security: {
+    base: <span class="hljs-string">'Chrome'</span>,
+    flags: [<span class="hljs-string">'--disable-web-security'</span>],
+    displayName: <span class="hljs-string">'Chrome w/o security'</span>
+  }
+}</code></pre>
+<p>the browser will figure as <code>Chrome w/o security</code> in logs and reports.</p>
 <h2>Correct path to browser binary</h2>
 <p>Each plugin has some default paths where to find the browser binary on particular OS.
 You can override these settings by <code>&lt;BROWSER&gt;_BIN</code> ENV variable, or alternatively by creating a <code>symlink</code>.</p>
