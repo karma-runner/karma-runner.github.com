@@ -25,11 +25,15 @@
   <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/apple-touch-icon-114x114.png">
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/img/apple-touch-icon-144x144.png">
   <!-- canonical link for search engines-->
-  <link href="http://karma-runner.github.io/0.13/plus/codio.html" rel="canonical">
+  <link href="http://karma-runner.github.io/1.0/plus/codio.html" rel="canonical">
 </head>
 <body>
   <div id="wrap" class="boxed">
     <header>
+      <div class="flash">
+        <b>Heads Up!</b> You're viewing the docs for <b>v0.13</b>, an old version of Karma.
+        <a href="/1.0/plus/codio.html"><b>v1.0</b> is the newest</a>.
+      </div>
       <div class="container clearfix">
         <div class="six columns">
           <div class="logo"><a href="/0.13/index.html"><img src="/assets/img/banner.png" alt="Karma - Spectacular Test Runner for JavaScript" title="Karma - Spectacular Test Runner for JavaScript"></a></div>
@@ -87,6 +91,7 @@
               </li>
               <li><a href="javascript:void">v0.13</a>
                 <ul>
+                  <li><a href="/1.0/index.html">v1.0</a></li>
                   <li><a href="/0.13/index.html">v0.13</a></li>
                   <li><a href="/0.12/index.html">v0.12</a></li>
                   <li><a href="/0.10/index.html">v0.10</a></li>
@@ -104,7 +109,7 @@
     </header>
     <div class="container clearfix">
       <div class="sixteen columns">
-        <h1 class="page-title">Codio<a href="https://github.com/karma-runner/karma/edit/master/docs/plus/09-codio.md" data-tooltip="Edit this page on GitHub" class="edit"><i class="icon-edit"></i></a><span class="line"></span>
+        <h1 class="page-title">Codio<span class="line"></span>
         </h1>
       </div>
       <div class="page-columns">
@@ -113,15 +118,15 @@
 <p>Next to the help menu you will see the &quot;Configure&quot; option, if you don&#39;t see it click the little arrow near the end and then select &quot;Configure&quot;.</p>
 <p>This opens a .codio file which you can customize and use rather than entering commands in Terminal. Replace the existing text with the text below:</p>
 <pre><code>{
-// Configure your Run <span class="hljs-keyword">and </span>Preview <span class="hljs-keyword">buttons </span>here.
+<span class="hljs-comment">// Configure your Run and Preview buttons here.</span>
 
-// Run <span class="hljs-keyword">button </span>configuration
+<span class="hljs-comment">// Run button configuration</span>
   <span class="hljs-string">"commands"</span>: {
     <span class="hljs-string">"Karma Start"</span>: <span class="hljs-string">"karma start --no-browsers"</span>
     <span class="hljs-string">"Karam Run"</span>: <span class="hljs-string">"karma run"</span>
   },
 
-// Preview <span class="hljs-keyword">button </span>configuration
+<span class="hljs-comment">// Preview button configuration</span>
   <span class="hljs-string">"preview"</span>: {
     <span class="hljs-string">"Karma Preview"</span>: <span class="hljs-string">"http://{{domain}}:8080"</span>
   }
@@ -131,20 +136,20 @@
 <ul>
 <li>Edit the <code>karma.conf.js</code> and add the following:</li>
 </ul>
-<pre><code>    <span class="hljs-comment">// hostname for the server</span>
-    hostname: <span class="hljs-function"><span class="hljs-title">require</span><span class="hljs-params">(<span class="hljs-string">'os'</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">hostname</span><span class="hljs-params">()</span></span> + <span class="hljs-string">'.codio.io'</span>,</code></pre>
+<pre><code>    // <span class="hljs-built_in">hostname</span> <span class="hljs-keyword">for</span> the server
+    <span class="hljs-built_in">hostname</span>: require(<span class="hljs-string">'os'</span>).<span class="hljs-built_in">hostname</span>() + <span class="hljs-string">'.codio.io'</span>,</code></pre>
 <ul>
 <li>Review webserver port entry to ensure same port defined as entered in .codio file</li>
 </ul>
 <pre><code>    <span class="hljs-comment">// web server port</span>
-    <span class="hljs-attribute">port</span>: <span class="hljs-number">8080</span>,</code></pre>
+<span class="hljs-symbol">    port:</span> <span class="hljs-number">8080</span>,</code></pre>
 <h2>Capture the browser manually on the local machine</h2>
 <p>You can use your local browser.</p>
 <ul>
 <li><p>Either:</p>
 <ul>
 <li><p>Open a Terminal window and enter</p>
-<pre><code>  $ karma <span class="hljs-built_in">start</span> <span class="hljs-comment">--no-browsers</span></code></pre>
+<pre><code>  <span class="hljs-symbol">$</span> karma start --<span class="hljs-keyword">no</span>-browsers</code></pre>
 <p>or </p>
 </li>
 <li>Select <code>Karma Start</code> from the Run menu (the 2nd from right button).</li>
@@ -157,7 +162,7 @@
 <li><p>Switch back into your Codio project and either: </p>
 <ul>
 <li><p>Open a new Terminal window and enter</p>
-<pre><code>  $ karma <span class="hljs-command">run</span></code></pre>
+<pre><code>  $ karma <span class="hljs-built_in">run</span></code></pre>
 <p>or </p>
 </li>
 <li>Select <code>Karma Run</code> from the Run menu (the 2nd from right button).</li>

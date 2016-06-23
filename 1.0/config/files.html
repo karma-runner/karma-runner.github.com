@@ -1,0 +1,246 @@
+<!DOCTYPE html><!-- [if lt IE 7]>
+<html lang="en" class="ie ie6"></html><![endif]-->
+<!-- [if IE 7]>
+<html lang="en" class="ie ie7"></html><![endif]-->
+<!-- [if IE 8]>
+<html lang="en" class="ie ie8"></html><![endif]-->
+<!-- [if (gte IE 9)|!(IE)]>
+<html lang="en"></html><![endif]-->
+<head>
+  <!-- Basic Page Needs-->
+  <meta charset="utf-8">
+  <title>Karma - Files</title>
+  <!-- Mobile specific Metas-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- Le styles-->
+  <link href="/assets/css/app.css" rel="stylesheet">
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements--><!-- [if lt IE 9]>
+  <script src="/assets/js/html5.js"></script><![endif]-->
+  <!-- Fav and touch icons-->
+  <link rel="shortcut icon" href="/assets/img/favicon/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/img/apple-touch-icon-144x144.png">
+  <!-- canonical link for search engines-->
+  <link href="http://karma-runner.github.io/1.0/config/files.html" rel="canonical">
+</head>
+<body>
+  <div id="wrap" class="boxed">
+    <header>
+      <div class="container clearfix">
+        <div class="six columns">
+          <div class="logo"><a href="/1.0/index.html"><img src="/assets/img/banner.png" alt="Karma - Spectacular Test Runner for JavaScript" title="Karma - Spectacular Test Runner for JavaScript"></a></div>
+        </div>
+        <div class="ten columns">
+          <nav id="menu" class="navigation">
+            <ul id="nav">
+              <li><a href="javascript:void">intro</a>
+                <ul>
+                  <li><a href="/1.0/intro/installation.html">Installation</a></li>
+                  <li><a href="/1.0/intro/configuration.html">Configuration</a></li>
+                  <li><a href="/1.0/intro/how-it-works.html">How It Works</a></li>
+                  <li><a href="/1.0/intro/faq.html">FAQ</a></li>
+                  <li><a href="/1.0/intro/troubleshooting.html">Troubleshooting</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void" class="active">config</a>
+                <ul>
+                  <li><a href="/1.0/config/configuration-file.html">Configuration File</a></li>
+                  <li><a href="/1.0/config/files.html">Files</a></li>
+                  <li><a href="/1.0/config/browsers.html">Browsers</a></li>
+                  <li><a href="/1.0/config/preprocessors.html">Preprocessors</a></li>
+                  <li><a href="/1.0/config/plugins.html">Plugins</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void">plus</a>
+                <ul>
+                  <li><a href="/1.0/plus/requirejs.html">RequireJS</a></li>
+                  <li><a href="/1.0/plus/travis.html">Travis CI</a></li>
+                  <li><a href="/1.0/plus/jenkins.html">Jenkins CI</a></li>
+                  <li><a href="/1.0/plus/semaphore.html">Semaphore CI</a></li>
+                  <li><a href="/1.0/plus/cloud9.html">Cloud9</a></li>
+                  <li><a href="/1.0/plus/angularjs.html">AngularJS</a></li>
+                  <li><a href="/1.0/plus/yeoman.html">Yeoman</a></li>
+                  <li><a href="/1.0/plus/emberjs.html">Ember.js</a></li>
+                  <li><a href="/1.0/plus/codio.html">Codio</a></li>
+                  <li><a href="/1.0/plus/teamcity.html">TeamCity</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void">dev</a>
+                <ul>
+                  <li><a href="/1.0/dev/contributing.html">Contributing</a></li>
+                  <li><a href="/1.0/dev/making-changes.html">Making Changes</a></li>
+                  <li><a href="/1.0/dev/maintaining.html">Maintaining</a></li>
+                  <li><a href="/1.0/dev/public-api.html">Public Api</a></li>
+                  <li><a href="/1.0/dev/plugins.html">Plugins</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void">about</a>
+                <ul>
+                  <li><a href="/1.0/about/versioning.html">Versioning</a></li>
+                  <li><a href="/1.0/about/changelog.html">Changelog</a></li>
+                  <li><a href="/1.0/about/migration.html">Migration</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void">v1.0</a>
+                <ul>
+                  <li><a href="/1.0/index.html">v1.0</a></li>
+                  <li><a href="/0.13/index.html">v0.13</a></li>
+                  <li><a href="/0.12/index.html">v0.12</a></li>
+                  <li><a href="/0.10/index.html">v0.10</a></li>
+                  <li><a href="/0.8/index.html">v0.8</a></li>
+                  <li><a href="/0.6/index.html">v0.6</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="sixteen columns">
+          <hr>
+        </div>
+      </div>
+    </header>
+    <div class="container clearfix">
+      <div class="sixteen columns">
+        <h1 class="page-title">Files<a href="https://github.com/karma-runner/karma/edit/master/docs/config/02-files.md" data-tooltip="Edit this page on GitHub" class="edit"><i class="icon-edit"></i></a><span class="line"></span>
+        </h1>
+      </div>
+      <div class="page-columns">
+        <div id="markdown" class="sixteen columns bottom"><p><strong>The <code>files</code> array determines which files are included in the browser and which files are watched and served by Karma.</strong></p>
+<h2>Pattern matching and <code>basePath</code></h2>
+<ul>
+<li>All of the relative patterns will get resolved using the <code>basePath</code> first.</li>
+<li>If the <code>basePath</code> is a relative path, it gets resolved to the
+directory where the configuration file is located.</li>
+<li>Eventually, all the patterns will get resolved into files using
+<a href="https://github.com/isaacs/node-glob">glob</a>, so you can use <a href="https://github.com/isaacs/minimatch">minimatch</a> expressions like <code>test/unit/**/*.spec.js</code>.</li>
+</ul>
+<h2>Ordering</h2>
+<ul>
+<li>The order of patterns determines the order in which files are included in the browser.</li>
+<li>Multiple files matching a single pattern are sorted alphabetically.</li>
+<li>Each file is included exactly once. If multiple patterns match the
+same file, it&#39;s included as if it only matched the first pattern.</li>
+</ul>
+<h2>Included, served, watched</h2>
+<p>Each pattern is either a simple string or an object with four properties:</p>
+<h3><code>pattern</code></h3>
+<ul>
+<li><strong>Type.</strong> String</li>
+<li><strong>No Default.</strong></li>
+<li><strong>Description.</strong> The pattern to use for matching. This property is mandatory.</li>
+</ul>
+<h3><code>watched</code></h3>
+<ul>
+<li><strong>Type.</strong> Boolean</li>
+<li><strong>Default.</strong> <code>true</code></li>
+<li><strong>Description.</strong>  If <code>autoWatch</code> is <code>true</code> all files that have set <code>watched</code> to true will be watched for changes.</li>
+</ul>
+<h3><code>included</code></h3>
+<ul>
+<li><strong>Type.</strong> Boolean</li>
+<li><strong>Default.</strong> <code>true</code></li>
+<li><p><strong>Description.</strong> Should the files be included in the browser using
+  <code>&lt;script&gt;</code> tag? Use <code>false</code> if you want to load them manually, eg.
+  using <a href="../plus/requirejs.html">Require.js</a>.</p>
+<p>  If a file is covered by multiple patterns with different <code>include</code> properties, the most specific pattern takes
+  precedence over the other.</p>
+<p>  The specificity of the pattern is defined as a six-tuple, where larger tuple implies lesser specificity: 
+  <em>(n<sub>glob parts</sub>, n<sub>glob star</sub>, n<sub>star</sub>, n<sub>ext glob</sub>, n<sub>range</sub>, n<sub>optional</sub>)</em>.
+  Tuples are compared lexicographically. </p>
+<p>  The <em>n<sub>glob parts</sub></em> is the number of patterns after the bracket sections are expanded. E.g. the 
+  the pattern <em>{0...9}</em> will yield <em>n<sub>glob parts</sub>=10</em>. The rest of the tuple is decided as the least
+  specific of each expanded pattern. </p>
+</li>
+</ul>
+<h3><code>served</code></h3>
+<ul>
+<li><strong>Type.</strong> Boolean</li>
+<li><strong>Default.</strong> <code>true</code></li>
+<li><strong>Description.</strong> Should the files be served by Karma&#39;s webserver?</li>
+</ul>
+<h3><code>nocache</code></h3>
+<ul>
+<li><strong>Type.</strong> Boolean</li>
+<li><strong>Default.</strong> <code>false</code></li>
+<li><strong>Description.</strong> Should the files be served from disk on each request by Karma&#39;s webserver?</li>
+</ul>
+<h2>Preprocessor transformations</h2>
+<p>Depending on preprocessor configuration, be aware that files loaded may be transformed and no longer available in
+their native format. For instance, if html2js preprocessor is enabled, the actual .html files are no longer
+served - but rather available as <code>window.__html__[&#39;my.html&#39;]</code>. Read more about <a href="preprocessors.html">preprocessors</a>.</p>
+<h2>Complete example</h2>
+<p>Here is a complete example showing the different options possible:</p>
+<pre><code class="language-javascript">files: [
+
+  <span class="hljs-comment">// Detailed pattern to include a file. Similarly other options can be used</span>
+  { pattern: <span class="hljs-string">'lib/angular.js'</span>, watched: <span class="hljs-literal">false</span> },
+  <span class="hljs-comment">// Prefer to have watched false for library files. No need to watch them for changes</span>
+
+  <span class="hljs-comment">// simple pattern to load the needed testfiles</span>
+  <span class="hljs-comment">// equal to {pattern: 'test/unit/*.spec.js', watched: true, served: true, included: true}</span>
+  <span class="hljs-string">'test/unit/*.spec.js'</span>,
+
+  <span class="hljs-comment">// this file gets served but will be ignored by the watcher</span>
+  <span class="hljs-comment">// note if html2js preprocessor is active, reference as `window.__html__['compiled/index.html']`</span>
+  {pattern: <span class="hljs-string">'compiled/index.html'</span>, watched: <span class="hljs-literal">false</span>},
+
+  <span class="hljs-comment">// this file only gets watched and is otherwise ignored</span>
+  {pattern: <span class="hljs-string">'app/index.html'</span>, included: <span class="hljs-literal">false</span>, served: <span class="hljs-literal">false</span>},
+
+  <span class="hljs-comment">// this file will be served on demand from disk and will be ignored by the watcher</span>
+  {pattern: <span class="hljs-string">'compiled/app.js.map'</span>, included: <span class="hljs-literal">false</span>, served: <span class="hljs-literal">true</span>, watched: <span class="hljs-literal">false</span>, nocache: <span class="hljs-literal">true</span>}
+],</code></pre>
+<h2>Loading Assets</h2>
+<p>By default all assets are served at <code>http://localhost:[PORT]/base/</code></p>
+<p>Example for loading images</p>
+<pre><code class="language-javascript">files: [
+  {pattern: <span class="hljs-string">'test/images/*.jpg'</span>, watched: <span class="hljs-literal">false</span>, included: <span class="hljs-literal">false</span>, served: <span class="hljs-literal">true</span>, nocache: <span class="hljs-literal">false</span>}
+],</code></pre>
+<p>The pattern is a glob which matches the specified image assets. Watched and included are not necessary as images are not tests. However, they will need to be served to the browser.</p>
+<p>In this case an image would be accessed at <code>http://localhost:[PORT]/base/test/images/[MY IMAGE].jpg</code></p>
+<p>Notice the <strong>base</strong> in the URL, it is a reference to your <strong>basePath</strong>. You do not need to replace or provide your own <strong>base</strong>.</p>
+<p>In addition, you can use a proxy</p>
+<pre><code class="language-javascript">proxies: {
+  <span class="hljs-string">"/img/"</span>: <span class="hljs-string">"http://localhost:8080/base/test/images/"</span>
+},</code></pre>
+<p>Now you can fetch images in <code>test/images</code> at <code>http://localhost:8080/img/[MY IMAGE].jpg</code></p>
+<p>Change <strong>8080</strong> to the port you use</p>
+<p>You can also use proxies without specifying the protocol, hostname, and port</p>
+<pre><code class="language-javascript">proxies: {
+  <span class="hljs-string">"/img/"</span>: <span class="hljs-string">"/base/test/images/"</span>
+},</code></pre>
+
+        </div>
+      </div>
+    </div>
+    <div class="push"></div>
+  </div>
+  <footer>
+    <div class="container">
+      <div class="ten columns"><span class="copyright">
+          Karma is released under the MIT license. 
+          Site by&nbsp;<a href="https://github.com/Dignifiedquire">Friedel Ziegelmayer</a>. Logo by&nbsp;<a href="http://dribbble.com/isaacdurazo">Isaac Durazo</a>.</span></div>
+      <div class="six columns">
+        <div class="social"><a href="https://github.com/karma-runner/karma/" data-tooltip="GitHub Repo"><i class="icon-github-alt icon-large"></i></a><a href="https://github.com/karma-runner/karma/issues" data-tooltip="Issues"><i class="icon-beaker icon-large"></i></a><a href="http://twitter.com/JsKarma" data-tooltip="@JsKarma"><i class="icon-twitter icon-large"></i></a><a href="https://groups.google.com/forum/#!forum/karma-users" data-tooltip="Mailing List"><i class="icon-envelope-alt icon-large"></i></a></div>
+      </div>
+    </div>
+  </footer>
+</body>
+<!-- Placed at the end of the document so the pages load faster-->
+<script src="/assets/js/app.js"></script>
+<!-- Google Analytics-->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-46195299-1']);
+  _gaq.push(['_trackPageview']);
+  
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>

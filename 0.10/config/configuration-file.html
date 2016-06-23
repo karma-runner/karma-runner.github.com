@@ -25,14 +25,14 @@
   <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/apple-touch-icon-114x114.png">
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/img/apple-touch-icon-144x144.png">
   <!-- canonical link for search engines-->
-  <link href="http://karma-runner.github.io/0.13/config/configuration-file.html" rel="canonical">
+  <link href="http://karma-runner.github.io/1.0/config/configuration-file.html" rel="canonical">
 </head>
 <body>
   <div id="wrap" class="boxed">
     <header>
       <div class="flash">
         <b>Heads Up!</b> You're viewing the docs for <b>v0.10</b>, an old version of Karma.
-        <a href="/0.13/config/configuration-file.html"><b>v0.13</b> is the newest</a>.
+        <a href="/1.0/config/configuration-file.html"><b>v1.0</b> is the newest</a>.
       </div>
       <div class="container clearfix">
         <div class="six columns">
@@ -86,6 +86,7 @@
               </li>
               <li><a href="javascript:void">v0.10</a>
                 <ul>
+                  <li><a href="/1.0/index.html">v1.0</a></li>
                   <li><a href="/0.13/index.html">v0.13</a></li>
                   <li><a href="/0.12/index.html">v0.12</a></li>
                   <li><a href="/0.10/index.html">v0.10</a></li>
@@ -128,8 +129,8 @@ which accepts one argument: the configuration object.</p>
 <pre><code class="language-coffeescript"><span class="hljs-comment"># an example karma.conf.coffee</span>
 <span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-params">(config)</span> -&gt;</span>
   config.set
-    <span class="hljs-attribute">basePath</span>: <span class="hljs-string">'../..'</span>
-    <span class="hljs-attribute">frameworks</span>: [<span class="hljs-string">'jasmine'</span>]
+    basePath: <span class="hljs-string">'../..'</span>
+    frameworks: [<span class="hljs-string">'jasmine'</span>]
     <span class="hljs-comment"># ...</span></code></pre>
 <p>To see a more detailed example configuration file, see <a href="https://github.com/karma-runner/karma/blob/master/test/client/karma.conf.js">test/client/karma.conf.js</a> which contains most of
 the available configuration options.</p>
