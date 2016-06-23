@@ -9,7 +9,7 @@ if [ -z "$BRANCH" ]; then
 fi
 
 if [ -z "$VERSION" ]; then
-  VERSION="0.13"
+  VERSION="1.0"
 fi
 
 DOCS_REPO=$(cd "$(dirname "$0")"; pwd)
