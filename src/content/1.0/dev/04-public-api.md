@@ -126,13 +126,81 @@ This function will signal a running server to stop.  The equivalent of `karma st
 
 ```javascript
 var stopper = require('karma').stopper
-runner.stop({port: 9876}, function(exitCode) {
+stopper.stop({port: 9876}, function(exitCode) {
   if (exitCode === 0) {
     console.log('Server stop as initiated')
   }
   process.exit(exitCode)
 })
 ```
+
+## karma.config.parseConfig([configFilePath], [cliOptions])
+
+This function will load given config file and returns a filled config object.
+This can be useful if you want to integrate karma into another tool and want to load
+the karma config while honoring the karma defaults. For example, the [stryker-karma-runner](https://github.com/stryker-mutator/stryker-karma-runner)
+uses this to load your karma configuration and use that in the stryker configuration.
+
+```javascript
+const cfg = require('karma').config;
+const path = require('path');
+// Read karma.conf.js, but override port with 1337
+const karmaConfig = cfg.parseConfig(path.resolve('./karma.conf.js'), { port: 1337 } );
+```
+
+## karma.constants
+
+### **constants.VERSION**
+
+The current version of karma
+
+### **constants.DEFAULT_PORT**
+
+The default port used for the karma server
+
+### **constants.DEFAULT_HOSTNAME**
+
+The default hostname used for the karma server
+
+### **constants.LOG_DISABLE**
+
+The value for disabling logs
+
+### **constants.LOG_ERROR**
+
+The value for the log `error` level
+
+### **constants.LOG_WARN**
+
+The value for the log `warn` level
+
+### **constants.LOG_INFO**
+
+The value for the log `info` level
+
+### **constants.LOG_DEBUG**
+
+The value for the log `debug` level
+
+### **constants.LOG_PRIORITIES**
+
+An array of log levels in descending order, i.e. `LOG_DISABLE`, `LOG_ERROR`, `LOG_WARN`, `LOG_INFO`, and `LOG_DEBUG`
+
+### **constants.COLOR_PATTERN**
+
+The default color pattern for log output
+
+### **constants.NO_COLOR_PATTERN**
+
+The default pattern for log output without color
+
+### **constants.CONSOLE_APPENDER**
+
+The default console appender
+
+### **constants.EXIT_CODE**
+
+The exit code
 
 ## Callback function notes
 

@@ -1,5 +1,118 @@
 editButton: false
 
+<a name="1.4.0"></a>
+# [1.4.0](https://github.com/karma-runner/karma/compare/v1.3.0...v1.4.0) (2017-01-14)
+
+
+### Bug Fixes
+
+* **browser:** filter browser logging by level  ([35965d9](https://github.com/karma-runner/karma/commit/35965d9)), closes [#2228](https://github.com/karma-runner/karma/issues/2228)
+* **cli:** restore shell completion in the npm package ([f56b5a5](https://github.com/karma-runner/karma/commit/f56b5a5)), closes [#2351](https://github.com/karma-runner/karma/issues/2351)
+* **config:** add crossOriginAttribute config option ([1e465b1](https://github.com/karma-runner/karma/commit/1e465b1))
+* **middleware:** update `Buffer` usage ([3d94b8c](https://github.com/karma-runner/karma/commit/3d94b8c))
+* **reporter:** do not allow URL domains to span new lines ([2c13404](https://github.com/karma-runner/karma/commit/2c13404))
+* **reporter:** strip only hostname/port ([fbbeccf](https://github.com/karma-runner/karma/commit/fbbeccf)), closes [#2209](https://github.com/karma-runner/karma/issues/2209)
+* **reporters:**  cannot read property map of undefined  ([305df2c](https://github.com/karma-runner/karma/commit/305df2c)), closes [#1662](https://github.com/karma-runner/karma/issues/1662)
+* **server:** exit with code 1 when failing due to missing browser ([86e2ef2](https://github.com/karma-runner/karma/commit/86e2ef2)), closes [#2403](https://github.com/karma-runner/karma/issues/2403)
+
+
+### Features
+
+* **api:** add constants to the public api ([ee10977](https://github.com/karma-runner/karma/commit/ee10977)), closes [#2361](https://github.com/karma-runner/karma/issues/2361)
+* **api:** expose `config.parseConfig` on the public api ([7d2c1ae](https://github.com/karma-runner/karma/commit/7d2c1ae))
+* **client:** capture confirm & prompt  ([3a618b3](https://github.com/karma-runner/karma/commit/3a618b3)), closes [#694](https://github.com/karma-runner/karma/issues/694)
+* **server:** add listen address option so that IPv6 and loopback interfaces can be used ([8e5bee6](https://github.com/karma-runner/karma/commit/8e5bee6)), closes [#2477](https://github.com/karma-runner/karma/issues/2477)
+* **web-server:** allow overriding of default http module ([1e7514d](https://github.com/karma-runner/karma/commit/1e7514d)), closes [#2424](https://github.com/karma-runner/karma/issues/2424)
+
+
+
+<a name="1.3.0"></a>
+# [1.3.0](https://github.com/karma-runner/karma/compare/v1.2.0...v1.3.0) (2016-09-09)
+
+
+### Bug Fixes
+
+* **launcher:** exclude concurrent browser on launcher restart ([96f8f14](https://github.com/karma-runner/karma/commit/96f8f14)), closes [#2280](https://github.com/karma-runner/karma/issues/2280)
+* **middleware:** ensure Range headers adhere more closely to RFC 2616 ([8b1b4b1](https://github.com/karma-runner/karma/commit/8b1b4b1)), closes [#2310](https://github.com/karma-runner/karma/issues/2310)
+
+
+### Features
+
+* **reporter:** add config formatError function  ([98a4fbf](https://github.com/karma-runner/karma/commit/98a4fbf)), closes [#2119](https://github.com/karma-runner/karma/issues/2119)
+* upstreamProxy config option to deal with proxies that adjust the base path, etc ([55755e4](https://github.com/karma-runner/karma/commit/55755e4))
+
+
+
+<a name="1.2.0"></a>
+# [1.2.0](https://github.com/karma-runner/karma/compare/v1.1.1...v1.2.0) (2016-08-11)
+
+
+### Bug Fixes
+
+* **context:** Updated postMessage listener to stop validating non-Karma messages ([306e565](https://github.com/karma-runner/karma/commit/306e565))
+* **docs:** fix stopper.stop wrong variable name. closes [#2244](https://github.com/karma-runner/karma/issues/2244) ([0745a00](https://github.com/karma-runner/karma/commit/0745a00)), closes [#2244](https://github.com/karma-runner/karma/issues/2244)
+* **file-list:** ensure patterns are comparable ([4d1bf3e](https://github.com/karma-runner/karma/commit/4d1bf3e)), closes [#2194](https://github.com/karma-runner/karma/issues/2194)
+* **middleware:** fix WARN log when passing undefined error handler to promise.then ([20b87de](https://github.com/karma-runner/karma/commit/20b87de)), closes [#2227](https://github.com/karma-runner/karma/issues/2227)
+* call .resume to prevent browser output streams filling up ([107cd02](https://github.com/karma-runner/karma/commit/107cd02))
+* Merge config child nodes on config.set() ([65b688a](https://github.com/karma-runner/karma/commit/65b688a))
+* **web-server:** Allow karma to run in project which path contains HTML URL encoded characters. Karma fails on Jenkins when it checks out branches containing '/' as it converts it to '%2F'. Fixes  errors seen on [#1751](https://github.com/karma-runner/karma/issues/1751), [#61](https://github.com/karma-runner/karma/issues/61). ([da1930f](https://github.com/karma-runner/karma/commit/da1930f)), closes [#1751](https://github.com/karma-runner/karma/issues/1751) [#61](https://github.com/karma-runner/karma/issues/61)
+
+
+### Features
+
+* **web-server:** Allow Range headers in web server. ([a567b6f](https://github.com/karma-runner/karma/commit/a567b6f)), closes [#2140](https://github.com/karma-runner/karma/issues/2140)
+
+
+
+<a name="1.1.2"></a>
+## [1.1.2](https://github.com/karma-runner/karma/compare/v1.1.1...v1.1.2) (2016-07-26)
+
+
+### Bug Fixes
+
+* Merge config child nodes on config.set() ([65b688a](https://github.com/karma-runner/karma/commit/65b688a))
+* **context:** Updated postMessage listener to stop validating non-Karma messages ([306e565](https://github.com/karma-runner/karma/commit/306e565))
+* **docs:** fix stopper.stop wrong variable name. closes [#2244](https://github.com/karma-runner/karma/issues/2244) ([0745a00](https://github.com/karma-runner/karma/commit/0745a00)), closes [#2244](https://github.com/karma-runner/karma/issues/2244)
+* **file-list:** ensure patterns are comparable ([4d1bf3e](https://github.com/karma-runner/karma/commit/4d1bf3e)), closes [#2194](https://github.com/karma-runner/karma/issues/2194)
+* **middleware:** fix WARN log when passing undefined error handler to promise.then ([20b87de](https://github.com/karma-runner/karma/commit/20b87de)), closes [#2227](https://github.com/karma-runner/karma/issues/2227)
+
+
+
+<a name="1.1.1"></a>
+## [1.1.1](https://github.com/karma-runner/karma/compare/v1.1.0...v1.1.1) (2016-07-07)
+
+
+### Bug Fixes
+
+* **executor:** ensure run_complete is emitted last ([9c894f9](https://github.com/karma-runner/karma/commit/9c894f9)), closes [#2210](https://github.com/karma-runner/karma/issues/2210)
+* **reporter:** inject correct config option ([80bd726](https://github.com/karma-runner/karma/commit/80bd726))
+* **reporter:** remove console.log ([b4e3694](https://github.com/karma-runner/karma/commit/b4e3694))
+* Add crossorigin attribute to script HTML tags ([5690ffe](https://github.com/karma-runner/karma/commit/5690ffe))
+
+
+### Features
+
+* deprecate helper._ ([5c6b151](https://github.com/karma-runner/karma/commit/5c6b151))
+* **config:** add support for TypeScript ([6445310](https://github.com/karma-runner/karma/commit/6445310))
+
+
+
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/karma-runner/karma/compare/v1.0.0...v1.1.0) (2016-06-26)
+
+
+### Bug Fixes
+
+* **deps:** freeze socket.io version ([73e300d](https://github.com/karma-runner/karma/commit/73e300d))
+* **server:** log browser messages to the terminal ([d1f924c](https://github.com/karma-runner/karma/commit/d1f924c)), closes [#2187](https://github.com/karma-runner/karma/issues/2187)
+
+
+### Features
+
+* Allow frameworks to inject middleware ([d972f3d](https://github.com/karma-runner/karma/commit/d972f3d))
+
+
+
 <a name="1.0.0"></a>
 # [1.0.0](https://github.com/karma-runner/karma/compare/v0.13.22...v1.0.0) (2016-06-23)
 
