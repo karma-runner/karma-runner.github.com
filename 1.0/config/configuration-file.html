@@ -122,8 +122,10 @@ is by using the <code>karma init</code> command. This page lists all of the avai
 <ul>
 <li><code>./karma.conf.js</code></li>
 <li><code>./karma.conf.coffee</code></li>
+<li><code>./karma.conf.ts</code></li>
 <li><code>./.config/karma.conf.js</code></li>
 <li><code>./.config/karma.conf.coffee</code></li>
+<li><code>./.config/karma.conf.ts</code></li>
 </ul>
 <p>in that order.</p>
 <p>Within the configuration file, the configuration code is put together by setting <code>module.exports</code> to point to a function
@@ -142,6 +144,14 @@ which accepts one argument: the configuration object.</p>
     basePath: <span class="hljs-string">'../..'</span>
     frameworks: [<span class="hljs-string">'jasmine'</span>]
     <span class="hljs-comment"># ...</span></code></pre>
+<pre><code class="language-typescript"># karma.conf.ts
+<span class="hljs-keyword">module</span>.exports = (config) =&gt; {
+  config.set({
+    basePath: <span class="hljs-string">'../..'</span>,
+    frameworks: [<span class="hljs-string">'jasmine'</span>],
+    <span class="hljs-comment">//...</span>
+  });
+}</code></pre>
 <h2>File Patterns</h2>
 <p>All of the configuration options, which specify file paths, use the <a href="https://github.com/isaacs/minimatch">minimatch</a> library to facilitate flexible
 but concise file expressions so you can easily list all of the files you want to include and exclude.</p>
@@ -215,12 +225,12 @@ a flaky network link between the Karma server and the browsers.</p>
 <h2>browsers</h2>
 <p><strong>Type:</strong> Array</p>
 <p><strong>Default:</strong>  <code>[]</code></p>
-<p><strong>CLI:</strong> <code>--browsers Chrome,Firefox</code></p>
+<p><strong>CLI:</strong> <code>--browsers Chrome,Firefox</code>, <code>--no-browsers</code></p>
 <p><strong>Possible Values:</strong></p>
 <ul>
-<li><code>Chrome</code> (launcher comes installed with Karma)</li>
-<li><code>ChromeCanary</code> (launcher comes installed with Karma)</li>
-<li><code>PhantomJS</code> (launcher comes installed with Karma)</li>
+<li><code>Chrome</code> (launcher requires karma-chrome-launcher plugin)</li>
+<li><code>ChromeCanary</code> (launcher requires karma-chrome-launcher plugin)</li>
+<li><code>PhantomJS</code> (launcher requires karma-phantomjs-launcher plugin)</li>
 <li><code>Firefox</code> (launcher requires karma-firefox-launcher plugin)</li>
 <li><code>Opera</code> (launcher requires karma-opera-launcher plugin)</li>
 <li><code>IE</code> (launcher requires karma-ie-launcher plugin)</li>
@@ -230,7 +240,9 @@ a flaky network link between the Karma server and the browsers.</p>
 which is placed within this setting. Once Karma is shut down, it will shut down these
 browsers as well. You can capture any browser manually by opening the browser and visiting the URL where
 the Karma web server is listening (by default it is <code>http://localhost:9876/</code>).</p>
-<p>See <a href="browsers.html">config/browsers</a> for more information. Additional launchers can be defined through <a href="plugins.html">plugins</a>.</p>
+<p>See <a href="browsers.html">config/browsers</a> for more information. Additional launchers can be defined through <a href="plugins.html">plugins</a>. Use the
+<code>--no-browsers</code> command line option to override the value of this setting specified in the configuration file
+with an empty list.</p>
 <h2>captureTimeout</h2>
 <p><strong>Type:</strong> Number</p>
 <p><strong>Default:</strong> <code>60000</code></p>
@@ -272,6 +284,11 @@ upon the completion of running the tests. Setting this to false is useful when e
 <p><strong>Default:</strong> <code>Infinity</code></p>
 <p><strong>Description:</strong> How many browsers Karma launches in parallel.</p>
 <p>Especially on services like SauceLabs and Browserstack, it makes sense only to launch a limited amount of browsers at once, and only start more when those have finished. Using this configuration, you can specify how many browsers should be running at once at any given point in time.</p>
+<h2>crossOriginAttribute</h2>
+<p><strong>Type:</strong> Boolean</p>
+<p><strong>Default:</strong> <code>true</code></p>
+<p><strong>Description:</strong> When true, this will append the crossorigin attribute to generated script tags, which enables better error reporting for JavaScript files served from a different origin.
+Disable this when you need to load external scripts that are served without the necessary <code>Access-Control-Allow-Origin</code> header.</p>
 <h2>customContextFile</h2>
 <p><strong>Type:</strong> string</p>
 <p><strong>Default:</strong> <code>null</code></p>
@@ -329,6 +346,10 @@ will return exit-code <code>0</code> and display a warning.</p>
 <p><strong>Description:</strong> List of test frameworks you want to use. Typically, you will set this to <code>[&#39;jasmine&#39;]</code>, <code>[&#39;mocha&#39;]</code> or <code>[&#39;qunit&#39;]</code>...</p>
 <p>Please note just about all frameworks in Karma require an additional plugin/framework library to be installed (via NPM).</p>
 <p>Additional information can be found in <a href="plugins.html">plugins</a>.</p>
+<h2>listenAddress</h2>
+<p><strong>Type:</strong> String</p>
+<p><strong>Default:</strong> <code>&#39;0.0.0.0&#39; or LISTEN_ADDR</code></p>
+<p><strong>Description:</strong> Address that the server will listen on. Change to &#39;localhost&#39; to only listen to the loopback, or &#39;::&#39; to listen on all IPv6 interfaces</p>
 <h2>hostname</h2>
 <p><strong>Type:</strong> String</p>
 <p><strong>Default:</strong> <code>&#39;localhost&#39;</code></p>
@@ -435,6 +456,14 @@ but your interactive debugging does not.</p>
 
 
 </div>
+<h2>httpModule</h2>
+<p><strong>Type:</strong> String</p>
+<p><strong>Default:</strong> <code>undefined</code></p>
+<p><strong>Description:</strong> Module used for Karma webserver.</p>
+<p>Uses the provided module instead of node&#39;s built in <code>http</code> or <code>https</code> module. The module loaded here must exactly match the interface of node&#39;s http module. This can be useful for loading in a module like <code>node-http2</code> to allow for http2 support. </p>
+<div class="alert alert-success"><h4 class="alert-heading">Note: </h4>if you&#39;re using this to enable <code>http2</code> you must also set the <code>protocol</code> to <code>https:</code> and specify certificates as http2 can only run of https.
+
+</div>
 <h2>proxies</h2>
 <p><strong>Type:</strong> Object</p>
 <p><strong>Default:</strong> <code>{}</code></p>
@@ -478,6 +507,17 @@ This is disabled by default (since the default value is 0).</p>
 
 
 </div>
+<h2>formatError</h2>
+<p><strong>Type:</strong> Function</p>
+<p><strong>Default:</strong> <code>undefined</code></p>
+<p><strong>CLI:</strong> <code>--format-error ./path/to/formatFunction.js</code></p>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>msg</code> - The entire assertion error and stack trace as a string.</li>
+</ul>
+<p><strong>Returns:</strong> A new error message string.</p>
+<p><strong>Description:</strong> Format assertion errors and stack traces.  Useful for removing vendors and compiled sources.</p>
+<p>The CLI option should be a path to a file that exports the format function.  This can be a function exported at the root of the module or an export named <code>formatError</code>.</p>
 <h2>restartOnFileChange</h2>
 <p><strong>Type:</strong> Boolean</p>
 <p><strong>Default:</strong> <code>false</code></p>
@@ -502,6 +542,27 @@ on whether all tests passed or any tests failed.</p>
 <p><strong>Description:</strong> An array of allowed transport methods between the browser and testing server. This configuration setting
 is handed off to <a href="http://socket.io/">socket.io</a> (which manages the communication
 between browsers and the testing server).</p>
+<h2>upstreamProxy</h2>
+<p><strong>Type:</strong> Object</p>
+<p><strong>Default:</strong> <code>undefined</code></p>
+<p><strong>Description:</strong> For use when the Karma server needs to be run behind a proxy that changes the base url, etc</p>
+<p>If set then the following fields will be defined and can be overriden:</p>
+<h3>path</h3>
+<p><strong>Type:</strong> String</p>
+<p><strong>Default:</strong> <code>&#39;/&#39;</code></p>
+<p><strong>Description:</strong> Will be prepended to the base url when launching browsers and prepended to internal urls as loaded by the browsers</p>
+<h3>port</h3>
+<p><strong>Type:</strong> Number</p>
+<p><strong>Default:</strong> <code>9875</code></p>
+<p><strong>Description:</strong> Will be used as the port when launching browsers</p>
+<h3>hostname</h3>
+<p><strong>Type:</strong> String</p>
+<p><strong>Default:</strong> <code>&#39;localhost&#39;</code></p>
+<p><strong>Description:</strong> Will be used as the hostname when launching browsers</p>
+<h3>protocol</h3>
+<p><strong>Type:</strong> String</p>
+<p><strong>Default:</strong> <code>&#39;http:&#39;</code></p>
+<p><strong>Description:</strong> Will be used as the protocol when launching browsers</p>
 <h2>urlRoot</h2>
 <p><strong>Type:</strong> String</p>
 <p><strong>Default:</strong> <code>&#39;/&#39;</code></p>

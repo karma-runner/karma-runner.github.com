@@ -109,11 +109,9 @@
         </h1>
       </div>
       <div class="page-columns">
-        <div id="markdown" class="sixteen columns bottom"><p>Capturing browsers on your own can be a tedious and time-consuming task,
-so Karma can automate this for you. Simply add the browsers you would like to
-capture into the configuration file:</p>
+        <div id="markdown" class="sixteen columns bottom"><p>Capturing browsers on your own can be a tedious and time-consuming task. However, Karma can automate this for you. Simply add the browsers you would like to capture into the <a href="configuration-file.html">configuration file</a>.</p>
 <pre><code class="language-javascript">browsers: [<span class="hljs-string">'Chrome'</span>]</code></pre>
-<p>Then, Karma will take care of auto-capturing these browsers, as well as killing them.</p>
+<p>Then, Karma will take care of auto-capturing these browsers, as well as killing them after the job is over.</p>
 <div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Most of the browser launchers need to be loaded as <a href="plugins.html">plugins</a>.
 
 </div>
@@ -123,8 +121,9 @@ capture into the configuration file:</p>
 <li><a href="https://www.npmjs.com/package/karma-firefox-launcher">Firefox</a></li>
 <li><a href="https://www.npmjs.com/package/karma-safari-launcher">Safari</a></li>
 <li><a href="https://www.npmjs.com/package/karma-phantomjs-launcher">PhantomJS</a></li>
+<li><a href="https://www.npmjs.com/package/karma-jsdom-launcher">JSDOM</a></li>
 <li><a href="https://www.npmjs.com/package/karma-opera-launcher">Opera</a></li>
-<li><a href="https://www.npmjs.com/package/karma-ie-launcher">IE</a></li>
+<li><a href="https://www.npmjs.com/package/karma-ie-launcher">Internet Explorer</a></li>
 <li><a href="https://www.npmjs.com/package/karma-saucelabs-launcher">SauceLabs</a></li>
 <li><a href="https://www.npmjs.com/package/karma-browserstack-launcher">BrowserStack</a></li>
 <li><a href="https://www.npmjs.org/browse/keyword/karma-launcher">many more</a></li>
@@ -132,7 +131,7 @@ capture into the configuration file:</p>
 <p>Here&#39;s an example of how to add Firefox to your testing suite:</p>
 <pre><code class="language-bash"><span class="hljs-comment"># Install the launcher first with NPM:</span>
 $ npm install karma-firefox-launcher --save-dev</code></pre>
-<p>And then inside your configuration file...</p>
+<p>And then, inside your configuration file, add the browser name in <code>browsers</code> array.</p>
 <pre><code class="language-javascript"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">config</span>) </span>{
   config.set({
     browsers : [<span class="hljs-string">'Chrome'</span>, <span class="hljs-string">'Firefox'</span>]
@@ -164,7 +163,7 @@ as the machine running Karma (or using a local tunnel).</p>
   }
 }</code></pre>
 <p>A display name can be set for any custom launcher. If set, this name will be used for reporting instead of the
-user agent. E.g. defining</p>
+user agent. Here is a code snippet example explaining how to set a display name for a custom launcher.</p>
 <pre><code class="language-javascript">customLaunchers: {
   chrome_without_security: {
     base: <span class="hljs-string">'Chrome'</span>,
@@ -172,7 +171,7 @@ user agent. E.g. defining</p>
     displayName: <span class="hljs-string">'Chrome w/o security'</span>
   }
 }</code></pre>
-<p>the browser will figure as <code>Chrome w/o security</code> in logs and reports.</p>
+<p>If the definition is as above, the browser will be displayed as <code>Chrome w/o security</code> in logs and reports.</p>
 <h2>Correct path to browser binary</h2>
 <p>Each plugin has some default paths where to find the browser binary on particular OS.
 You can override these settings by <code>&lt;BROWSER&gt;_BIN</code> ENV variable, or alternatively by creating a <code>symlink</code>.</p>
