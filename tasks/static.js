@@ -116,14 +116,19 @@ module.exports = function (grunt) {
             var jadeTpl = args[0]
 
             file.newUrl = file.url.replace(file.version, versions[0])
-            file.newUrl = file.url.replace("coverage.html", "preprocessors.html")
+            file.newUrl = file.url.replace('coverage.html', 'preprocessors.html')
             return fs.write(fileUrl, jadeTpl({
               versions: versions,
               oldVersion: file.version !== versions[0],
               canonicalUrl: file.newUrl,
               editButton: file.editButton && file.version === versions[0],
               menu: menu[file.version],
-              self: file
+              self: file,
+              users: [
+                {name: 'Mocha', imgUrl: 'https://cldup.com/xFVFxOioAU.svg', webUrl: 'https://mochajs.org/'},
+                {name: 'SVG', imgUrl: 'https://cloud.githubusercontent.com/assets/43763/20244488/f8931606-a984-11e6-8075-a6a047e9cd2b.png', webUrl: 'https://svgdotjs.github.io/'},
+                {name: 'TrustTIC', imgUrl: 'https://cloud.githubusercontent.com/assets/3668245/21148402/6a37daa4-c158-11e6-91cd-25e7068bc07d.png', webUrl: 'https://github.com/TrustTIC'}
+              ]
             }))
           })
         }))

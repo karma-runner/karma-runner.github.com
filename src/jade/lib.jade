@@ -19,3 +19,12 @@ mixin versionDropdown(versions, current)
       each version in versions
         li
           a(href='/#{version}/index.html')= 'v' + version
+
+
+
+mixin usersSection(users)
+  if(users)
+    for item in users
+      div(class='user-item')
+        a(href='#{item.webUrl}')
+          img(src='#{item.imgUrl}' alt='#{item.name}')
