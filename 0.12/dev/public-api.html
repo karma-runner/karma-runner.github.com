@@ -119,7 +119,7 @@ You can, however, call Karma programmatically from your node module. Here is the
 <h3><strong>server.start(options, [callback=process.exit])</strong></h3>
 <p>Equivalent of <code>karma start</code>.</p>
 <pre><code class="language-javascript"><span class="hljs-keyword">var</span> server = <span class="hljs-built_in">require</span>(<span class="hljs-string">'karma'</span>).server;
-server.start({port: <span class="hljs-number">9876</span>}, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">exitCode</span>) </span>{
+server.start({<span class="hljs-attr">port</span>: <span class="hljs-number">9876</span>}, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">exitCode</span>) </span>{
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Karma has exited with '</span> + exitCode);
   process.exit(exitCode);
 });</code></pre>
@@ -127,7 +127,7 @@ server.start({port: <span class="hljs-number">9876</span>}, <span class="hljs-fu
 <h3><strong>runner.run(options, [callback=process.exit])</strong></h3>
 <p>Equivalent of <code>karma run</code>.</p>
 <pre><code class="language-javascript"><span class="hljs-keyword">var</span> runner = <span class="hljs-built_in">require</span>(<span class="hljs-string">'karma'</span>).runner;
-runner.run({port: <span class="hljs-number">9876</span>}, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">exitCode</span>) </span>{
+runner.run({<span class="hljs-attr">port</span>: <span class="hljs-number">9876</span>}, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">exitCode</span>) </span>{
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Karma has exited with '</span> + exitCode);
   process.exit(exitCode);
 });</code></pre>

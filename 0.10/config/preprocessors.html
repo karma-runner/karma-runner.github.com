@@ -145,7 +145,7 @@ $ npm install karma-coverage --save-dev</code></pre>
 <p>And then inside your configuration file...</p>
 <pre><code class="language-javascript"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">config</span>) </span>{
   config.set({
-    preprocessors: {
+    <span class="hljs-attr">preprocessors</span>: {
       <span class="hljs-string">'**/*.js'</span>: [<span class="hljs-string">'coverage'</span>]
     }
   });
@@ -154,15 +154,15 @@ $ npm install karma-coverage --save-dev</code></pre>
 <h2>Configured Preprocessors</h2>
 <p>Some of the preprocessors can be also configured:</p>
 <pre><code class="language-javascript">coffeePreprocessor: {
-  options: {
-    bare: <span class="hljs-literal">false</span>
+  <span class="hljs-attr">options</span>: {
+    <span class="hljs-attr">bare</span>: <span class="hljs-literal">false</span>
   }
 }</code></pre>
 <p>Or define a configured preprocessor:</p>
 <pre><code class="language-javascript">customPreprocessors: {
-  bare_coffee: {
-    base: <span class="hljs-string">'coffee'</span>,
-    options: {bare: <span class="hljs-literal">true</span>}
+  <span class="hljs-attr">bare_coffee</span>: {
+    <span class="hljs-attr">base</span>: <span class="hljs-string">'coffee'</span>,
+    <span class="hljs-attr">options</span>: {<span class="hljs-attr">bare</span>: <span class="hljs-literal">true</span>}
   }
 }</code></pre>
 <h2>Minimatching</h2>
