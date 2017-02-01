@@ -1080,38 +1080,38 @@ if you are using <code>karma run</code> with custom <code>--runer-port</code>, p
 </ul>
 <pre><code class="language-javascript"><span class="hljs-comment">// before:</span>
 <span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">karma</span>) </span>{
-  karma.configure({<span class="hljs-attr">port</span>: <span class="hljs-number">123</span>});
+  karma.configure({port: <span class="hljs-number">123</span>});
   karma.defineLauncher(<span class="hljs-string">'x'</span>, <span class="hljs-string">'Chrome'</span>, {
-    <span class="hljs-attr">flags</span>: [<span class="hljs-string">'--disable-web-security'</span>]
+    flags: [<span class="hljs-string">'--disable-web-security'</span>]
   });
   karma.definePreprocessor(<span class="hljs-string">'y'</span>, <span class="hljs-string">'coffee'</span>, {
-    <span class="hljs-attr">bare</span>: <span class="hljs-literal">false</span>
+    bare: <span class="hljs-literal">false</span>
   });
   karma.defineReporter(<span class="hljs-string">'z'</span>, <span class="hljs-string">'coverage'</span>, {
-    <span class="hljs-attr">type</span>: <span class="hljs-string">'html'</span>
+    type: <span class="hljs-string">'html'</span>
   });
 };
 
 <span class="hljs-comment">// after:</span>
 <span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">config</span>) </span>{
   config.set({
-    <span class="hljs-attr">port</span>: <span class="hljs-number">123</span>,
-    <span class="hljs-attr">customLaunchers</span>: {
+    port: <span class="hljs-number">123</span>,
+    customLaunchers: {
       <span class="hljs-string">'x'</span>: {
-        <span class="hljs-attr">base</span>: <span class="hljs-string">'Chrome'</span>,
-        <span class="hljs-attr">flags</span>: [<span class="hljs-string">'--disable-web-security'</span>]
+        base: <span class="hljs-string">'Chrome'</span>,
+        flags: [<span class="hljs-string">'--disable-web-security'</span>]
       }
     },
-    <span class="hljs-attr">customPreprocessors</span>: {
+    customPreprocessors: {
       <span class="hljs-string">'y'</span>: {
-        <span class="hljs-attr">base</span>: <span class="hljs-string">'coffee'</span>,
-        <span class="hljs-attr">bare</span>: <span class="hljs-literal">false</span>
+        base: <span class="hljs-string">'coffee'</span>,
+        bare: <span class="hljs-literal">false</span>
       }
     },
-    <span class="hljs-attr">customReporters</span>: {
+    customReporters: {
       <span class="hljs-string">'z'</span>: {
-        <span class="hljs-attr">base</span>: <span class="hljs-string">'coverage'</span>,
-        <span class="hljs-attr">type</span>: <span class="hljs-string">'html'</span>
+        base: <span class="hljs-string">'coverage'</span>,
+        type: <span class="hljs-string">'html'</span>
       }
     }
   });
@@ -1157,7 +1157,7 @@ if you are using <code>karma run</code> with custom <code>--runer-port</code>, p
 </ul>
 <pre><code class="language-javascript"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">karma</span>) </span>{
   karma.configure({
-    <span class="hljs-attr">autoWatch</span>: <span class="hljs-literal">true</span>,
+    autoWatch: <span class="hljs-literal">true</span>,
     <span class="hljs-comment">// ...</span>
   });
 };</code></pre>

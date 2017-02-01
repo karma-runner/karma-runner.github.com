@@ -134,7 +134,7 @@ $ npm install karma-firefox-launcher --save-dev</code></pre>
 <p>And then, inside your configuration file, add the browser name in <code>browsers</code> array.</p>
 <pre><code class="language-javascript"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">config</span>) </span>{
   config.set({
-    <span class="hljs-attr">browsers</span> : [<span class="hljs-string">'Chrome'</span>, <span class="hljs-string">'Firefox'</span>]
+    browsers : [<span class="hljs-string">'Chrome'</span>, <span class="hljs-string">'Firefox'</span>]
   });
 };</code></pre>
 <p>Also, keep in mind that the <code>browsers</code> configuration setting is empty by default.</p>
@@ -148,27 +148,27 @@ as the machine running Karma (or using a local tunnel).</p>
 <h2>Configured launchers</h2>
 <p>Some of the launchers can also be configured:</p>
 <pre><code class="language-javascript">sauceLabs: {
-  <span class="hljs-attr">username</span>: <span class="hljs-string">'michael_jackson'</span>
+  username: <span class="hljs-string">'michael_jackson'</span>
 }</code></pre>
 <p>Or defined as a configured launcher:</p>
 <pre><code class="language-javascript">customLaunchers: {
-  <span class="hljs-attr">chrome_without_security</span>: {
-    <span class="hljs-attr">base</span>: <span class="hljs-string">'Chrome'</span>,
-    <span class="hljs-attr">flags</span>: [<span class="hljs-string">'--disable-web-security'</span>]
+  chrome_without_security: {
+    base: <span class="hljs-string">'Chrome'</span>,
+    flags: [<span class="hljs-string">'--disable-web-security'</span>]
   },
-  <span class="hljs-attr">sauce_chrome_win</span>: {
-    <span class="hljs-attr">base</span>: <span class="hljs-string">'SauceLabs'</span>,
-    <span class="hljs-attr">browserName</span>: <span class="hljs-string">'chrome'</span>,
-    <span class="hljs-attr">platform</span>: <span class="hljs-string">'windows'</span>
+  sauce_chrome_win: {
+    base: <span class="hljs-string">'SauceLabs'</span>,
+    browserName: <span class="hljs-string">'chrome'</span>,
+    platform: <span class="hljs-string">'windows'</span>
   }
 }</code></pre>
 <p>A display name can be set for any custom launcher. If set, this name will be used for reporting instead of the
 user agent. Here is a code snippet example explaining how to set a display name for a custom launcher.</p>
 <pre><code class="language-javascript">customLaunchers: {
-  <span class="hljs-attr">chrome_without_security</span>: {
-    <span class="hljs-attr">base</span>: <span class="hljs-string">'Chrome'</span>,
-    <span class="hljs-attr">flags</span>: [<span class="hljs-string">'--disable-web-security'</span>],
-    <span class="hljs-attr">displayName</span>: <span class="hljs-string">'Chrome w/o security'</span>
+  chrome_without_security: {
+    base: <span class="hljs-string">'Chrome'</span>,
+    flags: [<span class="hljs-string">'--disable-web-security'</span>],
+    displayName: <span class="hljs-string">'Chrome w/o security'</span>
   }
 }</code></pre>
 <p>If the definition is as above, the browser will be displayed as <code>Chrome w/o security</code> in logs and reports.</p>

@@ -26,5 +26,5 @@ mixin usersSection(users)
   if(users)
     for item in users
       div(class='user-item')
-        a(href='#{item.webUrl}' title='#{item.name}')
+        a(href='#{item.webUrl}')
           img(src='#{item.imgUrl}' alt='#{item.name}')

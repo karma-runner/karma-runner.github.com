@@ -145,7 +145,7 @@ same file, it&#39;s included as if it only matched the first pattern.</li>
 more closely.</p>
 <p>If you define them like before a simple pattern like
 <code>&#39;test/unit/*.js&#39;</code> this gets expanded internally to the following:</p>
-<pre><code class="language-javascript">  {<span class="hljs-attr">pattern</span>: <span class="hljs-string">'test/unit/*.js'</span>, <span class="hljs-attr">watched</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">included</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">served</span>: <span class="hljs-literal">true</span>}</code></pre>
+<pre><code class="language-javascript">  {pattern: <span class="hljs-string">'test/unit/*.js'</span>, watched: <span class="hljs-literal">true</span>, included: <span class="hljs-literal">true</span>, served: <span class="hljs-literal">true</span>}</code></pre>
 <h3><code>pattern</code></h3>
 <ul>
 <li><strong>Description.</strong> The pattern to use for matching.</li>
@@ -184,10 +184,10 @@ watched for changes.</li>
   <span class="hljs-string">'test/unit/*.spec.js'</span>,
 
   <span class="hljs-comment">// this file gets served but will be ignored by the watcher</span>
-  {<span class="hljs-attr">pattern</span>: <span class="hljs-string">'compiled/index.html'</span>, <span class="hljs-attr">watched</span>: <span class="hljs-literal">false</span>},
+  {pattern: <span class="hljs-string">'compiled/index.html'</span>, watched: <span class="hljs-literal">false</span>},
 
   <span class="hljs-comment">// this file only gets watched but otherwise ignored</span>
-  {<span class="hljs-attr">pattern</span>: <span class="hljs-string">'app/index.html'</span>, <span class="hljs-attr">included</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">served</span>: <span class="hljs-literal">false</span>}
+  {pattern: <span class="hljs-string">'app/index.html'</span>, included: <span class="hljs-literal">false</span>, served: <span class="hljs-literal">false</span>}
 ];</code></pre>
 
         </div>

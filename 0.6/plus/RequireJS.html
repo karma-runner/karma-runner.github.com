@@ -148,7 +148,7 @@ should be the last file listed.</p>
   REQUIRE_ADAPTER,
 
   <span class="hljs-comment">// libs required for test framework</span>
-  {<span class="hljs-attr">pattern</span>: <span class="hljs-string">'node_modules/chai/chai.js'</span>, <span class="hljs-attr">included</span>: <span class="hljs-literal">false</span>},
+  {pattern: <span class="hljs-string">'node_modules/chai/chai.js'</span>, included: <span class="hljs-literal">false</span>},
 
   <span class="hljs-comment">// put what used to be in your requirejs 'shim' config here,</span>
   <span class="hljs-comment">// these files will be included without requirejs</span>
@@ -158,11 +158,11 @@ should be the last file listed.</p>
   <span class="hljs-string">'lib/handlebars.js'</span>,
 
   <span class="hljs-comment">// put all libs in requirejs 'paths' config here (included: false)</span>
-  {<span class="hljs-attr">pattern</span>: <span class="hljs-string">'lib/**/*.js'</span>, <span class="hljs-attr">included</span>: <span class="hljs-literal">false</span>},
+  {pattern: <span class="hljs-string">'lib/**/*.js'</span>, included: <span class="hljs-literal">false</span>},
 
   <span class="hljs-comment">// all src and test modules (included: false)</span>
-  {<span class="hljs-attr">pattern</span>: <span class="hljs-string">'src/**/*'</span>, <span class="hljs-attr">included</span>: <span class="hljs-literal">false</span>},
-  {<span class="hljs-attr">pattern</span>: <span class="hljs-string">'test/**/*.test.js'</span>, <span class="hljs-attr">included</span>: <span class="hljs-literal">false</span>},
+  {pattern: <span class="hljs-string">'src/**/*'</span>, included: <span class="hljs-literal">false</span>},
+  {pattern: <span class="hljs-string">'test/**/*.test.js'</span>, included: <span class="hljs-literal">false</span>},
 
   <span class="hljs-comment">// test main require module last</span>
   <span class="hljs-string">'test/test-main.js'</span>
@@ -199,9 +199,9 @@ it starts the tests.</p>
 <span class="hljs-built_in">require</span>({
   <span class="hljs-comment">// Testacular serves files from '/base'</span>
   baseUrl: <span class="hljs-string">'/base/src'</span>,
-  <span class="hljs-attr">paths</span>: {
-    <span class="hljs-attr">require</span>: <span class="hljs-string">'../lib/require'</span>,
-    <span class="hljs-attr">text</span>: <span class="hljs-string">'../lib/text'</span>
+  paths: {
+    <span class="hljs-built_in">require</span>: <span class="hljs-string">'../lib/require'</span>,
+    text: <span class="hljs-string">'../lib/text'</span>
   },
   <span class="hljs-comment">// ask requirejs to load these files (all our tests)</span>
   deps: tests,
