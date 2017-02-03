@@ -116,14 +116,46 @@ module.exports = function (grunt) {
             var jadeTpl = args[0]
 
             file.newUrl = file.url.replace(file.version, versions[0])
-            file.newUrl = file.url.replace("coverage.html", "preprocessors.html")
+            file.newUrl = file.url.replace('coverage.html', 'preprocessors.html')
             return fs.write(fileUrl, jadeTpl({
               versions: versions,
               oldVersion: file.version !== versions[0],
               canonicalUrl: file.newUrl,
               editButton: file.editButton && file.version === versions[0],
               menu: menu[file.version],
-              self: file
+              self: file,
+              users: [
+                {
+                  name: 'Mocha',
+                  imgUrl: 'https://cldup.com/xFVFxOioAU.svg',
+                  webUrl: 'https://mochajs.org/'
+                },
+                {
+                  name: 'SVG',
+                  imgUrl: 'https://cloud.githubusercontent.com/assets/43763/20244488/f8931606-a984-11e6-8075-a6a047e9cd2b.png',
+                  webUrl: 'https://svgdotjs.github.io/'
+                },
+                {
+                  name: 'TrustTIC',
+                  imgUrl: 'https://cloud.githubusercontent.com/assets/3668245/21148402/6a37daa4-c158-11e6-91cd-25e7068bc07d.png',
+                  webUrl: 'https://github.com/TrustTIC'
+                },
+                {
+                  name: 'JetBrains',
+                  imgUrl: 'https://cloud.githubusercontent.com/assets/616193/21158499/7d273660-c18e-11e6-9b85-28ff217b987c.png',
+                  webUrl: 'https://www.jetbrains.com'
+                },
+                {
+                  name: 'InfTec',
+                  imgUrl: 'https://camo.githubusercontent.com/e03bacb5b51c17612e1b010aabe43e9fe050c8de/687474703a2f2f7777772e696e667465632e63682f7468656d65732f626173652f696d616765732f6c6f676f2e706e67',
+                  webUrl: 'www.inftec.ch'
+                },
+                {
+                  name: 'RPLAN',
+                  imgUrl: 'https://cloud.githubusercontent.com/assets/1228437/16383838/08be8a26-3c87-11e6-8739-fc657cd89b3b.png',
+                  webUrl: 'https://rplan.com'
+                }
+              ]
             }))
           })
         }))
