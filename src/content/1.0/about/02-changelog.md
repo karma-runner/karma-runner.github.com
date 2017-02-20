@@ -1,5 +1,40 @@
 editButton: false
 
+<a name="1.5.0"></a>
+# [1.5.0](https://github.com/karma-runner/karma/compare/v1.4.1...v1.5.0) (2017-02-20)
+
+
+### Bug Fixes
+
+* filter browser logging by level of LOG ([89a7a1c](https://github.com/karma-runner/karma/commit/89a7a1c)), closes [#2228](https://github.com/karma-runner/karma/issues/2228)
+* make window.parent.karma available in debugged context ([3e7eaeb](https://github.com/karma-runner/karma/commit/3e7eaeb))
+* **client:** don't crash if receive array-like results ([e095411](https://github.com/karma-runner/karma/commit/e095411)), closes [#2061](https://github.com/karma-runner/karma/issues/2061)
+
+
+### Features
+
+* add an option to run the tests by dynamically loading test scripts without iframe ([aa42c41](https://github.com/karma-runner/karma/commit/aa42c41))
+* add support for node[@7](https://github.com/7) ([eb407ab](https://github.com/karma-runner/karma/commit/eb407ab)), closes [#2559](https://github.com/karma-runner/karma/issues/2559)
+
+
+
+<a name="1.4.1"></a>
+## [1.4.1](https://github.com/karma-runner/karma/compare/v1.4.0...v1.4.1) (2017-01-29)
+
+
+### Bug Fixes
+
+* **runner:** Make process kill timeout configurable ([ffaa054](https://github.com/karma-runner/karma/commit/ffaa054)), closes [#2447](https://github.com/karma-runner/karma/issues/2447)
+* **runner:** Make process kill timeout configurable - Fix Build ([a128e5c](https://github.com/karma-runner/karma/commit/a128e5c)), closes [#2447](https://github.com/karma-runner/karma/issues/2447)
+* **runner:** Test process kill timeout config ([99a1d48](https://github.com/karma-runner/karma/commit/99a1d48)), closes [#2447](https://github.com/karma-runner/karma/issues/2447)
+
+
+### Features
+
+* **config:** allow config to be a default export ([9976dce](https://github.com/karma-runner/karma/commit/9976dce))
+
+
+
 <a name="1.4.0"></a>
 # [1.4.0](https://github.com/karma-runner/karma/compare/v1.3.0...v1.4.0) (2017-01-14)
 

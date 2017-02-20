@@ -6,7 +6,7 @@ is by using the `karma init` command. This page lists all of the available confi
 Note: Most of the framework adapters, reporters, preprocessors and launchers needs to be loaded as [plugins].
 
 
-The Karma configuration file can be written in JavaScript or CoffeeScript and is loaded as a regular Node.js module.
+The Karma configuration file can be written in JavaScript, CoffeeScript, or TypeScript and is loaded as a regular Node.js module.
 
 Unless provided as argument, the Karma CLI will look for a configuration file at
 
@@ -43,7 +43,7 @@ module.exports = (config) ->
 ```
 
 ```typescript
-# karma.conf.ts
+// karma.conf.ts
 module.exports = (config) => {
   config.set({
     basePath: '../..',
@@ -200,6 +200,7 @@ The `captureTimeout` value represents the maximum boot-up time allowed for a bro
 If any browser does not get captured within the timeout, Karma will kill it and try to launch
 it again and, after three attempts to capture it, Karma will give up.
 
+
 ## client.args
 **Type:** Array
 
@@ -224,6 +225,14 @@ How this value is used is up to your test adapter - you should check your adapte
 If true, Karma runs the tests inside an iFrame. If false, Karma runs the tests in a new window. Some tests may not run in an
 iFrame and may need a new window to run.
 
+## client.runInParent
+**Type:** Boolean
+
+**Default:** `false`
+
+**Description:** Run the tests on the same window as the client, without using iframe or a new window
+
+If true, Karma runs the tests inside the original window without using iframe. It will load the test scripts dynamically.
 
 ## client.captureConsole
 **Type:** Boolean
@@ -286,6 +295,14 @@ Disable this when you need to load external scripts that are served without the 
 **Default:** `null`
 
 **Description:** If `null` (default), uses karma's own `debug.html` file.
+
+
+## customClientContextFile
+**Type:** string
+
+**Default:** `null`
+
+**Description:** If `null` (default), uses karma's own `client_with_context.html` file (which is used when client.runInParent set to true).
 
 
 ## customHeaders
@@ -505,6 +522,16 @@ See [plugins] for more information.
 **Description:** The port where the web server will be listening.
 
 
+## processKillTimeout
+**Type:** Number
+
+**Default:** `2000`
+
+**Description:** How long will Karma wait for browser process to terminate before sending a SIGKILL signal.
+
+If, after test execution or after Karma attempts to kill the browser, browser is not killed within `processKillTimeout`(ms), Karma will send a SIGKILL signal to attempt to kill the browser forcefully.
+
+
 ## preprocessors
 **Type:** Object
 
@@ -704,6 +731,8 @@ If set then the following fields will be defined and can be overriden:
 **Default:** `'localhost'`
 
 **Description:** Will be used as the hostname when launching browsers
+
+
 
 ### protocol
 **Type:** String
