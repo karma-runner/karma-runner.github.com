@@ -117,7 +117,7 @@ is by using the <code>karma init</code> command. This page lists all of the avai
 
 
 </div>
-<p>The Karma configuration file can be written in JavaScript or CoffeeScript and is loaded as a regular Node.js module.</p>
+<p>The Karma configuration file can be written in JavaScript, CoffeeScript, or TypeScript and is loaded as a regular Node.js module.</p>
 <p>Unless provided as argument, the Karma CLI will look for a configuration file at</p>
 <ul>
 <li><code>./karma.conf.js</code></li>
@@ -144,7 +144,7 @@ which accepts one argument: the configuration object.</p>
     basePath: <span class="hljs-string">'../..'</span>
     frameworks: [<span class="hljs-string">'jasmine'</span>]
     <span class="hljs-comment"># ...</span></code></pre>
-<pre><code class="language-typescript"># karma.conf.ts
+<pre><code class="language-typescript"><span class="hljs-comment">// karma.conf.ts</span>
 <span class="hljs-keyword">module</span>.exports = (config) =&gt; {
   config.set({
     basePath: <span class="hljs-string">'../..'</span>,
@@ -264,6 +264,11 @@ The <code>client.args</code> option allows you to set this value for actions oth
 <p><strong>Description:</strong> Run the tests inside an iFrame or a new window</p>
 <p>If true, Karma runs the tests inside an iFrame. If false, Karma runs the tests in a new window. Some tests may not run in an
 iFrame and may need a new window to run.</p>
+<h2>client.runInParent</h2>
+<p><strong>Type:</strong> Boolean</p>
+<p><strong>Default:</strong> <code>false</code></p>
+<p><strong>Description:</strong> Run the tests on the same window as the client, without using iframe or a new window</p>
+<p>If true, Karma runs the tests inside the original window without using iframe. It will load the test scripts dynamically.</p>
 <h2>client.captureConsole</h2>
 <p><strong>Type:</strong> Boolean</p>
 <p><strong>Default:</strong> <code>true</code></p>
@@ -297,6 +302,10 @@ Disable this when you need to load external scripts that are served without the 
 <p><strong>Type:</strong> string</p>
 <p><strong>Default:</strong> <code>null</code></p>
 <p><strong>Description:</strong> If <code>null</code> (default), uses karma&#39;s own <code>debug.html</code> file.</p>
+<h2>customClientContextFile</h2>
+<p><strong>Type:</strong> string</p>
+<p><strong>Default:</strong> <code>null</code></p>
+<p><strong>Description:</strong> If <code>null</code> (default), uses karma&#39;s own <code>client_with_context.html</code> file (which is used when client.runInParent set to true).</p>
 <h2>customHeaders</h2>
 <p><strong>Type:</strong> Array</p>
 <p><strong>Default:</strong> <code>undefined</code></p>
@@ -427,6 +436,11 @@ By default, Karma loads all sibling NPM modules which have a name starting with 
 <p><strong>Default:</strong> <code>9876</code></p>
 <p><strong>CLI:</strong> <code>--port 9876</code></p>
 <p><strong>Description:</strong> The port where the web server will be listening.</p>
+<h2>processKillTimeout</h2>
+<p><strong>Type:</strong> Number</p>
+<p><strong>Default:</strong> <code>2000</code></p>
+<p><strong>Description:</strong> How long will Karma wait for browser process to terminate before sending a SIGKILL signal.</p>
+<p>If, after test execution or after Karma attempts to kill the browser, browser is not killed within <code>processKillTimeout</code>(ms), Karma will send a SIGKILL signal to attempt to kill the browser forcefully.</p>
 <h2>preprocessors</h2>
 <p><strong>Type:</strong> Object</p>
 <p><strong>Default:</strong> <code>{&#39;**/*.coffee&#39;: &#39;coffee&#39;}</code></p>
