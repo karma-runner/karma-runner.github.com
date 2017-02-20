@@ -148,7 +148,7 @@ module.exports = function (grunt) {
                 {
                   name: 'InfTec',
                   imgUrl: 'https://camo.githubusercontent.com/e03bacb5b51c17612e1b010aabe43e9fe050c8de/687474703a2f2f7777772e696e667465632e63682f7468656d65732f626173652f696d616765732f6c6f676f2e706e67',
-                  webUrl: 'www.inftec.ch'
+                  webUrl: 'http://www.inftec.ch'
                 },
                 {
                   name: 'RPLAN',
