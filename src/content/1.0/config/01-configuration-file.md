@@ -3,7 +3,7 @@ In order to serve you well, Karma needs to know about your project in order to t
 and this is done via a configuration file. The easiest way to generate an initial configuration file
 is by using the `karma init` command. This page lists all of the available configuration options.
 
-Note: Most of the framework adapters, reporters, preprocessors and launchers needs to be loaded as [plugins].
+Note: Most of the framework adapters, reporters, preprocessors and launchers need to be loaded as [plugins].
 
 
 The Karma configuration file can be written in JavaScript, CoffeeScript, or TypeScript and is loaded as a regular Node.js module.
@@ -652,11 +652,11 @@ Note: Just about all additional reporters in Karma (other than progress) require
 
 **Arguments:**
 
-  * `msg` - The entire assertion error and stack trace as a string.
+  * `msg` - A single line of the assertion error and stack trace (called for each line).
 
-**Returns:** A new error message string.
+**Returns:** A new error message line.
 
-**Description:** Format assertion errors and stack traces.  Useful for removing vendors and compiled sources.
+**Description:** Format assertion errors and stack traces.  Useful for removing vendors and compiled sources.  Return an empty line `''` to remove it.
 
 The CLI option should be a path to a file that exports the format function.  This can be a function exported at the root of the module or an export named `formatError`.
 
@@ -700,6 +700,43 @@ on whether all tests passed or any tests failed.
 **Description:** An array of allowed transport methods between the browser and testing server. This configuration setting
 is handed off to [socket.io](http://socket.io/) (which manages the communication
 between browsers and the testing server).
+
+
+## proxyReq
+**Type:** Function
+
+**Default:** `undefined`
+
+**Description:** Called when requesting Proxy.
+
+Details about this can be found in the [node-http-proxy](https://github.com/nodejitsu/node-http-proxy). An example of overwriting the HTTP header is shown below.
+
+**Example:**
+```javascript
+proxyReq: function(proxyReq, req, res, options) {
+  proxyReq.setHeader('Referer', 'https://www.example.com/');
+}
+```
+
+## proxyRes
+**Type:** Function
+
+**Default:** `undefined`
+
+**Description:** Called when respnsing Proxy.
+
+Details about this can be found in the [node-http-proxy](https://github.com/nodejitsu/node-http-proxy). An example of overwriting the HTTP header is shown below.
+
+**Example:**
+```javascript
+proxyRes: function(proxyRes, req, res) {
+  if (proxyRes.headers['set-cookie']) {
+    proxyRes.headers['set-cookie'] = proxyRes.headers['set-cookie'].map(function (cookie) {
+      return cookie.replace(/\s*secure;?/i, '');
+    })
+  }
+}
+```
 
 
 ## upstreamProxy

@@ -1,5 +1,41 @@
 editButton: false
 
+<a name="1.7.0"></a>
+# [1.7.0](https://github.com/karma-runner/karma/compare/v1.6.0...v1.7.0) (2017-05-06)
+
+
+### Bug Fixes
+
+* **middleware:** change to use vanilla for loop ([ac62cc0](https://github.com/karma-runner/karma/commit/ac62cc0)), closes [#2671](https://github.com/karma-runner/karma/issues/2671)
+* **reporters:** Revert the backwards-incompatible log priority order changes ([316b944](https://github.com/karma-runner/karma/commit/316b944)), closes [#2582](https://github.com/karma-runner/karma/issues/2582)
+
+
+### Features
+
+* **runner:** Buffer stdout and stderr for output when errors occur ([460d423](https://github.com/karma-runner/karma/commit/460d423))
+
+
+
+<a name="1.6.0"></a>
+# [1.6.0](https://github.com/karma-runner/karma/compare/v1.5.0...v1.6.0) (2017-04-05)
+
+
+### Bug Fixes
+
+* **client:** add proxy support to stringify ([be10116](https://github.com/karma-runner/karma/commit/be10116))
+* **file-list:** always use file from first matcher ([74bfdf3](https://github.com/karma-runner/karma/commit/74bfdf3))
+* **middleware:** does not work with mootools ([#2591](https://github.com/karma-runner/karma/issues/2591)) ([2685e13](https://github.com/karma-runner/karma/commit/2685e13))
+* **reporter:** keep users exact formatError result ([17c2c43](https://github.com/karma-runner/karma/commit/17c2c43))
+
+
+### Features
+
+* **browser:** add browser_info event ([09ac7d7](https://github.com/karma-runner/karma/commit/09ac7d7)), closes [#2192](https://github.com/karma-runner/karma/issues/2192)
+* **launcher:** output stderr for failing launchers ([7d33398](https://github.com/karma-runner/karma/commit/7d33398))
+* **proxy:** add proxy events to config  ([f5d99fb](https://github.com/karma-runner/karma/commit/f5d99fb))
+
+
+
 <a name="1.5.0"></a>
 # [1.5.0](https://github.com/karma-runner/karma/compare/v1.4.1...v1.5.0) (2017-02-20)
 
