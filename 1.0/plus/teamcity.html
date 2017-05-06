@@ -126,7 +126,7 @@ being installed during the build.</p>
 <p>Add new build step to the build configuration: use Command Line runner and fill in <code>Custom
 script</code> text area. If you had decided not to install <em>all</em> your NPM dependencies globally
 add <code>npm install</code> at the beginning of the script. Then add command to run Karma, e.g.:</p>
-<pre><code><span class="hljs-comment">karma</span> <span class="hljs-comment">start</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">reporters</span> <span class="hljs-comment">teamcity</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">single</span><span class="hljs-literal">-</span><span class="hljs-comment">run</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">browsers</span> <span class="hljs-comment">PhantomJS</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">colors</span> <span class="hljs-comment">false</span></code></pre>
+<pre><code>karma start <span class="hljs-params">--reporters</span> teamcity <span class="hljs-params">--single-run</span> <span class="hljs-params">--browsers</span> PhantomJS <span class="hljs-params">--colors</span> <span class="hljs-literal">false</span></code></pre>
 <p>Running Karma with all these options provided via command line allows to run Karma in
 TeamCity build and locally in development environment (with options from configuration
 file).</p>

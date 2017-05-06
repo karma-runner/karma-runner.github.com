@@ -113,7 +113,7 @@
 <p>In order to serve you well, Karma needs to know about your project in order to test it
 and this is done via a configuration file. The easiest way to generate an initial configuration file
 is by using the <code>karma init</code> command. This page lists all of the available configuration options.</p>
-<div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Most of the framework adapters, reporters, preprocessors and launchers needs to be loaded as <a href="plugins.html">plugins</a>.
+<div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Most of the framework adapters, reporters, preprocessors and launchers need to be loaded as <a href="plugins.html">plugins</a>.
 
 
 </div>
@@ -133,8 +133,8 @@ which accepts one argument: the configuration object.</p>
 <pre><code class="language-javascript"><span class="hljs-comment">// karma.conf.js</span>
 <span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">config</span>) </span>{
   config.set({
-    basePath: <span class="hljs-string">'../..'</span>,
-    frameworks: [<span class="hljs-string">'jasmine'</span>],
+    <span class="hljs-attr">basePath</span>: <span class="hljs-string">'../..'</span>,
+    <span class="hljs-attr">frameworks</span>: [<span class="hljs-string">'jasmine'</span>],
     <span class="hljs-comment">//...</span>
   });
 };</code></pre>
@@ -145,7 +145,7 @@ which accepts one argument: the configuration object.</p>
     frameworks: [<span class="hljs-string">'jasmine'</span>]
     <span class="hljs-comment"># ...</span></code></pre>
 <pre><code class="language-typescript"><span class="hljs-comment">// karma.conf.ts</span>
-<span class="hljs-keyword">module</span>.exports = (config) =&gt; {
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function">(<span class="hljs-params">config</span>) =&gt;</span> {
   config.set({
     basePath: <span class="hljs-string">'../..'</span>,
     frameworks: [<span class="hljs-string">'jasmine'</span>],
@@ -200,10 +200,10 @@ If the browser reconnects during that time, everything is fine.</p>
 <p><strong>Description:</strong> Configure how the browser console is logged with the following
 properties, all of which are optional:</p>
 <pre><code class="language-javascript">{
-  level:  string,
-  format: string,
-  path:   string,
-  terminal: boolean
+  <span class="hljs-attr">level</span>:  string,
+  <span class="hljs-attr">format</span>: string,
+  <span class="hljs-attr">path</span>:   string,
+  <span class="hljs-attr">terminal</span>: boolean
 }</code></pre>
 <p>Here the <code>level</code> is the desired log-level, where level <code>log</code> always is logged. The format
 is a string where <code>%b</code>, <code>%t</code>, <code>%T</code>, and <code>%m</code> are replaced with the browser string,
@@ -320,9 +320,9 @@ Custom headers are useful, especially with upcoming browser features like Servic
 </ul>
 <p><strong>Example:</strong></p>
 <pre><code class="language-javascript">customHeaders: [{
-  match: <span class="hljs-string">'.*foo.html'</span>,
-  name: <span class="hljs-string">'Service-Worker-Allowed'</span>,
-  value: <span class="hljs-string">'/'</span>
+  <span class="hljs-attr">match</span>: <span class="hljs-string">'.*foo.html'</span>,
+  <span class="hljs-attr">name</span>: <span class="hljs-string">'Service-Worker-Allowed'</span>,
+  <span class="hljs-attr">value</span>: <span class="hljs-string">'/'</span>
 }]</code></pre>
 <h2>detached</h2>
 <p><strong>Type:</strong> Boolean</p>
@@ -370,8 +370,8 @@ will return exit-code <code>0</code> and display a warning.</p>
 <p>Object description can be found in the <a href="https://nodejs.org/api/tls.html#tls_tls_createserver_options_secureconnectionlistener">NodeJS.org API docs</a></p>
 <p><strong>Example:</strong></p>
 <pre><code class="language-javascript">httpsServerOptions: {
-  key: fs.readFileSync(<span class="hljs-string">'server.key'</span>, <span class="hljs-string">'utf8'</span>),
-  cert: fs.readFileSync(<span class="hljs-string">'server.crt'</span>, <span class="hljs-string">'utf8'</span>)
+  <span class="hljs-attr">key</span>: fs.readFileSync(<span class="hljs-string">'server.key'</span>, <span class="hljs-string">'utf8'</span>),
+  <span class="hljs-attr">cert</span>: fs.readFileSync(<span class="hljs-string">'server.crt'</span>, <span class="hljs-string">'utf8'</span>)
 },</code></pre>
 <h2>logLevel</h2>
 <p><strong>Type:</strong> Constant</p>
@@ -398,7 +398,7 @@ will return exit-code <code>0</code> and display a warning.</p>
 <p>The plugin must provide an express/connect middleware function (details about this can be found in <a href="http://expressjs.com/guide/using-middleware.html">the Express docs</a>. An example of custom inline middleware is shown below.</p>
 <p><strong>Example:</strong></p>
 <pre><code class="language-javascript"><span class="hljs-keyword">var</span> CustomMiddlewareFactory = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{
-  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">request, response, <span class="hljs-comment">/* next */</span></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">request, response, <span class="hljs-regexp">/* next */</span></span>) </span>{
     response.writeHead(<span class="hljs-number">200</span>)
     <span class="hljs-keyword">return</span> response.end(<span class="hljs-string">"content!"</span>)
   }
@@ -527,10 +527,10 @@ This is disabled by default (since the default value is 0).</p>
 <p><strong>CLI:</strong> <code>--format-error ./path/to/formatFunction.js</code></p>
 <p><strong>Arguments:</strong></p>
 <ul>
-<li><code>msg</code> - The entire assertion error and stack trace as a string.</li>
+<li><code>msg</code> - A single line of the assertion error and stack trace (called for each line).</li>
 </ul>
-<p><strong>Returns:</strong> A new error message string.</p>
-<p><strong>Description:</strong> Format assertion errors and stack traces.  Useful for removing vendors and compiled sources.</p>
+<p><strong>Returns:</strong> A new error message line.</p>
+<p><strong>Description:</strong> Format assertion errors and stack traces.  Useful for removing vendors and compiled sources.  Return an empty line <code>&#39;&#39;</code> to remove it.</p>
 <p>The CLI option should be a path to a file that exports the format function.  This can be a function exported at the root of the module or an export named <code>formatError</code>.</p>
 <h2>restartOnFileChange</h2>
 <p><strong>Type:</strong> Boolean</p>
@@ -556,6 +556,28 @@ on whether all tests passed or any tests failed.</p>
 <p><strong>Description:</strong> An array of allowed transport methods between the browser and testing server. This configuration setting
 is handed off to <a href="http://socket.io/">socket.io</a> (which manages the communication
 between browsers and the testing server).</p>
+<h2>proxyReq</h2>
+<p><strong>Type:</strong> Function</p>
+<p><strong>Default:</strong> <code>undefined</code></p>
+<p><strong>Description:</strong> Called when requesting Proxy.</p>
+<p>Details about this can be found in the <a href="https://github.com/nodejitsu/node-http-proxy">node-http-proxy</a>. An example of overwriting the HTTP header is shown below.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-javascript">proxyReq: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">proxyReq, req, res, options</span>) </span>{
+  proxyReq.setHeader(<span class="hljs-string">'Referer'</span>, <span class="hljs-string">'https://www.example.com/'</span>);
+}</code></pre>
+<h2>proxyRes</h2>
+<p><strong>Type:</strong> Function</p>
+<p><strong>Default:</strong> <code>undefined</code></p>
+<p><strong>Description:</strong> Called when respnsing Proxy.</p>
+<p>Details about this can be found in the <a href="https://github.com/nodejitsu/node-http-proxy">node-http-proxy</a>. An example of overwriting the HTTP header is shown below.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-javascript">proxyRes: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">proxyRes, req, res</span>) </span>{
+  <span class="hljs-keyword">if</span> (proxyRes.headers[<span class="hljs-string">'set-cookie'</span>]) {
+    proxyRes.headers[<span class="hljs-string">'set-cookie'</span>] = proxyRes.headers[<span class="hljs-string">'set-cookie'</span>].map(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">cookie</span>) </span>{
+      <span class="hljs-keyword">return</span> cookie.replace(<span class="hljs-regexp">/\s*secure;?/i</span>, <span class="hljs-string">''</span>);
+    })
+  }
+}</code></pre>
 <h2>upstreamProxy</h2>
 <p><strong>Type:</strong> Object</p>
 <p><strong>Default:</strong> <code>undefined</code></p>

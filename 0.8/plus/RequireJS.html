@@ -160,9 +160,9 @@ files = [
   REQUIRE,
   REQUIRE_ADAPTER,
 
-  {pattern: <span class="hljs-string">'lib/**/*.js'</span>, included: <span class="hljs-literal">false</span>},
-  {pattern: <span class="hljs-string">'src/**/*.js'</span>, included: <span class="hljs-literal">false</span>},
-  {pattern: <span class="hljs-string">'test/**/*Spec.js'</span>, included: <span class="hljs-literal">false</span>},
+  {<span class="hljs-attr">pattern</span>: <span class="hljs-string">'lib/**/*.js'</span>, <span class="hljs-attr">included</span>: <span class="hljs-literal">false</span>},
+  {<span class="hljs-attr">pattern</span>: <span class="hljs-string">'src/**/*.js'</span>, <span class="hljs-attr">included</span>: <span class="hljs-literal">false</span>},
+  {<span class="hljs-attr">pattern</span>: <span class="hljs-string">'test/**/*Spec.js'</span>, <span class="hljs-attr">included</span>: <span class="hljs-literal">false</span>},
 
   <span class="hljs-string">'test/test-main.js'</span>
 ];
@@ -205,14 +205,14 @@ requirejs.config({
     <span class="hljs-comment">// Karma serves files from '/base'</span>
     baseUrl: <span class="hljs-string">'/base/src'</span>,
 
-    paths: {
+    <span class="hljs-attr">paths</span>: {
         <span class="hljs-string">'jquery'</span>: <span class="hljs-string">'../lib/jquery'</span>,
         <span class="hljs-string">'underscore'</span>: <span class="hljs-string">'../lib/underscore'</span>,
     },
 
-    shim: {
+    <span class="hljs-attr">shim</span>: {
         <span class="hljs-string">'underscore'</span>: {
-            exports: <span class="hljs-string">'_'</span>
+            <span class="hljs-attr">exports</span>: <span class="hljs-string">'_'</span>
         }
     },
 
