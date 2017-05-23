@@ -115,8 +115,10 @@ module.exports = function (grunt) {
           return q.all([getJadeTpl(file.layout), fs.makeTree(path.dirname(fileUrl))]).then(function (args) {
             var jadeTpl = args[0]
 
-            file.newUrl = file.url.replace(file.version, versions[0])
-            file.newUrl = file.url.replace('coverage.html', 'preprocessors.html')
+            file.newUrl = file.url
+              .replace(file.version, versions[0])
+              .replace('coverage.html', 'preprocessors.html')
+
             return fs.write(fileUrl, jadeTpl({
               versions: versions,
               oldVersion: file.version !== versions[0],
