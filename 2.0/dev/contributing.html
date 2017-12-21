@@ -1,0 +1,177 @@
+<!DOCTYPE html><!-- [if lt IE 7]>
+<html lang="en" class="ie ie6"></html><![endif]-->
+<!-- [if IE 7]>
+<html lang="en" class="ie ie7"></html><![endif]-->
+<!-- [if IE 8]>
+<html lang="en" class="ie ie8"></html><![endif]-->
+<!-- [if (gte IE 9)|!(IE)]>
+<html lang="en"></html><![endif]-->
+<head>
+  <!-- Basic Page Needs-->
+  <meta charset="utf-8">
+  <title>Karma - Contributing to Karma</title>
+  <!-- Mobile specific Metas-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- Le styles-->
+  <link href="/assets/css/app.css" rel="stylesheet">
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements--><!-- [if lt IE 9]>
+  <script src="/assets/js/html5.js"></script><![endif]-->
+  <!-- Fav and touch icons-->
+  <link rel="shortcut icon" href="/assets/img/favicon/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/img/apple-touch-icon-144x144.png">
+  <!-- canonical link for search engines-->
+  <link href="http://karma-runner.github.io/2.0/dev/contributing.html" rel="canonical">
+</head>
+<body>
+  <div id="wrap" class="boxed">
+    <header>
+      <div class="container clearfix">
+        <div class="six columns">
+          <div class="logo"><a href="/2.0/index.html"><img src="/assets/img/banner.png" alt="Karma - Spectacular Test Runner for JavaScript" title="Karma - Spectacular Test Runner for JavaScript"></a></div>
+        </div>
+        <div class="ten columns">
+          <nav id="menu" class="navigation">
+            <ul id="nav">
+              <li><a href="javascript:void">intro</a>
+                <ul>
+                  <li><a href="/2.0/intro/installation.html">Installation</a></li>
+                  <li><a href="/2.0/intro/configuration.html">Configuration</a></li>
+                  <li><a href="/2.0/intro/how-it-works.html">How It Works</a></li>
+                  <li><a href="/2.0/intro/faq.html">FAQ</a></li>
+                  <li><a href="/2.0/intro/troubleshooting.html">Troubleshooting</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void">config</a>
+                <ul>
+                  <li><a href="/2.0/config/configuration-file.html">Configuration File</a></li>
+                  <li><a href="/2.0/config/files.html">Files</a></li>
+                  <li><a href="/2.0/config/browsers.html">Browsers</a></li>
+                  <li><a href="/2.0/config/preprocessors.html">Preprocessors</a></li>
+                  <li><a href="/2.0/config/plugins.html">Plugins</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void">plus</a>
+                <ul>
+                  <li><a href="/2.0/plus/requirejs.html">RequireJS</a></li>
+                  <li><a href="/2.0/plus/travis.html">Travis CI</a></li>
+                  <li><a href="/2.0/plus/jenkins.html">Jenkins CI</a></li>
+                  <li><a href="/2.0/plus/semaphore.html">Semaphore CI</a></li>
+                  <li><a href="/2.0/plus/cloud9.html">Cloud9</a></li>
+                  <li><a href="/2.0/plus/angularjs.html">AngularJS</a></li>
+                  <li><a href="/2.0/plus/yeoman.html">Yeoman</a></li>
+                  <li><a href="/2.0/plus/emberjs.html">Ember.js</a></li>
+                  <li><a href="/2.0/plus/codio.html">Codio</a></li>
+                  <li><a href="/2.0/plus/teamcity.html">TeamCity</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void" class="active">dev</a>
+                <ul>
+                  <li><a href="/2.0/dev/contributing.html">Contributing</a></li>
+                  <li><a href="/2.0/dev/making-changes.html">Making Changes</a></li>
+                  <li><a href="/2.0/dev/maintaining.html">Maintaining</a></li>
+                  <li><a href="/2.0/dev/public-api.html">Public Api</a></li>
+                  <li><a href="/2.0/dev/plugins.html">Plugins</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void">about</a>
+                <ul>
+                  <li><a href="/2.0/about/versioning.html">Versioning</a></li>
+                  <li><a href="/2.0/about/changelog.html">Changelog</a></li>
+                  <li><a href="/2.0/about/migration.html">Migration</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void">v2.0</a>
+                <ul>
+                  <li><a href="/2.0/index.html">v2.0</a></li>
+                  <li><a href="/1.0/index.html">v1.0</a></li>
+                  <li><a href="/0.13/index.html">v0.13</a></li>
+                  <li><a href="/0.12/index.html">v0.12</a></li>
+                  <li><a href="/0.10/index.html">v0.10</a></li>
+                  <li><a href="/0.8/index.html">v0.8</a></li>
+                  <li><a href="/0.6/index.html">v0.6</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="sixteen columns">
+          <hr>
+        </div>
+      </div>
+    </header>
+    <div class="container clearfix">
+      <div class="sixteen columns">
+        <h1 class="page-title">Contributing to Karma<a href="https://github.com/karma-runner/karma/edit/master/docs/dev/01-contributing.md" data-tooltip="Edit this page on GitHub" class="edit"><i class="icon-edit"></i></a><span class="line"></span>
+        </h1>
+      </div>
+      <div class="page-columns">
+        <div id="markdown" class="sixteen columns bottom"><p><strong>Working on your first Pull Request?</strong> You can learn how from this <em>free</em> series
+<a href="https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github">How to Contribute to an Open Source Project on GitHub</a></p>
+<p>You want to contribute to Karma? That is truly great!
+Here are some tips to get you started...</p>
+<h3>Help others</h3>
+<p>The best way to start contributing to any open source project is to help other people.
+You can answer questions on the <a href="https://gitter.im/karma-runner/karma">Gitter</a> or <a href="http://stackoverflow.com/questions/tagged/karma-runner">Stack Overflow</a>.
+Either find something you already know the answer for, or something you feel interested in and
+dig into it a little bit to find the answer.</p>
+<p>Soon, you will realize you know Karma pretty well...</p>
+<h3>Improve the documentation</h3>
+<p>You don’t feel like hacking on the code, but still want to help?
+Improving the documentation is very valuable as it will help many others.</p>
+<p>All the source code is in <a href="https://github.com/karma-runner/karma/tree/master/docs"><code>docs/</code></a>.</p>
+<h3>Fix something that bothers you</h3>
+<p>Did you find a bug that really bothers you? It’s more likely it bothers other users too, and maybe
+it’s not that hard to fix it! Try to find an existing issue. If it does not exist yet, create one.
+Look into the code and let others know what solution you are thinking about.
+Then, send a pull request and let other contributors review.</p>
+<p><a href="./making-changes.html">Here</a> is some more info on how to set up your workspace and send a pull
+request.</p>
+<h3>Fix something else</h3>
+<p>You want to contribute some code but not sure where to start? That&#39;s cool. Fortunately,
+there are many issues labeled as &quot;PR please&quot;. These are typically fairly simple issues with
+a well-known, waiting just for you...</p>
+<p><a href="https://github.com/karma-runner/karma/issues?labels=PR+please&amp;page=1&amp;state=open">Here</a> is a list
+of all the issues for the core repo. In the same way, each plugin has &quot;PR please&quot; label as well...</p>
+<h3>Review others work</h3>
+<p>Check out the list of outstanding pull requests if there is something you might be interested in.
+Maybe somebody is trying to fix that stupid bug that bothers you. Review the PR.
+Do you have any better ideas how to fix this problem? Let us know...</p>
+<h3>I want to help more</h3>
+<p>Check out <a href="./maintaining.html">Maintaining Karma</a>. Becoming a Karma maintainer is simple.
+You just do it. There is no test to pass ;-)</p>
+
+        </div>
+      </div>
+    </div>
+    <div class="push"></div>
+  </div>
+  <footer>
+    <div class="container">
+      <div class="ten columns"><span class="copyright">
+          Karma is released under the MIT license. 
+          Site by&nbsp;<a href="https://github.com/Dignifiedquire">Friedel Ziegelmayer</a>. Logo by&nbsp;<a href="http://dribbble.com/isaacdurazo">Isaac Durazo</a>.</span></div>
+      <div class="six columns">
+        <div class="social"><a href="https://github.com/karma-runner/karma/" data-tooltip="GitHub Repo"><i class="icon-github-alt icon-large"></i></a><a href="https://github.com/karma-runner/karma/issues" data-tooltip="Issues"><i class="icon-beaker icon-large"></i></a><a href="http://twitter.com/JsKarma" data-tooltip="@JsKarma"><i class="icon-twitter icon-large"></i></a><a href="https://groups.google.com/forum/#!forum/karma-users" data-tooltip="Mailing List"><i class="icon-envelope-alt icon-large"></i></a></div>
+      </div>
+    </div>
+  </footer>
+</body>
+<!-- Placed at the end of the document so the pages load faster-->
+<script src="/assets/js/app.js"></script>
+<!-- Google Analytics-->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-46195299-1']);
+  _gaq.push(['_trackPageview']);
+  
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>

@@ -25,14 +25,14 @@
   <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/apple-touch-icon-114x114.png">
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/img/apple-touch-icon-144x144.png">
   <!-- canonical link for search engines-->
-  <link href="http://karma-runner.github.io/0.12/intro/configuration.html" rel="canonical">
+  <link href="http://karma-runner.github.io/2.0/intro/configuration.html" rel="canonical">
 </head>
 <body>
   <div id="wrap" class="boxed">
     <header>
       <div class="flash">
         <b>Heads Up!</b> You're viewing the docs for <b>v0.12</b>, an old version of Karma.
-        <a href="/0.12/intro/configuration.html"><b>v1.0</b> is the newest</a>.
+        <a href="/2.0/intro/configuration.html"><b>v2.0</b> is the newest</a>.
       </div>
       <div class="container clearfix">
         <div class="six columns">
@@ -91,6 +91,7 @@
               </li>
               <li><a href="javascript:void">v0.12</a>
                 <ul>
+                  <li><a href="/2.0/index.html">v2.0</a></li>
                   <li><a href="/1.0/index.html">v1.0</a></li>
                   <li><a href="/0.13/index.html">v0.13</a></li>
                   <li><a href="/0.12/index.html">v0.12</a></li>
@@ -165,7 +166,7 @@ please read the <a href="../config/configuration-file.html">configuration file d
 <h2>Command line arguments</h2>
 <p>Some configurations, which are already present within the configuration file, can be overridden by specifying the configuration
 as a command line argument for when Karma is executed.</p>
-<pre><code class="language-bash">karma start my.conf.js --log-level debug --single-run</code></pre>
+<pre><code class="language-bash">karma start my.conf.js --<span class="hljs-built_in">log</span>-level debug --single-run</code></pre>
 <p>Try <code>karma start --help</code> if you want to see all available options.</p>
 <h2>Integrating with Grunt/Gulp</h2>
 <ul>
