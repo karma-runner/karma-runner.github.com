@@ -14,7 +14,7 @@ markdown. You can even do that directly from the github web interface.
 ```bash
 $ git clone https://github.com/karma-runner/karma-runner.github.com.git
 $ cd karma-runner.github.com
-$ npm install
+$ yarn
 $ grunt
 ```
 Now open your browser at http://localhost:8000.
