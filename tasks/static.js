@@ -59,7 +59,7 @@ module.exports = function (grunt) {
         var tplFileName = path.join(template, name + '.jade')
 
         tplCache[name] = fs.read(tplFileName).then(function (content) {
-          return jade.compile(content, {filename: tplFileName, cache: true, pretty: true})
+          return jade.compile(content, { filename: tplFileName, cache: true, pretty: true })
         })
       }
       return tplCache[name]
