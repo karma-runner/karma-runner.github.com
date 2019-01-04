@@ -1,5 +1,86 @@
 editButton: false
 
+<a name="3.1.4"></a>
+## [3.1.4](https://github.com/karma-runner/karma/compare/v3.1.3...v3.1.4) (2018-12-17)
+
+
+### Bug Fixes
+
+* **file-list:** revert "do not preprocess up-to-date files" ([#3226](https://github.com/karma-runner/karma/issues/3226)) ([#3230](https://github.com/karma-runner/karma/issues/3230)) ([bb022a7](https://github.com/karma-runner/karma/commit/bb022a7))
+* improve error msg when bin is a directory ([#3231](https://github.com/karma-runner/karma/issues/3231)) ([584dddc](https://github.com/karma-runner/karma/commit/584dddc))
+* restarted browsers not running tests ([#3233](https://github.com/karma-runner/karma/issues/3233)) ([cc2eff2](https://github.com/karma-runner/karma/commit/cc2eff2))
+
+
+
+<a name="3.1.3"></a>
+## [3.1.3](https://github.com/karma-runner/karma/compare/v3.1.2...v3.1.3) (2018-12-01)
+
+
+### Bug Fixes
+
+* add missing dep flatted ([#3223](https://github.com/karma-runner/karma/issues/3223)) ([655d4d2](https://github.com/karma-runner/karma/commit/655d4d2))
+
+
+
+<a name="3.1.2"></a>
+## [3.1.2](https://github.com/karma-runner/karma/compare/v3.1.1...v3.1.2) (2018-12-01)
+
+
+### Bug Fixes
+
+* **browser:** report errors to console during singleRun=false ([#3209](https://github.com/karma-runner/karma/issues/3209)) ([30ff73b](https://github.com/karma-runner/karma/commit/30ff73b)), closes [#3131](https://github.com/karma-runner/karma/issues/3131)
+* **changelog:** remove release which does not exist ([#3214](https://github.com/karma-runner/karma/issues/3214)) ([4e87902](https://github.com/karma-runner/karma/commit/4e87902))
+* **dep:** Bump useragent to fix HeadlessChrome version ([#3201](https://github.com/karma-runner/karma/issues/3201)) ([240209f](https://github.com/karma-runner/karma/commit/240209f)), closes [#2762](https://github.com/karma-runner/karma/issues/2762)
+* **deps:** upgrade sinon-chai 2.x -> 3.x ([#3207](https://github.com/karma-runner/karma/issues/3207)) ([dc5f5de](https://github.com/karma-runner/karma/commit/dc5f5de))
+* **file-list:** do not preprocess up-to-date files ([#3196](https://github.com/karma-runner/karma/issues/3196)) ([5334d1a](https://github.com/karma-runner/karma/commit/5334d1a)), closes [#2829](https://github.com/karma-runner/karma/issues/2829)
+* **package:** bump lodash version ([#3203](https://github.com/karma-runner/karma/issues/3203)) ([d38f344](https://github.com/karma-runner/karma/commit/d38f344)), closes [#3177](https://github.com/karma-runner/karma/issues/3177)
+* **server:** use flatted for json.stringify ([#3220](https://github.com/karma-runner/karma/issues/3220)) ([fb05fb1](https://github.com/karma-runner/karma/commit/fb05fb1)), closes [#3215](https://github.com/karma-runner/karma/issues/3215)
+
+
+### Features
+
+* **docs:** callout the key debug strategies. ([#3219](https://github.com/karma-runner/karma/issues/3219)) ([2682bff](https://github.com/karma-runner/karma/commit/2682bff))
+
+
+
+<a name="3.1.1"></a>
+## [3.1.1](https://github.com/karma-runner/karma/compare/v3.1.0...v3.1.1) (2018-10-23)
+
+
+### Bug Fixes
+
+* **config:** move puppeteer from dependency to dev-dependency ([#3193](https://github.com/karma-runner/karma/issues/3193)) ([f0d52ad](https://github.com/karma-runner/karma/commit/f0d52ad)), closes [#3191](https://github.com/karma-runner/karma/issues/3191)
+
+
+
+<a name="3.1.0"></a>
+# [3.1.0](https://github.com/karma-runner/karma/compare/v3.0.0...v3.1.0) (2018-10-22)
+
+
+### Bug Fixes
+
+* work around broken console methods ([873e4f9](https://github.com/karma-runner/karma/commit/873e4f9)), closes [/github.com/angular/angular.js/pull/16644#issuecomment-407680658](https://github.com//github.com/angular/angular.js/pull/16644/issues/issuecomment-407680658)
+* **browser:** emit 'browsers_change' in collection ([#3183](https://github.com/karma-runner/karma/issues/3183)) ([7634e71](https://github.com/karma-runner/karma/commit/7634e71))
+* **config:** remove phantomjs in favor of chrome headless ([#3175](https://github.com/karma-runner/karma/issues/3175)) ([0f8b2b1](https://github.com/karma-runner/karma/commit/0f8b2b1))
+* **init:** Support ChromeHeadless in `validateBrowser` ([#3110](https://github.com/karma-runner/karma/issues/3110)) ([eeadcf2](https://github.com/karma-runner/karma/commit/eeadcf2))
+* **middleware:** simplify stripHost. ([#3115](https://github.com/karma-runner/karma/issues/3115)) ([d65e911](https://github.com/karma-runner/karma/commit/d65e911))
+* **runner:** Do not persist grep option across runs ([#3121](https://github.com/karma-runner/karma/issues/3121)) ([c91cb81](https://github.com/karma-runner/karma/commit/c91cb81))
+* **runner:** Make exit code configurable when tests are failing ([#3116](https://github.com/karma-runner/karma/issues/3116)) ([74da748](https://github.com/karma-runner/karma/commit/74da748)), closes [#1300](https://github.com/karma-runner/karma/issues/1300)
+* **test/client:** revert const/let changes. ([c097ecf](https://github.com/karma-runner/karma/commit/c097ecf))
+
+
+### Features
+
+* **config:** Add config option for browser socket timeout ([#3102](https://github.com/karma-runner/karma/issues/3102)) ([11e3a9d](https://github.com/karma-runner/karma/commit/11e3a9d)), closes [#2927](https://github.com/karma-runner/karma/issues/2927)
+* **config:** add support for ES modules ([e811adb](https://github.com/karma-runner/karma/commit/e811adb))
+* **frameworks:** report start() errors back to server. ([#3126](https://github.com/karma-runner/karma/issues/3126)) ([8257375](https://github.com/karma-runner/karma/commit/8257375))
+* **server:** .dom files include HTML tags in page. ([#3178](https://github.com/karma-runner/karma/issues/3178)) ([4651524](https://github.com/karma-runner/karma/commit/4651524))
+* **server:** Add public API to force a file refresh ([dab8a82](https://github.com/karma-runner/karma/commit/dab8a82))
+* **server:** Add stop method ([#3153](https://github.com/karma-runner/karma/issues/3153)) ([6d96d8e](https://github.com/karma-runner/karma/commit/6d96d8e)), closes [#3149](https://github.com/karma-runner/karma/issues/3149)
+* **server:** Add support for encoded source files ([#3123](https://github.com/karma-runner/karma/issues/3123)) ([68b37d3](https://github.com/karma-runner/karma/commit/68b37d3))
+
+
+
 <a name="3.0.0"></a>
 # [3.0.0](https://github.com/karma-runner/karma/compare/v2.0.5...v3.0.0) (2018-08-09)
 
@@ -18,23 +99,6 @@ editButton: false
 ### BREAKING CHANGES
 
 * Drop Support for Nodejs4 ([#3082](https://github.com/karma-runner/karma/pull/3082))
-
-
-
-<a name="2.0.6"></a>
-## [2.0.6](https://github.com/karma-runner/karma/compare/v2.0.5...v2.0.6) (2018-08-09)
-
-
-### Bug Fixes
-
-* **config:** wait 20s for browser activity. ([#3087](https://github.com/karma-runner/karma/issues/3087)) ([88b977f](https://github.com/karma-runner/karma/commit/88b977f))
-* **config:** Wait 30s for browser activity per Travis. ([#3091](https://github.com/karma-runner/karma/issues/3091)) ([f6d2f0e](https://github.com/karma-runner/karma/commit/f6d2f0e))
-* **init:** add "ChromeHeadless" to the browsers' options ([#3096](https://github.com/karma-runner/karma/issues/3096)) ([56fda53](https://github.com/karma-runner/karma/commit/56fda53))
-* **server:** Exit clean on unhandledRejections. ([#3092](https://github.com/karma-runner/karma/issues/3092)) ([02f54c6](https://github.com/karma-runner/karma/commit/02f54c6)), closes [#3064](https://github.com/karma-runner/karma/issues/3064)
-* **travis:** Up the socket timeout 2->20s. ([#3103](https://github.com/karma-runner/karma/issues/3103)) ([732396a](https://github.com/karma-runner/karma/commit/732396a)), closes [#3102](https://github.com/karma-runner/karma/issues/3102)
-* **travis:** use the value not the key name. ([#3097](https://github.com/karma-runner/karma/issues/3097)) ([90f5546](https://github.com/karma-runner/karma/commit/90f5546))
-* **travis:** validate TRAVIS_COMMIT if TRAVIS_PULL_REQUEST_SHA is not set. ([#3094](https://github.com/karma-runner/karma/issues/3094)) ([fba5d36](https://github.com/karma-runner/karma/commit/fba5d36))
-* **travis:** Validate TRAVIS_PULL_REQUEST_SHA rather than TRAVIS_COMMIT. ([#3093](https://github.com/karma-runner/karma/issues/3093)) ([a58fa45](https://github.com/karma-runner/karma/commit/a58fa45))
 
 
 
