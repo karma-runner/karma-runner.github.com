@@ -120,15 +120,15 @@
 <p>Next to the help menu you will see the &quot;Configure&quot; option, if you don&#39;t see it click the little arrow near the end and then select &quot;Configure&quot;.</p>
 <p>This opens a .codio file which you can customize and use rather than entering commands in Terminal. Replace the existing text with the text below:</p>
 <pre><code>{
-// Configure your <span class="hljs-keyword">Run</span><span class="bash"> and Preview buttons here.
-</span>
-// <span class="hljs-keyword">Run</span><span class="bash"> button configuration
-</span>  <span class="hljs-string">"commands"</span>: {
+<span class="hljs-comment">// Configure your Run and Preview buttons here.</span>
+
+<span class="hljs-comment">// Run button configuration</span>
+  <span class="hljs-string">"commands"</span>: {
     <span class="hljs-string">"Karma Start"</span>: <span class="hljs-string">"karma start --no-browsers"</span>
     <span class="hljs-string">"Karam Run"</span>: <span class="hljs-string">"karma run"</span>
   },
 
-// Preview button configuration
+<span class="hljs-comment">// Preview button configuration</span>
   <span class="hljs-string">"preview"</span>: {
     <span class="hljs-string">"Karma Preview"</span>: <span class="hljs-string">"http://{{domain}}:8080"</span>
   }
@@ -144,7 +144,7 @@
 <li>Review webserver port entry to ensure same port defined as entered in .codio file</li>
 </ul>
 <pre><code>    <span class="hljs-comment">// web server port</span>
-<span class="hljs-symbol">    port:</span> <span class="hljs-number">8080</span>,</code></pre>
+    port: <span class="hljs-number">8080</span>,</code></pre>
 <h2>Capture the browser manually on the local machine</h2>
 <p>You can use your local browser.</p>
 <ul>

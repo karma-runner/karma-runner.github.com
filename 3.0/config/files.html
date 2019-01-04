@@ -146,8 +146,12 @@ same file, it&#39;s included as if it only matched the first pattern.</li>
 <li><code>js</code></li>
 <li><code>dart</code></li>
 <li><code>module</code></li>
+<li><code>dom</code></li>
 </ul>
 </li>
+<li><strong>Description.</strong> The type determines the mechanism for including the file. The <code>css</code> and <code>html</code> types
+create <code>link</code> elements; the <code>js</code>, <code>dart</code>, and <code>module</code> elements create <code>script</code> elements. The <code>dom</code> type
+includes the file content in the page, used, for example, to test components combinging HTML and JS.</li>
 </ul>
 <h3><code>watched</code></h3>
 <ul>
@@ -164,12 +168,12 @@ same file, it&#39;s included as if it only matched the first pattern.</li>
   using <a href="../plus/requirejs.html">Require.js</a>.</p>
 <p>  If a file is covered by multiple patterns with different <code>include</code> properties, the most specific pattern takes
   precedence over the other.</p>
-<p>  The specificity of the pattern is defined as a six-tuple, where larger tuple implies lesser specificity: 
+<p>  The specificity of the pattern is defined as a six-tuple, where larger tuple implies lesser specificity:
   <em>(n<sub>glob parts</sub>, n<sub>glob star</sub>, n<sub>star</sub>, n<sub>ext glob</sub>, n<sub>range</sub>, n<sub>optional</sub>)</em>.
-  Tuples are compared lexicographically. </p>
-<p>  The <em>n<sub>glob parts</sub></em> is the number of patterns after the bracket sections are expanded. E.g. the 
+  Tuples are compared lexicographically.</p>
+<p>  The <em>n<sub>glob parts</sub></em> is the number of patterns after the bracket sections are expanded. E.g. the
   the pattern <em>{0...9}</em> will yield <em>n<sub>glob parts</sub>=10</em>. The rest of the tuple is decided as the least
-  specific of each expanded pattern. </p>
+  specific of each expanded pattern.</p>
 </li>
 </ul>
 <h3><code>served</code></h3>

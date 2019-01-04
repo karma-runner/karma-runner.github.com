@@ -128,6 +128,9 @@ You can, however, call Karma programmatically from your node module. Here is the
 <h3><strong>server.refreshFiles()</strong></h3>
 <p>Trigger a file list refresh. Returns a promise.</p>
 <pre><code class="language-javascript">server.refreshFiles()</code></pre>
+<h3><strong>server.refreshFile(path)</strong></h3>
+<p>Trigger a file refresh. Returns a promise.</p>
+<pre><code class="language-javascript">server.refreshFile(<span class="hljs-string">'src/js/module-dep.js'</span>)</code></pre>
 <h3>Events</h3>
 <p>The <code>server</code> object is an <a href="https://nodejs.org/docs/latest/api/events.html#events_class_events_eventemitter"><code>EventEmitter</code></a>. You can simply listen to events like this:</p>
 <pre><code class="language-javascript">server.on(<span class="hljs-string">'browser_register'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">browser</span>) </span>{
