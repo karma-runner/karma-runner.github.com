@@ -8,7 +8,7 @@ Karma can be extended through plugins. A plugin is essentially an NPM module. Ty
 - use NPM keywords `karma-plugin`, `karma-framework`.
 
 ## Reporters
-- example plugins: [karma-growl-reporter], [karma-junit-reporter]
+- example plugins: [karma-growl-reporter], [karma-junit-reporter], [karma-material-reporter]
 - use naming convention is `karma-*-reporter`
 - use NPM keywords `karma-plugin`, `karma-reporter`
 
@@ -43,6 +43,7 @@ Karma is assembled by Dependency Injection and a plugin is just an additional DI
 [karma-requirejs]: https://github.com/karma-runner/karma-requirejs
 [karma-growl-reporter]: https://github.com/karma-runner/karma-growl-reporter
 [karma-junit-reporter]: https://github.com/karma-runner/karma-junit-reporter
+[karma-material-reporter]: https://github.com/ameerthehacker/karma-material-reporter
 [karma-chrome-launcher]: https://github.com/karma-runner/karma-chrome-launcher
 [karma-sauce-launcher]: https://github.com/karma-runner/karma-sauce-launcher
 [karma-coffee-preprocessor]: https://github.com/karma-runner/karma-coffee-preprocessor
