@@ -185,25 +185,11 @@ the corresponding array. So for instance, if the config object is:</p>
   <span class="hljs-string">'*.js'</span>: [<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>]
 }</code></pre>
 <p>Then karma will execute <code>&#39;a&#39;</code> before executing <code>&#39;b&#39;</code>.</p>
-<p>If a file matches multiple keys, karma will do its best to execute the
-preprocessors in a reasonable order.  So if you have:</p>
-<pre><code class="language-js">preprocessors: {
-  <span class="hljs-string">'*.js'</span>: [<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>],
-  <span class="hljs-string">'a.*'</span>: [<span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>]
-}</code></pre>
-<p>then for <code>a.js</code>, karma will run <code>&#39;a&#39;</code> then <code>&#39;b&#39;</code> then <code>&#39;c&#39;</code>.  If two lists contradict each other, like:</p>
-<pre><code class="language-js">preprocessors: {
-  <span class="hljs-string">'*.js'</span>: [<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>],
-  <span class="hljs-string">'a.*'</span>: [<span class="hljs-string">'b'</span>, <span class="hljs-string">'a'</span>]
-}</code></pre>
-<p>then karma will arbitrarily pick one list to prioritize over the other.  In a
-case like:</p>
-<pre><code class="language-js">preprocessors: {
-  <span class="hljs-string">'*.js'</span>: [<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>],
-  <span class="hljs-string">'a.*'</span>: [<span class="hljs-string">'c'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'d'</span>]
-}</code></pre>
-<p>Then <code>&#39;a&#39;</code> will definitely be run first, <code>&#39;d&#39;</code> will definitely be run last, but
-it&#39;s arbitrary if karma will run <code>&#39;b&#39;</code> before <code>&#39;c&#39;</code> or vice versa.</p>
+<p>If a file matches multiple keys, use <code>config.preprocessor_priority</code> to control the execution order.
+The  <code>config.preprocessor_priority</code> should be an object with property names equal to the preprocessor
+names and property values equal to the priority of execution. Higher priority preprocessors are run earlier.
+The default priority is 0.
+</p>
 
         </div>
       </div>
@@ -213,7 +199,7 @@ it&#39;s arbitrary if karma will run <code>&#39;b&#39;</code> before <code>&#39;
   <footer>
     <div class="container">
       <div class="ten columns"><span class="copyright">
-          Karma is released under the MIT license. 
+          Karma is released under the MIT license.
           Site by&nbsp;<a href="https://github.com/Dignifiedquire">Friedel Ziegelmayer</a>. Logo by&nbsp;<a href="http://dribbble.com/isaacdurazo">Isaac Durazo</a>.</span></div>
       <div class="six columns">
         <div class="social"><a href="https://github.com/karma-runner/karma/" data-tooltip="GitHub Repo"><i class="icon-github-alt icon-large"></i></a><a href="https://github.com/karma-runner/karma/issues" data-tooltip="Issues"><i class="icon-beaker icon-large"></i></a><a href="http://twitter.com/JsKarma" data-tooltip="@JsKarma"><i class="icon-twitter icon-large"></i></a><a href="https://groups.google.com/forum/#!forum/karma-users" data-tooltip="Mailing List"><i class="icon-envelope-alt icon-large"></i></a></div>
@@ -228,7 +214,7 @@ it&#39;s arbitrary if karma will run <code>&#39;b&#39;</code> before <code>&#39;
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-46195299-1']);
   _gaq.push(['_trackPageview']);
-  
+
   (function() {
     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
