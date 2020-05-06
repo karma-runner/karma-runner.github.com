@@ -89,4 +89,4 @@ If no filename is given, it will write the output to the console.
 
 
 
-[Istanbul]: https://github.com/yahoo/istanbul
+[Istanbul]: https://istanbul.js.org
