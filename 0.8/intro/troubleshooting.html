@@ -25,14 +25,14 @@
   <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/apple-touch-icon-114x114.png">
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/img/apple-touch-icon-144x144.png">
   <!-- canonical link for search engines-->
-  <link href="http://karma-runner.github.io/4.0/intro/troubleshooting.html" rel="canonical">
+  <link href="http://karma-runner.github.io/5.0/intro/troubleshooting.html" rel="canonical">
 </head>
 <body>
   <div id="wrap" class="boxed">
     <header>
       <div class="flash">
         <b>Heads Up!</b> You're viewing the docs for <b>v0.8</b>, an old version of Karma.
-        <a href="/4.0/intro/troubleshooting.html"><b>v4.0</b> is the newest</a>.
+        <a href="/5.0/intro/troubleshooting.html"><b>v5.0</b> is the newest</a>.
       </div>
       <div class="container clearfix">
         <div class="six columns">
@@ -84,6 +84,7 @@
               </li>
               <li><a href="javascript:void">v0.8</a>
                 <ul>
+                  <li><a href="/5.0/index.html">v5.0</a></li>
                   <li><a href="/4.0/index.html">v4.0</a></li>
                   <li><a href="/3.0/index.html">v3.0</a></li>
                   <li><a href="/2.0/index.html">v2.0</a></li>
@@ -123,7 +124,7 @@ have to figure them out again and again.</p>
 <ul>
 <li><p>Chrome won&#39;t start. (Issues: <a href="https://github.com/karma-runner/karma/issues/202">#202</a>, <a href="https://github.com/karma-runner/karma/issues/74">#74</a>)</p>
 <ol>
-<li>Set <code>CHROME_BIN</code> like this<pre><code>&gt; export CHROME_BIN='C:<span class="hljs-symbol">\P</span>rogram Files (x86)<span class="hljs-symbol">\G</span>oogle<span class="hljs-symbol">\C</span>hrome<span class="hljs-symbol">\A</span>pplication<span class="hljs-symbol">\c</span>hrome.exe'</code></pre>
+<li>Set <code>CHROME_BIN</code> like this<pre><code>&gt; export CHROME_BIN='C:<span class="hljs-tag">\<span class="hljs-name">Program</span></span> Files (x86)<span class="hljs-tag">\<span class="hljs-name">Google</span></span><span class="hljs-tag">\<span class="hljs-name">Chrome</span></span><span class="hljs-tag">\<span class="hljs-name">Application</span></span><span class="hljs-tag">\<span class="hljs-name">chrome</span></span>.exe'</code></pre>
 </li>
 <li>Increase the timeout from 5000ms to 10000ms. At 5000ms, timeouts
 occurred and the retry logic kicks in and eventually resolves

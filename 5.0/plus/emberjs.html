@@ -1,0 +1,220 @@
+<!DOCTYPE html><!-- [if lt IE 7]>
+<html lang="en" class="ie ie6"></html><![endif]-->
+<!-- [if IE 7]>
+<html lang="en" class="ie ie7"></html><![endif]-->
+<!-- [if IE 8]>
+<html lang="en" class="ie ie8"></html><![endif]-->
+<!-- [if (gte IE 9)|!(IE)]>
+<html lang="en"></html><![endif]-->
+<head>
+  <!-- Basic Page Needs-->
+  <meta charset="utf-8">
+  <title>Karma - Ember.js</title>
+  <!-- Mobile specific Metas-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- Le styles-->
+  <link href="/assets/css/app.css" rel="stylesheet">
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements--><!-- [if lt IE 9]>
+  <script src="/assets/js/html5.js"></script><![endif]-->
+  <!-- Fav and touch icons-->
+  <link rel="shortcut icon" href="/assets/img/favicon/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/img/apple-touch-icon-144x144.png">
+  <!-- canonical link for search engines-->
+  <link href="http://karma-runner.github.io/5.0/plus/emberjs.html" rel="canonical">
+</head>
+<body>
+  <div id="wrap" class="boxed">
+    <header>
+      <div class="container clearfix">
+        <div class="six columns">
+          <div class="logo"><a href="/5.0/index.html"><img src="/assets/img/banner.png" alt="Karma - Spectacular Test Runner for JavaScript" title="Karma - Spectacular Test Runner for JavaScript"></a></div>
+        </div>
+        <div class="ten columns">
+          <nav id="menu" class="navigation">
+            <ul id="nav">
+              <li><a href="javascript:void">intro</a>
+                <ul>
+                  <li><a href="/5.0/intro/installation.html">Installation</a></li>
+                  <li><a href="/5.0/intro/configuration.html">Configuration</a></li>
+                  <li><a href="/5.0/intro/how-it-works.html">How It Works</a></li>
+                  <li><a href="/5.0/intro/faq.html">FAQ</a></li>
+                  <li><a href="/5.0/intro/troubleshooting.html">Troubleshooting</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void">config</a>
+                <ul>
+                  <li><a href="/5.0/config/configuration-file.html">Configuration File</a></li>
+                  <li><a href="/5.0/config/files.html">Files</a></li>
+                  <li><a href="/5.0/config/browsers.html">Browsers</a></li>
+                  <li><a href="/5.0/config/preprocessors.html">Preprocessors</a></li>
+                  <li><a href="/5.0/config/plugins.html">Plugins</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void" class="active">plus</a>
+                <ul>
+                  <li><a href="/5.0/plus/requirejs.html">RequireJS</a></li>
+                  <li><a href="/5.0/plus/travis.html">Travis CI</a></li>
+                  <li><a href="/5.0/plus/jenkins.html">Jenkins CI</a></li>
+                  <li><a href="/5.0/plus/semaphore.html">Semaphore CI</a></li>
+                  <li><a href="/5.0/plus/cloud9.html">Cloud9</a></li>
+                  <li><a href="/5.0/plus/angularjs.html">AngularJS</a></li>
+                  <li><a href="/5.0/plus/yeoman.html">Yeoman</a></li>
+                  <li><a href="/5.0/plus/emberjs.html">Ember.js</a></li>
+                  <li><a href="/5.0/plus/codio.html">Codio</a></li>
+                  <li><a href="/5.0/plus/teamcity.html">TeamCity</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void">dev</a>
+                <ul>
+                  <li><a href="/5.0/dev/contributing.html">Contributing</a></li>
+                  <li><a href="/5.0/dev/making-changes.html">Making Changes</a></li>
+                  <li><a href="/5.0/dev/maintaining.html">Maintaining</a></li>
+                  <li><a href="/5.0/dev/public-api.html">Public Api</a></li>
+                  <li><a href="/5.0/dev/plugins.html">Plugins</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void">about</a>
+                <ul>
+                  <li><a href="/5.0/about/versioning.html">Versioning</a></li>
+                  <li><a href="/5.0/about/changelog.html">Changelog</a></li>
+                  <li><a href="/5.0/about/migration.html">Migration</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void">v5.0</a>
+                <ul>
+                  <li><a href="/5.0/index.html">v5.0</a></li>
+                  <li><a href="/4.0/index.html">v4.0</a></li>
+                  <li><a href="/3.0/index.html">v3.0</a></li>
+                  <li><a href="/2.0/index.html">v2.0</a></li>
+                  <li><a href="/1.0/index.html">v1.0</a></li>
+                  <li><a href="/0.13/index.html">v0.13</a></li>
+                  <li><a href="/0.12/index.html">v0.12</a></li>
+                  <li><a href="/0.10/index.html">v0.10</a></li>
+                  <li><a href="/0.8/index.html">v0.8</a></li>
+                  <li><a href="/0.6/index.html">v0.6</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="sixteen columns">
+          <hr>
+        </div>
+      </div>
+    </header>
+    <div class="container clearfix">
+      <div class="sixteen columns">
+        <h1 class="page-title">Ember.js<a href="https://github.com/karma-runner/karma/edit/master/docs/plus/08-emberjs.md" data-tooltip="Edit this page on GitHub" class="edit"><i class="icon-edit"></i></a><span class="line"></span>
+        </h1>
+      </div>
+      <div class="page-columns">
+        <div id="markdown" class="sixteen columns bottom"><p>To execute javascript unit and integration tests with ember.js follow the steps below:</p>
+<ol>
+<li><p><a href="../intro/installation.html">install karma</a></p>
+</li>
+<li><p>install the qunit plugin</p>
+<pre><code class="language-bash">npm install karma-qunit --save-dev</code></pre>
+</li>
+<li><p>install the ember preprocessor plugin</p>
+<pre><code class="language-bash">npm install karma-ember-preprocessor --save-dev</code></pre>
+</li>
+<li><p>generate a configuration file for karma</p>
+<pre><code class="language-bash">karma init</code></pre>
+<p>note -the above will walk you through the basic setup. An example configuration file that works with ember.js/qunit and phantomjs is below</p>
+<pre><code class="language-javascript"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">config</span>) </span>{
+ config.set({
+   <span class="hljs-attr">basePath</span>: <span class="hljs-string">'js'</span>,
+
+   <span class="hljs-attr">files</span>: [
+     <span class="hljs-string">'vendor/jquery/jquery.min.js'</span>,
+     <span class="hljs-string">'vendor/handlebars/handlebars.js'</span>,
+     <span class="hljs-string">'vendor/ember/ember.js'</span>,
+     <span class="hljs-string">'app.js'</span>,
+     <span class="hljs-string">'tests/*.js'</span>,
+     <span class="hljs-string">'templates/*.handlebars'</span>
+   ],
+
+   <span class="hljs-attr">browsers</span>: [<span class="hljs-string">'PhantomJS'</span>],
+   <span class="hljs-attr">singleRun</span>: <span class="hljs-literal">true</span>,
+   <span class="hljs-attr">autoWatch</span>: <span class="hljs-literal">false</span>,
+
+   <span class="hljs-attr">frameworks</span>: [<span class="hljs-string">'qunit'</span>],
+
+   <span class="hljs-attr">plugins</span>: [
+     <span class="hljs-string">'karma-qunit'</span>,
+     <span class="hljs-string">'karma-ember-preprocessor'</span>,
+     <span class="hljs-string">'karma-phantomjs-launcher'</span>
+   ],
+
+   <span class="hljs-attr">preprocessors</span>: {
+     <span class="hljs-string">'**/*.handlebars'</span>: <span class="hljs-string">'ember'</span>
+   }
+ });
+};</code></pre>
+<p>Note - the <code>files</code> section above should include all dependencies, ie- jQuery/handlebars/ember.js along with the js and handlebars files required to deploy and run your production ember.js application</p>
+<p>Note - when testing ember applications, it is important that karma does not try to run the tests until the ember application has finished initialization. You will need to include a small bootstrap file in the <code>files</code> section above to enforce this.  Here&#39;s an example:</p>
+<pre><code class="language-javascript">__karma__.loaded = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{};
+
+App.setupForTesting();
+App.injectTestHelpers();
+
+<span class="hljs-comment">//this gate/check is required given that standard practice in Ember tests to is to call</span>
+<span class="hljs-comment">//Ember.reset() in the afterEach/tearDown for each test.  Doing so, causes the application</span>
+<span class="hljs-comment">//to 're-initialize', resulting in repeated calls to the initialize function below</span>
+<span class="hljs-keyword">var</span> karma_started = <span class="hljs-literal">false</span>;
+App.initializer({
+   <span class="hljs-attr">name</span>: <span class="hljs-string">"run tests"</span>,
+   <span class="hljs-attr">initialize</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">container, application</span>) </span>{
+       <span class="hljs-keyword">if</span> (!karma_started) {
+           karma_started = <span class="hljs-literal">true</span>;
+           __karma__.start();
+       }
+   }
+});</code></pre>
+</li>
+<li><p>add a simple Qunit test</p>
+<pre><code class="language-javascript">test(<span class="hljs-string">'one should equal one'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+   equal(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-string">'error: one did not equal one'</span>);
+});</code></pre>
+</li>
+<li><p>run the tests with karma from the command line</p>
+<pre><code class="language-bash">karma start</code></pre>
+</li>
+</ol>
+<p>A simple unit / integration tested example app showing karma / qunit / ember in action can be found <a href="https://github.com/toranb/ember-testing-example">here</a></p>
+
+        </div>
+      </div>
+    </div>
+    <div class="push"></div>
+  </div>
+  <footer>
+    <div class="container">
+      <div class="ten columns"><span class="copyright">
+          Karma is released under the MIT license. 
+          Site by&nbsp;<a href="https://github.com/Dignifiedquire">Friedel Ziegelmayer</a>. Logo by&nbsp;<a href="http://dribbble.com/isaacdurazo">Isaac Durazo</a>.</span></div>
+      <div class="six columns">
+        <div class="social"><a href="https://github.com/karma-runner/karma/" data-tooltip="GitHub Repo"><i class="icon-github-alt icon-large"></i></a><a href="https://github.com/karma-runner/karma/issues" data-tooltip="Issues"><i class="icon-beaker icon-large"></i></a><a href="http://twitter.com/JsKarma" data-tooltip="@JsKarma"><i class="icon-twitter icon-large"></i></a><a href="https://groups.google.com/forum/#!forum/karma-users" data-tooltip="Mailing List"><i class="icon-envelope-alt icon-large"></i></a></div>
+      </div>
+    </div>
+  </footer>
+</body>
+<!-- Placed at the end of the document so the pages load faster-->
+<script src="/assets/js/app.js"></script>
+<!-- Google Analytics-->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-46195299-1']);
+  _gaq.push(['_trackPageview']);
+  
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>

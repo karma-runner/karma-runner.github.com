@@ -1,0 +1,206 @@
+<!DOCTYPE html><!-- [if lt IE 7]>
+<html lang="en" class="ie ie6"></html><![endif]-->
+<!-- [if IE 7]>
+<html lang="en" class="ie ie7"></html><![endif]-->
+<!-- [if IE 8]>
+<html lang="en" class="ie ie8"></html><![endif]-->
+<!-- [if (gte IE 9)|!(IE)]>
+<html lang="en"></html><![endif]-->
+<head>
+  <!-- Basic Page Needs-->
+  <meta charset="utf-8">
+  <title>Karma - Maintaining Karma</title>
+  <!-- Mobile specific Metas-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- Le styles-->
+  <link href="/assets/css/app.css" rel="stylesheet">
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements--><!-- [if lt IE 9]>
+  <script src="/assets/js/html5.js"></script><![endif]-->
+  <!-- Fav and touch icons-->
+  <link rel="shortcut icon" href="/assets/img/favicon/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/img/apple-touch-icon-144x144.png">
+  <!-- canonical link for search engines-->
+  <link href="http://karma-runner.github.io/5.0/dev/maintaining.html" rel="canonical">
+</head>
+<body>
+  <div id="wrap" class="boxed">
+    <header>
+      <div class="container clearfix">
+        <div class="six columns">
+          <div class="logo"><a href="/5.0/index.html"><img src="/assets/img/banner.png" alt="Karma - Spectacular Test Runner for JavaScript" title="Karma - Spectacular Test Runner for JavaScript"></a></div>
+        </div>
+        <div class="ten columns">
+          <nav id="menu" class="navigation">
+            <ul id="nav">
+              <li><a href="javascript:void">intro</a>
+                <ul>
+                  <li><a href="/5.0/intro/installation.html">Installation</a></li>
+                  <li><a href="/5.0/intro/configuration.html">Configuration</a></li>
+                  <li><a href="/5.0/intro/how-it-works.html">How It Works</a></li>
+                  <li><a href="/5.0/intro/faq.html">FAQ</a></li>
+                  <li><a href="/5.0/intro/troubleshooting.html">Troubleshooting</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void">config</a>
+                <ul>
+                  <li><a href="/5.0/config/configuration-file.html">Configuration File</a></li>
+                  <li><a href="/5.0/config/files.html">Files</a></li>
+                  <li><a href="/5.0/config/browsers.html">Browsers</a></li>
+                  <li><a href="/5.0/config/preprocessors.html">Preprocessors</a></li>
+                  <li><a href="/5.0/config/plugins.html">Plugins</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void">plus</a>
+                <ul>
+                  <li><a href="/5.0/plus/requirejs.html">RequireJS</a></li>
+                  <li><a href="/5.0/plus/travis.html">Travis CI</a></li>
+                  <li><a href="/5.0/plus/jenkins.html">Jenkins CI</a></li>
+                  <li><a href="/5.0/plus/semaphore.html">Semaphore CI</a></li>
+                  <li><a href="/5.0/plus/cloud9.html">Cloud9</a></li>
+                  <li><a href="/5.0/plus/angularjs.html">AngularJS</a></li>
+                  <li><a href="/5.0/plus/yeoman.html">Yeoman</a></li>
+                  <li><a href="/5.0/plus/emberjs.html">Ember.js</a></li>
+                  <li><a href="/5.0/plus/codio.html">Codio</a></li>
+                  <li><a href="/5.0/plus/teamcity.html">TeamCity</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void" class="active">dev</a>
+                <ul>
+                  <li><a href="/5.0/dev/contributing.html">Contributing</a></li>
+                  <li><a href="/5.0/dev/making-changes.html">Making Changes</a></li>
+                  <li><a href="/5.0/dev/maintaining.html">Maintaining</a></li>
+                  <li><a href="/5.0/dev/public-api.html">Public Api</a></li>
+                  <li><a href="/5.0/dev/plugins.html">Plugins</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void">about</a>
+                <ul>
+                  <li><a href="/5.0/about/versioning.html">Versioning</a></li>
+                  <li><a href="/5.0/about/changelog.html">Changelog</a></li>
+                  <li><a href="/5.0/about/migration.html">Migration</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void">v5.0</a>
+                <ul>
+                  <li><a href="/5.0/index.html">v5.0</a></li>
+                  <li><a href="/4.0/index.html">v4.0</a></li>
+                  <li><a href="/3.0/index.html">v3.0</a></li>
+                  <li><a href="/2.0/index.html">v2.0</a></li>
+                  <li><a href="/1.0/index.html">v1.0</a></li>
+                  <li><a href="/0.13/index.html">v0.13</a></li>
+                  <li><a href="/0.12/index.html">v0.12</a></li>
+                  <li><a href="/0.10/index.html">v0.10</a></li>
+                  <li><a href="/0.8/index.html">v0.8</a></li>
+                  <li><a href="/0.6/index.html">v0.6</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="sixteen columns">
+          <hr>
+        </div>
+      </div>
+    </header>
+    <div class="container clearfix">
+      <div class="sixteen columns">
+        <h1 class="page-title">Maintaining Karma<a href="https://github.com/karma-runner/karma/edit/master/docs/dev/03-maintaining.md" data-tooltip="Edit this page on GitHub" class="edit"><i class="icon-edit"></i></a><span class="line"></span>
+        </h1>
+      </div>
+      <div class="page-columns">
+        <div id="markdown" class="sixteen columns bottom"><p>This document is for people working on Karma. It describes common tasks such as triaging or merging
+pull requests.</p>
+<p>If you are interested in contributing to Karma, you might check out <a href="./contributing.html">Contributing to Karma</a>.</p>
+<p>We use <a href="https://gitter.im/karma-runner">gitter/karma-runner</a> to talk about pull requests and issues, stuff like,
+“hey this is important, can you look into it...”, “I’m not sure what to do about this issue...”.</p>
+<h2>Triaging issues</h2>
+<p>New issues pop up every day. We need to identify urgent issues (such as “nobody can install karma”),
+close duplicates, answer questions, etc.</p>
+<p>See <a href="https://github.com/angular/angular.js/blob/master/TRIAGING.md">angular/TRIAGING.md</a> for more info.</p>
+<p>An issue or pull request is untriaged (needs to be triaged) when it is not assigned to any milestone.</p>
+<h2>Merging a pull request</h2>
+<p>Please, make sure:</p>
+<ul>
+<li>Travis build is green.</li>
+<li>At least one owner (other than you) approved the PR<ul>
+<li>by commenting “LGTM” or something like that.</li>
+<li>if it’s just a simple docs change or a typo fix, feel free to skip this step.</li>
+</ul>
+</li>
+<li>All the commits follow the <a href="http://karma-runner.github.io/latest/dev/git-commit-msg.html">convention</a>.<ul>
+<li>This is very important, because the auto-release tasks depend on it.</li>
+<li>Commits are squashed. Each change is a single commit.<ul>
+<li>e.g. if the PR contains two changes such as, <code>fix(web-server): xxx</code> and then <code>style(web-server): missing semicolons</code>; it should be two separate changes</li>
+<li>e.g. if the first commit is <code>fix(web-server): serve binary files</code> and a second commit is “fix unit tests broken in the previous commit”, you should squash them into a single commit.</li>
+</ul>
+</li>
+<li>It’s alright to ask the author of the pull request to fix any of the above.</li>
+</ul>
+</li>
+</ul>
+<h2>Releasing npm</h2>
+<p>For core collaborators with admin rights.</p>
+<ul>
+<li>Be on a good network that won&#39;t go down in the middle.</li>
+<li>Make sure you are sync to upstream master.</li>
+<li><code>echo $GH_TOKEN</code><ul>
+<li>If not set, set GH_TOKEN from <a href="https://github.com/settings/tokens/new">https://github.com/settings/tokens/new</a></li>
+</ul>
+</li>
+<li><code>npm login karmarunnerbot</code><ul>
+<li>The password is known to authorized releasers.</li>
+</ul>
+</li>
+<li><code>grunt release</code>
+If the release fails, check the state of the git tags pushed to github.  You may have to delete one.</li>
+</ul>
+<h2>Ownership</h2>
+<p>Every project has one or more owners (or “maintainers”), listed in <code>owners</code> field of the
+<code>package.json</code>. Typically, owners have push permissions.</p>
+<p>Being a maintainer of one plugin doesn’t mean you can’t contribute to some other plugins.
+In fact, you can be a maintainer of multiple projects. The main point is to have people who are
+familiar with the codebase and therefore can better decide what a good change is or not.</p>
+<h2>Becoming a maintainer</h2>
+<p>If you are interested in becoming a Karma maintainer, start by triaging issues, reviewing pull
+requests and stop by at <a href="https://gitter.im/karma-runner">gitter/karma-runner</a>. Once we see you are helping, we will give you push
+permissions. Being a maintainer is not an obligation. You can help when you have time and be less
+active when you don’t. If you get a new job and get busy, that’s alright.</p>
+<p>These are all just recommendations, something we found to be helpful for us to be more efficient.
+Nothing is set in a stone. If you feel like there is a way to improve this workflow,
+please send a proposal to <a href="mailto:karma-devs@googlegroups.com">karma-devs@googlegroups.com</a>.</p>
+
+        </div>
+      </div>
+    </div>
+    <div class="push"></div>
+  </div>
+  <footer>
+    <div class="container">
+      <div class="ten columns"><span class="copyright">
+          Karma is released under the MIT license. 
+          Site by&nbsp;<a href="https://github.com/Dignifiedquire">Friedel Ziegelmayer</a>. Logo by&nbsp;<a href="http://dribbble.com/isaacdurazo">Isaac Durazo</a>.</span></div>
+      <div class="six columns">
+        <div class="social"><a href="https://github.com/karma-runner/karma/" data-tooltip="GitHub Repo"><i class="icon-github-alt icon-large"></i></a><a href="https://github.com/karma-runner/karma/issues" data-tooltip="Issues"><i class="icon-beaker icon-large"></i></a><a href="http://twitter.com/JsKarma" data-tooltip="@JsKarma"><i class="icon-twitter icon-large"></i></a><a href="https://groups.google.com/forum/#!forum/karma-users" data-tooltip="Mailing List"><i class="icon-envelope-alt icon-large"></i></a></div>
+      </div>
+    </div>
+  </footer>
+</body>
+<!-- Placed at the end of the document so the pages load faster-->
+<script src="/assets/js/app.js"></script>
+<!-- Google Analytics-->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-46195299-1']);
+  _gaq.push(['_trackPageview']);
+  
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>

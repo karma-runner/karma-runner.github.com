@@ -25,14 +25,14 @@
   <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/apple-touch-icon-114x114.png">
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/img/apple-touch-icon-144x144.png">
   <!-- canonical link for search engines-->
-  <link href="http://karma-runner.github.io/4.0/plus/RequireJS.html" rel="canonical">
+  <link href="http://karma-runner.github.io/5.0/plus/RequireJS.html" rel="canonical">
 </head>
 <body>
   <div id="wrap" class="boxed">
     <header>
       <div class="flash">
         <b>Heads Up!</b> You're viewing the docs for <b>v0.8</b>, an old version of Karma.
-        <a href="/4.0/plus/RequireJS.html"><b>v4.0</b> is the newest</a>.
+        <a href="/5.0/plus/RequireJS.html"><b>v5.0</b> is the newest</a>.
       </div>
       <div class="container clearfix">
         <div class="six columns">
@@ -84,6 +84,7 @@
               </li>
               <li><a href="javascript:void">v0.8</a>
                 <ul>
+                  <li><a href="/5.0/index.html">v5.0</a></li>
                   <li><a href="/4.0/index.html">v4.0</a></li>
                   <li><a href="/3.0/index.html">v3.0</a></li>
                   <li><a href="/2.0/index.html">v2.0</a></li>
@@ -206,7 +207,7 @@ The <code>test/main-test.js</code> file ends up looking like this:</p>
 
 requirejs.config({
     <span class="hljs-comment">// Karma serves files from '/base'</span>
-    baseUrl: <span class="hljs-string">'/base/src'</span>,
+    <span class="hljs-attr">baseUrl</span>: <span class="hljs-string">'/base/src'</span>,
 
     <span class="hljs-attr">paths</span>: {
         <span class="hljs-string">'jquery'</span>: <span class="hljs-string">'../lib/jquery'</span>,
@@ -220,10 +221,10 @@ requirejs.config({
     },
 
     <span class="hljs-comment">// ask Require.js to load these files (all our tests)</span>
-    deps: tests,
+    <span class="hljs-attr">deps</span>: tests,
 
     <span class="hljs-comment">// start test run, once Require.js is done</span>
-    callback: <span class="hljs-built_in">window</span>.__karma__.start
+    <span class="hljs-attr">callback</span>: <span class="hljs-built_in">window</span>.__karma__.start
 });</code></pre>
 <h2>Using Require.js in tests</h2>
 <p>Tests can now be written as regular Require.js modules. We wrap
