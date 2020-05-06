@@ -25,14 +25,14 @@
   <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/apple-touch-icon-114x114.png">
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/img/apple-touch-icon-144x144.png">
   <!-- canonical link for search engines-->
-  <link href="http://karma-runner.github.io/4.0/config/browsers.html" rel="canonical">
+  <link href="http://karma-runner.github.io/5.0/config/browsers.html" rel="canonical">
 </head>
 <body>
   <div id="wrap" class="boxed">
     <header>
       <div class="flash">
         <b>Heads Up!</b> You're viewing the docs for <b>v0.13</b>, an old version of Karma.
-        <a href="/4.0/config/browsers.html"><b>v4.0</b> is the newest</a>.
+        <a href="/5.0/config/browsers.html"><b>v5.0</b> is the newest</a>.
       </div>
       <div class="container clearfix">
         <div class="six columns">
@@ -91,6 +91,7 @@
               </li>
               <li><a href="javascript:void">v0.13</a>
                 <ul>
+                  <li><a href="/5.0/index.html">v5.0</a></li>
                   <li><a href="/4.0/index.html">v4.0</a></li>
                   <li><a href="/3.0/index.html">v3.0</a></li>
                   <li><a href="/2.0/index.html">v2.0</a></li>
@@ -198,7 +199,7 @@ $ <span class="hljs-built_in">export</span> PHANTOMJS_BIN=<span class="hljs-vari
 <pre><code class="language-bash"><span class="hljs-variable">$Env</span>:FIREFOX_BIN = <span class="hljs-string">'c:\Program Files (x86)\Mozilla Firefox 4.0 Beta 6\firefox.exe'</span></code></pre>
 <h2>Custom browsers</h2>
 <pre><code class="language-javascript"><span class="hljs-comment">// in the karma.conf.js</span>
-browsers: [<span class="hljs-string">'/usr/local/bin/custom-browser.sh'</span>],
+<span class="hljs-attr">browsers</span>: [<span class="hljs-string">'/usr/local/bin/custom-browser.sh'</span>],
 
 <span class="hljs-comment">// from cli</span>
 karma start --browsers /usr/local/bin/custom-browser.sh</code></pre>

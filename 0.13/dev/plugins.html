@@ -25,14 +25,14 @@
   <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/apple-touch-icon-114x114.png">
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/img/apple-touch-icon-144x144.png">
   <!-- canonical link for search engines-->
-  <link href="http://karma-runner.github.io/4.0/dev/plugins.html" rel="canonical">
+  <link href="http://karma-runner.github.io/5.0/dev/plugins.html" rel="canonical">
 </head>
 <body>
   <div id="wrap" class="boxed">
     <header>
       <div class="flash">
         <b>Heads Up!</b> You're viewing the docs for <b>v0.13</b>, an old version of Karma.
-        <a href="/4.0/dev/plugins.html"><b>v4.0</b> is the newest</a>.
+        <a href="/5.0/dev/plugins.html"><b>v5.0</b> is the newest</a>.
       </div>
       <div class="container clearfix">
         <div class="six columns">
@@ -91,6 +91,7 @@
               </li>
               <li><a href="javascript:void">v0.13</a>
                 <ul>
+                  <li><a href="/5.0/index.html">v5.0</a></li>
                   <li><a href="/4.0/index.html">v4.0</a></li>
                   <li><a href="/3.0/index.html">v3.0</a></li>
                   <li><a href="/2.0/index.html">v2.0</a></li>
@@ -159,21 +160,21 @@ to send results back to karma:</p>
 statuses. The method takes an object of the form:</p>
 <pre><code class="language-js">{
     <span class="hljs-comment">// test id</span>
-    id: <span class="hljs-built_in">String</span>,
+    <span class="hljs-attr">id</span>: <span class="hljs-built_in">String</span>,
 
      <span class="hljs-comment">// test description</span>
-    description: <span class="hljs-built_in">String</span>,
+    <span class="hljs-attr">description</span>: <span class="hljs-built_in">String</span>,
 
     <span class="hljs-comment">// the suite to which this test belongs. potentially nested.</span>
-    suite: <span class="hljs-built_in">Array</span>[<span class="hljs-built_in">String</span>],
+    <span class="hljs-attr">suite</span>: <span class="hljs-built_in">Array</span>[<span class="hljs-built_in">String</span>],
 
     <span class="hljs-comment">// an array of string error messages that might explain a failure.</span>
     <span class="hljs-comment">// this is required if success is false.</span>
-    log: <span class="hljs-built_in">Array</span>[<span class="hljs-built_in">String</span>],
+    <span class="hljs-attr">log</span>: <span class="hljs-built_in">Array</span>[<span class="hljs-built_in">String</span>],
 
     <span class="hljs-attr">success</span>: <span class="hljs-built_in">Boolean</span>, <span class="hljs-comment">// pass / fail</span>
 
-    skipped: <span class="hljs-built_in">Boolean</span> <span class="hljs-comment">// skipped / ran</span>
+    <span class="hljs-attr">skipped</span>: <span class="hljs-built_in">Boolean</span> <span class="hljs-comment">// skipped / ran</span>
 }</code></pre>
 
         </div>

@@ -25,14 +25,14 @@
   <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/apple-touch-icon-114x114.png">
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/img/apple-touch-icon-144x144.png">
   <!-- canonical link for search engines-->
-  <link href="http://karma-runner.github.io/4.0/plus/requirejs.html" rel="canonical">
+  <link href="http://karma-runner.github.io/5.0/plus/requirejs.html" rel="canonical">
 </head>
 <body>
   <div id="wrap" class="boxed">
     <header>
       <div class="flash">
         <b>Heads Up!</b> You're viewing the docs for <b>v2.0</b>, an old version of Karma.
-        <a href="/4.0/plus/requirejs.html"><b>v4.0</b> is the newest</a>.
+        <a href="/5.0/plus/requirejs.html"><b>v5.0</b> is the newest</a>.
       </div>
       <div class="container clearfix">
         <div class="six columns">
@@ -91,6 +91,7 @@
               </li>
               <li><a href="javascript:void">v2.0</a>
                 <ul>
+                  <li><a href="/5.0/index.html">v5.0</a></li>
                   <li><a href="/4.0/index.html">v4.0</a></li>
                   <li><a href="/3.0/index.html">v3.0</a></li>
                   <li><a href="/2.0/index.html">v2.0</a></li>
@@ -176,7 +177,7 @@ start the application in our tests.</p>
     ],
 
     <span class="hljs-comment">// list of files to exclude</span>
-    exclude: [
+    <span class="hljs-attr">exclude</span>: [
         <span class="hljs-string">'src/main.js'</span>
     ]
   });
@@ -241,26 +242,26 @@ The <code>test/test-main.js</code> file ends up looking like this:</p>
 
 <span class="hljs-built_in">require</span>.config({
   <span class="hljs-comment">// Karma serves files under /base, which is the basePath from your config file</span>
-  baseUrl: <span class="hljs-string">'/base/src'</span>,
+  <span class="hljs-attr">baseUrl</span>: <span class="hljs-string">'/base/src'</span>,
 
   <span class="hljs-comment">// example of using a couple of path translations (paths), to allow us to refer to different library dependencies, without using relative paths</span>
-  paths: {
+  <span class="hljs-attr">paths</span>: {
     <span class="hljs-string">'jquery'</span>: <span class="hljs-string">'../lib/jquery'</span>,
     <span class="hljs-string">'underscore'</span>: <span class="hljs-string">'../lib/underscore'</span>,
   },
 
   <span class="hljs-comment">// example of using a shim, to load non AMD libraries (such as underscore)</span>
-  shim: {
+  <span class="hljs-attr">shim</span>: {
     <span class="hljs-string">'underscore'</span>: {
       <span class="hljs-attr">exports</span>: <span class="hljs-string">'_'</span>
     }
   },
 
   <span class="hljs-comment">// dynamically load all test files</span>
-  deps: allTestFiles,
+  <span class="hljs-attr">deps</span>: allTestFiles,
 
   <span class="hljs-comment">// we have to kickoff jasmine, as it is asynchronous</span>
-  callback: <span class="hljs-built_in">window</span>.__karma__.start
+  <span class="hljs-attr">callback</span>: <span class="hljs-built_in">window</span>.__karma__.start
 });</code></pre>
 <h2>Using Require.js in tests</h2>
 <p>Tests can now be written as regular Require.js modules. We wrap
