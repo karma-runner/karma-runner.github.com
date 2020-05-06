@@ -1,8 +1,9 @@
 #!/bin/bash
 
+set -e
+
 BRANCH="$1"
 VERSION="$2"
-REMOTE="upstream"
 
 if [ -z "$BRANCH" ]; then
   BRANCH="master"
@@ -12,16 +13,23 @@ if [ -z "$VERSION" ]; then
   VERSION="5.0"
 fi
 
+KARMA_REPO="karma"
 DOCS_REPO=$(cd "$(dirname "$0")"; pwd)
-KARMA_REPO="$DOCS_REPO/../karma"
 
-# checkout the branch in the karma repo
-#cd $KARMA_REPO
-#git fetch $REMOTE
-#git checkout $REMOTE/$BRANCH
+# get latest Karma repo and switch to requested branch or tag
+cd $KARMA_REPO
+if [ -d "$KARMA_REPO" ]; then
+  echo "Fetching karma-runner/karma repository updates..."
+  git fetch
+else
+  echo "Cloning karma-runner/karma repository..."
+  git clone https://github.com/karma-runner/karma.git
+fi
+echo "Switching karma-runner/karma repository to $BRANCH..."
+git checkout --detach $BRANCH
+cd $DOCS_REPO
 
 # copy the docs source
-#cd $DOCS_REPO
 echo "Removing old docs..."
 git rm -rf src/content/$VERSION
 echo "Copying the docs from master repo..."
@@ -38,8 +46,5 @@ git commit -m "Sync the docs"
 
 # build html and commit
 ./node_modules/.bin/grunt build
-#git add $VERSION/**/*.html $VERSION/*.html
 git add .
 git commit -m "Build"
-
-#git push origin HEAD:master
