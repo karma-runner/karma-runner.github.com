@@ -40,7 +40,7 @@ module.exports = function (grunt) {
   var sortByVersion = function (a, b) {
     if (a.split('.').length < 3) a = a + '.0'
     if (b.split('.').length < 3) b = b + '.0'
-    return semver.lt(a, b)
+    return semver.lt(a, b) ? 1 : -1
   }
 
   // Register Grunt Task
