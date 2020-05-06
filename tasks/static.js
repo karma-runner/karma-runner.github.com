@@ -69,6 +69,7 @@ module.exports = function (grunt) {
       // Options
       var source = f.src[0]
       var destination = f.dest[0]
+      var versions
 
       grunt.log.writeln('Building files from "' + source + '" to "' + destination + '".')
 
@@ -109,7 +110,7 @@ module.exports = function (grunt) {
         })
 
         // generate and write all the html files
-        var versions = Object.keys(menu).sort(sortByVersion)
+        versions = Object.keys(menu).sort(sortByVersion)
         return q.all(files.map(function (file) {
           var fileUrl = path.join(destination, file.url)
           return q.all([getJadeTpl(file.layout), fs.makeTree(path.dirname(fileUrl))]).then(function (args) {
@@ -161,6 +162,10 @@ module.exports = function (grunt) {
             }))
           })
         }))
+      }).then(function () {
+        return fs.remove('latest')
+      }).then(function () {
+        return fs.symbolicLink('latest', versions[0], 'directory')
       }).then(function () {
         done()
       }, function (e) {
