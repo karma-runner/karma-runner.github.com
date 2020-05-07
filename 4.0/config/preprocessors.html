@@ -185,7 +185,7 @@ the corresponding array. So for instance, if the config object is:</p>
   <span class="hljs-string">'*.js'</span>: [<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>]
 }</code></pre>
 <p>Then karma will execute <code>&#39;a&#39;</code> before executing <code>&#39;b&#39;</code>.</p>
-<p>If a file matches multiple keys, use <code>config.preprocessor_priority</code> to control the execution order.
+<p>(Since v4.3) If a file matches multiple keys, use <code>config.preprocessor_priority</code> to control the execution order.
 The  <code>config.preprocessor_priority</code> should be an object with property names equal to the preprocessor
 names and property values equal to the priority of execution. Higher priority preprocessors are run earlier.
 The default priority is 0.
