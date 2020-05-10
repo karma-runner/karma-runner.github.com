@@ -88,7 +88,7 @@ module.exports = function (grunt) {
               url: basePath + urlFromFilename(fileName),
               editUrl: editUrlFromFilenameAndSection(fileName, section),
               layout: parsed.metadata.layout || 'layout',
-              content: parsed.html,
+              content: parsed.html.replace(/\n+<\/div>/g, '</div>'),
               version: version,
               section: section,
               menuTitle: parsed.metadata.menuTitle || menuTitleFromFilename(fileName),

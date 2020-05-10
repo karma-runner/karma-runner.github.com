@@ -127,10 +127,7 @@
 <p>In order to serve you well, Karma needs to know about your project in order to test it
 and this is done via a configuration file. The easiest way to generate an initial configuration file
 is by using the <code>karma init</code> command. This page lists all of the available configuration options.</p>
-<div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Most of the framework adapters, reporters, preprocessors and launchers needs to be loaded as <a href="plugins.html">plugins</a>.
-
-
-</div>
+<div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Most of the framework adapters, reporters, preprocessors and launchers needs to be loaded as <a href="plugins.html">plugins</a>.</div>
 <p>The Karma configuration file can be written in JavaScript or CoffeeScript and is loaded as a regular Node.js module.</p>
 <p>Unless provided as argument, the Karma CLI will look for a configuration file at</p>
 <ul>
@@ -379,9 +376,7 @@ will return exit-code <code>0</code> and display a warning.</p>
 <p><strong>Default:</strong> <code>[&#39;karma-*&#39;]</code></p>
 <p><strong>Description:</strong> List of plugins to load. A plugin can be a string (in which case it will be required by Karma) or an inlined plugin - Object.
 By default, Karma loads all sibling NPM modules which have a name starting with <code>karma-*</code>.</p>
-<div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Just about all plugins in Karma require an additional library to be installed (via NPM).
-
-</div>
+<div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Just about all plugins in Karma require an additional library to be installed (via NPM).</div>
 <p>See <a href="plugins.html">plugins</a> for more information.</p>
 <h2>port</h2>
 <p><strong>Type:</strong> Number</p>
@@ -394,9 +389,7 @@ By default, Karma loads all sibling NPM modules which have a name starting with 
 <p><strong>Description:</strong> A map of preprocessors to use.</p>
 <p>Preprocessors can be loaded through <a href="plugins.html">plugins</a>.</p>
 <div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Just about all preprocessors in Karma (other than CoffeeScript and some other defaults)
-require an additional library to be installed (via NPM).
-
-</div>
+require an additional library to be installed (via NPM).</div>
 <p>Be aware that preprocessors may be transforming the files and file types that are available at run time. For instance,
 if you are using the &quot;coverage&quot; preprocessor on your source files, if you then attempt to interactively debug
 your tests, you&#39;ll discover that your expected source code is completely changed from what you expected.  Because
@@ -413,10 +406,7 @@ but your interactive debugging does not.</p>
 </ul>
 <p><strong>Description:</strong> Protocol used for running the Karma webserver.</p>
 <p>Determines the use of the Node <code>http</code> or <code>https</code> class.</p>
-<div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Using <code>&#39;https:&#39;</code> requires you to specify <code>httpsServerOptions</code>.
-
-
-</div>
+<div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Using <code>&#39;https:&#39;</code> requires you to specify <code>httpsServerOptions</code>.</div>
 <h2>proxies</h2>
 <p><strong>Type:</strong> Object</p>
 <p><strong>Default:</strong> <code>{}</code></p>
@@ -456,10 +446,7 @@ This is disabled by default (since the default value is 0).</p>
 </ul>
 <p><strong>Description:</strong> A list of reporters to use.</p>
 <p>Additional reporters, such as <code>growl</code>, <code>junit</code>, <code>teamcity</code> or <code>coverage</code> can be loaded through <a href="plugins.html">plugins</a>.</p>
-<div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Just about all additional reporters in Karma (other than progress) require an additional library to be installed (via NPM).
-
-
-</div>
+<div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Just about all additional reporters in Karma (other than progress) require an additional library to be installed (via NPM).</div>
 <h2>restartOnFileChange</h2>
 <p><strong>Type:</strong> Boolean</p>
 <p><strong>Default:</strong> <code>false</code></p>
