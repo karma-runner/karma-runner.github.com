@@ -1,4 +1,6 @@
+---
 pageTitle: Developing Plugins
+---
 
 Karma can be extended through plugins. A plugin is essentially an NPM module. Typically, there are four kinds of plugins: **frameworks**, **reporters**, **launchers** and **preprocessors**. The best way to understand how this works is to take a look at some of the existing plugins. Following sections list some of the plugins that you might use as a reference.
 

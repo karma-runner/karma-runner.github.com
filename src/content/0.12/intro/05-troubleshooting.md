@@ -1,5 +1,7 @@
+---
 pageTitle: Troubleshooting
 menuTitle: Troubleshooting
+---
 
 Here you'll find a list of the most common problems and how to solve it.
 

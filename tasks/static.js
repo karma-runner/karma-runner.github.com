@@ -1,5 +1,5 @@
 /**
- * Generate the docs ;-)
+ * Generate the docs -)
  *
  * @author Vojta Jina <vojta.jina@gmail.com>
  */
@@ -8,9 +8,12 @@ var path = require('path')
 
 var q = require('q')
 var fs = require('q-io/fs')
-var namp = require('namp')
 var jade = require('jade')
 var semver = require('semver')
+const marked = require('marked')
+const { escape } = require('marked/src/helpers')
+const { getLanguage, highlight, highlightAuto } = require('highlight.js')
+const frontMatter = require('front-matter')
 
 module.exports = function (grunt) {
   // Helper Methods
@@ -46,6 +49,83 @@ module.exports = function (grunt) {
   // Register Grunt Task
   grunt.registerMultiTask('static', 'Generate a static homepage', function () {
     // Async Task
+    marked.use({
+      renderer: {
+        paragraph (text) {
+          if (text.startsWith('Note: ')) {
+            return `<div class="alert alert-success"><h4 class="alert-heading">Note: </h4>${text.substring(6)}</div>\n`
+          } else {
+            return `<p>${text}</p>\n`
+          }
+        },
+        code (code, infostring, escaped) {
+          const lang = (infostring || '').match(/\S*/)[0]
+          if (this.options.highlight) {
+            const out = this.options.highlight(code, lang).replace(/&#x27;/g, "'").replace(/&quot;/g, '"')
+            // MODIFIED: prevent code which was not changed by highlighter from
+            // being escaped
+            if (out != null) {
+              escaped = true
+              code = out
+            }
+          }
+          if (!lang) {
+            return '<pre><code>' +
+              (escaped ? code : escape(code, true)) +
+              '</code></pre>\n'
+          }
+          return '<pre><code class="' +
+            this.options.langPrefix +
+            escape(lang, true) +
+            '">' +
+            (escaped ? code : escape(code, true)) +
+            '</code></pre>\n'
+        }
+      },
+      tokenizer: {
+        url (src, mangle) {
+          let cap = this.rules.inline.url.exec(src)
+          if (cap) {
+            let text, href
+            if (cap[2] === '@') {
+              // MODIFIED: prevent karma@0.13 from being treated as an email address
+              return undefined
+            } else {
+              // do extended autolink path validation
+              let prevCapZero
+              do {
+                prevCapZero = cap[0]
+                cap[0] = this.rules.inline._backpedal.exec(cap[0])[0]
+              } while (prevCapZero !== cap[0])
+              text = escape(cap[0])
+              if (cap[1] === 'www.') {
+                href = 'http://' + text
+              } else {
+                href = text
+              }
+            }
+            return {
+              type: 'link',
+              raw: cap[0],
+              text,
+              href,
+              tokens: [
+                {
+                  type: 'text',
+                  raw: text,
+                  text
+                }
+              ]
+            }
+          }
+        }
+      },
+      headerIds: false,
+      highlight: function (code, language) {
+        const validLanguage = getLanguage(language) ? language : null
+        return validLanguage != null ? highlight(language, code).value : highlightAuto(code).value
+      }
+    })
     var done = this.async()
     var options = this.options({})
     var template = options.template
@@ -82,19 +162,20 @@ module.exports = function (grunt) {
             var version = parts[0]
             var section = parts[1] || null
             var basePath = parts.join('/') + '/'
-            var parsed = namp(content)
+            const { attributes: metadata, body } = frontMatter(content)
+            const html = marked(body)
 
             return {
               url: basePath + urlFromFilename(fileName),
               editUrl: editUrlFromFilenameAndSection(fileName, section),
-              layout: parsed.metadata.layout || 'layout',
-              content: parsed.html.replace(/\n+<\/div>/g, '</div>'),
+              layout: metadata.layout || 'layout',
+              content: html,
               version: version,
               section: section,
-              menuTitle: parsed.metadata.menuTitle || menuTitleFromFilename(fileName),
-              showInMenu: parsed.metadata.showInMenu !== 'false',
-              pageTitle: parsed.metadata.pageTitle || pageTitleFromFilename(fileName),
-              editButton: parsed.metadata.editButton !== 'false'
+              menuTitle: metadata.menuTitle || menuTitleFromFilename(fileName),
+              showInMenu: metadata.showInMenu !== false,
+              pageTitle: metadata.pageTitle || pageTitleFromFilename(fileName),
+              editButton: metadata.editButton !== false
             }
           })
         }))

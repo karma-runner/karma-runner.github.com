@@ -1,4 +1,6 @@
+---
 pageTitle: Migration from v0.10
+---
 
 
 The good thing is that you don't have to migrate everything at once.

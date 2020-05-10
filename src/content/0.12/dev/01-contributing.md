@@ -1,4 +1,6 @@
+---
 pageTitle: Contributing to Karma
+---
 
 
 You wanna contribute to Karma? That is truly great!

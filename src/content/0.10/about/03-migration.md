@@ -1,4 +1,6 @@
+---
 pageTitle: Migration from v0.8
+---
 
 
 The good thing is that you don't have to migrate everything at once. You can keep the global Karma and update project by project.
