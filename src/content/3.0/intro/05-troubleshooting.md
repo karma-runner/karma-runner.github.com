@@ -1,5 +1,7 @@
+---
 pageTitle: Troubleshooting
 menuTitle: Troubleshooting
+---
 
 ### How Do I Debug a karma issue?
 

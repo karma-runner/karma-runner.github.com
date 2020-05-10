@@ -1,5 +1,7 @@
+---
 pageTitle: Semaphore CI
 menuTitle: Semaphore CI
+---
 
 [Semaphore] is a popular continuous integration service for
 Ruby developers that [integrates] with [GitHub]. It also includes

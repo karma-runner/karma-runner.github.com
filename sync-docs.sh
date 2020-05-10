@@ -37,7 +37,7 @@ echo "Copying the docs from master repo..."
 mkdir src/content/$VERSION
 cp -r $KARMA_REPO/docs/* $DOCS_REPO/src/content/$VERSION/
 echo "Copying the changelog..."
-echo -e "editButton: false\n" > $DOCS_REPO/src/content/$VERSION/about/02-changelog.md
+echo -e "---\neditButton: false\n---\n" > $DOCS_REPO/src/content/$VERSION/about/02-changelog.md
 cat $KARMA_REPO/CHANGELOG.md >> $DOCS_REPO/src/content/$VERSION/about/02-changelog.md
 
 if test -z "$(git status --porcelain)"; then

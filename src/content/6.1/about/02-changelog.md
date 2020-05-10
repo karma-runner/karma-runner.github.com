@@ -1,4 +1,6 @@
+---
 editButton: false
+---
 
 ## [6.1.2](https://github.com/karma-runner/karma/compare/v6.1.1...v6.1.2) (2021-03-09)
 
