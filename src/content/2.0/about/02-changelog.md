@@ -548,7 +548,7 @@ to match this new format.
 
 
 
-<a name"0.13.3"></a>
+<a name="0.13.3"></a>
 ### 0.13.3 (2015-07-22)
 
 
@@ -562,7 +562,7 @@ to match this new format.
 * **preprocessor:** Capital letters in binary files extenstions ([1688689d](https://github.com/karma-runner/karma/commit/1688689d), closes [#1508](https://github.com/karma-runner/karma/issues/1508))
 
 
-<a name"0.13.2"></a>
+<a name="0.13.2"></a>
 ### 0.13.2 (2015-07-17)
 
 
@@ -573,7 +573,7 @@ to match this new format.
 * **server:** Add public api to force a file list refresh. ([b3c462a5](https://github.com/karma-runner/karma/commit/b3c462a5))
 
 
-<a name"0.13.1"></a>
+<a name="0.13.1"></a>
 ### 0.13.1 (2015-07-16)
 
 
@@ -584,7 +584,7 @@ to match this new format.
   * Normalize glob patterns ([fb841a79](https://github.com/karma-runner/karma/commit/fb841a79), closes [#1494](https://github.com/karma-runner/karma/issues/1494))
 
 
-<a name"0.13.0"></a>
+<a name="0.13.0"></a>
 ## 0.13.0 (2015-07-15)
 
 
@@ -641,7 +641,7 @@ to match this new format.
 
 
 
-<a name"0.12.37"></a>
+<a name="0.12.37"></a>
 ### 0.12.37 (2015-06-24)
 
 
@@ -652,7 +652,7 @@ to match this new format.
 * **middleware:** Actually serve the favicon. ([f12db639](https://github.com/karma-runner/karma/commit/f12db639))
 
 
-<a name"0.12.36"></a>
+<a name="0.12.36"></a>
 ### 0.12.36 (2015-06-04)
 
 
@@ -662,7 +662,7 @@ to match this new format.
 * **preprocessor:** Lookup patterns once invoked ([00a27813](https://github.com/karma-runner/karma/commit/00a27813), closes [#1340](https://github.com/karma-runner/karma/issues/1340))
 
 
-<a name"0.12.35"></a>
+<a name="0.12.35"></a>
 ### 0.12.35 (2015-05-29)
 
 
@@ -671,7 +671,7 @@ to match this new format.
 * **server:** Start webserver and browsers after preprocessing completed ([e0d2d239](https://github.com/karma-runner/karma/commit/e0d2d239))
 
 
-<a name"0.12.34"></a>
+<a name="0.12.34"></a>
 ### 0.12.34 (2015-05-29)
 
 
@@ -687,7 +687,7 @@ to match this new format.
 * **runner:** Use favicon in static runner pages ([6cded4f8](https://github.com/karma-runner/karma/commit/6cded4f8))
 
 
-<a name"0.12.33"></a>
+<a name="0.12.33"></a>
 ### 0.12.33 (2015-05-26)
 
 
