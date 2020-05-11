@@ -1459,12 +1459,6 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.10.0"
 
-jstransformer-marked@1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/jstransformer-marked/-/jstransformer-marked-1.0.3.tgz#07ce849d95a3c4e398f2dfd90d94be3b88453f16"
-  dependencies:
-    marked "^0.3.9"
-
 jstransformer@0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/jstransformer/-/jstransformer-0.0.2.tgz#7aae29a903d196cfa0973d885d3e47947ecd76ab"
@@ -1581,10 +1575,6 @@ map-obj@^1.0.0, map-obj@^1.0.1:
 marked@0.5.1:
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/marked/-/marked-0.5.1.tgz#062f43b88b02ee80901e8e8d8e6a620ddb3aa752"
-
-marked@^0.3.9:
-  version "0.3.19"
-  resolved "http://registry.npmjs.org/marked/-/marked-0.3.19.tgz#5d47f709c4c9fc3c216b6d46127280f40b39d790"
 
 maxmin@^2.1.0:
   version "2.1.0"
@@ -2358,7 +2348,9 @@ string-width@^2.1.0, string-width@^2.1.1:
     strip-ansi "^4.0.0"
 
 string_decoder@0.10:
-  version "0.0.0"
+  version "0.10.31"
+  resolved "https://registry.yarnpkg.com/string_decoder/-/string_decoder-0.10.31.tgz#62e203bc41766c6c28c9fc84301dab1c5310fa94"
+  integrity sha1-YuIDvEF2bGwoyfyEMB2rHFMQ+pQ=
 
 string_decoder@~1.1.1:
   version "1.1.1"

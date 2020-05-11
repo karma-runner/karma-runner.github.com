@@ -21,7 +21,6 @@
     "grunt-contrib-watch": "1.1.0",
     "grunt-eslint": "21.0.0",
     "jade": "1.11.0",
-    "jstransformer-marked": "1.0.3",
     "load-grunt-tasks": "4.0.0",
     "marked": "0.5.1",
     "namp": "0.2.25",
