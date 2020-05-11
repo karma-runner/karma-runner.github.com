@@ -17,13 +17,14 @@ KARMA_REPO="karma"
 DOCS_REPO=$(cd "$(dirname "$0")"; pwd)
 
 # get latest Karma repo and switch to requested branch or tag
-cd $KARMA_REPO
 if [ -d "$KARMA_REPO" ]; then
   echo "Fetching karma-runner/karma repository updates..."
+  cd $KARMA_REPO
   git fetch
 else
   echo "Cloning karma-runner/karma repository..."
   git clone https://github.com/karma-runner/karma.git
+  cd $KARMA_REPO
 fi
 echo "Switching karma-runner/karma repository to $BRANCH..."
 git checkout --detach $BRANCH
