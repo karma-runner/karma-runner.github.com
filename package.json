@@ -46,7 +46,6 @@
     "Matias Niemelä <matias@yearofmoo.com>"
   ],
   "engines": {
-    "node": ">= 10.11.0",
-    "yarn": ">= 1.10.1"
+    "node": ">= 10.11.0"
   }
 }
