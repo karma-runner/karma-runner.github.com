@@ -1,0 +1,329 @@
+<!DOCTYPE html><!-- [if lt IE 7]>
+<html lang="en" class="ie ie6"></html><![endif]-->
+<!-- [if IE 7]>
+<html lang="en" class="ie ie7"></html><![endif]-->
+<!-- [if IE 8]>
+<html lang="en" class="ie ie8"></html><![endif]-->
+<!-- [if (gte IE 9)|!(IE)]>
+<html lang="en"></html><![endif]-->
+<head>
+  <!-- Basic Page Needs-->
+  <meta charset="utf-8">
+  <title>Karma - RequireJS</title>
+  <!-- Mobile specific Metas-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- Le styles-->
+  <link href="/assets/css/app.css" rel="stylesheet">
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements--><!-- [if lt IE 9]>
+  <script src="/assets/js/html5.js"></script><![endif]-->
+  <!-- Fav and touch icons-->
+  <link rel="shortcut icon" href="/assets/img/favicon/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/img/apple-touch-icon-144x144.png">
+  <!-- canonical link for search engines-->
+  <link href="http://karma-runner.github.io/5.2/plus/requirejs.html" rel="canonical">
+</head>
+<body>
+  <div id="wrap" class="boxed">
+    <header>
+      <div class="container clearfix">
+        <div class="six columns">
+          <div class="logo"><a href="/5.2/index.html"><img src="/assets/img/banner.png" alt="Karma - Spectacular Test Runner for JavaScript" title="Karma - Spectacular Test Runner for JavaScript"></a></div>
+        </div>
+        <div class="ten columns">
+          <nav id="menu" class="navigation">
+            <ul id="nav">
+              <li><a href="javascript:void">intro</a>
+                <ul>
+                  <li><a href="/5.2/intro/installation.html">Installation</a></li>
+                  <li><a href="/5.2/intro/configuration.html">Configuration</a></li>
+                  <li><a href="/5.2/intro/how-it-works.html">How It Works</a></li>
+                  <li><a href="/5.2/intro/faq.html">FAQ</a></li>
+                  <li><a href="/5.2/intro/troubleshooting.html">Troubleshooting</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void">config</a>
+                <ul>
+                  <li><a href="/5.2/config/configuration-file.html">Configuration File</a></li>
+                  <li><a href="/5.2/config/files.html">Files</a></li>
+                  <li><a href="/5.2/config/browsers.html">Browsers</a></li>
+                  <li><a href="/5.2/config/preprocessors.html">Preprocessors</a></li>
+                  <li><a href="/5.2/config/plugins.html">Plugins</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void" class="active">plus</a>
+                <ul>
+                  <li><a href="/5.2/plus/requirejs.html">RequireJS</a></li>
+                  <li><a href="/5.2/plus/travis.html">Travis CI</a></li>
+                  <li><a href="/5.2/plus/jenkins.html">Jenkins CI</a></li>
+                  <li><a href="/5.2/plus/semaphore.html">Semaphore CI</a></li>
+                  <li><a href="/5.2/plus/cloud9.html">Cloud9</a></li>
+                  <li><a href="/5.2/plus/angularjs.html">AngularJS</a></li>
+                  <li><a href="/5.2/plus/yeoman.html">Yeoman</a></li>
+                  <li><a href="/5.2/plus/emberjs.html">Ember.js</a></li>
+                  <li><a href="/5.2/plus/codio.html">Codio</a></li>
+                  <li><a href="/5.2/plus/teamcity.html">TeamCity</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void">dev</a>
+                <ul>
+                  <li><a href="/5.2/dev/contributing.html">Contributing</a></li>
+                  <li><a href="/5.2/dev/making-changes.html">Making Changes</a></li>
+                  <li><a href="/5.2/dev/maintaining.html">Maintaining</a></li>
+                  <li><a href="/5.2/dev/public-api.html">Public Api</a></li>
+                  <li><a href="/5.2/dev/plugins.html">Plugins</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void">about</a>
+                <ul>
+                  <li><a href="/5.2/about/versioning.html">Versioning</a></li>
+                  <li><a href="/5.2/about/changelog.html">Changelog</a></li>
+                  <li><a href="/5.2/about/migration.html">Migration</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void">v5.2</a>
+                <ul>
+                  <li><a href="/5.2/index.html">v5.2</a></li>
+                  <li><a href="/5.1/index.html">v5.1</a></li>
+                  <li><a href="/5.0/index.html">v5.0</a></li>
+                  <li><a href="/4.0/index.html">v4.0</a></li>
+                  <li><a href="/3.0/index.html">v3.0</a></li>
+                  <li><a href="/2.0/index.html">v2.0</a></li>
+                  <li><a href="/1.0/index.html">v1.0</a></li>
+                  <li><a href="/0.13/index.html">v0.13</a></li>
+                  <li><a href="/0.12/index.html">v0.12</a></li>
+                  <li><a href="/0.10/index.html">v0.10</a></li>
+                  <li><a href="/0.8/index.html">v0.8</a></li>
+                  <li><a href="/0.6/index.html">v0.6</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="sixteen columns">
+          <hr>
+        </div>
+      </div>
+    </header>
+    <div class="container clearfix">
+      <div class="sixteen columns">
+        <h1 class="page-title">RequireJS<a href="https://github.com/karma-runner/karma/edit/master/docs/plus/01-requirejs.md" data-tooltip="Edit this page on GitHub" class="edit"><i class="icon-edit"></i></a><span class="line"></span>
+        </h1>
+      </div>
+      <div class="page-columns">
+        <div id="markdown" class="sixteen columns bottom"><p>To get Karma to run with <a href="http://requirejs.org/">Require.js</a> we need two files:</p>
+<ul>
+<li><code>karma.conf.js</code> &mdash; which configures Karma</li>
+<li><code>test-main.js</code> &mdash; which configures Require.js for the tests</li>
+</ul>
+<p>Let&#39;s imagine our app has a directory structure which looks something like this:</p>
+<pre><code class="language-bash">$ tree
+.
+|-- index.html
+|-- karma.conf.js
+|-- lib
+|   |-- jquery.js
+|   |-- require.js
+|   `-- underscore.js
+|-- src
+|   |-- app.js
+|   `-- main.js
+`-- <span class="hljs-built_in">test</span>
+    |-- appSpec.js
+    `-- <span class="hljs-built_in">test</span>-main.js
+
+3 directories, 9 files</code></pre>
+<h2>Configure Karma</h2>
+<p>The first step is creating our <code>karma.conf.js</code>. We can do this from the
+command line:</p>
+<pre><code class="language-bash">$ karma init</code></pre>
+<p>This will give you a series of prompts for things such as paths to the source and test
+files as well as which browsers to capture.</p>
+<p>In this example we&#39;ll use Jasmine, but other test frameworks work just
+as well.</p>
+<p>Choose &quot;yes&quot; for Require.js.</p>
+<p>For the question <em>&quot;Which files do you want to include with &lt;script&gt;
+tag?&quot;</em>, we need to choose all files which are <em>not</em> loaded by Require.js.
+Usually, you&#39;ll only need to include your <code>test-main.js</code> file, which has
+the same role for your tests as <code>main.js</code> has for your app when using
+Require.js.</p>
+<p>For the question <em>&quot;What is the location of your source and test files?&quot;</em>, we choose all the
+files we want to load with Require.js. For this example we&#39;ll need:</p>
+<ul>
+<li><code>lib/**/*.js</code> &mdash; all external libraries</li>
+<li><code>src/**/*.js</code> &mdash; our source code</li>
+<li><code>test/**/*Spec.js</code> &mdash; all the tests</li>
+</ul>
+<p>And then, when excluding files, type in <code>src/main.js</code>, as we don&#39;t want to actually
+start the application in our tests.</p>
+<p>Now your <code>karma.conf.js</code> should include:</p>
+<pre><code class="language-javascript"><span class="hljs-comment">// list of files / patterns to load in the browser</span>
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">config</span>) </span>{
+  config.set({
+    <span class="hljs-attr">frameworks</span>: [<span class="hljs-string">'jasmine'</span>, <span class="hljs-string">'requirejs'</span>],
+
+    <span class="hljs-attr">files</span>: [
+      {<span class="hljs-attr">pattern</span>: <span class="hljs-string">'lib/**/*.js'</span>, <span class="hljs-attr">included</span>: <span class="hljs-literal">false</span>},
+      {<span class="hljs-attr">pattern</span>: <span class="hljs-string">'src/**/*.js'</span>, <span class="hljs-attr">included</span>: <span class="hljs-literal">false</span>},
+      {<span class="hljs-attr">pattern</span>: <span class="hljs-string">'test/**/*Spec.js'</span>, <span class="hljs-attr">included</span>: <span class="hljs-literal">false</span>},
+
+      <span class="hljs-string">'test/test-main.js'</span>
+    ],
+
+    <span class="hljs-comment">// list of files to exclude</span>
+    <span class="hljs-attr">exclude</span>: [
+        <span class="hljs-string">'src/main.js'</span>
+    ]
+  });
+};</code></pre>
+<p>The files property contains every file you want to be available to the
+Karma runner. By default a script tag will be created for the files,
+unless you use the <code>included: false</code> option.</p>
+<p>If you want a script tag to be added before requirejs (to load an amd 
+compatible script before requirejs) then you must add the requirejs
+and adapter script to the files list and remove requirejs from the
+frameworks list. This allows you to control the order. For instance
+to load <code>knockout.js</code> before requirejs...</p>
+<pre><code>  config.set({
+    frameworks: [<span class="hljs-symbol">'jasmine'</span>],
+
+    files: [
+      <span class="hljs-symbol">'knockout</span>.js',
+
+      <span class="hljs-symbol">'node_modules</span>/requirejs/require.js',
+      <span class="hljs-symbol">'node_modules</span>/karma-requirejs/lib/adapter.js',
+
+      {pattern: <span class="hljs-symbol">'lib</span>/**/*.js', included: <span class="hljs-literal">false</span>},
+      {pattern: <span class="hljs-symbol">'src</span>/**/*.js', included: <span class="hljs-literal">false</span>},
+      {pattern: <span class="hljs-symbol">'test</span>/**/*<span class="hljs-type">Spec</span>.js', included: <span class="hljs-literal">false</span>},
+
+      <span class="hljs-symbol">'test</span>/test-main.js'
+    ],</code></pre>
+<h2>Configuring Require.js</h2>
+<p>Just like any Require.js project, you need a main module to bootstrap
+your tests. We do this in <code>test/test-main.js</code>.</p>
+<h3>Karma <code>/base</code> Directory</h3>
+<p>Karma serves files under the <code>/base</code> directory. So, on the server
+requests to files will be served up under
+<code>http://localhost:9876/base/*</code>.</p>
+<p>The Require.js config for <code>baseUrl</code> gives a starting context for modules
+that load with relative paths. When setting this value for the Karma
+server, it will need to start with <code>/base</code>. We want the <code>baseUrl</code> for our
+tests to be the same folder as the base url we have in <code>src/main.js</code>, so
+that relative requires in the source won’t need to change. So, as we
+want our base url to be at <code>src/</code>, we need to write <code>/base/src</code>.</p>
+<h3>Require Each Test File</h3>
+<p>With Karma we don&#39;t need to list all test files ourselves as we can
+easily find them from the files specified in <code>test-main.js</code>: Karma
+includes all the files in <code>window.__karma__.files</code>, so by filtering this
+array we find all our test files.</p>
+<p>Now we can tell Require.js to load our tests, which must be done
+asynchronously as dependencies must be fetched before the tests are run.
+The <code>test/test-main.js</code> file ends up looking like this:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">var</span> TEST_REGEXP = <span class="hljs-regexp">/(spec|test)\.js$/i</span>;
+<span class="hljs-keyword">var</span> allTestFiles = [];
+
+<span class="hljs-comment">// Get a list of all the test files to include</span>
+<span class="hljs-built_in">Object</span>.keys(<span class="hljs-built_in">window</span>.__karma__.files).forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">file</span>) </span>{
+  <span class="hljs-keyword">if</span> (TEST_REGEXP.test(file)) {
+    <span class="hljs-comment">// Normalize paths to RequireJS module names.</span>
+    <span class="hljs-comment">// If you require sub-dependencies of test files to be loaded as-is (requiring file extension)</span>
+    <span class="hljs-comment">// then do not normalize the paths</span>
+    <span class="hljs-keyword">var</span> normalizedTestModule = file.replace(<span class="hljs-regexp">/^\/base\/|\.js$/g</span>, <span class="hljs-string">''</span>);
+    allTestFiles.push(normalizedTestModule);
+  }
+});
+
+<span class="hljs-built_in">require</span>.config({
+  <span class="hljs-comment">// Karma serves files under /base, which is the basePath from your config file</span>
+  <span class="hljs-attr">baseUrl</span>: <span class="hljs-string">'/base/src'</span>,
+
+  <span class="hljs-comment">// example of using a couple of path translations (paths), to allow us to refer to different library dependencies, without using relative paths</span>
+  <span class="hljs-attr">paths</span>: {
+    <span class="hljs-string">'jquery'</span>: <span class="hljs-string">'../lib/jquery'</span>,
+    <span class="hljs-string">'underscore'</span>: <span class="hljs-string">'../lib/underscore'</span>,
+  },
+
+  <span class="hljs-comment">// example of using a shim, to load non AMD libraries (such as underscore)</span>
+  <span class="hljs-attr">shim</span>: {
+    <span class="hljs-string">'underscore'</span>: {
+      <span class="hljs-attr">exports</span>: <span class="hljs-string">'_'</span>
+    }
+  },
+
+  <span class="hljs-comment">// dynamically load all test files</span>
+  <span class="hljs-attr">deps</span>: allTestFiles,
+
+  <span class="hljs-comment">// we have to kickoff jasmine, as it is asynchronous</span>
+  <span class="hljs-attr">callback</span>: <span class="hljs-built_in">window</span>.__karma__.start
+});</code></pre>
+<h2>Using Require.js in tests</h2>
+<p>Tests can now be written as regular Require.js modules. We wrap
+everything in <code>define</code>, and inside we can use the regular test methods,
+such as <code>describe</code> and <code>it</code>. Example:</p>
+<pre><code class="language-javascript">define([<span class="hljs-string">'app'</span>, <span class="hljs-string">'jquery'</span>, <span class="hljs-string">'underscore'</span>, <span class="hljs-string">'./test-helper'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">App, $, _, testHelper</span>) </span>{
+
+    describe(<span class="hljs-string">'just checking'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+
+        testHelper.setup();
+
+        it(<span class="hljs-string">'works for app'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+            <span class="hljs-keyword">var</span> el = $(<span class="hljs-string">'&lt;div&gt;&lt;/div&gt;'</span>);
+
+            <span class="hljs-keyword">var</span> app = <span class="hljs-keyword">new</span> App(el);
+            app.render();
+
+            expect(el.text()).toEqual(<span class="hljs-string">'require.js up and running'</span>);
+        });
+
+        it(<span class="hljs-string">'works for underscore'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+            <span class="hljs-comment">// just checking that _ works</span>
+            expect(_.size([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>])).toEqual(<span class="hljs-number">3</span>);
+        });
+
+    });
+
+});</code></pre>
+<h2>Running the tests</h2>
+<p>We can now run the tests from the command line:</p>
+<pre><code class="language-bash">$ karma start</code></pre>
+<p>If you didn&#39;t configure Karma to watch all the files and run tests
+automatically on any change, you can trigger the tests manually by
+typing:</p>
+<pre><code class="language-bash">$ karma run</code></pre>
+<p><a href="https://github.com/kjbekkelund/karma-requirejs">Here is a running example of Karma with Require.js</a>.</p>
+
+        </div>
+      </div>
+    </div>
+    <div class="push"></div>
+  </div>
+  <footer>
+    <div class="container">
+      <div class="ten columns"><span class="copyright">
+          Karma is released under the MIT license. 
+          Site by&nbsp;<a href="https://github.com/Dignifiedquire">Friedel Ziegelmayer</a>. Logo by&nbsp;<a href="http://dribbble.com/isaacdurazo">Isaac Durazo</a>.</span></div>
+      <div class="six columns">
+        <div class="social"><a href="https://github.com/karma-runner/karma/" data-tooltip="GitHub Repo"><i class="icon-github-alt icon-large"></i></a><a href="https://github.com/karma-runner/karma/issues" data-tooltip="Issues"><i class="icon-beaker icon-large"></i></a><a href="http://twitter.com/JsKarma" data-tooltip="@JsKarma"><i class="icon-twitter icon-large"></i></a><a href="https://groups.google.com/forum/#!forum/karma-users" data-tooltip="Mailing List"><i class="icon-envelope-alt icon-large"></i></a></div>
+      </div>
+    </div>
+  </footer>
+</body>
+<!-- Placed at the end of the document so the pages load faster-->
+<script src="/assets/js/app.js"></script>
+<!-- Google Analytics-->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-46195299-1']);
+  _gaq.push(['_trackPageview']);
+  
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>

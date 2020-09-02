@@ -1,0 +1,293 @@
+<!DOCTYPE html><!-- [if lt IE 7]>
+<html lang="en" class="ie ie6"></html><![endif]-->
+<!-- [if IE 7]>
+<html lang="en" class="ie ie7"></html><![endif]-->
+<!-- [if IE 8]>
+<html lang="en" class="ie ie8"></html><![endif]-->
+<!-- [if (gte IE 9)|!(IE)]>
+<html lang="en"></html><![endif]-->
+<head>
+  <!-- Basic Page Needs-->
+  <meta charset="utf-8">
+  <title>Karma - Public Api</title>
+  <!-- Mobile specific Metas-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- Le styles-->
+  <link href="/assets/css/app.css" rel="stylesheet">
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements--><!-- [if lt IE 9]>
+  <script src="/assets/js/html5.js"></script><![endif]-->
+  <!-- Fav and touch icons-->
+  <link rel="shortcut icon" href="/assets/img/favicon/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/img/apple-touch-icon-144x144.png">
+  <!-- canonical link for search engines-->
+  <link href="http://karma-runner.github.io/5.2/dev/public-api.html" rel="canonical">
+</head>
+<body>
+  <div id="wrap" class="boxed">
+    <header>
+      <div class="container clearfix">
+        <div class="six columns">
+          <div class="logo"><a href="/5.2/index.html"><img src="/assets/img/banner.png" alt="Karma - Spectacular Test Runner for JavaScript" title="Karma - Spectacular Test Runner for JavaScript"></a></div>
+        </div>
+        <div class="ten columns">
+          <nav id="menu" class="navigation">
+            <ul id="nav">
+              <li><a href="javascript:void">intro</a>
+                <ul>
+                  <li><a href="/5.2/intro/installation.html">Installation</a></li>
+                  <li><a href="/5.2/intro/configuration.html">Configuration</a></li>
+                  <li><a href="/5.2/intro/how-it-works.html">How It Works</a></li>
+                  <li><a href="/5.2/intro/faq.html">FAQ</a></li>
+                  <li><a href="/5.2/intro/troubleshooting.html">Troubleshooting</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void">config</a>
+                <ul>
+                  <li><a href="/5.2/config/configuration-file.html">Configuration File</a></li>
+                  <li><a href="/5.2/config/files.html">Files</a></li>
+                  <li><a href="/5.2/config/browsers.html">Browsers</a></li>
+                  <li><a href="/5.2/config/preprocessors.html">Preprocessors</a></li>
+                  <li><a href="/5.2/config/plugins.html">Plugins</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void">plus</a>
+                <ul>
+                  <li><a href="/5.2/plus/requirejs.html">RequireJS</a></li>
+                  <li><a href="/5.2/plus/travis.html">Travis CI</a></li>
+                  <li><a href="/5.2/plus/jenkins.html">Jenkins CI</a></li>
+                  <li><a href="/5.2/plus/semaphore.html">Semaphore CI</a></li>
+                  <li><a href="/5.2/plus/cloud9.html">Cloud9</a></li>
+                  <li><a href="/5.2/plus/angularjs.html">AngularJS</a></li>
+                  <li><a href="/5.2/plus/yeoman.html">Yeoman</a></li>
+                  <li><a href="/5.2/plus/emberjs.html">Ember.js</a></li>
+                  <li><a href="/5.2/plus/codio.html">Codio</a></li>
+                  <li><a href="/5.2/plus/teamcity.html">TeamCity</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void" class="active">dev</a>
+                <ul>
+                  <li><a href="/5.2/dev/contributing.html">Contributing</a></li>
+                  <li><a href="/5.2/dev/making-changes.html">Making Changes</a></li>
+                  <li><a href="/5.2/dev/maintaining.html">Maintaining</a></li>
+                  <li><a href="/5.2/dev/public-api.html">Public Api</a></li>
+                  <li><a href="/5.2/dev/plugins.html">Plugins</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void">about</a>
+                <ul>
+                  <li><a href="/5.2/about/versioning.html">Versioning</a></li>
+                  <li><a href="/5.2/about/changelog.html">Changelog</a></li>
+                  <li><a href="/5.2/about/migration.html">Migration</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void">v5.2</a>
+                <ul>
+                  <li><a href="/5.2/index.html">v5.2</a></li>
+                  <li><a href="/5.1/index.html">v5.1</a></li>
+                  <li><a href="/5.0/index.html">v5.0</a></li>
+                  <li><a href="/4.0/index.html">v4.0</a></li>
+                  <li><a href="/3.0/index.html">v3.0</a></li>
+                  <li><a href="/2.0/index.html">v2.0</a></li>
+                  <li><a href="/1.0/index.html">v1.0</a></li>
+                  <li><a href="/0.13/index.html">v0.13</a></li>
+                  <li><a href="/0.12/index.html">v0.12</a></li>
+                  <li><a href="/0.10/index.html">v0.10</a></li>
+                  <li><a href="/0.8/index.html">v0.8</a></li>
+                  <li><a href="/0.6/index.html">v0.6</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="sixteen columns">
+          <hr>
+        </div>
+      </div>
+    </header>
+    <div class="container clearfix">
+      <div class="sixteen columns">
+        <h1 class="page-title">Public Api<a href="https://github.com/karma-runner/karma/edit/master/docs/dev/04-public-api.md" data-tooltip="Edit this page on GitHub" class="edit"><i class="icon-edit"></i></a><span class="line"></span>
+        </h1>
+      </div>
+      <div class="page-columns">
+        <div id="markdown" class="sixteen columns bottom"><p>Most of the time, you will be using Karma directly from the command line.
+You can, however, call Karma programmatically from your node module. Here is the public API.</p>
+<h2>karma.Server(options, [callback=process.exit])</h2>
+<h3>Constructor</h3>
+<pre><code class="language-javascript"><span class="hljs-keyword">var</span> Server = <span class="hljs-built_in">require</span>(<span class="hljs-string">'karma'</span>).Server
+<span class="hljs-keyword">var</span> karmaConfig = {<span class="hljs-attr">port</span>: <span class="hljs-number">9876</span>}
+<span class="hljs-keyword">var</span> server = <span class="hljs-keyword">new</span> Server(karmaConfig, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">exitCode</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Karma has exited with '</span> + exitCode)
+  process.exit(exitCode)
+})</code></pre>
+<p>Notice the capital &#39;S&#39; on  <code>require(&#39;karma&#39;).Server</code>.</p>
+<h3><strong>server.start()</strong></h3>
+<p>Equivalent of <code>karma start</code>.</p>
+<pre><code class="language-javascript">server.start()</code></pre>
+<h3><strong>server.refreshFiles()</strong></h3>
+<p>Trigger a file list refresh. Returns a promise.</p>
+<pre><code class="language-javascript">server.refreshFiles()</code></pre>
+<h3><strong>server.refreshFile(path)</strong></h3>
+<p>Trigger a file refresh. Returns a promise.</p>
+<pre><code class="language-javascript">server.refreshFile(<span class="hljs-string">'src/js/module-dep.js'</span>)</code></pre>
+<h3>Events</h3>
+<p>The <code>server</code> object is an <a href="https://nodejs.org/docs/latest/api/events.html#events_class_events_eventemitter"><code>EventEmitter</code></a>. You can simply listen to events like this:</p>
+<pre><code class="language-javascript">server.on(<span class="hljs-string">'browser_register'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">browser</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'A new browser was registered'</span>)
+})</code></pre>
+<h3><code>listening</code></h3>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>port</code>: Port number</li>
+</ul>
+<p>Begin accepting connections on the specified port.</p>
+<h3><code>browser_register</code></h3>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>browser</code>: The browser instance</li>
+</ul>
+<p>A new browser was opened, but is not ready yet.</p>
+<h3><code>browser_error</code></h3>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>browser</code>: The browser instance</li>
+<li><code>error</code>: The error that occurred</li>
+</ul>
+<p>There was an error in this browser instance.</p>
+<h3><code>browser_start</code></h3>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>browser</code>: The browser instance</li>
+<li><code>info</code>: Details about the run</li>
+</ul>
+<p>A test run is beginning in this browser.</p>
+<h3><code>browser_complete</code></h3>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>browser</code>: The browser instance</li>
+<li><code>result</code>: Test results</li>
+</ul>
+<p>A test run has completed in this browser.</p>
+<h3><code>browsers_change</code></h3>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>browsers</code>: A collection of browser instances</li>
+</ul>
+<p>The list of browsers has changed.</p>
+<h3><code>browsers_ready</code></h3>
+<p>All browsers are ready for execution</p>
+<h3><code>run_start</code></h3>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>browsers</code>: A collection of browser instances on which tests are executed</li>
+</ul>
+<p>A test run starts.</p>
+<h3><code>run_complete</code></h3>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>browsers</code>: A collection of browser instances</li>
+<li><code>results</code>: A list of results</li>
+</ul>
+<p>A test run was completed.</p>
+<h2>karma.runner</h2>
+<h3><strong>runner.run(options, [callback=process.exit])</strong></h3>
+<p>The equivalent of <code>karma run</code>.</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">var</span> runner = <span class="hljs-built_in">require</span>(<span class="hljs-string">'karma'</span>).runner
+runner.run({<span class="hljs-attr">port</span>: <span class="hljs-number">9876</span>}, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">exitCode</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Karma has exited with '</span> + exitCode)
+  process.exit(exitCode)
+})</code></pre>
+<p><code>runner.run()</code> returns an <code>EventEmitter</code> which emits a <code>progress</code> event passing
+the reporter output as a <code>Buffer</code> object.</p>
+<p>You may listen for that event to print the reporter output to the console:</p>
+<pre><code class="language-javascript">runner.run({<span class="hljs-attr">port</span>: <span class="hljs-number">9876</span>}).on(<span class="hljs-string">'progress'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+  process.stdout.write(data)
+})</code></pre>
+<h2>karma.stopper</h2>
+<h3><strong>stopper.stop(options, [callback=process.exit])</strong></h3>
+<p>This function will signal a running server to stop.  The equivalent of <code>karma stop</code>.  </p>
+<pre><code class="language-javascript"><span class="hljs-keyword">var</span> stopper = <span class="hljs-built_in">require</span>(<span class="hljs-string">'karma'</span>).stopper
+stopper.stop({<span class="hljs-attr">port</span>: <span class="hljs-number">9876</span>}, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">exitCode</span>) </span>{
+  <span class="hljs-keyword">if</span> (exitCode === <span class="hljs-number">0</span>) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Server stop as initiated'</span>)
+  }
+  process.exit(exitCode)
+})</code></pre>
+<h2>karma.config.parseConfig([configFilePath], [cliOptions])</h2>
+<p>This function will load given config file and returns a filled config object.
+This can be useful if you want to integrate karma into another tool and want to load
+the karma config while honoring the karma defaults. For example, the <a href="https://github.com/stryker-mutator/stryker-karma-runner">stryker-karma-runner</a>
+uses this to load your karma configuration and use that in the stryker configuration.</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">const</span> cfg = <span class="hljs-built_in">require</span>(<span class="hljs-string">'karma'</span>).config;
+<span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+<span class="hljs-comment">// Read karma.conf.js, but override port with 1337</span>
+<span class="hljs-keyword">const</span> karmaConfig = cfg.parseConfig(path.resolve(<span class="hljs-string">'./karma.conf.js'</span>), { <span class="hljs-attr">port</span>: <span class="hljs-number">1337</span> } );</code></pre>
+<h2>karma.constants</h2>
+<h3><strong>constants.VERSION</strong></h3>
+<p>The current version of karma</p>
+<h3><strong>constants.DEFAULT_PORT</strong></h3>
+<p>The default port used for the karma server</p>
+<h3><strong>constants.DEFAULT_HOSTNAME</strong></h3>
+<p>The default hostname used for the karma server</p>
+<h3><strong>constants.DEFAULT_LISTEN_ADDR</strong></h3>
+<p>The default address use for the karma server to listen on</p>
+<h3><strong>constants.LOG_DISABLE</strong></h3>
+<p>The value for disabling logs</p>
+<h3><strong>constants.LOG_ERROR</strong></h3>
+<p>The value for the log <code>error</code> level</p>
+<h3><strong>constants.LOG_WARN</strong></h3>
+<p>The value for the log <code>warn</code> level</p>
+<h3><strong>constants.LOG_INFO</strong></h3>
+<p>The value for the log <code>info</code> level</p>
+<h3><strong>constants.LOG_DEBUG</strong></h3>
+<p>The value for the log <code>debug</code> level</p>
+<h3><strong>constants.LOG_PRIORITIES</strong></h3>
+<p>An array of log levels in descending order, i.e. <code>LOG_DISABLE</code>, <code>LOG_ERROR</code>, <code>LOG_WARN</code>, <code>LOG_INFO</code>, and <code>LOG_DEBUG</code></p>
+<h3><strong>constants.COLOR_PATTERN</strong></h3>
+<p>The default color pattern for log output</p>
+<h3><strong>constants.NO_COLOR_PATTERN</strong></h3>
+<p>The default pattern for log output without color</p>
+<h3><strong>constants.CONSOLE_APPENDER</strong></h3>
+<p>The default console appender</p>
+<h3><strong>constants.EXIT_CODE</strong></h3>
+<p>The exit code</p>
+<h2>Callback function notes</h2>
+<ul>
+<li>If there is an error, the error code will be provided as the second parameter to the error callback.</li>
+</ul>
+
+        </div>
+      </div>
+    </div>
+    <div class="push"></div>
+  </div>
+  <footer>
+    <div class="container">
+      <div class="ten columns"><span class="copyright">
+          Karma is released under the MIT license. 
+          Site by&nbsp;<a href="https://github.com/Dignifiedquire">Friedel Ziegelmayer</a>. Logo by&nbsp;<a href="http://dribbble.com/isaacdurazo">Isaac Durazo</a>.</span></div>
+      <div class="six columns">
+        <div class="social"><a href="https://github.com/karma-runner/karma/" data-tooltip="GitHub Repo"><i class="icon-github-alt icon-large"></i></a><a href="https://github.com/karma-runner/karma/issues" data-tooltip="Issues"><i class="icon-beaker icon-large"></i></a><a href="http://twitter.com/JsKarma" data-tooltip="@JsKarma"><i class="icon-twitter icon-large"></i></a><a href="https://groups.google.com/forum/#!forum/karma-users" data-tooltip="Mailing List"><i class="icon-envelope-alt icon-large"></i></a></div>
+      </div>
+    </div>
+  </footer>
+</body>
+<!-- Placed at the end of the document so the pages load faster-->
+<script src="/assets/js/app.js"></script>
+<!-- Google Analytics-->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-46195299-1']);
+  _gaq.push(['_trackPageview']);
+  
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
