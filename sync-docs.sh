@@ -32,7 +32,7 @@ cd $DOCS_REPO
 
 # copy the docs source
 echo "Removing old docs..."
-git rm -rf src/content/$VERSION
+rm -rf src/content/$VERSION
 echo "Copying the docs from master repo..."
 mkdir src/content/$VERSION
 cp -r $KARMA_REPO/docs/* $DOCS_REPO/src/content/$VERSION/
