@@ -40,12 +40,18 @@ echo "Copying the changelog..."
 echo -e "editButton: false\n" > $DOCS_REPO/src/content/$VERSION/about/02-changelog.md
 cat $KARMA_REPO/CHANGELOG.md >> $DOCS_REPO/src/content/$VERSION/about/02-changelog.md
 
-# commit sync
-cd $DOCS_REPO
-git add src/content/$VERSION/**/*.md src/content/$VERSION/*.md
-git commit -m "Sync the docs"
+if git diff --exit-code > /dev/null; then
+  echo "Documentation has not changed. Exiting..."
+else
+  echo "Documentation has changed. Updating..."
 
-# build html and commit
-./node_modules/.bin/grunt build
-git add .
-git commit -m "Build"
+  # commit sync
+  cd $DOCS_REPO
+  git add src/content/$VERSION/**/*.md src/content/$VERSION/*.md
+  git commit -m "Sync the docs"
+
+  # build html and commit
+  ./node_modules/.bin/grunt build
+  git add .
+  git commit -m "Build"
+fi
