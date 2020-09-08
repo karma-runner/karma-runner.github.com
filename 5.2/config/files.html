@@ -143,19 +143,16 @@ same file, it&#39;s included as if it only matched the first pattern.</li>
 <ul>
 <li><strong>Type.</strong> String</li>
 <li><strong>Default.</strong> Will attempt to determine type based on file extension. If that fails, defaults to <code>js</code>.</li>
-<li><strong>Description.</strong> Choose the type to use when including a file.</li>
 <li><strong>Possible Values:</strong><ul>
-<li><code>css</code></li>
-<li><code>html</code></li>
-<li><code>js</code></li>
-<li><code>dart</code></li>
-<li><code>module</code></li>
-<li><code>dom</code></li>
+<li><code>css</code> - Include using <code>&lt;link rel=&quot;stylesheet&quot;&gt;</code> tag.</li>
+<li><code>html</code> - Include using <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/HTML_Imports">HTML Imports</a>. Note that this feature is obsolete and does not work in the modern browsers. </li>
+<li><code>js</code> - Include using <code>&lt;script&gt;&lt;/script&gt;</code> tag.</li>
+<li><code>dart</code> - Include using <code>&lt;script type=&quot;application/dart&quot;&gt;&lt;/script&gt;</code> tag. Note that this does not work in the modern browsers.</li>
+<li><code>module</code> - Include using <code>&lt;script type=&quot;module&quot;&gt;&lt;/script&gt;</code> tag.</li>
+<li><code>dom</code> - Inline content of the file in the page. This can be used, for example, to test components combining HTML and JS.</li>
 </ul>
 </li>
-<li><strong>Description.</strong> The type determines the mechanism for including the file. The <code>css</code> and <code>html</code> types
-create <code>link</code> elements; the <code>js</code>, <code>dart</code>, and <code>module</code> elements create <code>script</code> elements. The <code>dom</code> type
-includes the file content in the page, used, for example, to test components combining HTML and JS.</li>
+<li><strong>Description.</strong> The type determines the mechanism for including the file.</li>
 </ul>
 <h3><code>watched</code></h3>
 <ul>
