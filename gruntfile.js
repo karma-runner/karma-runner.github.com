@@ -10,7 +10,8 @@ module.exports = function (grunt) {
     less: {
       docs: {
         files: {
-          'assets/css/app.css': 'src/less/app.less'
+          'assets/css/app.css': 'src/less/app.less',
+          'assets/css/app-dark.css': 'src/less/app-dark.less'
         }
       }
     },
@@ -18,7 +19,8 @@ module.exports = function (grunt) {
     cssmin: {
       docs: {
         files: {
-          'assets/css/app.css': 'assets/css/app.css'
+          'assets/css/app.css': 'assets/css/app.css',
+          'assets/css/app-dark.css': 'assets/css/app-dark.css'
         }
       }
     },

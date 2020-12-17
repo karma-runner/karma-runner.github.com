@@ -20,6 +20,29 @@ mixin versionDropdown(versions, current)
         li
           a(href='/#{version}/index.html')= 'v' + version
 
+mixin themeDropdown()
+  script.
+    function switchTheme(event, theme) {
+      event.preventDefault();
+      const lightThemeStyle = document.querySelector("#app-style");
+      const darkThemeStyle = document.querySelector("#app-style-dark");
+      // Swap out the URL for the different stylesheets
+      if (theme === 'dark') {
+        lightThemeStyle.rel = "alternate";
+        darkThemeStyle.rel = "stylesheet";
+      } else {
+        lightThemeStyle.rel = "stylesheet";
+        darkThemeStyle.rel = "alternate";
+      }
+      localStorage.setItem('theme', theme);
+    }
+  li
+    a(href='javascript:void')= 'theme'
+    ul
+      li
+        a(href='#', onclick="switchTheme(event, 'dark'); return;")= 'Dark'
+      li
+        a(href='#', onclick="switchTheme(event, 'light'); return;")= 'Light'
 
 
 mixin usersSection(users)
