@@ -5,7 +5,13 @@
 @import 'variables';
 
 // Crevision Theme
-@import 'theme';
+@media (prefers-color-scheme: light) {
+    @import 'theme';
+}
+// Custom Night Theme
+@media (prefers-color-scheme: dark) {
+    @import 'theme-dark';
+}
 
 // Sticky Footer
 @import 'sticky-footer';
