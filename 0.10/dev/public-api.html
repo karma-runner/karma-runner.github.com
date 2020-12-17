@@ -15,7 +15,24 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <!-- Le styles-->
-  <link href="/assets/css/app.css" rel="stylesheet">
+  <link href="/assets/css/app.css" rel="stylesheet" id="app-style">
+  <link href="/assets/css/app-dark.css" rel="stylesheet" id="app-style-dark">
+  <script>
+    function setTheme(theme) {
+        const lightThemeStyle = document.querySelector("#app-style");
+        const darkThemeStyle = document.querySelector("#app-style-dark");
+        // This is the best way to change sheets on page load (without a major refactor of styles) to avoid
+        // a perceived delay on transitioning styles
+        if (theme === 'dark') {
+            lightThemeStyle.rel = "alternate";
+            darkThemeStyle.rel = "stylesheet";
+        } else {
+            lightThemeStyle.rel = "stylesheet";
+            darkThemeStyle.rel = "alternate";
+        }
+    }
+    setTheme(localStorage.getItem('theme'));
+  </script>
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements--><!-- [if lt IE 9]>
   <script src="/assets/js/html5.js"></script><![endif]-->
   <!-- Fav and touch icons-->
@@ -98,6 +115,28 @@
                   <li><a href="/0.10/index.html">v0.10</a></li>
                   <li><a href="/0.8/index.html">v0.8</a></li>
                   <li><a href="/0.6/index.html">v0.6</a></li>
+                </ul>
+              </li>
+              <script>
+                function switchTheme(event, theme) {
+                  event.preventDefault();
+                  const lightThemeStyle = document.querySelector("#app-style");
+                  const darkThemeStyle = document.querySelector("#app-style-dark");
+                  // Swap out the URL for the different stylesheets
+                  if (theme === 'dark') {
+                    lightThemeStyle.rel = "alternate";
+                    darkThemeStyle.rel = "stylesheet";
+                  } else {
+                    lightThemeStyle.rel = "stylesheet";
+                    darkThemeStyle.rel = "alternate";
+                  }
+                  localStorage.setItem('theme', theme);
+                }
+              </script>
+              <li><a href="javascript:void">theme</a>
+                <ul>
+                  <li><a href="#" onclick="switchTheme(event, 'dark'); return;">Dark</a></li>
+                  <li><a href="#" onclick="switchTheme(event, 'light'); return;">Light</a></li>
                 </ul>
               </li>
             </ul>
