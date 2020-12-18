@@ -22,7 +22,7 @@
 // Css Styles for shortcodes
 @import 'theme/shortcodes.less';
 
-// Markown specific 
+// Markown specific
 @import 'theme/markdown.less';
 
 // Custom modifications
@@ -39,3 +39,73 @@
 
 // Color Skin
 @import 'theme/blue.less';
+
+// Custom Night Theme
+@media (prefers-color-scheme: dark) {
+  body, .post-meta a {
+    color:@grayLighter;
+  }
+
+  .navigation ul li a, .sti-menu li a h2, .comment a:hover, .form-box label{
+    color:@logoPrimaryColor;
+  }
+
+  h1, h2, h3, h4, h5, h6, .services .item a, .services .item.active:hover a, .day, .qoute h2, .welcome p, .js .selectnav, .description p, .use p, .progress-bar h5, #horizontal-tabs ul.tabs li, #vertical-tabs ul.tabs li, .square-list li, .square-list li a, .check-list li, .check-list li a, .plus-list li, .plus-list li a, .arrow-list li, .arrow-list li a, .cross-list li, .cross-list li a, .star-list li, .star-list li a, .minus-list li, .minus-list li a, .arrow2-list li, .arrow2-list li a, .circle-list li, .circle-list li a, table th, #options li a, .most-posts li a:hover, #clock-ticker .block, .tweet_list li a:hover, .under-construction .copyright a:hover {
+    color:@grayLighter;
+  }
+
+  .navigation ul li a:hover, .navigation ul li a.selected, .navigation ul li a.active, .navigation ul li ul li a, .services .item,
+  .recent-work .item, .welcome, .qoute, .lightbox .item, .portfolio .item, #options li a, .popular-tags a, .meta {
+    background: @grayDark;
+  }
+
+  .navigation ul li ul li a:hover, .tables-column .list li.odd, #clock-ticker .block, input.subscribe-text {
+    background:@logoSecondaryColor;
+  }
+
+  .testimonials p, .clients .items, blockquote, .info-box, .box, .description, .use, #horizontal-tabs ul.tabs li, #horizontal-tabs .tabscontent, #vertical-tabs ul.tabs li, #vertical-tabs .tabscontent, .pagination li a, .breadcrumbs.gray, table th, .tables-column .list li.even, #toggle-view li h3.normal {
+    background-color:@grayDark;
+  }
+
+  body {
+    background: @darkBackground;
+  }
+
+  .welcome, .recent-work .item, .qoute, .description, .use, .lightbox .item, .portfolio .item {
+    text-shadow:1px 1px 1px #000;
+  }
+
+  /* header */
+  header {
+    border-top:5px solid @logoSecondaryColor;
+  }
+
+  span.color, a:hover, .navigation ul li ul li a:hover, .recent-blog .tags-comments a:hover, .tags-comments2 a:hover, #accordion h3:hover a, ul.team  li:hover h3, .choose ul li:hover, .square-list li:hover, .square-list li a:hover, .check-list li:hover, .check-list li a:hover, .plus-list li:hover, .plus-list li a:hover, .arrow-list li:hover, .arrow-list li a:hover, .cross-list li:hover, .cross-list li a:hover, .star-list li:hover, .star-list li a:hover, .minus-list li:hover, .minus-list li a:hover, .arrow2-list li:hover, .arrow2-list li a:hover, .circle-list li:hover, .circle-list li a:hover, .breadcrumbs li a, .comment a, h1.big, .tweet_list li a, .under-construction .copyright a {
+    color:@white;
+  }
+
+  // Inline and block code styles
+  code,
+  pre {
+    background-color: @grayDarker;
+    color: @white;
+  }
+
+  // Fix markdown
+  #markdown {
+
+    .alert {
+      h4 {
+        color: #bce8f1;
+      }
+    }
+
+    // Note:
+    .alert-success {
+      color: @white;
+      background-color: @grayDarker;
+    }
+
+  }
+
+}
