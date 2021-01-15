@@ -1,0 +1,221 @@
+<!DOCTYPE html><!-- [if lt IE 7]>
+<html lang="en" class="ie ie6"></html><![endif]-->
+<!-- [if IE 7]>
+<html lang="en" class="ie ie7"></html><![endif]-->
+<!-- [if IE 8]>
+<html lang="en" class="ie ie8"></html><![endif]-->
+<!-- [if (gte IE 9)|!(IE)]>
+<html lang="en"></html><![endif]-->
+<head>
+  <!-- Basic Page Needs-->
+  <meta charset="utf-8">
+  <title>Karma - Developing Plugins</title>
+  <!-- Mobile specific Metas-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- Le styles-->
+  <link href="/assets/css/app.css" rel="stylesheet">
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements--><!-- [if lt IE 9]>
+  <script src="/assets/js/html5.js"></script><![endif]-->
+  <!-- Fav and touch icons-->
+  <link rel="shortcut icon" href="/assets/img/favicon/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/img/apple-touch-icon-144x144.png">
+  <!-- canonical link for search engines-->
+  <link href="http://karma-runner.github.io/6.0/dev/plugins.html" rel="canonical">
+</head>
+<body>
+  <div id="wrap" class="boxed">
+    <header>
+      <div class="container clearfix">
+        <div class="six columns">
+          <div class="logo"><a href="/6.0/index.html"><img src="/assets/img/banner.png" alt="Karma - Spectacular Test Runner for JavaScript" title="Karma - Spectacular Test Runner for JavaScript"></a></div>
+        </div>
+        <div class="ten columns">
+          <nav id="menu" class="navigation">
+            <ul id="nav">
+              <li><a href="javascript:void">intro</a>
+                <ul>
+                  <li><a href="/6.0/intro/installation.html">Installation</a></li>
+                  <li><a href="/6.0/intro/configuration.html">Configuration</a></li>
+                  <li><a href="/6.0/intro/how-it-works.html">How It Works</a></li>
+                  <li><a href="/6.0/intro/faq.html">FAQ</a></li>
+                  <li><a href="/6.0/intro/troubleshooting.html">Troubleshooting</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void">config</a>
+                <ul>
+                  <li><a href="/6.0/config/configuration-file.html">Configuration File</a></li>
+                  <li><a href="/6.0/config/files.html">Files</a></li>
+                  <li><a href="/6.0/config/browsers.html">Browsers</a></li>
+                  <li><a href="/6.0/config/preprocessors.html">Preprocessors</a></li>
+                  <li><a href="/6.0/config/plugins.html">Plugins</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void">plus</a>
+                <ul>
+                  <li><a href="/6.0/plus/requirejs.html">RequireJS</a></li>
+                  <li><a href="/6.0/plus/travis.html">Travis CI</a></li>
+                  <li><a href="/6.0/plus/jenkins.html">Jenkins CI</a></li>
+                  <li><a href="/6.0/plus/semaphore.html">Semaphore CI</a></li>
+                  <li><a href="/6.0/plus/cloud9.html">Cloud9</a></li>
+                  <li><a href="/6.0/plus/angularjs.html">AngularJS</a></li>
+                  <li><a href="/6.0/plus/yeoman.html">Yeoman</a></li>
+                  <li><a href="/6.0/plus/emberjs.html">Ember.js</a></li>
+                  <li><a href="/6.0/plus/codio.html">Codio</a></li>
+                  <li><a href="/6.0/plus/teamcity.html">TeamCity</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void" class="active">dev</a>
+                <ul>
+                  <li><a href="/6.0/dev/contributing.html">Contributing</a></li>
+                  <li><a href="/6.0/dev/making-changes.html">Making Changes</a></li>
+                  <li><a href="/6.0/dev/maintaining.html">Maintaining</a></li>
+                  <li><a href="/6.0/dev/public-api.html">Public Api</a></li>
+                  <li><a href="/6.0/dev/plugins.html">Plugins</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void">about</a>
+                <ul>
+                  <li><a href="/6.0/about/versioning.html">Versioning</a></li>
+                  <li><a href="/6.0/about/changelog.html">Changelog</a></li>
+                  <li><a href="/6.0/about/migration.html">Migration</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void">v6.0</a>
+                <ul>
+                  <li><a href="/6.0/index.html">v6.0</a></li>
+                  <li><a href="/5.2/index.html">v5.2</a></li>
+                  <li><a href="/5.1/index.html">v5.1</a></li>
+                  <li><a href="/5.0/index.html">v5.0</a></li>
+                  <li><a href="/4.0/index.html">v4.0</a></li>
+                  <li><a href="/3.0/index.html">v3.0</a></li>
+                  <li><a href="/2.0/index.html">v2.0</a></li>
+                  <li><a href="/1.0/index.html">v1.0</a></li>
+                  <li><a href="/0.13/index.html">v0.13</a></li>
+                  <li><a href="/0.12/index.html">v0.12</a></li>
+                  <li><a href="/0.10/index.html">v0.10</a></li>
+                  <li><a href="/0.8/index.html">v0.8</a></li>
+                  <li><a href="/0.6/index.html">v0.6</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="sixteen columns">
+          <hr>
+        </div>
+      </div>
+    </header>
+    <div class="container clearfix">
+      <div class="sixteen columns">
+        <h1 class="page-title">Developing Plugins<a href="https://github.com/karma-runner/karma/edit/master/docs/dev/05-plugins.md" data-tooltip="Edit this page on GitHub" class="edit"><i class="icon-edit"></i></a><span class="line"></span>
+        </h1>
+      </div>
+      <div class="page-columns">
+        <div id="markdown" class="sixteen columns bottom"><p>Karma can be extended through plugins. A plugin is essentially an NPM module. Typically, there are four kinds of plugins: <strong>frameworks</strong>, <strong>reporters</strong>, <strong>launchers</strong> and <strong>preprocessors</strong>. The best way to understand how this works is to take a look at some of the existing plugins. Following sections list some of the plugins that you might use as a reference.</p>
+<h2>Frameworks</h2>
+<ul>
+<li>example plugins: <a href="https://github.com/karma-runner/karma-jasmine">karma-jasmine</a>, <a href="https://github.com/karma-runner/karma-mocha">karma-mocha</a>, <a href="https://github.com/karma-runner/karma-requirejs">karma-requirejs</a></li>
+<li>use naming convention is <code>karma-*</code></li>
+<li>use NPM keywords <code>karma-plugin</code>, <code>karma-framework</code>.</li>
+</ul>
+<h2>Reporters</h2>
+<ul>
+<li>example plugins: <a href="https://github.com/karma-runner/karma-growl-reporter">karma-growl-reporter</a>, <a href="https://github.com/karma-runner/karma-junit-reporter">karma-junit-reporter</a>, <a href="https://github.com/ameerthehacker/karma-material-reporter">karma-material-reporter</a></li>
+<li>use naming convention is <code>karma-*-reporter</code></li>
+<li>use NPM keywords <code>karma-plugin</code>, <code>karma-reporter</code></li>
+</ul>
+<h2>Launchers</h2>
+<ul>
+<li>example plugins: <a href="https://github.com/karma-runner/karma-chrome-launcher">karma-chrome-launcher</a>, <a href="https://github.com/karma-runner/karma-sauce-launcher">karma-sauce-launcher</a></li>
+<li>use naming convention is <code>karma-*-launcher</code></li>
+<li>use NPM keywords <code>karma-plugin</code>, <code>karma-launcher</code></li>
+</ul>
+<h2>Preprocessors</h2>
+<p>A preprocessor is a function that accepts three arguments (<code>content</code>, <code>file</code>, and <code>next</code>), mutates the content in some way, and passes it on to the next preprocessor.</p>
+<ul>
+<li>arguments passed to preprocessor plugins:<ul>
+<li><strong><code>content</code></strong> of the file being processed</li>
+<li><strong><code>file</code></strong> object describing the file being processed<ul>
+<li><strong>path:</strong> the current file, mutable file path. e. g. <code>some/file.coffee</code> -&gt; <code>some/file.coffee.js</code> <em>This path is mutable and may not actually exist.</em></li>
+<li><strong>originalPath:</strong> the original, unmutated path</li>
+<li><strong>encodings:</strong> A mutable, keyed object where the keys are a valid encoding type (&#39;gzip&#39;, &#39;compress&#39;, &#39;br&#39;, etc.) and the values are the encoded content. Encoded content should be stored here and not resolved using <code>next(null, encodedContent)</code></li>
+<li><strong>type:</strong> determines how to include a file, when serving</li>
+</ul>
+</li>
+<li><strong><code>next</code></strong> function to be called when preprocessing is complete, should be called as <code>next(null, processedContent)</code> or <code>next(error)</code></li>
+</ul>
+</li>
+<li>example plugins: <a href="https://github.com/karma-runner/karma-coffee-preprocessor">karma-coffee-preprocessor</a>, <a href="https://github.com/karma-runner/karma-ng-html2js-preprocessor">karma-ng-html2js-preprocessor</a></li>
+<li>use naming convention is <code>karma-*-preprocessor</code></li>
+<li>user NPM keywords <code>karma-plugin</code>, <code>karma-preprocessor</code></li>
+</ul>
+<h2>Crazier stuff</h2>
+<p>Karma is assembled by Dependency Injection and a plugin is just an additional DI module (see <a href="https://github.com/vojtajina/node-di">node-di</a> for more), that can be loaded by Karma. Therefore, it can ask for pretty much any Karma component and interact with it. There are a couple of plugins that do more interesting stuff like this, check out <a href="https://github.com/karma-runner/karma-closure">karma-closure</a>, <a href="https://github.com/karma-runner/karma-intellij">karma-intellij</a>.</p>
+<h2>Karma Framework API</h2>
+<p>Karma Framework connects existing testing libraries to Karma&#39;s API, so that their
+results can be displayed in a browser and sent back to the server.</p>
+<p>Karma frameworks <em>must</em> implement a <code>window.__karma__.start</code> method that Karma will
+call to start test execution. This function is called with an object that has methods
+to send results back to karma:</p>
+<ul>
+<li><code>.result</code> a single test has finished</li>
+<li><code>.complete</code> the client completed execution of all the tests</li>
+<li><code>.error</code> an error happened in the client</li>
+<li><code>.info</code> other data (e.g. number of tests or debugging messages)</li>
+</ul>
+<p>Most commonly you&#39;ll use the <code>result</code> method to send individual test success or failure
+statuses. The method takes an object of the form:</p>
+<pre><code class="language-js">{
+    <span class="hljs-comment">// test id</span>
+    <span class="hljs-attr">id</span>: <span class="hljs-built_in">String</span>,
+
+     <span class="hljs-comment">// test description</span>
+    <span class="hljs-attr">description</span>: <span class="hljs-built_in">String</span>,
+
+    <span class="hljs-comment">// the suite to which this test belongs. potentially nested.</span>
+    <span class="hljs-attr">suite</span>: <span class="hljs-built_in">Array</span>[<span class="hljs-built_in">String</span>],
+
+    <span class="hljs-comment">// an array of string error messages that might explain a failure.</span>
+    <span class="hljs-comment">// this is required if success is false.</span>
+    <span class="hljs-attr">log</span>: <span class="hljs-built_in">Array</span>[<span class="hljs-built_in">String</span>],
+
+    <span class="hljs-attr">success</span>: <span class="hljs-built_in">Boolean</span>, <span class="hljs-comment">// pass / fail</span>
+
+    <span class="hljs-attr">skipped</span>: <span class="hljs-built_in">Boolean</span> <span class="hljs-comment">// skipped / ran</span>
+}</code></pre>
+
+        </div>
+      </div>
+    </div>
+    <div class="push"></div>
+  </div>
+  <footer>
+    <div class="container">
+      <div class="ten columns"><span class="copyright">
+          Karma is released under the MIT license. 
+          Site by&nbsp;<a href="https://github.com/Dignifiedquire">Friedel Ziegelmayer</a>. Logo by&nbsp;<a href="http://dribbble.com/isaacdurazo">Isaac Durazo</a>.</span></div>
+      <div class="six columns">
+        <div class="social"><a href="https://github.com/karma-runner/karma/" data-tooltip="GitHub Repo"><i class="icon-github-alt icon-large"></i></a><a href="https://github.com/karma-runner/karma/issues" data-tooltip="Issues"><i class="icon-beaker icon-large"></i></a><a href="http://twitter.com/JsKarma" data-tooltip="@JsKarma"><i class="icon-twitter icon-large"></i></a><a href="https://groups.google.com/forum/#!forum/karma-users" data-tooltip="Mailing List"><i class="icon-envelope-alt icon-large"></i></a></div>
+      </div>
+    </div>
+  </footer>
+</body>
+<!-- Placed at the end of the document so the pages load faster-->
+<script src="/assets/js/app.js"></script>
+<!-- Google Analytics-->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-46195299-1']);
+  _gaq.push(['_trackPageview']);
+  
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
