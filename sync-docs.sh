@@ -40,7 +40,7 @@ echo "Copying the changelog..."
 echo -e "editButton: false\n" > $DOCS_REPO/src/content/$VERSION/about/02-changelog.md
 cat $KARMA_REPO/CHANGELOG.md >> $DOCS_REPO/src/content/$VERSION/about/02-changelog.md
 
-if git diff --exit-code > /dev/null; then
+if test -z "$(git status --porcelain)"; then
   echo "Documentation has not changed. Exiting..."
 else
   echo "Documentation has changed. Updating..."
