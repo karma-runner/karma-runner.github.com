@@ -116,29 +116,16 @@
         </h1>
       </div>
       <div class="page-columns">
-        <div id="markdown" class="sixteen columns bottom"><p><strong>The <code>files</code> array determines which files are included in the browser and which files are watched and served by Karma.</strong></p>
-<h2>Pattern matching and <code>basePath</code></h2>
-<ul>
-<li>All of the relative patterns will get resolved using the <code>basePath</code> first.</li>
-<li>If the <code>basePath</code> is a relative path, it gets resolved to the
-directory where the configuration file is located.</li>
-<li>Eventually, all the patterns will get resolved into files using
-<a href="https://github.com/isaacs/node-glob">glob</a>, so you can use <a href="https://github.com/isaacs/minimatch">minimatch</a> expressions like <code>test/unit/**/*.spec.js</code>.</li>
-</ul>
-<h2>Ordering</h2>
-<ul>
-<li>The order of patterns determines the order in which files are included in the browser.</li>
-<li>Multiple files matching a single pattern are sorted alphabetically.</li>
-<li>Each file is included exactly once. If multiple patterns match the
-same file, it&#39;s included as if it only matched the first pattern.</li>
-</ul>
-<h2>Included, served, watched</h2>
-<p>Each pattern is either a simple string or an object with the following properties:</p>
+        <div id="markdown" class="sixteen columns bottom"><p>The <code>files</code> array determines which files are included in the browser, watched, and served by Karma.</p>
+<h2><code>files</code></h2>
+<p><strong>Type.</strong> Array
+<strong>No Default.</strong> This property is mandatory.
+<strong>Description.</strong> Each item is either a string (equivalent to <code>{ pattern: &quot;&lt;string&gt;&quot; }</code>) or an object with the following properties:</p>
 <h3><code>pattern</code></h3>
 <ul>
 <li><strong>Type.</strong> String</li>
 <li><strong>No Default.</strong> This property is mandatory.</li>
-<li><strong>Description.</strong> The pattern to use for matching.</li>
+<li><strong>Description.</strong> The pattern to use for matching. See below for details on how patterns are resolved.</li>
 </ul>
 <h3><code>type</code></h3>
 <ul>
@@ -189,6 +176,21 @@ same file, it&#39;s included as if it only matched the first pattern.</li>
 <li><strong>Default.</strong> <code>false</code></li>
 <li><strong>Description.</strong> Should the files be served from disk on each request by Karma&#39;s webserver?</li>
 </ul>
+<h2>Pattern matching and <code>basePath</code></h2>
+<ul>
+<li>All of the relative patterns will get resolved using the <code>basePath</code> first.</li>
+<li>If the <code>basePath</code> is a relative path, it gets resolved to the
+directory where the configuration file is located.</li>
+<li>Eventually, all the patterns will get resolved into files using
+<a href="https://github.com/isaacs/node-glob">glob</a>, so you can use <a href="https://github.com/isaacs/minimatch">minimatch</a> expressions like <code>test/unit/**/*.spec.js</code>.</li>
+</ul>
+<h2>Ordering</h2>
+<ul>
+<li>The order of patterns determines the order in which files are included in the browser.</li>
+<li>Multiple files matching a single pattern are sorted alphabetically.</li>
+<li>Each file is included exactly once. If multiple patterns match the
+same file, it&#39;s included as if it only matched the first pattern.</li>
+</ul>
 <h2>Preprocessor transformations</h2>
 <p>Depending on preprocessor configuration, be aware that files loaded may be transformed and no longer available in
 their native format. For instance, if html2js preprocessor is enabled, the actual .html files are no longer
@@ -215,6 +217,26 @@ served - but rather available as <code>window.__html__[&#39;my.html&#39;]</code>
   <span class="hljs-comment">// this file will be served on demand from disk and will be ignored by the watcher</span>
   {<span class="hljs-attr">pattern</span>: <span class="hljs-string">'compiled/app.js.map'</span>, <span class="hljs-attr">included</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">served</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">watched</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">nocache</span>: <span class="hljs-literal">true</span>}
 ],</code></pre>
+<h2>Loading files from another server</h2>
+<p>Pattern can also be an absolute URL. This allows including files which are not served by Karma.</p>
+<p>Example:</p>
+<pre><code class="language-javascript">config.set({
+  <span class="hljs-attr">files</span>: [
+    <span class="hljs-string">'https://example.com/my-lib.js'</span>,
+    { <span class="hljs-attr">pattern</span>: <span class="hljs-string">'https://example.com/my-lib'</span>, <span class="hljs-attr">type</span>: <span class="hljs-string">'js'</span> }
+  ]
+})</code></pre>
+<p>Absolute URLs have some special rules comparing to the regular file paths:</p>
+<ul>
+<li>Globing is not support, so each URL must be specified as a separate pattern.</li>
+<li>Most of the regular options are not supported:<ul>
+<li><code>watched</code> is always <code>false</code></li>
+<li><code>included</code> is always <code>true</code></li>
+<li><code>served</code> is always <code>false</code></li>
+<li><code>nocache</code> is always <code>false</code></li>
+</ul>
+</li>
+</ul>
 <h2>Loading Assets</h2>
 <p>By default all assets are served at <code>http://localhost:[PORT]/base/</code></p>
 <p>Example for loading images</p>
