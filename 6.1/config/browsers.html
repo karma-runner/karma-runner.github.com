@@ -1,0 +1,236 @@
+<!DOCTYPE html><!-- [if lt IE 7]>
+<html lang="en" class="ie ie6"></html><![endif]-->
+<!-- [if IE 7]>
+<html lang="en" class="ie ie7"></html><![endif]-->
+<!-- [if IE 8]>
+<html lang="en" class="ie ie8"></html><![endif]-->
+<!-- [if (gte IE 9)|!(IE)]>
+<html lang="en"></html><![endif]-->
+<head>
+  <!-- Basic Page Needs-->
+  <meta charset="utf-8">
+  <title>Karma - Browsers</title>
+  <!-- Mobile specific Metas-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- Le styles-->
+  <link href="/assets/css/app.css" rel="stylesheet">
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements--><!-- [if lt IE 9]>
+  <script src="/assets/js/html5.js"></script><![endif]-->
+  <!-- Fav and touch icons-->
+  <link rel="shortcut icon" href="/assets/img/favicon/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/img/apple-touch-icon-144x144.png">
+  <!-- canonical link for search engines-->
+  <link href="http://karma-runner.github.io/6.1/config/browsers.html" rel="canonical">
+</head>
+<body>
+  <div id="wrap" class="boxed">
+    <header>
+      <div class="container clearfix">
+        <div class="six columns">
+          <div class="logo"><a href="/6.1/index.html"><img src="/assets/img/banner.png" alt="Karma - Spectacular Test Runner for JavaScript" title="Karma - Spectacular Test Runner for JavaScript"></a></div>
+        </div>
+        <div class="ten columns">
+          <nav id="menu" class="navigation">
+            <ul id="nav">
+              <li><a href="javascript:void">intro</a>
+                <ul>
+                  <li><a href="/6.1/intro/installation.html">Installation</a></li>
+                  <li><a href="/6.1/intro/configuration.html">Configuration</a></li>
+                  <li><a href="/6.1/intro/how-it-works.html">How It Works</a></li>
+                  <li><a href="/6.1/intro/faq.html">FAQ</a></li>
+                  <li><a href="/6.1/intro/troubleshooting.html">Troubleshooting</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void" class="active">config</a>
+                <ul>
+                  <li><a href="/6.1/config/configuration-file.html">Configuration File</a></li>
+                  <li><a href="/6.1/config/files.html">Files</a></li>
+                  <li><a href="/6.1/config/browsers.html">Browsers</a></li>
+                  <li><a href="/6.1/config/preprocessors.html">Preprocessors</a></li>
+                  <li><a href="/6.1/config/plugins.html">Plugins</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void">plus</a>
+                <ul>
+                  <li><a href="/6.1/plus/requirejs.html">RequireJS</a></li>
+                  <li><a href="/6.1/plus/travis.html">Travis CI</a></li>
+                  <li><a href="/6.1/plus/jenkins.html">Jenkins CI</a></li>
+                  <li><a href="/6.1/plus/semaphore.html">Semaphore CI</a></li>
+                  <li><a href="/6.1/plus/cloud9.html">Cloud9</a></li>
+                  <li><a href="/6.1/plus/angularjs.html">AngularJS</a></li>
+                  <li><a href="/6.1/plus/yeoman.html">Yeoman</a></li>
+                  <li><a href="/6.1/plus/emberjs.html">Ember.js</a></li>
+                  <li><a href="/6.1/plus/codio.html">Codio</a></li>
+                  <li><a href="/6.1/plus/teamcity.html">TeamCity</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void">dev</a>
+                <ul>
+                  <li><a href="/6.1/dev/contributing.html">Contributing</a></li>
+                  <li><a href="/6.1/dev/making-changes.html">Making Changes</a></li>
+                  <li><a href="/6.1/dev/maintaining.html">Maintaining</a></li>
+                  <li><a href="/6.1/dev/public-api.html">Public Api</a></li>
+                  <li><a href="/6.1/dev/plugins.html">Plugins</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void">about</a>
+                <ul>
+                  <li><a href="/6.1/about/versioning.html">Versioning</a></li>
+                  <li><a href="/6.1/about/changelog.html">Changelog</a></li>
+                  <li><a href="/6.1/about/migration.html">Migration</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void">v6.1</a>
+                <ul>
+                  <li><a href="/6.1/index.html">v6.1</a></li>
+                  <li><a href="/6.0/index.html">v6.0</a></li>
+                  <li><a href="/5.2/index.html">v5.2</a></li>
+                  <li><a href="/5.1/index.html">v5.1</a></li>
+                  <li><a href="/5.0/index.html">v5.0</a></li>
+                  <li><a href="/4.0/index.html">v4.0</a></li>
+                  <li><a href="/3.0/index.html">v3.0</a></li>
+                  <li><a href="/2.0/index.html">v2.0</a></li>
+                  <li><a href="/1.0/index.html">v1.0</a></li>
+                  <li><a href="/0.13/index.html">v0.13</a></li>
+                  <li><a href="/0.12/index.html">v0.12</a></li>
+                  <li><a href="/0.10/index.html">v0.10</a></li>
+                  <li><a href="/0.8/index.html">v0.8</a></li>
+                  <li><a href="/0.6/index.html">v0.6</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="sixteen columns">
+          <hr>
+        </div>
+      </div>
+    </header>
+    <div class="container clearfix">
+      <div class="sixteen columns">
+        <h1 class="page-title">Browsers<a href="https://github.com/karma-runner/karma/edit/master/docs/config/03-browsers.md" data-tooltip="Edit this page on GitHub" class="edit"><i class="icon-edit"></i></a><span class="line"></span>
+        </h1>
+      </div>
+      <div class="page-columns">
+        <div id="markdown" class="sixteen columns bottom"><p>Capturing browsers on your own can be a tedious and time-consuming task. However, Karma can automate this for you. Simply add the browsers you would like to capture into the <a href="configuration-file.html">configuration file</a>.</p>
+<pre><code class="language-javascript">browsers: [<span class="hljs-string">'Chrome'</span>]</code></pre>
+<p>Then, Karma will take care of auto-capturing these browsers, as well as killing them after the job is over.</p>
+<div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Most of the browser launchers need to be loaded as <a href="plugins.html">plugins</a>.
+
+</div>
+<h2>Available browser launchers</h2>
+<ul>
+<li><a href="https://www.npmjs.com/package/karma-chrome-launcher">Chrome and Chrome Canary</a></li>
+<li><a href="https://www.npmjs.com/package/karma-firefox-launcher">Firefox</a></li>
+<li><a href="https://www.npmjs.com/package/karma-safari-launcher">Safari</a></li>
+<li><a href="https://www.npmjs.com/package/karma-phantomjs-launcher">PhantomJS</a></li>
+<li><a href="https://www.npmjs.com/package/karma-jsdom-launcher">JSDOM</a></li>
+<li><a href="https://www.npmjs.com/package/karma-opera-launcher">Opera</a></li>
+<li><a href="https://www.npmjs.com/package/karma-ie-launcher">Internet Explorer</a></li>
+<li><a href="https://www.npmjs.com/package/karma-sauce-launcher">SauceLabs</a></li>
+<li><a href="https://www.npmjs.com/package/karma-browserstack-launcher">BrowserStack</a></li>
+<li><a href="https://www.npmjs.org/browse/keyword/karma-launcher">many more</a></li>
+</ul>
+<p>Here&#39;s an example of how to add Firefox to your testing suite:</p>
+<pre><code class="language-bash"><span class="hljs-comment"># Install the launcher first with NPM:</span>
+$ npm install karma-firefox-launcher --save-dev</code></pre>
+<p>And then, inside your configuration file, add the browser name in <code>browsers</code> array.</p>
+<pre><code class="language-javascript"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">config</span>) </span>{
+  config.set({
+    <span class="hljs-attr">browsers</span> : [<span class="hljs-string">'Chrome'</span>, <span class="hljs-string">'Firefox'</span>]
+  });
+};</code></pre>
+<p>Also, keep in mind that the <code>browsers</code> configuration setting is empty by default.</p>
+<p>Of course, you can write <a href="../dev/plugins.html">custom plugins</a> too!</p>
+<h2>Capturing any browser manually</h2>
+<p>You can also capture browsers by simply opening <code>http://&lt;hostname&gt;:&lt;port&gt;/</code>, where <code>&lt;hostname&gt;</code> is the IP
+address or hostname of the machine where the Karma server is running and <code>&lt;port&gt;</code> is the port where the Karma
+server is listening (by default it&#39;s <code>9876</code>). With the default settings in place, just point your browser to <code>http://localhost:9876/</code>.</p>
+<p>This allows you to capture a browser on any device, such as a tablet or a phone, that is on the same network
+as the machine running Karma (or using a local tunnel).</p>
+<h2>Configured launchers</h2>
+<p>Some of the launchers can also be configured:</p>
+<pre><code class="language-javascript">sauceLabs: {
+  <span class="hljs-attr">username</span>: <span class="hljs-string">'michael_jackson'</span>
+}</code></pre>
+<p>Or defined as a configured launcher:</p>
+<pre><code class="language-javascript">customLaunchers: {
+  <span class="hljs-attr">chrome_without_security</span>: {
+    <span class="hljs-attr">base</span>: <span class="hljs-string">'Chrome'</span>,
+    <span class="hljs-attr">flags</span>: [<span class="hljs-string">'--disable-web-security'</span>]
+  },
+  <span class="hljs-attr">sauce_chrome_win</span>: {
+    <span class="hljs-attr">base</span>: <span class="hljs-string">'SauceLabs'</span>,
+    <span class="hljs-attr">browserName</span>: <span class="hljs-string">'chrome'</span>,
+    <span class="hljs-attr">platform</span>: <span class="hljs-string">'windows'</span>
+  }
+}</code></pre>
+<p>A display name can be set for any custom launcher. If set, this name will be used for reporting instead of the
+user agent. Here is a code snippet example explaining how to set a display name for a custom launcher.</p>
+<pre><code class="language-javascript">customLaunchers: {
+  <span class="hljs-attr">chrome_without_security</span>: {
+    <span class="hljs-attr">base</span>: <span class="hljs-string">'Chrome'</span>,
+    <span class="hljs-attr">flags</span>: [<span class="hljs-string">'--disable-web-security'</span>],
+    <span class="hljs-attr">displayName</span>: <span class="hljs-string">'Chrome w/o security'</span>
+  }
+}</code></pre>
+<p>If the definition is as above, the browser will be displayed as <code>Chrome w/o security</code> in logs and reports.</p>
+<h2>Correct path to browser binary</h2>
+<p>Each plugin has some default paths where to find the browser binary on particular OS.
+You can override these settings by <code>&lt;BROWSER&gt;_BIN</code> ENV variable, or alternatively by creating a <code>symlink</code>.</p>
+<h3>POSIX shells</h3>
+<pre><code class="language-bash"><span class="hljs-comment"># Changing the path to the Chrome binary</span>
+$ <span class="hljs-built_in">export</span> CHROME_BIN=/usr/<span class="hljs-built_in">local</span>/bin/my-chrome-build
+
+<span class="hljs-comment"># Changing the path to the Chrome Canary binary</span>
+$ <span class="hljs-built_in">export</span> CHROME_CANARY_BIN=/usr/<span class="hljs-built_in">local</span>/bin/my-chrome-build
+
+<span class="hljs-comment"># Changing the path to the PhantomJs binary</span>
+$ <span class="hljs-built_in">export</span> PHANTOMJS_BIN=<span class="hljs-variable">$HOME</span>/<span class="hljs-built_in">local</span>/bin/phantomjs</code></pre>
+<h3>Windows cmd.exe</h3>
+<pre><code class="language-bash">C:&gt; SET IE_BIN=C:\Program Files\Internet Explorer\iexplore.exe</code></pre>
+<h3>Windows Powershell</h3>
+<pre><code class="language-bash"><span class="hljs-variable">$Env</span>:FIREFOX_BIN = <span class="hljs-string">'c:\Program Files (x86)\Mozilla Firefox 4.0 Beta 6\firefox.exe'</span></code></pre>
+<h2>Custom browsers</h2>
+<pre><code class="language-javascript"><span class="hljs-comment">// in the karma.conf.js</span>
+<span class="hljs-attr">browsers</span>: [<span class="hljs-string">'/usr/local/bin/custom-browser.sh'</span>],
+
+<span class="hljs-comment">// from cli</span>
+karma start --browsers /usr/local/bin/custom-browser.sh</code></pre>
+<p>The browser scripts need to take one argument, which is the URL with the ID-parameter to be used to connect to the server. The supplied ID is used by the server to keep track of which specific browser is captured.</p>
+
+        </div>
+      </div>
+    </div>
+    <div class="push"></div>
+  </div>
+  <footer>
+    <div class="container">
+      <div class="ten columns"><span class="copyright">
+          Karma is released under the MIT license. 
+          Site by&nbsp;<a href="https://github.com/Dignifiedquire">Friedel Ziegelmayer</a>. Logo by&nbsp;<a href="http://dribbble.com/isaacdurazo">Isaac Durazo</a>.</span></div>
+      <div class="six columns">
+        <div class="social"><a href="https://github.com/karma-runner/karma/" data-tooltip="GitHub Repo"><i class="icon-github-alt icon-large"></i></a><a href="https://github.com/karma-runner/karma/issues" data-tooltip="Issues"><i class="icon-beaker icon-large"></i></a><a href="http://twitter.com/JsKarma" data-tooltip="@JsKarma"><i class="icon-twitter icon-large"></i></a><a href="https://groups.google.com/forum/#!forum/karma-users" data-tooltip="Mailing List"><i class="icon-envelope-alt icon-large"></i></a></div>
+      </div>
+    </div>
+  </footer>
+</body>
+<!-- Placed at the end of the document so the pages load faster-->
+<script src="/assets/js/app.js"></script>
+<!-- Google Analytics-->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-46195299-1']);
+  _gaq.push(['_trackPageview']);
+  
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
