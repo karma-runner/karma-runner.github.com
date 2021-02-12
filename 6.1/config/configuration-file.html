@@ -461,12 +461,8 @@ Use this to prevent accidental disabling tests needed to validate production.</p
 <h2>plugins</h2>
 <p><strong>Type:</strong> Array</p>
 <p><strong>Default:</strong> <code>[&#39;karma-*&#39;]</code></p>
-<p><strong>Description:</strong> List of plugins to load. A plugin can be a string (in which case it will be required by Karma) or an inlined plugin - Object.
-By default, Karma loads all sibling NPM modules which have a name starting with <code>karma-*</code>.</p>
-<div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Just about all plugins in Karma require an additional library to be installed (via NPM).
-
-</div>
-<p>See <a href="plugins.html">plugins</a> for more information.</p>
+<p><strong>Description:</strong> List of plugins to load. A plugin can be either a plugin object, or a string containing name of the module which exports a plugin object. See <a href="plugins.html">plugins</a> for more information on how to install and use plugins. </p>
+<p>By default, Karma loads plugins from all sibling NPM packages which have a name starting with <code>karma-*</code>.</p>
 <h2>port</h2>
 <p><strong>Type:</strong> Number</p>
 <p><strong>Default:</strong> <code>9876</code></p>
@@ -483,8 +479,7 @@ By default, Karma loads all sibling NPM modules which have a name starting with 
 <p><strong>Default:</strong> <code>{&#39;**/*.coffee&#39;: &#39;coffee&#39;}</code></p>
 <p><strong>Description:</strong> A map of preprocessors to use.</p>
 <p>Preprocessors can be loaded through <a href="plugins.html">plugins</a>.</p>
-<div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Just about all preprocessors in Karma (other than CoffeeScript and some other defaults)
-require an additional library to be installed (via NPM).
+<div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Just about all preprocessors in Karma require an additional library to be installed (via NPM).
 
 </div>
 <p>Be aware that preprocessors may be transforming the files and file types that are available at run time. For instance,
