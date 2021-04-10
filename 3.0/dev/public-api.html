@@ -125,8 +125,8 @@
       <div class="page-columns">
         <div id="markdown" class="sixteen columns bottom"><p>Most of the time, you will be using Karma directly from the command line.
 You can, however, call Karma programmatically from your node module. Here is the public API.</p>
-<h2>karma.Server(options, [callback=process.exit])</h2>
-<h3>Constructor</h3>
+<h2 id="karmaserveroptions-callbackprocessexit">karma.Server(options, [callback=process.exit]) <a class="heading-anchor" href="#karmaserveroptions-callbackprocessexit">#</a></h2>
+<h3 id="constructor">Constructor <a class="heading-anchor" href="#constructor">#</a></h3>
 <pre><code class="language-javascript"><span class="hljs-keyword">var</span> Server = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;karma&#x27;</span>).Server
 <span class="hljs-keyword">var</span> karmaConfig = {<span class="hljs-attr">port</span>: <span class="hljs-number">9876</span>}
 <span class="hljs-keyword">var</span> server = <span class="hljs-keyword">new</span> Server(karmaConfig, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">exitCode</span>) </span>{
@@ -135,80 +135,80 @@ You can, however, call Karma programmatically from your node module. Here is the
 })
 </code></pre>
 <p>Notice the capital &#39;S&#39; on  <code>require(&#39;karma&#39;).Server</code>.</p>
-<h3><strong>server.start()</strong></h3>
+<h3 id="serverstart"><strong>server.start()</strong> <a class="heading-anchor" href="#serverstart">#</a></h3>
 <p>Equivalent of <code>karma start</code>.</p>
 <pre><code class="language-javascript">server.start()
 </code></pre>
-<h3><strong>server.refreshFiles()</strong></h3>
+<h3 id="serverrefreshfiles"><strong>server.refreshFiles()</strong> <a class="heading-anchor" href="#serverrefreshfiles">#</a></h3>
 <p>Trigger a file list refresh. Returns a promise.</p>
 <pre><code class="language-javascript">server.refreshFiles()
 </code></pre>
-<h3><strong>server.refreshFile(path)</strong></h3>
+<h3 id="serverrefreshfilepath"><strong>server.refreshFile(path)</strong> <a class="heading-anchor" href="#serverrefreshfilepath">#</a></h3>
 <p>Trigger a file refresh. Returns a promise.</p>
 <pre><code class="language-javascript">server.refreshFile(<span class="hljs-string">&#x27;src/js/module-dep.js&#x27;</span>)
 </code></pre>
-<h3>Events</h3>
+<h3 id="events">Events <a class="heading-anchor" href="#events">#</a></h3>
 <p>The <code>server</code> object is an <a href="https://nodejs.org/docs/latest/api/events.html#events_class_events_eventemitter"><code>EventEmitter</code></a>. You can simply listen to events like this:</p>
 <pre><code class="language-javascript">server.on(<span class="hljs-string">&#x27;browser_register&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">browser</span>) </span>{
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;A new browser was registered&#x27;</span>)
 })
 </code></pre>
-<h3><code>listening</code></h3>
+<h3 id="listening"><code>listening</code> <a class="heading-anchor" href="#listening">#</a></h3>
 <p><strong>Arguments:</strong></p>
 <ul>
 <li><code>port</code>: Port number</li>
 </ul>
 <p>Begin accepting connections on the specified port.</p>
-<h3><code>browser_register</code></h3>
+<h3 id="browser_register"><code>browser_register</code> <a class="heading-anchor" href="#browser_register">#</a></h3>
 <p><strong>Arguments:</strong></p>
 <ul>
 <li><code>browser</code>: The browser instance</li>
 </ul>
 <p>A new browser was opened, but is not ready yet.</p>
-<h3><code>browser_error</code></h3>
+<h3 id="browser_error"><code>browser_error</code> <a class="heading-anchor" href="#browser_error">#</a></h3>
 <p><strong>Arguments:</strong></p>
 <ul>
 <li><code>browser</code>: The browser instance</li>
 <li><code>error</code>: The error that occurred</li>
 </ul>
 <p>There was an error in this browser instance.</p>
-<h3><code>browser_start</code></h3>
+<h3 id="browser_start"><code>browser_start</code> <a class="heading-anchor" href="#browser_start">#</a></h3>
 <p><strong>Arguments:</strong></p>
 <ul>
 <li><code>browser</code>: The browser instance</li>
 <li><code>info</code>: Details about the run</li>
 </ul>
 <p>A test run is beginning in this browser.</p>
-<h3><code>browser_complete</code></h3>
+<h3 id="browser_complete"><code>browser_complete</code> <a class="heading-anchor" href="#browser_complete">#</a></h3>
 <p><strong>Arguments:</strong></p>
 <ul>
 <li><code>browser</code>: The browser instance</li>
 <li><code>result</code>: Test results</li>
 </ul>
 <p>A test run has completed in this browser.</p>
-<h3><code>browsers_change</code></h3>
+<h3 id="browsers_change"><code>browsers_change</code> <a class="heading-anchor" href="#browsers_change">#</a></h3>
 <p><strong>Arguments:</strong></p>
 <ul>
 <li><code>browsers</code>: A collection of browser instances</li>
 </ul>
 <p>The list of browsers has changed.</p>
-<h3><code>browsers_ready</code></h3>
+<h3 id="browsers_ready"><code>browsers_ready</code> <a class="heading-anchor" href="#browsers_ready">#</a></h3>
 <p>All browsers are ready for execution</p>
-<h3><code>run_start</code></h3>
+<h3 id="run_start"><code>run_start</code> <a class="heading-anchor" href="#run_start">#</a></h3>
 <p><strong>Arguments:</strong></p>
 <ul>
 <li><code>browsers</code>: A collection of browser instances on which tests are executed</li>
 </ul>
 <p>A test run starts.</p>
-<h3><code>run_complete</code></h3>
+<h3 id="run_complete"><code>run_complete</code> <a class="heading-anchor" href="#run_complete">#</a></h3>
 <p><strong>Arguments:</strong></p>
 <ul>
 <li><code>browsers</code>: A collection of browser instances</li>
 <li><code>results</code>: A list of results</li>
 </ul>
 <p>A test run was completed.</p>
-<h2>karma.runner</h2>
-<h3><strong>runner.run(options, [callback=process.exit])</strong></h3>
+<h2 id="karmarunner">karma.runner <a class="heading-anchor" href="#karmarunner">#</a></h2>
+<h3 id="runnerrunoptions-callbackprocessexit"><strong>runner.run(options, [callback=process.exit])</strong> <a class="heading-anchor" href="#runnerrunoptions-callbackprocessexit">#</a></h3>
 <p>The equivalent of <code>karma run</code>.</p>
 <pre><code class="language-javascript"><span class="hljs-keyword">var</span> runner = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;karma&#x27;</span>).runner
 runner.run({<span class="hljs-attr">port</span>: <span class="hljs-number">9876</span>}, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">exitCode</span>) </span>{
@@ -216,8 +216,8 @@ runner.run({<span class="hljs-attr">port</span>: <span class="hljs-number">9876<
   process.exit(exitCode)
 })
 </code></pre>
-<h2>karma.stopper</h2>
-<h3><strong>stopper.stop(options, [callback=process.exit])</strong></h3>
+<h2 id="karmastopper">karma.stopper <a class="heading-anchor" href="#karmastopper">#</a></h2>
+<h3 id="stopperstopoptions-callbackprocessexit"><strong>stopper.stop(options, [callback=process.exit])</strong> <a class="heading-anchor" href="#stopperstopoptions-callbackprocessexit">#</a></h3>
 <p>This function will signal a running server to stop.  The equivalent of <code>karma stop</code>.  </p>
 <pre><code class="language-javascript"><span class="hljs-keyword">var</span> stopper = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;karma&#x27;</span>).stopper
 stopper.stop({<span class="hljs-attr">port</span>: <span class="hljs-number">9876</span>}, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">exitCode</span>) </span>{
@@ -227,7 +227,7 @@ stopper.stop({<span class="hljs-attr">port</span>: <span class="hljs-number">987
   process.exit(exitCode)
 })
 </code></pre>
-<h2>karma.config.parseConfig([configFilePath], [cliOptions])</h2>
+<h2 id="karmaconfigparseconfigconfigfilepath-clioptions">karma.config.parseConfig([configFilePath], [cliOptions]) <a class="heading-anchor" href="#karmaconfigparseconfigconfigfilepath-clioptions">#</a></h2>
 <p>This function will load given config file and returns a filled config object.
 This can be useful if you want to integrate karma into another tool and want to load
 the karma config while honoring the karma defaults. For example, the <a href="https://github.com/stryker-mutator/stryker-karma-runner">stryker-karma-runner</a>
@@ -237,34 +237,34 @@ uses this to load your karma configuration and use that in the stryker configura
 <span class="hljs-comment">// Read karma.conf.js, but override port with 1337</span>
 <span class="hljs-keyword">const</span> karmaConfig = cfg.parseConfig(path.resolve(<span class="hljs-string">&#x27;./karma.conf.js&#x27;</span>), { <span class="hljs-attr">port</span>: <span class="hljs-number">1337</span> } );
 </code></pre>
-<h2>karma.constants</h2>
-<h3><strong>constants.VERSION</strong></h3>
+<h2 id="karmaconstants">karma.constants <a class="heading-anchor" href="#karmaconstants">#</a></h2>
+<h3 id="constantsversion"><strong>constants.VERSION</strong> <a class="heading-anchor" href="#constantsversion">#</a></h3>
 <p>The current version of karma</p>
-<h3><strong>constants.DEFAULT_PORT</strong></h3>
+<h3 id="constantsdefault_port"><strong>constants.DEFAULT_PORT</strong> <a class="heading-anchor" href="#constantsdefault_port">#</a></h3>
 <p>The default port used for the karma server</p>
-<h3><strong>constants.DEFAULT_HOSTNAME</strong></h3>
+<h3 id="constantsdefault_hostname"><strong>constants.DEFAULT_HOSTNAME</strong> <a class="heading-anchor" href="#constantsdefault_hostname">#</a></h3>
 <p>The default hostname used for the karma server</p>
-<h3><strong>constants.LOG_DISABLE</strong></h3>
+<h3 id="constantslog_disable"><strong>constants.LOG_DISABLE</strong> <a class="heading-anchor" href="#constantslog_disable">#</a></h3>
 <p>The value for disabling logs</p>
-<h3><strong>constants.LOG_ERROR</strong></h3>
+<h3 id="constantslog_error"><strong>constants.LOG_ERROR</strong> <a class="heading-anchor" href="#constantslog_error">#</a></h3>
 <p>The value for the log <code>error</code> level</p>
-<h3><strong>constants.LOG_WARN</strong></h3>
+<h3 id="constantslog_warn"><strong>constants.LOG_WARN</strong> <a class="heading-anchor" href="#constantslog_warn">#</a></h3>
 <p>The value for the log <code>warn</code> level</p>
-<h3><strong>constants.LOG_INFO</strong></h3>
+<h3 id="constantslog_info"><strong>constants.LOG_INFO</strong> <a class="heading-anchor" href="#constantslog_info">#</a></h3>
 <p>The value for the log <code>info</code> level</p>
-<h3><strong>constants.LOG_DEBUG</strong></h3>
+<h3 id="constantslog_debug"><strong>constants.LOG_DEBUG</strong> <a class="heading-anchor" href="#constantslog_debug">#</a></h3>
 <p>The value for the log <code>debug</code> level</p>
-<h3><strong>constants.LOG_PRIORITIES</strong></h3>
+<h3 id="constantslog_priorities"><strong>constants.LOG_PRIORITIES</strong> <a class="heading-anchor" href="#constantslog_priorities">#</a></h3>
 <p>An array of log levels in descending order, i.e. <code>LOG_DISABLE</code>, <code>LOG_ERROR</code>, <code>LOG_WARN</code>, <code>LOG_INFO</code>, and <code>LOG_DEBUG</code></p>
-<h3><strong>constants.COLOR_PATTERN</strong></h3>
+<h3 id="constantscolor_pattern"><strong>constants.COLOR_PATTERN</strong> <a class="heading-anchor" href="#constantscolor_pattern">#</a></h3>
 <p>The default color pattern for log output</p>
-<h3><strong>constants.NO_COLOR_PATTERN</strong></h3>
+<h3 id="constantsno_color_pattern"><strong>constants.NO_COLOR_PATTERN</strong> <a class="heading-anchor" href="#constantsno_color_pattern">#</a></h3>
 <p>The default pattern for log output without color</p>
-<h3><strong>constants.CONSOLE_APPENDER</strong></h3>
+<h3 id="constantsconsole_appender"><strong>constants.CONSOLE_APPENDER</strong> <a class="heading-anchor" href="#constantsconsole_appender">#</a></h3>
 <p>The default console appender</p>
-<h3><strong>constants.EXIT_CODE</strong></h3>
+<h3 id="constantsexit_code"><strong>constants.EXIT_CODE</strong> <a class="heading-anchor" href="#constantsexit_code">#</a></h3>
 <p>The exit code</p>
-<h2>Callback function notes</h2>
+<h2 id="callback-function-notes">Callback function notes <a class="heading-anchor" href="#callback-function-notes">#</a></h2>
 <ul>
 <li>If there is an error, the error code will be provided as the second parameter to the error callback.</li>
 </ul>

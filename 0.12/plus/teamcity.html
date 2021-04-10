@@ -125,19 +125,19 @@
       <div class="page-columns">
         <div id="markdown" class="sixteen columns bottom"><p>Running Karma in your <a href="https://www.jetbrains.com/teamcity/">TeamCity</a> build is as simple as adding command line build
 step to perform the task. Basically that is it.</p>
-<h2>Install Prerequisites</h2>
+<h2 id="install-prerequisites">Install Prerequisites <a class="heading-anchor" href="#install-prerequisites">#</a></h2>
 <p>The only prerequisite is <code>Node</code> (with <code>npm</code>) installed on the agent(s) you are going to use to
 run build on.
 You may decide to install Karma and Karma-related packages on the agent globally to reuse the same
 Karma installation by different builds.</p>
-<h2>Configure project</h2>
+<h2 id="configure-project">Configure project <a class="heading-anchor" href="#configure-project">#</a></h2>
 <p>Add <code>karma-teamcity-reporter</code> as a dependency to your project:</p>
 <pre><code>npm i --<span class="hljs-built_in">save</span>-<span class="hljs-built_in">dev</span> karma-teamcity-reporter
 </code></pre>
 <p>It is also a good idea to check that you have all karma npm dependencies listed in your
 <code>package.json</code> file (e.g. <code>karma-jasmine</code>, <code>karma-phantomja-launcher</code> and so on) to have them
 being installed during build.</p>
-<h2>Create a new TeamCity build step</h2>
+<h2 id="create-a-new-teamcity-build-step">Create a new TeamCity build step <a class="heading-anchor" href="#create-a-new-teamcity-build-step">#</a></h2>
 <p>Add new build step to build configuration: use Command Line runner and fill in <code>Custom script</code> textarea. If you had decided not to install <em>all</em> your NPM dependencies globally
 add <code>npm install</code> in the beginning of the script. Then add command to run Karma, e.g.:</p>
 <pre><code>karma start <span class="hljs-params">--reporters</span> teamcity <span class="hljs-params">--single-run</span> <span class="hljs-params">--browsers</span> PhantomJS <span class="hljs-params">--colors</span> <span class="hljs-literal">false</span>

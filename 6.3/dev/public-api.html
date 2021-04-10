@@ -121,14 +121,14 @@
       <div class="page-columns">
         <div id="markdown" class="sixteen columns bottom"><p>Most of the time, you will be using Karma directly from the command line.
 You can, however, call Karma programmatically from your node module. Here is the public API.</p>
-<h2>karma.Server(options, [callback=process.exit])</h2>
-<h3><code>constructor</code></h3>
+<h2 id="karmaserveroptions-callbackprocessexit">karma.Server(options, [callback=process.exit]) <a class="heading-anchor" href="#karmaserveroptions-callbackprocessexit">#</a></h2>
+<h3 id="constructor"><code>constructor</code> <a class="heading-anchor" href="#constructor">#</a></h3>
 <ul>
 <li><strong>Returns:</strong> <code>Server</code> instance.</li>
 </ul>
-<h4>Usage</h4>
+<h4 id="usage">Usage <a class="heading-anchor" href="#usage">#</a></h4>
 <p>Notice the capital &#39;S&#39; on  <code>require(&#39;karma&#39;).Server</code>.</p>
-<h5>Deprecated Behavior</h5>
+<h5 id="deprecated-behavior">Deprecated Behavior <a class="heading-anchor" href="#deprecated-behavior">#</a></h5>
 <p>The following still works, but the way it behaves is deprecated and will be
 changed in a future major version.</p>
 <pre><code class="language-javascript"><span class="hljs-keyword">var</span> Server = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;karma&#x27;</span>).Server
@@ -138,7 +138,7 @@ changed in a future major version.</p>
   process.exit(exitCode)
 })
 </code></pre>
-<h5>New Behavior</h5>
+<h5 id="new-behavior">New Behavior <a class="heading-anchor" href="#new-behavior">#</a></h5>
 <pre><code class="language-javascript"><span class="hljs-keyword">const</span> karma = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;karma&#x27;</span>)
 <span class="hljs-keyword">const</span> parseConfig = karma.config.parseConfig
 <span class="hljs-keyword">const</span> Server = karma.Server
@@ -157,86 +157,86 @@ parseConfig(
   <span class="hljs-function">(<span class="hljs-params">rejectReason</span>) =&gt;</span> { <span class="hljs-comment">/* respond to the rejection reason error */</span> }
 );
 </code></pre>
-<h3><code>server.start()</code></h3>
+<h3 id="serverstart"><code>server.start()</code> <a class="heading-anchor" href="#serverstart">#</a></h3>
 <p>Equivalent of <code>karma start</code>.</p>
 <pre><code class="language-javascript">server.start()
 </code></pre>
-<h3><code>server.refreshFiles()</code></h3>
+<h3 id="serverrefreshfiles"><code>server.refreshFiles()</code> <a class="heading-anchor" href="#serverrefreshfiles">#</a></h3>
 <p>Trigger a file list refresh. Returns a promise.</p>
 <pre><code class="language-javascript">server.refreshFiles()
 </code></pre>
-<h3><code>server.refreshFile(path)</code></h3>
+<h3 id="serverrefreshfilepath"><code>server.refreshFile(path)</code> <a class="heading-anchor" href="#serverrefreshfilepath">#</a></h3>
 <p>Trigger a file refresh. Returns a promise.</p>
 <pre><code class="language-javascript">server.refreshFile(<span class="hljs-string">&#x27;src/js/module-dep.js&#x27;</span>)
 </code></pre>
-<h3>Events</h3>
+<h3 id="events">Events <a class="heading-anchor" href="#events">#</a></h3>
 <p>The <code>server</code> object is an <a href="https://nodejs.org/docs/latest/api/events.html#events_class_events_eventemitter"><code>EventEmitter</code></a>. You can simply listen to events like this:</p>
 <pre><code class="language-javascript">server.on(<span class="hljs-string">&#x27;browser_register&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">browser</span>) </span>{
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;A new browser was registered&#x27;</span>)
 })
 </code></pre>
-<h3><code>listening</code></h3>
+<h3 id="listening"><code>listening</code> <a class="heading-anchor" href="#listening">#</a></h3>
 <p><strong>Arguments:</strong></p>
 <ul>
 <li><code>port</code>: Port number</li>
 </ul>
 <p>Begin accepting connections on the specified port.</p>
-<h3><code>browser_register</code></h3>
+<h3 id="browser_register"><code>browser_register</code> <a class="heading-anchor" href="#browser_register">#</a></h3>
 <p><strong>Arguments:</strong></p>
 <ul>
 <li><code>browser</code>: The browser instance</li>
 </ul>
 <p>A new browser was opened, but is not ready yet.</p>
-<h3><code>browser_error</code></h3>
+<h3 id="browser_error"><code>browser_error</code> <a class="heading-anchor" href="#browser_error">#</a></h3>
 <p><strong>Arguments:</strong></p>
 <ul>
 <li><code>browser</code>: The browser instance</li>
 <li><code>error</code>: The error that occurred</li>
 </ul>
 <p>There was an error in this browser instance.</p>
-<h3><code>browser_start</code></h3>
+<h3 id="browser_start"><code>browser_start</code> <a class="heading-anchor" href="#browser_start">#</a></h3>
 <p><strong>Arguments:</strong></p>
 <ul>
 <li><code>browser</code>: The browser instance</li>
 <li><code>info</code>: Details about the run</li>
 </ul>
 <p>A test run is beginning in this browser.</p>
-<h3><code>browser_complete</code></h3>
+<h3 id="browser_complete"><code>browser_complete</code> <a class="heading-anchor" href="#browser_complete">#</a></h3>
 <p><strong>Arguments:</strong></p>
 <ul>
 <li><code>browser</code>: The browser instance</li>
 <li><code>result</code>: Test results</li>
 </ul>
 <p>A test run has completed in this browser.</p>
-<h3><code>browsers_change</code></h3>
+<h3 id="browsers_change"><code>browsers_change</code> <a class="heading-anchor" href="#browsers_change">#</a></h3>
 <p><strong>Arguments:</strong></p>
 <ul>
 <li><code>browsers</code>: A collection of browser instances</li>
 </ul>
 <p>The list of browsers has changed.</p>
-<h3><code>browsers_ready</code></h3>
+<h3 id="browsers_ready"><code>browsers_ready</code> <a class="heading-anchor" href="#browsers_ready">#</a></h3>
 <p>All browsers are ready for execution</p>
-<h3><code>run_start</code></h3>
+<h3 id="run_start"><code>run_start</code> <a class="heading-anchor" href="#run_start">#</a></h3>
 <p><strong>Arguments:</strong></p>
 <ul>
 <li><code>browsers</code>: A collection of browser instances on which tests are executed</li>
 </ul>
 <p>A test run starts.</p>
-<h3><code>run_complete</code></h3>
+<h3 id="run_complete"><code>run_complete</code> <a class="heading-anchor" href="#run_complete">#</a></h3>
 <p><strong>Arguments:</strong></p>
 <ul>
 <li><code>browsers</code>: A collection of browser instances</li>
 <li><code>results</code>: A list of results</li>
 </ul>
 <p>This event gets triggered whenever all the browsers, which belong to a test run, finish. For example, on a run that has 3 browsers, one would expect 3 <code>browser_complete</code> events before the <code>run_complete</code> one.</p>
-<h2>karma.runner</h2>
-<h3><code>runner.run(options, [callback=process.exit])</code></h3>
+<h2 id="karmarunner">karma.runner <a class="heading-anchor" href="#karmarunner">#</a></h2>
+<h3 id="runnerrunoptions-callbackprocessexit"><code>runner.run(options, [callback=process.exit])</code> <a class="heading-anchor" href="#runnerrunoptions-callbackprocessexit">#</a></h3>
 <ul>
 <li><strong>Returns:</strong> <code>EventEmitter</code></li>
 </ul>
 <p>The equivalent of <code>karma run</code>.</p>
-<h4>Usage</h4>
-<h5>Deprecated Behavior</h5>
+<h4 id="usage-1">Usage <a class="heading-anchor" href="#usage-1">#</a></h4>
+<h5 id="deprecated-behavior-1">Deprecated Behavior <a class="heading-anchor" href="#deprecated-behavior-1">#</a></h5>
 <p>The following still works, but the way it behaves is deprecated and will be
 changed in a future major version.</p>
 <pre><code class="language-javascript"><span class="hljs-keyword">var</span> runner = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;karma&#x27;</span>).runner
@@ -245,7 +245,7 @@ runner.run({<span class="hljs-attr">port</span>: <span class="hljs-number">9876<
   process.exit(exitCode)
 })
 </code></pre>
-<h5>New Behavior</h5>
+<h5 id="new-behavior-1">New Behavior <a class="heading-anchor" href="#new-behavior-1">#</a></h5>
 <pre><code class="language-javascript"><span class="hljs-keyword">const</span> karma = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;karma&#x27;</span>)
 
 karma.config.parseConfig(
@@ -262,11 +262,11 @@ karma.config.parseConfig(
   <span class="hljs-function">(<span class="hljs-params">rejectReason</span>) =&gt;</span> { <span class="hljs-comment">/* respond to the rejection reason error */</span> }
 );
 </code></pre>
-<h4><code>callback</code> argument</h4>
+<h4 id="callback-argument"><code>callback</code> argument <a class="heading-anchor" href="#callback-argument">#</a></h4>
 <p>The callback receives the exit code as the first argument.</p>
 <p>If there is an error, the error code will be provided as the second parameter to
 the error callback.</p>
-<h4>runner Events</h4>
+<h4 id="runner-events">runner Events <a class="heading-anchor" href="#runner-events">#</a></h4>
 <p><code>runner.run()</code> returns an <code>EventEmitter</code> which emits a <code>progress</code> event passing
 the reporter output as a <code>Buffer</code> object.</p>
 <p>You may listen for that event to print the reporter output to the console:</p>
@@ -274,12 +274,12 @@ the reporter output as a <code>Buffer</code> object.</p>
   process.stdout.write(data)
 })
 </code></pre>
-<h2>karma.stopper</h2>
-<h3><code>stopper.stop(options, [callback=process.exit])</code></h3>
+<h2 id="karmastopper">karma.stopper <a class="heading-anchor" href="#karmastopper">#</a></h2>
+<h3 id="stopperstopoptions-callbackprocessexit"><code>stopper.stop(options, [callback=process.exit])</code> <a class="heading-anchor" href="#stopperstopoptions-callbackprocessexit">#</a></h3>
 <p>This function will signal a running server to stop. The equivalent of
 <code>karma stop</code>.</p>
-<h4>Usage</h4>
-<h5>Deprecated Behavior</h5>
+<h4 id="usage-2">Usage <a class="heading-anchor" href="#usage-2">#</a></h4>
+<h5 id="deprecated-behavior-2">Deprecated Behavior <a class="heading-anchor" href="#deprecated-behavior-2">#</a></h5>
 <p>The following still works, but the way it behaves is deprecated and will be
 changed in a future major version.</p>
 <pre><code class="language-javascript"><span class="hljs-keyword">var</span> stopper = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;karma&#x27;</span>).stopper
@@ -290,7 +290,7 @@ stopper.stop({<span class="hljs-attr">port</span>: <span class="hljs-number">987
   process.exit(exitCode)
 })
 </code></pre>
-<h5>New Behavior</h5>
+<h5 id="new-behavior-2">New Behavior <a class="heading-anchor" href="#new-behavior-2">#</a></h5>
 <pre><code class="language-javascript"><span class="hljs-keyword">const</span> karma = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;karma&#x27;</span>)
 
 karma.config.parseConfig(
@@ -309,17 +309,17 @@ karma.config.parseConfig(
   <span class="hljs-function">(<span class="hljs-params">rejectReason</span>) =&gt;</span> { <span class="hljs-comment">/* respond to the rejection reason error */</span> }
 );
 </code></pre>
-<h4><code>callback</code> argument</h4>
+<h4 id="callback-argument-1"><code>callback</code> argument <a class="heading-anchor" href="#callback-argument-1">#</a></h4>
 <p>The callback receives the exit code as the first argument.</p>
 <p>If there is an error, the error code will be provided as the second parameter to
 the error callback.</p>
-<h2>karma.config</h2>
-<h3><code>config.parseConfig([configFilePath], [cliOptions], [parseOptions])</code></h3>
+<h2 id="karmaconfig">karma.config <a class="heading-anchor" href="#karmaconfig">#</a></h2>
+<h3 id="configparseconfigconfigfilepath-clioptions-parseoptions"><code>config.parseConfig([configFilePath], [cliOptions], [parseOptions])</code> <a class="heading-anchor" href="#configparseconfigconfigfilepath-clioptions-parseoptions">#</a></h3>
 <p>This function will load given config file and returns a filled config object.
 This can be useful if you want to integrate karma into another tool and want to load
 the karma config while honoring the karma defaults.</p>
-<h4>Usage</h4>
-<h5>Deprecated Behavior</h5>
+<h4 id="usage-3">Usage <a class="heading-anchor" href="#usage-3">#</a></h4>
+<h5 id="deprecated-behavior-3">Deprecated Behavior <a class="heading-anchor" href="#deprecated-behavior-3">#</a></h5>
 <p>The following still works, but the way it behaves is deprecated and will be
 changed in a future major version.</p>
 <pre><code class="language-javascript"><span class="hljs-keyword">const</span> cfg = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;karma&#x27;</span>).config;
@@ -333,7 +333,7 @@ changed in a future major version.</p>
 <p>The new behavior in the future will involve throwing exceptions instead of
 exiting the process and aynchronous config files will be supported through the
 use of promises.</p>
-<h5>New Behavior</h5>
+<h5 id="new-behavior-3">New Behavior <a class="heading-anchor" href="#new-behavior-3">#</a></h5>
 <pre><code class="language-javascript"><span class="hljs-keyword">const</span> cfg = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;karma&#x27;</span>).config;
 <span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;path&#x27;</span>);
 <span class="hljs-comment">// Read karma.conf.js, but override port with 1337</span>
@@ -346,7 +346,7 @@ cfg.parseConfig(
   <span class="hljs-function">(<span class="hljs-params">rejectReason</span>) =&gt;</span> { <span class="hljs-comment">/* respond to the rejection reason error */</span> }
 );
 </code></pre>
-<h4><code>configFilePath</code> argument</h4>
+<h4 id="configfilepath-argument"><code>configFilePath</code> argument <a class="heading-anchor" href="#configfilepath-argument">#</a></h4>
 <ul>
 <li><strong>Type:</strong> String | <code>null</code> | <code>undefined</code></li>
 <li><strong>Default Value:</strong> <code>undefined</code></li>
@@ -364,7 +364,7 @@ by the <code>cliOptions</code> argument will be set.</p>
 </ul>
 </li>
 </ul>
-<h4><code>cliOptions</code> argument</h4>
+<h4 id="clioptions-argument"><code>cliOptions</code> argument <a class="heading-anchor" href="#clioptions-argument">#</a></h4>
 <ul>
 <li><strong>Type:</strong> Object | <code>null</code> | <code>undefined</code></li>
 <li><strong>Default Value:</strong> <code>undefined</code></li>
@@ -377,7 +377,7 @@ will effectively be ignored in the final configuration.</p>
 <code>config.set()</code> method.</p>
 <p>The expected source of this argument is parsed command line options, but 
 programatic users may construct this object or leave it out entirely.</p>
-<h4><code>parseOptions</code> argument</h4>
+<h4 id="parseoptions-argument"><code>parseOptions</code> argument <a class="heading-anchor" href="#parseoptions-argument">#</a></h4>
 <ul>
 <li><strong>Type:</strong> Object | <code>null</code> | <code>undefined</code></li>
 <li><strong>Default Value:</strong> <code>undefined</code></li>
@@ -387,7 +387,7 @@ allow additional control over parsing and opt-in access to new behaviors or
 features.</p>
 <p>These options are only related to parsing configuration files and object and are
 not related to the configuration of Karma itself.</p>
-<h5><code>parseOptions.promiseConfig</code> option</h5>
+<h5 id="parseoptionspromiseconfig-option"><code>parseOptions.promiseConfig</code> option <a class="heading-anchor" href="#parseoptionspromiseconfig-option">#</a></h5>
 <ul>
 <li><strong>Type:</strong> Boolean</li>
 <li><strong>Default Value:</strong> <code>false</code></li>
@@ -406,7 +406,7 @@ promise returned by <code>parseConfig()</code> will resolve with a parsed config
 object, an instance of the <code>Config</code> class, as the value.</p>
 <p><em><strong>In most cases, <code>parseOptions.throwErrors = true</code> should also be set. This
 disables process exiting and allows errors to result in rejected promises.</strong></em></p>
-<h5><code>parseOptions.throwErrors</code> option</h5>
+<h5 id="parseoptionsthrowerrors-option"><code>parseOptions.throwErrors</code> option <a class="heading-anchor" href="#parseoptionsthrowerrors-option">#</a></h5>
 <ul>
 <li><strong>Type:</strong> Boolean</li>
 <li><strong>Default Value:</strong> <code>false</code></li>
@@ -422,34 +422,34 @@ to.</p>
 <p>If the asynchronous API (<code>parseOptions.promiseConfig = true</code>) is being used,
 then <code>parseOptions.throwErrors = true</code> allows the promise to be rejected
 instead of exiting the process.</p>
-<h2><code>karma.constants</code></h2>
-<h3><code>constants.VERSION</code></h3>
+<h2 id="karmaconstants"><code>karma.constants</code> <a class="heading-anchor" href="#karmaconstants">#</a></h2>
+<h3 id="constantsversion"><code>constants.VERSION</code> <a class="heading-anchor" href="#constantsversion">#</a></h3>
 <p>The current version of karma</p>
-<h3><code>constants.DEFAULT_PORT</code></h3>
+<h3 id="constantsdefault_port"><code>constants.DEFAULT_PORT</code> <a class="heading-anchor" href="#constantsdefault_port">#</a></h3>
 <p>The default port used for the karma server</p>
-<h3><code>constants.DEFAULT_HOSTNAME</code></h3>
+<h3 id="constantsdefault_hostname"><code>constants.DEFAULT_HOSTNAME</code> <a class="heading-anchor" href="#constantsdefault_hostname">#</a></h3>
 <p>The default hostname used for the karma server</p>
-<h3><code>constants.DEFAULT_LISTEN_ADDR</code></h3>
+<h3 id="constantsdefault_listen_addr"><code>constants.DEFAULT_LISTEN_ADDR</code> <a class="heading-anchor" href="#constantsdefault_listen_addr">#</a></h3>
 <p>The default address use for the karma server to listen on</p>
-<h3><code>constants.LOG_DISABLE</code></h3>
+<h3 id="constantslog_disable"><code>constants.LOG_DISABLE</code> <a class="heading-anchor" href="#constantslog_disable">#</a></h3>
 <p>The value for disabling logs</p>
-<h3><code>constants.LOG_ERROR</code></h3>
+<h3 id="constantslog_error"><code>constants.LOG_ERROR</code> <a class="heading-anchor" href="#constantslog_error">#</a></h3>
 <p>The value for the log <code>error</code> level</p>
-<h3><code>constants.LOG_WARN</code></h3>
+<h3 id="constantslog_warn"><code>constants.LOG_WARN</code> <a class="heading-anchor" href="#constantslog_warn">#</a></h3>
 <p>The value for the log <code>warn</code> level</p>
-<h3><code>constants.LOG_INFO</code></h3>
+<h3 id="constantslog_info"><code>constants.LOG_INFO</code> <a class="heading-anchor" href="#constantslog_info">#</a></h3>
 <p>The value for the log <code>info</code> level</p>
-<h3><code>constants.LOG_DEBUG</code></h3>
+<h3 id="constantslog_debug"><code>constants.LOG_DEBUG</code> <a class="heading-anchor" href="#constantslog_debug">#</a></h3>
 <p>The value for the log <code>debug</code> level</p>
-<h3><code>constants.LOG_PRIORITIES</code></h3>
+<h3 id="constantslog_priorities"><code>constants.LOG_PRIORITIES</code> <a class="heading-anchor" href="#constantslog_priorities">#</a></h3>
 <p>An array of log levels in descending order, i.e. <code>LOG_DISABLE</code>, <code>LOG_ERROR</code>, <code>LOG_WARN</code>, <code>LOG_INFO</code>, and <code>LOG_DEBUG</code></p>
-<h3><code>constants.COLOR_PATTERN</code></h3>
+<h3 id="constantscolor_pattern"><code>constants.COLOR_PATTERN</code> <a class="heading-anchor" href="#constantscolor_pattern">#</a></h3>
 <p>The default color pattern for log output</p>
-<h3><code>constants.NO_COLOR_PATTERN</code></h3>
+<h3 id="constantsno_color_pattern"><code>constants.NO_COLOR_PATTERN</code> <a class="heading-anchor" href="#constantsno_color_pattern">#</a></h3>
 <p>The default pattern for log output without color</p>
-<h3><code>constants.CONSOLE_APPENDER</code></h3>
+<h3 id="constantsconsole_appender"><code>constants.CONSOLE_APPENDER</code> <a class="heading-anchor" href="#constantsconsole_appender">#</a></h3>
 <p>The default console appender</p>
-<h3><code>constants.EXIT_CODE</code></h3>
+<h3 id="constantsexit_code"><code>constants.EXIT_CODE</code> <a class="heading-anchor" href="#constantsexit_code">#</a></h3>
 <p>The exit code</p>
 
         </div>

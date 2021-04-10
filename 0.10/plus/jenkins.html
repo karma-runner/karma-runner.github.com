@@ -124,7 +124,7 @@ project (hopefully early on), you might want to have automated tests run
 off your code versioning system. Jenkins will help you with this task.
 This tutorial assumes you have Jenkins already setup and running
 on your CI environment.</p>
-<h2>Install Prerequisites</h2>
+<h2 id="install-prerequisites">Install Prerequisites <a class="heading-anchor" href="#install-prerequisites">#</a></h2>
 <p>You need the following tools installed on your Jenkins CI server:</p>
 <ul>
 <li>Node</li>
@@ -134,7 +134,7 @@ on your CI environment.</p>
 <ul>
 <li><a href="https://wiki.jenkins-ci.org/display/JENKINS/EnvInject+Plugin">EnvInject</a> - it makes things easier under certain linux distributions and user permissions.</li>
 </ul>
-<h2>Configure Karma</h2>
+<h2 id="configure-karma">Configure Karma <a class="heading-anchor" href="#configure-karma">#</a></h2>
 <p> Make the following additions and changes to your <code>karma.conf.js</code>
  file as needed:</p>
 <pre><code class="language-javascript">singleRun: <span class="hljs-literal">true</span>,
@@ -145,11 +145,11 @@ on your CI environment.</p>
 </code></pre>
 <p>Please note the <code>test-result.xml</code> file will be written to the present
 working directory (and you will need to tell Jenkins where to find it).</p>
-<h2>Create a new Jenkins Job</h2>
+<h2 id="create-a-new-jenkins-job">Create a new Jenkins Job <a class="heading-anchor" href="#create-a-new-jenkins-job">#</a></h2>
 <p>In Jenkins, start a new job for Angular/Karma with the basic
 settings (Name, description, parameters, source code repo to pull
 from, etc.)</p>
-<h2>Configure the Build Environment</h2>
+<h2 id="configure-the-build-environment">Configure the Build Environment <a class="heading-anchor" href="#configure-the-build-environment">#</a></h2>
 <p>First go to the job page and click on configure. Then in the Build
 Environment sub-section, check the “Inject environment
 variables to the build process” checkbox. A few textboxes will

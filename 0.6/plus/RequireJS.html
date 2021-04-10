@@ -116,8 +116,8 @@
       </div>
       <div class="page-columns">
         <div id="markdown" class="sixteen columns bottom"><p>This page shows how to configure a project that uses <a href="http://requirejs.org/">RequireJS</a>. It is based on Jake&#39;s <a href="http://jaketrent.com/post/test-requirejs-testacular/">post</a>.</p>
-<h2>Configure Testacular</h2>
-<h3>Directory Setup</h3>
+<h2 id="configure-testacular">Configure Testacular <a class="heading-anchor" href="#configure-testacular">#</a></h2>
+<h3 id="directory-setup">Directory Setup <a class="heading-anchor" href="#directory-setup">#</a></h3>
 <p>For clarity in the example configuration files and test below, the
 directory structure upon which these are based looks like this:</p>
 <pre><code class="language-bash">project/
@@ -132,7 +132,7 @@ directory structure upon which these are based looks like this:</p>
     test-main.js
 testacular.conf.js
 </code></pre>
-<h3>Initialize Testacular</h3>
+<h3 id="initialize-testacular">Initialize Testacular <a class="heading-anchor" href="#initialize-testacular">#</a></h3>
 <p>Testacular comes with a nice utility for generating a config file
 (default name: <code>testacular.conf.js</code>) that it needs in order to run.</p>
 <p>In your terminal, type:</p>
@@ -140,7 +140,7 @@ testacular.conf.js
 </code></pre>
 <p>This will give you a series of prompts for things such as paths to
 source and tests and which browsers to capture.</p>
-<h3>RequireJs Shim</h3>
+<h3 id="requirejs-shim">RequireJs Shim <a class="heading-anchor" href="#requirejs-shim">#</a></h3>
 <p>Not immediately apparent is the fact that the ‘shim’ config from
 RequireJs 2.x does not work from within Testacular. I haven’t yet
 figured out why. For instance, I was constantly getting <code>‘Backbone’ is not defined</code> messages even though it was specified in the ‘shim’
@@ -148,7 +148,7 @@ config and required in the test. I could have been doing something
 wrong. My solution thus far has been to list each of the non-RequireJs
 modules and their dependencies in the <code>files</code> attribute of
 <code>testacular.conf.js</code>.</p>
-<h3><code>testacular.conf.js</code></h3>
+<h3 id="testacularconfjs"><code>testacular.conf.js</code> <a class="heading-anchor" href="#testacularconfjs">#</a></h3>
 <p>The final point is that the RequireJs main module for your test runner
 should be the last file listed.</p>
 <p>So, finally, here is the ‘file’ excerpt of <code>testacular.conf.js</code>:</p>
@@ -180,10 +180,10 @@ should be the last file listed.</p>
 ];
 </code></pre>
 <p>This config is awesome. It replaces an html test runner that you would otherwise have to build.</p>
-<h2>RequireJs Main Module</h2>
+<h2 id="requirejs-main-module">RequireJs Main Module <a class="heading-anchor" href="#requirejs-main-module">#</a></h2>
 <p>Just like any RequireJs project, you need a main module to bootstrap
 your tests. In the main module, you setup the <code>require.config</code>.</p>
-<h3>Testacular <code>/base</code> Directory</h3>
+<h3 id="testacular-base-directory">Testacular <code>/base</code> Directory <a class="heading-anchor" href="#testacular-base-directory">#</a></h3>
 <p>Testacular serves files under the <code>/base</code> directory. So, on the
 server, requests to files will be served up under
 <code>http://localhost:9876/base/*</code>. The RequireJs config for <code>baseUrl</code>
@@ -192,14 +192,14 @@ When setting this value for the Testacular server, it will need to
 start with <code>/base</code>. I want my baseUrl to be at the root of my <code>/src</code>
 directory so relative requires in the source won’t need to change. My
 baseUrl has the value of <code>/base/src</code>.</p>
-<h3>Require Each Test File</h3>
+<h3 id="require-each-test-file">Require Each Test File <a class="heading-anchor" href="#require-each-test-file">#</a></h3>
 <p>One of the things I hate is having to update a master list of all
 tests to run every time I add a test. There is no config option for
 this, but there&#39;s an easy way to get around it by filtering the tests
 from the <code>window.__testacular__.files</code> object.
 The code is included in the example below and the original suggestion
 came from <a href="https://github.com/testacular/testacular/pull/236">https://github.com/testacular/testacular/pull/236</a>.</p>
-<h3>Asynchronously Run Testacular</h3>
+<h3 id="asynchronously-run-testacular">Asynchronously Run Testacular <a class="heading-anchor" href="#asynchronously-run-testacular">#</a></h3>
 <p>Because the RequireJs require statements are asynchronous, Testacular
 needs to wait until they’re done (the code is loaded and ready) before
 it starts the tests.</p>
@@ -221,7 +221,7 @@ it starts the tests.</p>
   <span class="hljs-attr">callback</span>: <span class="hljs-built_in">window</span>.__testacular__.start
 });
 </code></pre>
-<h2>RequireJs Test in Testacular</h2>
+<h2 id="requirejs-test-in-testacular">RequireJs Test in Testacular <a class="heading-anchor" href="#requirejs-test-in-testacular">#</a></h2>
 <p>All the setup thus far has been in preparation for the code to follow.
 The test can now be setup as a RequireJs module. It can require the
 source code under test. It can use Mocha (or whatever framework there
@@ -248,7 +248,7 @@ asynchronous callback to avoid this error:</p>
   });
 });
 </code></pre>
-<h2>Run the Tests in Testacular</h2>
+<h2 id="run-the-tests-in-testacular">Run the Tests in Testacular <a class="heading-anchor" href="#run-the-tests-in-testacular">#</a></h2>
 <p>To start the Testacular server:</p>
 <pre><code class="language-bash">$ testacular start
 </code></pre>

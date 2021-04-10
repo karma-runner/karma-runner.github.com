@@ -116,7 +116,7 @@
       </div>
       <div class="page-columns">
         <div id="markdown" class="sixteen columns bottom"><p><strong>The files array determines which files are loaded, watched and served by Testacular.</strong></p>
-<h2>Adapters</h2>
+<h2 id="adapters">Adapters <a class="heading-anchor" href="#adapters">#</a></h2>
 <p>The first thing you usually need is an adapter. The following adapters
 are bundled with Testacular:</p>
 <ul>
@@ -134,7 +134,7 @@ to use Mocha you have the following in your config file:</p>
   MOCHA_ADAPTER
 ];
 </code></pre>
-<h2>Pattern matching and <code>basePath</code></h2>
+<h2 id="pattern-matching-and-basepath">Pattern matching and <code>basePath</code> <a class="heading-anchor" href="#pattern-matching-and-basepath">#</a></h2>
 <ul>
 <li>All the relative patterns will get resolved to <code>basePath</code> first.</li>
 <li>If the <code>basePath</code> is a relative path, it gets resolved to the
@@ -142,7 +142,7 @@ directory where the configuration file is.</li>
 <li>Eventually, all the patterns will get resolved into files using
 <a href="https://github.com/isaacs/node-glob">glob</a>, so you can use expressions like <code>test/unit/**/*.spec.js</code>.</li>
 </ul>
-<h2>Ordering</h2>
+<h2 id="ordering">Ordering <a class="heading-anchor" href="#ordering">#</a></h2>
 <ul>
 <li>The order of patterns determines the order of files in which they
 are included in the browser.</li>
@@ -150,25 +150,25 @@ are included in the browser.</li>
 <li>Each file is included exactly once. If multiple patterns match the
 same file, it&#39;s included as if it only matched the first pattern.</li>
 </ul>
-<h2>Included, served, watched</h2>
+<h2 id="included-served-watched">Included, served, watched <a class="heading-anchor" href="#included-served-watched">#</a></h2>
 <p>Since version 0.5.2 there is the ability to configure the patterns
 more closely.</p>
 <p>If you define them like before a simple pattern like
 <code>&#39;test/unit/*.js&#39;</code> this gets expanded internally to the following:</p>
 <pre><code class="language-javascript">  {<span class="hljs-attr">pattern</span>: <span class="hljs-string">&#x27;test/unit/*.js&#x27;</span>, <span class="hljs-attr">watched</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">included</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">served</span>: <span class="hljs-literal">true</span>}
 </code></pre>
-<h3><code>pattern</code></h3>
+<h3 id="pattern"><code>pattern</code> <a class="heading-anchor" href="#pattern">#</a></h3>
 <ul>
 <li><strong>Description.</strong> The pattern to use for matching.</li>
 </ul>
-<h3><code>watched</code></h3>
+<h3 id="watched"><code>watched</code> <a class="heading-anchor" href="#watched">#</a></h3>
 <ul>
 <li><strong>Type.</strong> Boolean</li>
 <li><strong>Default.</strong> <code>true</code></li>
 <li><strong>Description.</strong>  If <code>autoWatch</code> is <code>true</code> all files that have set <code>watched</code> to true will be
 watched for changes.</li>
 </ul>
-<h3><code>included</code></h3>
+<h3 id="included"><code>included</code> <a class="heading-anchor" href="#included">#</a></h3>
 <ul>
 <li><strong>Type.</strong> Boolean</li>
 <li><strong>Default.</strong> <code>true</code></li>
@@ -176,13 +176,13 @@ watched for changes.</li>
   <code>&lt;script&gt;</code> tag? Use <code>false</code> if you wanna load them manually, eg.
   using <a href="../plus/RequireJS.html">Require.js</a>.</li>
 </ul>
-<h3><code>served</code></h3>
+<h3 id="served"><code>served</code> <a class="heading-anchor" href="#served">#</a></h3>
 <ul>
 <li><strong>Type.</strong> Boolean</li>
 <li><strong>Default.</strong> <code>true</code></li>
 <li><strong>Description.</strong> Should the files be served by Testacular&#39;s webserver?</li>
 </ul>
-<h2>Complete example</h2>
+<h2 id="complete-example">Complete example <a class="heading-anchor" href="#complete-example">#</a></h2>
 <p>Here is a complete example showing the different options that are possible.</p>
 <pre><code class="language-javascript">files = [
 

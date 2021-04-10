@@ -135,7 +135,7 @@ of the configuration file:</p>
 <div class="alert alert-success"><h4 class="alert-heading">Note: </h4>There are multiple expressions referencing the &quot;coffee&quot; preprocessor in this example, as a preprocessor
 can be listed more than once as another way to specify multiple file path expressions.</div>
 <div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Most of the preprocessors need to be loaded as <a href="plugins.html">plugins</a>.</div>
-<h2>Available Preprocessors</h2>
+<h2 id="available-preprocessors">Available Preprocessors <a class="heading-anchor" href="#available-preprocessors">#</a></h2>
 <ul>
 <li><a href="https://github.com/karma-runner/karma-coffee-preprocessor">coffee</a></li>
 <li><a href="https://github.com/karma-runner/karma-html2js-preprocessor">html2js</a><ul>
@@ -161,7 +161,7 @@ $ npm install karma-coffee-preprocessor --save-dev
 };
 </code></pre>
 <p>Of course, you can write <a href="../dev/plugins.html">custom plugins</a> too!</p>
-<h2>Configured Preprocessors</h2>
+<h2 id="configured-preprocessors">Configured Preprocessors <a class="heading-anchor" href="#configured-preprocessors">#</a></h2>
 <p>Some of the preprocessors can also be configured:</p>
 <pre><code class="language-javascript">coffeePreprocessor: {
   <span class="hljs-attr">options</span>: {
@@ -177,7 +177,7 @@ $ npm install karma-coffee-preprocessor --save-dev
   }
 }
 </code></pre>
-<h2>Mini matching</h2>
+<h2 id="mini-matching">Mini matching <a class="heading-anchor" href="#mini-matching">#</a></h2>
 <p>The keys of the preprocessors config object are used to filter the files specified in
 the <code>files</code> configuration.</p>
 <ul>
@@ -189,7 +189,7 @@ the <code>files</code> configuration.</p>
 <p>So for example the path <code>/my/absolute/path/to/test/unit/file.coffee</code> matched against
 the key <code>**/*.coffee</code> would return <code>true</code>, but matched against just <code>*.coffee</code> it would
 return <code>false</code> and the preprocessor would not be executed on the CoffeeScript files.</p>
-<h2>Order of execution</h2>
+<h2 id="order-of-execution">Order of execution <a class="heading-anchor" href="#order-of-execution">#</a></h2>
 <p>If a file matches only one key in the preprocessors config object, then karma
 will execute the preprocessors over that file in the order they are listed in
 the corresponding array. So for instance, if the config object is:</p>

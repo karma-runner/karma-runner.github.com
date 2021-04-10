@@ -146,7 +146,7 @@
 
 3 directories, 9 files
 </code></pre>
-<h2>Configure Karma</h2>
+<h2 id="configure-karma">Configure Karma <a class="heading-anchor" href="#configure-karma">#</a></h2>
 <p>The first step is creating our <code>karma.conf.js</code>. We can do this from the
 command line:</p>
 <pre><code class="language-bash">$ karma init
@@ -215,10 +215,10 @@ to load <code>knockout.js</code> before requirejs...</p>
       <span class="hljs-symbol">&#x27;test</span>/test-main.js&#x27;
     ],
 </code></pre>
-<h2>Configuring Require.js</h2>
+<h2 id="configuring-requirejs">Configuring Require.js <a class="heading-anchor" href="#configuring-requirejs">#</a></h2>
 <p>Just like any Require.js project, you need a main module to bootstrap
 your tests. We do this in <code>test/test-main.js</code>.</p>
-<h3>Karma <code>/base</code> Directory</h3>
+<h3 id="karma-base-directory">Karma <code>/base</code> Directory <a class="heading-anchor" href="#karma-base-directory">#</a></h3>
 <p>Karma serves files under the <code>/base</code> directory. So, on the server
 requests to files will be served up under
 <code>http://localhost:9876/base/*</code>.</p>
@@ -228,7 +228,7 @@ server, it will need to start with <code>/base</code>. We want the <code>baseUrl
 tests to be the same folder as the base url we have in <code>src/main.js</code>, so
 that relative requires in the source won’t need to change. So, as we
 want our base url to be at <code>src/</code>, we need to write <code>/base/src</code>.</p>
-<h3>Require Each Test File</h3>
+<h3 id="require-each-test-file">Require Each Test File <a class="heading-anchor" href="#require-each-test-file">#</a></h3>
 <p>With Karma we don&#39;t need to list all test files ourselves as we can
 easily find them from the files specified in <code>test-main.js</code>: Karma
 includes all the files in <code>window.__karma__.files</code>, so by filtering this
@@ -274,7 +274,7 @@ The <code>test/test-main.js</code> file ends up looking like this:</p>
   <span class="hljs-attr">callback</span>: <span class="hljs-built_in">window</span>.__karma__.start
 });
 </code></pre>
-<h2>Using Require.js in tests</h2>
+<h2 id="using-requirejs-in-tests">Using Require.js in tests <a class="heading-anchor" href="#using-requirejs-in-tests">#</a></h2>
 <p>Tests can now be written as regular Require.js modules. We wrap
 everything in <code>define</code>, and inside we can use the regular test methods,
 such as <code>describe</code> and <code>it</code>. Example:</p>
@@ -302,7 +302,7 @@ such as <code>describe</code> and <code>it</code>. Example:</p>
 
 });
 </code></pre>
-<h2>Running the tests</h2>
+<h2 id="running-the-tests">Running the tests <a class="heading-anchor" href="#running-the-tests">#</a></h2>
 <p>We can now run the tests from the command line:</p>
 <pre><code class="language-bash">$ karma start
 </code></pre>

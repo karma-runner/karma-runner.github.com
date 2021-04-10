@@ -136,7 +136,7 @@ sending a signal to the testing server to inform all of the captured browsers to
 Each browser then loads the source files inside an IFrame, executes the tests and reports the results back to the server.</p>
 <p>The server collects the results from all of the captured browsers and presents them to the developer.</p>
 <p>This is only a very brief overview, as the internals of how Karma works aren&#39;t entirely necessary when using Karma.</p>
-<h2>Outline of workflow.</h2>
+<h2 id="outline-of-workflow">Outline of workflow. <a class="heading-anchor" href="#outline-of-workflow">#</a></h2>
 <p>Here is roughly how Karma works:</p>
 <p>After starting up, Karma loads plugins and the configuration file, then starts its local web server which listens for connections.
 Any browser already waiting on websockets from the server will reconnect immediately. As part of loading the plugins, test reporters

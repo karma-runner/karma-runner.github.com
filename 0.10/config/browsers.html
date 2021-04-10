@@ -124,7 +124,7 @@ so Karma can do that for you. Just simply add into the configuration file:</p>
 </code></pre>
 <p>Then, Karma will take care of autocapturing these browsers, as well as killing them.</p>
 <div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Most of the browser launchers needs to be loaded as <a href="plugins.html">plugins</a>.</div>
-<h2>Available browser launchers</h2>
+<h2 id="available-browser-launchers">Available browser launchers <a class="heading-anchor" href="#available-browser-launchers">#</a></h2>
 <p>These launchers are shipped with Karma by default:</p>
 <ul>
 <li><a href="https://github.com/karma-runner/karma-chrome-launcher">Chrome and Chrome Canary</a></li>
@@ -152,10 +152,10 @@ $ npm install karma-firefox-launcher --save-dev
 </code></pre>
 <p>Also keep in mind that the <code>browsers</code> configuration setting is empty by default.</p>
 <p>Of course, you can write <a href="../dev/plugins.html">custom plugins</a> too!</p>
-<h2>Capturing any browser manually</h2>
+<h2 id="capturing-any-browser-manually">Capturing any browser manually <a class="heading-anchor" href="#capturing-any-browser-manually">#</a></h2>
 <p>You can also capture browsers by simply opening <code>http://&lt;hostname&gt;:&lt;port&gt;/</code>, where <code>&lt;hostname&gt;</code> is the IP address or hostname of the machine where Karma server is running and <code>&lt;port&gt;</code> is the port where Karma server is listening (by default it&#39;s <code>9876</code>). With the default settings in place, just point your browser to <code>http://localhost:9876/</code>.</p>
 <p>This allows you to capture a browser on any device such as a tablet or a phone, that is on the same network as the machine running Karma (or using a local tunnel).</p>
-<h2>Configured launchers</h2>
+<h2 id="configured-launchers">Configured launchers <a class="heading-anchor" href="#configured-launchers">#</a></h2>
 <p>Some of the launchers can be also configured:</p>
 <pre><code class="language-javascript">sauceLabs: {
   <span class="hljs-attr">username</span>: <span class="hljs-string">&#x27;michael_jackson&#x27;</span>
@@ -174,10 +174,10 @@ $ npm install karma-firefox-launcher --save-dev
   }
 }
 </code></pre>
-<h2>Correct path to browser binary</h2>
+<h2 id="correct-path-to-browser-binary">Correct path to browser binary <a class="heading-anchor" href="#correct-path-to-browser-binary">#</a></h2>
 <p>Each plugin has some default paths where to find the browser binary on particular OS.
 You can override these settings by <code>&lt;BROWSER&gt;_BIN</code> ENV variable, or alternatively by creating a <code>symlink</code>.</p>
-<h3>POSIX shells</h3>
+<h3 id="posix-shells">POSIX shells <a class="heading-anchor" href="#posix-shells">#</a></h3>
 <pre><code class="language-bash"><span class="hljs-comment"># Changing the path to the Chrome binary</span>
 $ <span class="hljs-built_in">export</span> CHROME_BIN=/usr/<span class="hljs-built_in">local</span>/bin/my-chrome-build
 
@@ -187,13 +187,13 @@ $ <span class="hljs-built_in">export</span> CHROME_CANARY_BIN=/usr/<span class="
 <span class="hljs-comment"># Changing the path to the PhantomJs binary</span>
 $ <span class="hljs-built_in">export</span> PHANTOMJS_BIN=<span class="hljs-variable">$HOME</span>/<span class="hljs-built_in">local</span>/bin/phantomjs
 </code></pre>
-<h3>Windows cmd.exe</h3>
+<h3 id="windows-cmdexe">Windows cmd.exe <a class="heading-anchor" href="#windows-cmdexe">#</a></h3>
 <pre><code class="language-bash">C:&gt; SET IE_BIN=C:\Program Files\Internet Explorer\iexplore.exe
 </code></pre>
-<h3>Windows Powershell</h3>
+<h3 id="windows-powershell">Windows Powershell <a class="heading-anchor" href="#windows-powershell">#</a></h3>
 <pre><code class="language-bash"><span class="hljs-variable">$Env</span>:FIREFOX_BIN = <span class="hljs-string">&#x27;c:\Program Files (x86)\Mozilla Firefox 4.0 Beta 6\firefox.exe&#x27;</span>
 </code></pre>
-<h2>Custom browsers</h2>
+<h2 id="custom-browsers">Custom browsers <a class="heading-anchor" href="#custom-browsers">#</a></h2>
 <pre><code class="language-javascript"><span class="hljs-comment">// in the karma.conf.js</span>
 <span class="hljs-attr">browsers</span>: [<span class="hljs-string">&#x27;/usr/local/bin/custom-browser.sh&#x27;</span>],
 
