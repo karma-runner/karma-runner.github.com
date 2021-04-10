@@ -1,2 +1,3 @@
-node_modules
-karma
+/.idea/*
+/node_modules/*
+/karma/*
