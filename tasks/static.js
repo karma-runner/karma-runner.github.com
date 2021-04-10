@@ -57,29 +57,6 @@ module.exports = function (grunt) {
           } else {
             return `<p>${text}</p>\n`
           }
-        },
-        code (code, infostring, escaped) {
-          const lang = (infostring || '').match(/\S*/)[0]
-          if (this.options.highlight) {
-            const out = this.options.highlight(code, lang).replace(/&#x27;/g, "'").replace(/&quot;/g, '"')
-            // MODIFIED: prevent code which was not changed by highlighter from
-            // being escaped
-            if (out != null) {
-              escaped = true
-              code = out
-            }
-          }
-          if (!lang) {
-            return '<pre><code>' +
-              (escaped ? code : escape(code, true)) +
-              '</code></pre>\n'
-          }
-          return '<pre><code class="' +
-            this.options.langPrefix +
-            escape(lang, true) +
-            '">' +
-            (escaped ? code : escape(code, true)) +
-            '</code></pre>\n'
         }
       },
       tokenizer: {
