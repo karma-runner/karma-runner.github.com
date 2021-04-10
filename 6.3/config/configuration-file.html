@@ -123,10 +123,7 @@
 <p>In order to serve you well, Karma needs to know about your project in order to test it
 and this is done via a configuration file. The easiest way to generate an initial configuration file
 is by using the <code>karma init</code> command. This page lists all of the available configuration options.</p>
-<div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Most of the framework adapters, reporters, preprocessors and launchers need to be loaded as <a href="plugins.html">plugins</a>.
-
-
-</div>
+<div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Most of the framework adapters, reporters, preprocessors and launchers need to be loaded as <a href="plugins.html">plugins</a>.</div>
 <p>The Karma configuration file can be written in JavaScript, CoffeeScript, or TypeScript and is loaded as a regular Node.js module.</p>
 <p>Unless provided as argument, the Karma CLI will look for a configuration file at</p>
 <ul>
@@ -481,9 +478,7 @@ Use this to prevent accidental disabling tests needed to validate production.</p
 <p><strong>Default:</strong> <code>{&#39;**/*.coffee&#39;: &#39;coffee&#39;}</code></p>
 <p><strong>Description:</strong> A map of preprocessors to use.</p>
 <p>Preprocessors can be loaded through <a href="plugins.html">plugins</a>.</p>
-<div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Just about all preprocessors in Karma require an additional library to be installed (via NPM).
-
-</div>
+<div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Just about all preprocessors in Karma require an additional library to be installed (via NPM).</div>
 <p>Be aware that preprocessors may be transforming the files and file types that are available at run time. For instance,
 if you are using the &quot;coverage&quot; preprocessor on your source files, if you then attempt to interactively debug
 your tests, you&#39;ll discover that your expected source code is completely changed from what you expected.  Because
@@ -500,18 +495,13 @@ but your interactive debugging does not.</p>
 </ul>
 <p><strong>Description:</strong> Protocol used for running the Karma webserver.</p>
 <p>Determines the use of the Node <code>http</code> or <code>https</code> class.</p>
-<div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Using <code>&#39;https:&#39;</code> requires you to specify <code>httpsServerOptions</code>.
-
-
-</div>
+<div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Using <code>&#39;https:&#39;</code> requires you to specify <code>httpsServerOptions</code>.</div>
 <h2>httpModule</h2>
 <p><strong>Type:</strong> String</p>
 <p><strong>Default:</strong> <code>undefined</code></p>
 <p><strong>Description:</strong> Module used for Karma webserver.</p>
 <p>Uses the provided module instead of node&#39;s built in <code>http</code> or <code>https</code> module. The module loaded here must exactly match the interface of node&#39;s http module. This can be useful for loading in a module like <code>node-http2</code> to allow for http2 support.</p>
-<div class="alert alert-success"><h4 class="alert-heading">Note: </h4>if you&#39;re using this to enable <code>http2</code> you must also set the <code>protocol</code> to <code>https:</code> and specify certificates as http2 can only run of https.
-
-</div>
+<div class="alert alert-success"><h4 class="alert-heading">Note: </h4>if you&#39;re using this to enable <code>http2</code> you must also set the <code>protocol</code> to <code>https:</code> and specify certificates as http2 can only run of https.</div>
 <h2>proxies</h2>
 <p><strong>Type:</strong> Object</p>
 <p><strong>Default:</strong> <code>{}</code></p>
@@ -551,10 +541,7 @@ This is disabled by default (since the default value is 0).</p>
 </ul>
 <p><strong>Description:</strong> A list of reporters to use.</p>
 <p>Additional reporters, such as <code>growl</code>, <code>junit</code>, <code>teamcity</code> or <code>coverage</code> can be loaded through <a href="plugins.html">plugins</a>.</p>
-<div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Just about all additional reporters in Karma (other than progress) require an additional library to be installed (via NPM).
-
-
-</div>
+<div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Just about all additional reporters in Karma (other than progress) require an additional library to be installed (via NPM).</div>
 <h2>formatError</h2>
 <p><strong>Type:</strong> Function</p>
 <p><strong>Default:</strong> <code>undefined</code></p>
