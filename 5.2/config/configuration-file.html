@@ -144,24 +144,24 @@ which accepts one argument: the configuration object.</p>
 <pre><code class="language-javascript"><span class="hljs-comment">// karma.conf.js</span>
 <span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">config</span>) </span>{
   config.set({
-    <span class="hljs-attr">basePath</span>: <span class="hljs-string">'../..'</span>,
-    <span class="hljs-attr">frameworks</span>: [<span class="hljs-string">'jasmine'</span>],
+    <span class="hljs-attr">basePath</span>: <span class="hljs-string">&#x27;../..&#x27;</span>,
+    <span class="hljs-attr">frameworks</span>: [<span class="hljs-string">&#x27;jasmine&#x27;</span>],
     <span class="hljs-comment">//...</span>
   });
 };
 </code></pre>
 <pre><code class="language-coffeescript"><span class="hljs-comment"># karma.conf.coffee</span>
-<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-params">(config)</span> -&gt;</span>
+<span class="hljs-built_in">module</span>.<span class="hljs-built_in">exports</span> = <span class="hljs-function"><span class="hljs-params">(config)</span> -&gt;</span>
   config.set
-    basePath: <span class="hljs-string">'../..'</span>
-    frameworks: [<span class="hljs-string">'jasmine'</span>]
+    basePath: <span class="hljs-string">&#x27;../..&#x27;</span>
+    frameworks: [<span class="hljs-string">&#x27;jasmine&#x27;</span>]
     <span class="hljs-comment"># ...</span>
 </code></pre>
 <pre><code class="language-typescript"><span class="hljs-comment">// karma.conf.ts</span>
 <span class="hljs-built_in">module</span>.exports = <span class="hljs-function">(<span class="hljs-params">config</span>) =&gt;</span> {
   config.set({
-    basePath: <span class="hljs-string">'../..'</span>,
-    frameworks: [<span class="hljs-string">'jasmine'</span>],
+    <span class="hljs-attr">basePath</span>: <span class="hljs-string">&#x27;../..&#x27;</span>,
+    <span class="hljs-attr">frameworks</span>: [<span class="hljs-string">&#x27;jasmine&#x27;</span>],
     <span class="hljs-comment">//...</span>
   });
 }
@@ -170,12 +170,12 @@ which accepts one argument: the configuration object.</p>
 <p>Under the hood Karma uses ts-node to transpile TypeScript to JavaScript. If the resolved <code>tsconfig.json</code> has <code>module</code> configured as <code>ES</code> formats. You might get errors like <code>SyntaxError: Unexpected token</code>. This is due that in Node <code>ES</code> module formats are not supported. To overcome this issue you need to configure ts-node to use <code>commonjs</code> module format.</p>
 <p>Create a JavaScript configuration file that overrides the module format.</p>
 <pre><code class="language-javascript"><span class="hljs-comment">// karma.conf.js</span>
-<span class="hljs-built_in">require</span>(<span class="hljs-string">'ts-node'</span>).register({
+<span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;ts-node&#x27;</span>).register({
   <span class="hljs-attr">compilerOptions</span>: {
-    <span class="hljs-attr">module</span>: <span class="hljs-string">'commonjs'</span>
+    <span class="hljs-attr">module</span>: <span class="hljs-string">&#x27;commonjs&#x27;</span>
   }
 });
-<span class="hljs-built_in">require</span>(<span class="hljs-string">'./karma.conf.ts'</span>);
+<span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;./karma.conf.ts&#x27;</span>);
 </code></pre>
 <h2>File Patterns</h2>
 <p>All of the configuration options, which specify file paths, use the <a href="https://github.com/isaacs/minimatch">minimatch</a> library to facilitate flexible
@@ -353,9 +353,9 @@ Custom headers are useful, especially with upcoming browser features like Servic
 </ul>
 <p><strong>Example:</strong></p>
 <pre><code class="language-javascript">customHeaders: [{
-  <span class="hljs-attr">match</span>: <span class="hljs-string">'.*foo.html'</span>,
-  <span class="hljs-attr">name</span>: <span class="hljs-string">'Service-Worker-Allowed'</span>,
-  <span class="hljs-attr">value</span>: <span class="hljs-string">'/'</span>
+  <span class="hljs-attr">match</span>: <span class="hljs-string">&#x27;.*foo.html&#x27;</span>,
+  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Service-Worker-Allowed&#x27;</span>,
+  <span class="hljs-attr">value</span>: <span class="hljs-string">&#x27;/&#x27;</span>
 }]
 </code></pre>
 <h2>detached</h2>
@@ -415,8 +415,8 @@ Use this to prevent accidental disabling tests needed to validate production.</p
 <p>Object description can be found in the <a href="https://nodejs.org/api/tls.html#tls_tls_createserver_options_secureconnectionlistener">NodeJS.org API docs</a></p>
 <p><strong>Example:</strong></p>
 <pre><code class="language-javascript">httpsServerOptions: {
-  <span class="hljs-attr">key</span>: fs.readFileSync(<span class="hljs-string">'server.key'</span>, <span class="hljs-string">'utf8'</span>),
-  <span class="hljs-attr">cert</span>: fs.readFileSync(<span class="hljs-string">'server.crt'</span>, <span class="hljs-string">'utf8'</span>)
+  <span class="hljs-attr">key</span>: fs.readFileSync(<span class="hljs-string">&#x27;server.key&#x27;</span>, <span class="hljs-string">&#x27;utf8&#x27;</span>),
+  <span class="hljs-attr">cert</span>: fs.readFileSync(<span class="hljs-string">&#x27;server.crt&#x27;</span>, <span class="hljs-string">&#x27;utf8&#x27;</span>)
 },
 </code></pre>
 <h2>logLevel</h2>
@@ -444,15 +444,15 @@ Use this to prevent accidental disabling tests needed to validate production.</p
 <p>The plugin must provide an express/connect middleware function (details about this can be found in <a href="http://expressjs.com/guide/using-middleware.html">the Express docs</a>. An example of custom inline middleware is shown below.</p>
 <p><strong>Example:</strong></p>
 <pre><code class="language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">CustomMiddlewareFactory</span> (<span class="hljs-params">config</span>) </span>{
-  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">request, response, <span class="hljs-regexp">/* next */</span></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">request, response, <span class="hljs-comment">/* next */</span></span>) </span>{
     response.writeHead(<span class="hljs-number">200</span>)
-    <span class="hljs-keyword">return</span> response.end(<span class="hljs-string">"content!"</span>)
+    <span class="hljs-keyword">return</span> response.end(<span class="hljs-string">&quot;content!&quot;</span>)
   }
 }
 </code></pre>
-<pre><code class="language-javascript">middleware: [<span class="hljs-string">'custom'</span>]
+<pre><code class="language-javascript">middleware: [<span class="hljs-string">&#x27;custom&#x27;</span>]
 <span class="hljs-attr">plugins</span>: [
-  {<span class="hljs-string">'middleware:custom'</span>: [<span class="hljs-string">'factory'</span>, CustomMiddlewareFactory]}
+  {<span class="hljs-string">&#x27;middleware:custom&#x27;</span>: [<span class="hljs-string">&#x27;factory&#x27;</span>, CustomMiddlewareFactory]}
   ...
 ]
 </code></pre>
@@ -463,8 +463,8 @@ Use this to prevent accidental disabling tests needed to validate production.</p
 <p>Set property name to required MIME, provide Array of extensions (without dots) as it&#39;s value</p>
 <p><strong>Example:</strong></p>
 <pre><code class="language-javascript">mime: {
-   <span class="hljs-string">'text/x-typescript'</span>: [<span class="hljs-string">'ts'</span>,<span class="hljs-string">'tsx'</span>]
-   <span class="hljs-string">'text/plain'</span> : [<span class="hljs-string">'mytxt'</span>]
+   <span class="hljs-string">&#x27;text/x-typescript&#x27;</span>: [<span class="hljs-string">&#x27;ts&#x27;</span>,<span class="hljs-string">&#x27;tsx&#x27;</span>]
+   <span class="hljs-string">&#x27;text/plain&#x27;</span> : [<span class="hljs-string">&#x27;mytxt&#x27;</span>]
 }
 </code></pre>
 <h2>beforeMiddleware</h2>
@@ -530,12 +530,12 @@ but your interactive debugging does not.</p>
 </ul>
 <p><strong>Example:</strong></p>
 <pre><code class="language-javascript">proxies: {
-  <span class="hljs-string">'/static'</span>: <span class="hljs-string">'http://gstatic.com'</span>,
-  <span class="hljs-string">'/web'</span>: <span class="hljs-string">'http://localhost:9000'</span>,
-  <span class="hljs-string">'/img/'</span>: <span class="hljs-string">'/base/test/images/'</span>,
-  <span class="hljs-string">'/proxyfied'</span>: {
-    <span class="hljs-string">'target'</span>: <span class="hljs-string">'http://myserver.localhost'</span>,
-    <span class="hljs-string">'changeOrigin'</span>: <span class="hljs-literal">true</span>
+  <span class="hljs-string">&#x27;/static&#x27;</span>: <span class="hljs-string">&#x27;http://gstatic.com&#x27;</span>,
+  <span class="hljs-string">&#x27;/web&#x27;</span>: <span class="hljs-string">&#x27;http://localhost:9000&#x27;</span>,
+  <span class="hljs-string">&#x27;/img/&#x27;</span>: <span class="hljs-string">&#x27;/base/test/images/&#x27;</span>,
+  <span class="hljs-string">&#x27;/proxyfied&#x27;</span>: {
+    <span class="hljs-string">&#x27;target&#x27;</span>: <span class="hljs-string">&#x27;http://myserver.localhost&#x27;</span>,
+    <span class="hljs-string">&#x27;changeOrigin&#x27;</span>: <span class="hljs-literal">true</span>
   }
 },
 </code></pre>
@@ -607,7 +607,7 @@ between browsers and the testing server).</p>
 <p>Details about this can be found in the <a href="https://github.com/nodejitsu/node-http-proxy">node-http-proxy</a>. An example of overwriting the HTTP header is shown below.</p>
 <p><strong>Example:</strong></p>
 <pre><code class="language-javascript">proxyReq: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">proxyReq, req, res, options</span>) </span>{
-  proxyReq.setHeader(<span class="hljs-string">'Referer'</span>, <span class="hljs-string">'https://www.example.com/'</span>);
+  proxyReq.setHeader(<span class="hljs-string">&#x27;Referer&#x27;</span>, <span class="hljs-string">&#x27;https://www.example.com/&#x27;</span>);
 }
 </code></pre>
 <h2>proxyRes</h2>
@@ -617,9 +617,9 @@ between browsers and the testing server).</p>
 <p>Details about this can be found in the <a href="https://github.com/nodejitsu/node-http-proxy">node-http-proxy</a>. An example of overwriting the HTTP header is shown below.</p>
 <p><strong>Example:</strong></p>
 <pre><code class="language-javascript">proxyRes: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">proxyRes, req, res</span>) </span>{
-  <span class="hljs-keyword">if</span> (proxyRes.headers[<span class="hljs-string">'set-cookie'</span>]) {
-    proxyRes.headers[<span class="hljs-string">'set-cookie'</span>] = proxyRes.headers[<span class="hljs-string">'set-cookie'</span>].map(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">cookie</span>) </span>{
-      <span class="hljs-keyword">return</span> cookie.replace(<span class="hljs-regexp">/\s*secure;?/i</span>, <span class="hljs-string">''</span>);
+  <span class="hljs-keyword">if</span> (proxyRes.headers[<span class="hljs-string">&#x27;set-cookie&#x27;</span>]) {
+    proxyRes.headers[<span class="hljs-string">&#x27;set-cookie&#x27;</span>] = proxyRes.headers[<span class="hljs-string">&#x27;set-cookie&#x27;</span>].map(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">cookie</span>) </span>{
+      <span class="hljs-keyword">return</span> cookie.replace(<span class="hljs-regexp">/\s*secure;?/i</span>, <span class="hljs-string">&#x27;&#x27;</span>);
     })
   }
 }
@@ -660,12 +660,12 @@ to connect.</p>
 <p>When running a browser in different environments, it can take different amounts of time for the
 client socket to connect. If Karma cannot connect within the default timeout, you may see an
 error similar to the following:</p>
-<pre><code>ChromeHeadless have <span class="hljs-keyword">not</span> captured <span class="hljs-keyword">in</span> <span class="hljs-number">60000</span>ms, killing.
-Trying to start ChromeHeadless again (<span class="hljs-number">1</span>/<span class="hljs-number">2</span>).
-ChromeHeadless have <span class="hljs-keyword">not</span> captured <span class="hljs-keyword">in</span> <span class="hljs-number">60000</span>ms, killing.
-Trying to start ChromeHeadless again (<span class="hljs-number">2</span>/<span class="hljs-number">2</span>).
-ChromeHeadless have <span class="hljs-keyword">not</span> captured <span class="hljs-keyword">in</span> <span class="hljs-number">60000</span>ms, killing.
-ChromeHeadless failed <span class="hljs-number">2</span> times(timeout). Giving up.
+<pre><code><span class="hljs-attribute">ChromeHeadless</span> have not captured in <span class="hljs-number">60000</span>ms, killing.
+<span class="hljs-attribute">Trying</span> to start ChromeHeadless again (<span class="hljs-number">1</span>/<span class="hljs-number">2</span>).
+<span class="hljs-attribute">ChromeHeadless</span> have not captured in <span class="hljs-number">60000</span>ms, killing.
+<span class="hljs-attribute">Trying</span> to start ChromeHeadless again (<span class="hljs-number">2</span>/<span class="hljs-number">2</span>).
+<span class="hljs-attribute">ChromeHeadless</span> have not captured in <span class="hljs-number">60000</span>ms, killing.
+<span class="hljs-attribute">ChromeHeadless</span> failed <span class="hljs-number">2</span> times(timeout). Giving up.
 </code></pre>
 <p>If you see this error, you can try increasing the socket connection timeout.</p>
 

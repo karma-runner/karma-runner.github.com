@@ -127,9 +127,9 @@
 they get served to the browser. These are configured in the <code>preprocessors</code> block
 of the configuration file:</p>
 <pre><code class="language-javascript">preprocessors: {
-  <span class="hljs-string">'**/*.coffee'</span>: [<span class="hljs-string">'coffee'</span>],
-  <span class="hljs-string">'**/*.tea'</span>: [<span class="hljs-string">'coffee'</span>],
-  <span class="hljs-string">'**/*.html'</span>: [<span class="hljs-string">'html2js'</span>]
+  <span class="hljs-string">&#x27;**/*.coffee&#x27;</span>: [<span class="hljs-string">&#x27;coffee&#x27;</span>],
+  <span class="hljs-string">&#x27;**/*.tea&#x27;</span>: [<span class="hljs-string">&#x27;coffee&#x27;</span>],
+  <span class="hljs-string">&#x27;**/*.html&#x27;</span>: [<span class="hljs-string">&#x27;html2js&#x27;</span>]
 },
 </code></pre>
 <div class="alert alert-success"><h4 class="alert-heading">Note: </h4>There are multiple expressions referencing the &quot;coffee&quot; preprocessor in this example, as a preprocessor
@@ -155,7 +155,7 @@ $ npm install karma-coffee-preprocessor --save-dev
 <pre><code class="language-javascript"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">config</span>) </span>{
   config.set({
     <span class="hljs-attr">preprocessors</span>: {
-      <span class="hljs-string">'**/*.coffee'</span>: [<span class="hljs-string">'coffee'</span>]
+      <span class="hljs-string">&#x27;**/*.coffee&#x27;</span>: [<span class="hljs-string">&#x27;coffee&#x27;</span>]
     }
   });
 };
@@ -172,7 +172,7 @@ $ npm install karma-coffee-preprocessor --save-dev
 <p>Or define a configured preprocessor:</p>
 <pre><code class="language-javascript">customPreprocessors: {
   <span class="hljs-attr">bare_coffee</span>: {
-    <span class="hljs-attr">base</span>: <span class="hljs-string">'coffee'</span>,
+    <span class="hljs-attr">base</span>: <span class="hljs-string">&#x27;coffee&#x27;</span>,
     <span class="hljs-attr">options</span>: {<span class="hljs-attr">bare</span>: <span class="hljs-literal">true</span>}
   }
 }

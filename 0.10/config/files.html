@@ -171,15 +171,15 @@ served - but rather available as <code>window.__html__[&#39;my.html&#39;]</code>
 <pre><code class="language-javascript">files: [
 
   <span class="hljs-comment">// simple patterns to load the needed testfiles</span>
-  <span class="hljs-comment">// equals to {pattern: 'test/unit/*.spec.js', watched: true, served: true, included: true}</span>
-  <span class="hljs-string">'test/unit/*.spec.js'</span>,
+  <span class="hljs-comment">// equals to {pattern: &#x27;test/unit/*.spec.js&#x27;, watched: true, served: true, included: true}</span>
+  <span class="hljs-string">&#x27;test/unit/*.spec.js&#x27;</span>,
 
   <span class="hljs-comment">// this file gets served but will be ignored by the watcher</span>
-  <span class="hljs-comment">// note if html2js preprocessor is active, reference as `window.__html__['compiled/index.html']`</span>
-  {<span class="hljs-attr">pattern</span>: <span class="hljs-string">'compiled/index.html'</span>, <span class="hljs-attr">watched</span>: <span class="hljs-literal">false</span>},
+  <span class="hljs-comment">// note if html2js preprocessor is active, reference as `window.__html__[&#x27;compiled/index.html&#x27;]`</span>
+  {<span class="hljs-attr">pattern</span>: <span class="hljs-string">&#x27;compiled/index.html&#x27;</span>, <span class="hljs-attr">watched</span>: <span class="hljs-literal">false</span>},
 
   <span class="hljs-comment">// this file only gets watched but otherwise ignored</span>
-  {<span class="hljs-attr">pattern</span>: <span class="hljs-string">'app/index.html'</span>, <span class="hljs-attr">included</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">served</span>: <span class="hljs-literal">false</span>}
+  {<span class="hljs-attr">pattern</span>: <span class="hljs-string">&#x27;app/index.html&#x27;</span>, <span class="hljs-attr">included</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">served</span>: <span class="hljs-literal">false</span>}
 ],
 </code></pre>
 

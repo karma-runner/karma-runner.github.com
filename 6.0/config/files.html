@@ -209,22 +209,22 @@ served - but rather available as <code>window.__html__[&#39;my.html&#39;]</code>
 <pre><code class="language-javascript">files: [
 
   <span class="hljs-comment">// Detailed pattern to include a file. Similarly other options can be used</span>
-  { <span class="hljs-attr">pattern</span>: <span class="hljs-string">'lib/angular.js'</span>, <span class="hljs-attr">watched</span>: <span class="hljs-literal">false</span> },
+  { <span class="hljs-attr">pattern</span>: <span class="hljs-string">&#x27;lib/angular.js&#x27;</span>, <span class="hljs-attr">watched</span>: <span class="hljs-literal">false</span> },
   <span class="hljs-comment">// Prefer to have watched false for library files. No need to watch them for changes</span>
 
   <span class="hljs-comment">// simple pattern to load the needed testfiles</span>
-  <span class="hljs-comment">// equal to {pattern: 'test/unit/*.spec.js', watched: true, served: true, included: true}</span>
-  <span class="hljs-string">'test/unit/*.spec.js'</span>,
+  <span class="hljs-comment">// equal to {pattern: &#x27;test/unit/*.spec.js&#x27;, watched: true, served: true, included: true}</span>
+  <span class="hljs-string">&#x27;test/unit/*.spec.js&#x27;</span>,
 
   <span class="hljs-comment">// this file gets served but will be ignored by the watcher</span>
-  <span class="hljs-comment">// note if html2js preprocessor is active, reference as `window.__html__['compiled/index.html']`</span>
-  {<span class="hljs-attr">pattern</span>: <span class="hljs-string">'compiled/index.html'</span>, <span class="hljs-attr">watched</span>: <span class="hljs-literal">false</span>},
+  <span class="hljs-comment">// note if html2js preprocessor is active, reference as `window.__html__[&#x27;compiled/index.html&#x27;]`</span>
+  {<span class="hljs-attr">pattern</span>: <span class="hljs-string">&#x27;compiled/index.html&#x27;</span>, <span class="hljs-attr">watched</span>: <span class="hljs-literal">false</span>},
 
   <span class="hljs-comment">// this file only gets watched and is otherwise ignored</span>
-  {<span class="hljs-attr">pattern</span>: <span class="hljs-string">'app/index.html'</span>, <span class="hljs-attr">included</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">served</span>: <span class="hljs-literal">false</span>},
+  {<span class="hljs-attr">pattern</span>: <span class="hljs-string">&#x27;app/index.html&#x27;</span>, <span class="hljs-attr">included</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">served</span>: <span class="hljs-literal">false</span>},
 
   <span class="hljs-comment">// this file will be served on demand from disk and will be ignored by the watcher</span>
-  {<span class="hljs-attr">pattern</span>: <span class="hljs-string">'compiled/app.js.map'</span>, <span class="hljs-attr">included</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">served</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">watched</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">nocache</span>: <span class="hljs-literal">true</span>}
+  {<span class="hljs-attr">pattern</span>: <span class="hljs-string">&#x27;compiled/app.js.map&#x27;</span>, <span class="hljs-attr">included</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">served</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">watched</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">nocache</span>: <span class="hljs-literal">true</span>}
 ],
 </code></pre>
 <h2>Loading files from another server</h2>
@@ -232,8 +232,8 @@ served - but rather available as <code>window.__html__[&#39;my.html&#39;]</code>
 <p>Example:</p>
 <pre><code class="language-javascript">config.set({
   <span class="hljs-attr">files</span>: [
-    <span class="hljs-string">'https://example.com/my-lib.js'</span>,
-    { <span class="hljs-attr">pattern</span>: <span class="hljs-string">'https://example.com/my-lib'</span>, <span class="hljs-attr">type</span>: <span class="hljs-string">'js'</span> }
+    <span class="hljs-string">&#x27;https://example.com/my-lib.js&#x27;</span>,
+    { <span class="hljs-attr">pattern</span>: <span class="hljs-string">&#x27;https://example.com/my-lib&#x27;</span>, <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;js&#x27;</span> }
   ]
 })
 </code></pre>
@@ -252,7 +252,7 @@ served - but rather available as <code>window.__html__[&#39;my.html&#39;]</code>
 <p>By default all assets are served at <code>http://localhost:[PORT]/base/</code></p>
 <p>Example for loading images</p>
 <pre><code class="language-javascript">files: [
-  {<span class="hljs-attr">pattern</span>: <span class="hljs-string">'test/images/*.jpg'</span>, <span class="hljs-attr">watched</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">included</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">served</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">nocache</span>: <span class="hljs-literal">false</span>}
+  {<span class="hljs-attr">pattern</span>: <span class="hljs-string">&#x27;test/images/*.jpg&#x27;</span>, <span class="hljs-attr">watched</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">included</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">served</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">nocache</span>: <span class="hljs-literal">false</span>}
 ],
 </code></pre>
 <p>The pattern is a glob which matches the specified image assets. Watched and included are not necessary as images are not tests. However, they will need to be served to the browser.</p>
@@ -260,14 +260,14 @@ served - but rather available as <code>window.__html__[&#39;my.html&#39;]</code>
 <p>Notice the <strong>base</strong> in the URL, it is a reference to your <strong>basePath</strong>. You do not need to replace or provide your own <strong>base</strong>.</p>
 <p>In addition, you can use a proxy</p>
 <pre><code class="language-javascript">proxies: {
-  <span class="hljs-string">"/img/"</span>: <span class="hljs-string">"http://localhost:8080/base/test/images/"</span>
+  <span class="hljs-string">&quot;/img/&quot;</span>: <span class="hljs-string">&quot;http://localhost:8080/base/test/images/&quot;</span>
 },
 </code></pre>
 <p>Now you can fetch images in <code>test/images</code> at <code>http://localhost:8080/img/[MY IMAGE].jpg</code></p>
 <p>Change <strong>8080</strong> to the port you use</p>
 <p>You can also use proxies without specifying the protocol, hostname, and port</p>
 <pre><code class="language-javascript">proxies: {
-  <span class="hljs-string">"/img/"</span>: <span class="hljs-string">"/base/test/images/"</span>
+  <span class="hljs-string">&quot;/img/&quot;</span>: <span class="hljs-string">&quot;/base/test/images/&quot;</span>
 },
 </code></pre>
 <h2>Webserver features</h2>

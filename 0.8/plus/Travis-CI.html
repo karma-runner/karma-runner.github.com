@@ -128,19 +128,19 @@ already have Travis account.</p>
 following YAML content:</p>
 <pre><code class="language-ruby"><span class="hljs-symbol">language:</span> node_js
 <span class="hljs-symbol">node_js:</span>
-  - <span class="hljs-number">0</span>.<span class="hljs-number">8</span>
+  - <span class="hljs-number">0.8</span>
 </code></pre>
 <h2>Setup a Test Command</h2>
 <p>If you do not already have a <code>package.json</code> in your project root
 create one now. Travis runs <code>npm test</code> to trigger your tests so this
 is where you tell Travis how to run your tests.</p>
 <pre><code class="language-javascript"><span class="hljs-comment">// ...snip...</span>
-<span class="hljs-string">'devDependencies'</span>: {
-  <span class="hljs-string">'karma'</span>: <span class="hljs-string">'~0.8'</span>
+<span class="hljs-string">&#x27;devDependencies&#x27;</span>: {
+  <span class="hljs-string">&#x27;karma&#x27;</span>: <span class="hljs-string">&#x27;~0.8&#x27;</span>
 },
 <span class="hljs-comment">// ...snip...</span>
-<span class="hljs-string">'scripts'</span>: {
-   <span class="hljs-string">'test'</span>: <span class="hljs-string">'./node_modules/.bin/karma start --single-run --browsers PhantomJS'</span>
+<span class="hljs-string">&#x27;scripts&#x27;</span>: {
+   <span class="hljs-string">&#x27;test&#x27;</span>: <span class="hljs-string">&#x27;./node_modules/.bin/karma start --single-run --browsers PhantomJS&#x27;</span>
 }
 <span class="hljs-comment">// ...snip...</span>
 </code></pre>
@@ -153,7 +153,7 @@ screen. Just update your <code>.travis.yml</code> to set up the virtual screen
 like this:</p>
 <pre><code class="language-ruby"><span class="hljs-symbol">language:</span> node_js
 <span class="hljs-symbol">node_js:</span>
-  - <span class="hljs-number">0</span>.<span class="hljs-number">8</span>
+  - <span class="hljs-number">0.8</span>
 <span class="hljs-symbol">before_script:</span>
   - export DISPLAY=<span class="hljs-symbol">:</span><span class="hljs-number">99.0</span>
   - sh -e /etc/init.d/xvfb start

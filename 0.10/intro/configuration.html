@@ -141,14 +141,14 @@ Press tab to list possible options. Enter empty string to move to the next quest
 &gt;
 
 What is the location of your <span class="hljs-built_in">source</span> and <span class="hljs-built_in">test</span> files ?
-You can use glob patterns, eg. <span class="hljs-string">"js/*.js"</span> or <span class="hljs-string">"test/**/*Spec.js"</span>.
+You can use glob patterns, eg. <span class="hljs-string">&quot;js/*.js&quot;</span> or <span class="hljs-string">&quot;test/**/*Spec.js&quot;</span>.
 Enter empty string to move to the next question.
 &gt; *.js
 &gt; <span class="hljs-built_in">test</span>/**/*.js
 &gt;
 
 Should any of the files included by the previous patterns be excluded ?
-You can use glob patterns, eg. <span class="hljs-string">"**/*.swp"</span>.
+You can use glob patterns, eg. <span class="hljs-string">&quot;**/*.swp&quot;</span>.
 Enter empty string to move to the next question.
 &gt;
 
@@ -156,7 +156,7 @@ Do you want Karma to watch all the files and run the tests on change ?
 Press tab to list possible options.
 &gt; yes
 
-Config file generated at <span class="hljs-string">"/Users/vojta/Code/karma/my.conf.js"</span>.
+Config file generated at <span class="hljs-string">&quot;/Users/vojta/Code/karma/my.conf.js&quot;</span>.
 </code></pre>
 <p>The configuration file can be written in CoffeeScript as well.
 In fact, if you execute <code>karma init</code> with a <code>.coffee</code> filename extension, it will generate a CoffeeScript file.</p>
@@ -172,7 +172,7 @@ please read the <a href="../config/configuration-file.html">configuration file d
 <h2>Command line arguments</h2>
 <p>Some configurations, which are already present within the configuration file, can be overridden by specifying the configuration
 as a command line argument for when Karma is executed.</p>
-<pre><code class="language-bash">karma start karma-conf.js --<span class="hljs-built_in">command</span>-one --<span class="hljs-built_in">command</span>-two
+<pre><code class="language-bash">karma start karma-conf.js --command-one --command-two
 </code></pre>
 <p>Try <code>karma start --help</code> if you want to see all available options.</p>
 <h2>Using Grunt</h2>

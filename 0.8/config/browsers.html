@@ -119,7 +119,7 @@
         <div id="markdown" class="sixteen columns bottom"><h2>Starting browsers</h2>
 <p>Capturing browsers is kinda boring, so Karma can do that for you.
 Just simply add into the configuration file:</p>
-<pre><code class="language-javascript">browsers = [<span class="hljs-string">'Chrome'</span>];
+<pre><code class="language-javascript">browsers = [<span class="hljs-string">&#x27;Chrome&#x27;</span>];
 </code></pre>
 <p>Then, Karma will take care of autocapturing these browsers, as
 well as killing them.</p>
@@ -154,11 +154,11 @@ $ <span class="hljs-built_in">export</span> PHANTOMJS_BIN=<span class="hljs-vari
 <pre><code class="language-bash">C:&gt; SET IE_BIN=C:\Program Files\Internet Explorer\iexplore.exe
 </code></pre>
 <h3>Windows Powershell</h3>
-<pre><code class="language-bash"><span class="hljs-variable">$Env</span>:FIREFOX_BIN = <span class="hljs-string">'c:\Program Files (x86)\Mozilla Firefox 4.0 Beta 6\firefox.exe'</span>
+<pre><code class="language-bash"><span class="hljs-variable">$Env</span>:FIREFOX_BIN = <span class="hljs-string">&#x27;c:\Program Files (x86)\Mozilla Firefox 4.0 Beta 6\firefox.exe&#x27;</span>
 </code></pre>
 <h2>Custom browsers</h2>
 <pre><code class="language-javascript"><span class="hljs-comment">// in the karma.conf.js</span>
-browsers = [<span class="hljs-string">'/usr/local/bin/custom-browser.sh'</span>];
+browsers = [<span class="hljs-string">&#x27;/usr/local/bin/custom-browser.sh&#x27;</span>];
 
 <span class="hljs-comment">// from cli</span>
 karma start --browsers /usr/local/bin/custom-browser.sh

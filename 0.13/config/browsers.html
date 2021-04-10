@@ -126,7 +126,7 @@
         <div id="markdown" class="sixteen columns bottom"><p>Capturing browsers on your own can be a tedious and time consuming task,
 so Karma can automate this for you. Simply add the browsers you would like to
 capture into the configuration file:</p>
-<pre><code class="language-javascript">browsers: [<span class="hljs-string">'Chrome'</span>]
+<pre><code class="language-javascript">browsers: [<span class="hljs-string">&#x27;Chrome&#x27;</span>]
 </code></pre>
 <p>Then, Karma will take care of auto-capturing these browsers, as well as killing them.</p>
 <div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Most of the browser launchers need to be loaded as <a href="plugins.html">plugins</a>.</div>
@@ -149,7 +149,7 @@ $ npm install karma-firefox-launcher --save-dev
 <p>And then inside your configuration file...</p>
 <pre><code class="language-javascript"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">config</span>) </span>{
   config.set({
-    <span class="hljs-attr">browsers</span> : [<span class="hljs-string">'Chrome'</span>, <span class="hljs-string">'Firefox'</span>]
+    <span class="hljs-attr">browsers</span> : [<span class="hljs-string">&#x27;Chrome&#x27;</span>, <span class="hljs-string">&#x27;Firefox&#x27;</span>]
   });
 };
 </code></pre>
@@ -164,19 +164,19 @@ as the machine running Karma (or using a local tunnel).</p>
 <h2>Configured launchers</h2>
 <p>Some of the launchers can be also configured:</p>
 <pre><code class="language-javascript">sauceLabs: {
-  <span class="hljs-attr">username</span>: <span class="hljs-string">'michael_jackson'</span>
+  <span class="hljs-attr">username</span>: <span class="hljs-string">&#x27;michael_jackson&#x27;</span>
 }
 </code></pre>
 <p>Or defined as a configured launcher:</p>
 <pre><code class="language-javascript">customLaunchers: {
   <span class="hljs-attr">chrome_without_security</span>: {
-    <span class="hljs-attr">base</span>: <span class="hljs-string">'Chrome'</span>,
-    <span class="hljs-attr">flags</span>: [<span class="hljs-string">'--disable-web-security'</span>]
+    <span class="hljs-attr">base</span>: <span class="hljs-string">&#x27;Chrome&#x27;</span>,
+    <span class="hljs-attr">flags</span>: [<span class="hljs-string">&#x27;--disable-web-security&#x27;</span>]
   },
   <span class="hljs-attr">sauce_chrome_win</span>: {
-    <span class="hljs-attr">base</span>: <span class="hljs-string">'SauceLabs'</span>,
-    <span class="hljs-attr">browserName</span>: <span class="hljs-string">'chrome'</span>,
-    <span class="hljs-attr">platform</span>: <span class="hljs-string">'windows'</span>
+    <span class="hljs-attr">base</span>: <span class="hljs-string">&#x27;SauceLabs&#x27;</span>,
+    <span class="hljs-attr">browserName</span>: <span class="hljs-string">&#x27;chrome&#x27;</span>,
+    <span class="hljs-attr">platform</span>: <span class="hljs-string">&#x27;windows&#x27;</span>
   }
 }
 </code></pre>
@@ -184,9 +184,9 @@ as the machine running Karma (or using a local tunnel).</p>
 user agent. E.g. defining</p>
 <pre><code class="language-javascript">customLaunchers: {
   <span class="hljs-attr">chrome_without_security</span>: {
-    <span class="hljs-attr">base</span>: <span class="hljs-string">'Chrome'</span>,
-    <span class="hljs-attr">flags</span>: [<span class="hljs-string">'--disable-web-security'</span>],
-    <span class="hljs-attr">displayName</span>: <span class="hljs-string">'Chrome w/o security'</span>
+    <span class="hljs-attr">base</span>: <span class="hljs-string">&#x27;Chrome&#x27;</span>,
+    <span class="hljs-attr">flags</span>: [<span class="hljs-string">&#x27;--disable-web-security&#x27;</span>],
+    <span class="hljs-attr">displayName</span>: <span class="hljs-string">&#x27;Chrome w/o security&#x27;</span>
   }
 }
 </code></pre>
@@ -208,11 +208,11 @@ $ <span class="hljs-built_in">export</span> PHANTOMJS_BIN=<span class="hljs-vari
 <pre><code class="language-bash">C:&gt; SET IE_BIN=C:\Program Files\Internet Explorer\iexplore.exe
 </code></pre>
 <h3>Windows Powershell</h3>
-<pre><code class="language-bash"><span class="hljs-variable">$Env</span>:FIREFOX_BIN = <span class="hljs-string">'c:\Program Files (x86)\Mozilla Firefox 4.0 Beta 6\firefox.exe'</span>
+<pre><code class="language-bash"><span class="hljs-variable">$Env</span>:FIREFOX_BIN = <span class="hljs-string">&#x27;c:\Program Files (x86)\Mozilla Firefox 4.0 Beta 6\firefox.exe&#x27;</span>
 </code></pre>
 <h2>Custom browsers</h2>
 <pre><code class="language-javascript"><span class="hljs-comment">// in the karma.conf.js</span>
-<span class="hljs-attr">browsers</span>: [<span class="hljs-string">'/usr/local/bin/custom-browser.sh'</span>],
+<span class="hljs-attr">browsers</span>: [<span class="hljs-string">&#x27;/usr/local/bin/custom-browser.sh&#x27;</span>],
 
 <span class="hljs-comment">// from cli</span>
 karma start --browsers /usr/local/bin/custom-browser.sh

@@ -172,9 +172,9 @@
 <ul>
 <li><strong>server:</strong> Deprecated <code>require(&#39;karma&#39;).server.start()</code> and <code>require(&#39;karma&#39;).Server.start()</code> variants were removed from the public API. Instead use canonical form:</li>
 </ul>
-<pre><code>const {<span class="hljs-built_in"> Server </span>} = require(<span class="hljs-string">'karma'</span>);
-const<span class="hljs-built_in"> server </span>= new Server();
-server.start();
+<pre><code>const { <span class="hljs-keyword">Server</span> } = require(<span class="hljs-string">&#x27;karma&#x27;</span>);
+const <span class="hljs-keyword">server</span> = <span class="hljs-built_in">new</span> <span class="hljs-keyword">Server</span>();
+<span class="hljs-keyword">server</span>.<span class="hljs-keyword">start</span>();
 </code></pre>
 <ul>
 <li><strong>cli:</strong> Karma is more strict and will error out if unknown option or argument is passed to CLI.</li>
@@ -1611,14 +1611,14 @@ if you are using <code>karma run</code> with custom <code>--runer-port</code>, p
 <pre><code class="language-javascript"><span class="hljs-comment">// before:</span>
 <span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">karma</span>) </span>{
   karma.configure({<span class="hljs-attr">port</span>: <span class="hljs-number">123</span>});
-  karma.defineLauncher(<span class="hljs-string">'x'</span>, <span class="hljs-string">'Chrome'</span>, {
-    <span class="hljs-attr">flags</span>: [<span class="hljs-string">'--disable-web-security'</span>]
+  karma.defineLauncher(<span class="hljs-string">&#x27;x&#x27;</span>, <span class="hljs-string">&#x27;Chrome&#x27;</span>, {
+    <span class="hljs-attr">flags</span>: [<span class="hljs-string">&#x27;--disable-web-security&#x27;</span>]
   });
-  karma.definePreprocessor(<span class="hljs-string">'y'</span>, <span class="hljs-string">'coffee'</span>, {
+  karma.definePreprocessor(<span class="hljs-string">&#x27;y&#x27;</span>, <span class="hljs-string">&#x27;coffee&#x27;</span>, {
     <span class="hljs-attr">bare</span>: <span class="hljs-literal">false</span>
   });
-  karma.defineReporter(<span class="hljs-string">'z'</span>, <span class="hljs-string">'coverage'</span>, {
-    <span class="hljs-attr">type</span>: <span class="hljs-string">'html'</span>
+  karma.defineReporter(<span class="hljs-string">&#x27;z&#x27;</span>, <span class="hljs-string">&#x27;coverage&#x27;</span>, {
+    <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;html&#x27;</span>
   });
 };
 
@@ -1627,21 +1627,21 @@ if you are using <code>karma run</code> with custom <code>--runer-port</code>, p
   config.set({
     <span class="hljs-attr">port</span>: <span class="hljs-number">123</span>,
     <span class="hljs-attr">customLaunchers</span>: {
-      <span class="hljs-string">'x'</span>: {
-        <span class="hljs-attr">base</span>: <span class="hljs-string">'Chrome'</span>,
-        <span class="hljs-attr">flags</span>: [<span class="hljs-string">'--disable-web-security'</span>]
+      <span class="hljs-string">&#x27;x&#x27;</span>: {
+        <span class="hljs-attr">base</span>: <span class="hljs-string">&#x27;Chrome&#x27;</span>,
+        <span class="hljs-attr">flags</span>: [<span class="hljs-string">&#x27;--disable-web-security&#x27;</span>]
       }
     },
     <span class="hljs-attr">customPreprocessors</span>: {
-      <span class="hljs-string">'y'</span>: {
-        <span class="hljs-attr">base</span>: <span class="hljs-string">'coffee'</span>,
+      <span class="hljs-string">&#x27;y&#x27;</span>: {
+        <span class="hljs-attr">base</span>: <span class="hljs-string">&#x27;coffee&#x27;</span>,
         <span class="hljs-attr">bare</span>: <span class="hljs-literal">false</span>
       }
     },
     <span class="hljs-attr">customReporters</span>: {
-      <span class="hljs-string">'z'</span>: {
-        <span class="hljs-attr">base</span>: <span class="hljs-string">'coverage'</span>,
-        <span class="hljs-attr">type</span>: <span class="hljs-string">'html'</span>
+      <span class="hljs-string">&#x27;z&#x27;</span>: {
+        <span class="hljs-attr">base</span>: <span class="hljs-string">&#x27;coverage&#x27;</span>,
+        <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;html&#x27;</span>
       }
     }
   });

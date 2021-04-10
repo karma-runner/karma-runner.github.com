@@ -128,11 +128,11 @@
 <h2>Installing Plugins</h2>
 <p>The recommended way to install plugins is to add them as project dependencies in your <code>package.json</code>:</p>
 <pre><code class="language-json">{
-  <span class="hljs-attr">"devDependencies"</span>: {
-    <span class="hljs-attr">"karma"</span>: <span class="hljs-string">"~0.10"</span>,
-    <span class="hljs-attr">"karma-mocha"</span>: <span class="hljs-string">"~0.0.1"</span>,
-    <span class="hljs-attr">"karma-growl-reporter"</span>: <span class="hljs-string">"~0.0.1"</span>,
-    <span class="hljs-attr">"karma-firefox-launcher"</span>: <span class="hljs-string">"~0.0.1"</span>
+  <span class="hljs-attr">&quot;devDependencies&quot;</span>: {
+    <span class="hljs-attr">&quot;karma&quot;</span>: <span class="hljs-string">&quot;~0.10&quot;</span>,
+    <span class="hljs-attr">&quot;karma-mocha&quot;</span>: <span class="hljs-string">&quot;~0.0.1&quot;</span>,
+    <span class="hljs-attr">&quot;karma-growl-reporter&quot;</span>: <span class="hljs-string">&quot;~0.0.1&quot;</span>,
+    <span class="hljs-attr">&quot;karma-firefox-launcher&quot;</span>: <span class="hljs-string">&quot;~0.0.1&quot;</span>
   }
 }
 </code></pre>
@@ -145,18 +145,18 @@
 <pre><code class="language-javascript">config.set({
   <span class="hljs-attr">plugins</span>: [
     <span class="hljs-comment">// Load a plugin you installed from NPM.</span>
-    <span class="hljs-built_in">require</span>(<span class="hljs-string">'karma-jasmine'</span>),
+    <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;karma-jasmine&#x27;</span>),
 
     <span class="hljs-comment">// Load a plugin from the file in your project.</span>
-    <span class="hljs-built_in">require</span>(<span class="hljs-string">'./my-custom-plugin'</span>),
+    <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;./my-custom-plugin&#x27;</span>),
   
     <span class="hljs-comment">// Define a plugin inline.</span>
-    { <span class="hljs-string">'framework:xyz'</span>: [<span class="hljs-string">'factory'</span>, factoryFn] },
+    { <span class="hljs-string">&#x27;framework:xyz&#x27;</span>: [<span class="hljs-string">&#x27;factory&#x27;</span>, factoryFn] },
 
     <span class="hljs-comment">// Specify a module name or path which Karma will require() and load its </span>
     <span class="hljs-comment">// default export as a plugin.</span>
-    <span class="hljs-string">'karma-chrome-launcher'</span>,
-    <span class="hljs-string">'./my-fancy-plugin'</span>
+    <span class="hljs-string">&#x27;karma-chrome-launcher&#x27;</span>,
+    <span class="hljs-string">&#x27;./my-fancy-plugin&#x27;</span>
   ]
 })
 </code></pre>

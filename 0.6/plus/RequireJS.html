@@ -129,7 +129,7 @@ directory structure upon which these are based looks like this:</p>
     MyModule.js
   <span class="hljs-built_in">test</span>/
     MyModule.test.js
-    <span class="hljs-built_in">test</span>-main.js
+    test-main.js
 testacular.conf.js
 </code></pre>
 <h3>Initialize Testacular</h3>
@@ -159,24 +159,24 @@ should be the last file listed.</p>
   REQUIRE_ADAPTER,
 
   <span class="hljs-comment">// libs required for test framework</span>
-  {<span class="hljs-attr">pattern</span>: <span class="hljs-string">'node_modules/chai/chai.js'</span>, <span class="hljs-attr">included</span>: <span class="hljs-literal">false</span>},
+  {<span class="hljs-attr">pattern</span>: <span class="hljs-string">&#x27;node_modules/chai/chai.js&#x27;</span>, <span class="hljs-attr">included</span>: <span class="hljs-literal">false</span>},
 
-  <span class="hljs-comment">// put what used to be in your requirejs 'shim' config here,</span>
+  <span class="hljs-comment">// put what used to be in your requirejs &#x27;shim&#x27; config here,</span>
   <span class="hljs-comment">// these files will be included without requirejs</span>
-  <span class="hljs-string">'lib/jquery.js'</span>,
-  <span class="hljs-string">'lib/underscore.js'</span>,
-  <span class="hljs-string">'lib/backbone.js'</span>,
-  <span class="hljs-string">'lib/handlebars.js'</span>,
+  <span class="hljs-string">&#x27;lib/jquery.js&#x27;</span>,
+  <span class="hljs-string">&#x27;lib/underscore.js&#x27;</span>,
+  <span class="hljs-string">&#x27;lib/backbone.js&#x27;</span>,
+  <span class="hljs-string">&#x27;lib/handlebars.js&#x27;</span>,
 
-  <span class="hljs-comment">// put all libs in requirejs 'paths' config here (included: false)</span>
-  {<span class="hljs-attr">pattern</span>: <span class="hljs-string">'lib/**/*.js'</span>, <span class="hljs-attr">included</span>: <span class="hljs-literal">false</span>},
+  <span class="hljs-comment">// put all libs in requirejs &#x27;paths&#x27; config here (included: false)</span>
+  {<span class="hljs-attr">pattern</span>: <span class="hljs-string">&#x27;lib/**/*.js&#x27;</span>, <span class="hljs-attr">included</span>: <span class="hljs-literal">false</span>},
 
   <span class="hljs-comment">// all src and test modules (included: false)</span>
-  {<span class="hljs-attr">pattern</span>: <span class="hljs-string">'src/**/*'</span>, <span class="hljs-attr">included</span>: <span class="hljs-literal">false</span>},
-  {<span class="hljs-attr">pattern</span>: <span class="hljs-string">'test/**/*.test.js'</span>, <span class="hljs-attr">included</span>: <span class="hljs-literal">false</span>},
+  {<span class="hljs-attr">pattern</span>: <span class="hljs-string">&#x27;src/**/*&#x27;</span>, <span class="hljs-attr">included</span>: <span class="hljs-literal">false</span>},
+  {<span class="hljs-attr">pattern</span>: <span class="hljs-string">&#x27;test/**/*.test.js&#x27;</span>, <span class="hljs-attr">included</span>: <span class="hljs-literal">false</span>},
 
   <span class="hljs-comment">// test main require module last</span>
-  <span class="hljs-string">'test/test-main.js'</span>
+  <span class="hljs-string">&#x27;test/test-main.js&#x27;</span>
 ];
 </code></pre>
 <p>This config is awesome. It replaces an html test runner that you would otherwise have to build.</p>
@@ -209,11 +209,11 @@ it starts the tests.</p>
 });
 
 <span class="hljs-built_in">require</span>({
-  <span class="hljs-comment">// Testacular serves files from '/base'</span>
-  <span class="hljs-attr">baseUrl</span>: <span class="hljs-string">'/base/src'</span>,
+  <span class="hljs-comment">// Testacular serves files from &#x27;/base&#x27;</span>
+  <span class="hljs-attr">baseUrl</span>: <span class="hljs-string">&#x27;/base/src&#x27;</span>,
   <span class="hljs-attr">paths</span>: {
-    <span class="hljs-attr">require</span>: <span class="hljs-string">'../lib/require'</span>,
-    <span class="hljs-attr">text</span>: <span class="hljs-string">'../lib/text'</span>
+    <span class="hljs-attr">require</span>: <span class="hljs-string">&#x27;../lib/require&#x27;</span>,
+    <span class="hljs-attr">text</span>: <span class="hljs-string">&#x27;../lib/text&#x27;</span>
   },
   <span class="hljs-comment">// ask requirejs to load these files (all our tests)</span>
   <span class="hljs-attr">deps</span>: tests,
@@ -234,15 +234,15 @@ asynchronous callback to avoid this error:</p>
 </code></pre>
 <p>And finally, <code>should()</code> must be invoked to be available in the test.</p>
 <p>So, a simple test will look like:</p>
-<pre><code class="language-javascript">define([<span class="hljs-string">'../node_modules/chai/chai'</span>, <span class="hljs-string">'MyModule'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">chai, MyModule</span>) </span>{
+<pre><code class="language-javascript">define([<span class="hljs-string">&#x27;../node_modules/chai/chai&#x27;</span>, <span class="hljs-string">&#x27;MyModule&#x27;</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">chai, MyModule</span>) </span>{
 
   <span class="hljs-keyword">var</span> should = chai.should();
 
-  describe(<span class="hljs-string">'MyModule'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
-    describe(<span class="hljs-string">'#initialize()'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
-      it(<span class="hljs-string">'should be a stinkin object'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  describe(<span class="hljs-string">&#x27;MyModule&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    describe(<span class="hljs-string">&#x27;#initialize()&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+      it(<span class="hljs-string">&#x27;should be a stinkin object&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
         <span class="hljs-keyword">var</span> yippee = <span class="hljs-keyword">new</span> MyModule();
-        yippee.should.be.an(<span class="hljs-string">'object'</span>);
+        yippee.should.be.an(<span class="hljs-string">&#x27;object&#x27;</span>);
       });
     });
   });
