@@ -141,8 +141,7 @@ source and tests and which browsers to capture.</p>
 <h3>RequireJs Shim</h3>
 <p>Not immediately apparent is the fact that the ‘shim’ config from
 RequireJs 2.x does not work from within Testacular. I haven’t yet
-figured out why. For instance, I was constantly getting <code>‘Backbone’ is
-not defined</code> messages even though it was specified in the ‘shim’
+figured out why. For instance, I was constantly getting <code>‘Backbone’ is not defined</code> messages even though it was specified in the ‘shim’
 config and required in the test. I could have been doing something
 wrong. My solution thus far has been to list each of the non-RequireJs
 modules and their dependencies in the <code>files</code> attribute of

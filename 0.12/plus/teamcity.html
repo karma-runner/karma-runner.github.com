@@ -137,8 +137,7 @@ Karma installation by different builds.</p>
 <code>package.json</code> file (e.g. <code>karma-jasmine</code>, <code>karma-phantomja-launcher</code> and so on) to have them
 being installed during build.</p>
 <h2>Create a new TeamCity build step</h2>
-<p>Add new build step to build configuration: use Command Line runner and fill in <code>Custom
-script</code> textarea. If you had decided not to install <em>all</em> your NPM dependencies globally
+<p>Add new build step to build configuration: use Command Line runner and fill in <code>Custom script</code> textarea. If you had decided not to install <em>all</em> your NPM dependencies globally
 add <code>npm install</code> in the beginning of the script. Then add command to run Karma, e.g.:</p>
 <pre><code>karma start <span class="hljs-params">--reporters</span> teamcity <span class="hljs-params">--single-run</span> <span class="hljs-params">--browsers</span> PhantomJS <span class="hljs-params">--colors</span> <span class="hljs-literal">false</span></code></pre>
 <p>Running Karma with all these options provided via command line allows to run Karma in

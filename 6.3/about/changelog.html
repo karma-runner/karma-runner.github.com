@@ -802,7 +802,8 @@ n* drop core-js and babel where possible (<a href="https://github.com/karma-runn
 </ul>
 <h3>BREAKING CHANGES</h3>
 <ul>
-<li>This is in preparation for deeper <code>context.js</code> changes in #1984.</li>
+<li>context: Our <code>context.html</code> and <code>debug.html</code> structures have changed to lean on <code>context.js</code> and <code>debug.js</code>.
+This is in preparation for deeper <code>context.js</code> changes in #1984.</li>
 </ul>
 <p>As a result, all <code>customContextFile</code> and <code>customDebugFile</code> options much update their format
 to match this new format.</p>
@@ -1039,12 +1040,12 @@ to match this new format.</p>
 <h4>Breaking Changes</h4>
 <ul>
 <li><p>The public api interface has changed to a constructor form. To upgrade change</p>
-<pre><code class="language-javascript">  <span class="hljs-keyword">var</span> server = <span class="hljs-built_in">require</span>(‘karma’).server
-  server.start(config, done)</code></pre>
+<pre><code class="language-javascript"><span class="hljs-keyword">var</span> server = <span class="hljs-built_in">require</span>(‘karma’).server
+server.start(config, done)</code></pre>
 <p>to</p>
-<pre><code class="language-javascript">  <span class="hljs-keyword">var</span> Server = <span class="hljs-built_in">require</span>(‘karma’).Server
-  <span class="hljs-keyword">var</span> server = <span class="hljs-keyword">new</span> Server(config, done)
-  server.start()</code></pre>
+<pre><code class="language-javascript"><span class="hljs-keyword">var</span> Server = <span class="hljs-built_in">require</span>(‘karma’).Server
+<span class="hljs-keyword">var</span> server = <span class="hljs-keyword">new</span> Server(config, done)
+server.start()</code></pre>
 <p>Closes #1037, #1482, #1467
 (<a href="https://github.com/karma-runner/karma/commit/82cbbadd">82cbbadd</a>)</p>
 </li>
@@ -1160,7 +1161,7 @@ to match this new format.</p>
 <h3>0.12.22 (2014-08-19)</h3>
 <h4>Bug Fixes</h4>
 <ul>
-<li><strong>preprocessor:</strong> treat <em>.tgz, </em>.tbz2, <em>.txz &amp; </em>.xz as binary (<a href="http://github.com/karma-runner/karma/commit/7b642449811b0c0af63147f74159c6dbb8900563">7b642449</a>)</li>
+<li><strong>preprocessor:</strong> treat *.tgz, *.tbz2, *.txz &amp; *.xz as binary (<a href="http://github.com/karma-runner/karma/commit/7b642449811b0c0af63147f74159c6dbb8900563">7b642449</a>)</li>
 </ul>
 <p><a name="0.12.21"></a></p>
 <h3>0.12.21 (2014-08-05)</h3>
@@ -1888,7 +1889,7 @@ if you are using <code>karma run</code> with custom <code>--runer-port</code>, p
 </ul>
 <h3>v0.5.2</h3>
 <ul>
-<li></li>
+<li>Init: ask about using Require.js</li>
 </ul>
 <h3>v0.5.1</h3>
 <ul>
@@ -1987,7 +1988,7 @@ if you are using <code>karma run</code> with custom <code>--runer-port</code>, p
 <h3>v0.1.2</h3>
 <ul>
 <li>Fix jasmine memory leaks</li>
-<li>support <strong>filename and </strong>dirname in config files</li>
+<li>support __filename and __dirname in config files</li>
 </ul>
 <h3>v0.1.1</h3>
 <ul>
