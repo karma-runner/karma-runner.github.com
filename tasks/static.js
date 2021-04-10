@@ -65,6 +65,15 @@ module.exports = function (grunt) {
           } else {
             return `<p>${text}</p>\n`
           }
+        },
+        heading (text, level, raw, slugger) {
+          if (this.options.headerIds) {
+            const id = this.options.headerPrefix + slugger.slug(raw)
+            const anchor = `<a class="heading-anchor" href="#${id}">#</a>`
+            return `<h${level} id="${id}">${text} ${anchor}</h${level}>\n`
+          }
+          // ignore IDs
+          return `<h${level}>${text}</h${level}>\n`
         }
       },
       tokenizer: {
@@ -105,7 +114,6 @@ module.exports = function (grunt) {
           }
         }
       },
-      headerIds: false,
       highlight: function (code, language) {
         const validLanguage = getLanguage(language) ? language : null
         return validLanguage != null ? highlight(code, { language }).value : highlightAuto(code).value
