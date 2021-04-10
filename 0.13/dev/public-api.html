@@ -125,78 +125,78 @@
       <div class="page-columns">
         <div id="markdown" class="sixteen columns bottom"><p>Most of the time, you will be using Karma directly from the command line.
 You can, however, call Karma programmatically from your node module. Here is the public API.</p>
-<h2>karma.Server(options, [callback=process.exit])</h2>
-<h3>Constructor</h3>
+<h2 id="karmaserveroptions-callbackprocessexit">karma.Server(options, [callback=process.exit]) <a class="heading-anchor" href="#karmaserveroptions-callbackprocessexit">#</a></h2>
+<h3 id="constructor">Constructor <a class="heading-anchor" href="#constructor">#</a></h3>
 <pre><code class="language-javascript"><span class="hljs-keyword">var</span> Server = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;karma&#x27;</span>).Server
 <span class="hljs-keyword">var</span> server = <span class="hljs-keyword">new</span> Server({<span class="hljs-attr">port</span>: <span class="hljs-number">9876</span>}, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">exitCode</span>) </span>{
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Karma has exited with &#x27;</span> + exitCode)
   process.exit(exitCode)
 })
 </code></pre>
-<h3><strong>server.start()</strong></h3>
+<h3 id="serverstart"><strong>server.start()</strong> <a class="heading-anchor" href="#serverstart">#</a></h3>
 <p>Equivalent of <code>karma start</code>.</p>
 <pre><code class="language-javascript">server.start()
 </code></pre>
-<h3><strong>server.refreshFiles()</strong></h3>
+<h3 id="serverrefreshfiles"><strong>server.refreshFiles()</strong> <a class="heading-anchor" href="#serverrefreshfiles">#</a></h3>
 <p>Trigger a file list refresh. Returns a promise.</p>
 <pre><code class="language-javascript">server.refreshFiles()
 </code></pre>
-<h3>Events</h3>
+<h3 id="events">Events <a class="heading-anchor" href="#events">#</a></h3>
 <p>The <code>server</code> object is an <a href="https://nodejs.org/docs/latest/api/events.html#events_class_events_eventemitter"><code>EventEmitter</code></a>. You can simply listen to events like this:</p>
 <pre><code class="language-javascript">server.on(<span class="hljs-string">&#x27;browser_register&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">browser</span>) </span>{
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;A new browser was registered&#x27;</span>)
 })
 </code></pre>
-<h3><code>browser_register</code></h3>
+<h3 id="browser_register"><code>browser_register</code> <a class="heading-anchor" href="#browser_register">#</a></h3>
 <p><strong>Arguments:</strong></p>
 <ul>
 <li><code>browser</code>: The browser instance</li>
 </ul>
 <p>A new browser was opened, but is not ready yet.</p>
-<h3><code>browser_error</code></h3>
+<h3 id="browser_error"><code>browser_error</code> <a class="heading-anchor" href="#browser_error">#</a></h3>
 <p><strong>Arguments:</strong></p>
 <ul>
 <li><code>browser</code>: The browser instance</li>
 <li><code>error</code>: The error that occurred</li>
 </ul>
 <p>There was an error on this browser instance.</p>
-<h3><code>browser_start</code></h3>
+<h3 id="browser_start"><code>browser_start</code> <a class="heading-anchor" href="#browser_start">#</a></h3>
 <p><strong>Arguments:</strong></p>
 <ul>
 <li><code>browser</code>: The browser instance</li>
 <li><code>info</code>: Details about the run</li>
 </ul>
 <p>A test run is beginning in this browser.</p>
-<h3><code>browser_complete</code></h3>
+<h3 id="browser_complete"><code>browser_complete</code> <a class="heading-anchor" href="#browser_complete">#</a></h3>
 <p><strong>Arguments:</strong></p>
 <ul>
 <li><code>browser</code>: The browser instance</li>
 <li><code>result</code>: Test results</li>
 </ul>
 <p>A test run has completed in this browser.</p>
-<h3><code>browsers_change</code></h3>
+<h3 id="browsers_change"><code>browsers_change</code> <a class="heading-anchor" href="#browsers_change">#</a></h3>
 <p><strong>Arguments:</strong></p>
 <ul>
 <li><code>browsers</code>: A collection of browser instances</li>
 </ul>
 <p>The list of browsers has changed.</p>
-<h4><code>browsers_ready</code></h4>
+<h4 id="browsers_ready"><code>browsers_ready</code> <a class="heading-anchor" href="#browsers_ready">#</a></h4>
 <p>All browsers are ready for execution</p>
-<h3><code>run_start</code></h3>
+<h3 id="run_start"><code>run_start</code> <a class="heading-anchor" href="#run_start">#</a></h3>
 <p><strong>Arguments:</strong></p>
 <ul>
 <li><code>browsers</code>: A collection of browser instances on which tests are executed</li>
 </ul>
 <p>A test run starts.</p>
-<h3><code>run_complete</code></h3>
+<h3 id="run_complete"><code>run_complete</code> <a class="heading-anchor" href="#run_complete">#</a></h3>
 <p><strong>Arguments:</strong></p>
 <ul>
 <li><code>browsers</code>: A collection of browser instances</li>
 <li><code>results</code>: A list of results</li>
 </ul>
 <p>A test run was completed.</p>
-<h2>karma.runner</h2>
-<h3><strong>runner.run(options, [callback=process.exit])</strong></h3>
+<h2 id="karmarunner">karma.runner <a class="heading-anchor" href="#karmarunner">#</a></h2>
+<h3 id="runnerrunoptions-callbackprocessexit"><strong>runner.run(options, [callback=process.exit])</strong> <a class="heading-anchor" href="#runnerrunoptions-callbackprocessexit">#</a></h3>
 <p>Equivalent of <code>karma run</code>.</p>
 <pre><code class="language-javascript"><span class="hljs-keyword">var</span> runner = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;karma&#x27;</span>).runner
 runner.run({<span class="hljs-attr">port</span>: <span class="hljs-number">9876</span>}, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">exitCode</span>) </span>{
@@ -204,7 +204,7 @@ runner.run({<span class="hljs-attr">port</span>: <span class="hljs-number">9876<
   process.exit(exitCode)
 })
 </code></pre>
-<h2>Callback function notes</h2>
+<h2 id="callback-function-notes">Callback function notes <a class="heading-anchor" href="#callback-function-notes">#</a></h2>
 <ul>
 <li>If there is an error, the error code will be provided as the second parameter to the error callback.</li>
 </ul>

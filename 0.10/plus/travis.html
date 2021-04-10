@@ -125,14 +125,14 @@ tests when code is pushed. Integration is done by adding a simple
 rest. Whenever tested, the Travis results will appear in your Github pull requests and your
 history will be available within their control panel. This article assumes you
 already have Travis account.</p>
-<h2>Configure Travis</h2>
+<h2 id="configure-travis">Configure Travis <a class="heading-anchor" href="#configure-travis">#</a></h2>
 <p>Create a file in your project root called <code>.travis.yml</code> with the
 following YAML content:</p>
 <pre><code class="language-ruby"><span class="hljs-symbol">language:</span> node_js
 <span class="hljs-symbol">node_js:</span>
   - <span class="hljs-number">0.8</span>
 </code></pre>
-<h2>Setup a Test Command</h2>
+<h2 id="setup-a-test-command">Setup a Test Command <a class="heading-anchor" href="#setup-a-test-command">#</a></h2>
 <p>If you do not already have a <code>package.json</code> in your project root
 create one now. Travis runs <code>npm test</code> to trigger your tests so this
 is where you tell Travis how to run your tests.</p>
@@ -149,7 +149,7 @@ is where you tell Travis how to run your tests.</p>
 <p>Travis will run <code>npm install</code> before every suite so this is your
 chance to specify any modules your app needs that Travis does not know
 about like Karma.</p>
-<h2>Configure Travis with Firefox</h2>
+<h2 id="configure-travis-with-firefox">Configure Travis with Firefox <a class="heading-anchor" href="#configure-travis-with-firefox">#</a></h2>
 <p>Travis supports running a real browser (Firefox) with a virtual
 screen. Just update your <code>.travis.yml</code> to set up the virtual screen
 like this:</p>
@@ -164,7 +164,7 @@ like this:</p>
 command to</p>
 <pre><code class="language-bash">./node_modules/.bin/karma start --browsers Firefox --single-run
 </code></pre>
-<h2>Notes</h2>
+<h2 id="notes">Notes <a class="heading-anchor" href="#notes">#</a></h2>
 <ul>
 <li>Travis&#39; Node environment has very little available. If the startup
 process in Travis fails check for missing module information and be

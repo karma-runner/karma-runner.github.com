@@ -123,7 +123,7 @@ If you want to generate the coverage, you need to configure up to three parts:</
 <li>reporter <code>coverage</code> (required)</li>
 <li>reporter options (optional)</li>
 </ul>
-<h2>Preprocessor</h2>
+<h2 id="preprocessor">Preprocessor <a class="heading-anchor" href="#preprocessor">#</a></h2>
 <p>The preprocessor configures which files should be tested for coverage.
 For example if all your code lives in <code>lib/</code> you need to add this to your
 configuration file.</p>
@@ -151,13 +151,13 @@ these file are only for the test setup used and not for your program.</p>
 <li>a part of the code coverage report will be output in the installation directory of Karma.</li>
 <li>the code coverage rate is reduced unfairly.</li>
 </ul>
-<h2>Reporter</h2>
+<h2 id="reporter">Reporter <a class="heading-anchor" href="#reporter">#</a></h2>
 <p>To activate the coverage reporter add this to your configuration file.</p>
 <pre><code class="language-javascript">reporters = [<span class="hljs-string">&#x27;coverage&#x27;</span>];
 </code></pre>
 <p>This will create a coverage report for every browser that the tests are run in.
 In addition, it will create a JSON file that outputs the intermediate data.</p>
-<h2>Reporter Options</h2>
+<h2 id="reporter-options">Reporter Options <a class="heading-anchor" href="#reporter-options">#</a></h2>
 <p>The reporter defaults to the following values.</p>
 <pre><code class="language-javascript">coverageReporter = {
   <span class="hljs-attr">type</span> : <span class="hljs-string">&#x27;html&#x27;</span>,
@@ -165,7 +165,7 @@ In addition, it will create a JSON file that outputs the intermediate data.</p>
 }
 </code></pre>
 <p>If you want to configure it yourself here are the options explained.</p>
-<h3>type</h3>
+<h3 id="type">type <a class="heading-anchor" href="#type">#</a></h3>
 <p><strong>Type:</strong> String</p>
 <p><strong>Possible Values:</strong></p>
 <ul>
@@ -184,7 +184,7 @@ In addition, it will create a JSON file that outputs the intermediate data.</p>
 }
 </code></pre>
 <p>If no filename is given, it will write the output to the console.</p>
-<h3>dir</h3>
+<h3 id="dir">dir <a class="heading-anchor" href="#dir">#</a></h3>
 <p><strong>Type:</strong> String</p>
 <p><strong>Description:</strong> This will be used to output coverage reports. When
   you set a relative path, the directory is resolved against the <code>basePath</code>.</p>

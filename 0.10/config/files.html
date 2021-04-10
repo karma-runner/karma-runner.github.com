@@ -119,7 +119,7 @@
       </div>
       <div class="page-columns">
         <div id="markdown" class="sixteen columns bottom"><p><strong>The <code>files</code> array determines which files are included in the browser and which files are watched and served by Karma.</strong></p>
-<h2>Pattern matching and <code>basePath</code></h2>
+<h2 id="pattern-matching-and-basepath">Pattern matching and <code>basePath</code> <a class="heading-anchor" href="#pattern-matching-and-basepath">#</a></h2>
 <ul>
 <li>All of the relative patterns will get resolved to <code>basePath</code> first.</li>
 <li>If the <code>basePath</code> is a relative path, it gets resolved to the
@@ -127,7 +127,7 @@ directory where the configuration file is.</li>
 <li>Eventually, all the patterns will get resolved into files using
 <a href="https://github.com/isaacs/node-glob">glob</a>, so you can use <a href="https://github.com/isaacs/minimatch">minimatch</a> expressions like <code>test/unit/**/*.spec.js</code>.</li>
 </ul>
-<h2>Ordering</h2>
+<h2 id="ordering">Ordering <a class="heading-anchor" href="#ordering">#</a></h2>
 <ul>
 <li>The order of patterns determines the order of files in which they
 are included in the browser.</li>
@@ -135,20 +135,20 @@ are included in the browser.</li>
 <li>Each file is included exactly once. If multiple patterns match the
 same file, it&#39;s included as if it only matched the first pattern.</li>
 </ul>
-<h2>Included, served, watched</h2>
+<h2 id="included-served-watched">Included, served, watched <a class="heading-anchor" href="#included-served-watched">#</a></h2>
 <p>Each pattern is either a simple string or an object with four properties:</p>
-<h3><code>pattern</code></h3>
+<h3 id="pattern"><code>pattern</code> <a class="heading-anchor" href="#pattern">#</a></h3>
 <ul>
 <li><strong>Description.</strong> The pattern to use for matching. This property is mandatory.</li>
 </ul>
-<h3><code>watched</code></h3>
+<h3 id="watched"><code>watched</code> <a class="heading-anchor" href="#watched">#</a></h3>
 <ul>
 <li><strong>Type.</strong> Boolean</li>
 <li><strong>Default.</strong> <code>true</code></li>
 <li><strong>Description.</strong>  If <code>autoWatch</code> is <code>true</code> all files that have set <code>watched</code> to true will be
 watched for changes.</li>
 </ul>
-<h3><code>included</code></h3>
+<h3 id="included"><code>included</code> <a class="heading-anchor" href="#included">#</a></h3>
 <ul>
 <li><strong>Type.</strong> Boolean</li>
 <li><strong>Default.</strong> <code>true</code></li>
@@ -156,17 +156,17 @@ watched for changes.</li>
   <code>&lt;script&gt;</code> tag? Use <code>false</code> if you wanna load them manually, eg.
   using <a href="../plus/RequireJS.html">Require.js</a>.</li>
 </ul>
-<h3><code>served</code></h3>
+<h3 id="served"><code>served</code> <a class="heading-anchor" href="#served">#</a></h3>
 <ul>
 <li><strong>Type.</strong> Boolean</li>
 <li><strong>Default.</strong> <code>true</code></li>
 <li><strong>Description.</strong> Should the files be served by Karma&#39;s webserver?</li>
 </ul>
-<h2>Preprocessor tranformations</h2>
+<h2 id="preprocessor-tranformations">Preprocessor tranformations <a class="heading-anchor" href="#preprocessor-tranformations">#</a></h2>
 <p>Depending on preprocessor configuration, be aware that files loaded may be transformed and no longer available in
 their native format. For instance, if html2js preprocessor is enabled, the actual .html files are no longer
 served - but rather available as <code>window.__html__[&#39;my.html&#39;]</code>. Read more about <a href="preprocessors.html">preprocessors</a>.</p>
-<h2>Complete example</h2>
+<h2 id="complete-example">Complete example <a class="heading-anchor" href="#complete-example">#</a></h2>
 <p>Here is a complete example showing the different options that are possible.</p>
 <pre><code class="language-javascript">files: [
 

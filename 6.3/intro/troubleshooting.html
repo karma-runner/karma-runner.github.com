@@ -120,44 +120,44 @@
       </div>
       <div class="page-columns">
         <div id="markdown" class="sixteen columns bottom"><p>karma has an extensive set of tests and we have limited time to help with bugs. Here are some suggestions to get you unstuck.</p>
-<h3>npm audit vulnerabilities</h3>
+<h3 id="npm-audit-vulnerabilities">npm audit vulnerabilities <a class="heading-anchor" href="#npm-audit-vulnerabilities">#</a></h3>
 <p>Please open a Pull Request that will fix the issue.</p>
 <p>We get lots of these reports, from multiple automated services, from other projects, and from users. The vast majority are minor: please open a pull request if you want a fix. We only take direct action to fix serious issues that affect online users.</p>
-<h3>How Do I Debug a karma issue?</h3>
+<h3 id="how-do-i-debug-a-karma-issue">How Do I Debug a karma issue? <a class="heading-anchor" href="#how-do-i-debug-a-karma-issue">#</a></h3>
 <p>Many issues can be solved by reading the <code>debug log</code> or by using the <code>browsers devtools</code>:</p>
-<h4>Use <code>--log-level debug</code> to investigate server-side issues, especially configuration issues.</h4>
+<h4 id="use---log-level-debug-to-investigate-server-side-issues-especially-configuration-issues">Use <code>--log-level debug</code> to investigate server-side issues, especially configuration issues. <a class="heading-anchor" href="#use---log-level-debug-to-investigate-server-side-issues-especially-configuration-issues">#</a></h4>
 <p>The <code>DEBUG</code> log includes a copy of the final &#39;config&#39;: note that plugins can alter the config and sometimes the settings you applied do not give the result you expected. The log includes both core <code>karma</code> lines and lines from plugins: use the logging prefix to determine if your issue may need to be reported to a karma plugin.</p>
-<h4>Use <code>--no-single-run</code> to investigate browser-side issues, especially global errors in test files.</h4>
+<h4 id="use---no-single-run-to-investigate-browser-side-issues-especially-global-errors-in-test-files">Use <code>--no-single-run</code> to investigate browser-side issues, especially global errors in test files. <a class="heading-anchor" href="#use---no-single-run-to-investigate-browser-side-issues-especially-global-errors-in-test-files">#</a></h4>
 <p>The <code>--no-single-run</code> option causes the server to print a URL and wait.  Open the URL in a browser and use the browsers devtools to investigate the problem. Typically you will want to open the URL, then click the DEBUG link in the upper right corner. That opens a new window with cleaner code for debugging.</p>
-<h4>Is your issue related to another tool?</h4>
+<h4 id="is-your-issue-related-to-another-tool">Is your issue related to another tool? <a class="heading-anchor" href="#is-your-issue-related-to-another-tool">#</a></h4>
 <p>Issues with Angular setups are probably better debugged by consulting with other Angular users.  Issues with coverage are probably related to your config, the compiler for coverage instrumentation, or possibly karma-coverage.</p>
-<h4>Use the source!</h4>
+<h4 id="use-the-source">Use the source! <a class="heading-anchor" href="#use-the-source">#</a></h4>
 <p><code>karma</code> is all JavaScript code: perhaps you can debug your issue by adding logging?</p>
-<h3>I&#39;m getting an error during the installation related to the <code>ws</code> module, how can I solve it?</h3>
+<h3 id="im-getting-an-error-during-the-installation-related-to-the-ws-module-how-can-i-solve-it">I&#39;m getting an error during the installation related to the <code>ws</code> module, how can I solve it? <a class="heading-anchor" href="#im-getting-an-error-during-the-installation-related-to-the-ws-module-how-can-i-solve-it">#</a></h3>
 <p>This is a common Windows <a href="https://github.com/einaros/ws/issues/178">issue</a>, the compilation of the native <a href="https://www.npmjs.org/package/ws">ws</a> module fails. Anyways, <code>ws</code> has a fallback JS implementation which NPM should take care using it. All you need to do is make sure that you&#39;re using an up-to-date version of NPM. To do that you can:</p>
-<h4>Update NPM</h4>
+<h4 id="update-npm">Update NPM <a class="heading-anchor" href="#update-npm">#</a></h4>
 <p><code>$ npm install -g npm</code></p>
 <p>or</p>
-<h4>Do a fresh NodeJS install</h4>
+<h4 id="do-a-fresh-nodejs-install">Do a fresh NodeJS install <a class="heading-anchor" href="#do-a-fresh-nodejs-install">#</a></h4>
 <p>If you have issues to update NPM, you can just go to the <a href="http://nodejs.org/">NodeJS</a> download the current version. It will come with the latest NPM version.</p>
-<h3>The browser just does not start. What&#39;s going on?</h3>
+<h3 id="the-browser-just-does-not-start-whats-going-on">The browser just does not start. What&#39;s going on? <a class="heading-anchor" href="#the-browser-just-does-not-start-whats-going-on">#</a></h3>
 <p>It&#39;s more likely Karma can&#39;t find the location of the browser binary (the execution file). You can fix this by setting
 the appropriate environment variable with the correct path (Google Chrome, for instance, uses the <code>CHROME_BIN</code> environment variable).
 Check out [browsers] for more information.</p>
-<h3>I&#39;m getting a weird error from the browser, how can I debug it?</h3>
+<h3 id="im-getting-a-weird-error-from-the-browser-how-can-i-debug-it">I&#39;m getting a weird error from the browser, how can I debug it? <a class="heading-anchor" href="#im-getting-a-weird-error-from-the-browser-how-can-i-debug-it">#</a></h3>
 <p>Go to the captured browser and click the &quot;DEBUG&quot; button (or open <code>http://localhost:9876/debug.html</code>)
 and use the web inspector to see what&#39;s going on. (You may need to refresh the debug.html page for it to kick in once
 the web inspector is open.)</p>
-<h3>I&#39;m getting a syntax error from a HTML file. It looks like the preprocessor isn&#39;t working.</h3>
+<h3 id="im-getting-a-syntax-error-from-a-html-file-it-looks-like-the-preprocessor-isnt-working">I&#39;m getting a syntax error from a HTML file. It looks like the preprocessor isn&#39;t working. <a class="heading-anchor" href="#im-getting-a-syntax-error-from-a-html-file-it-looks-like-the-preprocessor-isnt-working">#</a></h3>
 <p>The patterns in the <code>preprocessors</code> configuration setting are resolved via the <code>basePath</code> setting.
 See preprocessors for more information. You can also turn on debug logging (use <code>--log-level debug</code> when starting Karma)
 and Karma will display which files are preprocessed.</p>
-<h3>I&#39;m getting a <code>npm ERR! peerinvalid Peer</code> error. How can I fix that?</h3>
+<h3 id="im-getting-a-npm-err-peerinvalid-peer-error-how-can-i-fix-that">I&#39;m getting a <code>npm ERR! peerinvalid Peer</code> error. How can I fix that? <a class="heading-anchor" href="#im-getting-a-npm-err-peerinvalid-peer-error-how-can-i-fix-that">#</a></h3>
 <p>Try to remove <code>karma</code> and <code>karma-*</code> modules from your <code>node_modules</code> first (for instance <code>rm -rf /usr/local/lib/node_modules/karma-*</code>), then install Karma again.</p>
-<h3>My tests are running really slow. What&#39;s going on?</h3>
+<h3 id="my-tests-are-running-really-slow-whats-going-on">My tests are running really slow. What&#39;s going on? <a class="heading-anchor" href="#my-tests-are-running-really-slow-whats-going-on">#</a></h3>
 <p>Make sure the Karma&#39;s tab is active. Browsers give inactive tabs only minimum CPU.</p>
 <div class="alert alert-success"><h4 class="alert-heading">Note: </h4>If you can&#39;t find the solution for your issue here you can also ask for help in the <a href="https://groups.google.com/d/forum/karma-users">mailing-list</a> or <a href="http://stackoverflow.com/questions/tagged/karma-runner">Stack Overflow</a>.</div>
-<h3>I&#39;m really stuck. I tried every thing!</h3>
+<h3 id="im-really-stuck-i-tried-every-thing">I&#39;m really stuck. I tried every thing! <a class="heading-anchor" href="#im-really-stuck-i-tried-every-thing">#</a></h3>
 <p>Because of the complexity of test setups, we rarely work to fix bugs without steps to reproduce. The best approach is to create a github project that installs all the components and reproduces the bug.</p>
 
         </div>

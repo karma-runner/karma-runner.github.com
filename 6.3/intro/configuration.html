@@ -122,7 +122,7 @@
         <div id="markdown" class="sixteen columns bottom"><p>In order to serve you well, Karma needs to know about your project in order to test it
 and this is done via a configuration file. This page explains how to create such a configuration file.</p>
 <p>See <a href="../config/configuration-file.html">configuration file docs</a> for more information about the syntax and all the available options.</p>
-<h2>Generating the config file</h2>
+<h2 id="generating-the-config-file">Generating the config file <a class="heading-anchor" href="#generating-the-config-file">#</a></h2>
 <p>The configuration file can be generated using <code>karma init</code>:</p>
 <pre><code class="language-bash">$ karma init my.conf.js
 
@@ -162,7 +162,7 @@ Config file generated at <span class="hljs-string">&quot;/Users/vojta/Code/karma
 <p>The configuration file can be written in CoffeeScript as well.
 In fact, if you execute <code>karma init</code> with a <code>*.coffee</code> extension such as <code>karma init karma.conf.coffee</code>, it will generate a CoffeeScript file.</p>
 <p>Of course, you can write the config file by hand or copy-paste it from another project ;-)</p>
-<h2>Starting Karma</h2>
+<h2 id="starting-karma">Starting Karma <a class="heading-anchor" href="#starting-karma">#</a></h2>
 <p>When starting Karma, the configuration file path can be passed in as the first argument.</p>
 <p>By default, Karma will look for <code>karma.conf.js</code> or <code>karma.conf.coffee</code> in the current directory.</p>
 <pre><code class="language-bash"><span class="hljs-comment"># Start Karma using your configuration:</span>
@@ -170,13 +170,13 @@ $ karma start my.conf.js
 </code></pre>
 <p>For more detailed information about the Karma configuration file, such as available options and features,
 please read the <a href="../config/configuration-file.html">configuration file docs</a>.</p>
-<h2>Command line arguments</h2>
+<h2 id="command-line-arguments">Command line arguments <a class="heading-anchor" href="#command-line-arguments">#</a></h2>
 <p>Some configurations, which are already present within the configuration file, can be overridden by specifying the configuration
 as a command line argument for when Karma is executed.</p>
 <pre><code class="language-bash">karma start my.conf.js --log-level debug --single-run
 </code></pre>
 <p>Try <code>karma start --help</code> if you want to see all available options.</p>
-<h2>Integrating with Grunt/Gulp</h2>
+<h2 id="integrating-with-gruntgulp">Integrating with Grunt/Gulp <a class="heading-anchor" href="#integrating-with-gruntgulp">#</a></h2>
 <ul>
 <li><a href="https://github.com/karma-runner/grunt-karma">grunt-karma</a></li>
 <li><a href="https://github.com/karma-runner/gulp-karma">gulp-karma</a></li>

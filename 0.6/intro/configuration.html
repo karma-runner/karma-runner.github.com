@@ -119,21 +119,21 @@
 project. That&#39;s done through a configuration file.</p>
 <p>For an example file, see <a href="https://github.com/testacular/testacular/blob/master/test/client/testacular.conf.js">test/client/testacular.conf.js</a>
 which contains most of the options.</p>
-<h2>Generating the config file</h2>
+<h2 id="generating-the-config-file">Generating the config file <a class="heading-anchor" href="#generating-the-config-file">#</a></h2>
 <p>You can write the config file by hand or copy paste it from another project.</p>
 <p>A third way is to use <code>testacular init</code> to generate it.</p>
 <pre><code class="language-bash"><span class="hljs-comment"># This will ask you a few questions and generate a new config file</span>
 <span class="hljs-comment"># called my.conf.js</span>
 $ testacular init my.conf.js
 </code></pre>
-<h2>Starting Testacular</h2>
+<h2 id="starting-testacular">Starting Testacular <a class="heading-anchor" href="#starting-testacular">#</a></h2>
 <p>When starting testacular, you can pass a path to the configuration file as an argument.</p>
 <p>By default, Testacular will look for <code>testacular.conf.js</code> in the current directory.</p>
 <pre><code class="language-bash"><span class="hljs-comment"># Start Testacular using your configuration</span>
 $ testacular start my.conf.js
 </code></pre>
 <p>For more info about configuration file, see the <a href="../config/configuration-file.html">configuration file docs</a>.</p>
-<h2>Command line arguments</h2>
+<h2 id="command-line-arguments">Command line arguments <a class="heading-anchor" href="#command-line-arguments">#</a></h2>
 <p>Some of the configurations can be specified as a command line argument, which
 overrides the configuration from the config file.</p>
 <p>Try <code>testacular start --help</code> if you want to see all available options.</p>

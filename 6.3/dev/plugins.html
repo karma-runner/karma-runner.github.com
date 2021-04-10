@@ -127,11 +127,11 @@
 <li>A <em>preprocessor</em> is responsible for transforming/transpiling source files before loading them into a browser.</li>
 <li>A <em>middleware</em> can be used to customise how files are served to a browser.</li>
 </ul>
-<h2>Dependency injection</h2>
+<h2 id="dependency-injection">Dependency injection <a class="heading-anchor" href="#dependency-injection">#</a></h2>
 <p>Karma is assembled using <a href="https://en.wikipedia.org/wiki/Dependency_injection"><em>dependency injection</em></a>. It is important to understand this concept to be able to develop plugins.</p>
 <p>On the very high level you can think of Karma as an object where each key (a <em>DI token</em>) is mapped to a certain Karma object (a <em>service</em>). For example, <code>config</code> DI token maps to <code>Config</code> instance, which holds current Karma configuration. Plugins can request (or <em>inject</em>) various Karma objects by specifying a corresponding DI token. Upon injection a plugin can interact with injected services to implement their functionality.</p>
 <p>There is no exhaustive list of all available services and their DI tokens, but you can discover them by reading Karma&#39;s or other plugins&#39; source code.</p>
-<h2>Plugin structure</h2>
+<h2 id="plugin-structure">Plugin structure <a class="heading-anchor" href="#plugin-structure">#</a></h2>
 <p>Each plugin is essentially a service with its associated DI token. When user <a href="../config/plugins.html">activates a plugin</a> in their config, Karma looks for a corresponding DI token and instantiates a service linked to this DI token.</p>
 <p>To declare a plugin one should define a DI token for the plugin and explain Karma how to instantiate it. A DI token consists of two parts: a plugin type and plugin&#39;s unique name. The former defines what a plugin can do, requirements to the service&#39;s API and when it is instantiated. The latter is a unique name, which a plugin user will use to activate a plugin. </p>
 <p>It is totally valid for a plugin to define multiple services. This can be done by adding more keys to the object exported by the plugin. Common example of this would be <code>framework</code> + <code>reporter</code> plugins, which usually come together.</p>
@@ -168,7 +168,7 @@
   })
 }
 </code></pre>
-<h2>Injecting dependencies</h2>
+<h2 id="injecting-dependencies">Injecting dependencies <a class="heading-anchor" href="#injecting-dependencies">#</a></h2>
 <p>In &quot;Dependency injection&quot; section we discussed that it is possible to inject any Karma services into a plugin and interact with them. This can be done by setting an <code>$inject</code> property on the plugin&#39;s factory function to an array of DI tokens plugin wishes to interact with. Karma will pick up this property and pass requested services to the factory functions as parameters.</p>
 <p>Let&#39;s make the <code>hello</code> framework a bit more useful and make it add <code>hello.js</code> file to the <code>files</code> array. This way users of the plugin can, for example, access a function defined in <code>hello.js</code> from their tests.</p>
 <pre><code class="language-js"><span class="hljs-comment">// hello-plugin.js</span>
@@ -192,9 +192,9 @@ helloFrameworkFactory.$inject = [<span class="hljs-string">&#x27;config&#x27;</s
 </code></pre>
 <p>The Karma config is unchanged and is omitted for brevity. See above example for the plugin usage.</p>
 <div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Currently, Karma uses <a href="https://github.com/vojtajina/node-di">node-di</a> library as a DI implementation. The library is more powerful than what&#39;s documented above, however, the DI implementation may change in the future, so we recommend not to rely on the node-di implementation details.</div>
-<h2>Plugin types</h2>
+<h2 id="plugin-types">Plugin types <a class="heading-anchor" href="#plugin-types">#</a></h2>
 <p>This section outlines API requirements and conventions for different plugin types. There also links to some plugins, which you can use for inspiration.</p>
-<h3>Frameworks</h3>
+<h3 id="frameworks">Frameworks <a class="heading-anchor" href="#frameworks">#</a></h3>
 <ul>
 <li>example plugins: <a href="https://github.com/karma-runner/karma-jasmine">karma-jasmine</a>, <a href="https://github.com/karma-runner/karma-mocha">karma-mocha</a>, <a href="https://github.com/karma-runner/karma-requirejs">karma-requirejs</a></li>
 <li>use naming convention is <code>karma-*</code></li>
@@ -231,19 +231,19 @@ statuses. The method takes an object of the form:</p>
     <span class="hljs-attr">skipped</span>: <span class="hljs-built_in">Boolean</span> <span class="hljs-comment">// skipped / ran</span>
 }
 </code></pre>
-<h3>Reporters</h3>
+<h3 id="reporters">Reporters <a class="heading-anchor" href="#reporters">#</a></h3>
 <ul>
 <li>example plugins: <a href="https://github.com/karma-runner/karma-growl-reporter">karma-growl-reporter</a>, <a href="https://github.com/karma-runner/karma-junit-reporter">karma-junit-reporter</a>, <a href="https://github.com/ameerthehacker/karma-material-reporter">karma-material-reporter</a></li>
 <li>use naming convention is <code>karma-*-reporter</code></li>
 <li>use NPM keywords <code>karma-plugin</code>, <code>karma-reporter</code></li>
 </ul>
-<h3>Launchers</h3>
+<h3 id="launchers">Launchers <a class="heading-anchor" href="#launchers">#</a></h3>
 <ul>
 <li>example plugins: <a href="https://github.com/karma-runner/karma-chrome-launcher">karma-chrome-launcher</a>, <a href="https://github.com/karma-runner/karma-sauce-launcher">karma-sauce-launcher</a></li>
 <li>use naming convention is <code>karma-*-launcher</code></li>
 <li>use NPM keywords <code>karma-plugin</code>, <code>karma-launcher</code></li>
 </ul>
-<h3>Preprocessors</h3>
+<h3 id="preprocessors">Preprocessors <a class="heading-anchor" href="#preprocessors">#</a></h3>
 <ul>
 <li>example plugins: <a href="https://github.com/karma-runner/karma-coffee-preprocessor">karma-coffee-preprocessor</a>, <a href="https://github.com/karma-runner/karma-ng-html2js-preprocessor">karma-ng-html2js-preprocessor</a></li>
 <li>use naming convention is <code>karma-*-preprocessor</code></li>
@@ -264,7 +264,7 @@ statuses. The method takes an object of the form:</p>
 </ul>
 </li>
 </ul>
-<h3>Crazier stuff</h3>
+<h3 id="crazier-stuff">Crazier stuff <a class="heading-anchor" href="#crazier-stuff">#</a></h3>
 <p>As Karma is assembled by dependency injection, a plugin can ask for pretty much any Karma component and interact with it. There are a couple of plugins that do more interesting stuff like this, check out <a href="https://github.com/karma-runner/karma-closure">karma-closure</a>, <a href="https://github.com/karma-runner/karma-intellij">karma-intellij</a>.</p>
 
         </div>

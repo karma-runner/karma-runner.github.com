@@ -121,7 +121,7 @@
       <div class="page-columns">
         <div id="markdown" class="sixteen columns bottom"><p>Karma can be easily extended through plugins. In fact, all the existing preprocessors, reporters, browser launchers and frameworks are plugins. </p>
 <p>You can install <a href="https://npmjs.org/browse/keyword/karma-plugin">existing plugins</a> from NPM or you can write <a href="../dev/plugins.html">your own plugins</a> for Karma.</p>
-<h2>Installing Plugins</h2>
+<h2 id="installing-plugins">Installing Plugins <a class="heading-anchor" href="#installing-plugins">#</a></h2>
 <p>The recommended way to install plugins is to add them as project dependencies in your <code>package.json</code>:</p>
 <pre><code class="language-json">{
   <span class="hljs-attr">&quot;devDependencies&quot;</span>: {
@@ -135,7 +135,7 @@
 <p>Therefore, a simple way to install a plugin is:</p>
 <pre><code class="language-bash">npm install karma-&lt;plugin name&gt; --save-dev
 </code></pre>
-<h2>Loading Plugins</h2>
+<h2 id="loading-plugins">Loading Plugins <a class="heading-anchor" href="#loading-plugins">#</a></h2>
 <p>By default, Karma loads plugins from all sibling NPM packages which have a name starting with <code>karma-*</code>.</p>
 <p>You can also override this behavior and explicitly list plugins you want to load via the <code>plugins</code> configuration setting:</p>
 <pre><code class="language-javascript">config.set({
@@ -156,7 +156,7 @@
   ]
 })
 </code></pre>
-<h2>Activating Plugins</h2>
+<h2 id="activating-plugins">Activating Plugins <a class="heading-anchor" href="#activating-plugins">#</a></h2>
 <p>Adding a plugin to the <code>plugins</code> array only makes Karma aware of the plugin, but it does not activate it. Depending on the plugin type you&#39;ll need to add a plugin name into <code>frameworks</code>, <code>reporters</code>, <code>preprocessors</code>, <code>middleware</code> or <code>browsers</code> configuration key to activate it. For the detailed information refer to the corresponding plugin documentation or check out <a href="../dev/plugins.html">Developing plugins</a> guide for more in-depth explanation of how plugins work.</p>
 
         </div>

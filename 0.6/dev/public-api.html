@@ -118,8 +118,8 @@
         <div id="markdown" class="sixteen columns bottom"><p>Most of the time, you will be using Testacular directly from the command line.</p>
 <p>You can, however, call Testacular programmatically from your node module. This might be helpful when
 using Testacular with <a href="http://gruntjs.com/">Grunt</a> for instance.</p>
-<h2>testacular.server</h2>
-<h3><strong>server.start(options, [callback=process.exit])</strong></h3>
+<h2 id="testacularserver">testacular.server <a class="heading-anchor" href="#testacularserver">#</a></h2>
+<h3 id="serverstartoptions-callbackprocessexit"><strong>server.start(options, [callback=process.exit])</strong> <a class="heading-anchor" href="#serverstartoptions-callbackprocessexit">#</a></h3>
 <p>Equivalent of <code>testacular start</code>.</p>
 <pre><code class="language-javascript"><span class="hljs-keyword">var</span> server = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;testacular&#x27;</span>).server;
 server.start({<span class="hljs-attr">port</span>: <span class="hljs-number">9877</span>}, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">exitCode</span>) </span>{
@@ -127,8 +127,8 @@ server.start({<span class="hljs-attr">port</span>: <span class="hljs-number">987
   process.exit(exitCode);
 });
 </code></pre>
-<h2>testacular.runner</h2>
-<h3><strong>runner.run(options, [callback=process.exit])</strong></h3>
+<h2 id="testacularrunner">testacular.runner <a class="heading-anchor" href="#testacularrunner">#</a></h2>
+<h3 id="runnerrunoptions-callbackprocessexit"><strong>runner.run(options, [callback=process.exit])</strong> <a class="heading-anchor" href="#runnerrunoptions-callbackprocessexit">#</a></h3>
 <p>Equivalent of <code>testacular run</code>.</p>
 <pre><code class="language-javascript"><span class="hljs-keyword">var</span> runner = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;testacular&#x27;</span>).runner;
 runner.run({<span class="hljs-attr">runnerPort</span>: <span class="hljs-number">9100</span>}, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">exitCode</span>) </span>{

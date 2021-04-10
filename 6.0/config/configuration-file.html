@@ -123,7 +123,7 @@
         </h1>
       </div>
       <div class="page-columns">
-        <div id="markdown" class="sixteen columns bottom"><h2>Overview</h2>
+        <div id="markdown" class="sixteen columns bottom"><h2 id="overview">Overview <a class="heading-anchor" href="#overview">#</a></h2>
 <p>In order to serve you well, Karma needs to know about your project in order to test it
 and this is done via a configuration file. The easiest way to generate an initial configuration file
 is by using the <code>karma init</code> command. This page lists all of the available configuration options.</p>
@@ -166,7 +166,7 @@ which accepts one argument: the configuration object.</p>
   });
 }
 </code></pre>
-<h3>Customized TypeScript Configuration</h3>
+<h3 id="customized-typescript-configuration">Customized TypeScript Configuration <a class="heading-anchor" href="#customized-typescript-configuration">#</a></h3>
 <p>Under the hood Karma uses ts-node to transpile TypeScript to JavaScript. If the resolved <code>tsconfig.json</code> has <code>module</code> configured as <code>ES</code> formats. You might get errors like <code>SyntaxError: Unexpected token</code>. This is due that in Node <code>ES</code> module formats are not supported. To overcome this issue you need to configure ts-node to use <code>commonjs</code> module format.</p>
 <p>Create a JavaScript configuration file that overrides the module format.</p>
 <pre><code class="language-javascript"><span class="hljs-comment">// karma.conf.js</span>
@@ -177,7 +177,7 @@ which accepts one argument: the configuration object.</p>
 });
 <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;./karma.conf.ts&#x27;</span>);
 </code></pre>
-<h2>File Patterns</h2>
+<h2 id="file-patterns">File Patterns <a class="heading-anchor" href="#file-patterns">#</a></h2>
 <p>All of the configuration options, which specify file paths, use the <a href="https://github.com/isaacs/minimatch">minimatch</a> library to facilitate flexible
 but concise file expressions so you can easily list all of the files you want to include and exclude.</p>
 <p>You can find details about each configuration option in the section below. The following options utilize minimatch expressions:</p>
@@ -192,14 +192,14 @@ but concise file expressions so you can easily list all of the files you want to
 <li><code>**/!(jquery).js</code>: Same as previous, but excludes &quot;jquery.js&quot;</li>
 <li><code>**/(foo|bar).js</code>: In all subdirectories, all &quot;foo.js&quot; or &quot;bar.js&quot; files</li>
 </ul>
-<h2>Configuration Options</h2>
+<h2 id="configuration-options">Configuration Options <a class="heading-anchor" href="#configuration-options">#</a></h2>
 <p>These are all of the available configuration options.</p>
-<h2>autoWatch</h2>
+<h2 id="autowatch">autoWatch <a class="heading-anchor" href="#autowatch">#</a></h2>
 <p><strong>Type:</strong> Boolean</p>
 <p><strong>Default:</strong>  <code>true</code></p>
 <p><strong>CLI:</strong> <code>--auto-watch</code>, <code>--no-auto-watch</code></p>
 <p><strong>Description:</strong> Enable or disable watching files and executing the tests whenever one of these files changes.</p>
-<h2>autoWatchBatchDelay</h2>
+<h2 id="autowatchbatchdelay">autoWatchBatchDelay <a class="heading-anchor" href="#autowatchbatchdelay">#</a></h2>
 <p><strong>Type:</strong> Number</p>
 <p><strong>Default:</strong>  <code>250</code></p>
 <p><strong>Description:</strong> When Karma is watching the files for changes, it tries to batch
@@ -207,20 +207,20 @@ multiple changes into a single run so that the test runner doesn&#39;t try to st
 tests more than it should, or restart while build files are not in a consistent state. The configuration setting
 tells Karma how long to wait (in milliseconds) from the last file change before starting
 the test process again, resetting the timer each time a file changes (i.e. <a href="https://davidwalsh.name/javascript-debounce-function">debouncing</a>).</p>
-<h2>basePath</h2>
+<h2 id="basepath">basePath <a class="heading-anchor" href="#basepath">#</a></h2>
 <p><strong>Type:</strong> String</p>
 <p><strong>Default:</strong> <code>&#39;&#39;</code></p>
 <p><strong>Description:</strong> The root path location that will be used to resolve all relative
 paths defined in <code>files</code> and <code>exclude</code>. If the <code>basePath</code> configuration is a
 relative path, then it will be resolved to the <code>__dirname</code> of the configuration file.</p>
-<h2>browserDisconnectTimeout</h2>
+<h2 id="browserdisconnecttimeout">browserDisconnectTimeout <a class="heading-anchor" href="#browserdisconnecttimeout">#</a></h2>
 <p><strong>Type:</strong> Number</p>
 <p><strong>Default:</strong> <code>2000</code></p>
 <p><strong>Description:</strong> How long does Karma wait for a browser to reconnect (in ms).</p>
 <p>With a flaky connection, it is pretty common that the browser disconnects, but the actual test execution is still running
 without any problems. Karma does not treat a disconnection as an immediate failure and will wait for <code>browserDisconnectTimeout</code> (ms).
 If the browser reconnects during that time, everything is fine.</p>
-<h2>browserConsoleLogOptions</h2>
+<h2 id="browserconsolelogoptions">browserConsoleLogOptions <a class="heading-anchor" href="#browserconsolelogoptions">#</a></h2>
 <p><strong>Type:</strong> Object</p>
 <p><strong>Default:</strong> <code>{level: &quot;debug&quot;, format: &quot;%b %T: %m&quot;, terminal: true}</code></p>
 <p><strong>Description:</strong> Configure how the browser console is logged with the following
@@ -237,19 +237,19 @@ is a string where <code>%b</code>, <code>%t</code>, <code>%T</code>, and <code>%
 log type in lower-case, log type in uppercase, and log message, respectively. This format will
 only effect the output file. <code>path</code> is the output-path of the output-file, and <code>terminal</code> indicates
 if the log should be written in the terminal, or not.</p>
-<h2>browserDisconnectTolerance</h2>
+<h2 id="browserdisconnecttolerance">browserDisconnectTolerance <a class="heading-anchor" href="#browserdisconnecttolerance">#</a></h2>
 <p><strong>Type:</strong> Number</p>
 <p><strong>Default:</strong> <code>0</code></p>
 <p><strong>Description:</strong> The number of disconnections tolerated.</p>
 <p>The <code>disconnectTolerance</code> value represents the maximum number of tries a browser will attempt in the case of a disconnection.
 Usually, any disconnection is considered a failure, but this option allows you to define a tolerance level when there is
 a flaky network link between the Karma server and the browsers.</p>
-<h2>browserNoActivityTimeout</h2>
+<h2 id="browsernoactivitytimeout">browserNoActivityTimeout <a class="heading-anchor" href="#browsernoactivitytimeout">#</a></h2>
 <p><strong>Type:</strong> Number</p>
 <p><strong>Default:</strong> <code>30000</code></p>
 <p><strong>Description:</strong> How long will Karma wait for a message from a browser before disconnecting from it (in ms).</p>
 <p>If, during test execution, Karma does not receive any message from a browser within <code>browserNoActivityTimeout</code>(ms), it will disconnect from the browser. The default is the one recommended by Travis (<a href="https://docs.travis-ci.com/user/gui-and-headless-browsers/#karma-and-firefox-inactivity-timeouts">https://docs.travis-ci.com/user/gui-and-headless-browsers/#karma-and-firefox-inactivity-timeouts</a>)</p>
-<h2>browsers</h2>
+<h2 id="browsers">browsers <a class="heading-anchor" href="#browsers">#</a></h2>
 <p><strong>Type:</strong> Array</p>
 <p><strong>Default:</strong>  <code>[]</code></p>
 <p><strong>CLI:</strong> <code>--browsers Chrome,Firefox</code>, <code>--no-browsers</code></p>
@@ -271,14 +271,14 @@ the Karma web server is listening (by default it is <code>http://localhost:9876/
 <p>See <a href="browsers.html">config/browsers</a> for more information. Additional launchers can be defined through <a href="plugins.html">plugins</a>. Use the
 <code>--no-browsers</code> command line option to override the value of this setting specified in the configuration file
 with an empty list.</p>
-<h2>captureTimeout</h2>
+<h2 id="capturetimeout">captureTimeout <a class="heading-anchor" href="#capturetimeout">#</a></h2>
 <p><strong>Type:</strong> Number</p>
 <p><strong>Default:</strong> <code>60000</code></p>
 <p><strong>Description:</strong> Timeout for capturing a browser (in ms).</p>
 <p>The <code>captureTimeout</code> value represents the maximum boot-up time allowed for a browser to start and connect to Karma.
 If any browser does not get captured within the timeout, Karma will kill it and try to launch
 it again and, after three attempts to capture it, Karma will give up.</p>
-<h2>client.args</h2>
+<h2 id="clientargs">client.args <a class="heading-anchor" href="#clientargs">#</a></h2>
 <p><strong>Type:</strong> Array</p>
 <p><strong>Default:</strong> <code>undefined</code></p>
 <p><strong>CLI:</strong> All arguments after <code>--</code> (only when using <code>karma run</code>)</p>
@@ -286,60 +286,60 @@ it again and, after three attempts to capture it, Karma will give up.</p>
 are passed through to the test adapter as <code>karma.config.args</code> (an array of strings).
 The <code>client.args</code> option allows you to set this value for actions other than <code>run</code>.</p>
 <p>How this value is used is up to your test adapter - you should check your adapter&#39;s documentation to see how (and if) it uses this value.</p>
-<h2>client.useIframe</h2>
+<h2 id="clientuseiframe">client.useIframe <a class="heading-anchor" href="#clientuseiframe">#</a></h2>
 <p><strong>Type:</strong> Boolean</p>
 <p><strong>Default:</strong> <code>true</code></p>
 <p><strong>Description:</strong> Run the tests inside an iFrame or a new window</p>
 <p>If true, Karma runs the tests inside an iFrame. If false, Karma runs the tests in a new window. Some tests may not run in an
 iFrame and may need a new window to run.</p>
-<h2>client.runInParent</h2>
+<h2 id="clientruninparent">client.runInParent <a class="heading-anchor" href="#clientruninparent">#</a></h2>
 <p><strong>Type:</strong> Boolean</p>
 <p><strong>Default:</strong> <code>false</code></p>
 <p><strong>Description:</strong> Run the tests on the same window as the client, without using iframe or a new window</p>
 <p>If true, Karma runs the tests inside the original window without using iframe. It will load the test scripts dynamically.</p>
-<h2>client.captureConsole</h2>
+<h2 id="clientcaptureconsole">client.captureConsole <a class="heading-anchor" href="#clientcaptureconsole">#</a></h2>
 <p><strong>Type:</strong> Boolean</p>
 <p><strong>Default:</strong> <code>true</code></p>
 <p><strong>Description:</strong> Capture all console output and pipe it to the terminal.</p>
-<h2>client.clearContext</h2>
+<h2 id="clientclearcontext">client.clearContext <a class="heading-anchor" href="#clientclearcontext">#</a></h2>
 <p><strong>Type:</strong> Boolean</p>
 <p><strong>Default:</strong> <code>true</code></p>
 <p><strong>Description:</strong> Clear the context window</p>
 <p>If true, Karma clears the context window upon the completion of running the tests. If false, Karma does not clear the context window
 upon the completion of running the tests. Setting this to false is useful when embedding a Jasmine Spec Runner Template.</p>
-<h2>client.clientDisplayNone</h2>
+<h2 id="clientclientdisplaynone">client.clientDisplayNone <a class="heading-anchor" href="#clientclientdisplaynone">#</a></h2>
 <p><strong>Type:</strong> Boolean</p>
 <p><strong>Default:</strong> <code>false</code></p>
 <p><strong>Description:</strong> Set style display none on client elements.</p>
 <p>If true, Karma does not display the banner and browser list. Useful when using karma on component tests with screenshots.</p>
-<h2>colors</h2>
+<h2 id="colors">colors <a class="heading-anchor" href="#colors">#</a></h2>
 <p><strong>Type:</strong> Boolean</p>
 <p><strong>Default:</strong>   <code>true</code></p>
 <p><strong>CLI:</strong> <code>--colors</code>, <code>--no-colors</code></p>
 <p><strong>Description:</strong> Enable or disable colors in the output (reporters and logs).</p>
-<h2>concurrency</h2>
+<h2 id="concurrency">concurrency <a class="heading-anchor" href="#concurrency">#</a></h2>
 <p><strong>Type:</strong> Number</p>
 <p><strong>Default:</strong> <code>Infinity</code></p>
 <p><strong>Description:</strong> How many browsers Karma launches in parallel.</p>
 <p>Especially on services like SauceLabs and Browserstack, it makes sense only to launch a limited amount of browsers at once, and only start more when those have finished. Using this configuration, you can specify how many browsers should be running at once at any given point in time.</p>
-<h2>crossOriginAttribute</h2>
+<h2 id="crossoriginattribute">crossOriginAttribute <a class="heading-anchor" href="#crossoriginattribute">#</a></h2>
 <p><strong>Type:</strong> Boolean</p>
 <p><strong>Default:</strong> <code>true</code></p>
 <p><strong>Description:</strong> When true, this will append the crossorigin attribute to generated script tags, which enables better error reporting for JavaScript files served from a different origin.
 Disable this when you need to load external scripts that are served without the necessary <code>Access-Control-Allow-Origin</code> header.</p>
-<h2>customContextFile</h2>
+<h2 id="customcontextfile">customContextFile <a class="heading-anchor" href="#customcontextfile">#</a></h2>
 <p><strong>Type:</strong> string</p>
 <p><strong>Default:</strong> <code>null</code></p>
 <p><strong>Description:</strong> If <code>null</code> (default), uses karma&#39;s own <code>context.html</code> file.</p>
-<h2>customDebugFile</h2>
+<h2 id="customdebugfile">customDebugFile <a class="heading-anchor" href="#customdebugfile">#</a></h2>
 <p><strong>Type:</strong> string</p>
 <p><strong>Default:</strong> <code>null</code></p>
 <p><strong>Description:</strong> If <code>null</code> (default), uses karma&#39;s own <code>debug.html</code> file.</p>
-<h2>customClientContextFile</h2>
+<h2 id="customclientcontextfile">customClientContextFile <a class="heading-anchor" href="#customclientcontextfile">#</a></h2>
 <p><strong>Type:</strong> string</p>
 <p><strong>Default:</strong> <code>null</code></p>
 <p><strong>Description:</strong> If <code>null</code> (default), uses karma&#39;s own <code>client_with_context.html</code> file (which is used when client.runInParent set to true).</p>
-<h2>customHeaders</h2>
+<h2 id="customheaders">customHeaders <a class="heading-anchor" href="#customheaders">#</a></h2>
 <p><strong>Type:</strong> Array</p>
 <p><strong>Default:</strong> <code>undefined</code></p>
 <p><strong>Description</strong> Custom HTTP headers that will be set upon serving files by Karma&#39;s web server.
@@ -358,57 +358,57 @@ Custom headers are useful, especially with upcoming browser features like Servic
   <span class="hljs-attr">value</span>: <span class="hljs-string">&#x27;/&#x27;</span>
 }]
 </code></pre>
-<h2>detached</h2>
+<h2 id="detached">detached <a class="heading-anchor" href="#detached">#</a></h2>
 <p><strong>Type:</strong> Boolean</p>
 <p><strong>Default:</strong> <code>false</code></p>
 <p><strong>CLI:</strong> <code>--detached</code></p>
 <p><strong>Description:</strong> When true, this will start the karma server in another process, writing no output to the console.
 The server can be stopped using the <code>karma stop</code> command.</p>
-<h2>exclude</h2>
+<h2 id="exclude">exclude <a class="heading-anchor" href="#exclude">#</a></h2>
 <p><strong>Type:</strong> Array</p>
 <p><strong>Default:</strong> <code>[]</code></p>
 <p><strong>Description:</strong> List of files/patterns to exclude from loaded files.</p>
-<h2>failOnEmptyTestSuite</h2>
+<h2 id="failonemptytestsuite">failOnEmptyTestSuite <a class="heading-anchor" href="#failonemptytestsuite">#</a></h2>
 <p><strong>Type:</strong> Boolean</p>
 <p><strong>Default:</strong> <code>true</code></p>
 <p><strong>CLI:</strong> <code>--fail-on-empty-test-suite</code>, <code>--no-fail-on-empty-test-suite</code></p>
 <p><strong>Description:</strong> Enable or disable failure on running empty test-suites. If disabled the program
 will return exit-code <code>0</code> and display a warning.</p>
-<h2>failOnSkippedTests</h2>
+<h2 id="failonskippedtests">failOnSkippedTests <a class="heading-anchor" href="#failonskippedtests">#</a></h2>
 <p><strong>Type:</strong> Boolean</p>
 <p><strong>Default:</strong> <code>false</code></p>
 <p><strong>CLI:</strong> <code>--fail-on-skipped-tests</code>, <code>--no-fail-on-skipped-tests</code></p>
 <p><strong>Description:</strong> Enable or disable failure on tests deliberately disabled, eg fit() or xit() tests in jasmine.
 Use this to prevent accidental disabling tests needed to validate production.</p>
-<h2>failOnFailingTestSuite</h2>
+<h2 id="failonfailingtestsuite">failOnFailingTestSuite <a class="heading-anchor" href="#failonfailingtestsuite">#</a></h2>
 <p><strong>Type:</strong> Boolean</p>
 <p><strong>Default:</strong> <code>true</code></p>
 <p><strong>CLI:</strong> <code>--fail-on-failing-test-suite</code>, <code>--no-fail-on-failing-test-suite</code></p>
 <p><strong>Description:</strong> Enable or disable failure on failing tests.</p>
-<h2>files</h2>
+<h2 id="files">files <a class="heading-anchor" href="#files">#</a></h2>
 <p><strong>Type:</strong> Array</p>
 <p><strong>Default:</strong> <code>[]</code></p>
 <p><strong>Description:</strong> List of files/patterns to load in the browser.</p>
 <p>See <a href="files.html">config/files</a> for more information.</p>
-<h2>forceJSONP</h2>
+<h2 id="forcejsonp">forceJSONP <a class="heading-anchor" href="#forcejsonp">#</a></h2>
 <p><strong>Type:</strong> Boolean</p>
 <p><strong>Default:</strong> <code>false</code></p>
 <p><strong>Description:</strong> Force socket.io to use JSONP polling instead of XHR polling.</p>
-<h2>frameworks</h2>
+<h2 id="frameworks">frameworks <a class="heading-anchor" href="#frameworks">#</a></h2>
 <p><strong>Type:</strong> Array</p>
 <p><strong>Default:</strong> <code>[]</code></p>
 <p><strong>Description:</strong> List of test frameworks you want to use. Typically, you will set this to <code>[&#39;jasmine&#39;]</code>, <code>[&#39;mocha&#39;]</code> or <code>[&#39;qunit&#39;]</code>...</p>
 <p>Please note just about all frameworks in Karma require an additional plugin/framework library to be installed (via NPM).</p>
 <p>Additional information can be found in <a href="plugins.html">plugins</a>.</p>
-<h2>listenAddress</h2>
+<h2 id="listenaddress">listenAddress <a class="heading-anchor" href="#listenaddress">#</a></h2>
 <p><strong>Type:</strong> String</p>
 <p><strong>Default:</strong> <code>&#39;0.0.0.0&#39; or LISTEN_ADDR</code></p>
 <p><strong>Description:</strong> Address that the server will listen on. Change to &#39;localhost&#39; to only listen to the loopback, or &#39;::&#39; to listen on all IPv6 interfaces</p>
-<h2>hostname</h2>
+<h2 id="hostname">hostname <a class="heading-anchor" href="#hostname">#</a></h2>
 <p><strong>Type:</strong> String</p>
 <p><strong>Default:</strong> <code>&#39;localhost&#39;</code></p>
 <p><strong>Description:</strong> Hostname to be used when capturing browsers.</p>
-<h2>httpsServerOptions</h2>
+<h2 id="httpsserveroptions">httpsServerOptions <a class="heading-anchor" href="#httpsserveroptions">#</a></h2>
 <p><strong>Type:</strong> Object</p>
 <p><strong>Default:</strong> <code>{}</code></p>
 <p><strong>Description:</strong> Options object to be used by Node&#39;s <code>https</code> class.</p>
@@ -419,7 +419,7 @@ Use this to prevent accidental disabling tests needed to validate production.</p
   <span class="hljs-attr">cert</span>: fs.readFileSync(<span class="hljs-string">&#x27;server.crt&#x27;</span>, <span class="hljs-string">&#x27;utf8&#x27;</span>)
 },
 </code></pre>
-<h2>logLevel</h2>
+<h2 id="loglevel">logLevel <a class="heading-anchor" href="#loglevel">#</a></h2>
 <p><strong>Type:</strong> Constant</p>
 <p><strong>Default:</strong> <code>config.LOG_INFO</code></p>
 <p><strong>CLI:</strong> <code>--log-level debug</code></p>
@@ -432,11 +432,11 @@ Use this to prevent accidental disabling tests needed to validate production.</p
 <li><code>config.LOG_DEBUG</code></li>
 </ul>
 <p><strong>Description:</strong> Level of logging.</p>
-<h2>loggers</h2>
+<h2 id="loggers">loggers <a class="heading-anchor" href="#loggers">#</a></h2>
 <p><strong>Type:</strong> Array</p>
 <p><strong>Default:</strong> <code>[{type: &#39;console&#39;}]</code></p>
 <p><strong>Description:</strong> A list of log appenders to be used. See the documentation for <a href="https://github.com/nomiddlename/log4js-node">log4js</a> for more information.</p>
-<h2>middleware</h2>
+<h2 id="middleware">middleware <a class="heading-anchor" href="#middleware">#</a></h2>
 <p><strong>Type:</strong> Array</p>
 <p><strong>Default:</strong> <code>[]</code></p>
 <p><strong>Description:</strong> List of names of additional middleware you want the karma server to use. Middleware will be used in the order listed.</p>
@@ -456,7 +456,7 @@ Use this to prevent accidental disabling tests needed to validate production.</p
   ...
 ]
 </code></pre>
-<h2>mime</h2>
+<h2 id="mime">mime <a class="heading-anchor" href="#mime">#</a></h2>
 <p><strong>Type:</strong> Object</p>
 <p><strong>Default:</strong> <code>{}</code></p>
 <p><strong>Description:</strong> Redefine default mapping from file extensions to MIME-type</p>
@@ -467,29 +467,29 @@ Use this to prevent accidental disabling tests needed to validate production.</p
    <span class="hljs-string">&#x27;text/plain&#x27;</span> : [<span class="hljs-string">&#x27;mytxt&#x27;</span>]
 }
 </code></pre>
-<h2>beforeMiddleware</h2>
+<h2 id="beforemiddleware">beforeMiddleware <a class="heading-anchor" href="#beforemiddleware">#</a></h2>
 <p><strong>Type:</strong> Array</p>
 <p><strong>Default:</strong> <code>[]</code></p>
 <p><strong>Description:</strong> This is the same as middleware except that these middleware will be run before karma&#39;s own middleware.</p>
-<h2>plugins</h2>
+<h2 id="plugins">plugins <a class="heading-anchor" href="#plugins">#</a></h2>
 <p><strong>Type:</strong> Array</p>
 <p><strong>Default:</strong> <code>[&#39;karma-*&#39;]</code></p>
 <p><strong>Description:</strong> List of plugins to load. A plugin can be a string (in which case it will be required by Karma) or an inlined plugin - Object.
 By default, Karma loads all sibling NPM modules which have a name starting with <code>karma-*</code>.</p>
 <div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Just about all plugins in Karma require an additional library to be installed (via NPM).</div>
 <p>See <a href="plugins.html">plugins</a> for more information.</p>
-<h2>port</h2>
+<h2 id="port">port <a class="heading-anchor" href="#port">#</a></h2>
 <p><strong>Type:</strong> Number</p>
 <p><strong>Default:</strong> <code>9876</code></p>
 <p><strong>CLI:</strong> <code>--port 9876</code></p>
 <p><strong>Description:</strong> The port where the web server will be listening.</p>
 <p>If the defined port is already in use, karma will automatically increase its value in steps of 1 until a free port is found.</p>
-<h2>processKillTimeout</h2>
+<h2 id="processkilltimeout">processKillTimeout <a class="heading-anchor" href="#processkilltimeout">#</a></h2>
 <p><strong>Type:</strong> Number</p>
 <p><strong>Default:</strong> <code>2000</code></p>
 <p><strong>Description:</strong> How long will Karma wait for browser process to terminate before sending a SIGKILL signal.</p>
 <p>If, after test execution or after Karma attempts to kill the browser, browser is not killed within <code>processKillTimeout</code>(ms), Karma will send a SIGKILL signal to attempt to kill the browser forcefully.</p>
-<h2>preprocessors</h2>
+<h2 id="preprocessors">preprocessors <a class="heading-anchor" href="#preprocessors">#</a></h2>
 <p><strong>Type:</strong> Object</p>
 <p><strong>Default:</strong> <code>{&#39;**/*.coffee&#39;: &#39;coffee&#39;}</code></p>
 <p><strong>Description:</strong> A map of preprocessors to use.</p>
@@ -502,7 +502,7 @@ your tests, you&#39;ll discover that your expected source code is completely cha
 of that, you&#39;ll want to engineer this so that your automated builds use the coverage entry in the &quot;reporters&quot; list,
 but your interactive debugging does not.</p>
 <p>Click <a href="preprocessors.html">here</a> for more information.</p>
-<h2>protocol</h2>
+<h2 id="protocol">protocol <a class="heading-anchor" href="#protocol">#</a></h2>
 <p><strong>Type:</strong> String</p>
 <p><strong>Default:</strong> <code>&#39;http:&#39;</code></p>
 <p><strong>Possible Values:</strong></p>
@@ -513,13 +513,13 @@ but your interactive debugging does not.</p>
 <p><strong>Description:</strong> Protocol used for running the Karma webserver.</p>
 <p>Determines the use of the Node <code>http</code> or <code>https</code> class.</p>
 <div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Using <code>&#39;https:&#39;</code> requires you to specify <code>httpsServerOptions</code>.</div>
-<h2>httpModule</h2>
+<h2 id="httpmodule">httpModule <a class="heading-anchor" href="#httpmodule">#</a></h2>
 <p><strong>Type:</strong> String</p>
 <p><strong>Default:</strong> <code>undefined</code></p>
 <p><strong>Description:</strong> Module used for Karma webserver.</p>
 <p>Uses the provided module instead of node&#39;s built in <code>http</code> or <code>https</code> module. The module loaded here must exactly match the interface of node&#39;s http module. This can be useful for loading in a module like <code>node-http2</code> to allow for http2 support.</p>
 <div class="alert alert-success"><h4 class="alert-heading">Note: </h4>if you&#39;re using this to enable <code>http2</code> you must also set the <code>protocol</code> to <code>https:</code> and specify certificates as http2 can only run of https.</div>
-<h2>proxies</h2>
+<h2 id="proxies">proxies <a class="heading-anchor" href="#proxies">#</a></h2>
 <p><strong>Type:</strong> Object</p>
 <p><strong>Default:</strong> <code>{}</code></p>
 <p><strong>Description:</strong> A map of path-proxy pairs.</p>
@@ -539,16 +539,16 @@ but your interactive debugging does not.</p>
   }
 },
 </code></pre>
-<h2>proxyValidateSSL</h2>
+<h2 id="proxyvalidatessl">proxyValidateSSL <a class="heading-anchor" href="#proxyvalidatessl">#</a></h2>
 <p><strong>Type:</strong> Boolean</p>
 <p><strong>Default:</strong> <code>true</code></p>
 <p><strong>Description:</strong> Whether or not Karma or any browsers should raise an error when an invalid SSL certificate is found.</p>
-<h2>reportSlowerThan</h2>
+<h2 id="reportslowerthan">reportSlowerThan <a class="heading-anchor" href="#reportslowerthan">#</a></h2>
 <p><strong>Type:</strong> Number</p>
 <p><strong>Default:</strong> <code>0</code></p>
 <p><strong>Description:</strong> Karma will report all the tests that are slower than given time limit (in ms).
 This is disabled by default (since the default value is 0).</p>
-<h2>reporters</h2>
+<h2 id="reporters">reporters <a class="heading-anchor" href="#reporters">#</a></h2>
 <p><strong>Type:</strong> Array</p>
 <p><strong>Default:</strong> <code>[&#39;progress&#39;]</code></p>
 <p><strong>CLI:</strong> <code>--reporters progress,growl</code></p>
@@ -560,7 +560,7 @@ This is disabled by default (since the default value is 0).</p>
 <p><strong>Description:</strong> A list of reporters to use.</p>
 <p>Additional reporters, such as <code>growl</code>, <code>junit</code>, <code>teamcity</code> or <code>coverage</code> can be loaded through <a href="plugins.html">plugins</a>.</p>
 <div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Just about all additional reporters in Karma (other than progress) require an additional library to be installed (via NPM).</div>
-<h2>formatError</h2>
+<h2 id="formaterror">formatError <a class="heading-anchor" href="#formaterror">#</a></h2>
 <p><strong>Type:</strong> Function</p>
 <p><strong>Default:</strong> <code>undefined</code></p>
 <p><strong>CLI:</strong> <code>--format-error ./path/to/formatFunction.js</code></p>
@@ -571,36 +571,36 @@ This is disabled by default (since the default value is 0).</p>
 <p><strong>Returns:</strong> A new error message line.</p>
 <p><strong>Description:</strong> Format assertion errors and stack traces.  Useful for removing vendors and compiled sources.  Return an empty line <code>&#39;&#39;</code> to remove it.</p>
 <p>The CLI option should be a path to a file that exports the format function.  This can be a function exported at the root of the module or an export named <code>formatError</code>.</p>
-<h2>pingTimeout</h2>
+<h2 id="pingtimeout">pingTimeout <a class="heading-anchor" href="#pingtimeout">#</a></h2>
 <p><strong>Type</strong> Number</p>
 <p><strong>Default</strong> 5000</p>
 <p><strong>Description</strong> Socket.io pingTimeout in ms, <a href="https://socket.io/docs/server-api/#new-Server-httpServer-options">https://socket.io/docs/server-api/#new-Server-httpServer-options</a>.
 Very slow networks may need values up to 60000. Larger values delay discovery of deadlock in tests or browser crashes.</p>
-<h2>restartOnFileChange</h2>
+<h2 id="restartonfilechange">restartOnFileChange <a class="heading-anchor" href="#restartonfilechange">#</a></h2>
 <p><strong>Type:</strong> Boolean</p>
 <p><strong>Default:</strong> <code>false</code></p>
 <p><strong>Description:</strong> When Karma is watching the files for changes, it will delay a new run until
 the current run is finished. Enabling this setting will cancel the current run and start a new run
 immediately when a change is detected.</p>
-<h2>retryLimit</h2>
+<h2 id="retrylimit">retryLimit <a class="heading-anchor" href="#retrylimit">#</a></h2>
 <p><strong>Type:</strong> Number</p>
 <p><strong>Default:</strong> 2</p>
 <p><strong>Description:</strong> When a browser crashes, karma will try to relaunch. This defines how many times karma should relaunch
 a browser before giving up.</p>
-<h2>singleRun</h2>
+<h2 id="singlerun">singleRun <a class="heading-anchor" href="#singlerun">#</a></h2>
 <p><strong>Type:</strong> Boolean</p>
 <p><strong>Default:</strong> <code>false</code></p>
 <p><strong>CLI:</strong> <code>--single-run</code>, <code>--no-single-run</code></p>
 <p><strong>Description:</strong> Continuous Integration mode.</p>
 <p>If <code>true</code>, Karma will start and capture all configured browsers, run tests and then exit with an exit code of <code>0</code> or <code>1</code> depending
 on whether all tests passed or any tests failed.</p>
-<h2>transports</h2>
+<h2 id="transports">transports <a class="heading-anchor" href="#transports">#</a></h2>
 <p><strong>Type:</strong> Array</p>
 <p><strong>Default:</strong> <code>[&#39;polling&#39;, &#39;websocket&#39;]</code></p>
 <p><strong>Description:</strong> An array of allowed transport methods between the browser and testing server. This configuration setting
 is handed off to <a href="http://socket.io/">socket.io</a> (which manages the communication
 between browsers and the testing server).</p>
-<h2>proxyReq</h2>
+<h2 id="proxyreq">proxyReq <a class="heading-anchor" href="#proxyreq">#</a></h2>
 <p><strong>Type:</strong> Function</p>
 <p><strong>Default:</strong> <code>undefined</code></p>
 <p><strong>Description:</strong> Called when requesting Proxy.</p>
@@ -610,7 +610,7 @@ between browsers and the testing server).</p>
   proxyReq.setHeader(<span class="hljs-string">&#x27;Referer&#x27;</span>, <span class="hljs-string">&#x27;https://www.example.com/&#x27;</span>);
 }
 </code></pre>
-<h2>proxyRes</h2>
+<h2 id="proxyres">proxyRes <a class="heading-anchor" href="#proxyres">#</a></h2>
 <p><strong>Type:</strong> Function</p>
 <p><strong>Default:</strong> <code>undefined</code></p>
 <p><strong>Description:</strong> Called when respnsing Proxy.</p>
@@ -624,34 +624,34 @@ between browsers and the testing server).</p>
   }
 }
 </code></pre>
-<h2>upstreamProxy</h2>
+<h2 id="upstreamproxy">upstreamProxy <a class="heading-anchor" href="#upstreamproxy">#</a></h2>
 <p><strong>Type:</strong> Object</p>
 <p><strong>Default:</strong> <code>undefined</code></p>
 <p><strong>Description:</strong> For use when the Karma server needs to be run behind a proxy that changes the base url, etc</p>
 <p>If set then the following fields will be defined and can be overridden:</p>
-<h3>path</h3>
+<h3 id="path">path <a class="heading-anchor" href="#path">#</a></h3>
 <p><strong>Type:</strong> String</p>
 <p><strong>Default:</strong> <code>&#39;/&#39;</code></p>
 <p><strong>Description:</strong> Will be prepended to the base url when launching browsers and prepended to internal urls as loaded by the browsers</p>
-<h3>port</h3>
+<h3 id="port-1">port <a class="heading-anchor" href="#port-1">#</a></h3>
 <p><strong>Type:</strong> Number</p>
 <p><strong>Default:</strong> <code>9875</code></p>
 <p><strong>Description:</strong> Will be used as the port when launching browsers</p>
-<h3>hostname</h3>
+<h3 id="hostname-1">hostname <a class="heading-anchor" href="#hostname-1">#</a></h3>
 <p><strong>Type:</strong> String</p>
 <p><strong>Default:</strong> <code>&#39;localhost&#39;</code></p>
 <p><strong>Description:</strong> Will be used as the hostname when launching browsers</p>
-<h3>protocol</h3>
+<h3 id="protocol-1">protocol <a class="heading-anchor" href="#protocol-1">#</a></h3>
 <p><strong>Type:</strong> String</p>
 <p><strong>Default:</strong> <code>&#39;http:&#39;</code></p>
 <p><strong>Description:</strong> Will be used as the protocol when launching browsers</p>
-<h2>urlRoot</h2>
+<h2 id="urlroot">urlRoot <a class="heading-anchor" href="#urlroot">#</a></h2>
 <p><strong>Type:</strong> String</p>
 <p><strong>Default:</strong> <code>&#39;/&#39;</code></p>
 <p><strong>Description:</strong> The base url, where Karma runs.</p>
 <p>All of Karma&#39;s urls get prefixed with the <code>urlRoot</code>. This is helpful when using proxies, as
 sometimes you might want to proxy a url that is already taken by Karma.</p>
-<h2>browserSocketTimeout</h2>
+<h2 id="browsersockettimeout">browserSocketTimeout <a class="heading-anchor" href="#browsersockettimeout">#</a></h2>
 <p><strong>Type:</strong> Number</p>
 <p><strong>Default:</strong> <code>20000</code></p>
 <p><strong>Description:</strong> Timeout for the client socket connection (in ms).</p>
