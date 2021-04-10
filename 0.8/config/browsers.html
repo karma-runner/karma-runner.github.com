@@ -119,7 +119,8 @@
         <div id="markdown" class="sixteen columns bottom"><h2>Starting browsers</h2>
 <p>Capturing browsers is kinda boring, so Karma can do that for you.
 Just simply add into the configuration file:</p>
-<pre><code class="language-javascript">browsers = [<span class="hljs-string">'Chrome'</span>];</code></pre>
+<pre><code class="language-javascript">browsers = [<span class="hljs-string">'Chrome'</span>];
+</code></pre>
 <p>Then, Karma will take care of autocapturing these browsers, as
 well as killing them.</p>
 <p>Currently available browsers:</p>
@@ -147,17 +148,21 @@ $ <span class="hljs-built_in">export</span> CHROME_BIN=/usr/<span class="hljs-bu
 $ <span class="hljs-built_in">export</span> CHROME_CANARY_BIN=/usr/<span class="hljs-built_in">local</span>/bin/my-chrome-build
 
 <span class="hljs-comment"># Changing the path to the PhantomJs binary</span>
-$ <span class="hljs-built_in">export</span> PHANTOMJS_BIN=<span class="hljs-variable">$HOME</span>/<span class="hljs-built_in">local</span>/bin/phantomjs</code></pre>
+$ <span class="hljs-built_in">export</span> PHANTOMJS_BIN=<span class="hljs-variable">$HOME</span>/<span class="hljs-built_in">local</span>/bin/phantomjs
+</code></pre>
 <h3>Windows cmd.exe</h3>
-<pre><code class="language-bash">C:&gt; SET IE_BIN=C:\Program Files\Internet Explorer\iexplore.exe</code></pre>
+<pre><code class="language-bash">C:&gt; SET IE_BIN=C:\Program Files\Internet Explorer\iexplore.exe
+</code></pre>
 <h3>Windows Powershell</h3>
-<pre><code class="language-bash"><span class="hljs-variable">$Env</span>:FIREFOX_BIN = <span class="hljs-string">'c:\Program Files (x86)\Mozilla Firefox 4.0 Beta 6\firefox.exe'</span></code></pre>
+<pre><code class="language-bash"><span class="hljs-variable">$Env</span>:FIREFOX_BIN = <span class="hljs-string">'c:\Program Files (x86)\Mozilla Firefox 4.0 Beta 6\firefox.exe'</span>
+</code></pre>
 <h2>Custom browsers</h2>
 <pre><code class="language-javascript"><span class="hljs-comment">// in the karma.conf.js</span>
 browsers = [<span class="hljs-string">'/usr/local/bin/custom-browser.sh'</span>];
 
 <span class="hljs-comment">// from cli</span>
-karma start --browsers /usr/local/bin/custom-browser.sh</code></pre>
+karma start --browsers /usr/local/bin/custom-browser.sh
+</code></pre>
 <p>The browser scripts need to take one argument, the url with id
 parameter to be used to connect to the server. The supplied id is used
 by the server to determine when the specific browser is captured.</p>

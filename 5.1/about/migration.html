@@ -128,7 +128,8 @@ You can leave all the existing projects using an older version of Karma and only
 version for the new projects. Alternatively, you can migrate the existing projects one at a time...</p>
 <p>Anyway, this migration should be easy ;-) so let&#39;s get started...</p>
 <pre><code class="language-bash"><span class="hljs-built_in">cd</span> &lt;path-to-your-project&gt;
-npm install karma --save-dev</code></pre>
+npm install karma --save-dev
+</code></pre>
 <p>This will install the latest version of Karma and also update <code>package.json</code> of your project.</p>
 <h2>Install missing plugins</h2>
 <p>Karma does not ship with any &quot;default&quot; plugins anymore.
@@ -149,9 +150,11 @@ For new projects, just remember you have to install all the plugins you need. Th
 <p>Karma does not put the <code>karma</code> command in your system PATH anymore.
 If you want to use the <code>karma</code> command, please install the command line interface (<code>karma-cli</code>).</p>
 <p>You probably have the <code>karma</code> package installed globally, in which case you should remove it first:</p>
-<pre><code class="language-bash">npm remove -g karma</code></pre>
+<pre><code class="language-bash">npm remove -g karma
+</code></pre>
 <p>And then install the command line interface:</p>
-<pre><code class="language-bash">npm install -g karma-cli</code></pre>
+<pre><code class="language-bash">npm install -g karma-cli
+</code></pre>
 <h2>Default configuration</h2>
 <p><code>autoWatch</code> is true by default, so if you don&#39;t wanna use it make sure you set it to <code>false</code>.
 But hey, give it a shot first, it&#39;s really awesome to run your tests on every save!</p>

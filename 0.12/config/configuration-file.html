@@ -138,13 +138,15 @@ which accepts one argument: the configuration object.</p>
     <span class="hljs-attr">frameworks</span>: [<span class="hljs-string">'jasmine'</span>],
     <span class="hljs-comment">//...</span>
   });
-};</code></pre>
+};
+</code></pre>
 <pre><code class="language-coffeescript"><span class="hljs-comment"># karma.conf.coffee</span>
 <span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-params">(config)</span> -&gt;</span>
   config.set
     basePath: <span class="hljs-string">'../..'</span>
     frameworks: [<span class="hljs-string">'jasmine'</span>]
-    <span class="hljs-comment"># ...</span></code></pre>
+    <span class="hljs-comment"># ...</span>
+</code></pre>
 <h2>File Patterns</h2>
 <p>All of the configuration options, which specify file paths, use the <a href="https://github.com/isaacs/minimatch">minimatch</a> library to facilitate flexible
 but concise file expressions so you can easily list all of the files you want to include and exclude.</p>
@@ -309,7 +311,8 @@ but your interactive debugging does not.</p>
 <pre><code class="language-javascript">proxies: {
 <span class="hljs-string">'/static'</span>: <span class="hljs-string">'http://gstatic.com'</span>,
 <span class="hljs-string">'/web'</span>: <span class="hljs-string">'http://localhost:9000'</span>
-},</code></pre>
+},
+</code></pre>
 <h2>proxyValidateSSL</h2>
 <p><strong>Type:</strong> Boolean</p>
 <p><strong>Default:</strong> <code>true</code></p>

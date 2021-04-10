@@ -128,13 +128,16 @@
 <li><p><a href="../intro/installation.html">install karma</a></p>
 </li>
 <li><p>install the qunit plugin</p>
-<pre><code class="language-bash">npm install karma-qunit --save-dev</code></pre>
+<pre><code class="language-bash">npm install karma-qunit --save-dev
+</code></pre>
 </li>
 <li><p>install the ember preprocessor plugin</p>
-<pre><code class="language-bash">npm install karma-ember-preprocessor --save-dev</code></pre>
+<pre><code class="language-bash">npm install karma-ember-preprocessor --save-dev
+</code></pre>
 </li>
 <li><p>generate a configuration file for karma</p>
-<pre><code class="language-bash">karma init</code></pre>
+<pre><code class="language-bash">karma init
+</code></pre>
 <p>note -the above will walk you through the basic setup. An example configuration file that works with ember.js/qunit and phantomjs is below</p>
 <pre><code class="language-javascript"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">config</span>) </span>{
   config.set({
@@ -165,7 +168,8 @@
       <span class="hljs-string">'**/*.handlebars'</span>: <span class="hljs-string">'ember'</span>
     }
   });
-};</code></pre>
+};
+</code></pre>
 <p>Note - the <code>files</code> section above should include all dependencies, ie- jQuery/handlebars/ember.js along with the js and handlebars files required to deploy and run your production ember.js application</p>
 <p>Note - when testing ember applications, it is important that karma does not try to run the tests until the ember application has finished initialization. You will need to include a small bootstrap file in the <code>files</code> section above to enforce this.  Here&#39;s an example:</p>
 <pre><code class="language-javascript">__karma__.loaded = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{};
@@ -185,15 +189,18 @@ App.initializer({
             __karma__.start();
         }
     }
-});</code></pre>
+});
+</code></pre>
 </li>
 <li><p>add a simple Qunit test</p>
 <pre><code class="language-javascript">test(<span class="hljs-string">'one should equal one'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
     equal(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-string">'error: one did not equal one'</span>);
-});</code></pre>
+});
+</code></pre>
 </li>
 <li><p>run the tests with karma from the command line</p>
-<pre><code class="language-bash">karma start</code></pre>
+<pre><code class="language-bash">karma start
+</code></pre>
 </li>
 </ol>
 <p>A simple unit / integration tested example app showing karma / qunit / ember in action can be found <a href="https://github.com/toranb/ember-testing-example">here</a></p>

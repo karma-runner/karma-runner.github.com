@@ -146,7 +146,8 @@ on your CI environment.</p>
 <span class="hljs-attr">reporters</span>: [<span class="hljs-string">'dots'</span>, <span class="hljs-string">'junit'</span>],
 <span class="hljs-attr">junitReporter</span>: {
   <span class="hljs-attr">outputFile</span>: <span class="hljs-string">'test-results.xml'</span>
-},</code></pre>
+},
+</code></pre>
 <p>Please note the <code>test-result.xml</code> file will be written to the present
 working directory (and you will need to tell Jenkins where to find it).</p>
 <h2>Create a new Jenkins Job</h2>
@@ -159,7 +160,8 @@ Environment sub-section, check the “Inject environment
 variables to the build process&#39; checkbox. A few textboxes will
 appear and in the “Properties Content” box set the following:</p>
 <pre><code class="language-bash">$ PATH=/sbin:/usr/sbin:/bin:/usr/bin:/usr/<span class="hljs-built_in">local</span>/bin
-$ PHANTOMJS_BIN=/usr/<span class="hljs-built_in">local</span>/bin/phantomjs <span class="hljs-comment">#or wherever PhantomJS happens to be installed</span></code></pre>
+$ PHANTOMJS_BIN=/usr/<span class="hljs-built_in">local</span>/bin/phantomjs <span class="hljs-comment">#or wherever PhantomJS happens to be installed</span>
+</code></pre>
 <p>Further down the page, in the Post-build Actions sub-section add a
 <code>Publish JUnit test result report</code> from the Post-build action drop
 down menu. When the textbox labeled Test report XMLs appears, enter

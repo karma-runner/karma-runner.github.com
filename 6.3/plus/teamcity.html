@@ -128,14 +128,16 @@ You may decide to install Karma and Karma-related packages on the agent globally
 Karma installation by different builds.</p>
 <h2>Configure project</h2>
 <p>Add <code>karma-teamcity-reporter</code> as a dependency to your project:</p>
-<pre><code>npm i --<span class="hljs-built_in">save</span>-<span class="hljs-built_in">dev</span> karma-teamcity-reporter</code></pre>
+<pre><code>npm i --<span class="hljs-built_in">save</span>-<span class="hljs-built_in">dev</span> karma-teamcity-reporter
+</code></pre>
 <p>It is also a good idea to check that you have all karma npm dependencies listed in your
 <code>package.json</code> file (e.g. <code>karma-jasmine</code>, <code>karma-phantomjs-launcher</code> and so on) to have them
 being installed during the build.</p>
 <h2>Create a new TeamCity build step</h2>
 <p>Add new build step to the build configuration: use Command Line runner and fill in <code>Custom script</code> text area. If you had decided not to install <em>all</em> your NPM dependencies globally
 add <code>npm install</code> at the beginning of the script. Then add command to run Karma, e.g.:</p>
-<pre><code>karma start <span class="hljs-params">--reporters</span> teamcity <span class="hljs-params">--single-run</span> <span class="hljs-params">--browsers</span> PhantomJS <span class="hljs-params">--colors</span> <span class="hljs-literal">false</span></code></pre>
+<pre><code>karma start <span class="hljs-params">--reporters</span> teamcity <span class="hljs-params">--single-run</span> <span class="hljs-params">--browsers</span> PhantomJS <span class="hljs-params">--colors</span> <span class="hljs-literal">false</span>
+</code></pre>
 <p>Running Karma with all these options provided via command line allows to run Karma in
 TeamCity build and locally in development environment (with options from configuration
 file).</p>

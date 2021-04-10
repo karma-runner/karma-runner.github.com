@@ -132,22 +132,27 @@ You can, however, call Karma programmatically from your node module. Here is the
 <span class="hljs-keyword">var</span> server = <span class="hljs-keyword">new</span> Server(karmaConfig, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">exitCode</span>) </span>{
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Karma has exited with '</span> + exitCode)
   process.exit(exitCode)
-})</code></pre>
+})
+</code></pre>
 <p>Notice the capital &#39;S&#39; on  <code>require(&#39;karma&#39;).Server</code>.</p>
 <h3><strong>server.start()</strong></h3>
 <p>Equivalent of <code>karma start</code>.</p>
-<pre><code class="language-javascript">server.start()</code></pre>
+<pre><code class="language-javascript">server.start()
+</code></pre>
 <h3><strong>server.refreshFiles()</strong></h3>
 <p>Trigger a file list refresh. Returns a promise.</p>
-<pre><code class="language-javascript">server.refreshFiles()</code></pre>
+<pre><code class="language-javascript">server.refreshFiles()
+</code></pre>
 <h3><strong>server.refreshFile(path)</strong></h3>
 <p>Trigger a file refresh. Returns a promise.</p>
-<pre><code class="language-javascript">server.refreshFile(<span class="hljs-string">'src/js/module-dep.js'</span>)</code></pre>
+<pre><code class="language-javascript">server.refreshFile(<span class="hljs-string">'src/js/module-dep.js'</span>)
+</code></pre>
 <h3>Events</h3>
 <p>The <code>server</code> object is an <a href="https://nodejs.org/docs/latest/api/events.html#events_class_events_eventemitter"><code>EventEmitter</code></a>. You can simply listen to events like this:</p>
 <pre><code class="language-javascript">server.on(<span class="hljs-string">'browser_register'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">browser</span>) </span>{
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'A new browser was registered'</span>)
-})</code></pre>
+})
+</code></pre>
 <h3><code>listening</code></h3>
 <p><strong>Arguments:</strong></p>
 <ul>
@@ -209,13 +214,15 @@ You can, however, call Karma programmatically from your node module. Here is the
 runner.run({<span class="hljs-attr">port</span>: <span class="hljs-number">9876</span>}, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">exitCode</span>) </span>{
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Karma has exited with '</span> + exitCode)
   process.exit(exitCode)
-})</code></pre>
+})
+</code></pre>
 <p><code>runner.run()</code> returns an <code>EventEmitter</code> which emits a <code>progress</code> event passing
 the reporter output as a <code>Buffer</code> object.</p>
 <p>You may listen for that event to print the reporter output to the console:</p>
 <pre><code class="language-javascript">runner.run({<span class="hljs-attr">port</span>: <span class="hljs-number">9876</span>}).on(<span class="hljs-string">'progress'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
   process.stdout.write(data)
-})</code></pre>
+})
+</code></pre>
 <h2>karma.stopper</h2>
 <h3><strong>stopper.stop(options, [callback=process.exit])</strong></h3>
 <p>This function will signal a running server to stop.  The equivalent of <code>karma stop</code>.  </p>
@@ -225,7 +232,8 @@ stopper.stop({<span class="hljs-attr">port</span>: <span class="hljs-number">987
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Server stop as initiated'</span>)
   }
   process.exit(exitCode)
-})</code></pre>
+})
+</code></pre>
 <h2>karma.config.parseConfig([configFilePath], [cliOptions])</h2>
 <p>This function will load given config file and returns a filled config object.
 This can be useful if you want to integrate karma into another tool and want to load
@@ -234,7 +242,8 @@ uses this to load your karma configuration and use that in the stryker configura
 <pre><code class="language-javascript"><span class="hljs-keyword">const</span> cfg = <span class="hljs-built_in">require</span>(<span class="hljs-string">'karma'</span>).config;
 <span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
 <span class="hljs-comment">// Read karma.conf.js, but override port with 1337</span>
-<span class="hljs-keyword">const</span> karmaConfig = cfg.parseConfig(path.resolve(<span class="hljs-string">'./karma.conf.js'</span>), { <span class="hljs-attr">port</span>: <span class="hljs-number">1337</span> } );</code></pre>
+<span class="hljs-keyword">const</span> karmaConfig = cfg.parseConfig(path.resolve(<span class="hljs-string">'./karma.conf.js'</span>), { <span class="hljs-attr">port</span>: <span class="hljs-number">1337</span> } );
+</code></pre>
 <h2>karma.constants</h2>
 <h3><strong>constants.VERSION</strong></h3>
 <p>The current version of karma</p>

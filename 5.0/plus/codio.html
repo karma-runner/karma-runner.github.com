@@ -140,18 +140,21 @@
   <span class="hljs-attr">"preview"</span>: {
     <span class="hljs-attr">"Karma Preview"</span>: <span class="hljs-string">"http://{{domain}}:8080"</span>
   }
-}</code></pre>
+}
+</code></pre>
 <p><em>If you wish, you can change the port for the <code>Karma Preview</code> entry, but make a note of the change as you will need to include that port in the <code>karma.config js</code> file later.</em></p>
 <h2>Configuration</h2>
 <ul>
 <li>Edit the <code>karma.conf.js</code> and add the following:</li>
 </ul>
 <pre><code>    <span class="hljs-comment">// hostname for the server</span>
-    <span class="hljs-attr">hostname</span>: <span class="hljs-built_in">require</span>(<span class="hljs-string">'os'</span>).hostname() + <span class="hljs-string">'.codio.io'</span>,</code></pre>
+    <span class="hljs-attr">hostname</span>: <span class="hljs-built_in">require</span>(<span class="hljs-string">'os'</span>).hostname() + <span class="hljs-string">'.codio.io'</span>,
+</code></pre>
 <ul>
 <li><p>Review webserver port entry to ensure same port defined as entered in .codio file</p>
 <pre><code>  <span class="hljs-comment">// web server port</span>
-  port: <span class="hljs-number">8080</span>,</code></pre>
+  port: <span class="hljs-number">8080</span>,
+</code></pre>
 </li>
 </ul>
 <h2>Capture the browser manually on the local machine</h2>
@@ -160,7 +163,8 @@
 <li><p>Either:</p>
 <ul>
 <li><p>Open a Terminal window and enter</p>
-<pre><code>  <span class="hljs-symbol">$</span> karma start --<span class="hljs-keyword">no</span>-browsers</code></pre>
+<pre><code>  <span class="hljs-symbol">$</span> karma start --<span class="hljs-keyword">no</span>-browsers
+</code></pre>
 <p>or </p>
 </li>
 <li><p>Select <code>Karma Start</code> from the Run menu (the 2nd from the right button).</p>
@@ -174,7 +178,8 @@
 <li><p>Switch back into your Codio project and either: </p>
 <ul>
 <li><p>Open a new Terminal window and enter</p>
-<pre><code>  $ karma <span class="hljs-keyword">run</span></code></pre>
+<pre><code>  $ karma <span class="hljs-keyword">run</span>
+</code></pre>
 <p>or </p>
 </li>
 <li><p>Select <code>Karma Run</code> from the Run menu (the 2nd from the right button).</p>

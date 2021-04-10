@@ -120,7 +120,8 @@
       </div>
       <div class="page-columns">
         <div id="markdown" class="sixteen columns bottom"><p>Capturing browsers on your own can be a tedious and time-consuming task. However, Karma can automate this for you. Simply add the browsers you would like to capture into the <a href="configuration-file.html">configuration file</a>.</p>
-<pre><code class="language-javascript">browsers: [<span class="hljs-string">'Chrome'</span>]</code></pre>
+<pre><code class="language-javascript">browsers: [<span class="hljs-string">'Chrome'</span>]
+</code></pre>
 <p>Then, Karma will take care of auto-capturing these browsers, as well as killing them after the job is over.</p>
 <div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Most of the browser launchers need to be loaded as <a href="plugins.html">plugins</a>.</div>
 <h2>Available browser launchers</h2>
@@ -138,13 +139,15 @@
 </ul>
 <p>Here&#39;s an example of how to add Firefox to your testing suite:</p>
 <pre><code class="language-bash"><span class="hljs-comment"># Install the launcher first with NPM:</span>
-$ npm install karma-firefox-launcher --save-dev</code></pre>
+$ npm install karma-firefox-launcher --save-dev
+</code></pre>
 <p>And then, inside your configuration file, add the browser name in <code>browsers</code> array.</p>
 <pre><code class="language-javascript"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">config</span>) </span>{
   config.set({
     <span class="hljs-attr">browsers</span> : [<span class="hljs-string">'Chrome'</span>, <span class="hljs-string">'Firefox'</span>]
   });
-};</code></pre>
+};
+</code></pre>
 <p>Also, keep in mind that the <code>browsers</code> configuration setting is empty by default.</p>
 <p>Of course, you can write <a href="../dev/plugins.html">custom plugins</a> too!</p>
 <h2>Capturing any browser manually</h2>
@@ -157,7 +160,8 @@ as the machine running Karma (or using a local tunnel).</p>
 <p>Some of the launchers can also be configured:</p>
 <pre><code class="language-javascript">sauceLabs: {
   <span class="hljs-attr">username</span>: <span class="hljs-string">'michael_jackson'</span>
-}</code></pre>
+}
+</code></pre>
 <p>Or defined as a configured launcher:</p>
 <pre><code class="language-javascript">customLaunchers: {
   <span class="hljs-attr">chrome_without_security</span>: {
@@ -169,7 +173,8 @@ as the machine running Karma (or using a local tunnel).</p>
     <span class="hljs-attr">browserName</span>: <span class="hljs-string">'chrome'</span>,
     <span class="hljs-attr">platform</span>: <span class="hljs-string">'windows'</span>
   }
-}</code></pre>
+}
+</code></pre>
 <p>A display name can be set for any custom launcher. If set, this name will be used for reporting instead of the
 user agent. Here is a code snippet example explaining how to set a display name for a custom launcher.</p>
 <pre><code class="language-javascript">customLaunchers: {
@@ -178,7 +183,8 @@ user agent. Here is a code snippet example explaining how to set a display name 
     <span class="hljs-attr">flags</span>: [<span class="hljs-string">'--disable-web-security'</span>],
     <span class="hljs-attr">displayName</span>: <span class="hljs-string">'Chrome w/o security'</span>
   }
-}</code></pre>
+}
+</code></pre>
 <p>If the definition is as above, the browser will be displayed as <code>Chrome w/o security</code> in logs and reports.</p>
 <h2>Correct path to browser binary</h2>
 <p>Each plugin has some default paths where to find the browser binary on particular OS.
@@ -191,17 +197,21 @@ $ <span class="hljs-built_in">export</span> CHROME_BIN=/usr/<span class="hljs-bu
 $ <span class="hljs-built_in">export</span> CHROME_CANARY_BIN=/usr/<span class="hljs-built_in">local</span>/bin/my-chrome-build
 
 <span class="hljs-comment"># Changing the path to the PhantomJs binary</span>
-$ <span class="hljs-built_in">export</span> PHANTOMJS_BIN=<span class="hljs-variable">$HOME</span>/<span class="hljs-built_in">local</span>/bin/phantomjs</code></pre>
+$ <span class="hljs-built_in">export</span> PHANTOMJS_BIN=<span class="hljs-variable">$HOME</span>/<span class="hljs-built_in">local</span>/bin/phantomjs
+</code></pre>
 <h3>Windows cmd.exe</h3>
-<pre><code class="language-bash">C:&gt; SET IE_BIN=C:\Program Files\Internet Explorer\iexplore.exe</code></pre>
+<pre><code class="language-bash">C:&gt; SET IE_BIN=C:\Program Files\Internet Explorer\iexplore.exe
+</code></pre>
 <h3>Windows Powershell</h3>
-<pre><code class="language-bash"><span class="hljs-variable">$Env</span>:FIREFOX_BIN = <span class="hljs-string">'c:\Program Files (x86)\Mozilla Firefox 4.0 Beta 6\firefox.exe'</span></code></pre>
+<pre><code class="language-bash"><span class="hljs-variable">$Env</span>:FIREFOX_BIN = <span class="hljs-string">'c:\Program Files (x86)\Mozilla Firefox 4.0 Beta 6\firefox.exe'</span>
+</code></pre>
 <h2>Custom browsers</h2>
 <pre><code class="language-javascript"><span class="hljs-comment">// in the karma.conf.js</span>
 <span class="hljs-attr">browsers</span>: [<span class="hljs-string">'/usr/local/bin/custom-browser.sh'</span>],
 
 <span class="hljs-comment">// from cli</span>
-karma start --browsers /usr/local/bin/custom-browser.sh</code></pre>
+karma start --browsers /usr/local/bin/custom-browser.sh
+</code></pre>
 <p>The browser scripts need to take one argument, which is the URL with the ID-parameter to be used to connect to the server. The supplied ID is used by the server to keep track of which specific browser is captured.</p>
 
         </div>

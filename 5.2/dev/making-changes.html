@@ -140,13 +140,15 @@ Here are some tips on how to set up a Karma workspace and how to send a good pul
 <li>Make sure you have a <a href="https://github.com/signup/free">GitHub account</a>.</li>
 <li><a href="https://github.com/karma-runner/karma/fork">Fork the repository</a> on GitHub.</li>
 <li>Clone your fork<pre><code class="language-bash">$ git <span class="hljs-built_in">clone</span> https://github.com/&lt;your-username&gt;/karma.git
-$ <span class="hljs-built_in">cd</span> karma</code></pre>
+$ <span class="hljs-built_in">cd</span> karma
+</code></pre>
 </li>
 <li>Install for development. Use a recent npm version, ignore peerdep warnings<pre><code class="language-bash">$ npm install
 
 $ npm run init
 <span class="hljs-comment"># or if you're on Windows</span>
-$ npm run init:windows</code></pre>
+$ npm run init:windows
+</code></pre>
 </li>
 </ul>
 <h2>Testing and Building</h2>
@@ -156,15 +158,18 @@ $ npm run init:windows</code></pre>
 <span class="hljs-comment"># or you can run test suits individually</span>
 $ npm run <span class="hljs-built_in">test</span>:unit
 $ npm run <span class="hljs-built_in">test</span>:e2e
-$ npm run <span class="hljs-built_in">test</span>:client</code></pre>
+$ npm run <span class="hljs-built_in">test</span>:client
+</code></pre>
 </li>
 <li><p>Lint the code via:</p>
 <pre><code class="language-bash">$ npm run lint
 <span class="hljs-comment"># or you can also apply auto-fixes where possible</span>
-$ npm run lint:fix</code></pre>
+$ npm run lint:fix
+</code></pre>
 </li>
 <li><p>Build the client code via:</p>
-<pre><code class="language-bash">$ npm run build</code></pre>
+<pre><code class="language-bash">$ npm run build
+</code></pre>
 </li>
 </ul>
 <h2>Changing the Code</h2>
@@ -172,7 +177,8 @@ $ npm run lint:fix</code></pre>
 <ul>
 <li>Features get the prefix <code>feature-</code>.</li>
 <li>Bug fixes get the prefix <code>fix-</code>.</li>
-<li>Improvements to the documentation get the prefix <code>docs-</code>.<pre><code class="language-bash">$ git checkout -b &lt;branch_name&gt;</code></pre>
+<li>Improvements to the documentation get the prefix <code>docs-</code>.<pre><code class="language-bash">$ git checkout -b &lt;branch_name&gt;
+</code></pre>
 </li>
 </ul>
 <p>Open your favorite editor, make some changes, run the tests, change the code, run the tests,
@@ -182,9 +188,11 @@ change the code, run the tests, etc.</p>
 </ul>
 <h2>Sending a Pull Request</h2>
 <ul>
-<li>Commit your changes (<strong>please follow our <a href="git-commit-msg.html">commit message conventions</a></strong>):<pre><code class="language-bash">$ git commit -m <span class="hljs-string">"..."</span></code></pre>
+<li>Commit your changes (<strong>please follow our <a href="git-commit-msg.html">commit message conventions</a></strong>):<pre><code class="language-bash">$ git commit -m <span class="hljs-string">"..."</span>
+</code></pre>
 </li>
-<li>Push to your github repo:<pre><code class="language-bash">$ git push origin &lt;branch_name&gt;</code></pre>
+<li>Push to your github repo:<pre><code class="language-bash">$ git push origin &lt;branch_name&gt;
+</code></pre>
 </li>
 <li>Go to the GitHub page and click &quot;Open a Pull request&quot;.</li>
 <li>Write a good description of the change.</li>

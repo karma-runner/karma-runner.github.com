@@ -127,10 +127,12 @@
 npm install karma
 
 <span class="hljs-comment"># or upgrade global install...</span>
-sudo npm install -g karma</code></pre>
+sudo npm install -g karma
+</code></pre>
 <h2>Plugins</h2>
 <p>All the frameworks, reporters, preprocessors and browser launchers are now separate plugins. Here is a list of all of them including related plugins. So install all the plugins you need:</p>
-<pre><code class="language-bash">npm install karma-&lt;plugin name&gt; --save-dev</code></pre>
+<pre><code class="language-bash">npm install karma-&lt;plugin name&gt; --save-dev
+</code></pre>
 <h3>Frameworks</h3>
 <ul>
 <li>jasmine (<code>karma-jasmine</code> ships with Karma)</li>
@@ -171,7 +173,8 @@ sudo npm install -g karma</code></pre>
       <span class="hljs-comment">// ...</span>
     ]
   })
-};</code></pre>
+};
+</code></pre>
 <p>Also, remove all the constants like <code>JASMINE</code>, <code>JASMINE_ADAPTER</code>, <code>MOCHA</code>, <code>MOCHA_ADAPTER</code>, <code>QUNIT</code>, <code>QUNIT_ADAPTER</code>, <code>REQUIRE</code>, <code>REQUIRE_ADAPTER</code>, <code>ANGULAR_SCENARIO</code>, <code>ANGULAR_SCENARIO_ADAPTER</code> from files and use frameworks config instead:</p>
 <pre><code class="language-javascript"><span class="hljs-comment">// before</span>
 files = [
@@ -186,7 +189,8 @@ files = [
     <span class="hljs-attr">frameworks</span>: [<span class="hljs-string">'jasmine'</span>],
     <span class="hljs-attr">files</span>: [<span class="hljs-string">'*.js'</span>]
   });
-};</code></pre>
+};
+</code></pre>
 <p>That should be it ;-) If you have any problem, ask on <a href="https://groups.google.com/forum/?fromgroups#!forum/karma-users">mailing list</a>.</p>
 <p>You can also check out <a href="https://github.com/angular/angular.js/commit/29f96c852c355d0e283a64111d4923d1bcde8f5f">migrating AngularJS</a>.</p>
 

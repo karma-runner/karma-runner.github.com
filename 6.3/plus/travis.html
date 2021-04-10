@@ -131,19 +131,21 @@ already have Travis account.</p>
 following YAML content:</p>
 <pre><code class="language-ruby"><span class="hljs-symbol">language:</span> node_js
 <span class="hljs-symbol">node_js:</span>
-  - <span class="hljs-string">"4"</span></code></pre>
+  - <span class="hljs-string">"4"</span>
+</code></pre>
 <h2>Set up a Test Command</h2>
 <p>If you do not already have a <code>package.json</code> in your project root, create one now. Travis runs <code>npm test</code> to trigger your tests, so this
 is where you tell Travis how to run your tests.</p>
 <pre><code class="language-json">// ...snip...
-"devDependencies": {
-  "karma": "~0.12"
+&quot;devDependencies&quot;: {
+  &quot;karma&quot;: &quot;~0.12&quot;
 },
 // ...snip...
-"scripts": {
-   "test": "karma start --single-run --browsers PhantomJS"
+&quot;scripts&quot;: {
+   &quot;test&quot;: &quot;karma start --single-run --browsers PhantomJS&quot;
 }
-// ...snip...</code></pre>
+// ...snip...
+</code></pre>
 <p>Travis will run <code>npm install</code> before every suite, so this is your
 chance to specify any modules your app needs that Travis does not know
 about like Karma.</p>
@@ -156,17 +158,20 @@ like this (if you&#39;re using Xenial):</p>
   - <span class="hljs-string">"4"</span>
 <span class="hljs-symbol">dist:</span> xenial
 <span class="hljs-symbol">services:</span>
-  - xvfb</code></pre>
+  - xvfb
+</code></pre>
 <p>Or this, for Trusty and below:</p>
 <pre><code class="language-ruby"><span class="hljs-symbol">language:</span> node_js
 <span class="hljs-symbol">node_js:</span>
   - <span class="hljs-string">"4"</span>
 <span class="hljs-symbol">before_script:</span>
   - export DISPLAY=<span class="hljs-symbol">:</span><span class="hljs-number">99.0</span>
-  - sh -e /etc/init.d/xvfb start</code></pre>
+  - sh -e /etc/init.d/xvfb start
+</code></pre>
 <p>And now, you can run your tests on Firefox, just change the <code>npm test</code>
 command to</p>
-<pre><code class="language-bash">karma start --browsers Firefox --single-run</code></pre>
+<pre><code class="language-bash">karma start --browsers Firefox --single-run
+</code></pre>
 <h2>Notes</h2>
 <ul>
 <li>Travis&#39; Node environment has very little available. If the startup

@@ -125,7 +125,8 @@ of the configuration file:</p>
   <span class="hljs-string">'**/*.coffee'</span>: [<span class="hljs-string">'coffee'</span>],
   <span class="hljs-string">'**/*.tea'</span>: [<span class="hljs-string">'coffee'</span>],
   <span class="hljs-string">'**/*.html'</span>: [<span class="hljs-string">'html2js'</span>]
-},</code></pre>
+},
+</code></pre>
 <p>Note the multiple expressions referencing the &quot;coffee&quot; preprocessor, as a preprocessor can be listed more than once,
 as another way to specify multiple file path expressions.</p>
 <div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Most of the preprocessors need to be loaded as <a href="plugins.html">plugins</a>.</div>
@@ -149,7 +150,8 @@ as another way to specify multiple file path expressions.</p>
 simply install the required NPM library first and the installed preprocessor can be used regularly.</p>
 <p>Here&#39;s an example of how to add the coverage preprocessor to your testing suite:</p>
 <pre><code class="language-bash"><span class="hljs-comment"># Install it first with NPM</span>
-$ npm install karma-coverage --save-dev</code></pre>
+$ npm install karma-coverage --save-dev
+</code></pre>
 <p>And then inside your configuration file...</p>
 <pre><code class="language-javascript"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">config</span>) </span>{
   config.set({
@@ -157,7 +159,8 @@ $ npm install karma-coverage --save-dev</code></pre>
       <span class="hljs-string">'**/*.js'</span>: [<span class="hljs-string">'coverage'</span>]
     }
   });
-};</code></pre>
+};
+</code></pre>
 <p>Of course, you can write <a href="../dev/plugins.html">custom plugins</a> too!</p>
 <h2>Configured Preprocessors</h2>
 <p>Some of the preprocessors can be also configured:</p>
@@ -165,14 +168,16 @@ $ npm install karma-coverage --save-dev</code></pre>
   <span class="hljs-attr">options</span>: {
     <span class="hljs-attr">bare</span>: <span class="hljs-literal">false</span>
   }
-}</code></pre>
+}
+</code></pre>
 <p>Or define a configured preprocessor:</p>
 <pre><code class="language-javascript">customPreprocessors: {
   <span class="hljs-attr">bare_coffee</span>: {
     <span class="hljs-attr">base</span>: <span class="hljs-string">'coffee'</span>,
     <span class="hljs-attr">options</span>: {<span class="hljs-attr">bare</span>: <span class="hljs-literal">true</span>}
   }
-}</code></pre>
+}
+</code></pre>
 <h2>Minimatching</h2>
 <p>The keys of the preprocessors config object are used to filter the files specified in
 the <code>files</code> configuration.</p>

@@ -140,19 +140,22 @@ make it easy to run your tests. Here&#39;s an example:</p>
 <span class="hljs-string">'scripts'</span>: {
    <span class="hljs-string">'test'</span>: <span class="hljs-string">'./node_modules/.bin/karma start --single-run --browsers PhantomJS'</span>
 }
-<span class="hljs-comment">// ...snip...</span></code></pre>
+<span class="hljs-comment">// ...snip...</span>
+</code></pre>
 <p>Another option is to use Firefox as your test browser. To do this, change
 the last part to:</p>
 <pre><code class="language-javascript"><span class="hljs-string">'scripts'</span>: {
    <span class="hljs-string">'test'</span>: <span class="hljs-string">'./node_modules/.bin/karma start --single-run --browsers Firefox'</span>
-}</code></pre>
+}
+</code></pre>
 <p>Now running <code>npm test</code> within your project will run your tests with Karma.</p>
 <h2>Add Your Project to Semaphore</h2>
 <p>Follow the process as shown in the <a href="https://semaphoreci.com/docs/adding-github-bitbucket-project-to-semaphore.html">screencast</a> on the Semaphore docs.</p>
 <p>After the analysis is finished, ignore the Ruby version Semaphore has set
 for you, choose to customize your build commands and use these:</p>
 <pre><code class="language-bash">npm install
-npm <span class="hljs-built_in">test</span></code></pre>
+npm <span class="hljs-built_in">test</span>
+</code></pre>
 <p>That&#39;s it - proceed to your first build. In case you&#39;re using Firefox as
 your test browser, Semaphore will automatically run it in a virtual screen
 during your builds.</p>
