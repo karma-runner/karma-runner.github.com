@@ -136,31 +136,31 @@
 <p>note -the above will walk you through the basic setup. An example configuration file that works with ember.js/qunit and phantomjs is below</p>
 <pre><code class="language-javascript"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">config</span>) </span>{
   config.set({
-    <span class="hljs-attr">basePath</span>: <span class="hljs-string">'js'</span>,
+    <span class="hljs-attr">basePath</span>: <span class="hljs-string">&#x27;js&#x27;</span>,
 
     <span class="hljs-attr">files</span>: [
-      <span class="hljs-string">'vendor/jquery/jquery.min.js'</span>,
-      <span class="hljs-string">'vendor/handlebars/handlebars.js'</span>,
-      <span class="hljs-string">'vendor/ember/ember.js'</span>,
-      <span class="hljs-string">'app.js'</span>,
-      <span class="hljs-string">'tests/*.js'</span>,
-      <span class="hljs-string">'templates/*.handlebars'</span>
+      <span class="hljs-string">&#x27;vendor/jquery/jquery.min.js&#x27;</span>,
+      <span class="hljs-string">&#x27;vendor/handlebars/handlebars.js&#x27;</span>,
+      <span class="hljs-string">&#x27;vendor/ember/ember.js&#x27;</span>,
+      <span class="hljs-string">&#x27;app.js&#x27;</span>,
+      <span class="hljs-string">&#x27;tests/*.js&#x27;</span>,
+      <span class="hljs-string">&#x27;templates/*.handlebars&#x27;</span>
     ],
 
-    <span class="hljs-attr">browsers</span>: [<span class="hljs-string">'PhantomJS'</span>],
+    <span class="hljs-attr">browsers</span>: [<span class="hljs-string">&#x27;PhantomJS&#x27;</span>],
     <span class="hljs-attr">singleRun</span>: <span class="hljs-literal">true</span>,
     <span class="hljs-attr">autoWatch</span>: <span class="hljs-literal">false</span>,
 
-    <span class="hljs-attr">frameworks</span>: [<span class="hljs-string">'qunit'</span>],
+    <span class="hljs-attr">frameworks</span>: [<span class="hljs-string">&#x27;qunit&#x27;</span>],
 
     <span class="hljs-attr">plugins</span>: [
-      <span class="hljs-string">'karma-qunit'</span>,
-      <span class="hljs-string">'karma-ember-preprocessor'</span>,
-      <span class="hljs-string">'karma-phantomjs-launcher'</span>
+      <span class="hljs-string">&#x27;karma-qunit&#x27;</span>,
+      <span class="hljs-string">&#x27;karma-ember-preprocessor&#x27;</span>,
+      <span class="hljs-string">&#x27;karma-phantomjs-launcher&#x27;</span>
     ],
 
     <span class="hljs-attr">preprocessors</span>: {
-      <span class="hljs-string">'**/*.handlebars'</span>: <span class="hljs-string">'ember'</span>
+      <span class="hljs-string">&#x27;**/*.handlebars&#x27;</span>: <span class="hljs-string">&#x27;ember&#x27;</span>
     }
   });
 };
@@ -168,8 +168,8 @@
 <p>Note - the <code>files</code> section above should include all dependencies, ie- jQuery/handlebars/ember.js along with the js and handlebars files required to deploy and run your production ember.js application</p>
 </li>
 <li><p>add a simple qunit test</p>
-<pre><code class="language-javascript">test(<span class="hljs-string">'one should equal one'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-    equal(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-string">'error: one did not equal one'</span>);
+<pre><code class="language-javascript">test(<span class="hljs-string">&#x27;one should equal one&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    equal(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-string">&#x27;error: one did not equal one&#x27;</span>);
 });
 </code></pre>
 </li>

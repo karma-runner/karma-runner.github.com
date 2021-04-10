@@ -123,11 +123,11 @@ In fact, all the existing preprocessors, reporters, browser launchers and framew
 <h2>Installation</h2>
 <p>Karma plugins are NPM modules, so the recommended way is to keep all the plugins your project requires in <code>package.json</code>:</p>
 <pre><code class="language-javascript">{
-  <span class="hljs-string">"devDependencies"</span>: {
-    <span class="hljs-string">"karma"</span>: <span class="hljs-string">"~0.10"</span>,
-    <span class="hljs-string">"karma-mocha"</span>: <span class="hljs-string">"~0.0.1"</span>,
-    <span class="hljs-string">"karma-growl-reporter"</span>: <span class="hljs-string">"~0.0.1"</span>,
-    <span class="hljs-string">"karma-firefox-launcher"</span>: <span class="hljs-string">"~0.0.1"</span>
+  <span class="hljs-string">&quot;devDependencies&quot;</span>: {
+    <span class="hljs-string">&quot;karma&quot;</span>: <span class="hljs-string">&quot;~0.10&quot;</span>,
+    <span class="hljs-string">&quot;karma-mocha&quot;</span>: <span class="hljs-string">&quot;~0.0.1&quot;</span>,
+    <span class="hljs-string">&quot;karma-growl-reporter&quot;</span>: <span class="hljs-string">&quot;~0.0.1&quot;</span>,
+    <span class="hljs-string">&quot;karma-firefox-launcher&quot;</span>: <span class="hljs-string">&quot;~0.0.1&quot;</span>
   }
 }
 </code></pre>
@@ -140,12 +140,12 @@ In fact, all the existing preprocessors, reporters, browser launchers and framew
 a string (module name), which will be required by Karma, or an object (inlined plugin).</p>
 <pre><code class="language-javascript">plugins: [
   <span class="hljs-comment">// these plugins will be require() by Karma</span>
-  <span class="hljs-string">'karma-jasmine'</span>,
-  <span class="hljs-string">'karma-chrome-launcher'</span>
+  <span class="hljs-string">&#x27;karma-jasmine&#x27;</span>,
+  <span class="hljs-string">&#x27;karma-chrome-launcher&#x27;</span>
 
   <span class="hljs-comment">// inelined plugins</span>
-  {<span class="hljs-string">'framework:xyz'</span>, [<span class="hljs-string">'factory'</span>, factoryFn]},
-  <span class="hljs-built_in">require</span>(<span class="hljs-string">'./plugin-required-from-config'</span>)
+  {<span class="hljs-string">&#x27;framework:xyz&#x27;</span>, [<span class="hljs-string">&#x27;factory&#x27;</span>, factoryFn]},
+  <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;./plugin-required-from-config&#x27;</span>)
 ]
 </code></pre>
 <p>There are already many <a href="https://npmjs.org/browse/keyword/karma-plugin">existing plugins</a>. Of course, you write <a href="../dev/plugins.html">your own plugins</a> too!</p>

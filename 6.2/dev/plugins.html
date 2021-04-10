@@ -145,18 +145,18 @@
 <span class="hljs-comment">// A factory function for our plugin, it will be called, when Karma needs to</span>
 <span class="hljs-comment">// instantiate a plugin. Normally it should return an instance of the service</span>
 <span class="hljs-comment">// conforming to the API requirements of the plugin type (more on that below),</span>
-<span class="hljs-comment">// but for our simple example we don't need any service and just print </span>
+<span class="hljs-comment">// but for our simple example we don&#x27;t need any service and just print </span>
 <span class="hljs-comment">// a message when function is called.</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">helloFrameworkFactory</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Hello, world!'</span>)
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Hello, world!&#x27;</span>)
 }
 
 <span class="hljs-built_in">module</span>.exports = {
   <span class="hljs-comment">// Declare the plugin, so Karma knows that it exists.</span>
-  <span class="hljs-comment">// 'factory' tells Karma that it should call `helloFrameworkFactory`</span>
+  <span class="hljs-comment">// &#x27;factory&#x27; tells Karma that it should call `helloFrameworkFactory`</span>
   <span class="hljs-comment">// function and use whatever it returns as a service for the DI token</span>
   <span class="hljs-comment">// `framework:hello`.</span>
-  <span class="hljs-string">'framework:hello'</span>: [<span class="hljs-string">'factory'</span>, helloFrameworkFactory]
+  <span class="hljs-string">&#x27;framework:hello&#x27;</span>: [<span class="hljs-string">&#x27;factory&#x27;</span>, helloFrameworkFactory]
 };
 </code></pre>
 <pre><code class="language-js"><span class="hljs-comment">// karma.conf.js</span>
@@ -164,11 +164,11 @@
 <span class="hljs-built_in">module</span>.exports = <span class="hljs-function">(<span class="hljs-params">config</span>) =&gt;</span> {
   config.set({
     <span class="hljs-attr">plugins</span>: [
-      <span class="hljs-built_in">require</span>(<span class="hljs-string">'./hello-plugin'</span>)
+      <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;./hello-plugin&#x27;</span>)
     ],
     <span class="hljs-comment">// Activate our plugin by specifying its unique name in the </span>
     <span class="hljs-comment">// corresponding configuration key.</span>
-    <span class="hljs-attr">frameworks</span>: [<span class="hljs-string">'hello'</span>]
+    <span class="hljs-attr">frameworks</span>: [<span class="hljs-string">&#x27;hello&#x27;</span>]
   })
 }
 </code></pre>
@@ -180,7 +180,7 @@
 <span class="hljs-comment">// Add parameters to the function to receive requested services.</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">helloFrameworkFactory</span>(<span class="hljs-params">config</span>) </span>{
   config.files.unshift({
-    <span class="hljs-attr">pattern</span>: __dirname + <span class="hljs-string">'/hello.js'</span>,
+    <span class="hljs-attr">pattern</span>: __dirname + <span class="hljs-string">&#x27;/hello.js&#x27;</span>,
     <span class="hljs-attr">included</span>: <span class="hljs-literal">true</span>,
     <span class="hljs-attr">served</span>: <span class="hljs-literal">true</span>,
     <span class="hljs-attr">watched</span>: <span class="hljs-literal">false</span>
@@ -188,10 +188,10 @@
 }
 
 <span class="hljs-comment">// Declare DI tokens plugin wants to inject.</span>
-helloFrameworkFactory.$inject = [<span class="hljs-string">'config'</span>]
+helloFrameworkFactory.$inject = [<span class="hljs-string">&#x27;config&#x27;</span>]
 
 <span class="hljs-built_in">module</span>.exports = {
-  <span class="hljs-string">'framework:hello'</span>: [<span class="hljs-string">'factory'</span>, helloFrameworkFactory]
+  <span class="hljs-string">&#x27;framework:hello&#x27;</span>: [<span class="hljs-string">&#x27;factory&#x27;</span>, helloFrameworkFactory]
 };
 </code></pre>
 <p>The Karma config is unchanged and is omitted for brevity. See above example for the plugin usage.</p>

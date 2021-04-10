@@ -127,9 +127,9 @@
 You can, however, call Karma programmatically from your node module. Here is the public API.</p>
 <h2>karma.Server(options, [callback=process.exit])</h2>
 <h3>Constructor</h3>
-<pre><code class="language-javascript"><span class="hljs-keyword">var</span> Server = <span class="hljs-built_in">require</span>(<span class="hljs-string">'karma'</span>).Server
+<pre><code class="language-javascript"><span class="hljs-keyword">var</span> Server = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;karma&#x27;</span>).Server
 <span class="hljs-keyword">var</span> server = <span class="hljs-keyword">new</span> Server({<span class="hljs-attr">port</span>: <span class="hljs-number">9876</span>}, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">exitCode</span>) </span>{
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Karma has exited with '</span> + exitCode)
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Karma has exited with &#x27;</span> + exitCode)
   process.exit(exitCode)
 })
 </code></pre>
@@ -143,8 +143,8 @@ You can, however, call Karma programmatically from your node module. Here is the
 </code></pre>
 <h3>Events</h3>
 <p>The <code>server</code> object is an <a href="https://nodejs.org/docs/latest/api/events.html#events_class_events_eventemitter"><code>EventEmitter</code></a>. You can simply listen to events like this:</p>
-<pre><code class="language-javascript">server.on(<span class="hljs-string">'browser_register'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">browser</span>) </span>{
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'A new browser was registered'</span>)
+<pre><code class="language-javascript">server.on(<span class="hljs-string">&#x27;browser_register&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">browser</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;A new browser was registered&#x27;</span>)
 })
 </code></pre>
 <h3><code>browser_register</code></h3>
@@ -198,9 +198,9 @@ You can, however, call Karma programmatically from your node module. Here is the
 <h2>karma.runner</h2>
 <h3><strong>runner.run(options, [callback=process.exit])</strong></h3>
 <p>Equivalent of <code>karma run</code>.</p>
-<pre><code class="language-javascript"><span class="hljs-keyword">var</span> runner = <span class="hljs-built_in">require</span>(<span class="hljs-string">'karma'</span>).runner
+<pre><code class="language-javascript"><span class="hljs-keyword">var</span> runner = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;karma&#x27;</span>).runner
 runner.run({<span class="hljs-attr">port</span>: <span class="hljs-number">9876</span>}, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">exitCode</span>) </span>{
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Karma has exited with '</span> + exitCode)
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Karma has exited with &#x27;</span> + exitCode)
   process.exit(exitCode)
 })
 </code></pre>

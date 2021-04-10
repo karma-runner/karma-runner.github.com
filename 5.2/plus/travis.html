@@ -135,7 +135,7 @@ already have Travis account.</p>
 following YAML content:</p>
 <pre><code class="language-ruby"><span class="hljs-symbol">language:</span> node_js
 <span class="hljs-symbol">node_js:</span>
-  - <span class="hljs-string">"4"</span>
+  - <span class="hljs-string">&quot;4&quot;</span>
 </code></pre>
 <h2>Set up a Test Command</h2>
 <p>If you do not already have a <code>package.json</code> in your project root, create one now. Travis runs <code>npm test</code> to trigger your tests, so this
@@ -159,7 +159,7 @@ screen. Just update your <code>.travis.yml</code> to set up the virtual screen
 like this (if you&#39;re using Xenial):</p>
 <pre><code class="language-ruby"><span class="hljs-symbol">language:</span> node_js
 <span class="hljs-symbol">node_js:</span>
-  - <span class="hljs-string">"4"</span>
+  - <span class="hljs-string">&quot;4&quot;</span>
 <span class="hljs-symbol">dist:</span> xenial
 <span class="hljs-symbol">services:</span>
   - xvfb
@@ -167,7 +167,7 @@ like this (if you&#39;re using Xenial):</p>
 <p>Or this, for Trusty and below:</p>
 <pre><code class="language-ruby"><span class="hljs-symbol">language:</span> node_js
 <span class="hljs-symbol">node_js:</span>
-  - <span class="hljs-string">"4"</span>
+  - <span class="hljs-string">&quot;4&quot;</span>
 <span class="hljs-symbol">before_script:</span>
   - export DISPLAY=<span class="hljs-symbol">:</span><span class="hljs-number">99.0</span>
   - sh -e /etc/init.d/xvfb start

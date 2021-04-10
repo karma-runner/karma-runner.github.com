@@ -127,14 +127,14 @@
 <span class="hljs-comment">// Configure your Run and Preview buttons here.</span>
 
 <span class="hljs-comment">// Run button configuration</span>
-  <span class="hljs-attr">"commands"</span>: {
-    <span class="hljs-attr">"Karma Start"</span>: <span class="hljs-string">"karma start --no-browsers"</span>
-    <span class="hljs-string">"Karam Run"</span>: <span class="hljs-string">"karma run"</span>
+  <span class="hljs-attr">&quot;commands&quot;</span>: {
+    <span class="hljs-attr">&quot;Karma Start&quot;</span>: <span class="hljs-string">&quot;karma start --no-browsers&quot;</span>
+    <span class="hljs-string">&quot;Karam Run&quot;</span>: <span class="hljs-string">&quot;karma run&quot;</span>
   },
 
 <span class="hljs-comment">// Preview button configuration</span>
-  <span class="hljs-attr">"preview"</span>: {
-    <span class="hljs-attr">"Karma Preview"</span>: <span class="hljs-string">"http://{{domain}}:8080"</span>
+  <span class="hljs-attr">&quot;preview&quot;</span>: {
+    <span class="hljs-attr">&quot;Karma Preview&quot;</span>: <span class="hljs-string">&quot;http://{{domain}}:8080&quot;</span>
   }
 }
 </code></pre>
@@ -144,11 +144,11 @@
 <li>Edit the <code>karma.conf.js</code> and add the following:</li>
 </ul>
 <pre><code>    <span class="hljs-comment">// hostname for the server</span>
-    <span class="hljs-attr">hostname</span>: <span class="hljs-built_in">require</span>(<span class="hljs-string">'os'</span>).hostname() + <span class="hljs-string">'.codio.io'</span>,
+    <span class="hljs-attr">hostname</span>: <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;os&#x27;</span>).hostname() + <span class="hljs-string">&#x27;.codio.io&#x27;</span>,
 </code></pre>
 <ul>
 <li><p>Review webserver port entry to ensure same port defined as entered in .codio file</p>
-<pre><code>  <span class="hljs-comment">// web server port</span>
+<pre><code>  <span class="hljs-regexp">//</span> web server port
   port: <span class="hljs-number">8080</span>,
 </code></pre>
 </li>
@@ -174,7 +174,7 @@
 <li><p>Switch back into your Codio project and either: </p>
 <ul>
 <li><p>Open a new Terminal window and enter</p>
-<pre><code>  $ karma <span class="hljs-keyword">run</span>
+<pre><code>  $ karma <span class="hljs-built_in">run</span>
 </code></pre>
 <p>or </p>
 </li>

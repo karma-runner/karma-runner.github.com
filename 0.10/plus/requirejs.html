@@ -137,7 +137,7 @@
 |   `-- main.js
 `-- <span class="hljs-built_in">test</span>
     |-- appSpec.js
-    `-- <span class="hljs-built_in">test</span>-main.js
+    `-- test-main.js
 
 3 directories, 9 files
 </code></pre>
@@ -169,19 +169,19 @@ start the application in our tests.</p>
 <pre><code class="language-javascript"><span class="hljs-comment">// list of files / patterns to load in the browser</span>
 <span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">config</span>) </span>{
   config.set({
-    <span class="hljs-attr">frameworks</span>: [<span class="hljs-string">'jasmine'</span>, <span class="hljs-string">'requirejs'</span>],
+    <span class="hljs-attr">frameworks</span>: [<span class="hljs-string">&#x27;jasmine&#x27;</span>, <span class="hljs-string">&#x27;requirejs&#x27;</span>],
 
     <span class="hljs-attr">files</span>: [
-      {<span class="hljs-attr">pattern</span>: <span class="hljs-string">'lib/**/*.js'</span>, <span class="hljs-attr">included</span>: <span class="hljs-literal">false</span>},
-      {<span class="hljs-attr">pattern</span>: <span class="hljs-string">'src/**/*.js'</span>, <span class="hljs-attr">included</span>: <span class="hljs-literal">false</span>},
-      {<span class="hljs-attr">pattern</span>: <span class="hljs-string">'test/**/*Spec.js'</span>, <span class="hljs-attr">included</span>: <span class="hljs-literal">false</span>},
+      {<span class="hljs-attr">pattern</span>: <span class="hljs-string">&#x27;lib/**/*.js&#x27;</span>, <span class="hljs-attr">included</span>: <span class="hljs-literal">false</span>},
+      {<span class="hljs-attr">pattern</span>: <span class="hljs-string">&#x27;src/**/*.js&#x27;</span>, <span class="hljs-attr">included</span>: <span class="hljs-literal">false</span>},
+      {<span class="hljs-attr">pattern</span>: <span class="hljs-string">&#x27;test/**/*Spec.js&#x27;</span>, <span class="hljs-attr">included</span>: <span class="hljs-literal">false</span>},
 
-      <span class="hljs-string">'test/test-main.js'</span>
+      <span class="hljs-string">&#x27;test/test-main.js&#x27;</span>
     ],
 
     <span class="hljs-comment">// list of files to exclude</span>
     <span class="hljs-attr">exclude</span>: [
-        <span class="hljs-string">'src/main.js'</span>
+        <span class="hljs-string">&#x27;src/main.js&#x27;</span>
     ]
   });
 };
@@ -217,17 +217,17 @@ The <code>test/main-test.js</code> file ends up looking like this:</p>
 }
 
 requirejs.config({
-    <span class="hljs-comment">// Karma serves files from '/base'</span>
-    <span class="hljs-attr">baseUrl</span>: <span class="hljs-string">'/base/src'</span>,
+    <span class="hljs-comment">// Karma serves files from &#x27;/base&#x27;</span>
+    <span class="hljs-attr">baseUrl</span>: <span class="hljs-string">&#x27;/base/src&#x27;</span>,
 
     <span class="hljs-attr">paths</span>: {
-        <span class="hljs-string">'jquery'</span>: <span class="hljs-string">'../lib/jquery'</span>,
-        <span class="hljs-string">'underscore'</span>: <span class="hljs-string">'../lib/underscore'</span>,
+        <span class="hljs-string">&#x27;jquery&#x27;</span>: <span class="hljs-string">&#x27;../lib/jquery&#x27;</span>,
+        <span class="hljs-string">&#x27;underscore&#x27;</span>: <span class="hljs-string">&#x27;../lib/underscore&#x27;</span>,
     },
 
     <span class="hljs-attr">shim</span>: {
-        <span class="hljs-string">'underscore'</span>: {
-            <span class="hljs-attr">exports</span>: <span class="hljs-string">'_'</span>
+        <span class="hljs-string">&#x27;underscore&#x27;</span>: {
+            <span class="hljs-attr">exports</span>: <span class="hljs-string">&#x27;_&#x27;</span>
         }
     },
 
@@ -242,20 +242,20 @@ requirejs.config({
 <p>Tests can now be written as regular Require.js modules. We wrap
 everything in <code>define</code>, and inside we can use the regular test methods,
 such as <code>describe</code> and <code>it</code>. Example:</p>
-<pre><code class="language-javascript">define([<span class="hljs-string">'app'</span>, <span class="hljs-string">'jquery'</span>, <span class="hljs-string">'underscore'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">App, $, _</span>) </span>{
+<pre><code class="language-javascript">define([<span class="hljs-string">&#x27;app&#x27;</span>, <span class="hljs-string">&#x27;jquery&#x27;</span>, <span class="hljs-string">&#x27;underscore&#x27;</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">App, $, _</span>) </span>{
 
-    describe(<span class="hljs-string">'just checking'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    describe(<span class="hljs-string">&#x27;just checking&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
 
-        it(<span class="hljs-string">'works for app'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-            <span class="hljs-keyword">var</span> el = $(<span class="hljs-string">'&lt;div&gt;&lt;/div&gt;'</span>);
+        it(<span class="hljs-string">&#x27;works for app&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+            <span class="hljs-keyword">var</span> el = $(<span class="hljs-string">&#x27;&lt;div&gt;&lt;/div&gt;&#x27;</span>);
 
             <span class="hljs-keyword">var</span> app = <span class="hljs-keyword">new</span> App(el);
             app.render();
 
-            expect(el.text()).toEqual(<span class="hljs-string">'require.js up and running'</span>);
+            expect(el.text()).toEqual(<span class="hljs-string">&#x27;require.js up and running&#x27;</span>);
         });
 
-        it(<span class="hljs-string">'works for underscore'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        it(<span class="hljs-string">&#x27;works for underscore&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
             <span class="hljs-comment">// just checking that _ works</span>
             expect(_.size([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>])).toEqual(<span class="hljs-number">3</span>);
         });

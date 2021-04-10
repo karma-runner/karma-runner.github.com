@@ -123,9 +123,9 @@
 they get served to the browser. These are configured in the <code>preprocessors</code> block
 of the configuration file:</p>
 <pre><code class="language-javascript">preprocessors: {
-  <span class="hljs-string">'**/*.coffee'</span>: [<span class="hljs-string">'coffee'</span>],
-  <span class="hljs-string">'**/*.tea'</span>: [<span class="hljs-string">'coffee'</span>],
-  <span class="hljs-string">'**/*.html'</span>: [<span class="hljs-string">'html2js'</span>]
+  <span class="hljs-string">&#x27;**/*.coffee&#x27;</span>: [<span class="hljs-string">&#x27;coffee&#x27;</span>],
+  <span class="hljs-string">&#x27;**/*.tea&#x27;</span>: [<span class="hljs-string">&#x27;coffee&#x27;</span>],
+  <span class="hljs-string">&#x27;**/*.html&#x27;</span>: [<span class="hljs-string">&#x27;html2js&#x27;</span>]
 },
 </code></pre>
 <div class="alert alert-success"><h4 class="alert-heading">Note: </h4>There are multiple expressions referencing the &quot;coffee&quot; preprocessor in this example, as a preprocessor
@@ -151,7 +151,7 @@ $ npm install karma-coffee-preprocessor --save-dev
 <pre><code class="language-javascript"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">config</span>) </span>{
   config.set({
     <span class="hljs-attr">preprocessors</span>: {
-      <span class="hljs-string">'**/*.coffee'</span>: [<span class="hljs-string">'coffee'</span>]
+      <span class="hljs-string">&#x27;**/*.coffee&#x27;</span>: [<span class="hljs-string">&#x27;coffee&#x27;</span>]
     }
   });
 };
@@ -168,7 +168,7 @@ $ npm install karma-coffee-preprocessor --save-dev
 <p>Or define a configured preprocessor:</p>
 <pre><code class="language-javascript">customPreprocessors: {
   <span class="hljs-attr">bare_coffee</span>: {
-    <span class="hljs-attr">base</span>: <span class="hljs-string">'coffee'</span>,
+    <span class="hljs-attr">base</span>: <span class="hljs-string">&#x27;coffee&#x27;</span>,
     <span class="hljs-attr">options</span>: {<span class="hljs-attr">bare</span>: <span class="hljs-literal">true</span>}
   }
 }
@@ -190,7 +190,7 @@ return <code>false</code> and the preprocessor would not be executed on the Coff
 will execute the preprocessors over that file in the order they are listed in
 the corresponding array. So for instance, if the config object is:</p>
 <pre><code class="language-js">preprocessors: {
-  <span class="hljs-string">'*.js'</span>: [<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>]
+  <span class="hljs-string">&#x27;*.js&#x27;</span>: [<span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;b&#x27;</span>]
 }
 </code></pre>
 <p>Then karma will execute <code>&#39;a&#39;</code> before executing <code>&#39;b&#39;</code>.</p>
@@ -198,21 +198,21 @@ the corresponding array. So for instance, if the config object is:</p>
 map to set the order. If this config option is not set, karma do its best to
 execute the preprocessors in a reasonable order.  So if you have:</p>
 <pre><code class="language-js">preprocessors: {
-  <span class="hljs-string">'*.js'</span>: [<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>],
-  <span class="hljs-string">'a.*'</span>: [<span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>]
+  <span class="hljs-string">&#x27;*.js&#x27;</span>: [<span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;b&#x27;</span>],
+  <span class="hljs-string">&#x27;a.*&#x27;</span>: [<span class="hljs-string">&#x27;b&#x27;</span>, <span class="hljs-string">&#x27;c&#x27;</span>]
 }
 </code></pre>
 <p>then for <code>a.js</code>, karma will run <code>&#39;a&#39;</code> then <code>&#39;b&#39;</code> then <code>&#39;c&#39;</code>.  If two lists contradict each other, like:</p>
 <pre><code class="language-js">preprocessors: {
-  <span class="hljs-string">'*.js'</span>: [<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>],
-  <span class="hljs-string">'a.*'</span>: [<span class="hljs-string">'b'</span>, <span class="hljs-string">'a'</span>]
+  <span class="hljs-string">&#x27;*.js&#x27;</span>: [<span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;b&#x27;</span>],
+  <span class="hljs-string">&#x27;a.*&#x27;</span>: [<span class="hljs-string">&#x27;b&#x27;</span>, <span class="hljs-string">&#x27;a&#x27;</span>]
 }
 </code></pre>
 <p>then karma will arbitrarily pick one list to prioritize over the other.  In a
 case like:</p>
 <pre><code class="language-js">preprocessors: {
-  <span class="hljs-string">'*.js'</span>: [<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>],
-  <span class="hljs-string">'a.*'</span>: [<span class="hljs-string">'c'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'d'</span>]
+  <span class="hljs-string">&#x27;*.js&#x27;</span>: [<span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;b&#x27;</span>, <span class="hljs-string">&#x27;c&#x27;</span>],
+  <span class="hljs-string">&#x27;a.*&#x27;</span>: [<span class="hljs-string">&#x27;c&#x27;</span>, <span class="hljs-string">&#x27;b&#x27;</span>, <span class="hljs-string">&#x27;d&#x27;</span>]
 }
 </code></pre>
 <p>Then <code>&#39;a&#39;</code> will definitely be run first, <code>&#39;d&#39;</code> will definitely be run last, but
