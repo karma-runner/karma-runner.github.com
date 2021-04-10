@@ -100,7 +100,7 @@ module.exports = function (grunt) {
       headerIds: false,
       highlight: function (code, language) {
         const validLanguage = getLanguage(language) ? language : null
-        return validLanguage != null ? highlight(language, code).value : highlightAuto(code).value
+        return validLanguage != null ? highlight(code, { language }).value : highlightAuto(code).value
       }
     })
     var done = this.async()
