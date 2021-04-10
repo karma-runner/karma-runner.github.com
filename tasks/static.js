@@ -4,12 +4,11 @@
  * @author Vojta Jina <vojta.jina@gmail.com>
  */
 
-var path = require('path')
+const fs = require('fs/promises')
+const path = require('path')
 
-var q = require('q')
-var fs = require('q-io/fs')
-var jade = require('jade')
-var semver = require('semver')
+const jade = require('jade')
+const semver = require('semver')
 const marked = require('marked')
 const { escape } = require('marked/src/helpers')
 const { getLanguage, highlight, highlightAuto } = require('highlight.js')
@@ -34,16 +33,25 @@ module.exports = function (grunt) {
     return 'https://github.com/karma-runner/karma/edit/master/docs/' + section + '/' + fileName
   }
 
-  var filterOnlyFiles = function (path, stat) {
-    // ignore dot files like .DS_Store
-    var filename = path.split('/').pop()
-    return stat.isFile() && !filename.match(/^\./)
-  }
-
   var sortByVersion = function (a, b) {
     if (a.split('.').length < 3) a = a + '.0'
     if (b.split('.').length < 3) b = b + '.0'
     return semver.lt(a, b) ? 1 : -1
+  }
+
+  async function listMarkdownFiles (directory) {
+    const items = await fs.readdir(directory)
+    const result = []
+    for (const item of items) {
+      const itemPath = path.join(directory, item)
+      const stat = await fs.stat(itemPath)
+      if (stat.isFile() && item.endsWith('.md')) {
+        result.push(itemPath)
+      } else if (stat.isDirectory()) {
+        result.push(...(await listMarkdownFiles(itemPath)))
+      }
+    }
+    return result
   }
 
   // Register Grunt Task
@@ -115,7 +123,7 @@ module.exports = function (grunt) {
       if (!tplCache[name]) {
         var tplFileName = path.join(template, name + '.jade')
 
-        tplCache[name] = fs.read(tplFileName).then(function (content) {
+        tplCache[name] = fs.readFile(tplFileName, 'utf-8').then(function (content) {
           return jade.compile(content, { filename: tplFileName, cache: true, pretty: true })
         })
       }
@@ -131,9 +139,9 @@ module.exports = function (grunt) {
       grunt.log.writeln('Building files from "' + source + '" to "' + destination + '".')
 
       // Read all the markdown files
-      fs.listTree(source, filterOnlyFiles).then(function (files) {
-        return q.all(files.sort().map(function (filePath) {
-          return fs.read(filePath).then(function (content) {
+      listMarkdownFiles(source).then(function (files) {
+        return Promise.all(files.sort().map(function (filePath) {
+          return fs.readFile(filePath, 'utf-8').then(function (content) {
             var parts = filePath.substr(source.length).replace(/^\//, '').split('/')
             var fileName = parts.pop()
             var version = parts[0]
@@ -169,16 +177,16 @@ module.exports = function (grunt) {
 
         // generate and write all the html files
         versions = Object.keys(menu).sort(sortByVersion)
-        return q.all(files.map(function (file) {
+        return Promise.all(files.map(function (file) {
           var fileUrl = path.join(destination, file.url)
-          return q.all([getJadeTpl(file.layout), fs.makeTree(path.dirname(fileUrl))]).then(function (args) {
+          return Promise.all([getJadeTpl(file.layout), fs.mkdir(path.dirname(fileUrl), { recursive: true })]).then(function (args) {
             var jadeTpl = args[0]
 
             file.newUrl = file.url
               .replace(file.version, versions[0])
               .replace('coverage.html', 'preprocessors.html')
 
-            return fs.write(fileUrl, jadeTpl({
+            return fs.writeFile(fileUrl, jadeTpl({
               versions: versions,
               oldVersion: file.version !== versions[0],
               canonicalUrl: file.newUrl,
@@ -221,9 +229,9 @@ module.exports = function (grunt) {
           })
         }))
       }).then(function () {
-        return fs.remove('latest')
+        return fs.unlink('latest')
       }).then(function () {
-        return fs.symbolicLink('latest', versions[0], 'directory')
+        return fs.symlink(versions[0], 'latest', 'dir')
       }).then(function () {
         done()
       }, function (e) {
