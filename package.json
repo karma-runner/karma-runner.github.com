@@ -21,7 +21,7 @@
     "grunt-contrib-uglify": "4.0.0",
     "grunt-contrib-watch": "1.1.0",
     "grunt-eslint": "21.0.0",
-    "highlight.js": "10.0.2",
+    "highlight.js": "10.4.1",
     "jade": "1.11.0",
     "load-grunt-tasks": "4.0.0",
     "marked": "2.0.1",
