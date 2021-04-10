@@ -144,13 +144,15 @@ which accepts one argument: the configuration object.</p>
     <span class="hljs-attr">frameworks</span>: [<span class="hljs-string">'jasmine'</span>],
     <span class="hljs-comment">//...</span>
   });
-};</code></pre>
+};
+</code></pre>
 <pre><code class="language-coffeescript"><span class="hljs-comment"># karma.conf.coffee</span>
 <span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-params">(config)</span> -&gt;</span>
   config.set
     basePath: <span class="hljs-string">'../..'</span>
     frameworks: [<span class="hljs-string">'jasmine'</span>]
-    <span class="hljs-comment"># ...</span></code></pre>
+    <span class="hljs-comment"># ...</span>
+</code></pre>
 <pre><code class="language-typescript"><span class="hljs-comment">// karma.conf.ts</span>
 <span class="hljs-built_in">module</span>.exports = <span class="hljs-function">(<span class="hljs-params">config</span>) =&gt;</span> {
   config.set({
@@ -158,7 +160,8 @@ which accepts one argument: the configuration object.</p>
     frameworks: [<span class="hljs-string">'jasmine'</span>],
     <span class="hljs-comment">//...</span>
   });
-}</code></pre>
+}
+</code></pre>
 <h3>Customized TypeScript Configuration</h3>
 <p>Under the hood Karma uses ts-node to transpile TypeScript to JavaScript. If the resolved <code>tsconfig.json</code> has <code>module</code> configured as <code>ES</code> formats. You might get errors like <code>SyntaxError: Unexpected token</code>. This is due that in Node <code>ES</code> module formats are not supported. To overcome this issue you need to configure ts-node to use <code>commonjs</code> module format.</p>
 <p>Create a JavaScript configuration file that overrides the module format.</p>
@@ -168,7 +171,8 @@ which accepts one argument: the configuration object.</p>
     <span class="hljs-attr">module</span>: <span class="hljs-string">'commonjs'</span>
   }
 });
-<span class="hljs-built_in">require</span>(<span class="hljs-string">'./karma.conf.ts'</span>);</code></pre>
+<span class="hljs-built_in">require</span>(<span class="hljs-string">'./karma.conf.ts'</span>);
+</code></pre>
 <h2>File Patterns</h2>
 <p>All of the configuration options, which specify file paths, use the <a href="https://github.com/isaacs/minimatch">minimatch</a> library to facilitate flexible
 but concise file expressions so you can easily list all of the files you want to include and exclude.</p>
@@ -222,7 +226,8 @@ properties, all of which are optional:</p>
   <span class="hljs-attr">format</span>: string,
   <span class="hljs-attr">path</span>:   string,
   <span class="hljs-attr">terminal</span>: boolean
-}</code></pre>
+}
+</code></pre>
 <p>Here the <code>level</code> is the desired log-level, where level <code>log</code> always is logged. The format
 is a string where <code>%b</code>, <code>%t</code>, <code>%T</code>, and <code>%m</code> are replaced with the browser string,
 log type in lower-case, log type in uppercase, and log message, respectively. This format will
@@ -347,7 +352,8 @@ Custom headers are useful, especially with upcoming browser features like Servic
   <span class="hljs-attr">match</span>: <span class="hljs-string">'.*foo.html'</span>,
   <span class="hljs-attr">name</span>: <span class="hljs-string">'Service-Worker-Allowed'</span>,
   <span class="hljs-attr">value</span>: <span class="hljs-string">'/'</span>
-}]</code></pre>
+}]
+</code></pre>
 <h2>detached</h2>
 <p><strong>Type:</strong> Boolean</p>
 <p><strong>Default:</strong> <code>false</code></p>
@@ -407,7 +413,8 @@ Use this to prevent accidental disabling tests needed to validate production.</p
 <pre><code class="language-javascript">httpsServerOptions: {
   <span class="hljs-attr">key</span>: fs.readFileSync(<span class="hljs-string">'server.key'</span>, <span class="hljs-string">'utf8'</span>),
   <span class="hljs-attr">cert</span>: fs.readFileSync(<span class="hljs-string">'server.crt'</span>, <span class="hljs-string">'utf8'</span>)
-},</code></pre>
+},
+</code></pre>
 <h2>logLevel</h2>
 <p><strong>Type:</strong> Constant</p>
 <p><strong>Default:</strong> <code>config.LOG_INFO</code></p>
@@ -437,12 +444,14 @@ Use this to prevent accidental disabling tests needed to validate production.</p
     response.writeHead(<span class="hljs-number">200</span>)
     <span class="hljs-keyword">return</span> response.end(<span class="hljs-string">"content!"</span>)
   }
-}</code></pre>
+}
+</code></pre>
 <pre><code class="language-javascript">middleware: [<span class="hljs-string">'custom'</span>]
 <span class="hljs-attr">plugins</span>: [
   {<span class="hljs-string">'middleware:custom'</span>: [<span class="hljs-string">'factory'</span>, CustomMiddlewareFactory]}
   ...
-]</code></pre>
+]
+</code></pre>
 <h2>mime</h2>
 <p><strong>Type:</strong> Object</p>
 <p><strong>Default:</strong> <code>{}</code></p>
@@ -452,7 +461,8 @@ Use this to prevent accidental disabling tests needed to validate production.</p
 <pre><code class="language-javascript">mime: {
    <span class="hljs-string">'text/x-typescript'</span>: [<span class="hljs-string">'ts'</span>,<span class="hljs-string">'tsx'</span>]
    <span class="hljs-string">'text/plain'</span> : [<span class="hljs-string">'mytxt'</span>]
-}</code></pre>
+}
+</code></pre>
 <h2>beforeMiddleware</h2>
 <p><strong>Type:</strong> Array</p>
 <p><strong>Default:</strong> <code>[]</code></p>
@@ -520,7 +530,8 @@ but your interactive debugging does not.</p>
     <span class="hljs-string">'target'</span>: <span class="hljs-string">'http://myserver.localhost'</span>,
     <span class="hljs-string">'changeOrigin'</span>: <span class="hljs-literal">true</span>
   }
-},</code></pre>
+},
+</code></pre>
 <h2>proxyValidateSSL</h2>
 <p><strong>Type:</strong> Boolean</p>
 <p><strong>Default:</strong> <code>true</code></p>
@@ -590,7 +601,8 @@ between browsers and the testing server).</p>
 <p><strong>Example:</strong></p>
 <pre><code class="language-javascript">proxyReq: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">proxyReq, req, res, options</span>) </span>{
   proxyReq.setHeader(<span class="hljs-string">'Referer'</span>, <span class="hljs-string">'https://www.example.com/'</span>);
-}</code></pre>
+}
+</code></pre>
 <h2>proxyRes</h2>
 <p><strong>Type:</strong> Function</p>
 <p><strong>Default:</strong> <code>undefined</code></p>
@@ -603,7 +615,8 @@ between browsers and the testing server).</p>
       <span class="hljs-keyword">return</span> cookie.replace(<span class="hljs-regexp">/\s*secure;?/i</span>, <span class="hljs-string">''</span>);
     })
   }
-}</code></pre>
+}
+</code></pre>
 <h2>upstreamProxy</h2>
 <p><strong>Type:</strong> Object</p>
 <p><strong>Default:</strong> <code>undefined</code></p>
@@ -645,7 +658,8 @@ Trying to start ChromeHeadless again (<span class="hljs-number">1</span>/<span c
 ChromeHeadless have <span class="hljs-keyword">not</span> captured <span class="hljs-keyword">in</span> <span class="hljs-number">60000</span>ms, killing.
 Trying to start ChromeHeadless again (<span class="hljs-number">2</span>/<span class="hljs-number">2</span>).
 ChromeHeadless have <span class="hljs-keyword">not</span> captured <span class="hljs-keyword">in</span> <span class="hljs-number">60000</span>ms, killing.
-ChromeHeadless failed <span class="hljs-number">2</span> times(timeout). Giving up.</code></pre>
+ChromeHeadless failed <span class="hljs-number">2</span> times(timeout). Giving up.
+</code></pre>
 <p>If you see this error, you can try increasing the socket connection timeout.</p>
 
         </div>

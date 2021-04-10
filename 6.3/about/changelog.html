@@ -207,7 +207,8 @@
 </ul>
 <pre><code>const {<span class="hljs-built_in"> Server </span>} = require(<span class="hljs-string">'karma'</span>);
 const<span class="hljs-built_in"> server </span>= new Server();
-server.start();</code></pre>
+server.start();
+</code></pre>
 <ul>
 <li><strong>cli:</strong> Karma is more strict and will error out if unknown option or argument is passed to CLI.</li>
 <li>Using Karma to run Dart code in the browser is no longer supported. Use your favorite Dart-to-JS compiler instead.</li>
@@ -1041,11 +1042,13 @@ to match this new format.</p>
 <ul>
 <li><p>The public api interface has changed to a constructor form. To upgrade change</p>
 <pre><code class="language-javascript"><span class="hljs-keyword">var</span> server = <span class="hljs-built_in">require</span>(‘karma’).server
-server.start(config, done)</code></pre>
+server.start(config, done)
+</code></pre>
 <p>to</p>
 <pre><code class="language-javascript"><span class="hljs-keyword">var</span> Server = <span class="hljs-built_in">require</span>(‘karma’).Server
 <span class="hljs-keyword">var</span> server = <span class="hljs-keyword">new</span> Server(config, done)
-server.start()</code></pre>
+server.start()
+</code></pre>
 <p>Closes #1037, #1482, #1467
 (<a href="https://github.com/karma-runner/karma/commit/82cbbadd">82cbbadd</a>)</p>
 </li>
@@ -1675,7 +1678,8 @@ if you are using <code>karma run</code> with custom <code>--runer-port</code>, p
       }
     }
   });
-};</code></pre>
+};
+</code></pre>
 <p><a name="v0.9.3"></a></p>
 <h3>v0.9.3 (2013-06-16)</h3>
 <h4>Bug Fixes</h4>
@@ -1720,7 +1724,8 @@ if you are using <code>karma run</code> with custom <code>--runer-port</code>, p
     <span class="hljs-attr">autoWatch</span>: <span class="hljs-literal">true</span>,
     <span class="hljs-comment">// ...</span>
   });
-};</code></pre>
+};
+</code></pre>
 <p><a name="v0.9.2"></a></p>
 <h3>v0.9.2 (2013-04-16)</h3>
 <h4>Bug Fixes</h4>

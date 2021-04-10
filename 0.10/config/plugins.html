@@ -129,9 +129,11 @@ In fact, all the existing preprocessors, reporters, browser launchers and framew
     <span class="hljs-string">"karma-growl-reporter"</span>: <span class="hljs-string">"~0.0.1"</span>,
     <span class="hljs-string">"karma-firefox-launcher"</span>: <span class="hljs-string">"~0.0.1"</span>
   }
-}</code></pre>
+}
+</code></pre>
 <p>Therefore, a simple way how to install a plugin is</p>
-<pre><code class="language-bash">npm install karma-&lt;plugin name&gt; --save-dev</code></pre>
+<pre><code class="language-bash">npm install karma-&lt;plugin name&gt; --save-dev
+</code></pre>
 <h2>Loading Plugins</h2>
 <p>By default, Karma loads all NPM modules that are siblinks to it and their name matches <code>karma-*</code>.</p>
 <p>You can also explicitly list plugins you want to load via the <code>plugins</code> configuration setting. The configuration value can either be
@@ -144,7 +146,8 @@ a string (module name), which will be required by Karma, or an object (inlined p
   <span class="hljs-comment">// inelined plugins</span>
   {<span class="hljs-string">'framework:xyz'</span>, [<span class="hljs-string">'factory'</span>, factoryFn]},
   <span class="hljs-built_in">require</span>(<span class="hljs-string">'./plugin-required-from-config'</span>)
-]</code></pre>
+]
+</code></pre>
 <p>There are already many <a href="https://npmjs.org/browse/keyword/karma-plugin">existing plugins</a>. Of course, you write <a href="../dev/plugins.html">your own plugins</a> too!</p>
 
         </div>

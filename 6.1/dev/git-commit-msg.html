@@ -133,14 +133,16 @@
 
 &lt;body&gt;
 
-&lt;footer&gt;</code></pre>
+&lt;footer&gt;
+</code></pre>
 <h2>Example commit message:</h2>
 <pre><code class="language-bash">fix(middleware): ensure Range headers adhere more closely to RFC 2616
 
 Add one new dependency, use `range-parser` (Express dependency) to compute
 range. It is more well-tested <span class="hljs-keyword">in</span> the wild.
 
-Fixes <span class="hljs-comment">#2310</span></code></pre>
+Fixes <span class="hljs-comment">#2310</span>
+</code></pre>
 <h2>Message subject (first line)</h2>
 <p>The first line cannot be longer than 70 characters, the second line is always blank and
 other lines should be wrapped at 80 characters. The type and scope should
@@ -181,9 +183,11 @@ omitted. In smaller projects such as Karma plugins, the <code>&lt;scope&gt;</cod
 <h2>Message footer</h2>
 <h3>Referencing issues</h3>
 <p>Closed issues should be listed on a separate line in the footer prefixed with &quot;Closes&quot; keyword like this:</p>
-<pre><code class="language-bash">Closes <span class="hljs-comment">#234</span></code></pre>
+<pre><code class="language-bash">Closes <span class="hljs-comment">#234</span>
+</code></pre>
 <p>or in the case of multiple issues:</p>
-<pre><code class="language-bash">Closes <span class="hljs-comment">#123, #245, #992</span></code></pre>
+<pre><code class="language-bash">Closes <span class="hljs-comment">#123, #245, #992</span>
+</code></pre>
 <h3>Breaking changes</h3>
 <p>All breaking changes have to be mentioned in footer with the
 description of the change, justification and migration notes.</p>
@@ -193,7 +197,8 @@ description of the change, justification and migration notes.</p>
 consistent with the configuration file syntax.
 
 To migrate your project, change all the commands, <span class="hljs-built_in">where</span> you use `--port-runner`
-to `--runner-port`.</code></pre>
+to `--runner-port`.
+</code></pre>
 <hr>
 <p>This document is based on <a href="https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#">AngularJS Git Commit Msg Convention</a>. See the
 <a href="https://github.com/karma-runner/karma/commits/master">commit history</a> for examples of properly-formatted commit messages.</p>

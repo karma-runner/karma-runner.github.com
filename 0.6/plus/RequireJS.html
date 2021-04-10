@@ -130,12 +130,14 @@ directory structure upon which these are based looks like this:</p>
   <span class="hljs-built_in">test</span>/
     MyModule.test.js
     <span class="hljs-built_in">test</span>-main.js
-testacular.conf.js</code></pre>
+testacular.conf.js
+</code></pre>
 <h3>Initialize Testacular</h3>
 <p>Testacular comes with a nice utility for generating a config file
 (default name: <code>testacular.conf.js</code>) that it needs in order to run.</p>
 <p>In your terminal, type:</p>
-<pre><code class="language-bash">$ testacular init</code></pre>
+<pre><code class="language-bash">$ testacular init
+</code></pre>
 <p>This will give you a series of prompts for things such as paths to
 source and tests and which browsers to capture.</p>
 <h3>RequireJs Shim</h3>
@@ -175,7 +177,8 @@ should be the last file listed.</p>
 
   <span class="hljs-comment">// test main require module last</span>
   <span class="hljs-string">'test/test-main.js'</span>
-];</code></pre>
+];
+</code></pre>
 <p>This config is awesome. It replaces an html test runner that you would otherwise have to build.</p>
 <h2>RequireJs Main Module</h2>
 <p>Just like any RequireJs project, you need a main module to bootstrap
@@ -216,7 +219,8 @@ it starts the tests.</p>
   <span class="hljs-attr">deps</span>: tests,
   <span class="hljs-comment">// start test run, once requirejs is done</span>
   <span class="hljs-attr">callback</span>: <span class="hljs-built_in">window</span>.__testacular__.start
-});</code></pre>
+});
+</code></pre>
 <h2>RequireJs Test in Testacular</h2>
 <p>All the setup thus far has been in preparation for the code to follow.
 The test can now be setup as a RequireJs module. It can require the
@@ -226,7 +230,8 @@ is a Testacular adapter for).</p>
 assertions. Note that by using RequireJs and running in the browser,
 we can’t just <code>require(&#39;chai&#39;)</code>. It has to be required using the
 asynchronous callback to avoid this error:</p>
-<pre><code class="language-bash">Uncaught Error: Module name “../node_modules/chai/chai” has not been loaded yet <span class="hljs-keyword">for</span> context: _. Use require([])</code></pre>
+<pre><code class="language-bash">Uncaught Error: Module name “../node_modules/chai/chai” has not been loaded yet <span class="hljs-keyword">for</span> context: _. Use require([])
+</code></pre>
 <p>And finally, <code>should()</code> must be invoked to be available in the test.</p>
 <p>So, a simple test will look like:</p>
 <pre><code class="language-javascript">define([<span class="hljs-string">'../node_modules/chai/chai'</span>, <span class="hljs-string">'MyModule'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">chai, MyModule</span>) </span>{
@@ -241,12 +246,15 @@ asynchronous callback to avoid this error:</p>
       });
     });
   });
-});</code></pre>
+});
+</code></pre>
 <h2>Run the Tests in Testacular</h2>
 <p>To start the Testacular server:</p>
-<pre><code class="language-bash">$ testacular start</code></pre>
+<pre><code class="language-bash">$ testacular start
+</code></pre>
 <p>If you didn&#39;t configure to watch all the files and run tests automatically on any change, you can trigger the tests manually. Just type:</p>
-<pre><code class="language-bash">$ testacular run</code></pre>
+<pre><code class="language-bash">$ testacular run
+</code></pre>
 
         </div>
       </div>

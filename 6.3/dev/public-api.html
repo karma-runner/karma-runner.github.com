@@ -136,7 +136,8 @@ changed in a future major version.</p>
 <span class="hljs-keyword">var</span> server = <span class="hljs-keyword">new</span> Server(karmaConfig, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">exitCode</span>) </span>{
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Karma has exited with '</span> + exitCode)
   process.exit(exitCode)
-})</code></pre>
+})
+</code></pre>
 <h5>New Behavior</h5>
 <pre><code class="language-javascript"><span class="hljs-keyword">const</span> karma = <span class="hljs-built_in">require</span>(<span class="hljs-string">'karma'</span>)
 <span class="hljs-keyword">const</span> parseConfig = karma.config.parseConfig
@@ -154,21 +155,26 @@ parseConfig(
     })
   },
   (rejectReason) =&gt; { <span class="hljs-comment">/* respond to the rejection reason error */</span> }
-);</code></pre>
+);
+</code></pre>
 <h3><code>server.start()</code></h3>
 <p>Equivalent of <code>karma start</code>.</p>
-<pre><code class="language-javascript">server.start()</code></pre>
+<pre><code class="language-javascript">server.start()
+</code></pre>
 <h3><code>server.refreshFiles()</code></h3>
 <p>Trigger a file list refresh. Returns a promise.</p>
-<pre><code class="language-javascript">server.refreshFiles()</code></pre>
+<pre><code class="language-javascript">server.refreshFiles()
+</code></pre>
 <h3><code>server.refreshFile(path)</code></h3>
 <p>Trigger a file refresh. Returns a promise.</p>
-<pre><code class="language-javascript">server.refreshFile(<span class="hljs-string">'src/js/module-dep.js'</span>)</code></pre>
+<pre><code class="language-javascript">server.refreshFile(<span class="hljs-string">'src/js/module-dep.js'</span>)
+</code></pre>
 <h3>Events</h3>
 <p>The <code>server</code> object is an <a href="https://nodejs.org/docs/latest/api/events.html#events_class_events_eventemitter"><code>EventEmitter</code></a>. You can simply listen to events like this:</p>
 <pre><code class="language-javascript">server.on(<span class="hljs-string">'browser_register'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">browser</span>) </span>{
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'A new browser was registered'</span>)
-})</code></pre>
+})
+</code></pre>
 <h3><code>listening</code></h3>
 <p><strong>Arguments:</strong></p>
 <ul>
@@ -237,7 +243,8 @@ changed in a future major version.</p>
 runner.run({<span class="hljs-attr">port</span>: <span class="hljs-number">9876</span>}, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">exitCode</span>) </span>{
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Karma has exited with '</span> + exitCode)
   process.exit(exitCode)
-})</code></pre>
+})
+</code></pre>
 <h5>New Behavior</h5>
 <pre><code class="language-javascript"><span class="hljs-keyword">const</span> karma = <span class="hljs-built_in">require</span>(<span class="hljs-string">'karma'</span>)
 
@@ -253,7 +260,8 @@ karma.config.parseConfig(
     })
   },
   (rejectReason) =&gt; { <span class="hljs-comment">/* respond to the rejection reason error */</span> }
-);</code></pre>
+);
+</code></pre>
 <h4><code>callback</code> argument</h4>
 <p>The callback receives the exit code as the first argument.</p>
 <p>If there is an error, the error code will be provided as the second parameter to
@@ -264,7 +272,8 @@ the reporter output as a <code>Buffer</code> object.</p>
 <p>You may listen for that event to print the reporter output to the console:</p>
 <pre><code class="language-javascript">runner.run({<span class="hljs-attr">port</span>: <span class="hljs-number">9876</span>}).on(<span class="hljs-string">'progress'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
   process.stdout.write(data)
-})</code></pre>
+})
+</code></pre>
 <h2>karma.stopper</h2>
 <h3><code>stopper.stop(options, [callback=process.exit])</code></h3>
 <p>This function will signal a running server to stop. The equivalent of
@@ -279,7 +288,8 @@ stopper.stop({<span class="hljs-attr">port</span>: <span class="hljs-number">987
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Server stop as initiated'</span>)
   }
   process.exit(exitCode)
-})</code></pre>
+})
+</code></pre>
 <h5>New Behavior</h5>
 <pre><code class="language-javascript"><span class="hljs-keyword">const</span> karma = <span class="hljs-built_in">require</span>(<span class="hljs-string">'karma'</span>)
 
@@ -297,7 +307,8 @@ karma.config.parseConfig(
     })
   },
   (rejectReason) =&gt; { <span class="hljs-comment">/* respond to the rejection reason error */</span> }
-);</code></pre>
+);
+</code></pre>
 <h4><code>callback</code> argument</h4>
 <p>The callback receives the exit code as the first argument.</p>
 <p>If there is an error, the error code will be provided as the second parameter to
@@ -317,7 +328,8 @@ changed in a future major version.</p>
 <span class="hljs-keyword">const</span> karmaConfig = cfg.parseConfig(
   path.resolve(<span class="hljs-string">'./karma.conf.js'</span>),
   { <span class="hljs-attr">port</span>: <span class="hljs-number">1337</span> }
-);</code></pre>
+);
+</code></pre>
 <p>The new behavior in the future will involve throwing exceptions instead of
 exiting the process and aynchronous config files will be supported through the
 use of promises.</p>
@@ -332,7 +344,8 @@ cfg.parseConfig(
 ).then(
   <span class="hljs-function">(<span class="hljs-params">karmaConfig</span>) =&gt;</span> { <span class="hljs-comment">/* use the config with the public API */</span> },
   (rejectReason) =&gt; { <span class="hljs-comment">/* respond to the rejection reason error */</span> }
-);</code></pre>
+);
+</code></pre>
 <h4><code>configFilePath</code> argument</h4>
 <ul>
 <li><strong>Type:</strong> String | <code>null</code> | <code>undefined</code></li>

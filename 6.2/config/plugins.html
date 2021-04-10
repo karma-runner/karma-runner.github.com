@@ -134,9 +134,11 @@
     <span class="hljs-attr">"karma-growl-reporter"</span>: <span class="hljs-string">"~0.0.1"</span>,
     <span class="hljs-attr">"karma-firefox-launcher"</span>: <span class="hljs-string">"~0.0.1"</span>
   }
-}</code></pre>
+}
+</code></pre>
 <p>Therefore, a simple way to install a plugin is:</p>
-<pre><code class="language-bash">npm install karma-&lt;plugin name&gt; --save-dev</code></pre>
+<pre><code class="language-bash">npm install karma-&lt;plugin name&gt; --save-dev
+</code></pre>
 <h2>Loading Plugins</h2>
 <p>By default, Karma loads plugins from all sibling NPM packages which have a name starting with <code>karma-*</code>.</p>
 <p>You can also override this behavior and explicitly list plugins you want to load via the <code>plugins</code> configuration setting:</p>
@@ -156,7 +158,8 @@
     <span class="hljs-string">'karma-chrome-launcher'</span>,
     <span class="hljs-string">'./my-fancy-plugin'</span>
   ]
-})</code></pre>
+})
+</code></pre>
 <h2>Activating Plugins</h2>
 <p>Adding a plugin to the <code>plugins</code> array only makes Karma aware of the plugin, but it does not activate it. Depending on the plugin type you&#39;ll need to add a plugin name into <code>frameworks</code>, <code>reporters</code>, <code>preprocessors</code>, <code>middleware</code> or <code>browsers</code> configuration key to activate it. For the detailed information refer to the corresponding plugin documentation or check out <a href="../dev/plugins.html">Developing plugins</a> guide for more in-depth explanation of how plugins work.</p>
 

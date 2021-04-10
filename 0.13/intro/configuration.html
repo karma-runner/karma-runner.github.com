@@ -161,7 +161,8 @@ Do you want Karma to watch all the files and run the tests on change ?
 Press tab to list possible options.
 &gt; yes
 
-Config file generated at <span class="hljs-string">"/Users/vojta/Code/karma/my.conf.js"</span>.</code></pre>
+Config file generated at <span class="hljs-string">"/Users/vojta/Code/karma/my.conf.js"</span>.
+</code></pre>
 <p>The configuration file can be written in CoffeeScript as well.
 In fact, if you execute <code>karma init</code> with a <code>*.coffee</code> extension such as <code>karma init karma.conf.coffee</code>, it will generate a CoffeeScript file.</p>
 <p>Of course, you can write the config file by hand or copy paste it from another project ;-)</p>
@@ -169,13 +170,15 @@ In fact, if you execute <code>karma init</code> with a <code>*.coffee</code> ext
 <p>When starting Karma, the configuration file path can be passed in as the first argument.</p>
 <p>By default, Karma will look for <code>karma.conf.js</code> or <code>karma.conf.coffee</code> in the current directory.</p>
 <pre><code class="language-bash"><span class="hljs-comment"># Start Karma using your configuration:</span>
-$ karma start my.conf.js</code></pre>
+$ karma start my.conf.js
+</code></pre>
 <p>For more detailed information about the Karma configuration file, such as available options and features,
 please read the <a href="../config/configuration-file.html">configuration file docs</a>.</p>
 <h2>Command line arguments</h2>
 <p>Some configurations, which are already present within the configuration file, can be overridden by specifying the configuration
 as a command line argument for when Karma is executed.</p>
-<pre><code class="language-bash">karma start my.conf.js --<span class="hljs-built_in">log</span>-level debug --single-run</code></pre>
+<pre><code class="language-bash">karma start my.conf.js --<span class="hljs-built_in">log</span>-level debug --single-run
+</code></pre>
 <p>Try <code>karma start --help</code> if you want to see all available options.</p>
 <h2>Integrating with Grunt/Gulp</h2>
 <ul>

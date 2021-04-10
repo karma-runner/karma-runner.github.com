@@ -153,7 +153,8 @@
   <span class="hljs-comment">// function and use whatever it returns as a service for the DI token</span>
   <span class="hljs-comment">// `framework:hello`.</span>
   <span class="hljs-string">'framework:hello'</span>: [<span class="hljs-string">'factory'</span>, helloFrameworkFactory]
-};</code></pre>
+};
+</code></pre>
 <pre><code class="language-js"><span class="hljs-comment">// karma.conf.js</span>
 
 <span class="hljs-built_in">module</span>.exports = <span class="hljs-function">(<span class="hljs-params">config</span>) =&gt;</span> {
@@ -165,7 +166,8 @@
     <span class="hljs-comment">// corresponding configuration key.</span>
     <span class="hljs-attr">frameworks</span>: [<span class="hljs-string">'hello'</span>]
   })
-}</code></pre>
+}
+</code></pre>
 <h2>Injecting dependencies</h2>
 <p>In &quot;Dependency injection&quot; section we discussed that it is possible to inject any Karma services into a plugin and interact with them. This can be done by setting an <code>$inject</code> property on the plugin&#39;s factory function to an array of DI tokens plugin wishes to interact with. Karma will pick up this property and pass requested services to the factory functions as parameters.</p>
 <p>Let&#39;s make the <code>hello</code> framework a bit more useful and make it add <code>hello.js</code> file to the <code>files</code> array. This way users of the plugin can, for example, access a function defined in <code>hello.js</code> from their tests.</p>
@@ -186,7 +188,8 @@ helloFrameworkFactory.$inject = [<span class="hljs-string">'config'</span>]
 
 <span class="hljs-built_in">module</span>.exports = {
   <span class="hljs-string">'framework:hello'</span>: [<span class="hljs-string">'factory'</span>, helloFrameworkFactory]
-};</code></pre>
+};
+</code></pre>
 <p>The Karma config is unchanged and is omitted for brevity. See above example for the plugin usage.</p>
 <div class="alert alert-success"><h4 class="alert-heading">Note: </h4>Currently, Karma uses <a href="https://github.com/vojtajina/node-di">node-di</a> library as a DI implementation. The library is more powerful than what&#39;s documented above, however, the DI implementation may change in the future, so we recommend not to rely on the node-di implementation details.</div>
 <h2>Plugin types</h2>
@@ -226,7 +229,8 @@ statuses. The method takes an object of the form:</p>
     <span class="hljs-attr">success</span>: <span class="hljs-built_in">Boolean</span>, <span class="hljs-comment">// pass / fail</span>
 
     <span class="hljs-attr">skipped</span>: <span class="hljs-built_in">Boolean</span> <span class="hljs-comment">// skipped / ran</span>
-}</code></pre>
+}
+</code></pre>
 <h3>Reporters</h3>
 <ul>
 <li>example plugins: <a href="https://github.com/karma-runner/karma-growl-reporter">karma-growl-reporter</a>, <a href="https://github.com/karma-runner/karma-junit-reporter">karma-junit-reporter</a>, <a href="https://github.com/ameerthehacker/karma-material-reporter">karma-material-reporter</a></li>

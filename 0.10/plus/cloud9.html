@@ -124,11 +124,13 @@ It is written almost entirely in JavaScript, and uses NodeJS on the back-end.</p
 <h2>Configuration</h2>
 <p>First, make sure the <code>karma.conf.js</code> includes the following entries:</p>
 <pre><code class="language-javascript">hostname: process.env.IP,
-<span class="hljs-attr">port</span>: process.env.PORT</code></pre>
+<span class="hljs-attr">port</span>: process.env.PORT
+</code></pre>
 <h2>Capture the browser manually on the local machine</h2>
 <p>You can use any of your local browsers.</p>
 <pre><code class="language-bash"><span class="hljs-comment"># Start Karma without browsers:</span>
-$ karma start --no-browsers</code></pre>
+$ karma start --no-browsers
+</code></pre>
 <p>Now, open <code>http://&lt;projectName&gt;.&lt;cloud9User&gt;.c9.io/</code> in your browser.</p>
 <h2>Run Karma unit tests with PhantomJS</h2>
 <p>It is also possible to run headless PhantomJS on the Cloud9 server.</p>
@@ -136,7 +138,8 @@ $ karma start --no-browsers</code></pre>
 $ npm install karma-phantomjs-launcher
 
 <span class="hljs-comment"># Start Karma:</span>
-$ karma start --browsers PhantomJS</code></pre>
+$ karma start --browsers PhantomJS
+</code></pre>
 
         </div>
       </div>

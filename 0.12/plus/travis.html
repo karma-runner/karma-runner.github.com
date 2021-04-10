@@ -135,7 +135,8 @@ already have Travis account.</p>
 following YAML content:</p>
 <pre><code class="language-ruby"><span class="hljs-symbol">language:</span> node_js
 <span class="hljs-symbol">node_js:</span>
-  - <span class="hljs-string">"0.10"</span></code></pre>
+  - <span class="hljs-string">"0.10"</span>
+</code></pre>
 <h2>Setup a Test Command</h2>
 <p>If you do not already have a <code>package.json</code> in your project root
 create one now. Travis runs <code>npm test</code> to trigger your tests so this
@@ -148,7 +149,8 @@ is where you tell Travis how to run your tests.</p>
 <span class="hljs-string">'scripts'</span>: {
    <span class="hljs-string">'test'</span>: <span class="hljs-string">'./node_modules/karma/bin/karma start --single-run --browsers PhantomJS'</span>
 }
-<span class="hljs-comment">// ...snip...</span></code></pre>
+<span class="hljs-comment">// ...snip...</span>
+</code></pre>
 <p>Travis will run <code>npm install</code> before every suite so this is your
 chance to specify any modules your app needs that Travis does not know
 about like Karma.</p>
@@ -161,10 +163,12 @@ like this:</p>
   - <span class="hljs-string">"0.10"</span>
 <span class="hljs-symbol">before_script:</span>
   - export DISPLAY=<span class="hljs-symbol">:</span><span class="hljs-number">99.0</span>
-  - sh -e /etc/init.d/xvfb start</code></pre>
+  - sh -e /etc/init.d/xvfb start
+</code></pre>
 <p>And now, you can run your tests on Firefox, just change the <code>npm test</code>
 command to</p>
-<pre><code class="language-bash">karma start --browsers Firefox --single-run</code></pre>
+<pre><code class="language-bash">karma start --browsers Firefox --single-run
+</code></pre>
 <h2>Notes</h2>
 <ul>
 <li>Travis&#39; Node environment has very little available. If the startup
