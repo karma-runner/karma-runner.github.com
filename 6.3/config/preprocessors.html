@@ -141,10 +141,10 @@ can be listed more than once as another way to specify multiple file path expres
 </li>
 <li><a href="https://github.com/karma-runner/karma-coverage">coverage</a></li>
 <li><a href="https://github.com/karma-runner/karma-ng-html2js-preprocessor">ng-html2js</a></li>
-<li><a href="https://www.npmjs.org/browse/keyword/karma-preprocessor">many more</a></li>
+<li><a href="https://www.npmjs.com/search?q=keywords:karma-preprocessor">many more</a></li>
 </ul>
 <p>Here&#39;s an example of how to add the CoffeScript preprocessor to your testing suite:</p>
-<pre><code class="language-bash"><span class="hljs-comment"># Install it first with NPM</span>
+<pre><code class="language-bash"><span class="hljs-comment"># Install it first with npm</span>
 $ npm install karma-coffee-preprocessor --save-dev
 </code></pre>
 <p>And then inside your configuration file...</p>
@@ -194,9 +194,8 @@ the corresponding array. So for instance, if the config object is:</p>
 }
 </code></pre>
 <p>Then karma will execute <code>&#39;a&#39;</code> before executing <code>&#39;b&#39;</code>.</p>
-<p>If a file matches multiple keys, karma will use the <code>config.preprocessor_priority</code>
-map to set the order. If this config option is not set, karma do its best to
-execute the preprocessors in a reasonable order.  So if you have:</p>
+<p>If a file matches multiple keys, karma will use the <code>config.preprocessor_priority</code> map to control the execution order. The <code>config.preprocessor_priority</code> should be an object with property names equal to the preprocessor names and property values equal to the priority of execution. Higher priority preprocessors are run earlier. The default priority is 0.</p>
+<p>If this config option is not set, karma will do its best to execute the preprocessors in a reasonable order. So if you have:</p>
 <pre><code class="language-js">preprocessors: {
   <span class="hljs-string">&#x27;*.js&#x27;</span>: [<span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;b&#x27;</span>],
   <span class="hljs-string">&#x27;a.*&#x27;</span>: [<span class="hljs-string">&#x27;b&#x27;</span>, <span class="hljs-string">&#x27;c&#x27;</span>]

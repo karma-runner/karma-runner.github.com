@@ -120,7 +120,7 @@
       </div>
       <div class="page-columns">
         <div id="markdown" class="sixteen columns bottom"><p>Karma can be easily extended through plugins. In fact, all the existing preprocessors, reporters, browser launchers and frameworks are plugins. </p>
-<p>You can install <a href="https://npmjs.org/browse/keyword/karma-plugin">existing plugins</a> from NPM or you can write <a href="../dev/plugins.html">your own plugins</a> for Karma.</p>
+<p>You can install <a href="https://www.npmjs.com/search?q=keywords:karma-plugin">existing plugins</a> from npm or you can write <a href="../dev/plugins.html">your own plugins</a> for Karma.</p>
 <h2 id="installing-plugins">Installing Plugins <a class="heading-anchor" href="#installing-plugins">#</a></h2>
 <p>The recommended way to install plugins is to add them as project dependencies in your <code>package.json</code>:</p>
 <pre><code class="language-json">{
@@ -136,11 +136,11 @@
 <pre><code class="language-bash">npm install karma-&lt;plugin name&gt; --save-dev
 </code></pre>
 <h2 id="loading-plugins">Loading Plugins <a class="heading-anchor" href="#loading-plugins">#</a></h2>
-<p>By default, Karma loads plugins from all sibling NPM packages which have a name starting with <code>karma-*</code>.</p>
+<p>By default, Karma loads plugins from all sibling npm packages which have a name starting with <code>karma-*</code>.</p>
 <p>You can also override this behavior and explicitly list plugins you want to load via the <code>plugins</code> configuration setting:</p>
 <pre><code class="language-javascript">config.set({
   <span class="hljs-attr">plugins</span>: [
-    <span class="hljs-comment">// Load a plugin you installed from NPM.</span>
+    <span class="hljs-comment">// Load a plugin you installed from npm.</span>
     <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;karma-jasmine&#x27;</span>),
 
     <span class="hljs-comment">// Load a plugin from the file in your project.</span>
