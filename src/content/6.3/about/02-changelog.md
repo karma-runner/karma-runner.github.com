@@ -2,6 +2,27 @@
 editButton: false
 ---
 
+## [6.3.6](https://github.com/karma-runner/karma/compare/v6.3.5...v6.3.6) (2021-10-25)
+
+
+### Bug Fixes
+
+* bump vulnerable ua-parser-js version ([6f2b2ec](https://github.com/karma-runner/karma/commit/6f2b2ec6ed0218980eabf2cbf44e0c8f16fee661)), closes [#3713](https://github.com/karma-runner/karma/issues/3713)
+
+## [6.3.5](https://github.com/karma-runner/karma/compare/v6.3.4...v6.3.5) (2021-10-20)
+
+
+### Bug Fixes
+
+* **client:** prevent socket.io from hanging due to mocked clocks ([#3695](https://github.com/karma-runner/karma/issues/3695)) ([105da90](https://github.com/karma-runner/karma/commit/105da90a9975c1050f96cda966bd30a3c677494e))
+
+## [6.3.4](https://github.com/karma-runner/karma/compare/v6.3.3...v6.3.4) (2021-06-14)
+
+
+### Bug Fixes
+
+* bump production dependencies within SemVer ranges ([#3682](https://github.com/karma-runner/karma/issues/3682)) ([36467a8](https://github.com/karma-runner/karma/commit/36467a8ac357108343dde4131ef34099004711e5)), closes [#3680](https://github.com/karma-runner/karma/issues/3680)
+
 ## [6.3.3](https://github.com/karma-runner/karma/compare/v6.3.2...v6.3.3) (2021-06-01)
 
 
