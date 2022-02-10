@@ -308,6 +308,11 @@ upon the completion of running the tests. Setting this to false is useful when e
 <p><strong>Default:</strong> <code>false</code></p>
 <p><strong>Description:</strong> Set style display none on client elements.</p>
 <p>If true, Karma does not display the banner and browser list. Useful when using karma on component tests with screenshots.</p>
+<h2 id="clientallowedreturnurlpatterns">client.allowedReturnUrlPatterns <a class="heading-anchor" href="#clientallowedreturnurlpatterns">#</a></h2>
+<p><strong>Type:</strong> Array</p>
+<p><strong>Default:</strong> <code>[&#39;^https?://&#39;]</code></p>
+<p><strong>Description:</strong> Define the string representations of the regular expressions that will be allowed for the <code>return_url</code> query parameter.</p>
+<p>If the value of the <code>return_url</code> query parameter does not match any regular expression derived from the string representation of each of the elements of this array, navigation to it will be blocked.</p>
 <h2 id="colors">colors <a class="heading-anchor" href="#colors">#</a></h2>
 <p><strong>Type:</strong> Boolean</p>
 <p><strong>Default:</strong>   <code>true</code></p>
