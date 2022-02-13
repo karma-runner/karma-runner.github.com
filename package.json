@@ -24,7 +24,7 @@
     "highlight.js": "10.7.2",
     "jade": "1.11.0",
     "load-grunt-tasks": "4.0.0",
-    "marked": "2.0.1",
+    "marked": "4.0.10",
     "semver": "5.5.1"
   },
   "scripts": {
