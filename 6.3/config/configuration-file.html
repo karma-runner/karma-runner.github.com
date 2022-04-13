@@ -162,6 +162,16 @@ which accepts one argument: the configuration object.</p>
   });
 }
 </code></pre>
+<p>Alternatively, you can use an <code>async</code> function instead (since v6.3).</p>
+<pre><code class="language-javascript"><span class="hljs-comment">// karma.conf.js</span>
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-keyword">async</span> (config) =&gt; {
+  <span class="hljs-keyword">const</span> karmaConfig = <span class="hljs-keyword">await</span> getKarmaConfig(<span class="hljs-string">&quot;dev&quot;</span>);
+  
+  config.set({
+    ...karmaConfig
+  });
+};
+</code></pre>
 <h3 id="customized-typescript-configuration">Customized TypeScript Configuration <a class="heading-anchor" href="#customized-typescript-configuration">#</a></h3>
 <p>Under the hood Karma uses ts-node to transpile TypeScript to JavaScript. If the resolved <code>tsconfig.json</code> has <code>module</code> configured as <code>ES</code> formats. You might get errors like <code>SyntaxError: Unexpected token</code>. This is due that in Node <code>ES</code> module formats are not supported. To overcome this issue you need to configure ts-node to use <code>commonjs</code> module format.</p>
 <p>Create a JavaScript configuration file that overrides the module format.</p>
